@@ -1,5 +1,6 @@
 /*
  * Sintomatología · base de conocimiento
+ * © 2026 Agustín Vivanco. Todos los derechos reservados.
  * --------------------------------------
  * Contenido redactado a partir de fuentes médicas confiables:
  *   - MedlinePlus en español (Biblioteca Nacional de Medicina de EE. UU., NIH)
@@ -29,21 +30,23 @@
   const ZONES = [
     { id: 'general', n: 'General' },
     { id: 'cabeza', n: 'Cabeza y nervios' },
-    { id: 'oong', n: 'Ojos, oídos, nariz y garganta' },
+    { id: 'ojos', n: 'Ojos' },
+    { id: 'oong', n: 'Oídos, nariz, boca y garganta' },
     { id: 'respiracion', n: 'Pecho y respiración' },
     { id: 'corazon', n: 'Corazón y circulación' },
     { id: 'digestivo', n: 'Abdomen y digestión' },
     { id: 'urogenital', n: 'Urinario y genital' },
+    { id: 'mujer', n: 'Regla, mamas y embarazo' },
     { id: 'piel', n: 'Piel' },
-    { id: 'musculo', n: 'Músculos y articulaciones' },
-    { id: 'mente', n: 'Ánimo y emociones' },
+    { id: 'musculo', n: 'Músculos, huesos y articulaciones' },
+    { id: 'mente', n: 'Ánimo, emociones y sueño' },
     { id: 'contexto', n: 'Contexto y exposiciones' }
   ];
 
   // [id, nombre, zona, gravedad, sinónimos, sexo opcional]
   const RAW_SYMPTOMS = [
     // ── General
-    ['fiebre', 'Fiebre (38 °C o más)', 'general', 2, ['temperatura', 'calentura', 'afiebrado', 'fiebre alta', 'febril']],
+    ['fiebre', 'Fiebre (38 °C o más)', 'general', 2, ['temperatura', 'afiebrado', 'fiebre alta', 'febril']],
     ['febricula', 'Fiebre baja (37,5 a 38 °C)', 'general', 1, ['febrícula', 'décimas', 'temperatura baja', 'destemplado']],
     ['escalofrios', 'Escalofríos', 'general', 1, ['chuchos de frío', 'tiritones', 'tiritar', 'tiritón']],
     ['fatiga', 'Cansancio o fatiga', 'general', 1, ['agotamiento', 'sin energía', 'decaimiento', 'cansado', 'agotado']],
@@ -77,7 +80,7 @@
     ['debilidad_lado', 'Debilidad o adormecimiento de un lado del cuerpo', 'cabeza', 3, ['hemiparesia', 'no puedo mover el brazo', 'brazo dormido', 'pierna dormida', 'parálisis']],
     ['cara_caida', 'Cara caída o boca torcida', 'cabeza', 3, ['boca chueca', 'parálisis facial', 'cara chueca']],
     ['habla', 'Dificultad repentina para hablar o entender', 'cabeza', 3, ['habla arrastrada', 'no me salen las palabras', 'se traba la lengua', 'balbuceo']],
-    ['vision_subita', 'Pérdida súbita de visión o visión doble', 'cabeza', 3, ['visión doble', 'ceguera', 'dejé de ver', 'diplopía']],
+    ['vision_subita', 'Pérdida súbita de visión o visión doble', 'ojos', 3, ['visión doble', 'ceguera', 'dejé de ver', 'diplopía']],
     ['rigidez_cuello', 'Rigidez de cuello (cuesta tocar el pecho con el mentón)', 'cabeza', 3, ['cuello duro', 'cuello rígido', 'nuca rígida', 'cuello tieso']],
     ['confusion', 'Confusión o desorientación', 'cabeza', 3, ['desorientado', 'no sabe dónde está', 'confundido', 'delirio']],
     ['hormigueo', 'Hormigueo en manos o alrededor de la boca', 'cabeza', 1, ['parestesias', 'cosquilleo', 'manos dormidas']],
@@ -97,9 +100,9 @@
     ['dolor_oido', 'Dolor de oído', 'oong', 1, ['otalgia', 'me duele el oído']],
     ['secrecion_oido', 'Secreción por el oído', 'oong', 2, ['supura el oído', 'pus en el oído', 'otorrea']],
     ['audicion', 'Oído tapado o baja audición', 'oong', 1, ['no escucho bien', 'sordera', 'oído tapado']],
-    ['ojo_rojo', 'Ojo rojo', 'oong', 1, ['ojos rojos', 'ojo irritado']],
-    ['laganas', 'Lagañas o secreción en el ojo', 'oong', 1, ['legañas', 'pus en el ojo', 'ojo pegado']],
-    ['vision_borrosa', 'Visión borrosa', 'oong', 2, ['veo borroso', 'visión nublada']],
+    ['ojo_rojo', 'Ojo rojo', 'ojos', 1, ['ojos rojos', 'ojo irritado']],
+    ['laganas', 'Lagañas o secreción en el ojo', 'ojos', 1, ['legañas', 'pus en el ojo', 'ojo pegado']],
+    ['vision_borrosa', 'Visión borrosa', 'ojos', 2, ['veo borroso', 'visión nublada']],
     ['sangrado_nariz', 'Sangrado de nariz', 'oong', 1, ['epistaxis', 'sangre de narices']],
 
     // ── Pecho y respiración
@@ -151,17 +154,17 @@
     ['orinar_frecuente', 'Ganas frecuentes o urgentes de orinar', 'urogenital', 1, ['polaquiuria', 'orino a cada rato', 'urgencia urinaria', 'orinar mucho']],
     ['orina_turbia', 'Orina turbia o con mal olor', 'urogenital', 1, ['orina con olor', 'orina turbia']],
     ['sangre_orina', 'Sangre en la orina', 'urogenital', 2, ['hematuria', 'orina roja', 'orina con sangre']],
-    ['orina_escasa', 'Orinar muy poco u orina muy oscura', 'urogenital', 2, ['oliguria', 'orina oscura', 'casi no orino']],
+    ['orina_escasa', 'Orinar muy poco (orina escasa y concentrada)', 'urogenital', 2, ['oliguria', 'orina oscura', 'casi no orino']],
     ['dolor_costado', 'Dolor en un costado de la espalda (zona del riñón)', 'urogenital', 2, ['dolor de riñón', 'dolor lumbar lateral']],
     ['colico_renal', 'Dolor muy intenso en oleadas, del costado hacia la ingle', 'urogenital', 2, ['cólico renal', 'piedra en el riñón', 'cálculo']],
     ['dolor_pelvico', 'Dolor en la parte baja del abdomen o pelvis', 'urogenital', 1, ['dolor de ovarios', 'bajo vientre', 'dolor pélvico', 'hipogastrio']],
-    ['atraso_menstrual', 'Atraso menstrual', 'urogenital', 1, ['no me llega la regla', 'falta de regla', 'atraso', 'amenorrea'], 'F'],
-    ['sangrado_vaginal', 'Sangrado vaginal fuera de la regla', 'urogenital', 2, ['metrorragia', 'manchado', 'sangrado anormal'], 'F'],
-    ['flujo_vaginal', 'Flujo vaginal anormal', 'urogenital', 1, ['flujo', 'descarga vaginal', 'leucorrea'], 'F'],
+    ['atraso_menstrual', 'Atraso menstrual', 'mujer', 1, ['no me llega la regla', 'falta de regla', 'atraso', 'amenorrea'], 'F'],
+    ['sangrado_vaginal', 'Sangrado vaginal fuera de la regla', 'mujer', 2, ['metrorragia', 'manchado', 'sangrado anormal'], 'F'],
+    ['flujo_vaginal', 'Flujo vaginal anormal', 'mujer', 1, ['flujo', 'descarga vaginal', 'leucorrea'], 'F'],
     ['picazon_genital', 'Picazón o ardor genital', 'urogenital', 1, ['comezón genital', 'prurito vulvar', 'picazón vaginal']],
-    ['dolor_menstrual', 'Dolor menstrual intenso', 'urogenital', 1, ['cólicos menstruales', 'dismenorrea', 'dolor de regla'], 'F'],
+    ['dolor_menstrual', 'Dolor menstrual intenso', 'mujer', 1, ['cólicos menstruales', 'dismenorrea', 'dolor de regla'], 'F'],
     ['dolor_relaciones', 'Dolor en las relaciones sexuales', 'urogenital', 1, ['dispareunia', 'dolor al tener sexo']],
-    ['sensibilidad_mamas', 'Pechos sensibles o hinchados', 'urogenital', 1, ['mamas sensibles', 'dolor de pechos', 'senos sensibles'], 'F'],
+    ['sensibilidad_mamas', 'Pechos sensibles o hinchados', 'mujer', 1, ['mamas sensibles', 'dolor de pechos', 'senos sensibles'], 'F'],
     ['dolor_testicular', 'Dolor testicular súbito e intenso', 'urogenital', 3, ['dolor de testículo', 'torsión', 'escroto'], 'M'],
 
     // ── Piel
@@ -197,7 +200,7 @@
     ['ideas_suicidas', 'Pensamientos de muerte o de hacerte daño', 'mente', 3, ['suicidio', 'quiero morir', 'hacerme daño', 'autolesión', 'no quiero vivir']],
 
     // ── Contexto y exposiciones
-    ['ctx_contagio', 'Contacto reciente con alguien resfriado o con gripe', 'contexto', 0, ['contagio', 'familiar enfermo', 'compañero enfermo']],
+    ['ctx_contagio', 'Contacto reciente con alguien enfermo (resfrío, gripe, varicela…)', 'contexto', 0, ['contagio', 'familiar enfermo', 'compañero enfermo']],
     ['ctx_comida', 'Comida sospechosa en las últimas horas', 'contexto', 0, ['mariscos', 'comida en mal estado', 'intoxicación']],
     ['ctx_brasero', 'Brasero, estufa, calefón o motor encendido en lugar cerrado', 'contexto', 0, ['monóxido', 'gas', 'calefactor', 'parafina', 'leña', 'estufa']],
     ['ctx_convivientes', 'Otras personas o mascotas de la casa con síntomas parecidos', 'contexto', 0, ['familia enferma', 'todos en la casa']],
@@ -208,13 +211,118 @@
     ['ctx_golpe', 'Golpe reciente en la cabeza', 'contexto', 0, ['traumatismo', 'caída', 'TEC', 'golpe']],
     ['ctx_diabetes', 'Tengo diabetes o uso insulina', 'contexto', 0, ['insulina', 'diabético', 'diabética', 'glicemia']],
     ['ctx_estres', 'Período de mucho estrés', 'contexto', 0, ['estrés', 'presión', 'agobio']],
-    ['ctx_antiinflam', 'Uso frecuente de antiinflamatorios (ibuprofeno, aspirina)', 'contexto', 0, ['ibuprofeno', 'aspirina', 'ketoprofeno', 'diclofenaco', 'naproxeno']]
+    ['ctx_antiinflam', 'Uso frecuente de antiinflamatorios (ibuprofeno, aspirina)', 'contexto', 0, ['ibuprofeno', 'aspirina', 'ketoprofeno', 'diclofenaco', 'naproxeno']],
+    // ── Ampliación (noviembre 2026) ─────────────────────────────
+    // General
+    ['sudor_nocturno', 'Sudoración nocturna que empapa la ropa', 'general', 2, ['sudores nocturnos', 'transpiro de noche', 'sudor de noche']],
+    ['hinchazon_cara_manos', 'Hinchazón de cara o manos', 'general', 2, ['cara hinchada', 'manos hinchadas', 'edema facial']],
+    // Cabeza y nervios
+    ['mareo_al_pararse', 'Mareo al ponerte de pie', 'cabeza', 1, ['me mareo al pararme', 'se me nubla la vista al pararme', 'baja de presión']],
+    ['prodromo_desmayo', 'Calor, náuseas y visión borrosa justo antes de desmayarte', 'cabeza', 1, ['casi me desmayo', 'me voy a desmayar', 'sensación de desvanecimiento']],
+    ['dolor_cabeza_despertar', 'Dolor de cabeza al despertar', 'cabeza', 1, ['cefalea matinal', 'despierto con dolor de cabeza']],
+    ['dolor_ojo_racimo', 'Dolor muy intenso alrededor de un ojo, con lagrimeo del mismo lado', 'cabeza', 2, ['cefalea en racimos', 'dolor detrás del ojo', 'dolor en la sien']],
+    ['paralisis_facial', 'Un lado de la cara paralizado, incluida la frente (no cierras el ojo)', 'cabeza', 2, ['parálisis de Bell', 'no puedo cerrar el ojo', 'no puedo arrugar la frente']],
+    ['hormigueo_mano', 'Hormigueo o adormecimiento en los dedos de la mano, peor de noche', 'cabeza', 1, ['túnel carpiano', 'mano dormida', 'dedos dormidos']],
+    // Ojos
+    ['dolor_ojo', 'Dolor intenso en un ojo', 'ojos', 3, ['me duele el ojo', 'dolor ocular']],
+    ['halos', 'Ver halos o arcoíris alrededor de las luces', 'ojos', 2, ['halos', 'arcoíris en las luces']],
+    ['moscas_destellos', 'Manchas flotantes nuevas o destellos de luz', 'ojos', 2, ['moscas volantes', 'puntos negros flotantes', 'destellos', 'flashes']],
+    ['cortina_vision', 'Sombra o cortina que tapa parte de la visión', 'ojos', 3, ['cortina', 'sombra en la vista', 'telón en la vista']],
+    ['bulto_parpado', 'Bulto rojo y doloroso en el borde del párpado', 'ojos', 1, ['orzuelo', 'chalazión', 'grano en el párpado']],
+    ['lagrimeo', 'Lagrimeo', 'ojos', 1, ['ojos llorosos', 'me lloran los ojos']],
+    // Oídos, nariz, boca y garganta
+    ['dolor_tocar_oreja', 'Dolor al tocar o tirar la oreja', 'oong', 1, ['me duele la oreja', 'oreja sensible']],
+    ['picazon_oido', 'Picazón dentro del oído', 'oong', 1, ['me pica el oído']],
+    ['zumbido', 'Zumbido o pitido en el oído', 'oong', 1, ['tinnitus', 'acúfenos', 'pito en el oído']],
+    ['sordera_subita', 'Pérdida súbita de audición en un oído', 'oong', 3, ['sordera súbita', 'dejé de escuchar', 'perdí la audición']],
+    ['dolor_muela', 'Dolor de muela o diente', 'oong', 1, ['dolor de diente', 'muela', 'caries', 'dolor dental']],
+    ['hinchazon_encia', 'Encía o cara hinchada junto a un diente', 'oong', 2, ['flemón', 'encía inflamada', 'absceso dental', 'cara hinchada por una muela']],
+    ['llagas_boca', 'Llagas dolorosas dentro de la boca', 'oong', 1, ['aftas', 'úlceras en la boca', 'heridas en la boca']],
+    ['ampollas_labio', 'Ampollitas en el borde del labio («fuego»)', 'oong', 1, ['fuego', 'fuego en el labio', 'herpes labial', 'vesículas en el labio']],
+    // Pecho y respiración
+    ['tos_perruna', 'Tos ronca, como ladrido de perro', 'respiracion', 2, ['tos de perro', 'tos de foca', 'tos perruna', 'crup']],
+    ['estridor', 'Ruido agudo al tomar aire (estridor)', 'respiracion', 3, ['silbido al inspirar', 'estridor', 'ruido al respirar']],
+    ['tos_accesos', 'Accesos de tos seguidos que terminan en «gallito» o vómito', 'respiracion', 2, ['tos convulsiva', 'coqueluche', 'tos ferina', 'gallito']],
+    ['tos_prolongada', 'Tos que dura más de 2 a 3 semanas', 'respiracion', 2, ['tos crónica', 'tos que no se quita', 'tos persistente']],
+    ['dolor_pecho_subito_lado', 'Dolor punzante súbito en un lado del pecho, con falta de aire', 'respiracion', 3, ['neumotórax', 'pulmón colapsado', 'puntada súbita en el pecho']],
+    // Corazón y circulación
+    ['piernas_pesadas', 'Piernas pesadas o cansadas al final del día', 'corazon', 1, ['pesadez de piernas', 'piernas cansadas']],
+    ['varices', 'Venas hinchadas y retorcidas en las piernas', 'corazon', 1, ['várices', 'venas varicosas', 'arañitas vasculares']],
+    // Abdomen y digestión
+    ['sangre_roja_defecar', 'Sangre roja fresca en el papel o la taza al ir al baño', 'digestivo', 2, ['sangrado al defecar', 'sangre en el papel', 'sangre roja en las deposiciones']],
+    ['dolor_anal', 'Dolor en el ano al ir al baño', 'digestivo', 1, ['dolor al defecar', 'ano adolorido']],
+    ['bulto_anal', 'Bulto o hinchazón en el ano', 'digestivo', 1, ['almorranas', 'hemorroides']],
+    ['picazon_anal', 'Picazón en el ano, sobre todo de noche', 'digestivo', 1, ['pidulles', 'oxiuros', 'comezón anal']],
+    ['dolor_fii', 'Dolor abajo a la izquierda del abdomen', 'digestivo', 2, ['fosa ilíaca izquierda', 'dolor lado izquierdo abajo', 'divertículos']],
+    ['bulto_ingle', 'Bulto en la ingle que aumenta al toser o hacer fuerza', 'digestivo', 1, ['hernia', 'bulto en la ingle']],
+    ['acolia', 'Deposiciones muy claras (color masilla)', 'digestivo', 2, ['heces blancas', 'deposiciones pálidas', 'acolia']],
+    // Urinario y genital
+    ['coluria', 'Orina color té o bebida cola', 'urogenital', 2, ['orina café', 'orina oscura como bebida cola', 'coluria']],
+    ['chorro_debil', 'Chorro débil, goteo o sensación de no vaciar la vejiga', 'urogenital', 1, ['próstata', 'goteo', 'me cuesta orinar', 'chorro débil'], 'M'],
+    ['nicturia', 'Levantarte varias veces en la noche a orinar', 'urogenital', 1, ['nicturia', 'orinar de noche']],
+    ['secrecion_uretral', 'Secreción por la punta del pene', 'urogenital', 2, ['pus en el pene', 'gota matinal', 'secreción uretral'], 'M'],
+    ['ulcera_genital', 'Llaga o herida en los genitales que no duele', 'urogenital', 2, ['chancro', 'úlcera genital', 'herida genital']],
+    ['ampollas_genitales', 'Ampollas o llagas dolorosas en los genitales', 'urogenital', 2, ['herpes genital', 'vesículas genitales']],
+    ['dolor_testicular_gradual', 'Dolor e hinchazón de un testículo que fue aumentando', 'urogenital', 2, ['testículo inflamado', 'epididimitis'], 'M'],
+    // Menstruación, mamas y embarazo
+    ['flujo_mal_olor', 'Flujo vaginal con mal olor (a pescado)', 'mujer', 1, ['olor vaginal', 'flujo con olor'], 'F'],
+    ['bochornos', 'Bochornos (oleadas de calor) o sudores nocturnos', 'mujer', 1, ['sofocos', 'calores', 'oleadas de calor'], 'F'],
+    ['reglas_irregulares', 'Reglas irregulares o cada vez más espaciadas', 'mujer', 1, ['menstruación irregular', 'regla irregular'], 'F'],
+    ['mama_roja', 'Pecho rojo, caliente y doloroso', 'mujer', 2, ['mastitis', 'mama inflamada', 'pecho inflamado'], 'F'],
+    ['ctx_premenstrual', 'Los síntomas aparecen en los días antes de la regla', 'mujer', 0, ['antes de la regla', 'premenstrual'], 'F'],
+    ['ctx_lactancia', 'Estás amamantando', 'mujer', 0, ['lactancia', 'dar pecho', 'amamantar'], 'F'],
+    ['ctx_embarazo20', 'Embarazo de más de 20 semanas o parto hace menos de 6 semanas', 'mujer', 0, ['embarazada', 'posparto', 'puerperio'], 'F'],
+    // Piel
+    ['placas_escamas', 'Placas rojas con escamas blanquecinas (codos, rodillas, cuero cabelludo)', 'piel', 1, ['psoriasis', 'escamas', 'descamación']],
+    ['eccema', 'Piel roja, seca y áspera que pica, en pliegues', 'piel', 1, ['eccema', 'eczema', 'dermatitis', 'piel irritada']],
+    ['picazon_nocturna', 'Picazón intensa que empeora en la noche', 'piel', 1, ['me pica todo de noche', 'sarna', 'escabiosis']],
+    ['surcos_dedos', 'Granitos o líneas finas entre los dedos o en las muñecas', 'piel', 1, ['surcos', 'granitos entre los dedos']],
+    ['ampollas_cuerpo', 'Ampollitas que pican por todo el cuerpo, en distintas etapas', 'piel', 2, ['varicela', 'peste cristal']],
+    ['pie_atleta', 'Picazón y piel agrietada entre los dedos de los pies', 'piel', 1, ['pie de atleta', 'hongos en los pies', 'tiña']],
+    ['bulto_pus', 'Bulto rojo, caliente y doloroso con pus', 'piel', 1, ['forúnculo', 'absceso', 'grano infectado', 'espinilla infectada']],
+    ['lesion_violacea', 'Lesión dolorosa que se pone violácea u oscura tras una picadura', 'piel', 3, ['araña de rincón', 'loxosceles', 'mancha morada', 'placa livedoide']],
+    ['piel_roja_sol', 'Piel roja, caliente y dolorosa después del sol', 'piel', 1, ['quemadura de sol', 'quemado por el sol', 'insolación leve']],
+    // Músculos y articulaciones
+    ['hinchazon_moreton', 'Hinchazón y moretón tras una torcedura o golpe', 'musculo', 1, ['moretón', 'esguince', 'torcedura', 'tobillo hinchado']],
+    ['no_apoyar', 'No puedes apoyar o mover la extremidad', 'musculo', 2, ['no puedo pisar', 'no puedo mover el brazo', 'no puedo caminar']],
+    ['deformidad', 'Extremidad deformada o hueso visible', 'musculo', 3, ['fractura expuesta', 'hueso torcido', 'deformidad']],
+    ['dolor_hombro', 'Dolor de hombro al levantar el brazo', 'musculo', 1, ['hombro', 'manguito rotador', 'tendinitis']],
+    ['rigidez_matinal', 'Rigidez de articulaciones en la mañana por más de 30 minutos', 'musculo', 1, ['rigidez matinal', 'articulaciones tiesas']],
+    ['articulaciones_manos', 'Dolor e hinchazón en articulaciones de ambas manos o muñecas', 'musculo', 2, ['dedos hinchados', 'nudillos inflamados']],
+    ['dolor_rodilla_cadera', 'Dolor de rodillas o caderas que empeora al caminar', 'musculo', 1, ['artrosis', 'desgaste', 'dolor de rodilla', 'dolor de cadera']],
+    ['dolor_generalizado', 'Dolor en muchas partes del cuerpo durante meses', 'musculo', 1, ['fibromialgia', 'me duele todo siempre']],
+    ['dolor_talon', 'Dolor en el talón al dar los primeros pasos', 'musculo', 1, ['talón', 'fascitis plantar', 'espolón']],
+    // Ánimo, emociones y sueño
+    ['euforia', 'Ánimo eufórico o muy irritable, distinto a lo habitual', 'mente', 2, ['manía', 'acelerado', 'eufórico']],
+    ['menos_sueno', 'Duermes muy poco y no te sientes cansado/a', 'mente', 2, ['no necesito dormir', 'duermo muy poco']],
+    ['impulsividad', 'Gastos, decisiones o conductas impulsivas o riesgosas', 'mente', 2, ['impulsivo', 'gastar mucho', 'conductas de riesgo']],
+    ['pensamiento_acelerado', 'Pensamientos acelerados o hablar muy rápido', 'mente', 1, ['mente acelerada', 'hablo rápido', 'verborrea']],
+    ['recuerdos_intrusivos', 'Recuerdos, pesadillas o flashbacks de un evento traumático', 'mente', 2, ['flashbacks', 'pesadillas', 'trauma']],
+    ['hipervigilancia', 'Siempre en alerta o te sobresaltas con facilidad', 'mente', 1, ['sobresalto', 'alerta constante', 'hipervigilancia']],
+    ['agotamiento_trabajo', 'Agotamiento, cinismo o desgano con el trabajo o los estudios', 'mente', 1, ['burnout', 'quemado', 'desgaste laboral']],
+    ['ronquidos', 'Ronquidos fuertes', 'mente', 1, ['roncar', 'ronco fuerte']],
+    ['pausas_respiratorias', 'Pausas en la respiración mientras duermes (te lo han dicho)', 'mente', 2, ['apnea', 'dejo de respirar durmiendo']],
+    ['somnolencia_diurna', 'Sueño excesivo durante el día', 'mente', 1, ['me quedo dormido de día', 'cabeceo', 'somnolencia diurna']],
+    // Contexto y exposiciones
+    ['ctx_fumador', 'Fumas o fumaste por muchos años', 'contexto', 0, ['cigarro', 'tabaco', 'fumador', 'fumadora']],
+    ['ctx_alcohol', 'Consumo frecuente o abundante de alcohol', 'contexto', 0, ['alcohol', 'copete', 'tomar mucho']],
+    ['ctx_lacteos', 'Los síntomas aparecen después de comer lácteos', 'contexto', 0, ['leche', 'queso', 'lactosa']],
+    ['ctx_mariscos', 'Comiste mariscos (choritos, almejas, machas, cholgas) hace pocas horas', 'contexto', 0, ['marea roja', 'choritos', 'almejas', 'machas', 'cholgas']],
+    ['ctx_sexo', 'Relaciones sexuales sin condón o con una pareja nueva', 'contexto', 0, ['ITS', 'sin preservativo', 'sexo sin protección']],
+    ['ctx_trauma', 'Viviste o presenciaste un evento traumático', 'contexto', 0, ['accidente', 'asalto', 'abuso', 'violencia']],
+    ['ctx_arana', 'Te picó o crees que te picó una araña de rincón', 'contexto', 0, ['araña', 'picadura de araña', 'loxosceles']],
+    ['ctx_torcedura', 'Torcedura, caída o golpe reciente en un brazo o pierna', 'contexto', 0, ['caída', 'me torcí el tobillo', 'golpe en la pierna']],
+    ['ctx_irritante', 'Contacto reciente con un producto, metal, crema o planta nuevos', 'contexto', 0, ['detergente', 'níquel', 'cosmético', 'alergia de contacto']],
+    ['ctx_agua', 'Te bañaste en piscina, mar o lago hace poco', 'contexto', 0, ['piscina', 'natación', 'bañarse']],
+    ['ctx_vasovagal', 'Ocurrió al ver sangre, con dolor intenso o tras mucho rato de pie', 'contexto', 0, ['ver sangre', 'vacuna', 'mucho rato parado']],
+    ['ctx_manos', 'Trabajo con movimientos repetitivos de manos (teclado, herramientas)', 'contexto', 0, ['teclado', 'herramientas', 'movimientos repetitivos']]
   ];
 
   // Síntomas de alarma que justifican llamar al 131 (el resto de los rosados: ir a urgencia de inmediato)
   const CALL_131 = new Set(['desmayo', 'convulsion', 'debilidad_lado', 'cara_caida', 'habla', 'vision_subita', 'rigidez_cuello',
     'confusion', 'perdida_equilibrio', 'dolor_cabeza_subito', 'ahogo_severo', 'labios_azules', 'dolor_pecho_opresivo',
-    'dolor_irradiado', 'presion_alta', 'vomito_sangre', 'hinchazon_labios', 'petequias', 'piel_caliente_seca', 'ideas_suicidas', 'tos_sangre']);
+    'dolor_irradiado', 'presion_alta', 'vomito_sangre', 'hinchazon_labios', 'petequias', 'piel_caliente_seca', 'ideas_suicidas', 'tos_sangre',
+    'estridor', 'dolor_pecho_subito_lado']);
 
   const SYMPTOMS = RAW_SYMPTOMS.map(([id, n, z, sev, syn, sx]) => ({
     id, n, z, sev, syn: syn || [], sx: sx || null,
@@ -225,6 +333,8 @@
   const MP = 'MedlinePlus (NIH)';
   const MAYO = 'Mayo Clinic';
   const MINSAL = 'MINSAL Chile';
+  const SUP = 'Superintendencia de Salud';
+  const ISP = 'ISP Chile';
   const SOURCES = {
     mp_resfrio: [MP, 'Resfriado común', 'https://medlineplus.gov/spanish/ency/article/000678.htm'],
     mp_resfrio_t: [MP, 'Resfrío', 'https://medlineplus.gov/spanish/commoncold.html'],
@@ -318,7 +428,115 @@
     mayo_mono: [MAYO, 'Mononucleosis', 'https://www.mayoclinic.org/es/diseases-conditions/mononucleosis/symptoms-causes/syc-20350328'],
     minsal_samu: [MINSAL, 'SAMU 131: uso responsable', 'https://www.minsal.cl/samu-instala-base-en-alto-hospicio-y-llama-a-utilizar-responsablemente-el-131/'],
     minsal_4141: [MINSAL, 'Fono *4141 de prevención del suicidio', 'https://www.minsal.cl/ministerio-de-salud-anuncio-fono-4141-de-prevencion-del-suicidio/'],
-    minsal_ges: [MINSAL, 'Problemas de salud AUGE/GES', 'https://auge.minsal.cl/problemasdesalud/index']
+    minsal_ges: [MINSAL, 'Problemas de salud AUGE/GES', 'https://auge.minsal.cl/problemasdesalud/index'],
+    // ── Ampliación (noviembre 2026)
+    mp_laringitis: [MP, 'Laringitis', 'https://medlineplus.gov/spanish/ency/article/001385.htm'],
+    mp_crup: [MP, 'Crup', 'https://medlineplus.gov/spanish/ency/article/000959.htm'],
+    mp_bronquiolitis: [MP, 'Bronquiolitis', 'https://medlineplus.gov/spanish/ency/article/000975.htm'],
+    minsal_bronquiolitis: [MINSAL, 'Orientación técnica para el manejo de la bronquiolitis (PDF)', 'https://diprece.minsal.cl/wp-content/uploads/2024/11/Orientacion-Tecnica-Bronquiolitis_v1_IRA_menores_5.pdf'],
+    mp_tosferina: [MP, 'Tos ferina', 'https://medlineplus.gov/spanish/ency/article/001561.htm'],
+    mp_epoc: [MP, 'Enfermedad pulmonar obstructiva crónica (EPOC)', 'https://medlineplus.gov/spanish/ency/article/000091.htm'],
+    mayo_tbc: [MAYO, 'Tuberculosis', 'https://www.mayoclinic.org/es/diseases-conditions/tuberculosis/symptoms-causes/syc-20351250'],
+    minsal_tbc_epi: [MINSAL, 'Tuberculosis (Departamento de Epidemiología)', 'http://epi.minsal.cl/tuberculosis-agente-etiologico/'],
+    minsal_tbc: [MINSAL, 'Tuberculosis: examen gratuito en centros de salud', 'https://www.minsal.cl/con-llamado-a-la-prevencion-conmemoraron-el-dia-mundial-de-la-tuberculosis/'],
+    mp_neumotorax: [MP, 'Colapso pulmonar (neumotórax)', 'https://medlineplus.gov/spanish/ency/article/000087.htm'],
+    mp_otitis_externa: [MP, 'Oído de nadador', 'https://medlineplus.gov/spanish/ency/article/000622.htm'],
+    mp_dolor_oido: [MP, 'Dolor de oído', 'https://medlineplus.gov/spanish/ency/article/003046.htm'],
+    mayo_cerumen: [MAYO, 'Oclusión por cerumen', 'https://www.mayoclinic.org/es/diseases-conditions/earwax-blockage/symptoms-causes/syc-20353004'],
+    mayo_audicion: [MAYO, 'Pérdida de la audición', 'https://www.mayoclinic.org/es/diseases-conditions/hearing-loss/symptoms-causes/syc-20373072'],
+    mp_laberintitis: [MP, 'Laberintitis', 'https://medlineplus.gov/spanish/ency/article/001054.htm'],
+    mp_absceso_dental: [MP, 'Absceso dental', 'https://medlineplus.gov/spanish/ency/article/001060.htm'],
+    mp_dolor_facial: [MP, 'Dolor facial', 'https://medlineplus.gov/spanish/ency/article/003027.htm'],
+    mp_herpes_oral: [MP, 'Herpes oral', 'https://medlineplus.gov/spanish/ency/article/000606.htm'],
+    mp_herpes_labial_t: [MP, 'Herpes labial (tema de salud)', 'https://medlineplus.gov/spanish/coldsores.html'],
+    mp_aftas: [MP, 'Aftas', 'https://medlineplus.gov/spanish/ency/article/000998.htm'],
+    mp_ulceras_bucales: [MP, 'Úlceras bucales', 'https://medlineplus.gov/spanish/ency/article/003059.htm'],
+    mp_parpado: [MP, 'Protuberancia en el párpado', 'https://medlineplus.gov/spanish/ency/article/001009.htm'],
+    mp_orzuelo_img: [MP, 'Orzuelo (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/1117.htm'],
+    mp_glaucoma: [MP, 'Glaucoma', 'https://medlineplus.gov/spanish/ency/article/001620.htm'],
+    mp_vision: [MP, 'Problemas de la visión', 'https://medlineplus.gov/spanish/ency/article/003029.htm'],
+    mp_retina: [MP, 'Desprendimiento de retina', 'https://medlineplus.gov/spanish/ency/article/001027.htm'],
+    mp_tvp: [MP, 'Trombosis venosa profunda', 'https://medlineplus.gov/spanish/ency/article/000156.htm'],
+    mayo_vasovagal: [MAYO, 'Síncope vasovagal', 'https://www.mayoclinic.org/es/diseases-conditions/vasovagal-syncope/symptoms-causes/syc-20350527'],
+    mayo_ortostatica: [MAYO, 'Hipotensión ortostática', 'https://www.mayoclinic.org/es/diseases-conditions/orthostatic-hypotension/symptoms-causes/syc-20352548'],
+    mp_varices: [MP, 'Venas varicosas', 'https://medlineplus.gov/spanish/ency/article/001109.htm'],
+    mp_insuf_venosa: [MP, 'Insuficiencia venosa', 'https://medlineplus.gov/spanish/ency/article/000203.htm'],
+    mp_bell: [MP, 'Parálisis de Bell', 'https://medlineplus.gov/spanish/ency/article/000773.htm'],
+    mp_paralisis_facial: [MP, 'Parálisis facial', 'https://medlineplus.gov/spanish/ency/article/003028.htm'],
+    mp_convulsiones: [MP, 'Convulsiones', 'https://medlineplus.gov/spanish/ency/article/003200.htm'],
+    mp_epilepsia: [MP, 'Epilepsia', 'https://medlineplus.gov/spanish/ency/article/000694.htm'],
+    mp_hsa: [MP, 'Hemorragia subaracnoidea', 'https://medlineplus.gov/spanish/ency/article/000701.htm'],
+    mp_aneurisma: [MP, 'Aneurisma en el cerebro', 'https://medlineplus.gov/spanish/ency/article/001414.htm'],
+    mayo_cefaleas: [MAYO, 'Dolores de cabeza: tipos y tratamiento', 'https://www.mayoclinic.org/es/diseases-conditions/chronic-daily-headaches/in-depth/headaches/art-20047375'],
+    mp_racimo_img: [MP, 'Cefalea en racimo (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/19241.htm'],
+    mp_tunel_carpiano: [MP, 'Síndrome del túnel carpiano', 'https://medlineplus.gov/spanish/ency/article/000433.htm'],
+    mp_bipolar_t: [MP, 'Trastorno bipolar (tema de salud)', 'https://medlineplus.gov/spanish/bipolardisorder.html'],
+    sup_bipolar: [SUP, 'GES: trastorno bipolar en personas de 15 años y más', 'https://www.supersalud.gob.cl/difusion/665/w3-article-18891.html'],
+    mayo_tept: [MAYO, 'Trastorno de estrés postraumático', 'https://www.mayoclinic.org/es/diseases-conditions/post-traumatic-stress-disorder/symptoms-causes/syc-20355967'],
+    mayo_burnout: [MAYO, 'Agotamiento laboral: cómo detectarlo y tomar medidas', 'https://www.mayoclinic.org/es/healthy-lifestyle/adult-health/in-depth/burnout/art-20046642'],
+    mp_apnea: [MP, 'Apnea obstructiva del sueño en adultos', 'https://medlineplus.gov/spanish/ency/article/000811.htm'],
+    mp_estrenimiento: [MP, 'Cuidados personales para el estreñimiento', 'https://medlineplus.gov/spanish/ency/patientinstructions/000120.htm'],
+    mp_hemorroides: [MP, 'Hemorroides', 'https://medlineplus.gov/spanish/ency/article/000292.htm'],
+    mp_sangrado_rectal: [MP, 'Sangrado rectal', 'https://medlineplus.gov/spanish/ency/article/007741.htm'],
+    mp_lactosa: [MP, 'Intolerancia a la lactosa', 'https://medlineplus.gov/spanish/ency/article/000276.htm'],
+    mayo_lactosa: [MAYO, 'Intolerancia a la lactosa (en inglés)', 'https://www.mayoclinic.org/diseases-conditions/lactose-intolerance/symptoms-causes/syc-20374232'],
+    mp_celiaca: [MP, 'Celiaquía', 'https://medlineplus.gov/spanish/ency/article/000233.htm'],
+    mayo_celiaca: [MAYO, 'Enfermedad celíaca', 'https://www.mayoclinic.org/es/diseases-conditions/celiac-disease/symptoms-causes/syc-20352220'],
+    mp_hepatitis_a_t: [MP, 'Hepatitis A (tema de salud)', 'https://medlineplus.gov/spanish/hepatitisa.html'],
+    mp_hepatitis_t: [MP, 'Hepatitis (tema de salud)', 'https://medlineplus.gov/spanish/hepatitis.html'],
+    mp_diverticulosis: [MP, 'Diverticulosis y diverticulitis', 'https://medlineplus.gov/spanish/ency/article/007668.htm'],
+    mp_crohn: [MP, 'Enfermedad de Crohn', 'https://medlineplus.gov/spanish/ency/article/000249.htm'],
+    mp_colitis_ulcerosa: [MP, 'Colitis ulcerativa', 'https://medlineplus.gov/spanish/ency/article/000250.htm'],
+    mp_hernia: [MP, 'Hernia', 'https://medlineplus.gov/spanish/ency/article/000960.htm'],
+    mp_oxiuros: [MP, 'Oxiuros', 'https://medlineplus.gov/spanish/ency/article/001152.htm'],
+    minsal_marea_roja: [MINSAL, 'Alerta sanitaria por marea roja: síntomas', 'https://www.minsal.cl/ministerio-de-salud-decreta-alerta-sanitaria-preventiva-por-marea-roja-en-regiones-de-aysen-y-los-lagos/'],
+    minsal_marea_roja_ot: [MINSAL, 'Orientación técnica: intoxicaciones por marea roja (PDF)', 'https://diprece.minsal.cl/wp-content/uploads/2023/10/ORIENTACION-TECNICA-PARA-EL-MANEJO-CLINICO-MAREA-ROJA.pdf'],
+    isp_marea_roja: [ISP, 'Prevención de intoxicaciones por marea roja', 'https://www.ispch.gob.cl/noticia/isp-refuerza-llamado-a-prevenir-intoxicaciones-por-marea-roja/'],
+    mp_prostata: [MP, 'Agrandamiento de la próstata', 'https://medlineplus.gov/spanish/ency/article/000381.htm'],
+    mp_uretritis: [MP, 'Uretritis', 'https://medlineplus.gov/spanish/ency/article/000439.htm'],
+    mp_clamidia: [MP, 'Infecciones por clamidia en los hombres', 'https://medlineplus.gov/spanish/ency/article/000659.htm'],
+    mp_its_t: [MP, 'Infecciones de transmisión sexual (tema de salud)', 'https://medlineplus.gov/spanish/sexuallytransmittedinfections.html'],
+    mp_ulceras_gen_h: [MP, 'Úlceras genitales en los hombres', 'https://medlineplus.gov/spanish/ency/article/003221.htm'],
+    mp_ulceras_gen_m: [MP, 'Úlceras genitales en las mujeres', 'https://medlineplus.gov/spanish/ency/article/003222.htm'],
+    mp_sifilis: [MP, 'Sífilis primaria', 'https://medlineplus.gov/spanish/ency/article/000861.htm'],
+    mp_vulvovaginitis: [MP, 'Vulvovaginitis', 'https://medlineplus.gov/spanish/ency/article/000897.htm'],
+    mp_spm: [MP, 'Síndrome premenstrual', 'https://medlineplus.gov/spanish/ency/article/001505.htm'],
+    mp_menopausia: [MP, 'Menopausia', 'https://medlineplus.gov/spanish/ency/article/000894.htm'],
+    mp_menopausia_casa: [MP, 'Manejo de la menopausia en casa', 'https://medlineplus.gov/spanish/ency/patientinstructions/000392.htm'],
+    mp_quistes_ovaricos: [MP, 'Quistes ováricos', 'https://medlineplus.gov/spanish/ency/article/001504.htm'],
+    mp_epi: [MP, 'Enfermedad inflamatoria pélvica (EIP)', 'https://medlineplus.gov/spanish/ency/article/000888.htm'],
+    mp_eclampsia: [MP, 'Eclampsia', 'https://medlineplus.gov/spanish/ency/article/000899.htm'],
+    mp_hta_embarazo: [MP, 'Presión arterial alta en el embarazo (tema de salud)', 'https://medlineplus.gov/spanish/highbloodpressureinpregnancy.html'],
+    mp_preeclampsia_img: [MP, 'Preeclampsia (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/17270.htm'],
+    mp_mastitis_img: [MP, 'Mastitis (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/19964.htm'],
+    mp_dolor_mamas: [MP, 'Dolor de mamas', 'https://medlineplus.gov/spanish/ency/article/003152.htm'],
+    mp_epididimitis: [MP, 'Epididimitis', 'https://medlineplus.gov/spanish/ency/article/001279.htm'],
+    mp_dolor_testiculo: [MP, 'Dolor en el testículo', 'https://medlineplus.gov/spanish/ency/article/003160.htm'],
+    mp_dermatitis_atopica: [MP, 'Dermatitis atópica', 'https://medlineplus.gov/spanish/ency/article/000853.htm'],
+    mp_dermatitis_contacto: [MP, 'Dermatitis de contacto', 'https://medlineplus.gov/spanish/ency/article/000869.htm'],
+    mp_psoriasis: [MP, 'Psoriasis', 'https://medlineplus.gov/spanish/ency/article/000434.htm'],
+    mp_escamas: [MP, 'Escamas', 'https://medlineplus.gov/spanish/ency/article/003226.htm'],
+    mp_sarna: [MP, 'Sarna', 'https://medlineplus.gov/spanish/ency/article/000830.htm'],
+    mp_varicela: [MP, 'Varicela', 'https://medlineplus.gov/spanish/ency/article/001592.htm'],
+    mp_vesiculas: [MP, 'Vesículas', 'https://medlineplus.gov/spanish/ency/article/003939.htm'],
+    mp_pie_atleta: [MP, 'Pie de atleta', 'https://medlineplus.gov/spanish/ency/article/000875.htm'],
+    mp_tina: [MP, 'Tiña', 'https://medlineplus.gov/spanish/ency/article/001439.htm'],
+    mp_forunculo: [MP, 'Forúnculos', 'https://medlineplus.gov/spanish/ency/article/001474.htm'],
+    mp_absceso: [MP, 'Absceso', 'https://medlineplus.gov/spanish/ency/article/001353.htm'],
+    minsal_arana_guia: [MINSAL, 'Guía de manejo de la mordedura de araña de rincón (PDF)', 'https://diprece.minsal.cl/wrdprss_minsal/wp-content/uploads/2016/11/ARA%C3%91A-DE-RINCON.pdf'],
+    minsal_arana: [MINSAL, 'Araña de rincón (Salud Responde)', 'https://saludresponde.minsal.cl/arana-de-rincon/'],
+    mp_quemadura_solar: [MP, 'Quemadura solar', 'https://medlineplus.gov/spanish/ency/article/003227.htm'],
+    mp_esguince: [MP, 'Atención postratamiento del esguince de tobillo', 'https://medlineplus.gov/spanish/ency/patientinstructions/000574.htm'],
+    mp_dolor_tobillo: [MP, 'Dolor de tobillo', 'https://medlineplus.gov/spanish/ency/article/003167.htm'],
+    mp_fractura: [MP, 'Fractura', 'https://medlineplus.gov/spanish/ency/article/000001.htm'],
+    mp_manguito: [MP, 'Problemas con el manguito de los rotadores', 'https://medlineplus.gov/spanish/ency/article/000438.htm'],
+    mp_torticolis: [MP, 'Tortícolis', 'https://medlineplus.gov/spanish/ency/article/000749.htm'],
+    mp_artritis: [MP, 'Artritis', 'https://medlineplus.gov/spanish/ency/article/001243.htm'],
+    mp_osteoartritis: [MP, 'Osteoartritis (video)', 'https://medlineplus.gov/spanish/ency/anatomyvideos/000092.htm'],
+    mp_ar: [MP, 'Artritis reumatoidea', 'https://medlineplus.gov/spanish/ency/article/000431.htm'],
+    mp_fibromialgia: [MP, 'Fibromialgia', 'https://medlineplus.gov/spanish/ency/article/000427.htm'],
+    mp_dolor_talon: [MP, 'Dolor del talón', 'https://medlineplus.gov/spanish/ency/article/003181.htm'],
+    mp_dolor_pie: [MP, 'Dolor en el pie', 'https://medlineplus.gov/spanish/ency/article/003183.htm']
   };
 
   const URGENCY = {
@@ -391,7 +609,7 @@
     },
     {
       id: 'rinitis_alergica', n: 'Rinitis alérgica', alt: 'Alergia nasal, fiebre del heno', urg: 1, prev: 1.1, dur: ['d', 's', 'm'],
-      s: { estornudos: 3, picazon_ojos_nariz: 3, secrecion_nasal: 2, congestion: 2, ojo_rojo: 1, ctx_alergeno: 1, tos_seca: 1, fiebre: -2, febricula: -1 },
+      s: { estornudos: 3, picazon_ojos_nariz: 3, secrecion_nasal: 2, congestion: 2, ojo_rojo: 1, ctx_alergeno: 1, tos_seca: 1, fiebre: -2, febricula: -1, lagrimeo: 1 },
       que: 'Reacción alérgica de la nariz a sustancias como pólenes, ácaros del polvo, pelo de mascotas o moho. Se parece a un resfrío, pero no la causa un virus, no da fiebre y suele repetirse en ciertas épocas (por ejemplo, primavera) o ambientes.',
       trat: 'Evitar el alérgeno cuando sea posible, lavados nasales, antihistamínicos orales y corticoides en spray nasal. En casos persistentes, la inmunoterapia (vacunas para la alergia) puede ayudar.',
       esp: 'Médico general; inmunólogo/alergólogo u otorrinolaringólogo si es persistente.',
@@ -400,7 +618,7 @@
     },
     {
       id: 'conjuntivitis', n: 'Conjuntivitis', alt: 'Ojo rosado', urg: 1, prev: 1.0, dur: ['h', 'd', 's'],
-      s: { ojo_rojo: 3, laganas: 2, picazon_ojos_nariz: 1, vision_subita: -3 },
+      s: { ojo_rojo: 3, laganas: 2, picazon_ojos_nariz: 1, vision_subita: -3, lagrimeo: 1 },
       que: 'Inflamación de la conjuntiva, la membrana que cubre el blanco del ojo. Puede ser viral, bacteriana (con lagañas espesas) o alérgica (con mucha picazón).',
       trat: 'La viral suele pasar sola en 1 a 2 semanas con compresas frías y lágrimas artificiales; la bacteriana puede requerir gotas antibióticas indicadas por un médico; la alérgica mejora con gotas antihistamínicas. Lávate las manos y no compartas toallas.',
       esp: 'Médico general; oftalmólogo si hay dolor, baja de visión o no mejora.',
@@ -409,7 +627,7 @@
     },
     {
       id: 'bronquitis', n: 'Bronquitis aguda', urg: 1, prev: 1.05, dur: ['d', 's'],
-      s: { tos_flema: 3, tos_seca: 2, sibilancias: 1, febricula: 1, fatiga: 1, dolor_garganta: 1, dolor_pecho_respirar: 1, falta_aire: 1, congestion: 1 },
+      s: { tos_flema: 3, tos_seca: 2, sibilancias: 1, febricula: 1, fatiga: 1, dolor_garganta: 1, dolor_pecho_respirar: 1, falta_aire: 1, congestion: 1, tos_prolongada: 1 },
       que: 'Inflamación de los bronquios, casi siempre causada por un virus después de un resfrío o gripe. La tos puede durar hasta 3 semanas, a veces con flema.',
       trat: 'Suele mejorar sola. Reposo, líquidos, aire humidificado y paracetamol. En la mayoría de los casos NO se necesitan antibióticos. No fumar ayuda a la recuperación.',
       esp: 'Médico general; broncopulmonar si la tos dura más de 3 semanas o se repite.',
@@ -429,6 +647,7 @@
     },
     {
       id: 'asma', n: 'Crisis de asma', urg: 4, prev: 1.0, dur: ['h', 'd'],
+      age: [[0, 2, 0.5]],
       s: { sibilancias: 3, falta_aire: 3, tos_seca: 2, ahogo_severo: 2, respiracion_rapida: 1, ctx_alergeno: 1, labios_azules: 1 },
       que: 'El asma es una enfermedad crónica en la que los bronquios se inflaman y se estrechan. En una crisis aparecen silbido al respirar, tos, pecho apretado y falta de aire, a menudo gatillados por virus, alérgenos, ejercicio, frío o humo.',
       trat: 'Las crisis se tratan con broncodilatadores inhalados de rescate (como salbutamol) y, si es necesario, corticoides. Para el control a largo plazo se usan inhaladores con corticoides y se evitan los desencadenantes. Toda persona con asma debería tener un plan de acción escrito.',
@@ -439,6 +658,7 @@
     },
     {
       id: 'embolia_pulmonar', n: 'Embolia pulmonar', alt: 'Tromboembolismo pulmonar', urg: 5, prev: 0.8, dur: ['h', 'd'],
+      req: ['falta_aire', 'ahogo_severo', 'dolor_pecho_respirar', 'tos_sangre', 'respiracion_rapida', 'desmayo', 'palpitaciones'], reqF: 0.4,
       s: { falta_aire: 3, dolor_pecho_respirar: 3, pantorrilla: 3, ctx_inmovil: 3, palpitaciones: 2, respiracion_rapida: 2, tos_sangre: 2, desmayo: 1, sudoracion: 1, mareo: 1, ahogo_severo: 1 },
       que: 'Bloqueo de una arteria del pulmón, generalmente por un coágulo que viaja desde las piernas (trombosis venosa profunda). Es más probable tras viajes largos, cirugías, reposo prolongado, embarazo o uso de anticonceptivos hormonales.',
       trat: 'Es una emergencia. Se diagnostica en el hospital (dímero D, angio-TAC) y se trata con anticoagulantes; en casos graves, con medicamentos que disuelven el coágulo o procedimientos para extraerlo.',
@@ -623,8 +843,8 @@
       src: ['mp_gastroenteritis', 'mp_dolor_abd']
     },
     {
-      id: 'intox_alimentaria', req: ['ctx_comida'], reqF: 0.6, n: 'Intoxicación alimentaria', urg: 2, prev: 1.0, dur: ['h', 'd'],
-      s: { ctx_comida: 3, vomitos: 3, nauseas: 2, diarrea: 2, dolor_abdominal: 2, fiebre: 1, escalofrios: 1 },
+      id: 'intox_alimentaria', req: ['ctx_comida', 'ctx_mariscos'], reqF: 0.6, n: 'Intoxicación alimentaria', urg: 2, prev: 1.0, dur: ['h', 'd'],
+      s: { ctx_comida: 3, vomitos: 3, nauseas: 2, diarrea: 2, dolor_abdominal: 2, fiebre: 1, escalofrios: 1, ctx_mariscos: 1 },
       que: 'Enfermedad causada por comer o beber alimentos contaminados con bacterias, virus o sus toxinas. Los síntomas aparecen desde pocas horas hasta días después: náuseas, vómitos, diarrea y dolor abdominal, a veces con fiebre.',
       trat: 'Hidratación con sales de rehidratación oral y reposo; la mayoría mejora en 1 a 3 días. Algunos casos (fiebre alta, diarrea con sangre) necesitan exámenes y antibióticos. Evita los antidiarreicos si hay fiebre o sangre.',
       esp: 'Médico general; urgencia si hay deshidratación.',
@@ -633,7 +853,7 @@
     },
     {
       id: 'erge', n: 'Reflujo gastroesofágico (ERGE)', alt: 'Acidez, reflujo', urg: 1, prev: 1.1, dur: ['d', 's', 'm'],
-      s: { ardor_pecho: 3, regurgitacion: 3, dolor_epigastrio: 1, tos_seca: 1, ronquera: 1, nauseas: 1, llenura: 1 },
+      s: { ardor_pecho: 3, regurgitacion: 3, dolor_epigastrio: 1, tos_seca: 1, ronquera: 1, nauseas: 1, llenura: 1, tos_prolongada: 1 },
       que: 'El contenido ácido del estómago se devuelve hacia el esófago, causando ardor detrás del esternón (acidez), regurgitación ácida y a veces tos o ronquera. Empeora después de comer abundante, al acostarse o al agacharse.',
       trat: 'Cambios de hábitos: comidas más pequeñas, no acostarse hasta 2 a 3 horas después de comer, elevar la cabecera de la cama, bajar de peso y reducir alcohol, tabaco, café y comidas grasas. Antiácidos para síntomas ocasionales; el médico puede indicar inhibidores de la bomba de protones (como omeprazol).',
       esp: 'Médico general; gastroenterólogo si persiste o hay signos de alarma.',
@@ -642,12 +862,13 @@
     },
     {
       id: 'gastritis_ulcera', n: 'Gastritis o úlcera péptica', urg: 2, prev: 1.05, dur: ['d', 's', 'm'],
-      s: { dolor_epigastrio: 3, nauseas: 2, llenura: 2, ctx_antiinflam: 2, deposiciones_negras: 2, vomito_sangre: 2, hinchazon_abdominal: 1, inapetencia: 1, ardor_pecho: 1, vomitos: 1 },
+      s: { dolor_epigastrio: 3, nauseas: 2, llenura: 2, ctx_antiinflam: 2, deposiciones_negras: 2, vomito_sangre: 2, hinchazon_abdominal: 1, inapetencia: 1, ardor_pecho: 1, vomitos: 1, ctx_alcohol: 1 },
       que: 'Inflamación o herida en la mucosa del estómago o del duodeno. Las causas más comunes son la bacteria Helicobacter pylori y el uso de antiinflamatorios (como ibuprofeno o aspirina); el alcohol y el tabaco empeoran el cuadro. Causa dolor o ardor en la boca del estómago, náuseas y sensación de llenura.',
       trat: 'Medicamentos que reducen el ácido (como omeprazol) y, si se detecta H. pylori, una combinación de antibióticos. Suspender los antiinflamatorios si es posible y evitar alcohol y tabaco. A veces se requiere una endoscopía.',
       esp: 'Médico general; gastroenterólogo para endoscopía.',
       alarma: 'Vómito con sangre o como borra de café, deposiciones negras, dolor abdominal súbito e intenso o desmayo: urgencia.',
-      src: ['mp_ulcera', 'mp_hpylori']
+      ges: 'El tratamiento de erradicación de Helicobacter pylori está cubierto por GES.',
+      src: ['mp_ulcera', 'mp_hpylori', 'minsal_ges']
     },
     {
       id: 'apendicitis', n: 'Apendicitis', urg: 4, prev: 0.95, dur: ['h', 'd'],
@@ -662,7 +883,7 @@
     {
       id: 'colecistitis', n: 'Cálculos en la vesícula / colecistitis', alt: 'Cólico biliar', urg: 4, prev: 0.95, dur: ['h', 'd'], sexF: 1.2,
       age: [[0, 25, 0.6], [40, 200, 1.2]],
-      s: { dolor_hipocondrio: 3, nauseas: 2, vomitos: 2, fiebre: 1, ictericia: 1, dolor_epigastrio: 1, hinchazon_abdominal: 1, llenura: 1 },
+      s: { dolor_hipocondrio: 3, nauseas: 2, vomitos: 2, fiebre: 1, ictericia: 1, dolor_epigastrio: 1, hinchazon_abdominal: 1, llenura: 1, coluria: 1 },
       que: 'Los cálculos (piedras) de la vesícula pueden bloquear su salida y causar dolor intenso en la parte alta derecha del abdomen o en la boca del estómago, a menudo después de comidas grasas, que puede irradiarse a la espalda o al hombro derecho. Si la vesícula se inflama o infecta (colecistitis) aparece fiebre.',
       trat: 'El cólico se trata con analgésicos; si los cálculos dan síntomas, el tratamiento habitual es extirpar la vesícula (colecistectomía), generalmente por laparoscopía. La colecistitis requiere hospitalización.',
       esp: 'Médico general o urgencia; cirujano digestivo.',
@@ -672,7 +893,7 @@
     },
     {
       id: 'pancreatitis', n: 'Pancreatitis aguda', urg: 4, prev: 0.8, dur: ['h', 'd'],
-      s: { dolor_cinturon: 3, dolor_epigastrio: 2, vomitos: 2, nauseas: 2, dolor_abdominal_intenso: 2, fiebre: 1, palpitaciones: 1, hinchazon_abdominal: 1 },
+      s: { dolor_cinturon: 3, dolor_epigastrio: 2, vomitos: 2, nauseas: 2, dolor_abdominal_intenso: 2, fiebre: 1, palpitaciones: 1, hinchazon_abdominal: 1, ctx_alcohol: 2 },
       que: 'Inflamación súbita del páncreas, casi siempre por cálculos biliares o por consumo de alcohol. Da un dolor intenso en la parte alta del abdomen que se irradia a la espalda “como un cinturón”, con náuseas y vómitos.',
       trat: 'Requiere hospitalización: ayuno inicial, sueros intravenosos y analgésicos, y tratar la causa (por ejemplo, extirpar la vesícula si hay cálculos o suspender el alcohol).',
       esp: 'Servicio de urgencia; gastroenterólogo o cirujano digestivo.',
@@ -857,7 +1078,7 @@
     },
     {
       id: 'anemia', n: 'Anemia por falta de hierro', urg: 2, prev: 1.0, dur: ['s', 'm'], sexF: 1.2,
-      s: { fatiga: 3, palidez: 3, mareo: 2, falta_aire: 1, palpitaciones: 1, dolor_cabeza: 1, caida_pelo: 1, intolerancia_frio: 1 },
+      s: { fatiga: 3, palidez: 3, mareo: 2, falta_aire: 1, palpitaciones: 1, dolor_cabeza: 1, caida_pelo: 1, intolerancia_frio: 1, mareo_al_pararse: 1 },
       que: 'Faltan glóbulos rojos sanos por falta de hierro, frecuentemente por menstruaciones abundantes, embarazo, dieta pobre en hierro o pérdidas de sangre digestivas. Produce cansancio, palidez, falta de aire con el esfuerzo, mareo, palpitaciones, uñas quebradizas y antojos de hielo o tierra.',
       trat: 'Se confirma con hemograma y ferritina. Se trata con suplementos de hierro y alimentos ricos en hierro, y buscando la causa de la pérdida (especialmente en hombres y en mujeres después de la menopausia).',
       esp: 'Médico general; hematólogo o gastroenterólogo según la causa.',
@@ -868,7 +1089,7 @@
     // ───────────── Ambientales / sistémicas
     {
       id: 'deshidratacion', n: 'Deshidratación', urg: 3, prev: 1.0, dur: ['h', 'd'],
-      s: { sed: 3, orina_escasa: 3, mareo: 2, fatiga: 1, dolor_cabeza: 1, diarrea: 1, vomitos: 1, confusion: 1, ctx_calor: 1 },
+      s: { sed: 3, orina_escasa: 3, mareo: 2, fatiga: 1, dolor_cabeza: 1, diarrea: 1, vomitos: 1, confusion: 1, ctx_calor: 1, mareo_al_pararse: 2 },
       que: 'El cuerpo pierde más líquido del que recibe, por vómitos, diarrea, fiebre, calor o poca ingesta. Produce sed, boca seca, orina escasa y oscura, mareo al ponerse de pie, cansancio y dolor de cabeza. Es más peligrosa en niños pequeños y adultos mayores.',
       trat: 'Leve a moderada: sales de rehidratación oral en sorbos frecuentes. Grave: sueros intravenosos en un centro de salud. Además, tratar la causa (diarrea, fiebre, calor).',
       esp: 'Médico general, o servicio de urgencia si es moderada a grave.',
@@ -886,7 +1107,7 @@
     },
     {
       id: 'monoxido', req: ['ctx_brasero', 'ctx_convivientes'], reqF: 0.3, n: 'Intoxicación por monóxido de carbono', urg: 5, prev: 0.8, dur: ['h'],
-      s: { ctx_brasero: 3, ctx_convivientes: 3, dolor_cabeza: 3, mareo: 2, nauseas: 2, confusion: 2, somnolencia: 2, debilidad_general: 1, desmayo: 1, vomitos: 1 },
+      s: { ctx_brasero: 3, ctx_convivientes: 3, dolor_cabeza: 3, mareo: 2, nauseas: 2, confusion: 2, somnolencia: 2, debilidad_general: 1, desmayo: 1, vomitos: 1, dolor_cabeza_despertar: 1 },
       que: 'El monóxido de carbono es un gas sin olor ni color que se produce al quemar combustibles en braseros, estufas a gas, leña o parafina, calefones o motores en lugares mal ventilados. Causa dolor de cabeza, mareo, náuseas, debilidad, confusión y somnolencia; a menudo varias personas de la misma casa (y mascotas) se sienten mal a la vez.',
       trat: 'Salir de inmediato al aire libre, ventilar y llamar al 131. En el hospital se administra oxígeno al 100% (a veces en cámara hiperbárica). Prevención: no usar braseros en espacios cerrados, revisar los artefactos a gas y ventilar.',
       esp: 'Emergencia: SAMU 131 o servicio de urgencia.',
@@ -926,7 +1147,7 @@
     {
       id: 'gota', n: 'Gota', alt: 'Ataque de ácido úrico', urg: 3, prev: 0.95, dur: ['h', 'd'], sexM: 1.4,
       age: [[0, 29, 0.5], [40, 200, 1.2]],
-      s: { articulacion_hinchada: 3, febricula: 1 },
+      s: { articulacion_hinchada: 3, febricula: 1, ctx_alcohol: 1 },
       que: 'Artritis causada por cristales de ácido úrico en una articulación. Produce ataques súbitos de dolor intenso, hinchazón, enrojecimiento y calor, típicamente en el dedo gordo del pie y a menudo de noche. Se asocia a alcohol, carnes rojas, mariscos, bebidas azucaradas y algunos medicamentos.',
       trat: 'En la crisis: antiinflamatorios, colchicina o corticoides indicados por un médico, reposo y hielo. A largo plazo, si hay crisis repetidas, medicamentos que bajan el ácido úrico (como alopurinol) y cambios en la dieta.',
       esp: 'Médico general; reumatólogo.',
@@ -942,6 +1163,704 @@
       esp: 'Médico general; infectólogo si hay complicaciones.',
       alarma: 'Dolor abdominal intenso en el lado izquierdo, o dificultad para respirar o tragar.',
       src: ['mayo_mono']
+    },
+    // ═════════════ Ampliación (noviembre 2026) ═════════════
+
+    // ───────────── Respiratorio / ORL
+    {
+      id: 'faringitis_viral', n: 'Faringitis viral', alt: 'Dolor de garganta por virus', urg: 1, prev: 1.1, dur: ['h', 'd'],
+      s: { dolor_garganta: 3, congestion: 2, tos_seca: 1, secrecion_nasal: 1, ronquera: 1, febricula: 1, fiebre: 1, dolor_cabeza: 1, ganglios: 1 },
+      que: 'Inflamación de la garganta causada por virus (los mismos del resfrío o la gripe). Es la causa más frecuente de dolor de garganta y suele venir acompañada de mocos, tos o ronquera.',
+      trat: 'Mejora sola en 5 a 7 días. Ayudan los líquidos tibios, las gárgaras con agua con sal, las pastillas para la garganta y el paracetamol o ibuprofeno. Los antibióticos no sirven cuando la causa es un virus.',
+      esp: 'Normalmente no requiere consulta; médico general si dura más de una semana, hay fiebre alta o placas de pus.',
+      alarma: 'Dificultad para respirar o para tragar saliva, babeo, imposibilidad de abrir la boca o hinchazón en el cuello.',
+      src: ['mp_faringitis']
+    },
+    {
+      id: 'laringitis', n: 'Laringitis aguda', alt: 'Disfonía; crup en niños', urg: 1, prev: 1.0, dur: ['h', 'd'],
+      age: [[0, 5, 1.2]],
+      s: { ronquera: 3, tos_perruna: 2, tos_seca: 2, dolor_garganta: 1, febricula: 1, estridor: 1, congestion: 1 },
+      que: 'Inflamación de la laringe (donde están las cuerdas vocales), casi siempre por virus o por forzar la voz. Produce voz ronca o pérdida de la voz. En niños pequeños puede presentarse como crup: tos ronca “de perro” y ruido al respirar, peor en la noche.',
+      trat: 'Reposo de la voz, líquidos, aire humidificado y evitar el humo. Los antibióticos no ayudan si es viral. En el crup, el médico puede indicar corticoides; respirar aire fresco suele aliviar.',
+      esp: 'Médico general o pediatra; otorrinolaringólogo si la ronquera dura más de 3 semanas.',
+      ges: 'La infección respiratoria aguda de manejo ambulatorio en menores de 5 años está cubierta por GES.',
+      alarma: 'Ruido agudo al respirar estando en reposo, dificultad para respirar, babeo, labios azulados o un niño muy decaído: urgencia inmediata.',
+      src: ['mp_laringitis', 'mp_crup', 'minsal_ges']
+    },
+    {
+      id: 'bronquiolitis', n: 'Bronquiolitis', alt: 'Virus sincicial (VRS) en lactantes', urg: 3, prev: 1.0, dur: ['d'], ageRange: [0, 3],
+      s: { sibilancias: 3, tos_seca: 2, respiracion_rapida: 2, congestion: 2, falta_aire: 2, secrecion_nasal: 1, febricula: 1, fiebre: 1, inapetencia: 1 },
+      que: 'Infección viral de los bronquiolos (las vías aéreas más pequeñas del pulmón) que afecta a menores de 2 años, sobre todo en invierno. La causa más común es el virus respiratorio sincicial (VRS). Empieza como un resfrío y luego aparecen tos, respiración rápida y silbido al respirar.',
+      trat: 'No hay un medicamento que la cure y los antibióticos no sirven. Se maneja con aseo nasal con suero, alimentación fraccionada, hidratación y vigilancia de la respiración; algunos niños necesitan oxígeno u hospitalización.',
+      esp: 'Pediatra o médico general (CESFAM); urgencia si respira con dificultad.',
+      ges: 'La infección respiratoria aguda de manejo ambulatorio en menores de 5 años está cubierta por GES.',
+      alarma: 'Hundimiento de las costillas al respirar, quejido, pausas en la respiración, labios azulados, rechazo del alimento o un lactante menor de 3 meses con dificultad para respirar: urgencia.',
+      src: ['mp_bronquiolitis', 'minsal_bronquiolitis', 'minsal_ges']
+    },
+    {
+      id: 'coqueluche', n: 'Coqueluche', alt: 'Tos convulsiva o tos ferina', urg: 3, prev: 0.8, dur: ['d', 's'],
+      s: { tos_accesos: 3, tos_prolongada: 2, vomitos: 1, congestion: 1, febricula: 1, secrecion_nasal: 1, labios_azules: 1 },
+      que: 'Infección bacteriana muy contagiosa (Bordetella pertussis). Comienza como un resfrío y luego aparecen accesos de tos intensos y seguidos, que pueden terminar en un “gallito” al tomar aire o en vómito. Es especialmente peligrosa en lactantes.',
+      trat: 'Se trata con antibióticos indicados por un médico, que además reducen el contagio; a veces también se trata a los contactos cercanos. La vacunación, incluida la de las embarazadas (que protege al recién nacido), es la mejor prevención.',
+      esp: 'Médico general o pediatra; urgencia si es un lactante.',
+      alarma: 'Lactante con pausas en la respiración, labios azulados durante la tos o que no puede alimentarse: urgencia inmediata.',
+      src: ['mp_tosferina']
+    },
+    {
+      id: 'epoc', n: 'Crisis de EPOC', alt: 'Enfermedad pulmonar obstructiva crónica', urg: 4, prev: 0.95, dur: ['d', 's', 'm'],
+      age: [[0, 39, 0.3], [40, 200, 1.2]], req: ['ctx_fumador'], reqF: 0.5,
+      s: { ctx_fumador: 3, falta_aire: 3, tos_flema: 2, tos_prolongada: 2, sibilancias: 2, fatiga: 1, labios_azules: 1 },
+      que: 'Enfermedad crónica de los pulmones, causada principalmente por el tabaco (y también por el humo de leña), que dificulta la salida del aire. Produce falta de aire progresiva, tos con flema y silbido. Las crisis, a menudo gatilladas por infecciones, empeoran bruscamente estos síntomas.',
+      trat: 'Dejar de fumar es lo más importante. Se usan inhaladores broncodilatadores, a veces corticoides, vacunas (influenza y neumococo) y rehabilitación respiratoria. En una crisis pueden requerirse antibióticos, corticoides u oxígeno.',
+      esp: 'Médico general (programa respiratorio del CESFAM); broncopulmonar.',
+      ges: 'La EPOC de tratamiento ambulatorio está cubierta por GES.',
+      alarma: 'Falta de aire en reposo, labios azulados, confusión o somnolencia, o si los inhaladores no te alivian: urgencia.',
+      src: ['mp_epoc', 'minsal_ges']
+    },
+    {
+      id: 'tuberculosis', n: 'Tuberculosis pulmonar', alt: 'TBC', urg: 3, prev: 0.8, dur: ['s', 'm'],
+      s: { tos_prolongada: 3, sudor_nocturno: 3, tos_flema: 2, perdida_peso: 2, tos_sangre: 2, fiebre: 1, febricula: 1, fatiga: 1, inapetencia: 1 },
+      que: 'Infección por la bacteria Mycobacterium tuberculosis, que se transmite por el aire al toser. Avanza lentamente: tos con flema por más de 2 semanas, fiebre en las tardes, sudoración nocturna, baja de peso y decaimiento.',
+      trat: 'Se diagnostica con un examen de expectoración (baciloscopía), gratuito en los centros de salud públicos. El tratamiento combina varios antibióticos durante al menos 6 meses y es gratuito para todas las personas a través del Programa de Tuberculosis del MINSAL. Completarlo es clave para curarse y no contagiar.',
+      esp: 'Médico general o programa respiratorio de tu CESFAM; broncopulmonar o infectólogo.',
+      alarma: 'Tos con abundante sangre o dificultad para respirar: urgencia.',
+      src: ['mayo_tbc', 'minsal_tbc_epi', 'minsal_tbc']
+    },
+    {
+      id: 'neumotorax', n: 'Neumotórax', alt: 'Pulmón colapsado', urg: 5, prev: 0.75, dur: ['h'], sexM: 1.3,
+      age: [[15, 40, 1.2]],
+      s: { dolor_pecho_subito_lado: 3, falta_aire: 3, dolor_pecho_respirar: 2, respiracion_rapida: 1, palpitaciones: 1, tos_seca: 1, ctx_fumador: 1, labios_azules: 1 },
+      que: 'Entrada de aire en el espacio que rodea al pulmón, lo que hace que este colapse parcial o totalmente. Produce un dolor punzante súbito en un lado del pecho y falta de aire. Es más común en hombres jóvenes, altos y delgados, en fumadores y en personas con enfermedades pulmonares.',
+      trat: 'Requiere evaluación urgente con radiografía. Los pequeños pueden resolverse solos con observación y oxígeno; los más grandes necesitan sacar el aire con una aguja o un tubo en el tórax y, si se repiten, cirugía.',
+      esp: 'Servicio de urgencia; luego broncopulmonar o cirujano de tórax.',
+      alarma: 'Falta de aire que aumenta, labios azulados, pulso muy rápido o mareo: llama al 131.',
+      src: ['mp_neumotorax']
+    },
+    {
+      id: 'otitis_externa', n: 'Otitis externa', alt: 'Oído de nadador', urg: 2, prev: 1.0, dur: ['h', 'd'],
+      s: { dolor_tocar_oreja: 3, dolor_oido: 3, picazon_oido: 2, secrecion_oido: 2, ctx_agua: 2, audicion: 1, fiebre: -1 },
+      que: 'Infección o inflamación del conducto auditivo externo, frecuente después de bañarse en piscina o en el mar, o por limpiar el oído con cotonitos. Duele al tocar o tirar la oreja, pica y puede salir secreción.',
+      trat: 'Generalmente se trata con gotas antibióticas (a veces con corticoide) indicadas por un médico durante 7 a 14 días, analgésicos y manteniendo el oído seco. No introducir cotonitos.',
+      esp: 'Médico general; otorrinolaringólogo si no mejora.',
+      alarma: 'Fiebre, dolor muy intenso o hinchazón detrás de la oreja o en la cara, especialmente si tienes diabetes o defensas bajas.',
+      src: ['mp_otitis_externa', 'mp_dolor_oido']
+    },
+    {
+      id: 'tapon_cerumen', n: 'Tapón de cera', alt: 'Cerumen impactado', urg: 1, prev: 1.0, dur: ['d', 's', 'm'],
+      s: { audicion: 3, zumbido: 1, picazon_oido: 1, dolor_oido: 1, mareo: 1, fiebre: -2, secrecion_oido: -1 },
+      que: 'Acumulación de cera que tapa el conducto del oído. Da sensación de oído tapado, baja de la audición y, a veces, zumbido, picazón o un leve dolor. Usar cotonitos suele empujar la cera más adentro.',
+      trat: 'Gotas que ablandan la cera durante algunos días; si no sale, un profesional puede hacer un lavado o una extracción. No uses cotonitos, horquillas ni “conos de vela”.',
+      esp: 'Médico general; otorrinolaringólogo si se repite o hay dolor.',
+      alarma: 'Pérdida súbita de audición, dolor intenso, secreción o fiebre (puede tratarse de otra causa).',
+      src: ['mayo_cerumen']
+    },
+    {
+      id: 'sordera_subita_cond', n: 'Sordera súbita', alt: 'Hipoacusia neurosensorial súbita', urg: 4, prev: 0.75, dur: ['h', 'd'],
+      s: { sordera_subita: 3, zumbido: 2, audicion: 2, mareo: 1, vertigo: 1, dolor_oido: -1 },
+      que: 'Pérdida rápida de la audición, generalmente en un solo oído, que aparece de golpe o en pocos días, a veces con zumbido o mareo. Muchas veces no se identifica la causa.',
+      trat: 'Es una urgencia del oído: el tratamiento con corticoides funciona mejor si se inicia en los primeros días. Requiere una audiometría y, a veces, estudios de imagen.',
+      esp: 'Otorrinolaringólogo con urgencia (idealmente antes de 72 horas) o servicio de urgencia.',
+      alarma: 'Pérdida de audición con debilidad, dificultad para hablar o vértigo intenso: llama al 131.',
+      src: ['mayo_audicion']
+    },
+    {
+      id: 'laberintitis', n: 'Laberintitis o neuritis vestibular', alt: 'Inflamación del oído interno', urg: 3, prev: 0.9, dur: ['h', 'd', 's'],
+      s: { vertigo: 3, nauseas: 2, vomitos: 2, perdida_equilibrio: 1, audicion: 1, zumbido: 1, vertigo_posicion: -1, debilidad_lado: -3, habla: -3 },
+      que: 'Inflamación del oído interno o de su nervio, generalmente por un virus. Produce vértigo intenso y continuo (sientes que todo gira) que dura horas o días, con náuseas, vómitos e inestabilidad; en la laberintitis también puede bajar la audición.',
+      trat: 'Medicamentos para el vértigo y las náuseas por pocos días, hidratación y, a veces, corticoides. Luego ayuda la rehabilitación vestibular (ejercicios de equilibrio). Suele mejorar en algunas semanas.',
+      esp: 'Médico general u otorrinolaringólogo; urgencia si es muy intenso, para descartar otras causas.',
+      alarma: 'Vértigo con dolor de cabeza intenso, visión doble, dificultad para hablar, debilidad o incapacidad para caminar: puede ser un ACV, llama al 131.',
+      src: ['mp_laberintitis', 'mp_vertigo']
+    },
+    {
+      id: 'absceso_dental', n: 'Infección dental (absceso)', alt: 'Flemón', urg: 3, prev: 1.0, dur: ['h', 'd'],
+      s: { dolor_muela: 3, hinchazon_encia: 3, fiebre: 1, ganglios: 1, dolor_cara: 1 },
+      que: 'Acumulación de pus en un diente o en la encía por una infección bacteriana, casi siempre por caries profundas o fracturas del diente. Produce dolor de muela pulsátil e intenso, hinchazón de la encía o de la cara y, a veces, fiebre.',
+      trat: 'El dentista drena la infección y trata el diente (endodoncia o extracción); puede indicar antibióticos y analgésicos. Mientras tanto ayudan los enjuagues con agua tibia con sal. No pongas aspirina sobre la encía.',
+      esp: 'Dentista (urgencia dental).',
+      ges: 'La urgencia odontológica ambulatoria está cubierta por GES.',
+      alarma: 'Hinchazón que se extiende al cuello o al ojo, fiebre alta, o dificultad para tragar, respirar o abrir la boca: urgencia inmediata.',
+      src: ['mp_absceso_dental', 'mp_dolor_facial', 'minsal_ges']
+    },
+    {
+      id: 'herpes_labial', n: 'Herpes labial', alt: '«Fuego» en el labio', urg: 1, prev: 1.05, dur: ['d'],
+      s: { ampollas_labio: 3, hormigueo: 1, febricula: 1, ganglios: 1 },
+      que: 'Infección por el virus herpes simple que provoca ampollitas dolorosas en el borde del labio, conocidas en Chile como “fuego”. Suelen anunciarse con hormigueo o ardor y reaparecen con el estrés, el sol, la fiebre o la menstruación.',
+      trat: 'Desaparece sola en 7 a 10 días. Las cremas o comprimidos antivirales (como aciclovir) acortan el episodio si se usan desde el hormigueo. Evita tocar las ampollas, besar y compartir utensilios mientras estén activas.',
+      esp: 'Médico general; dermatólogo si se repite muy seguido.',
+      alarma: 'Lesiones cerca del ojo, en recién nacidos o en personas con defensas bajas, o que no sanan en 2 semanas.',
+      src: ['mp_herpes_oral', 'mp_herpes_labial_t']
+    },
+    {
+      id: 'aftas', n: 'Aftas bucales', alt: 'Úlceras en la boca', urg: 1, prev: 1.0, dur: ['d', 's'],
+      s: { llagas_boca: 3, ctx_estres: 1, fiebre: -1 },
+      que: 'Pequeñas llagas redondas, blancas o amarillentas con borde rojo, dentro de la boca. Son dolorosas pero no contagiosas, y se relacionan con pequeñas heridas, estrés, cambios hormonales o algunos alimentos.',
+      trat: 'Suelen sanar solas en 1 a 2 semanas. Ayudan los enjuagues con agua con sal o bicarbonato, evitar comidas ácidas o picantes y los geles anestésicos de farmacia.',
+      esp: 'Médico general o dentista si son muy grandes, frecuentes o duran más de 2 semanas.',
+      alarma: 'Llagas que no sanan en 3 semanas, muy numerosas, con fiebre alta o con dificultad para tragar.',
+      src: ['mp_aftas', 'mp_ulceras_bucales']
+    },
+
+    // ───────────── Ojos
+    {
+      id: 'orzuelo', n: 'Orzuelo', urg: 1, prev: 1.0, dur: ['d'],
+      s: { bulto_parpado: 3, ojo_rojo: 1, lagrimeo: 1 },
+      que: 'Bulto rojo y doloroso en el borde del párpado, causado por la infección de una glándula sebácea, habitualmente por estafilococos. Es frecuente y no es grave.',
+      trat: 'Compresas tibias de 10 a 15 minutos varias veces al día. No lo aprietes ni lo revientes. Suele drenar y sanar solo en 1 a 2 semanas; a veces se indica un ungüento antibiótico.',
+      esp: 'Médico general; oftalmólogo si no mejora o se repite.',
+      alarma: 'Hinchazón y enrojecimiento de todo el párpado o de la cara, fiebre o alteración de la visión.',
+      src: ['mp_parpado', 'mp_orzuelo_img']
+    },
+    {
+      id: 'glaucoma_agudo', n: 'Glaucoma agudo', alt: 'Crisis de glaucoma de ángulo cerrado', urg: 5, prev: 0.7, dur: ['h'],
+      age: [[0, 39, 0.4], [50, 200, 1.3]],
+      s: { dolor_ojo: 3, halos: 3, vision_borrosa: 2, ojo_rojo: 2, dolor_cabeza: 1, nauseas: 1, vomitos: 1 },
+      que: 'El líquido del interior del ojo no puede salir y la presión ocular sube bruscamente. Produce dolor intenso en un ojo, ojo rojo, visión borrosa, halos alrededor de las luces, dolor de cabeza y náuseas. Puede dañar el nervio óptico en pocas horas.',
+      trat: 'Es una emergencia: se usan gotas y medicamentos para bajar la presión y luego un láser o una cirugía para evitar nuevas crisis.',
+      esp: 'Urgencia oftalmológica inmediata; oftalmólogo.',
+      alarma: 'Dolor intenso en un ojo con visión borrosa o halos: acude de inmediato a urgencia.',
+      src: ['mp_glaucoma', 'mp_vision']
+    },
+    {
+      id: 'desprendimiento_retina', n: 'Desprendimiento de retina', urg: 4, prev: 0.8, dur: ['h', 'd'],
+      age: [[0, 39, 0.6], [50, 200, 1.2]],
+      s: { moscas_destellos: 3, cortina_vision: 3, vision_borrosa: 2, dolor_ojo: -1 },
+      que: 'La retina (la capa que capta la luz en el fondo del ojo) se separa de su lugar. Se anuncia con manchas flotantes nuevas, destellos de luz y luego una sombra o cortina que tapa parte de la visión. No duele.',
+      trat: 'Requiere tratamiento rápido con láser, gas o cirugía para volver a fijar la retina; mientras antes, mejor resultado visual.',
+      esp: 'Oftalmólogo dentro de 24 horas o urgencia oftalmológica.',
+      ges: 'El desprendimiento de retina regmatógeno no traumático está cubierto por GES.',
+      alarma: 'Una cortina o sombra en la visión, o muchas manchas nuevas con destellos: atención el mismo día.',
+      src: ['mp_retina', 'minsal_ges']
+    },
+
+    // ───────────── Circulación
+    {
+      id: 'tvp', n: 'Trombosis venosa profunda', alt: 'Coágulo en una pierna', urg: 4, prev: 0.85, dur: ['h', 'd'],
+      s: { pantorrilla: 3, ctx_inmovil: 2, hinchazon_piernas: 1, piernas_pesadas: 1 },
+      que: 'Coágulo en una vena profunda, generalmente de la pierna. Produce hinchazón, dolor, calor o enrojecimiento en una sola pantorrilla o muslo. Es más probable tras cirugías, viajes largos, reposo prolongado, embarazo, anticonceptivos hormonales o cáncer.',
+      trat: 'Se confirma con una ecografía doppler y se trata con anticoagulantes durante varios meses, para evitar que el coágulo crezca o viaje al pulmón.',
+      esp: 'Servicio de urgencia el mismo día; luego medicina interna, hematólogo o cirujano vascular.',
+      alarma: 'Falta de aire súbita, dolor de pecho o tos con sangre (el coágulo puede haber viajado al pulmón): llama al 131.',
+      src: ['mp_tvp']
+    },
+    {
+      id: 'sincope_vasovagal', n: 'Desmayo vasovagal', alt: 'Síncope vasovagal', urg: 2, prev: 1.05, dur: ['h'],
+      age: [[10, 35, 1.15]],
+      s: { desmayo: 3, prodromo_desmayo: 3, ctx_vasovagal: 3, mareo: 2, nauseas: 1, sudoracion: 1, palidez: 1, dolor_pecho_opresivo: -2, palpitaciones: -1, convulsion: -1 },
+      que: 'Es el desmayo más común. Ocurre cuando el sistema nervioso reacciona de forma exagerada a un gatillante (ver sangre, dolor, miedo, calor o estar mucho rato de pie): bajan la presión y el pulso, y la persona pierde el conocimiento por segundos. Suele anunciarse con calor, náuseas, palidez y visión borrosa.',
+      trat: 'Al sentir los síntomas, acuéstate con las piernas en alto o siéntate con la cabeza entre las rodillas. Se previene con buena hidratación y evitando los gatillantes. Por lo general no requiere tratamiento.',
+      esp: 'Médico general tras el primer episodio; cardiólogo si se repite.',
+      alarma: 'Desmayo durante el ejercicio o estando acostado/a, con dolor de pecho o palpitaciones, con golpe en la cabeza, convulsión o si tienes una enfermedad cardíaca: urgencia.',
+      src: ['mayo_vasovagal']
+    },
+    {
+      id: 'hipotension_ortostatica', n: 'Hipotensión ortostática', alt: 'Baja de presión al ponerse de pie', urg: 2, prev: 1.0, dur: ['h', 'd', 's', 'm'],
+      age: [[65, 200, 1.3]],
+      s: { mareo_al_pararse: 3, mareo: 2, vision_borrosa: 1, desmayo: 1, debilidad_general: 1, fatiga: 1 },
+      que: 'Caída de la presión arterial al ponerse de pie, que produce mareo, visión borrosa o sensación de desmayo durante segundos o minutos. Es más común en mayores de 65 años y se asocia a deshidratación, reposo prolongado, algunos medicamentos (como los de la presión), diabetes o Parkinson.',
+      trat: 'Levantarse lentamente, hidratarse bien y revisar con el médico los medicamentos. A veces se usan medias de compresión o medicamentos específicos.',
+      esp: 'Médico general; cardiólogo o neurólogo según la causa.',
+      alarma: 'Desmayos repetidos, caídas, dolor de pecho o falta de aire.',
+      src: ['mayo_ortostatica']
+    },
+    {
+      id: 'varices_cond', n: 'Várices', alt: 'Insuficiencia venosa', urg: 1, prev: 1.05, dur: ['m'], sexF: 1.3,
+      age: [[0, 29, 0.6], [40, 200, 1.2]],
+      s: { varices: 3, piernas_pesadas: 3, hinchazon_piernas: 2, calambres: 1, picazon_piel: 1 },
+      que: 'Venas dilatadas y retorcidas en las piernas, porque sus válvulas no funcionan bien y la sangre se acumula. Producen piernas pesadas y cansadas, hinchazón al final del día, calambres y picazón. Son más frecuentes en mujeres, con la edad, el embarazo y al estar mucho tiempo de pie.',
+      trat: 'Medias de compresión, elevar las piernas, caminar y mantener un peso saludable. Si molestan mucho, existen tratamientos como escleroterapia, láser o cirugía.',
+      esp: 'Médico general; cirujano vascular.',
+      alarma: 'Una pierna hinchada, dolorosa y caliente (posible trombosis), una herida que no cicatriza o el sangrado de una várice.',
+      src: ['mp_varices', 'mp_insuf_venosa']
+    },
+
+    // ───────────── Neurológico
+    {
+      id: 'paralisis_bell', n: 'Parálisis facial periférica', alt: 'Parálisis de Bell', urg: 4, prev: 0.9, dur: ['h', 'd'],
+      s: { paralisis_facial: 3, cara_caida: 2, dolor_oido: 1, lagrimeo: 1, debilidad_lado: -3, habla: -2, perdida_equilibrio: -2 },
+      que: 'Debilidad o parálisis súbita de un lado de la cara por inflamación del nervio facial, probablemente por un virus. A diferencia del ACV, afecta también la frente (no puedes arrugarla ni cerrar bien el ojo) y no compromete los brazos ni las piernas.',
+      trat: 'Corticoides, idealmente en las primeras 72 horas, a veces con antivirales, y proteger el ojo con lágrimas artificiales y parche nocturno. La mayoría se recupera en semanas a meses.',
+      esp: 'Urgencia el mismo día (para descartar un ACV); luego neurólogo u otorrinolaringólogo.',
+      nota: 'Toda cara caída de inicio súbito debe evaluarse de inmediato para descartar un ACV.',
+      alarma: 'Debilidad de un brazo o pierna, dificultad para hablar, confusión o dolor de cabeza intenso: llama al 131.',
+      src: ['mp_bell', 'mp_paralisis_facial']
+    },
+    {
+      id: 'epilepsia', n: 'Crisis convulsiva', alt: 'Epilepsia', urg: 4, prev: 0.9, dur: ['h'],
+      s: { convulsion: 3, desmayo: 2, confusion: 2, somnolencia: 1, dolor_cabeza: 1 },
+      que: 'Una convulsión es una descarga eléctrica anormal en el cerebro que puede causar sacudidas, rigidez, pérdida de conciencia o episodios de desconexión. Cuando las crisis se repiten sin otra causa se habla de epilepsia. Una primera convulsión también puede deberse a fiebre, alcohol, azúcar baja, golpes o lesiones cerebrales.',
+      trat: 'Durante la crisis: proteger la cabeza, poner a la persona de lado y no meter nada en su boca. Se estudia con exámenes, electroencefalograma e imágenes; la epilepsia se controla en la mayoría de los casos con medicamentos antiepilépticos.',
+      esp: 'Urgencia ante una primera convulsión; luego neurólogo.',
+      ges: 'La epilepsia no refractaria está cubierta por GES (desde 1 año de edad).',
+      alarma: 'Convulsión que dura más de 5 minutos, una crisis tras otra sin recuperar la conciencia, primera convulsión, embarazo o lesión: llama al 131.',
+      src: ['mp_convulsiones', 'mp_epilepsia', 'minsal_ges']
+    },
+    {
+      id: 'hsa', n: 'Hemorragia subaracnoidea', alt: 'Rotura de un aneurisma cerebral', urg: 5, prev: 0.75, dur: ['h'],
+      s: { dolor_cabeza_subito: 3, rigidez_cuello: 2, vomitos: 2, desmayo: 2, fotofobia: 1, confusion: 1, convulsion: 1, nauseas: 1 },
+      que: 'Sangrado en el espacio que rodea al cerebro, casi siempre por la rotura de un aneurisma (una zona débil y dilatada de una arteria). El síntoma típico es un dolor de cabeza súbito y explosivo, “el peor de la vida”, a veces con vómitos, rigidez de cuello o pérdida de conciencia.',
+      trat: 'Es una emergencia neuroquirúrgica: se diagnostica con un escáner cerebral y se trata cerrando el aneurisma (cirugía o cateterismo) y con cuidados intensivos.',
+      esp: 'Emergencia: SAMU 131. Luego neurocirujano.',
+      ges: 'La hemorragia subaracnoidea por rotura de aneurismas cerebrales está cubierta por GES.',
+      alarma: 'Dolor de cabeza súbito e intensísimo: llama al 131 de inmediato.',
+      src: ['mp_hsa', 'mp_aneurisma', 'minsal_ges']
+    },
+    {
+      id: 'cefalea_racimos', n: 'Cefalea en racimos', urg: 2, prev: 0.8, dur: ['h', 'd', 's'], sexM: 1.4,
+      s: { dolor_ojo_racimo: 3, lagrimeo: 2, congestion: 1, ojo_rojo: 1, ansiedad: 1 },
+      que: 'Dolor de cabeza muy intenso alrededor o detrás de un ojo, siempre del mismo lado, que dura entre 15 minutos y 3 horas y se repite a diario durante semanas (“racimos”). Se acompaña de lagrimeo, ojo rojo y nariz tapada o goteo del mismo lado; la persona suele estar inquieta. Es más frecuente en hombres.',
+      trat: 'En la crisis, oxígeno al 100% o triptanes indicados por un médico; además existen tratamientos preventivos. Conviene evitar el alcohol durante los periodos de crisis.',
+      esp: 'Neurólogo.',
+      alarma: 'Un primer dolor de cabeza intenso y súbito, o con fiebre, rigidez de cuello o alteraciones neurológicas: urgencia.',
+      src: ['mayo_cefaleas', 'mp_racimo_img']
+    },
+    {
+      id: 'tunel_carpiano', n: 'Síndrome del túnel carpiano', urg: 1, prev: 1.0, dur: ['s', 'm'], sexF: 1.3,
+      age: [[30, 60, 1.15]],
+      s: { hormigueo_mano: 3, ctx_manos: 2, hormigueo: 1 },
+      que: 'Compresión del nervio mediano en la muñeca. Produce hormigueo, adormecimiento y dolor en los dedos pulgar, índice y medio, a menudo peor en la noche, y con el tiempo debilidad para agarrar cosas.',
+      trat: 'Férula de muñeca en la noche, pausas y ajustes en las tareas repetitivas, antiinflamatorios y, a veces, infiltración. Si es severo o no mejora, cirugía para liberar el nervio.',
+      esp: 'Médico general; traumatólogo o fisiatra; kinesiólogo o terapeuta ocupacional.',
+      alarma: 'Debilidad marcada de la mano, pérdida de masa muscular en la base del pulgar o síntomas de inicio súbito.',
+      src: ['mp_tunel_carpiano']
+    },
+
+    // ───────────── Salud mental y sueño
+    {
+      id: 'bipolar', n: 'Trastorno bipolar', alt: 'Episodio de manía o hipomanía', urg: 3, prev: 0.85, dur: ['d', 's', 'm'],
+      age: [[15, 45, 1.1]],
+      s: { euforia: 3, menos_sueno: 3, pensamiento_acelerado: 2, impulsividad: 2, irritabilidad: 1, tristeza: 1, ansiedad: 1 },
+      que: 'Trastorno del ánimo con periodos de depresión y periodos de manía o hipomanía: ánimo eufórico o muy irritable, mucha energía, necesidad de dormir muy poco, pensamiento acelerado, hablar rápido e impulsividad (gastos, conductas de riesgo).',
+      trat: 'Se trata con estabilizadores del ánimo y otros medicamentos indicados por un psiquiatra, junto con psicoterapia y rutinas regulares de sueño. El tratamiento es de largo plazo.',
+      esp: 'Psiquiatra; médico general (CESFAM) como puerta de entrada.',
+      ges: 'El trastorno bipolar en personas de 15 años y más está cubierto por GES.',
+      alarma: 'Conductas de riesgo graves, ideas de hacerte daño, no dormir durante varios días o pérdida de contacto con la realidad: urgencia psiquiátrica.',
+      src: ['mp_bipolar_t', 'sup_bipolar']
+    },
+    {
+      id: 'tept', n: 'Trastorno de estrés postraumático', alt: 'TEPT', urg: 2, prev: 0.9, dur: ['s', 'm'],
+      s: { recuerdos_intrusivos: 3, ctx_trauma: 3, hipervigilancia: 2, insomnio: 2, ansiedad: 1, irritabilidad: 1, tristeza: 1, memoria: 1 },
+      que: 'Afección de salud mental que aparece después de vivir o presenciar un evento traumático (accidente, violencia, abuso, desastre). Incluye recuerdos intrusivos o pesadillas, evitar lo que lo recuerda, cambios negativos en el ánimo y estar siempre en alerta o sobresaltarse con facilidad.',
+      trat: 'La psicoterapia centrada en el trauma (por ejemplo, la terapia cognitivo-conductual) es el tratamiento más efectivo; algunos medicamentos ayudan con los síntomas.',
+      esp: 'Psicólogo y/o psiquiatra; médico general (CESFAM) como primer paso.',
+      alarma: 'Pensamientos de hacerte daño: llama al *4141 o al 131.',
+      src: ['mayo_tept']
+    },
+    {
+      id: 'burnout', n: 'Agotamiento laboral (burnout)', alt: 'Desgaste profesional', urg: 2, prev: 1.0, dur: ['s', 'm'],
+      age: [[0, 17, 0.5]],
+      s: { agotamiento_trabajo: 3, fatiga: 2, ctx_estres: 2, insomnio: 1, irritabilidad: 1, memoria: 1, dolor_cabeza: 1, dolor_cuello: 1 },
+      que: 'Estado de agotamiento físico y emocional por estrés laboral crónico no resuelto. Se caracteriza por falta de energía, distancia mental o cinismo hacia el trabajo y menor rendimiento. No es una enfermedad en sí, pero afecta la salud y puede confundirse con una depresión.',
+      trat: 'Identificar las causas (carga, falta de control, desequilibrio con la vida personal), conversar con la jefatura si es posible, poner límites, dormir bien, hacer ejercicio y buscar apoyo psicológico. Si hay síntomas depresivos, requiere evaluación profesional.',
+      esp: 'Psicólogo; médico general o médico del trabajo (mutualidad si es de origen laboral).',
+      alarma: 'Tristeza persistente, pérdida de interés en todo o pensamientos de hacerte daño: consulta pronto o llama al *4141.',
+      src: ['mayo_burnout']
+    },
+    {
+      id: 'apnea_sueno', n: 'Apnea obstructiva del sueño', urg: 2, prev: 1.0, dur: ['s', 'm'], sexM: 1.3,
+      age: [[0, 29, 0.6], [40, 200, 1.2]],
+      s: { pausas_respiratorias: 3, ronquidos: 3, somnolencia_diurna: 3, dolor_cabeza_despertar: 2, fatiga: 1, memoria: 1, irritabilidad: 1, nicturia: 1 },
+      que: 'La vía aérea se cierra repetidamente mientras duermes e interrumpe la respiración. Produce ronquidos fuertes, pausas respiratorias que otros notan, despertares con ahogo, sueño excesivo durante el día y dolor de cabeza al despertar. Se asocia a sobrepeso, hipertensión y riesgo cardiovascular.',
+      trat: 'Se confirma con un estudio de sueño (polisomnografía). El tratamiento más eficaz es el CPAP (equipo de presión positiva); también ayudan bajar de peso, evitar el alcohol y los sedantes en la noche y dormir de lado.',
+      esp: 'Médico general; broncopulmonar, otorrinolaringólogo o especialista en sueño.',
+      alarma: 'Si te quedas dormido/a mientras manejas, no manejes hasta ser evaluado/a.',
+      src: ['mp_apnea']
+    },
+
+    // ───────────── Digestivo
+    {
+      id: 'estrenimiento_cond', n: 'Estreñimiento', alt: 'Constipación', urg: 1, prev: 1.1, dur: ['d', 's', 'm'],
+      s: { estrenimiento: 3, hinchazon_abdominal: 2, dolor_abdominal: 1, dolor_anal: 1, sangre_roja_defecar: 1, perdida_peso: -2, deposiciones_negras: -3 },
+      que: 'Hacer menos de tres deposiciones a la semana, o deposiciones duras, secas y difíciles de expulsar. Es muy común y suele deberse a poca fibra, poco líquido, sedentarismo, algunos medicamentos o aguantar las ganas.',
+      trat: 'Más fibra (frutas, verduras, legumbres, integrales), abundante agua, actividad física y un horario regular para ir al baño. Si no basta, el médico puede indicar laxantes por un tiempo.',
+      esp: 'Médico general; gastroenterólogo si es persistente o hay signos de alarma.',
+      alarma: 'Sangre en las deposiciones, baja de peso, dolor abdominal intenso con vómitos y sin poder eliminar gases, o un cambio del hábito intestinal después de los 50 años.',
+      src: ['mp_estrenimiento']
+    },
+    {
+      id: 'hemorroides', n: 'Hemorroides', alt: 'Almorranas', urg: 1, prev: 1.1, dur: ['d', 's', 'm'],
+      s: { bulto_anal: 3, sangre_roja_defecar: 3, picazon_anal: 1, dolor_anal: 1, estrenimiento: 1 },
+      que: 'Venas inflamadas en el ano o en la parte baja del recto. Producen sangre roja fresca al limpiarse, picazón, molestia y a veces un bulto. Se asocian al estreñimiento, a pujar mucho, al embarazo y a estar mucho rato sentado en el baño.',
+      trat: 'Más fibra y agua, evitar pujar, baños de asiento con agua tibia y cremas de farmacia por pocos días. Si persisten, existen tratamientos como las ligaduras o la cirugía.',
+      esp: 'Médico general; coloproctólogo o cirujano digestivo.',
+      alarma: 'Sangrado abundante, deposiciones negras, sangre mezclada con las deposiciones, baja de peso o un bulto duro, morado y muy doloroso.',
+      src: ['mp_hemorroides', 'mp_sangrado_rectal']
+    },
+    {
+      id: 'fisura_anal', n: 'Fisura anal', urg: 2, prev: 0.95, dur: ['d', 's', 'm'],
+      s: { dolor_anal: 3, sangre_roja_defecar: 2, estrenimiento: 2 },
+      que: 'Pequeño desgarro en la piel del ano, casi siempre por deposiciones duras o diarrea frecuente. Causa dolor intenso al defecar, que puede durar un rato después, y un poco de sangre roja.',
+      trat: 'Ablandar las deposiciones (fibra, agua y, a veces, laxantes), baños de asiento tibios y cremas indicadas por un médico. La mayoría sana en semanas; las crónicas pueden necesitar otros tratamientos o cirugía.',
+      esp: 'Médico general; coloproctólogo.',
+      alarma: 'Sangrado abundante, fiebre, salida de pus o dolor que no mejora en 2 a 3 semanas.',
+      src: ['mp_sangrado_rectal']
+    },
+    {
+      id: 'intolerancia_lactosa', n: 'Intolerancia a la lactosa', urg: 1, prev: 1.05, dur: ['h', 's', 'm'],
+      req: ['ctx_lacteos'], reqF: 0.5,
+      s: { ctx_lacteos: 3, hinchazon_abdominal: 3, diarrea: 2, dolor_abdominal: 1, nauseas: 1, fiebre: -2, deposiciones_negras: -3, diarrea_sangre: -3 },
+      que: 'El intestino produce poca lactasa, la enzima que digiere el azúcar de la leche. Unas horas después de consumir lácteos aparecen gases, hinchazón, dolor tipo cólico y diarrea. No es una alergia ni es peligrosa.',
+      trat: 'Reducir o evitar los lácteos con lactosa, preferir productos sin lactosa, yogur o quesos maduros (que se toleran mejor) y, si se desea, tabletas de lactasa. Cuidar el aporte de calcio.',
+      esp: 'Médico general; gastroenterólogo o nutricionista.',
+      alarma: 'Baja de peso, sangre en las deposiciones, fiebre o diarrea que te despierta en la noche (pueden indicar otra causa).',
+      src: ['mp_lactosa', 'mayo_lactosa']
+    },
+    {
+      id: 'celiaca', n: 'Enfermedad celíaca', alt: 'Celiaquía', urg: 2, prev: 0.9, dur: ['s', 'm'],
+      s: { diarrea: 3, hinchazon_abdominal: 2, perdida_peso: 2, fatiga: 2, palidez: 1, dolor_abdominal: 1, erupcion: 1, estrenimiento: 1 },
+      que: 'Enfermedad autoinmune en la que el gluten (trigo, cebada, centeno) daña el intestino delgado e impide absorber bien los nutrientes. Puede dar diarrea crónica, hinchazón, baja de peso, cansancio y anemia, aunque a veces los síntomas son leves o poco típicos.',
+      trat: 'Se diagnostica con exámenes de sangre (anticuerpos) y una biopsia por endoscopía, idealmente sin haber dejado el gluten antes. El tratamiento es una dieta estricta sin gluten de por vida, con la que el intestino se recupera.',
+      esp: 'Médico general; gastroenterólogo; nutricionista.',
+      alarma: 'Baja de peso importante, anemia marcada, deposiciones con sangre o deshidratación.',
+      src: ['mp_celiaca', 'mayo_celiaca']
+    },
+    {
+      id: 'hepatitis_a', n: 'Hepatitis viral aguda', alt: 'Hepatitis A', urg: 3, prev: 0.85, dur: ['d', 's'],
+      s: { ictericia: 3, coluria: 3, acolia: 2, fatiga: 2, nauseas: 2, dolor_hipocondrio: 2, fiebre: 1, inapetencia: 1, vomitos: 1, dolor_muscular: 1 },
+      que: 'Inflamación del hígado causada por un virus. La hepatitis A se transmite por agua o alimentos contaminados con deposiciones: produce cansancio, náuseas, dolor bajo las costillas derechas y fiebre, y luego piel y ojos amarillos, orina oscura y deposiciones claras. Suele mejorar sola en algunas semanas.',
+      trat: 'No tiene un tratamiento específico: reposo, buena hidratación, controles de exámenes y evitar el alcohol y los medicamentos que dañan el hígado (incluido el exceso de paracetamol). Existe vacuna. Las hepatitis B y C requieren otros estudios y tratamientos.',
+      esp: 'Médico general; gastroenterólogo o hepatólogo.',
+      ges: 'La hepatitis crónica por virus B está cubierta por GES.',
+      alarma: 'Confusión, somnolencia, sangrados fáciles, vómitos persistentes o color amarillo muy intenso: urgencia.',
+      src: ['mp_hepatitis_a_t', 'mp_hepatitis_t', 'minsal_ges']
+    },
+    {
+      id: 'diverticulitis', n: 'Diverticulitis', urg: 4, prev: 0.85, dur: ['h', 'd'],
+      age: [[0, 39, 0.4], [50, 200, 1.3]],
+      s: { dolor_fii: 3, fiebre: 2, nauseas: 1, estrenimiento: 1, diarrea: 1, dolor_abdominal: 1, inapetencia: 1 },
+      que: 'Inflamación o infección de pequeñas bolsitas (divertículos) que se forman en la pared del colon y que son muy comunes después de los 50 años. Produce dolor abajo a la izquierda del abdomen, fiebre, náuseas y cambios en las deposiciones.',
+      trat: 'Los casos leves se tratan con dieta líquida o blanda por unos días y, según el caso, antibióticos. Los graves (absceso, perforación) requieren hospitalización y a veces cirugía. Después, una dieta rica en fibra.',
+      esp: 'Médico general el mismo día o servicio de urgencia; gastroenterólogo o cirujano digestivo.',
+      alarma: 'Dolor intenso que aumenta, abdomen duro, fiebre alta, vómitos persistentes o sangre en las deposiciones: urgencia.',
+      src: ['mp_diverticulosis']
+    },
+    {
+      id: 'eii', n: 'Enfermedad inflamatoria intestinal', alt: 'Enfermedad de Crohn o colitis ulcerosa', urg: 3, prev: 0.85, dur: ['s', 'm'],
+      age: [[15, 40, 1.2]],
+      s: { diarrea_sangre: 3, diarrea: 2, dolor_abdominal: 2, perdida_peso: 2, fatiga: 1, fiebre: 1, sangre_roja_defecar: 1, palidez: 1 },
+      que: 'Enfermedades crónicas en que el sistema inmune inflama el intestino: la colitis ulcerosa afecta el colon y el recto; la enfermedad de Crohn puede afectar cualquier parte del tubo digestivo. Producen diarrea persistente, a menudo con sangre o mucosidad, dolor abdominal, cansancio y baja de peso, con periodos de crisis y de calma.',
+      trat: 'Se diagnostica con colonoscopía y biopsias. Se trata con antiinflamatorios intestinales, corticoides, inmunosupresores o medicamentos biológicos; algunos casos requieren cirugía. El control es de largo plazo.',
+      esp: 'Gastroenterólogo.',
+      alarma: 'Sangrado abundante, fiebre alta, dolor abdominal intenso, abdomen hinchado o deshidratación: urgencia.',
+      src: ['mp_crohn', 'mp_colitis_ulcerosa']
+    },
+    {
+      id: 'hernia_inguinal', n: 'Hernia inguinal', urg: 2, prev: 0.95, dur: ['s', 'm'], sexM: 1.5,
+      s: { bulto_ingle: 3, dolor_pelvico: 1, dolor_abdominal: 1 },
+      que: 'Parte del intestino o de la grasa abdominal sale por un punto débil de la pared abdominal en la ingle, formando un bulto que aumenta al toser, pujar o estar de pie y disminuye al acostarse. Es mucho más frecuente en hombres.',
+      trat: 'No se cura sola: el tratamiento definitivo es la cirugía (abierta o laparoscópica), que se programa según las molestias. Mientras tanto, evitar cargar peso y tratar el estreñimiento.',
+      esp: 'Médico general; cirujano general.',
+      alarma: 'Bulto duro y muy doloroso que no se puede devolver, con vómitos o abdomen hinchado (hernia atascada): urgencia inmediata.',
+      src: ['mp_hernia']
+    },
+    {
+      id: 'oxiuros', n: 'Oxiuros', alt: '«Pidulles»', urg: 1, prev: 0.95, dur: ['d', 's'],
+      age: [[0, 12, 1.4], [20, 200, 0.7]],
+      s: { picazon_anal: 3, insomnio: 1, irritabilidad: 1, ctx_convivientes: 1, dolor_abdominal: 1 },
+      que: 'Infección por pequeños gusanos blancos (en Chile, “pidulles”), muy común en niños. El síntoma principal es la picazón anal, sobre todo en la noche, que puede alterar el sueño. Se contagia fácilmente dentro de la familia por los huevos que quedan en las manos, uñas y ropa.',
+      trat: 'Antiparasitarios indicados por un médico, que suelen repetirse a las 2 semanas y darse a toda la familia. Ayuda lavarse bien las manos, cortar las uñas y lavar con agua caliente la ropa de cama y la ropa interior.',
+      esp: 'Médico general o pediatra.',
+      alarma: 'Dolor abdominal intenso, baja de peso o, en niñas, flujo o molestias genitales persistentes.',
+      src: ['mp_oxiuros']
+    },
+    {
+      id: 'marea_roja', n: 'Intoxicación por marea roja', alt: 'Veneno paralizante de los mariscos', urg: 5, prev: 0.75, dur: ['h'],
+      req: ['ctx_mariscos'], reqF: 0.15,
+      s: { ctx_mariscos: 3, hormigueo: 3, debilidad_general: 2, falta_aire: 2, nauseas: 1, vomitos: 1, mareo: 1, habla: 1, perdida_equilibrio: 1 },
+      que: 'Intoxicación por comer mariscos bivalvos (choritos, almejas, machas, cholgas, ostras) contaminados con la toxina de la marea roja, presente sobre todo en el sur de Chile. Entre minutos y pocas horas después aparecen hormigueo y adormecimiento en labios, lengua y cara, que avanzan a brazos y piernas, con debilidad, dificultad para hablar y, en casos graves, parálisis respiratoria.',
+      trat: 'No existe antídoto: el tratamiento es de soporte en un centro de salud, a veces con ventilación mecánica. La toxina no se destruye con la cocción, el limón ni el vinagre; compra mariscos solo en lugares autorizados y respeta las alertas sanitarias.',
+      esp: 'Emergencia: SAMU 131 o servicio de urgencia de inmediato.',
+      alarma: 'Hormigueo o adormecimiento de la boca después de comer mariscos: acude de inmediato a urgencia o llama al 131.',
+      src: ['minsal_marea_roja', 'minsal_marea_roja_ot', 'isp_marea_roja']
+    },
+
+    // ───────────── Urinario, genital y salud sexual
+    {
+      id: 'hpb', n: 'Crecimiento de la próstata', alt: 'Hiperplasia prostática benigna', urg: 2, prev: 1.0, dur: ['s', 'm'], sex: 'M',
+      age: [[0, 39, 0.2], [50, 200, 1.3]],
+      s: { chorro_debil: 3, nicturia: 3, orinar_frecuente: 2, ardor_orinar: -1, fiebre: -2 },
+      que: 'Aumento de tamaño no canceroso de la próstata, muy común en hombres mayores de 50 años. Aprieta la uretra y produce chorro débil, goteo, sensación de no vaciar la vejiga, ganas frecuentes de orinar y levantarse en la noche a orinar.',
+      trat: 'Según las molestias: cambios de hábitos (menos líquido en la noche, menos cafeína y alcohol), medicamentos que relajan o reducen la próstata y, si no basta, cirugía o procedimientos endoscópicos.',
+      esp: 'Médico general; urólogo.',
+      ges: 'El tratamiento de la hiperplasia benigna de la próstata en personas sintomáticas está cubierto por GES.',
+      alarma: 'No poder orinar, sangre en la orina, fiebre o dolor: urgencia.',
+      src: ['mp_prostata', 'minsal_ges']
+    },
+    {
+      id: 'uretritis_its', n: 'Infección de transmisión sexual (clamidia o gonorrea)', alt: 'Uretritis o cervicitis', urg: 3, prev: 0.95, dur: ['d', 's'],
+      req: ['ctx_sexo'], reqF: 0.5,
+      s: { ctx_sexo: 3, secrecion_uretral: 3, ardor_orinar: 2, flujo_vaginal: 2, dolor_pelvico: 1, sangrado_vaginal: 1, dolor_relaciones: 1, orinar_frecuente: 1 },
+      que: 'Infecciones de transmisión sexual frecuentes, causadas por las bacterias clamidia y gonococo. En hombres dan ardor al orinar y secreción por el pene; en mujeres, flujo anormal, sangrado entre reglas o dolor pélvico. Muchas veces no dan síntomas y se transmiten sin saberlo.',
+      trat: 'Se diagnostican con exámenes de orina o de secreción y se tratan con antibióticos indicados por un profesional, idealmente también a la pareja. Conviene hacerse además el test de VIH y de sífilis. El condón previene la mayoría de las ITS.',
+      esp: 'Médico general, matrona, urólogo o ginecólogo/a.',
+      alarma: 'Fiebre, dolor pélvico o testicular intenso, o dolor en las articulaciones con lesiones en la piel.',
+      src: ['mp_uretritis', 'mp_clamidia', 'mp_its_t']
+    },
+    {
+      id: 'herpes_genital', n: 'Herpes genital', urg: 2, prev: 0.9, dur: ['d', 's'],
+      s: { ampollas_genitales: 3, ctx_sexo: 2, ardor_orinar: 1, ganglios: 1, febricula: 1, dolor_muscular: 1, picazon_genital: 1 },
+      que: 'Infección de transmisión sexual por el virus herpes simple. Produce pequeñas ampollas o llagas dolorosas en los genitales o alrededor, a veces con ardor al orinar, fiebre y ganglios inflamados en la ingle. El virus queda en el cuerpo y puede reaparecer; muchas personas lo tienen sin saberlo.',
+      trat: 'No tiene cura, pero los antivirales (aciclovir, valaciclovir) acortan los brotes y reducen el contagio. Evita las relaciones sexuales mientras haya lesiones y usa condón.',
+      esp: 'Médico general, matrona, dermatólogo, ginecólogo/a o urólogo.',
+      alarma: 'Imposibilidad de orinar, dolor de cabeza intenso con rigidez de cuello o lesiones durante el embarazo.',
+      src: ['mp_ulceras_gen_h', 'mp_ulceras_gen_m', 'mp_its_t']
+    },
+    {
+      id: 'sifilis', n: 'Sífilis', urg: 3, prev: 0.85, dur: ['d', 's', 'm'],
+      s: { ulcera_genital: 3, ctx_sexo: 2, ganglios: 2, erupcion: 1, febricula: 1 },
+      que: 'Infección de transmisión sexual causada por la bacteria Treponema pallidum. Primero aparece una llaga que no duele (chancro) en los genitales, el ano o la boca, que sana sola; semanas después puede haber erupción en el cuerpo (incluidas palmas y plantas), fiebre y ganglios. Sin tratamiento puede dañar órganos años después.',
+      trat: 'Se diagnostica con un examen de sangre y se cura con penicilina inyectable indicada por un profesional. También deben estudiarse y tratarse las parejas sexuales. Es especialmente importante tratarla durante el embarazo.',
+      esp: 'Médico general, matrona, dermatólogo o infectólogo.',
+      alarma: 'Embarazo con sospecha de sífilis, alteraciones de la visión o síntomas neurológicos.',
+      src: ['mp_sifilis', 'mp_ulceras_gen_h', 'mp_ulceras_gen_m']
+    },
+    {
+      id: 'epididimitis', n: 'Epididimitis', alt: 'Inflamación testicular', urg: 3, prev: 0.85, dur: ['d'], sex: 'M',
+      s: { dolor_testicular_gradual: 3, ardor_orinar: 2, fiebre: 1, secrecion_uretral: 1, ctx_sexo: 1, dolor_testicular: 1 },
+      que: 'Inflamación del epidídimo (el conducto detrás del testículo), generalmente por una infección bacteriana: en jóvenes suele ser de transmisión sexual y en mayores, por infecciones urinarias. El dolor y la hinchazón del testículo aparecen de forma gradual, a veces con fiebre y ardor al orinar.',
+      trat: 'Antibióticos indicados por un médico, analgésicos, reposo, elevar el escroto y frío local. Si es de transmisión sexual, la pareja también debe tratarse.',
+      esp: 'Médico general o urgencia el mismo día; urólogo.',
+      nota: 'Si el dolor testicular comenzó de golpe puede ser una torsión, que requiere urgencia inmediata.',
+      alarma: 'Dolor súbito e intenso, fiebre alta o testículo muy hinchado: urgencia inmediata.',
+      src: ['mp_epididimitis', 'mp_dolor_testiculo']
+    },
+    {
+      id: 'vaginosis', n: 'Vaginosis bacteriana', urg: 2, prev: 1.0, dur: ['d', 's'], sex: 'F',
+      s: { flujo_mal_olor: 3, flujo_vaginal: 2, picazon_genital: 1 },
+      que: 'Desequilibrio de las bacterias normales de la vagina. Produce un flujo grisáceo o blanquecino, fluido y con olor a pescado, más notorio después de las relaciones. Es más frecuente con parejas nuevas o con duchas vaginales.',
+      trat: 'Antibióticos orales, o en óvulos o cremas, indicados por un profesional. Evita las duchas vaginales.',
+      esp: 'Matrona, médico general o ginecólogo/a.',
+      alarma: 'Fiebre, dolor pélvico o si estás embarazada.',
+      src: ['mp_flujo', 'mp_vulvovaginitis']
+    },
+
+    // ───────────── Salud de la mujer
+    {
+      id: 'spm', n: 'Síndrome premenstrual', urg: 1, prev: 1.05, dur: ['d', 'm'], sex: 'F', ageRange: [9, 55],
+      req: ['ctx_premenstrual'], reqF: 0.4,
+      s: { ctx_premenstrual: 3, sensibilidad_mamas: 2, irritabilidad: 2, hinchazon_abdominal: 1, tristeza: 1, ansiedad: 1, fatiga: 1, dolor_cabeza: 1 },
+      que: 'Conjunto de síntomas físicos y emocionales que aparecen en la segunda mitad del ciclo menstrual y desaparecen 1 a 2 días después de que llega la regla: irritabilidad, cambios de ánimo, hinchazón, pechos sensibles, cansancio y dolor de cabeza.',
+      trat: 'Ejercicio regular, dormir bien, reducir la sal, la cafeína y el alcohol, y analgésicos para el dolor. Si es intenso, el médico puede indicar anticonceptivos hormonales u otros medicamentos.',
+      esp: 'Matrona, médico general o ginecólogo/a.',
+      alarma: 'Síntomas emocionales tan intensos que afectan tu vida, o pensamientos de hacerte daño.',
+      src: ['mp_spm']
+    },
+    {
+      id: 'menopausia', n: 'Climaterio o menopausia', urg: 1, prev: 1.0, dur: ['s', 'm'], sex: 'F',
+      age: [[0, 39, 0.2], [40, 44, 0.7], [45, 58, 1.4]],
+      s: { bochornos: 3, reglas_irregulares: 3, insomnio: 2, irritabilidad: 1, tristeza: 1, sudoracion: 1, dolor_relaciones: 1, memoria: 1 },
+      que: 'Etapa en que los ovarios dejan de producir hormonas y terminan las menstruaciones, habitualmente entre los 45 y 55 años. En los años previos (climaterio) las reglas se vuelven irregulares y aparecen bochornos, sudores nocturnos, alteraciones del sueño y del ánimo, y sequedad vaginal.',
+      trat: 'Medidas de estilo de vida: ropa en capas, ambiente fresco, evitar gatillantes como el alcohol, la cafeína y los picantes, y hacer ejercicio. Si los síntomas son intensos, la terapia hormonal u otros medicamentos pueden ayudar; se decide con un profesional según los riesgos de cada persona.',
+      esp: 'Matrona, médico general o ginecólogo/a.',
+      alarma: 'Sangrado vaginal después de un año sin reglas, o sangrado muy abundante.',
+      src: ['mp_menopausia', 'mp_menopausia_casa']
+    },
+    {
+      id: 'torsion_ovarica', n: 'Quiste o torsión de ovario', urg: 4, prev: 0.85, dur: ['h', 'd'], sex: 'F', ageRange: [9, 60],
+      s: { dolor_pelvico: 3, dolor_abdominal_intenso: 2, nauseas: 2, vomitos: 2, fiebre: -1 },
+      que: 'Los quistes de ovario son frecuentes y casi siempre inofensivos, pero pueden romperse o hacer que el ovario se tuerza sobre sí mismo (torsión) y se corte su irrigación. Esto provoca un dolor pélvico súbito e intenso en un lado, a menudo con náuseas y vómitos.',
+      trat: 'Requiere evaluación urgente con ecografía. La torsión es una urgencia quirúrgica para salvar el ovario; un quiste roto puede manejarse con analgésicos y observación o requerir cirugía si hay sangrado.',
+      esp: 'Urgencia ginecológica; ginecólogo/a.',
+      alarma: 'Dolor pélvico súbito e intenso, mareo o desmayo: urgencia inmediata (también hay que descartar un embarazo ectópico).',
+      src: ['mp_quistes_ovaricos']
+    },
+    {
+      id: 'epi', n: 'Enfermedad inflamatoria pélvica', alt: 'EIP', urg: 3, prev: 0.85, dur: ['d', 's'], sex: 'F', ageRange: [12, 55],
+      s: { dolor_pelvico: 3, fiebre: 2, flujo_vaginal: 2, dolor_relaciones: 2, sangrado_vaginal: 1, ardor_orinar: 1, ctx_sexo: 1 },
+      que: 'Infección del útero, las trompas o los ovarios, generalmente por bacterias de transmisión sexual (clamidia, gonorrea) que suben desde la vagina. Produce dolor en la parte baja del abdomen, fiebre, flujo anormal, dolor en las relaciones y sangrado irregular. Sin tratamiento puede causar infertilidad.',
+      trat: 'Antibióticos indicados por un profesional (a veces con hospitalización), tratamiento de la pareja y abstención sexual hasta terminarlo.',
+      esp: 'Ginecólogo/a o médico general; urgencia si hay fiebre alta o dolor intenso.',
+      alarma: 'Fiebre alta, dolor intenso, vómitos o sospecha de embarazo: urgencia.',
+      src: ['mp_epi']
+    },
+    {
+      id: 'preeclampsia', n: 'Preeclampsia', alt: 'Presión alta en el embarazo', urg: 5, prev: 0.85, dur: ['h', 'd'], sex: 'F', preg: true, ageRange: [11, 55],
+      req: ['ctx_embarazo20'], reqF: 0.35,
+      s: { ctx_embarazo20: 3, hinchazon_cara_manos: 3, dolor_cabeza: 2, vision_borrosa: 2, dolor_epigastrio: 2, presion_alta: 2, nauseas: 1, falta_aire: 1, aumento_peso: 1 },
+      que: 'Complicación del embarazo (desde las 20 semanas y hasta 6 semanas después del parto) con presión arterial alta y daño en órganos como los riñones o el hígado. Puede dar dolor de cabeza persistente, visión borrosa o con luces, hinchazón de la cara y las manos, dolor en la boca del estómago y aumento rápido de peso.',
+      trat: 'Requiere control urgente de la presión y exámenes. Según la gravedad y las semanas de embarazo se usan medicamentos para la presión, sulfato de magnesio para prevenir convulsiones y, muchas veces, se adelanta el parto.',
+      esp: 'Urgencia obstétrica (maternidad); obstetra.',
+      alarma: 'Dolor de cabeza intenso, alteraciones de la visión, dolor en la boca del estómago, falta de aire o convulsión durante el embarazo o el posparto: llama al 131 o acude a la maternidad.',
+      src: ['mp_eclampsia', 'mp_hta_embarazo', 'mp_preeclampsia_img']
+    },
+    {
+      id: 'mastitis', n: 'Mastitis', alt: 'Inflamación de la mama', urg: 3, prev: 0.95, dur: ['h', 'd'], sex: 'F',
+      req: ['ctx_lactancia'], reqF: 0.4,
+      s: { mama_roja: 3, ctx_lactancia: 2, fiebre: 2, escalofrios: 1, dolor_muscular: 1, fatiga: 1 },
+      que: 'Inflamación de la mama, casi siempre durante la lactancia, cuando un conducto se obstruye y la leche se acumula, a veces con infección. Produce una zona del pecho roja, caliente, hinchada y dolorosa, y puede dar fiebre y malestar parecido a una gripe.',
+      trat: 'Seguir amamantando o extrayendo leche (es seguro para la guagua), aplicar frío o calor según alivie, analgésicos como ibuprofeno y reposo. Si hay fiebre o no mejora en 24 horas, el médico puede indicar antibióticos compatibles con la lactancia.',
+      esp: 'Matrona, médico general o ginecólogo/a.',
+      alarma: 'Fiebre alta persistente, un bulto duro que no disminuye (posible absceso) o enrojecimiento que avanza rápido.',
+      src: ['mp_mastitis_img', 'mp_dolor_mamas']
+    },
+
+    // ───────────── Piel
+    {
+      id: 'dermatitis_atopica', n: 'Dermatitis atópica', alt: 'Eccema', urg: 1, prev: 1.05, dur: ['d', 's', 'm'],
+      age: [[0, 12, 1.3]],
+      s: { eccema: 3, picazon_piel: 3, piel_seca: 2, erupcion: 1, insomnio: 1 },
+      que: 'Enfermedad crónica de la piel que produce zonas secas, rojas, ásperas y con mucha picazón, típicamente en los pliegues de codos, rodillas y cuello. Es común en niños y en personas con asma o rinitis alérgica, y tiene periodos de crisis y de calma. No es contagiosa.',
+      trat: 'Hidratar la piel a diario con cremas emolientes, baños cortos con agua tibia, jabones suaves y ropa de algodón. En las crisis se usan cremas con corticoides u otros antiinflamatorios indicados por un médico; los casos severos tienen tratamientos especiales.',
+      esp: 'Médico general o pediatra; dermatólogo.',
+      alarma: 'Lesiones con pus, costras amarillas, ampollas dolorosas o fiebre (posible infección).',
+      src: ['mp_dermatitis_atopica']
+    },
+    {
+      id: 'dermatitis_contacto', n: 'Dermatitis de contacto', urg: 1, prev: 1.0, dur: ['h', 'd', 's'],
+      req: ['ctx_irritante'], reqF: 0.5,
+      s: { ctx_irritante: 3, erupcion: 2, picazon_piel: 2, eccema: 1 },
+      que: 'Inflamación de la piel en la zona que tocó una sustancia irritante o que te da alergia: detergentes, cosméticos, tinturas, metales como el níquel (aros, hebillas) o plantas. Aparecen enrojecimiento, picazón y a veces ampollitas, con la forma del contacto.',
+      trat: 'Identificar y evitar la sustancia, lavar la piel con agua y jabón suave, compresas frías y cremas con corticoides o antihistamínicos según indicación. Suele mejorar en 2 a 3 semanas.',
+      esp: 'Médico general; dermatólogo (puede hacer pruebas de parche).',
+      alarma: 'Compromiso extenso, de la cara o los ojos, hinchazón de labios o dificultad para respirar.',
+      src: ['mp_dermatitis_contacto']
+    },
+    {
+      id: 'psoriasis', n: 'Psoriasis', urg: 2, prev: 0.95, dur: ['s', 'm'],
+      s: { placas_escamas: 3, picazon_piel: 1, articulaciones_manos: 1, piel_seca: 1 },
+      que: 'Enfermedad crónica inflamatoria de la piel, no contagiosa, que produce placas rojas y gruesas cubiertas de escamas plateadas, sobre todo en codos, rodillas, cuero cabelludo y espalda baja; puede afectar las uñas y, en algunas personas, las articulaciones (artritis psoriásica).',
+      trat: 'Cremas con corticoides o derivados de la vitamina D, fototerapia y, en casos moderados a severos, medicamentos orales o biológicos. No tiene cura, pero se controla bien con tratamiento.',
+      esp: 'Dermatólogo; reumatólogo si hay dolor en las articulaciones.',
+      alarma: 'Enrojecimiento de casi toda la piel, fiebre o pústulas extensas: urgencia dermatológica.',
+      src: ['mp_psoriasis', 'mp_escamas']
+    },
+    {
+      id: 'sarna', n: 'Sarna', alt: 'Escabiosis', urg: 2, prev: 0.95, dur: ['d', 's'],
+      s: { picazon_nocturna: 3, surcos_dedos: 3, picazon_piel: 2, ctx_convivientes: 2, erupcion: 1 },
+      que: 'Infestación de la piel por un ácaro diminuto que se transmite por contacto directo piel con piel. Produce una picazón muy intensa que empeora en la noche y granitos o pequeños surcos entre los dedos, en muñecas, axilas, cintura y genitales. Suele afectar a varias personas de la misma casa.',
+      trat: 'Cremas o lociones escabicidas (como la permetrina) o comprimidos indicados por un médico, aplicados a todos los convivientes al mismo tiempo. Lavar con agua caliente la ropa y la ropa de cama de los últimos días. La picazón puede durar semanas después del tratamiento.',
+      esp: 'Médico general; dermatólogo.',
+      alarma: 'Costras gruesas extensas, lesiones infectadas con pus o fiebre.',
+      src: ['mp_sarna']
+    },
+    {
+      id: 'varicela', n: 'Varicela', alt: '«Peste cristal»', urg: 2, prev: 0.85, dur: ['d'],
+      age: [[0, 14, 1.3], [25, 200, 0.7]],
+      s: { ampollas_cuerpo: 3, fiebre: 2, picazon_piel: 2, fatiga: 1, dolor_cabeza: 1, ctx_contagio: 1 },
+      que: 'Infección muy contagiosa por el virus varicela-zóster, conocida en Chile como “peste cristal”. Tras uno o dos días de fiebre y malestar aparecen manchitas rojas que se convierten en ampollas con mucha picazón y luego en costras, en distintas etapas a la vez. Hoy es menos frecuente gracias a la vacuna.',
+      trat: 'En niños sanos se maneja en casa con paracetamol (nunca aspirina), antihistamínicos, baños tibios y uñas cortas. En adolescentes, adultos, embarazadas o personas con defensas bajas el médico puede indicar antivirales. Contagia hasta que todas las lesiones están en costra.',
+      esp: 'Médico general o pediatra.',
+      alarma: 'Dificultad para respirar, confusión, rigidez de cuello, lesiones con pus o muy dolorosas, o embarazo: urgencia.',
+      src: ['mp_varicela', 'mp_vesiculas']
+    },
+    {
+      id: 'pie_atleta_cond', n: 'Pie de atleta', alt: 'Hongos en los pies (tiña)', urg: 1, prev: 1.05, dur: ['d', 's', 'm'],
+      s: { pie_atleta: 3, picazon_piel: 1, ctx_agua: 1 },
+      que: 'Infección por hongos de la piel de los pies, favorecida por la humedad, el calor y los camarines o piscinas. Produce picazón y piel agrietada, escamosa o blanquecina entre los dedos, a veces con mal olor.',
+      trat: 'Cremas o polvos antimicóticos de farmacia por 2 a 4 semanas, secar bien entre los dedos, calcetines de algodón, alternar el calzado y usar chalas en duchas comunes.',
+      esp: 'Médico general o dermatólogo si no mejora en 2 a 4 semanas.',
+      alarma: 'Pie rojo, caliente e hinchado o fiebre (posible infección bacteriana), sobre todo si tienes diabetes.',
+      src: ['mp_pie_atleta', 'mp_tina']
+    },
+    {
+      id: 'forunculo', n: 'Forúnculo', alt: 'Absceso en la piel', urg: 2, prev: 1.0, dur: ['d'],
+      s: { bulto_pus: 3, fiebre: 1, ganglios: 1, piel_roja_caliente: 1 },
+      que: 'Infección bacteriana (generalmente por estafilococo) de un folículo del pelo, que forma un bulto rojo, caliente y doloroso que se llena de pus. Es frecuente en axilas, glúteos, muslos y cuello.',
+      trat: 'Compresas tibias varias veces al día para que drene solo; no lo aprietes ni lo revientes. Si es grande, el médico puede drenarlo y a veces indicar antibióticos.',
+      esp: 'Médico general; dermatólogo si se repiten.',
+      alarma: 'Fiebre, enrojecimiento que se extiende, forúnculo en la cara o en la columna, o que dura más de 2 semanas.',
+      src: ['mp_forunculo', 'mp_absceso']
+    },
+    {
+      id: 'loxoscelismo', n: 'Picadura de araña de rincón', alt: 'Loxoscelismo', urg: 4, prev: 0.85, dur: ['h', 'd'],
+      req: ['ctx_arana', 'lesion_violacea'], reqF: 0.3,
+      s: { ctx_arana: 3, lesion_violacea: 3, coluria: 2, fiebre: 1, nauseas: 1, vomitos: 1, dolor_muscular: 1, ictericia: 1, erupcion: 1 },
+      que: 'Envenenamiento por la picadura de la araña de rincón (Loxosceles laeta), frecuente dentro de las casas en Chile. Produce dolor y ardor en el sitio de la picadura, que en horas se hincha y se transforma en una placa violácea u oscura que puede necrosarse. En un 10 a 15% de los casos hay compromiso general: fiebre, vómitos, orina oscura o con sangre e ictericia.',
+      trat: 'Lavar con agua y jabón, aplicar frío local y acudir de inmediato a urgencia; si es posible, llevar la araña en un frasco. No existe un antídoto eficaz: el manejo es médico, con analgésicos, cuidados de la herida y vigilancia con exámenes durante las primeras 24 a 48 horas.',
+      esp: 'Servicio de urgencia de inmediato.',
+      alarma: 'Orina oscura o rojiza, fiebre, ictericia, vómitos o decaimiento después de una picadura: urgencia inmediata.',
+      src: ['minsal_arana_guia', 'minsal_arana']
+    },
+    {
+      id: 'quemadura_solar', n: 'Quemadura solar', urg: 1, prev: 1.0, dur: ['h', 'd'],
+      s: { piel_roja_sol: 3, ctx_calor: 2, dolor_cabeza: 1, fiebre: 1 },
+      que: 'Enrojecimiento y dolor de la piel por exposición excesiva a la radiación ultravioleta del sol. Aparece horas después: piel roja, caliente, sensible y a veces con ampollas; si es extensa puede haber fiebre, escalofríos y dolor de cabeza.',
+      trat: 'Compresas frías o duchas tibias, cremas hidratantes o con aloe vera, mucha agua y paracetamol o ibuprofeno. No revientes las ampollas. Para prevenir: bloqueador FPS 30 o más, sombrero y evitar el sol del mediodía.',
+      esp: 'Normalmente no requiere consulta; médico general si es extensa o con ampollas grandes.',
+      alarma: 'Ampollas extensas, fiebre alta, confusión, mareo o deshidratación (posible golpe de calor).',
+      src: ['mp_quemadura_solar']
+    },
+
+    // ───────────── Músculos, huesos y articulaciones
+    {
+      id: 'esguince', n: 'Esguince', alt: 'Torcedura de ligamentos', urg: 2, prev: 1.05, dur: ['h', 'd', 's'],
+      req: ['ctx_torcedura'], reqF: 0.4,
+      s: { ctx_torcedura: 3, hinchazon_moreton: 3, no_apoyar: 1, deformidad: -2 },
+      que: 'Lesión de los ligamentos de una articulación (muy común en el tobillo) al torcerla o estirarla bruscamente. Produce dolor, hinchazón, moretón y dificultad para moverla o apoyar.',
+      trat: 'Reposo relativo, hielo de 15 a 20 minutos varias veces al día, vendaje compresivo y elevar la extremidad durante las primeras 48 horas, más analgésicos. Luego, movilización progresiva y, a veces, kinesiología.',
+      esp: 'Médico general, o urgencia si no puedes apoyar; traumatólogo y kinesiólogo.',
+      alarma: 'No poder apoyar ni dar 4 pasos, deformidad, adormecimiento o dolor justo sobre el hueso (posible fractura): urgencia.',
+      src: ['mp_esguince', 'mp_dolor_tobillo']
+    },
+    {
+      id: 'fractura', n: 'Fractura', alt: 'Hueso roto', urg: 4, prev: 0.95, dur: ['h', 'd'],
+      req: ['ctx_torcedura'], reqF: 0.4,
+      s: { ctx_torcedura: 3, no_apoyar: 3, deformidad: 3, hinchazon_moreton: 2 },
+      que: 'Rotura de un hueso, generalmente por una caída, un golpe o una torcedura fuerte. Produce dolor intenso, hinchazón, moretón, incapacidad para mover o apoyar la extremidad y, a veces, deformidad o hueso expuesto.',
+      trat: 'Inmovilizar la zona sin intentar enderezarla, aplicar frío y acudir a urgencia. Se confirma con radiografía y se trata con yeso, férula o cirugía según el tipo de fractura.',
+      esp: 'Servicio de urgencia; traumatólogo.',
+      alarma: 'Hueso expuesto, sangrado abundante, extremidad fría, pálida o sin sensibilidad, o golpe en la cabeza, el cuello o la columna: llama al 131.',
+      src: ['mp_fractura', 'mp_dolor_tobillo']
+    },
+    {
+      id: 'hombro_doloroso', n: 'Tendinitis del hombro', alt: 'Lesión del manguito rotador', urg: 1, prev: 1.0, dur: ['d', 's', 'm'],
+      age: [[40, 200, 1.2]],
+      s: { dolor_hombro: 3, insomnio: 1, dolor_cuello: 1 },
+      que: 'Irritación de los tendones del manguito rotador y de la bursa del hombro, por sobreuso, movimientos repetidos con el brazo en alto o el desgaste con la edad. Produce dolor al levantar el brazo o al dormir sobre ese lado, y debilidad.',
+      trat: 'Reposo relativo de los movimientos que duelen, hielo, antiinflamatorios por pocos días y kinesiología con ejercicios. A veces infiltración y, si hay una rotura importante, cirugía.',
+      esp: 'Médico general; traumatólogo; kinesiólogo.',
+      alarma: 'Dolor de hombro izquierdo con dolor de pecho o falta de aire (descartar un infarto), o imposibilidad total de levantar el brazo tras una caída.',
+      src: ['mp_manguito']
+    },
+    {
+      id: 'torticolis', n: 'Contractura cervical', alt: 'Tortícolis', urg: 1, prev: 1.05, dur: ['h', 'd'],
+      s: { dolor_cuello: 3, dolor_cabeza: 1, ctx_estres: 1, rigidez_cuello: -1, fiebre: -2 },
+      que: 'Contractura de los músculos del cuello que produce dolor y dificultad para girar la cabeza, a menudo al despertar, por una mala postura al dormir, estrés o esfuerzos.',
+      trat: 'Calor local, analgésicos o antiinflamatorios por pocos días, estiramientos suaves y mantener el movimiento dentro de lo tolerable. Suele mejorar en pocos días o una semana.',
+      esp: 'Médico general; kinesiólogo.',
+      alarma: 'Dolor de cuello con fiebre y dolor de cabeza intenso, después de un golpe, o con hormigueo o debilidad en los brazos: urgencia.',
+      src: ['mp_torticolis']
+    },
+    {
+      id: 'artrosis', n: 'Artrosis', alt: 'Osteoartritis', urg: 1, prev: 1.1, dur: ['m'],
+      age: [[0, 39, 0.3], [55, 200, 1.35]],
+      s: { dolor_rodilla_cadera: 3, rigidez_matinal: 1, articulacion_hinchada: 1 },
+      que: 'Desgaste del cartílago de las articulaciones, la forma más común de artritis y muy ligada a la edad. Produce dolor que empeora con el uso y mejora con el reposo, rigidez breve al levantarse y pérdida de movilidad, sobre todo en rodillas, caderas, manos y columna.',
+      trat: 'Ejercicio adaptado y kinesiología, control del peso, calor local y analgésicos o antiinflamatorios según indicación. En casos avanzados, infiltraciones o prótesis.',
+      esp: 'Médico general; traumatólogo, reumatólogo o fisiatra; kinesiólogo.',
+      ges: 'El tratamiento médico de la artrosis de cadera o rodilla leve o moderada en personas de 55 años y más está cubierto por GES.',
+      alarma: 'Articulación roja, caliente y muy hinchada con fiebre (posible infección).',
+      src: ['mp_artritis', 'mp_osteoartritis', 'minsal_ges']
+    },
+    {
+      id: 'artritis_reumatoide', n: 'Artritis reumatoide', urg: 2, prev: 0.9, dur: ['s', 'm'], sexF: 1.4,
+      age: [[30, 60, 1.15]],
+      s: { articulaciones_manos: 3, rigidez_matinal: 3, fatiga: 2, articulacion_hinchada: 1, febricula: 1 },
+      que: 'Enfermedad autoinmune en la que el sistema inmune ataca las articulaciones. Produce dolor, hinchazón y rigidez de varias articulaciones a la vez, típicamente de las manos y muñecas de ambos lados, con rigidez matinal de más de una hora y cansancio. Es más frecuente en mujeres.',
+      trat: 'El tratamiento temprano con medicamentos modificadores de la enfermedad (como el metotrexato) indicados por un reumatólogo evita el daño de las articulaciones; se complementa con antiinflamatorios, ejercicio y terapia ocupacional.',
+      esp: 'Reumatólogo (con derivación del médico general).',
+      ges: 'La artritis reumatoide está cubierta por GES.',
+      alarma: 'Fiebre alta, una articulación muy roja y caliente, o falta de aire.',
+      src: ['mp_ar', 'minsal_ges']
+    },
+    {
+      id: 'fibromialgia', n: 'Fibromialgia', urg: 1, prev: 0.95, dur: ['m'], sexF: 1.4,
+      s: { dolor_generalizado: 3, fatiga: 2, insomnio: 2, memoria: 1, dolor_cabeza: 1, tristeza: 1, ansiedad: 1 },
+      que: 'Trastorno crónico con dolor generalizado en músculos y articulaciones durante meses, acompañado de cansancio, sueño no reparador, problemas de concentración (“niebla mental”) y, a menudo, ánimo bajo. Es más frecuente en mujeres; los exámenes suelen salir normales.',
+      trat: 'El ejercicio aeróbico regular y progresivo es el tratamiento más eficaz, junto con higiene del sueño, manejo del estrés y psicoterapia. Algunos medicamentos ayudan con el dolor y el sueño.',
+      esp: 'Médico general; reumatólogo; equipo de salud mental y kinesiólogo.',
+      alarma: 'Fiebre, baja de peso, articulaciones hinchadas o debilidad real (sugieren otra causa).',
+      src: ['mp_fibromialgia']
+    },
+    {
+      id: 'fascitis_plantar', n: 'Fascitis plantar', alt: 'Dolor de talón', urg: 1, prev: 1.0, dur: ['s', 'm'],
+      age: [[35, 65, 1.2]],
+      s: { dolor_talon: 3 },
+      que: 'Inflamación de la fascia plantar, la banda que va del talón a los dedos. Produce dolor en el talón, sobre todo en los primeros pasos de la mañana o al levantarse después de estar sentado. Se asocia al sobrepeso, a estar mucho de pie, a correr y al calzado inadecuado.',
+      trat: 'Estiramientos de la pantorrilla y la planta del pie, hielo, calzado con buen soporte o plantillas, reducir el impacto y analgésicos por pocos días. La mayoría mejora en algunos meses; a veces se usan férulas nocturnas o infiltraciones.',
+      esp: 'Médico general; traumatólogo; kinesiólogo o podólogo.',
+      alarma: 'Dolor tras una caída o un golpe fuerte, talón hinchado y caliente, o adormecimiento del pie.',
+      src: ['mp_dolor_talon', 'mp_dolor_pie']
     }
   ];
 

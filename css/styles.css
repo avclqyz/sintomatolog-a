@@ -1,4 +1,5 @@
 /* Sintomatología · estilos
+   © 2026 Agustín Vivanco. Todos los derechos reservados.
    Paleta pastel, minimalista, con modo oscuro automático. */
 
 :root {
@@ -107,6 +108,7 @@ input { font: inherit; color: inherit; }
 .eyebrow { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 6vw, 2.9rem); letter-spacing: -.02em; }
 .lead { margin-top: 12px; font-size: 1.08rem; color: var(--ink-2); max-width: 46ch; }
+.hero-stats { margin-top: 10px; font-size: .84rem; color: var(--muted); }
 .notice { margin-top: 18px; display: inline-flex; gap: 8px; align-items: baseline; font-size: .88rem; color: var(--ink-2); background: var(--surface-2); padding: 8px 14px; border-radius: 999px; }
 .notice span { color: var(--rose-dot); }
 
@@ -178,6 +180,8 @@ input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
 
 /* ── zonas */
 .zones { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; -webkit-overflow-scrolling: touch; }
+@media (min-width: 621px) { .zones { flex-wrap: wrap; overflow: visible; } }
+@media (max-width: 620px) { .zones { -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); padding-right: 24px; } }
 .zone {
   flex: none; display: inline-flex; align-items: center; gap: 6px; min-height: 38px;
   padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line-2); background: transparent; color: var(--ink-2);
@@ -357,6 +361,8 @@ input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
 .muted { color: var(--muted); font-size: .84rem; }
 
 .foot { margin-top: 40px; padding: 26px 0 40px; border-top: 1px solid var(--line); font-size: .82rem; color: var(--muted); }
+.foot-inner { display: grid; gap: 6px; }
+.foot .copyright { color: var(--ink-2); font-weight: 600; font-size: .86rem; }
 
 /* ── animaciones */
 @keyframes pop { from { opacity: 0; transform: scale(.98); } to { opacity: 1; transform: none; } }
@@ -381,7 +387,7 @@ input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
 
 /* ── impresión */
 @media print {
-  .top, .actions, .help, .method, .foot, .results-actions { display: none !important; }
+  .top, .actions, .help, .method, .results-actions { display: none !important; }
   body { background: #fff; }
   .card, .cond { box-shadow: none; }
   .cond-body { display: grid !important; }

@@ -1,4 +1,5 @@
-/* Sintomatología · lógica de la interfaz y motor de coincidencias */
+/* Sintomatología · lógica de la interfaz y motor de coincidencias
+ * © 2026 Agustín Vivanco. Todos los derechos reservados. */
 (function () {
   'use strict';
 
@@ -10,11 +11,13 @@
   const DUR_LABEL = { h: 'horas', d: 'días', s: 'semanas', m: 'más de un mes' };
   const SEX_LABEL = { F: 'femenino', M: 'masculino', X: 'no indicado' };
   const STORE_KEY = 'sintomatologia:v1';
+  const OWNER = 'Agustín Vivanco';
   const MAX_MAIN = 6;
   const MAX_EXTRA = 5;
   // Síntomas muy inespecíficos: por sí solos no bastan para sugerir una enfermedad con síntomas clave más específicos.
   const GENERIC = new Set(['fiebre', 'febricula', 'fatiga', 'dolor_cabeza', 'nauseas', 'vomitos', 'mareo', 'dolor_muscular',
     'escalofrios', 'dolor_abdominal', 'sudoracion', 'debilidad_general', 'inapetencia']);
+  const specW = (id) => (GENERIC.has(id) ? 0.5 : 1);
 
   const state = {
     edad: null,
@@ -121,10 +124,15 @@
   }
 
   // ───────────────────────── catálogo por zonas
+  // Una zona se muestra solo si tiene síntomas visibles (p. ej. «Regla, mamas y embarazo» se oculta si el sexo es masculino).
+  function visibleZones() { return ZONES.filter((z) => SYMPTOMS.some((s) => s.z === z.id && visible(s))); }
+
   function renderZones() {
     const wrap = $('#zonas');
     wrap.textContent = '';
-    ZONES.forEach((z) => {
+    const zones = visibleZones();
+    if (!zones.some((z) => z.id === state.zona)) state.zona = zones[0].id;
+    zones.forEach((z) => {
       const count = SYMPTOMS.filter((s) => s.z === z.id && state.sel.has(s.id)).length;
       const btn = el('button', {
         type: 'button', role: 'tab', class: 'zone', id: 'tab-' + z.id,
@@ -208,7 +216,7 @@
       out.push([score, it.s]);
     }
     out.sort((a, b) => b[0] - a[0] || a[1].n.localeCompare(b[1].n));
-    return out.slice(0, 8).map((x) => x[1]);
+    return out.slice(0, 10).map((x) => x[1]);
   }
 
   function renderSuggestions() {
@@ -247,6 +255,8 @@
     state.zona = s.z;
     renderZones();
     renderCatalog();
+    const tab = $('#tab-' + s.z);
+    if (tab) tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     input.focus();
   }
 
@@ -293,7 +303,10 @@
     pos.sort((a, b) => b - a);
     const denom = pos.slice(0, 6).reduce((a, b) => a + b, 0);
     const coverage = Math.min(1, matched / denom); // ¿cuánto del cuadro típico tienes?
-    const explained = hits.length / state.sel.size; // ¿cuánto de lo tuyo explica este cuadro?
+    // ¿cuánto de lo tuyo explica este cuadro? Los síntomas inespecíficos pesan la mitad.
+    let selW = 0;
+    for (const id of state.sel.keys()) selW += specW(id);
+    const explained = hits.reduce((a, id) => a + specW(id), 0) / selW;
     let score = Math.pow(coverage, 0.8) * (0.5 + 0.5 * explained);
     const notes = [];
 
@@ -301,7 +314,8 @@
     else if (specKeyTotal && !specKeyHit) score *= 0.6;
     if (c.req && !c.req.some((id) => state.sel.has(id))) {
       score *= c.reqF;
-      notes.push('no marcaste ' + c.req.map((id) => SYM.get(id).n.toLowerCase()).join(' ni '));
+      const names = c.req.map((id) => SYM.get(id).n.toLowerCase());
+      notes.push(names.length > 2 ? 'no marcaste síntomas clave como ' + names.slice(0, 2).join(' o ') : 'no marcaste ' + names.join(' ni '));
     }
     if (neg) { score *= Math.max(0.25, 1 - 0.15 * neg); notes.push('algunos síntomas no calzan con este cuadro'); }
 
@@ -352,7 +366,13 @@
     // otras causas casi tan probables como la primera también cuentan
     main.slice(1, 3).forEach((r) => { if (r.score >= 0.4 && r.score >= main[0].score * 0.8) u = Math.max(u, r.c.urg); });
     const flags = redFlags();
-    if (flags.length) u = Math.max(u, ...flags.map((s) => s.em));
+    if (flags.length) {
+      // Si la causa principal es muy clara y los síntomas de alarma son característicos de ella
+      // (p. ej. desmayo con aviso previo y gatillante → desmayo vasovagal), no se fuerza «Emergencia».
+      const top = main[0];
+      const typicalOfTop = top && top.score >= 0.75 && flags.every((s) => (top.c.s[s.id] || 0) >= 3);
+      u = typicalOfTop ? Math.max(u, 3) : Math.max(u, ...flags.map((s) => s.em));
+    }
     else if (Array.from(state.sel.entries()).some(([id, i]) => SYM.get(id).sev === 2 && i === 3)) u = Math.max(u, 3);
     return u;
   }
@@ -494,7 +514,7 @@
       lines.push('', 'Posibles causas orientativas:');
       main.forEach((r) => lines.push(`- ${r.c.n} — ${pct(r.score)}% coincidencia`));
     }
-    lines.push('', 'Generado como orientación; no es un diagnóstico.');
+    lines.push('', 'Generado como orientación; no es un diagnóstico.', `Sintomatología · © ${new Date().getFullYear() > 2026 ? '2026–' + new Date().getFullYear() : '2026'} ${OWNER}`);
     return lines.join('\n');
   }
 
@@ -532,10 +552,14 @@
     Object.values(SOURCES).forEach(([org]) => { byOrg[org] = (byOrg[org] || 0) + 1; });
     $('#fuentes-resumen').textContent = Object.entries(byOrg).map(([o, n]) => `${o} (${n})`).join(' · ');
     $('#stats').textContent = `${SYMPTOMS.length} síntomas · ${CONDITIONS.length} enfermedades · ${Object.keys(SOURCES).length} referencias`;
+    $('#hero-stats').textContent = `${CONDITIONS.length} enfermedades · ${SYMPTOMS.length} síntomas · fuentes: MedlinePlus (NIH), Mayo Clinic y MINSAL`;
   }
 
   function init() {
     load();
+    const year = new Date().getFullYear();
+    const cy = $('#copy-year');
+    if (cy && year > 2026) cy.textContent = '2026–' + year;
     bindSegments();
     bindSearch();
     renderSourcesIndex();
@@ -559,9 +583,10 @@
     // navegación con flechas entre pestañas de zonas
     $('#zonas').addEventListener('keydown', (e) => {
       if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      const i = ZONES.findIndex((z) => z.id === state.zona);
-      const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + ZONES.length) % ZONES.length;
-      state.zona = ZONES[n].id;
+      const zones = visibleZones();
+      const i = zones.findIndex((z) => z.id === state.zona);
+      const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + zones.length) % zones.length;
+      state.zona = zones[n].id;
       save(); renderZones(); renderCatalog();
       $('#tab-' + state.zona).focus();
     });
