@@ -6,7 +6,7 @@
   <title>Sintomatología · Orientador de síntomas</title>
   <meta name="author" content="Agustín Vivanco">
   <meta name="copyright" content="© 2026 Agustín Vivanco. Todos los derechos reservados.">
-  <meta name="description" content="Marca tus síntomas y conoce posibles causas, cómo se tratan habitualmente y a qué especialista acudir. Información basada en MedlinePlus (NIH), Mayo Clinic y MINSAL Chile.">
+  <meta name="description" content="Marca tus síntomas y conoce posibles causas, cómo se tratan habitualmente y a qué especialista acudir. Información basada en la OMS, la OPS, MedlinePlus (NIH), Mayo Clinic, el MINSAL y clínicas chilenas.">
   <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1c1b22" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Sintomatología · Orientador de síntomas">
@@ -36,7 +36,7 @@
       <h1>¿Qué te está pasando?</h1>
       <p class="lead">Marca tus síntomas y te mostraremos posibles causas, cómo suelen tratarse y a qué especialista acudir.</p>
       <p class="hero-stats" id="hero-stats"></p>
-      <p class="notice"><span aria-hidden="true">✳</span> Orienta, no diagnostica. Ante una emergencia llama al <a href="tel:131">SAMU 131</a>.</p>
+      <p class="notice"><span aria-hidden="true">✳</span> Orienta, no diagnostica. Ante una emergencia llama al <a href="tel:131">SAMU 131</a>. <a href="#aviso-legal">Aviso legal</a></p>
     </section>
 
     <section class="card" aria-labelledby="t-perfil">
@@ -116,6 +116,7 @@
         <li><a href="tel:131"><strong>131</strong><span>SAMU · emergencias médicas, 24 h</span></a></li>
         <li><a href="tel:6003607777"><strong>600 360 7777</strong><span>Salud Responde (MINSAL) · orientación, 24 h</span></a></li>
         <li><a href="tel:*4141"><strong>*4141</strong><span>Prevención del suicidio · gratis desde celulares, 24 h</span></a></li>
+        <li><a href="tel:1412"><strong>1412</strong><span>SENDA · Fono Drogas y Alcohol, gratis y confidencial, 24 h</span></a></li>
         <li><a href="tel:132"><strong>132</strong><span>Bomberos</span></a></li>
         <li><a href="tel:133"><strong>133</strong><span>Carabineros</span></a></li>
       </ul>
@@ -125,7 +126,7 @@
     <details class="card method">
       <summary><h2>¿Cómo funciona y de dónde sale la información?</h2></summary>
       <div class="method-body">
-        <p><strong>Contenido.</strong> Cada enfermedad (qué es, tratamiento habitual, especialista y señales de alarma) fue redactada a partir de fuentes médicas reconocidas y cada ficha enlaza sus referencias: <span id="fuentes-resumen"></span>. No usamos Wikipedia ni sitios sin respaldo clínico.</p>
+        <p><strong>Contenido.</strong> Cada enfermedad (qué es, tratamiento habitual, especialista y señales de alarma) fue redactada a partir de fuentes médicas reconocidas: la Organización Mundial de la Salud (OMS, agencia de salud de la ONU) y la OPS, la Biblioteca Nacional de Medicina de EE. UU. (MedlinePlus), Mayo Clinic, el Ministerio de Salud de Chile, el ISP, SENDA, la Superintendencia de Salud y clínicas chilenas. Cada ficha enlaza sus referencias: <span id="fuentes-resumen"></span>. No usamos Wikipedia ni sitios sin respaldo clínico.</p>
         <p><strong>Colores.</strong> Cada síntoma tiene una gravedad base: <span class="tag sev-1">leve</span> <span class="tag sev-2">atención</span> <span class="tag sev-3">alarma</span>, más los datos de <span class="tag sev-0">contexto</span> (exposiciones o antecedentes). Tú agregas la intensidad con que lo sientes, y ambas cosas pesan en el resultado.</p>
         <p><strong>Coincidencia.</strong> Para cada enfermedad se compara cuánto de su cuadro típico tienes (los síntomas característicos pesan más) y cuánto de lo que sientes explica. Luego se ajusta por edad, sexo, posible embarazo, tiempo de evolución y frecuencia de la enfermedad. Las emergencias con un síntoma clave nunca quedan ocultas al fondo.</p>
         <p><strong>Privacidad.</strong> Todo ocurre en tu navegador: no se envían ni guardan tus datos en ningún servidor. Tu selección queda solo en este dispositivo para que no la pierdas al recargar.</p>
@@ -136,11 +137,29 @@
     </details>
   </main>
 
-  <footer class="foot">
+  <footer class="foot" id="aviso-legal">
     <div class="wrap foot-inner">
       <p class="copyright">© <span id="copy-year">2026</span> Agustín Vivanco. Todos los derechos reservados.</p>
-      <p>Prohibida la reproducción total o parcial del diseño, el código o los contenidos de este sitio sin autorización escrita de su autor. Las fuentes médicas citadas pertenecen a sus respectivos autores.</p>
-      <p>Sintomatología es una herramienta educativa de orientación: no entrega diagnósticos ni indicaciones médicas personalizadas.</p>
+
+      <section class="legal" aria-labelledby="t-legal">
+        <h2 id="t-legal">Aviso legal</h2>
+
+        <h3>Derechos de autor</h3>
+        <p>Este sitio web, «Sintomatología», incluidos su diseño, su código fuente, su base de síntomas y enfermedades, sus textos y sus elementos gráficos, es obra de Agustín Vivanco y está protegido por la Ley N° 17.336 sobre Propiedad Intelectual de Chile y por los tratados internacionales aplicables.</p>
+        <p>No se concede ninguna licencia de uso. Queda prohibido copiar, reproducir, modificar, distribuir, publicar, sublicenciar o crear obras derivadas de todo o parte de este contenido, con o sin fines comerciales, sin autorización previa y por escrito del autor. Que el código sea visible públicamente en GitHub no implica permiso para reutilizarlo: los Términos de Servicio de GitHub solo permiten a otros usuarios verlo y bifurcarlo (fork) dentro de la propia plataforma.</p>
+
+        <h3>Contenido de terceros</h3>
+        <p>Las fuentes citadas (OMS, OPS, MedlinePlus/NIH, Mayo Clinic, Ministerio de Salud de Chile, Superintendencia de Salud, ISP, SENDA y clínicas chilenas) pertenecen a sus respectivos titulares. Este sitio solo las enlaza y redacta textos propios a partir de ellas, sin afiliación ni respaldo de esas instituciones. Las tipografías Fraunces y Manrope se usan bajo la licencia SIL Open Font License.</p>
+
+        <h3>Aviso médico</h3>
+        <p>La información de este sitio es solo educativa y de orientación general. No constituye un diagnóstico, una indicación de tratamiento ni un consejo médico personalizado, y no reemplaza la evaluación de un profesional de salud. El porcentaje de coincidencia no es la probabilidad de tener una enfermedad. No inicies, cambies ni suspendas tratamientos por lo que leas aquí. Ante una emergencia, llama al SAMU 131 o acude al servicio de urgencia más cercano. El uso de este sitio es responsabilidad de cada persona; en la medida permitida por la ley, el autor no responde por decisiones tomadas a partir de su contenido.</p>
+
+        <h3>Privacidad</h3>
+        <p>Los síntomas y datos que ingresas se procesan solo en tu navegador: no se envían ni se guardan en ningún servidor del autor. Se almacenan únicamente en tu dispositivo para que no los pierdas al recargar la página, y puedes borrarlos con el botón «Reiniciar». El sitio está alojado en GitHub Pages y carga tipografías desde Google Fonts; esos servicios pueden registrar datos técnicos de conexión (como la dirección IP) según sus propias políticas.</p>
+
+        <h3>Contacto</h3>
+        <p>Para solicitar permisos o hacer consultas sobre el sitio, escribe al autor a través de GitHub: <a href="https://github.com/avclqyz" target="_blank" rel="noopener">github.com/avclqyz</a>.</p>
+      </section>
     </div>
   </footer>
 

@@ -16,18 +16,20 @@ Marcas tus síntomas (cada uno trae un color según su gravedad y tú indicas qu
 
 ## Qué cubre
 
-- **236 síntomas** en 13 zonas (general, cabeza, ojos, oídos-nariz-boca-garganta, pecho, corazón, abdomen, urinario y genital, regla-mamas-embarazo, piel, músculos y huesos, ánimo y sueño, y contexto o exposiciones), con sinónimos y modismos chilenos como "guata", "desgarro", "fuego", "pidulles" o "peste cristal".
-- **132 enfermedades**: desde resfrío, crisis de pánico o lumbago hasta infarto, ACV, meningitis, embolia pulmonar o embarazo ectópico, incluidas algunas propias de Chile como hantavirus, marea roja, araña de rincón e intoxicación por monóxido de carbono.
-- **200 referencias** enlazadas.
+- **290 síntomas** en 13 zonas (general, cabeza, ojos, oídos-nariz-boca-garganta, pecho, corazón, abdomen, urinario y genital, regla-mamas-embarazo, piel, músculos y huesos, ánimo y sueño, y contexto o exposiciones), con sinónimos y modismos chilenos como "guata", "desgarro", "fuego", "pidulles", "peste cristal", "puna" o "copete".
+- **183 enfermedades**: desde resfrío, crisis de pánico o lumbago hasta infarto, ACV, meningitis, embolia pulmonar o embarazo ectópico; infecciones vigiladas por la OMS (dengue, malaria, sarampión, mpox, VIH, Chagas, rabia); señales de alerta de los cánceres más frecuentes; y cuadros propios de Chile como hantavirus, marea roja, araña de rincón, monóxido de carbono, mal de altura (puna) e intoxicación por plaguicidas.
+- **294 referencias** enlazadas.
 
 ## Fuentes
 
 El contenido se redactó a partir de fuentes médicas reconocidas (no Wikipedia):
 
+- [Organización Mundial de la Salud (OMS)](https://www.who.int/es/news-room/fact-sheets), la agencia de salud de la ONU, y la [Organización Panamericana de la Salud (OPS)](https://www.paho.org/es)
 - [MedlinePlus en español](https://medlineplus.gov/spanish/), de la Biblioteca Nacional de Medicina de EE. UU. (NIH)
 - [Mayo Clinic](https://www.mayoclinic.org/es)
 - [Ministerio de Salud de Chile (MINSAL)](https://www.minsal.cl/), incluido el listado [AUGE/GES](https://auge.minsal.cl/problemasdesalud/index)
-- [Superintendencia de Salud](https://www.supersalud.gob.cl/) e [Instituto de Salud Pública (ISP)](https://www.ispch.gob.cl/)
+- [Superintendencia de Salud](https://www.supersalud.gob.cl/), [Instituto de Salud Pública (ISP)](https://www.ispch.gob.cl/) y [SENDA](https://www.senda.gob.cl/)
+- Clínicas chilenas: [Clínica Las Condes](https://www.clinicalascondes.cl/), [Clínica Alemana](https://www.clinicaalemana.cl/), [UC Christus](https://www.ucchristus.cl/) y [RedSalud](https://www.redsalud.cl/)
 
 Cada enfermedad enlaza sus referencias específicas dentro de la web.
 
@@ -46,4 +48,4 @@ Es una herramienta educativa de orientación. **No entrega diagnósticos ni reem
 
 © 2026 Agustín Vivanco. Todos los derechos reservados.
 
-El diseño, el código, la base de síntomas y enfermedades y los textos de este proyecto están protegidos por la Ley N° 17.336 sobre Propiedad Intelectual de Chile. No se permite copiarlos, modificarlos ni redistribuirlos sin autorización escrita del autor. Ver [LICENSE](LICENSE).
+El diseño, el código, la base de síntomas y enfermedades y los textos de este proyecto están protegidos por la Ley N° 17.336 sobre Propiedad Intelectual de Chile. No se permite copiarlos, modificarlos ni redistribuirlos sin autorización escrita del autor. Ver [LICENSE](LICENSE) y el aviso legal completo al final de la web (derechos de autor, contenido de terceros, aviso médico y privacidad).

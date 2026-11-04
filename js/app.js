@@ -312,7 +312,8 @@
 
     if (keyTotal && !keyHit) score *= 0.5;
     else if (specKeyTotal && !specKeyHit) score *= 0.6;
-    if (c.req && !c.req.some((id) => state.sel.has(id))) {
+    const pregnancyKnown = c.preg && state.sexo === 'F' && state.embarazo === 'si';
+    if (c.req && !c.req.some((id) => state.sel.has(id)) && !pregnancyKnown) {
       score *= c.reqF;
       const names = c.req.map((id) => SYM.get(id).n.toLowerCase());
       notes.push(names.length > 2 ? 'no marcaste síntomas clave como ' + names.slice(0, 2).join(' o ') : 'no marcaste ' + names.join(' ni '));
@@ -361,16 +362,25 @@
 
   function redFlags() { return Array.from(state.sel.keys()).map((id) => SYM.get(id)).filter((s) => s.sev === 3); }
 
+  // Síntomas de alarma que nunca se rebajan, aunque los explique otra causa.
+  const NEVER_DOWNGRADE = new Set(['ideas_suicidas']);
+
   function overallUrgency(main) {
     let u = main.length ? main[0].c.urg : 2;
     // otras causas casi tan probables como la primera también cuentan
     main.slice(1, 3).forEach((r) => { if (r.score >= 0.4 && r.score >= main[0].score * 0.8) u = Math.max(u, r.c.urg); });
+    // una emergencia con coincidencia «Alta» entre las 3 primeras siempre sube la recomendación
+    main.slice(0, 3).forEach((r) => { if (r.c.urg === 5 && pct(r.score) >= 70) u = 5; });
     const flags = redFlags();
     if (flags.length) {
-      // Si la causa principal es muy clara y los síntomas de alarma son característicos de ella
-      // (p. ej. desmayo con aviso previo y gatillante → desmayo vasovagal), no se fuerza «Emergencia».
+      // Si la causa principal es clara y explica los síntomas de alarma, no se fuerza «Emergencia»:
+      //  · cuadro agudo: el síntoma de alarma debe ser característico (p. ej. desmayo → desmayo vasovagal);
+      //  · síntomas de semanas o meses: basta con que la causa principal lo incluya (p. ej. equilibrio → Parkinson).
+      // El aviso rojo se muestra igual en ambos casos.
       const top = main[0];
-      const typicalOfTop = top && top.score >= 0.75 && flags.every((s) => (top.c.s[s.id] || 0) >= 3);
+      const chronic = state.duracion === 's' || state.duracion === 'm';
+      const explained = top && flags.every((s) => !NEVER_DOWNGRADE.has(s.id) && (top.c.s[s.id] || 0) >= (chronic ? 1 : 3));
+      const typicalOfTop = explained && top.score >= (chronic ? 0.6 : 0.75);
       u = typicalOfTop ? Math.max(u, 3) : Math.max(u, ...flags.map((s) => s.em));
     }
     else if (Array.from(state.sel.entries()).some(([id, i]) => SYM.get(id).sev === 2 && i === 3)) u = Math.max(u, 3);
@@ -552,7 +562,7 @@
     Object.values(SOURCES).forEach(([org]) => { byOrg[org] = (byOrg[org] || 0) + 1; });
     $('#fuentes-resumen').textContent = Object.entries(byOrg).map(([o, n]) => `${o} (${n})`).join(' · ');
     $('#stats').textContent = `${SYMPTOMS.length} síntomas · ${CONDITIONS.length} enfermedades · ${Object.keys(SOURCES).length} referencias`;
-    $('#hero-stats').textContent = `${CONDITIONS.length} enfermedades · ${SYMPTOMS.length} síntomas · fuentes: MedlinePlus (NIH), Mayo Clinic y MINSAL`;
+    $('#hero-stats').textContent = `${CONDITIONS.length} enfermedades · ${SYMPTOMS.length} síntomas · fuentes: OMS, OPS, MedlinePlus (NIH), Mayo Clinic, MINSAL y clínicas chilenas`;
   }
 
   function init() {
