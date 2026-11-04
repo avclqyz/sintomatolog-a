@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sintomatología · Orientador de síntomas</title>
+  <meta name="description" content="Marca tus síntomas y conoce posibles causas, cómo se tratan habitualmente y a qué especialista acudir. Información basada en MedlinePlus (NIH), Mayo Clinic y MINSAL Chile.">
+  <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1b22" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Sintomatología · Orientador de síntomas">
+  <meta property="og:description" content="Marca tus síntomas y conoce posibles causas, tratamiento habitual y especialista. Orientación, no diagnóstico.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="./" aria-label="Sintomatología, inicio">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-name">Sintomatología</span>
+      </a>
+      <a class="sos" href="tel:131" aria-label="Emergencias: llamar al SAMU 131">SAMU <strong>131</strong></a>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Orientación de salud · Chile</p>
+      <h1>¿Qué te está pasando?</h1>
+      <p class="lead">Marca tus síntomas y te mostraremos posibles causas, cómo suelen tratarse y a qué especialista acudir.</p>
+      <p class="notice"><span aria-hidden="true">✳</span> Orienta, no diagnostica. Ante una emergencia llama al <a href="tel:131">SAMU 131</a>.</p>
+    </section>
+
+    <section class="card" aria-labelledby="t-perfil">
+      <div class="card-head"><span class="step" aria-hidden="true">1</span><h2 id="t-perfil">Sobre ti</h2><span class="opt">opcional, mejora el resultado</span></div>
+      <div class="grid">
+        <label class="field" for="edad">
+          <span class="label">Edad</span>
+          <input type="number" id="edad" min="0" max="120" inputmode="numeric" placeholder="Ej: 34" autocomplete="off">
+        </label>
+        <div class="field">
+          <span class="label" id="l-sexo">Sexo biológico</span>
+          <div class="seg" data-name="sexo" role="group" aria-labelledby="l-sexo">
+            <button type="button" data-value="F" aria-pressed="false">Femenino</button>
+            <button type="button" data-value="M" aria-pressed="false">Masculino</button>
+            <button type="button" data-value="X" aria-pressed="false">Prefiero no decir</button>
+          </div>
+        </div>
+        <div class="field" id="field-embarazo" hidden>
+          <span class="label" id="l-emb">¿Podrías estar embarazada?</span>
+          <div class="seg" data-name="embarazo" role="group" aria-labelledby="l-emb">
+            <button type="button" data-value="si" aria-pressed="false">Sí</button>
+            <button type="button" data-value="no" aria-pressed="false">No</button>
+            <button type="button" data-value="nose" aria-pressed="false">No sé</button>
+          </div>
+        </div>
+        <div class="field full">
+          <span class="label" id="l-dur">¿Hace cuánto empezaron los síntomas?</span>
+          <div class="seg" data-name="duracion" role="group" aria-labelledby="l-dur">
+            <button type="button" data-value="h" aria-pressed="false">Horas</button>
+            <button type="button" data-value="d" aria-pressed="false">Días</button>
+            <button type="button" data-value="s" aria-pressed="false">Semanas</button>
+            <button type="button" data-value="m" aria-pressed="false">Más de un mes</button>
+          </div>
+        </div>
+      </div>
+      <p class="note" id="nota-pediatrica" hidden>En menores de 15 años los síntomas y tratamientos pueden diferir. Ante la duda, consulta con un pediatra.</p>
+    </section>
+
+    <section class="card" aria-labelledby="t-sintomas">
+      <div class="card-head"><span class="step" aria-hidden="true">2</span><h2 id="t-sintomas">Tus síntomas</h2></div>
+
+      <div class="search">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <input id="buscar" type="search" placeholder="Escribe un síntoma: fiebre, me arde al orinar, puntada en el pecho…"
+               role="combobox" aria-expanded="false" aria-controls="sugerencias" aria-autocomplete="list" autocomplete="off" aria-label="Buscar síntoma">
+        <ul id="sugerencias" role="listbox" hidden aria-label="Síntomas sugeridos"></ul>
+      </div>
+
+      <div class="legend" aria-label="Leyenda de colores">
+        <span class="lg sev-1"><span class="dot"></span>Leve</span>
+        <span class="lg sev-2"><span class="dot"></span>Atención</span>
+        <span class="lg sev-3"><span class="dot"></span>Alarma</span>
+        <span class="lg sev-0"><span class="dot"></span>Contexto</span>
+      </div>
+
+      <p class="subhint">o explora por zona del cuerpo</p>
+      <div class="zones" id="zonas" role="tablist" aria-label="Zonas del cuerpo"></div>
+      <div class="pills" id="catalogo" role="tabpanel"></div>
+
+      <div class="selected-wrap">
+        <h3 class="selected-title">Seleccionados <span id="sel-count"></span></h3>
+        <p class="sel-empty" id="sel-empty">Aún no agregas síntomas. El color indica la gravedad del síntoma; luego puedes marcar qué tan intenso lo sientes.</p>
+        <div class="selected" id="seleccionados" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="analizar" class="btn primary" type="button" disabled>Ver posibles causas</button>
+      <button id="reiniciar" class="btn ghost" type="button">Reiniciar</button>
+    </div>
+
+    <section id="resultados" class="results" hidden tabindex="-1" aria-live="polite"></section>
+
+    <section class="card help" aria-labelledby="t-ayuda">
+      <h2 id="t-ayuda">Ayuda en Chile</h2>
+      <ul class="help-list">
+        <li><a href="tel:131"><strong>131</strong><span>SAMU · emergencias médicas, 24 h</span></a></li>
+        <li><a href="tel:6003607777"><strong>600 360 7777</strong><span>Salud Responde (MINSAL) · orientación, 24 h</span></a></li>
+        <li><a href="tel:*4141"><strong>*4141</strong><span>Prevención del suicidio · gratis desde celulares, 24 h</span></a></li>
+        <li><a href="tel:132"><strong>132</strong><span>Bomberos</span></a></li>
+        <li><a href="tel:133"><strong>133</strong><span>Carabineros</span></a></li>
+      </ul>
+      <p class="help-note">Si no es una emergencia vital pero necesitas atención hoy, acude al SAPU o SAR de tu comuna, o al servicio de urgencia más cercano.</p>
+    </section>
+
+    <details class="card method">
+      <summary><h2>¿Cómo funciona y de dónde sale la información?</h2></summary>
+      <div class="method-body">
+        <p><strong>Contenido.</strong> Cada enfermedad (qué es, tratamiento habitual, especialista y señales de alarma) fue redactada a partir de fuentes médicas reconocidas y cada ficha enlaza sus referencias: <span id="fuentes-resumen"></span>. No usamos Wikipedia ni sitios sin respaldo clínico.</p>
+        <p><strong>Colores.</strong> Cada síntoma tiene una gravedad base: <span class="tag sev-1">leve</span> <span class="tag sev-2">atención</span> <span class="tag sev-3">alarma</span>, más los datos de <span class="tag sev-0">contexto</span> (exposiciones o antecedentes). Tú agregas la intensidad con que lo sientes, y ambas cosas pesan en el resultado.</p>
+        <p><strong>Coincidencia.</strong> Para cada enfermedad se compara cuánto de su cuadro típico tienes (los síntomas característicos pesan más) y cuánto de lo que sientes explica. Luego se ajusta por edad, sexo, posible embarazo, tiempo de evolución y frecuencia de la enfermedad. Las emergencias con un síntoma clave nunca quedan ocultas al fondo.</p>
+        <p><strong>Privacidad.</strong> Todo ocurre en tu navegador: no se envían ni guardan tus datos en ningún servidor. Tu selección queda solo en este dispositivo para que no la pierdas al recargar.</p>
+        <p><strong>Límites.</strong> La base cubre <span id="stats"></span>. Una persona puede tener una enfermedad que no está aquí o presentarla de forma distinta. Esta herramienta no reemplaza la evaluación de un profesional de salud.</p>
+        <p class="muted">Contenido revisado en noviembre de 2026.</p>
+      </div>
+    </details>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>Sintomatología · herramienta educativa de orientación. No entrega diagnósticos ni indicaciones médicas personalizadas.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
