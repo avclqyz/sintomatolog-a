@@ -2,6 +2,16 @@
    © 2026 Agustín Vivanco. Todos los derechos reservados.
    Paleta pastel, minimalista, con modo oscuro automático. */
 
+
+/* Tipografías alojadas en el propio sitio (SIL Open Font License, ver fonts/OFL-*.txt).
+   Así ningún dato del visitante se envía a servicios de terceros. */
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/manrope-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/manrope-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/manrope-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Manrope"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/manrope-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/fraunces-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 600; font-display: swap; src: url("../fonts/fraunces-latin-600-normal.woff2") format("woff2"); }
+
 :root {
   --bg: #faf7f2;
   --surface: #ffffff;
@@ -363,6 +373,33 @@ input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
 
 .foot { margin-top: 40px; padding: 26px 0 40px; border-top: 1px solid var(--line); font-size: .82rem; color: var(--muted); }
 .foot-inner { display: grid; gap: 6px; }
+.legal-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 4px; }
+.legal-links a { color: var(--ink-2); font-weight: 600; font-size: .86rem; }
+.legal-date { margin-top: 6px; font-style: italic; }
+
+/* ── aceptación de términos y aviso de alarma */
+.consent { margin-top: 18px; padding: 14px 16px; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--line-2); }
+.consent-label { display: flex; gap: 12px; align-items: flex-start; font-size: .88rem; color: var(--ink-2); cursor: pointer; }
+.consent-label input { flex: none; width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--primary); cursor: pointer; }
+.consent-label a { font-weight: 600; }
+.analizar-hint { margin-top: 8px; font-size: .8rem; color: var(--muted); }
+.sel-alarma { margin-top: 12px; padding: 12px 14px; border-radius: var(--radius-sm); background: var(--rose); color: var(--rose-ink); font-size: .88rem; border: 1px solid color-mix(in srgb, var(--rose-dot) 50%, transparent); }
+.sel-alarma a { color: inherit; font-weight: 700; }
+
+/* ── páginas legales */
+.doc { padding-top: 32px; padding-bottom: 24px; }
+.doc h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.8rem, 5vw, 2.4rem); letter-spacing: -.02em; }
+.doc-meta { margin-top: 8px; font-size: .84rem; color: var(--muted); }
+.doc-summary { margin-top: 18px; padding: 14px 16px; border-radius: var(--radius-sm); background: var(--lav); color: var(--lav-ink); font-size: .92rem; }
+.doc-toc { margin-top: 18px; padding: 14px 18px; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--line); }
+.doc-toc ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; font-size: .9rem; }
+.doc section { margin-top: 26px; }
+.doc h2 { font-family: var(--serif); font-weight: 500; font-size: 1.25rem; margin-bottom: 8px; scroll-margin-top: 76px; }
+.doc p, .doc li { font-size: .95rem; color: var(--ink-2); line-height: 1.7; }
+.doc p + p { margin-top: 8px; }
+.doc ul { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 4px; }
+.doc strong { color: var(--ink); }
+.doc-back { margin-top: 32px; font-weight: 600; }
 .foot .copyright { color: var(--ink-2); font-weight: 600; font-size: .9rem; }
 .legal { margin-top: 14px; padding-top: 16px; border-top: 1px dashed var(--line-2); display: grid; gap: 8px; max-width: 72ch; }
 .legal h2 { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; color: var(--ink-2); }

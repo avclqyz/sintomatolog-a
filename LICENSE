@@ -19,12 +19,16 @@ plataforma; esto no otorga ningún otro derecho de uso.
 
 Contenido de terceros
 - Las fuentes médicas citadas (OMS, OPS, MedlinePlus/NIH, Mayo Clinic,
-  Ministerio de Salud de Chile, Superintendencia de Salud, ISP, SENDA y
-  clínicas chilenas) pertenecen a sus respectivos titulares; este sitio
+  Ministerio de Salud y Gobierno de Chile, Superintendencia de Salud, ISP,
+  SENDA y clínicas chilenas) pertenecen a sus respectivos titulares; este sitio
   solo las enlaza y redacta textos propios a partir de ellas, sin
   afiliación ni respaldo de esas instituciones.
-- Las tipografías Fraunces y Manrope se cargan desde Google Fonts bajo la
-  licencia SIL Open Font License.
+- Las tipografías Fraunces y Manrope, incluidas en la carpeta fonts/, son
+  obra de sus respectivos autores y se distribuyen bajo la licencia SIL Open
+  Font License 1.1 (ver fonts/OFL-Fraunces.txt y fonts/OFL-Manrope.txt).
+  Esa licencia se aplica solo a esos archivos de tipografía.
 
-Para solicitar permisos, contacta al autor a través de GitHub:
-https://github.com/avclqyz
+Para solicitar permisos, escribe al autor a avclqy@gmail.com.
+
+Ver también los Términos y condiciones de uso (terminos.html) y la Política
+de privacidad (privacidad.html) del sitio.

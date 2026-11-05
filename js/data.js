@@ -321,7 +321,7 @@
     // ── Segunda ampliación (noviembre 2026): OMS, OPS, MINSAL y clínicas chilenas ──
     // General
     ['escalofrios_ciclicos', 'Fiebre con escalofríos intensos que va y viene cada 1 a 3 días', 'general', 2, ['fiebre intermitente', 'malaria', 'paludismo']],
-    ['sangrado_encias', 'Sangrado de encías o moretones sin haberte golpeado', 'general', 3, ['encías sangran', 'moretones espontáneos', 'petequias', 'hemorragia']],
+    ['sangrado_encias', 'Sangrado espontáneo de encías (sin cepillarte) o moretones sin golpes', 'general', 3, ['encías sangran', 'moretones espontáneos', 'petequias', 'hemorragia']],
     ['temblor_frio', 'Temblor intenso por frío, con piel fría y pálida', 'general', 2, ['tiritar de frío', 'congelado', 'hipotermia']],
     ['salivacion', 'Salivación, lagrimeo y sudoración excesivos', 'general', 2, ['babeo', 'mucha saliva', 'plaguicidas']],
     // Cabeza y nervios
@@ -383,7 +383,41 @@
     ['ctx_frio', 'Exposición prolongada al frío, al agua fría o con ropa mojada', 'contexto', 0, ['frío', 'nieve', 'agua helada', 'temporal']],
     ['ctx_plaguicidas', 'Contacto reciente con plaguicidas (fumigación, trabajo agrícola)', 'contexto', 0, ['plaguicidas', 'pesticidas', 'fumigación', 'insecticida']],
     ['ctx_alcohol_agudo', 'Tomaste mucho alcohol en las últimas horas', 'contexto', 0, ['borrachera', 'curado', 'curadera', 'mucho copete']],
-    ['ctx_quemadura', 'Quemadura con agua o aceite caliente, fuego, electricidad o químicos', 'contexto', 0, ['quemadura', 'agua hirviendo', 'aceite caliente']]
+    ['ctx_quemadura', 'Quemadura con agua o aceite caliente, fuego, electricidad o químicos', 'contexto', 0, ['quemadura', 'agua hirviendo', 'aceite caliente']],
+    // ── Tercera ampliación (noviembre 2026) ──
+    ['llanto_inconsolable', 'Llanto intenso e inconsolable de un lactante, sobre todo en la tarde', 'general', 1, ['cólicos del bebé', 'guagua llora mucho', 'llanto del lactante']],
+    ['ganglios_persistentes', 'Ganglios grandes que no duelen y duran más de 2 semanas', 'general', 2, ['ganglios que no bajan', 'bulto en la axila', 'linfoma']],
+    ['ardor_pies', 'Ardor, hormigueo o adormecimiento en ambos pies', 'cabeza', 1, ['neuropatía', 'pies dormidos', 'ardor en los pies']],
+    ['vision_central', 'Mancha en el centro de la visión o líneas rectas que se ven onduladas', 'ojos', 2, ['degeneración macular', 'mancha central', 'líneas torcidas']],
+    ['cuerpo_extrano_ojo', 'Sensación de tener algo en el ojo (polvo, viruta, astilla)', 'ojos', 1, ['basura en el ojo', 'algo en el ojo', 'cuerpo extraño']],
+    ['parpados_costras', 'Párpados rojos con costras o escamas en las pestañas', 'ojos', 1, ['blefaritis', 'pestañas con costras', 'párpados inflamados']],
+    ['dolor_garganta_un_lado', 'Dolor de garganta intenso de un lado, con voz apagada o dificultad para abrir la boca', 'oong', 3, ['absceso periamigdalino', 'flemón en la garganta', 'no puedo abrir la boca']],
+    ['vertigo_crisis_oido', 'Crisis de vértigo de horas con oído tapado, zumbido y baja audición', 'oong', 2, ['Ménière', 'vértigo con zumbido']],
+    ['hinchazon_parotida', 'Hinchazón dolorosa delante y debajo de la oreja', 'oong', 1, ['paperas', 'parótida', 'cachete hinchado']],
+    ['placas_boca', 'Placas blancas en la lengua o la boca que se desprenden', 'oong', 1, ['muguet', 'algorra', 'hongos en la boca', 'lengua blanca']],
+    ['encias_cepillado', 'Encías rojas, hinchadas o que sangran al cepillarte', 'oong', 1, ['gingivitis', 'encías inflamadas', 'sangran las encías al lavarme los dientes']],
+    ['dolor_mandibula', 'Dolor en la mandíbula o delante del oído al masticar, con chasquidos', 'oong', 1, ['ATM', 'bruxismo', 'mandíbula trabada', 'chasquido']],
+    ['bulto_cuello', 'Bulto en la parte delantera del cuello que se mueve al tragar', 'oong', 1, ['nódulo tiroideo', 'bocio', 'bulto en la tiroides']],
+    ['dolor_pecho_presion', 'Dolor en el pecho que aumenta al presionar con el dedo o al moverte', 'respiracion', 1, ['costocondritis', 'dolor en las costillas', 'dolor del esternón']],
+    ['bulto_abdomen', 'Bulto o masa que se palpa en el abdomen', 'digestivo', 2, ['masa abdominal', 'bulto en la guata']],
+    ['diarrea_grasosa', 'Diarrea prolongada con gases y deposiciones grasosas o de mal olor', 'digestivo', 1, ['giardia', 'deposiciones grasosas', 'diarrea que no se quita']],
+    ['ascitis', 'Guata cada vez más grande por acumulación de líquido', 'digestivo', 2, ['ascitis', 'líquido en el abdomen', 'guata hinchada con líquido']],
+    ['bulto_anal_doloroso', 'Bulto muy doloroso, rojo y caliente cerca del ano', 'digestivo', 2, ['absceso perianal', 'absceso anal']],
+    ['escroto_venas', 'Bulto blando como bolsa de venas en el escroto, con pesadez', 'urogenital', 1, ['varicocele', 'venas en el testículo'], 'M'],
+    ['disfuncion_erectil', 'Dificultad para lograr o mantener una erección', 'urogenital', 1, ['impotencia', 'disfunción eréctil', 'problemas de erección'], 'M'],
+    ['erupcion_aspera', 'Erupción roja y áspera como papel lija, con lengua roja', 'piel', 2, ['escarlatina', 'lengua de frambuesa', 'piel de lija']],
+    ['picadura_marina', 'Dolor intenso y marcas rojas en líneas tras tocar algo en el mar o la playa', 'piel', 2, ['fragata portuguesa', 'medusa', 'aguaviva', 'picadura en la playa']],
+    ['dermatitis_panal', 'Piel roja e irritada en la zona del pañal', 'piel', 1, ['coceduras', 'dermatitis del pañal', 'peste del pañal']],
+    ['una_encarnada', 'Uña del pie enterrada, con dolor, enrojecimiento o pus', 'piel', 1, ['uña encarnada', 'uñero']],
+    ['verrugas', 'Bultitos ásperos en la piel (manos, pies)', 'piel', 1, ['verruga', 'mezquino', 'ojo de pescado']],
+    ['caspa', 'Caspa o escamas grasosas en cuero cabelludo, cejas o alrededor de la nariz', 'piel', 1, ['dermatitis seborreica', 'caspa', 'costra láctea']],
+    ['unas_hongos', 'Uñas gruesas, amarillentas o quebradizas', 'piel', 1, ['onicomicosis', 'hongos en las uñas']],
+    ['placa_anillo', 'Mancha roja en forma de anillo que pica', 'piel', 1, ['tiña', 'anillo rojo', 'hongo en la piel']],
+    ['enrojecimiento_cara', 'Enrojecimiento persistente de mejillas y nariz, con granitos', 'piel', 1, ['rosácea', 'cara roja', 'cuperosis']],
+    ['piojos', 'Picazón en el cuero cabelludo, con liendres o piojos', 'piel', 1, ['piojos', 'liendres', 'pediculosis']],
+    ['ctx_sintomas_pasaron', 'Los síntomas de alarma duraron minutos y ya desaparecieron', 'contexto', 0, ['se me pasó', 'fue momentáneo', 'AIT', 'mini infarto cerebral']],
+    ['ctx_infeccion_reciente', 'Tuviste una infección viral (resfrío, gripe, COVID) en las últimas semanas', 'contexto', 0, ['estuve enfermo', 'virus reciente', 'gripe reciente']],
+    ['ctx_perros_rural', 'Contacto con perros en zonas rurales o ganaderas', 'contexto', 0, ['perros de campo', 'hidatidosis', 'ganado', 'campo del sur']]
   ];
 
   // Síntomas de alarma que justifican llamar al 131 (el resto de los rosados: ir a urgencia de inmediato)
@@ -410,6 +444,7 @@
   const CA = 'Clínica Alemana';
   const UCC = 'UC Christus';
   const REDSALUD = 'RedSalud';
+  const GOB = 'Gobierno de Chile';
   const SOURCES = {
     mp_resfrio: [MP, 'Resfriado común', 'https://medlineplus.gov/spanish/ency/article/000678.htm'],
     mp_resfrio_t: [MP, 'Resfrío', 'https://medlineplus.gov/spanish/commoncold.html'],
@@ -711,7 +746,55 @@
     clc_melanoma: [CLC, 'Melanoma maligno', 'https://www.clinicalascondes.cl/CENTROS-Y-ESPECIALIDADES/Especialidades/Departamento-de-Dermatologia/Cancer-de-Piel/Melanoma-Maligno'],
     ca_hpylori: [CA, 'Helicobacter pylori: diagnosticar y tratar a tiempo', 'https://www.clinicaalemana.cl/articulos/detalle/2023/helicobacter-pylori-diagnosticar-y-tratar-a-tiempo'],
     ucc_abcde: [UCC, 'Cuida tu piel y evalúa tus lunares con la regla ABCDE', 'https://www.ucchristus.cl/blog-salud-uc/articulos/2023/cuida-tu-piel-y-eval%C3%BAa-tus-lunares-con-la-regla-del-abcde'],
-    redsalud_gastrico: [REDSALUD, 'Cáncer gástrico', 'https://www.redsalud.cl/especialidades/cancer-gastrico']
+    redsalud_gastrico: [REDSALUD, 'Cáncer gástrico', 'https://www.redsalud.cl/especialidades/cancer-gastrico'],
+    // ── Tercera ampliación (noviembre 2026)
+    mp_ait_t: [MP, 'Ataque isquémico transitorio (tema de salud)', 'https://medlineplus.gov/spanish/transientischemicattack.html'],
+    mp_ait_img: [MP, 'Accidente isquémico transitorio (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/8968.htm'],
+    mp_sindrome_organico: [MP, 'Síndrome orgánico cerebral (delirio)', 'https://medlineplus.gov/spanish/ency/article/001401.htm'],
+    mp_neuropatia: [MP, 'Neuropatía periférica', 'https://medlineplus.gov/spanish/ency/article/000593.htm'],
+    mp_miocarditis: [MP, 'Miocarditis', 'https://medlineplus.gov/spanish/ency/article/000149.htm'],
+    mp_costocondritis: [MP, 'Costocondritis', 'https://medlineplus.gov/spanish/ency/article/000164.htm'],
+    mp_absceso_periamigdalino: [MP, 'Absceso periamigdalino', 'https://medlineplus.gov/spanish/ency/article/000986.htm'],
+    mp_meniere_t: [MP, 'Enfermedad de Ménière (tema de salud)', 'https://medlineplus.gov/spanish/menieresdisease.html'],
+    mp_macula: [MP, 'Degeneración macular asociada con la edad', 'https://medlineplus.gov/spanish/ency/article/001000.htm'],
+    mp_cuerpo_extrano_ojo: [MP, 'Cuerpo extraño en el ojo', 'https://medlineplus.gov/spanish/ency/article/002084.htm'],
+    mp_emergencias_ojo: [MP, 'Emergencias oftalmológicas', 'https://medlineplus.gov/spanish/ency/article/000054.htm'],
+    mp_blefaritis: [MP, 'Blefaritis', 'https://medlineplus.gov/spanish/ency/article/001619.htm'],
+    mp_paperas: [MP, 'Paperas', 'https://medlineplus.gov/spanish/ency/article/001557.htm'],
+    mp_escarlatina: [MP, 'Fiebre escarlatina', 'https://medlineplus.gov/spanish/ency/article/000974.htm'],
+    mp_escarlatina_img: [MP, 'Signos de escarlatina (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/19082.htm'],
+    minsal_chik: [MINSAL, 'Chikungunya', 'https://diprece.minsal.cl/programas-de-salud/programas-enfermedades-transmisibles/enfermedades-transmitidas-por-mosquitos/chikungunya/'],
+    minsal_arbovirus: [MINSAL, 'Virus dengue, zika y chikungunya', 'https://www.minsal.cl/virus-dengue/'],
+    who_chik: [OMS, 'Chikungunya (nota descriptiva)', 'https://apps.who.int/mediacentre/factsheets/fs327/es/index.html'],
+    who_zika: [OMS, 'Enfermedad por el virus de Zika (nota descriptiva)', 'https://apps.who.int/mediacentre/factsheets/zika/es/index.html'],
+    minsal_hidatidosis: [MINSAL, 'Hidatidosis: información para la comunidad', 'https://diprece.minsal.cl/programas-de-salud/programas-enfermedades-transmisibles/hidatidosis-equinococosis-quistica/informacion-para-la-comunidad-hidatidosis-equinococosis-quistica/'],
+    who_equinococosis: [OMS, 'Equinococosis', 'https://www.who.int/es/news-room/fact-sheets/detail/echinococcosis'],
+    mp_equinococo: [MP, 'Equinococo', 'https://medlineplus.gov/spanish/ency/article/000676.htm'],
+    mp_giardia_t: [MP, 'Infecciones por Giardia (tema de salud)', 'https://medlineplus.gov/spanish/giardiainfections.html'],
+    minsal_fragata: [MINSAL, 'Qué hacer ante la presencia de fragata portuguesa', 'https://degreyd.minsal.cl/que-hacer-ante-la-presencia-de-fragata-portuguesa/'],
+    gob_fragata: [GOB, '¿Qué hacer si me pica una fragata portuguesa?', 'https://www.gob.cl/noticias/fragata-portuguesa-caracteristicas-consejos-picadura/'],
+    mp_convulsiones_t: [MP, 'Convulsiones (tema de salud, incluye convulsiones febriles)', 'https://medlineplus.gov/spanish/seizures.html'],
+    mp_muguet: [MP, 'Candidiasis bucal en niños y adultos', 'https://medlineplus.gov/spanish/ency/article/000626.htm'],
+    mp_muguet_rn: [MP, 'Candidosis bucal en recién nacidos', 'https://medlineplus.gov/spanish/ency/article/007615.htm'],
+    mp_panal: [MP, 'Dermatitis del pañal', 'https://medlineplus.gov/spanish/ency/article/000964.htm'],
+    mp_colicos: [MP, 'Cuidados personales: el llanto y los cólicos', 'https://medlineplus.gov/spanish/ency/patientinstructions/000753.htm'],
+    mp_gingivitis: [MP, 'Gingivitis', 'https://medlineplus.gov/spanish/ency/article/001056.htm'],
+    mp_atm: [MP, 'Trastornos de la articulación temporomandibular', 'https://medlineplus.gov/spanish/ency/article/001227.htm'],
+    mp_cirrosis: [MP, 'Cirrosis', 'https://medlineplus.gov/spanish/ency/article/000255.htm'],
+    mp_ascitis: [MP, 'Ascitis', 'https://medlineplus.gov/spanish/ency/article/000286.htm'],
+    mp_absceso_anorrectal: [MP, 'Absceso anorrectal', 'https://medlineplus.gov/spanish/ency/article/001519.htm'],
+    mp_varicocele: [MP, 'Varicocele', 'https://medlineplus.gov/spanish/ency/article/001284.htm'],
+    mp_disfuncion_erectil_t: [MP, 'Disfunción eréctil (tema de salud)', 'https://medlineplus.gov/spanish/erectiledysfunction.html'],
+    mp_hodgkin: [MP, 'Linfoma de Hodgkin', 'https://medlineplus.gov/spanish/ency/article/000580.htm'],
+    mp_ganglios: [MP, 'Ganglios linfáticos inflamados', 'https://medlineplus.gov/spanish/ency/article/003097.htm'],
+    mp_bulto_cuello: [MP, 'Bulto en el cuello', 'https://medlineplus.gov/spanish/ency/article/003098.htm'],
+    mp_una_encarnada_img: [MP, 'Uña del pie encarnada (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/9471.htm'],
+    mp_protuberancias: [MP, 'Protuberancias de la piel', 'https://medlineplus.gov/spanish/ency/article/003279.htm'],
+    mp_onicomicosis: [MP, 'Infección micótica de la uña', 'https://medlineplus.gov/spanish/ency/article/001330.htm'],
+    mp_tina_corporal: [MP, 'Tiña corporal', 'https://medlineplus.gov/spanish/ency/article/000877.htm'],
+    mp_rosacea: [MP, 'Rosácea', 'https://medlineplus.gov/spanish/ency/article/000879.htm'],
+    mp_acne: [MP, 'Acné', 'https://medlineplus.gov/spanish/ency/article/000873.htm'],
+    mp_piojos: [MP, 'Piojos de la cabeza', 'https://medlineplus.gov/spanish/ency/article/000840.htm']
   };
 
   const URGENCY = {
@@ -867,7 +950,7 @@
     {
       id: 'pericarditis', n: 'Pericarditis', urg: 4, prev: 0.8, dur: ['h', 'd'],
       age: [[16, 50, 1.1]],
-      s: { dolor_pecho_inclinado: 3, dolor_pecho_respirar: 3, fiebre: 1, febricula: 1, palpitaciones: 1, falta_aire: 1, tos_seca: 1, fatiga: 1 },
+      s: { dolor_pecho_inclinado: 3, dolor_pecho_respirar: 3, fiebre: 1, febricula: 1, palpitaciones: 1, falta_aire: 1, tos_seca: 1, fatiga: 1, ctx_infeccion_reciente: 1 },
       que: 'Inflamación del pericardio, la membrana que envuelve el corazón, frecuentemente después de una infección viral. Produce un dolor de pecho punzante que empeora al acostarse o al respirar hondo y mejora al sentarse inclinado hacia adelante.',
       trat: 'Suele tratarse con antiinflamatorios (como ibuprofeno o aspirina) y colchicina indicados por un médico, más reposo. Se debe descartar acumulación de líquido alrededor del corazón con una ecocardiografía.',
       esp: 'Servicio de urgencia para la evaluación inicial (descartar infarto) y luego cardiólogo.',
@@ -1440,7 +1523,7 @@
     },
     {
       id: 'laberintitis', n: 'Laberintitis o neuritis vestibular', alt: 'Inflamación del oído interno', urg: 3, prev: 0.9, dur: ['h', 'd', 's'],
-      s: { vertigo: 3, nauseas: 2, vomitos: 2, perdida_equilibrio: 1, audicion: 1, zumbido: 1, vertigo_posicion: -1, debilidad_lado: -3, habla: -3 },
+      s: { vertigo: 3, nauseas: 2, vomitos: 2, perdida_equilibrio: 1, audicion: 1, zumbido: 1, vertigo_posicion: -1, debilidad_lado: -3, habla: -3, ctx_infeccion_reciente: 1 },
       que: 'Inflamación del oído interno o de su nervio, generalmente por un virus. Produce vértigo intenso y continuo (sientes que todo gira) que dura horas o días, con náuseas, vómitos e inestabilidad; en la laberintitis también puede bajar la audición.',
       trat: 'Medicamentos para el vértigo y las náuseas por pocos días, hidratación y, a veces, corticoides. Luego ayuda la rehabilitación vestibular (ejercicios de equilibrio). Suele mejorar en algunas semanas.',
       esp: 'Médico general u otorrinolaringólogo; urgencia si es muy intenso, para descartar otras causas.',
@@ -2341,7 +2424,7 @@
     },
     {
       id: 'guillain_barre', n: 'Síndrome de Guillain-Barré', urg: 5, prev: 0.65, dur: ['d'],
-      s: { debilidad_ascendente: 3, hormigueo: 2, falta_aire: 1, dolor_lumbar: 1 },
+      s: { debilidad_ascendente: 3, hormigueo: 2, falta_aire: 1, dolor_lumbar: 1, ctx_infeccion_reciente: 1 },
       que: 'El sistema inmune ataca los nervios periféricos, a menudo semanas después de una infección respiratoria o una diarrea. Produce hormigueo y debilidad que comienzan en los pies y suben en horas o días, y pueden afectar los brazos, la cara y los músculos de la respiración.',
       trat: 'Es una urgencia: requiere hospitalización para vigilar la respiración y tratamiento con inmunoglobulina o plasmaféresis. La mayoría se recupera con rehabilitación, aunque puede tardar meses.',
       esp: 'Servicio de urgencia; neurólogo.',
@@ -2573,6 +2656,375 @@
       esp: 'Normalmente no requiere consulta; otorrinolaringólogo si se repite.',
       alarma: 'Sangrado que no se detiene tras dos intentos de presión (unos 30 minutos), muy abundante, después de un golpe fuerte en la cabeza, con dificultad para respirar o si tomas anticoagulantes: urgencia.',
       src: ['mayo_epistaxis']
+    },
+    // ═════════════ Tercera ampliación (noviembre 2026) ═════════════
+
+    // ───────────── Neurológico y cardiovascular
+    {
+      id: 'ait', n: 'Ataque isquémico transitorio (AIT)', alt: '«Mini ACV» o aviso de ACV', urg: 5, prev: 0.85, dur: ['h'],
+      age: [[0, 39, 0.4], [55, 200, 1.3]], req: ['ctx_sintomas_pasaron'], reqF: 0.3,
+      s: { ctx_sintomas_pasaron: 3, debilidad_lado: 2, cara_caida: 2, habla: 2, vision_subita: 2, perdida_equilibrio: 1, mareo: 1 },
+      que: 'Falta temporal de sangre en una parte del cerebro que produce los mismos síntomas de un ACV (cara caída, debilidad de un lado, dificultad para hablar o pérdida de visión), pero que desaparecen en minutos u horas. Aunque se pase, es una señal de alarma: aumenta mucho el riesgo de un ACV en los días siguientes.',
+      trat: 'Requiere evaluación urgente el mismo día, aunque ya te sientas bien: exámenes del cerebro, del corazón y de las arterias del cuello para encontrar la causa. Luego se indican medicamentos para prevenir coágulos y se controlan la presión, el colesterol, la diabetes y el tabaco.',
+      esp: 'Servicio de urgencia hoy mismo; luego neurólogo.',
+      alarma: 'Si los síntomas vuelven a aparecer, llama al 131 de inmediato y anota la hora.',
+      src: ['mp_ait_t', 'mp_ait_img']
+    },
+    {
+      id: 'delirium', n: 'Delirium', alt: 'Confusión aguda (frecuente en adultos mayores)', urg: 4, prev: 0.85, dur: ['h', 'd'],
+      age: [[0, 59, 0.4], [70, 200, 1.4]],
+      s: { confusion: 3, somnolencia: 2, irritabilidad: 1, insomnio: 1, fiebre: 1, ardor_orinar: 1, tos_flema: 1 },
+      que: 'Alteración brusca de la atención y del pensamiento que aparece en horas o días y fluctúa durante el día: la persona está desorientada, confundida, agitada o muy somnolienta. Es frecuente en adultos mayores y suele deberse a otra causa, como una infección (urinaria o pulmonar), deshidratación, medicamentos o una hospitalización.',
+      trat: 'Es una urgencia médica porque refleja otro problema que hay que encontrar y tratar. Mientras tanto ayuda acompañar a la persona, orientarla con calma, mantener sus lentes y audífonos y respetar el ciclo de día y noche.',
+      esp: 'Servicio de urgencia; luego geriatra o médico general.',
+      alarma: 'Confusión que aparece de golpe, con fiebre, dificultad para respirar, debilidad de un lado o somnolencia profunda: llama al 131.',
+      src: ['mp_sindrome_organico']
+    },
+    {
+      id: 'neuropatia_periferica', n: 'Neuropatía periférica', alt: 'Daño de los nervios de pies y manos', urg: 2, prev: 0.95, dur: ['s', 'm'],
+      age: [[0, 39, 0.5], [50, 200, 1.2]],
+      s: { ardor_pies: 3, ctx_diabetes: 2, hormigueo: 1, ctx_alcohol: 1, debilidad_general: 1, perdida_equilibrio: 1 },
+      que: 'Daño de los nervios que llevan sensaciones a los pies y las manos. Suele comenzar con hormigueo, ardor, adormecimiento o dolor en ambos pies, que puede subir con el tiempo. La causa más común es la diabetes; otras son el alcohol, la falta de vitamina B12 y algunos medicamentos.',
+      trat: 'Se trata la causa (por ejemplo, controlar bien la diabetes o corregir la vitamina B12) y el dolor con medicamentos específicos indicados por un médico. Es clave revisar y cuidar los pies a diario para evitar heridas que no se sienten.',
+      esp: 'Médico general; neurólogo; podólogo si tienes diabetes.',
+      alarma: 'Debilidad que avanza rápido, heridas en los pies que no sanan o pie rojo, caliente e hinchado.',
+      src: ['mp_neuropatia']
+    },
+    {
+      id: 'miocarditis', n: 'Miocarditis', alt: 'Inflamación del músculo del corazón', urg: 4, prev: 0.75, dur: ['d', 's'],
+      age: [[15, 45, 1.2]],
+      s: { ctx_infeccion_reciente: 3, dolor_pecho_opresivo: 2, palpitaciones: 2, falta_aire: 2, fatiga: 2, fiebre: 1, dolor_pecho_respirar: 1 },
+      que: 'Inflamación del músculo del corazón, casi siempre por una infección viral reciente. Puede dar dolor en el pecho, palpitaciones, falta de aire y cansancio, a veces días o semanas después de un resfrío, una gripe o COVID. Sus síntomas se parecen a los de otras enfermedades del corazón.',
+      trat: 'Requiere evaluación con electrocardiograma, exámenes de sangre e imágenes del corazón. El tratamiento incluye reposo, evitar el ejercicio intenso por varios meses y medicamentos según la gravedad; los casos graves necesitan hospitalización.',
+      esp: 'Servicio de urgencia; luego cardiólogo.',
+      alarma: 'Dolor de pecho intenso, desmayo, palpitaciones con mareo o falta de aire en reposo: llama al 131.',
+      src: ['mp_miocarditis']
+    },
+    {
+      id: 'costocondritis', n: 'Costocondritis', alt: 'Dolor del cartílago de las costillas', urg: 2, prev: 1.0, dur: ['d', 's'],
+      s: { dolor_pecho_presion: 3, dolor_pecho_respirar: 1 },
+      que: 'Inflamación del cartílago que une las costillas con el esternón. Es una causa común y benigna de dolor en el pecho, que aumenta al presionar la zona, al moverse, al toser o al respirar hondo.',
+      trat: 'Suele mejorar sola en días o semanas con reposo relativo, calor o frío local y analgésicos o antiinflamatorios.',
+      esp: 'Médico general.',
+      nota: 'Todo dolor de pecho nuevo debe evaluarse para descartar una causa cardíaca, sobre todo si eres mayor de 40 años o tienes factores de riesgo.',
+      alarma: 'Dolor opresivo, con sudor frío, falta de aire, náuseas o que se extiende al brazo o la mandíbula: llama al 131.',
+      src: ['mp_costocondritis', 'mp_dolor_toracico']
+    },
+
+    // ───────────── Ojos, oídos, boca y garganta
+    {
+      id: 'absceso_periamigdalino', n: 'Absceso periamigdalino', alt: 'Flemón de la amígdala', urg: 4, prev: 0.8, dur: ['d'],
+      age: [[10, 40, 1.2]],
+      s: { dolor_garganta_un_lado: 3, dolor_garganta: 2, fiebre: 2, dolor_oido: 1, ronquera: 1, ganglios: 1 },
+      que: 'Acumulación de pus alrededor de una amígdala, casi siempre como complicación de una amigdalitis. Produce dolor de garganta muy intenso de un lado, fiebre, dificultad para tragar y abrir la boca, voz apagada (“de papa caliente”) y dolor que se va al oído.',
+      trat: 'Requiere evaluación urgente: se drena el pus y se indican antibióticos y analgésicos. A veces se recomienda extirpar las amígdalas si se repite.',
+      esp: 'Servicio de urgencia; otorrinolaringólogo.',
+      alarma: 'Dificultad para respirar, babeo por no poder tragar saliva o hinchazón del cuello: urgencia inmediata.',
+      src: ['mp_absceso_periamigdalino']
+    },
+    {
+      id: 'meniere', n: 'Enfermedad de Ménière', urg: 2, prev: 0.8, dur: ['h', 'd', 'm'],
+      age: [[30, 65, 1.2]],
+      s: { vertigo_crisis_oido: 3, vertigo: 2, zumbido: 2, audicion: 2, nauseas: 1, vomitos: 1 },
+      que: 'Trastorno del oído interno, generalmente de un solo oído, con crisis de vértigo intenso que duran horas, acompañadas de zumbido, sensación de oído tapado o presión y baja de la audición que va y viene.',
+      trat: 'No tiene cura, pero se controla con medicamentos para el vértigo durante las crisis, dieta baja en sal, a veces diuréticos y otros tratamientos indicados por el especialista.',
+      esp: 'Otorrinolaringólogo.',
+      alarma: 'Vértigo con dolor de cabeza intenso, visión doble, dificultad para hablar o debilidad: llama al 131.',
+      src: ['mp_meniere_t']
+    },
+    {
+      id: 'degeneracion_macular', n: 'Degeneración macular', alt: 'Asociada a la edad', urg: 3, prev: 0.9, dur: ['s', 'm'],
+      age: [[0, 54, 0.2], [65, 200, 1.4]],
+      s: { vision_central: 3, vision_borrosa: 1 },
+      que: 'Daño de la mácula, la parte central de la retina, que se vuelve más frecuente después de los 65 años. Produce una mancha o zona borrosa en el centro de la visión y hace que las líneas rectas se vean onduladas, aunque la visión de los lados se conserva. La forma “húmeda” puede avanzar rápido.',
+      trat: 'La forma húmeda se trata con inyecciones en el ojo que frenan su avance; mientras antes, mejor. En la forma seca ayudan algunos suplementos indicados por el oftalmólogo, no fumar y controles periódicos.',
+      esp: 'Oftalmólogo.',
+      alarma: 'Pérdida rápida de la visión central o deformación nueva de las líneas: consulta en pocos días.',
+      src: ['mp_macula']
+    },
+    {
+      id: 'cuerpo_extrano_ojo', n: 'Cuerpo extraño en el ojo', urg: 3, prev: 1.0, dur: ['h', 'd'],
+      s: { cuerpo_extrano_ojo: 3, lagrimeo: 2, ojo_rojo: 1, dolor_ojo: 1, fotofobia: 1 },
+      que: 'Partícula de polvo, arena, viruta, pestaña u otro objeto en la superficie del ojo. Produce sensación de algo en el ojo, lagrimeo, enrojecimiento y molestia al parpadear; puede rayar la córnea.',
+      trat: 'Lava el ojo con abundante agua limpia sin frotarlo. Si el objeto está en la parte coloreada del ojo, está clavado o la molestia sigue, no intentes sacarlo: acude a un centro de salud.',
+      esp: 'Servicio de urgencia u oftalmólogo.',
+      alarma: 'Objeto clavado, golpe con algo a alta velocidad (esmeril, martillo), químicos en el ojo, dolor intenso o baja de la visión: urgencia inmediata.',
+      src: ['mp_cuerpo_extrano_ojo', 'mp_emergencias_ojo']
+    },
+    {
+      id: 'blefaritis', n: 'Blefaritis', alt: 'Inflamación de los párpados', urg: 1, prev: 1.0, dur: ['d', 's', 'm'],
+      s: { parpados_costras: 3, ojo_rojo: 1, picazon_ojos_nariz: 1, arena_ojos: 1 },
+      que: 'Inflamación del borde de los párpados, con enrojecimiento, picazón, ardor y costras o escamas en las pestañas, sobre todo al despertar. Es frecuente, tiende a repetirse y se asocia a la caspa y la rosácea.',
+      trat: 'Higiene diaria de los párpados: compresas tibias y limpieza suave del borde con productos indicados para ello. En algunos casos el médico indica cremas o antibióticos.',
+      esp: 'Médico general; oftalmólogo si no mejora.',
+      alarma: 'Dolor ocular, baja de la visión o hinchazón importante del párpado.',
+      src: ['mp_blefaritis']
+    },
+    {
+      id: 'paperas', n: 'Paperas', alt: 'Parotiditis', urg: 2, prev: 0.8, dur: ['d'],
+      age: [[2, 25, 1.2]],
+      s: { hinchazon_parotida: 3, fiebre: 2, dolor_cabeza: 1, dolor_muscular: 1, inapetencia: 1, dolor_testicular_gradual: 1 },
+      que: 'Infección viral contagiosa que inflama las glándulas salivales (parótidas), produciendo hinchazón dolorosa delante y debajo de las orejas, fiebre, dolor de cabeza y malestar. Es más común en personas no vacunadas.',
+      trat: 'No tiene tratamiento específico: reposo, líquidos, paracetamol y compresas frías o tibias. Evita alimentos ácidos. La vacuna tres vírica (SRP) es la mejor prevención.',
+      esp: 'Médico general o pediatra.',
+      alarma: 'Dolor de cabeza intenso con rigidez de cuello, dolor o hinchazón testicular, dolor abdominal intenso o dificultad para tragar.',
+      src: ['mp_paperas']
+    },
+    {
+      id: 'muguet', n: 'Muguet', alt: 'Candidiasis bucal o «algorra»', urg: 1, prev: 0.95, dur: ['d', 's'],
+      s: { placas_boca: 3, dolor_garganta: 1, inapetencia: 1, irritabilidad: 1 },
+      que: 'Infección por el hongo Cándida en la boca, con placas blancas en la lengua, encías o mejillas que al rasparlas dejan zonas rojas. Es frecuente en recién nacidos y en personas que usan inhaladores con corticoides, antibióticos, prótesis dentales o tienen las defensas bajas.',
+      trat: 'Antimicóticos en gel o suspensión indicados por un médico. En personas con inhaladores, enjuagarse la boca después de usarlos ayuda a prevenirlo.',
+      esp: 'Médico general, pediatra o dentista.',
+      alarma: 'Dificultad para tragar o rechazo del alimento en un bebé, o si se repite sin causa clara.',
+      src: ['mp_muguet', 'mp_muguet_rn']
+    },
+    {
+      id: 'gingivitis', n: 'Gingivitis', alt: 'Inflamación de las encías', urg: 1, prev: 1.05, dur: ['d', 's', 'm'],
+      s: { encias_cepillado: 3, dolor_muela: 1 },
+      que: 'Inflamación de las encías causada por la placa bacteriana. Las encías se ven rojas e hinchadas y sangran al cepillarse o usar hilo dental. Sin tratamiento puede avanzar a periodontitis y pérdida de dientes.',
+      trat: 'Cepillado dos veces al día, hilo dental diario y limpiezas profesionales con el dentista; a veces enjuagues antibacterianos.',
+      esp: 'Dentista.',
+      alarma: 'Sangrado espontáneo de las encías (sin cepillarte) o moretones sin golpes: consulta pronto, porque puede deberse a otra causa.',
+      src: ['mp_gingivitis']
+    },
+    {
+      id: 'atm', n: 'Trastorno de la articulación temporomandibular', alt: 'ATM o bruxismo', urg: 1, prev: 1.0, dur: ['d', 's', 'm'],
+      s: { dolor_mandibula: 3, dolor_oido: 1, dolor_cabeza: 1, ctx_estres: 1 },
+      que: 'Problemas de los músculos y la articulación que unen la mandíbula con el cráneo. Producen dolor al masticar o abrir la boca, chasquidos, a veces bloqueo de la mandíbula, dolor de oído y de cabeza. Se asocian a apretar o rechinar los dientes (bruxismo) y al estrés.',
+      trat: 'Comidas blandas, calor local, evitar abrir mucho la boca o masticar chicle, manejo del estrés y analgésicos por pocos días. El dentista puede indicar un plano de relajación nocturno; también ayuda la kinesiología.',
+      esp: 'Dentista; kinesiólogo.',
+      alarma: 'Dolor de mandíbula con dolor de pecho, sudor frío o falta de aire (descartar infarto): llama al 131.',
+      src: ['mp_atm']
+    },
+    {
+      id: 'nodulo_tiroideo', n: 'Nódulo tiroideo', alt: 'Bulto en la tiroides', urg: 2, prev: 0.95, dur: ['s', 'm'], sexF: 1.3,
+      s: { bulto_cuello: 3, disfagia: 1, ronquera: 1 },
+      que: 'Bulto en la glándula tiroides, en la parte delantera del cuello, que se mueve al tragar. La gran mayoría son benignos y no dan síntomas, pero deben estudiarse; los grandes pueden molestar al tragar o cambiar la voz.',
+      trat: 'Se estudia con exámenes de sangre de la tiroides y una ecografía; según sus características se hace una punción para analizarlo. Muchos solo se controlan; algunos requieren tratamiento o cirugía.',
+      esp: 'Médico general; endocrinólogo.',
+      alarma: 'Bulto que crece rápido, duro, con ronquera persistente, dificultad para tragar o respirar: consulta pronto.',
+      src: ['mp_bulto_cuello']
+    },
+
+    // ───────────── Infecciones (OMS / MINSAL)
+    {
+      id: 'escarlatina', n: 'Escarlatina', urg: 2, prev: 0.85, dur: ['d'],
+      age: [[3, 15, 1.4], [20, 200, 0.5]],
+      s: { erupcion_aspera: 3, dolor_garganta: 2, fiebre: 2, placas: 1, vomitos: 1, dolor_abdominal: 1 },
+      que: 'Infección por el estreptococo del grupo A (la misma bacteria de la amigdalitis), más común en niños. Comienza con fiebre y dolor de garganta y, uno o dos días después, aparece una erupción roja y áspera como papel lija en el cuello y el pecho, con lengua roja “de frambuesa”.',
+      trat: 'Se trata con antibióticos indicados por un médico tras confirmar el diagnóstico; es importante completar el tratamiento para evitar complicaciones. Paracetamol para la fiebre y abundantes líquidos.',
+      esp: 'Pediatra o médico general.',
+      alarma: 'Dificultad para respirar, decaimiento marcado, dolor articular intenso, orina oscura o escasa, o hinchazón de la cara.',
+      src: ['mp_escarlatina', 'mp_escarlatina_img']
+    },
+    {
+      id: 'chikungunya', n: 'Chikungunya', urg: 3, prev: 0.75, dur: ['d', 's'],
+      req: ['ctx_viaje_tropical'], reqF: 0.2,
+      s: { ctx_viaje_tropical: 3, fiebre: 3, dolor_articular: 3, dolor_muscular: 1, dolor_cabeza: 1, erupcion: 1, fatiga: 1 },
+      que: 'Infección viral transmitida por los mismos mosquitos del dengue (Aedes) en zonas tropicales. Entre 4 y 8 días después de la picadura produce fiebre alta de inicio brusco y dolor articular intenso, sobre todo en manos, pies, rodillas y espalda, a veces con erupción y dolores musculares. El dolor articular puede durar meses.',
+      trat: 'No hay un antiviral específico: reposo, hidratación y paracetamol para la fiebre y el dolor. Hasta descartar dengue se deben evitar la aspirina y otros antiinflamatorios.',
+      esp: 'Médico general (menciona el viaje); infectólogo o reumatólogo si el dolor persiste.',
+      alarma: 'Sangrados, dolor abdominal intenso, vómitos persistentes o somnolencia (descartar dengue grave): urgencia.',
+      src: ['minsal_chik', 'who_chik', 'minsal_arbovirus']
+    },
+    {
+      id: 'zika', n: 'Zika', urg: 2, prev: 0.7, dur: ['d'],
+      req: ['ctx_viaje_tropical'], reqF: 0.2,
+      s: { ctx_viaje_tropical: 3, erupcion: 2, ojo_rojo: 2, febricula: 2, dolor_articular: 1, dolor_muscular: 1, dolor_cabeza: 1 },
+      que: 'Infección viral transmitida por mosquitos Aedes en zonas tropicales, y también por vía sexual. La mayoría de las personas no tiene síntomas; cuando aparecen son leves: fiebre baja, erupción, ojos rojos y dolores articulares y musculares por 2 a 7 días. Es importante en el embarazo porque puede afectar al bebé.',
+      trat: 'No hay tratamiento específico: reposo, líquidos y paracetamol. Las embarazadas que viajaron a zonas con zika deben consultar con su matrona u obstetra.',
+      esp: 'Médico general; obstetra si estás embarazada.',
+      alarma: 'Debilidad que sube desde las piernas, o embarazo con síntomas o antecedente de viaje: consulta pronto.',
+      src: ['who_zika', 'minsal_arbovirus']
+    },
+    {
+      id: 'hidatidosis', n: 'Hidatidosis', alt: 'Quiste hidatídico (equinococosis)', urg: 2, prev: 0.75, dur: ['s', 'm'],
+      req: ['ctx_perros_rural'], reqF: 0.25,
+      s: { ctx_perros_rural: 3, dolor_hipocondrio: 2, bulto_abdomen: 2, nauseas: 1, vomitos: 1, tos_prolongada: 1, tos_sangre: 1, ictericia: 1 },
+      que: 'Infección por un parásito (Echinococcus) que se adquiere al ingerir sus huevos presentes en las heces de perros infectados, por contacto con ellos o con agua y alimentos contaminados. Es endémica en zonas rurales y ganaderas de Chile. Forma quistes, sobre todo en el hígado y el pulmón, que pueden pasar años sin síntomas hasta causar dolor abdominal, náuseas, un bulto o tos.',
+      trat: 'Se diagnostica con ecografía u otras imágenes y exámenes de sangre. Según el quiste se trata con medicamentos antiparasitarios, punción o cirugía. Prevención: desparasitar a los perros, no alimentarlos con vísceras crudas y lavarse las manos.',
+      esp: 'Médico general; cirujano, infectólogo o gastroenterólogo.',
+      alarma: 'Dolor abdominal intenso súbito, fiebre con piel amarilla o reacción alérgica grave (posible rotura del quiste): urgencia.',
+      src: ['minsal_hidatidosis', 'who_equinococosis', 'mp_equinococo']
+    },
+    {
+      id: 'giardiasis', n: 'Giardiasis', alt: 'Infección intestinal por Giardia', urg: 2, prev: 0.9, dur: ['d', 's'],
+      age: [[0, 12, 1.2]],
+      s: { diarrea_grasosa: 3, diarrea: 2, hinchazon_abdominal: 2, dolor_abdominal: 1, nauseas: 1, perdida_peso: 1, fatiga: 1 },
+      que: 'Infección del intestino por un parásito microscópico que se transmite por agua o alimentos contaminados o de persona a persona. Produce diarrea que puede durar semanas, gases, hinchazón, deposiciones grasosas y de mal olor, y a veces baja de peso; algunas personas no tienen síntomas.',
+      trat: 'Se confirma con un examen de deposiciones y se trata con antiparasitarios indicados por un médico, junto con hidratación. Prevención: lavado de manos y agua segura.',
+      esp: 'Médico general o pediatra.',
+      alarma: 'Deshidratación, sangre en las deposiciones o fiebre alta.',
+      src: ['mp_giardia_t']
+    },
+    {
+      id: 'fragata_portuguesa', n: 'Picadura de fragata portuguesa o medusa', alt: '«Aguaviva»', urg: 3, prev: 0.9, dur: ['h', 'd'],
+      s: { picadura_marina: 3, ctx_agua: 2, ronchas: 1, nauseas: 1, falta_aire: 1, palpitaciones: 1 },
+      que: 'Lesión por contacto con los tentáculos de la fragata portuguesa u otras medusas, que aparecen en playas de Chile en verano y son tóxicas incluso muertas. Produce dolor intenso inmediato, enrojecimiento y marcas en líneas parecidas a una quemadura; en casos excepcionales hay reacciones generales como dificultad para respirar o problemas cardíacos.',
+      trat: 'Sal del agua, lava la zona con agua de mar (no con agua dulce) y retira los restos de tentáculos con un objeto plástico liso, sin tocarlos con las manos. Si tienes vinagre blanco, aplícalo o sumerge la zona 15 a 30 minutos. No frotes con arena ni toalla y no uses alcohol, orina, limón ni bebidas. Si el malestar continúa, consulta.',
+      esp: 'Centro de salud o servicio de urgencia si el dolor no cede.',
+      alarma: 'Dificultad para respirar, dolor de pecho, palpitaciones, desmayo o picaduras extensas en niños: llama al 131.',
+      src: ['minsal_fragata', 'gob_fragata']
+    },
+
+    // ───────────── Bebés y niños
+    {
+      id: 'convulsion_febril', n: 'Convulsión febril', urg: 4, prev: 0.9, dur: ['h'], ageRange: [0, 6],
+      s: { convulsion: 3, fiebre: 3, somnolencia: 1, irritabilidad: 1 },
+      que: 'Convulsión provocada por la fiebre en niños de 6 meses a 5 años, generalmente al inicio de una infección. Suele durar pocos minutos y, aunque asusta mucho, en la mayoría de los casos no deja secuelas.',
+      trat: 'Durante la crisis: acuesta al niño de lado en un lugar seguro, no le metas nada en la boca y mide cuánto dura. Después debe ser evaluado para buscar la causa de la fiebre; la fiebre se maneja con medidas físicas y paracetamol según indicación.',
+      esp: 'Servicio de urgencia tras la primera convulsión; pediatra.',
+      alarma: 'Convulsión que dura más de 5 minutos, que se repite, que afecta un solo lado del cuerpo, un bebé menor de 6 meses o que no despierta bien después: llama al 131.',
+      src: ['mp_convulsiones', 'mp_convulsiones_t']
+    },
+    {
+      id: 'colico_lactante', n: 'Cólicos del lactante', urg: 1, prev: 1.0, dur: ['h', 'd', 's'], ageRange: [0, 1],
+      s: { llanto_inconsolable: 3, irritabilidad: 2, hinchazon_abdominal: 1, fiebre: -2, vomitos: -1 },
+      que: 'Llanto intenso e inconsolable de más de 3 horas al día en un bebé sano, que suele comenzar a las 3 semanas de vida, empeora entre las 4 y 6 semanas y desaparece hacia los 3 o 4 meses. Es frecuente en la tarde y no se debe a otra enfermedad.',
+      trat: 'Calmar al bebé con contacto, mecerlo, ruido suave y paseos; revisar la técnica de alimentación y los gases. Es importante que los cuidadores descansen y pidan ayuda: nunca se debe sacudir a un bebé.',
+      esp: 'Pediatra o control de niño sano (CESFAM).',
+      alarma: 'Fiebre en un bebé menor de 3 meses, vómitos, rechazo del alimento, decaimiento o llanto muy distinto al habitual: urgencia.',
+      src: ['mp_colicos']
+    },
+    {
+      id: 'dermatitis_panal', n: 'Dermatitis del pañal', alt: '«Coceduras»', urg: 1, prev: 1.05, dur: ['d'], ageRange: [0, 4],
+      s: { dermatitis_panal: 3, irritabilidad: 1 },
+      que: 'Irritación de la piel en la zona del pañal por la humedad, la orina y las deposiciones; es frecuente entre los 4 y 15 meses. A veces se complica con hongos (manchas rojas con puntitos alrededor).',
+      trat: 'Cambiar el pañal seguido, limpiar con agua tibia, secar bien, dejar la piel al aire un rato y usar cremas protectoras. Si hay hongos, el médico indicará una crema antimicótica.',
+      esp: 'Pediatra o control de niño sano.',
+      alarma: 'Ampollas, pus, fiebre o si no mejora en 3 días.',
+      src: ['mp_panal']
+    },
+
+    // ───────────── Digestivo, urinario y sexual
+    {
+      id: 'cirrosis', n: 'Cirrosis hepática', urg: 3, prev: 0.8, dur: ['s', 'm'],
+      age: [[0, 34, 0.4], [45, 200, 1.2]],
+      s: { ascitis: 3, ictericia: 2, ctx_alcohol: 2, fatiga: 1, hinchazon_piernas: 1, confusion: 1, vomito_sangre: 1, deposiciones_negras: 1, sangrado_encias: 1 },
+      que: 'Cicatrización avanzada del hígado por daño prolongado (alcohol, hepatitis virales o hígado graso), que deteriora su función. Puede pasar años sin síntomas y luego producir cansancio, color amarillo de piel y ojos, acumulación de líquido en la guata, hinchazón de piernas, moretones fáciles y confusión.',
+      trat: 'No se revierte, pero se puede frenar tratando la causa (dejar el alcohol, tratar la hepatitis), con dieta baja en sal, diuréticos y control especializado. Se deben evitar los antiinflamatorios. En casos avanzados se evalúa el trasplante.',
+      esp: 'Médico general; gastroenterólogo o hepatólogo.',
+      alarma: 'Vómito con sangre, deposiciones negras, confusión o somnolencia, fiebre con guata hinchada: urgencia.',
+      src: ['mp_cirrosis', 'mp_ascitis']
+    },
+    {
+      id: 'absceso_anorrectal', n: 'Absceso anorrectal', alt: 'Absceso perianal', urg: 3, prev: 0.9, dur: ['d'],
+      s: { bulto_anal_doloroso: 3, dolor_anal: 2, fiebre: 2, bulto_anal: 1 },
+      que: 'Acumulación de pus cerca del ano por la infección de una glándula. Produce un bulto rojo, caliente y muy doloroso, que empeora al sentarse o al ir al baño, a veces con fiebre.',
+      trat: 'Requiere que un médico lo drene; a veces se agregan antibióticos. Después ayudan los baños de asiento tibios y evitar el estreñimiento.',
+      esp: 'Médico general o servicio de urgencia; cirujano o coloproctólogo.',
+      alarma: 'Fiebre alta, dolor que aumenta rápido, imposibilidad de orinar o enrojecimiento que se extiende: urgencia.',
+      src: ['mp_absceso_anorrectal']
+    },
+    {
+      id: 'varicocele', n: 'Varicocele', urg: 1, prev: 0.9, dur: ['m'], sex: 'M',
+      age: [[12, 35, 1.2]],
+      s: { escroto_venas: 3, dolor_testicular_gradual: 1 },
+      que: 'Dilatación de las venas del escroto, más frecuente al lado izquierdo, que se siente como una “bolsa de gusanos”. Suele no dar molestias o causar pesadez que empeora de pie; en algunos casos afecta la fertilidad o el tamaño del testículo.',
+      trat: 'Si no molesta, solo se controla. Si hay dolor, el testículo se achica o hay problemas de fertilidad, puede corregirse con cirugía o un procedimiento.',
+      esp: 'Urólogo.',
+      alarma: 'Varicocele que aparece de golpe en un adulto, solo del lado derecho, o dolor testicular súbito e intenso: consulta pronto.',
+      src: ['mp_varicocele']
+    },
+    {
+      id: 'disfuncion_erectil', n: 'Disfunción eréctil', urg: 2, prev: 1.0, dur: ['s', 'm'], sex: 'M',
+      age: [[0, 29, 0.6], [40, 200, 1.2]],
+      s: { disfuncion_erectil: 3, ctx_diabetes: 1, ctx_fumador: 1, presion_alta_cronica: 1, ansiedad: 1, tristeza: 1 },
+      que: 'Dificultad para lograr o mantener una erección suficiente para tener relaciones. Es frecuente con la edad y puede deberse a problemas de circulación, diabetes, presión alta, tabaco, medicamentos, alcohol o causas emocionales. Puede ser una señal temprana de enfermedad cardiovascular.',
+      trat: 'Requiere evaluación médica para buscar la causa. Ayudan los cambios de estilo de vida (ejercicio, dejar de fumar, menos alcohol), tratar las enfermedades asociadas, la terapia sexual o de pareja y medicamentos con receta indicados por un médico.',
+      esp: 'Médico general; urólogo; psicólogo o sexólogo.',
+      alarma: 'Erección dolorosa que dura más de 4 horas: urgencia.',
+      src: ['mp_disfuncion_erectil_t']
+    },
+
+    // ───────────── Señales que requieren estudio
+    {
+      id: 'linfoma', n: 'Ganglios persistentes', alt: 'Estudio de linfoma', urg: 3, prev: 0.8, dur: ['s', 'm'],
+      s: { ganglios_persistentes: 3, sudor_nocturno: 2, perdida_peso: 2, ganglios: 1, fiebre: 1, fatiga: 1, picazon_piel: 1 },
+      que: 'La mayoría de los ganglios inflamados se deben a infecciones y bajan en pocas semanas. Si un ganglio es grande, no duele y dura más de 2 a 4 semanas, o se acompaña de fiebre, sudores nocturnos o baja de peso, debe estudiarse para descartar un linfoma (cáncer del sistema linfático) u otras causas.',
+      trat: 'Se estudia con exámenes de sangre, imágenes y, si corresponde, una biopsia del ganglio. Los linfomas, como el de Hodgkin, se tratan con quimioterapia y/o radioterapia y muchos tienen altas tasas de curación.',
+      esp: 'Médico general para la derivación; hematólogo u oncólogo.',
+      alarma: 'Ganglios que crecen rápido, dificultad para respirar o tragar, o fiebre alta persistente: consulta pronto.',
+      src: ['mp_ganglios', 'mp_hodgkin']
+    },
+
+    // ───────────── Piel, pelo y uñas
+    {
+      id: 'una_encarnada', n: 'Uña encarnada', alt: 'Uñero', urg: 1, prev: 1.05, dur: ['d', 's'],
+      s: { una_encarnada: 3, piel_roja_caliente: 1 },
+      que: 'El borde de la uña, generalmente del dedo gordo del pie, crece hacia la piel y produce dolor, enrojecimiento, hinchazón y a veces pus. Se favorece con zapatos apretados y al cortar las uñas en curva o muy cortas.',
+      trat: 'Remojar el pie en agua tibia, usar calzado holgado y cortar la uña recta. Si hay infección o se repite, un profesional puede retirar el borde de la uña.',
+      esp: 'Podólogo o médico general.',
+      alarma: 'Enrojecimiento que se extiende, fiebre, o si tienes diabetes o mala circulación: consulta pronto.',
+      src: ['mp_una_encarnada_img']
+    },
+    {
+      id: 'verrugas_cond', n: 'Verrugas', alt: '«Mezquinos»', urg: 1, prev: 1.05, dur: ['s', 'm'],
+      s: { verrugas: 3 },
+      que: 'Pequeños crecimientos duros y ásperos en la piel causados por el virus del papiloma humano, frecuentes en manos y pies (en la planta pueden doler al caminar). Son benignas y se contagian por contacto.',
+      trat: 'Muchas desaparecen solas en meses o años. Existen tratamientos de farmacia con ácido salicílico o la congelación (crioterapia) hecha por un médico. No las rasques ni las cortes.',
+      esp: 'Médico general o dermatólogo.',
+      alarma: 'Una lesión que sangra, cambia de color o crece rápido, o verrugas en los genitales: consulta.',
+      src: ['mp_protuberancias']
+    },
+    {
+      id: 'dermatitis_seborreica', n: 'Dermatitis seborreica', alt: 'Caspa', urg: 1, prev: 1.05, dur: ['s', 'm'],
+      s: { caspa: 3, picazon_piel: 1, eccema: -1 },
+      que: 'Inflamación crónica de la piel en zonas grasas: cuero cabelludo (caspa), cejas, alrededor de la nariz, detrás de las orejas y el pecho. Produce escamas blanquecinas o amarillentas y enrojecimiento; en bebés se conoce como costra láctea.',
+      trat: 'Champús anticaspa (con ketoconazol, piritiona de zinc o sulfuro de selenio) y cremas indicadas por un médico en las crisis. Tiende a ir y venir.',
+      esp: 'Médico general; dermatólogo.',
+      alarma: 'Enrojecimiento extenso o que no mejora con tratamiento.',
+      src: ['mp_escamas']
+    },
+    {
+      id: 'onicomicosis', n: 'Hongos en las uñas', alt: 'Onicomicosis', urg: 1, prev: 1.0, dur: ['m'],
+      age: [[40, 200, 1.2]],
+      s: { unas_hongos: 3, pie_atleta: 1 },
+      que: 'Infección por hongos de las uñas, sobre todo de los pies, que se vuelven gruesas, amarillentas, quebradizas o se despegan. Es más común con la edad, la diabetes, el pie de atleta y el uso de calzado cerrado.',
+      trat: 'Requiere tratamiento prolongado: lacas o cremas antimicóticas en casos leves y comprimidos indicados por un médico en casos extensos. Mantener los pies secos y no compartir cortaúñas.',
+      esp: 'Médico general; dermatólogo; podólogo.',
+      alarma: 'Dolor, enrojecimiento o pus alrededor de la uña, sobre todo si tienes diabetes.',
+      src: ['mp_onicomicosis']
+    },
+    {
+      id: 'tina_corporal', n: 'Tiña corporal', alt: 'Hongo en la piel', urg: 1, prev: 1.0, dur: ['d', 's'],
+      s: { placa_anillo: 3, picazon_piel: 2 },
+      que: 'Infección de la piel por hongos que forma manchas rojas en forma de anillo, con el borde más marcado y descamado, que pican. Se contagia por contacto con personas, mascotas (sobre todo gatos) u objetos.',
+      trat: 'Cremas antimicóticas de farmacia durante varias semanas, mantener la piel seca y no compartir toallas; si es extensa, el médico puede indicar comprimidos.',
+      esp: 'Médico general; dermatólogo.',
+      alarma: 'Lesiones que no mejoran en 4 semanas de tratamiento, muy extensas o en el cuero cabelludo.',
+      src: ['mp_tina_corporal', 'mp_tina']
+    },
+    {
+      id: 'rosacea', n: 'Rosácea', urg: 1, prev: 0.95, dur: ['s', 'm'],
+      age: [[30, 60, 1.2]],
+      s: { enrojecimiento_cara: 3, ojo_rojo: 1, acne: 1 },
+      que: 'Enfermedad crónica de la piel de la cara con enrojecimiento persistente de mejillas y nariz, vasitos visibles y granitos parecidos al acné; puede afectar los ojos. Empeora con el sol, el calor, el alcohol, las comidas picantes y el estrés.',
+      trat: 'No tiene cura, pero se controla con cremas o geles indicados por un médico, protección solar diaria y evitando los desencadenantes; a veces se usan antibióticos o láser.',
+      esp: 'Dermatólogo.',
+      alarma: 'Molestias en los ojos o baja de la visión: consulta con oftalmólogo.',
+      src: ['mp_rosacea']
+    },
+    {
+      id: 'acne_vulgar', n: 'Acné', urg: 1, prev: 1.05, dur: ['s', 'm'],
+      age: [[11, 25, 1.4], [40, 200, 0.6]],
+      s: { acne: 3, vello_excesivo: -1, reglas_irregulares: -1 },
+      que: 'Afección de la piel muy común en la adolescencia, cuando los poros se tapan con grasa y células muertas. Produce puntos negros y blancos, granos y a veces quistes en la cara, el pecho y la espalda.',
+      trat: 'Lavado suave dos veces al día y productos con peróxido de benzoilo o ácido salicílico; no apretar los granos para evitar cicatrices. Si es moderado o severo, el médico puede indicar cremas con receta, antibióticos u otros tratamientos.',
+      esp: 'Médico general; dermatólogo.',
+      alarma: 'Quistes dolorosos, cicatrices o acné que afecta mucho el ánimo: consulta con dermatólogo.',
+      src: ['mp_acne']
+    },
+    {
+      id: 'piojos_cond', n: 'Piojos', alt: 'Pediculosis', urg: 1, prev: 1.0, dur: ['d', 's'],
+      age: [[3, 12, 1.4]],
+      s: { piojos: 3, picazon_piel: 1, ctx_convivientes: 1 },
+      que: 'Infestación del cuero cabelludo por piojos, muy frecuente en niños en edad escolar. Produce picazón, sobre todo detrás de las orejas y en la nuca, y se ven liendres (huevos) pegadas al pelo. No es un problema de higiene ni causa enfermedades graves.',
+      trat: 'Lociones o champús pediculicidas según indicación, repetidos a los 7 a 10 días, y pasar el peine fino cada 2 a 3 días durante 2 a 3 semanas. Lavar con agua caliente la ropa de cama, gorros y peinetas, y revisar a toda la familia.',
+      esp: 'Médico general o pediatra si no mejora.',
+      alarma: 'Heridas infectadas por el rascado o si persiste a pesar del tratamiento.',
+      src: ['mp_piojos']
     }
   ];
 

@@ -11,6 +11,10 @@
   const DUR_LABEL = { h: 'horas', d: 'días', s: 'semanas', m: 'más de un mes' };
   const SEX_LABEL = { F: 'femenino', M: 'masculino', X: 'no indicado' };
   const STORE_KEY = 'sintomatologia:v1';
+  const CONSENT_KEY = 'sintomatologia:acepta-terminos';
+  // Privacidad por diseño: los datos de salud se guardan solo en esta pestaña (sessionStorage)
+  // y se borran al cerrarla o con «Reiniciar». Nunca se envían a un servidor.
+  const store = (() => { try { return window.sessionStorage; } catch (e) { return null; } })();
   const OWNER = 'Agustín Vivanco';
   const MAX_MAIN = 6;
   const MAX_EXTRA = 5;
@@ -26,7 +30,8 @@
     duracion: null, // 'h' | 'd' | 's' | 'm'
     sel: new Map(), // id -> intensidad 1..3
     zona: ZONES[0].id,
-    analizado: false
+    analizado: false,
+    acepta: false
   };
 
   // ───────────────────────── utilidades
@@ -43,6 +48,7 @@
         if (k === 'class') node.className = v;
         else if (k === 'text') node.textContent = v;
         else if (k === 'html') node.innerHTML = v;
+        else if (k === 'style') node.style.cssText = v; // compatible con la política de seguridad de contenidos
         else if (k.startsWith('on')) node.addEventListener(k.slice(2), v);
         else node.setAttribute(k, v === true ? '' : v);
       }
@@ -51,18 +57,31 @@
     return node;
   }
 
-  // ───────────────────────── persistencia (solo en este navegador)
+  // ───────────────────────── persistencia (solo en esta pestaña del navegador)
   function save() {
     try {
-      localStorage.setItem(STORE_KEY, JSON.stringify({
+      if (!store) return;
+      // Si no hay nada ingresado, no se guarda nada (minimización de datos).
+      if (!state.sel.size && state.edad == null && !state.sexo && !state.embarazo && !state.duracion) {
+        store.removeItem(STORE_KEY); return;
+      }
+      store.setItem(STORE_KEY, JSON.stringify({
         edad: state.edad, sexo: state.sexo, embarazo: state.embarazo, duracion: state.duracion,
         sel: Array.from(state.sel.entries()), zona: state.zona
       }));
     } catch (e) { /* sin almacenamiento disponible */ }
   }
+  function clearStored() {
+    try { if (store) { store.removeItem(STORE_KEY); store.removeItem(CONSENT_KEY); } } catch (e) { /* nada */ }
+  }
+  function purgeLegacy() {
+    // Versiones anteriores guardaban la selección en localStorage: se elimina al abrir el sitio.
+    try { window.localStorage.removeItem(STORE_KEY); } catch (e) { /* nada */ }
+  }
   function load() {
     try {
-      const raw = localStorage.getItem(STORE_KEY);
+      state.acepta = !!(store && store.getItem(CONSENT_KEY) === '1');
+      const raw = store && store.getItem(STORE_KEY);
       if (!raw) return;
       const d = JSON.parse(raw);
       state.edad = Number.isFinite(d.edad) ? d.edad : null;
@@ -183,7 +202,31 @@
         el('button', { type: 'button', class: 'x', 'aria-label': 'Quitar ' + s.n, title: 'Quitar', onclick: () => toggle(s.id) }, [document.createTextNode('×')])
       ]));
     });
-    $('#analizar').disabled = items.length === 0;
+    // Aviso inmediato si hay síntomas de alarma (no depende de ver los resultados)
+    const flags = items.filter(([s]) => s.sev === 3).map(([s]) => s);
+    const box = $('#sel-alarma');
+    box.textContent = '';
+    if (flags.length) {
+      const suicide = flags.some((s) => s.id === 'ideas_suicidas');
+      box.append(el('strong', { text: 'Marcaste un síntoma de alarma.' }));
+      box.append(el('span', {
+        html: suicide
+          ? ' Si estás pensando en hacerte daño, llama ahora al <a href="tel:*4141">*4141</a> (gratis, 24 horas) o al SAMU <a href="tel:131">131</a>. No estás solo/a.'
+          : ' Si apareció de golpe, es intenso o va empeorando, llama al SAMU <a href="tel:131">131</a> o acude a urgencia ahora, sin esperar el resultado.'
+      }));
+    }
+    box.hidden = flags.length === 0;
+    updateAnalizar();
+  }
+
+  function updateAnalizar() {
+    const btn = $('#analizar');
+    btn.disabled = state.sel.size === 0 || !state.acepta;
+    const hint = $('#analizar-hint');
+    if (hint) {
+      hint.textContent = state.sel.size === 0 ? 'Agrega al menos un síntoma.' : (!state.acepta ? 'Marca la casilla de aceptación para ver los resultados.' : '');
+      hint.hidden = !hint.textContent;
+    }
   }
 
   function toggle(id) {
@@ -547,7 +590,7 @@
   // ───────────────────────── ciclo
   function afterChange() {
     save();
-    if (state.analizado) renderResults();
+    if (state.analizado && state.acepta) renderResults();
   }
   function renderAll() {
     renderProfile();
@@ -566,7 +609,16 @@
   }
 
   function init() {
+    purgeLegacy();
     load();
+    const acepto = $('#acepto');
+    acepto.checked = state.acepta;
+    acepto.addEventListener('change', () => {
+      state.acepta = acepto.checked;
+      try { if (store) { if (state.acepta) store.setItem(CONSENT_KEY, '1'); else store.removeItem(CONSENT_KEY); } } catch (e) { /* nada */ }
+      if (!state.acepta) { state.analizado = false; $('#resultados').hidden = true; }
+      updateAnalizar();
+    });
     const year = new Date().getFullYear();
     const cy = $('#copy-year');
     if (cy && year > 2026) cy.textContent = '2026–' + year;
@@ -575,6 +627,7 @@
     renderSourcesIndex();
 
     $('#analizar').addEventListener('click', () => {
+      if (!state.acepta || !state.sel.size) return;
       state.analizado = true;
       renderResults();
       const r = $('#resultados');
@@ -583,8 +636,10 @@
     });
     $('#reiniciar').addEventListener('click', () => {
       state.edad = null; state.sexo = null; state.embarazo = null; state.duracion = null;
-      state.sel.clear(); state.analizado = false; state.zona = ZONES[0].id;
+      state.sel.clear(); state.analizado = false; state.zona = ZONES[0].id; state.acepta = false;
+      clearStored();
       $('#edad').value = '';
+      $('#acepto').checked = false;
       $('#resultados').hidden = true;
       renderAll();
       window.scrollTo({ top: 0, behavior: 'smooth' });
