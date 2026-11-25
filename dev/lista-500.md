@@ -234,31 +234,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C223 Déficit de vitamina B12 — tanda 9 · `deficit_b12`
 - [x] C224 Déficit de vitamina D — tanda 9 · `deficit_vitamina_d`
 - [x] C225 Alergia a medicamentos — tanda 9 · `alergia_medicamentos`
-- [ ] C226 Alergia al látex
-- [ ] C227 Roséola
-- [ ] C228 Quinta enfermedad (eritema infeccioso)
-- [ ] C229 Infección de una herida
-- [ ] C230 Cabeza plana del bebé (plagiocefalia)
-- [ ] C231 Ingesta de pila de botón o cuerpo extraño
-- [ ] C232 Dentición (salida de los dientes)
-- [ ] C233 Agotamiento por calor
-- [ ] C234 Conjuntivitis alérgica
-- [ ] C235 Urticaria crónica
-- [ ] C236 Dermatitis numular
-- [ ] C237 Otitis media crónica
-- [ ] C238 Pie plano
-- [ ] C239 Dedo en martillo
-- [ ] C240 Boca seca (xerostomía)
-- [ ] C241 Linfangitis
-- [ ] C242 Ginecomastia
-- [ ] C243 Milia (quistes de milium)
-- [ ] C244 Alveolitis seca (tras sacar una muela)
-- [ ] C245 Temblor del párpado (mioquimia)
-- [ ] C246 Fotoqueratitis (ojo de soldador o ceguera de la nieve)
-- [ ] C247 Tos por medicamentos para la presión (IECA)
-- [ ] C248 Herida cortante
-- [ ] C249 Hipo persistente
-- [ ] C250 Tartamudez
+- [x] C226 Alergia al látex — tanda 10 · `alergia_latex`
+- [x] C227 Roséola — tanda 10 · `roseola`
+- [x] C228 Quinta enfermedad (eritema infeccioso) — tanda 10 · `quinta_enfermedad`
+- [x] C229 Infección de una herida — tanda 10 · `herida_infectada`
+- [x] C230 Cabeza plana del bebé (plagiocefalia) — tanda 10 · `plagiocefalia`
+- [x] C231 Ingesta de pila de botón o cuerpo extraño — tanda 10 · `ingesta_pila_boton`
+- [x] C232 Dentición (salida de los dientes) — tanda 10 · `denticion`
+- [x] C233 Agotamiento por calor — tanda 10 · `agotamiento_calor`
+- [x] C234 Conjuntivitis alérgica — tanda 10 · `conjuntivitis_alergica`
+- [x] C235 Urticaria crónica — tanda 10 · `urticaria_cronica`
+- [x] C236 Dermatitis numular — tanda 10 · `dermatitis_numular`
+- [x] C237 Otitis media crónica — tanda 10 · `otitis_cronica`
+- [x] C238 Pie plano — tanda 10 · `pie_plano`
+- [x] C239 Dedo en martillo — tanda 10 · `dedo_martillo`
+- [x] C240 Boca seca (xerostomía) — tanda 10 · `boca_seca`
+- [x] C241 Linfangitis — tanda 10 · `linfangitis`
+- [x] C242 Ginecomastia — tanda 10 · `ginecomastia`
+- [x] C243 Milia (quistes de milium) — tanda 10 · `milia`
+- [x] C244 Alveolitis seca (tras sacar una muela) — tanda 10 · `alveolitis_seca`
+- [x] C245 Temblor del párpado (mioquimia) — tanda 10 · `mioquimia`
+- [x] C246 Fotoqueratitis (ojo de soldador o ceguera de la nieve) — tanda 10 · `fotoqueratitis`
+- [x] C247 Tos por medicamentos para la presión (IECA) — tanda 10 · `tos_ieca`
+- [x] C248 Herida cortante — tanda 10 · `herida_cortante`
+- [x] C249 Hipo persistente — tanda 10 · `hipo_persistente`
+- [x] C250 Tartamudez — tanda 10 · `tartamudez`
 
 ### Reserva (frecuentes)
 
@@ -500,31 +500,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R223 Actinomicosis — tanda 9 · `actinomicosis`
 - [x] R224 Enfermedad por arañazo de gato — tanda 9 · `aranazo_gato`
 - [x] R225 Linfogranuloma venéreo — tanda 9 · `linfogranuloma_venereo`
-- [ ] R226 Chancroide
-- [ ] R227 Mastoiditis
-- [ ] R228 Epiglotitis
-- [ ] R229 Angina de Ludwig
-- [ ] R230 Fiebre de Oropouche
-- [ ] R231 Señales de leucemia aguda
-- [ ] R232 Leucemia crónica
-- [ ] R233 Mieloma múltiple
-- [ ] R234 Sarcoma de partes blandas
-- [ ] R235 Tumor óseo (osteosarcoma o sarcoma de Ewing)
-- [ ] R236 Retinoblastoma
-- [ ] R237 Neuroblastoma
-- [ ] R238 Tumor de Wilms
-- [ ] R239 Señales de cáncer de laringe
-- [ ] R240 Señales de cáncer de boca
-- [ ] R241 Señales de cáncer de ovario
-- [ ] R242 Policitemia vera
-- [ ] R243 Trombocitemia esencial
-- [ ] R244 Sarcoma de Kaposi
-- [ ] R245 Queratocono
-- [ ] R246 Oclusión de vasos de la retina
-- [ ] R247 Distrofia de Fuchs
-- [ ] R248 Síndrome de Horner
-- [ ] R249 Oftalmopatía tiroidea
-- [ ] R250 Escleritis
+- [x] R226 Chancroide — tanda 10 · `chancroide`
+- [x] R227 Mastoiditis — tanda 10 · `mastoiditis`
+- [x] R228 Epiglotitis — tanda 10 · `epiglotitis`
+- [x] R229 Angina de Ludwig — tanda 10 · `angina_ludwig`
+- [x] R230 Fiebre de Oropouche — tanda 10 · `oropouche`
+- [x] R231 Señales de leucemia aguda — tanda 10 · `leucemia_aguda`
+- [x] R232 Leucemia crónica — tanda 10 · `leucemia_cronica`
+- [x] R233 Mieloma múltiple — tanda 10 · `mieloma`
+- [x] R234 Sarcoma de partes blandas — tanda 10 · `sarcoma_partes_blandas`
+- [x] R235 Tumor óseo (osteosarcoma o sarcoma de Ewing) — tanda 10 · `tumor_oseo`
+- [x] R236 Retinoblastoma — tanda 10 · `retinoblastoma`
+- [x] R237 Neuroblastoma — tanda 10 · `neuroblastoma`
+- [x] R238 Tumor de Wilms — tanda 10 · `wilms`
+- [x] R239 Señales de cáncer de laringe — tanda 10 · `cancer_laringe`
+- [x] R240 Señales de cáncer de boca — tanda 10 · `cancer_boca`
+- [x] R241 Señales de cáncer de ovario — tanda 10 · `cancer_ovario`
+- [x] R242 Policitemia vera — tanda 10 · `policitemia_vera`
+- [x] R243 Trombocitemia esencial — tanda 10 · `trombocitemia`
+- [x] R244 Sarcoma de Kaposi — tanda 10 · `kaposi`
+- [x] R245 Queratocono — tanda 10 · `queratocono`
+- [x] R246 Oclusión de vasos de la retina — tanda 10 · `oclusion_retina`
+- [x] R247 Distrofia de Fuchs — tanda 10 · `fuchs`
+- [x] R248 Síndrome de Horner — tanda 10 · `horner`
+- [x] R249 Oftalmopatía tiroidea — tanda 10 · `oftalmopatia_tiroidea`
+- [x] R250 Escleritis — tanda 10 · `escleritis`
 - [ ] R251 Colesteatoma  _(reserva)_
 - [ ] R252 Otosclerosis  _(reserva)_
 - [ ] R253 Neurinoma del acústico  _(reserva)_

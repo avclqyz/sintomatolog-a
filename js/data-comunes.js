@@ -2756,4 +2756,313 @@
       }
     ]
   });
+
+  // ── Tanda 10 (noviembre 2026): infancia, alergias, heridas, calor, ojos, oídos, boca, pies y otros
+  D.addPack({
+    call131: ['linea_roja_piel'],
+    symptoms: [
+      ['ctx_latex', 'Los síntomas aparecen al tocar látex (guantes, globos, condones, sondas) o al comer palta, plátano, kiwi o castañas', 'contexto', 0, ['látex', 'guantes de goma']],
+      ['fiebre_luego_manchas', 'Bebé o niño pequeño con fiebre alta por 3 a 5 días y, cuando baja la fiebre, aparecen manchitas rosadas en el tronco', 'piel', 1, ['roséola', 'exantema súbito']],
+      ['mejillas_abofeteadas', 'Mejillas muy rojas, como abofeteadas, y luego una erupción en forma de encaje en brazos y piernas', 'piel', 1, ['quinta enfermedad', 'eritema infeccioso']],
+      ['herida_infectada', 'Herida o corte reciente que se pone más rojo, caliente, hinchado y doloroso, o que supura pus', 'piel', 2, ['herida infectada']],
+      ['cabeza_plana_bebe', 'Bebé con la parte de atrás de la cabeza aplanada (de un lado o pareja), sin crestas duras en el cráneo', 'general', 1, ['plagiocefalia', 'cabeza plana']],
+      ['ctx_trago_objeto', 'Un niño tragó (o pudo tragar) una pila de botón, un imán, una moneda u otro objeto', 'contexto', 0, ['pila de botón', 'se tragó algo']],
+      ['encias_hinchadas_bebe', 'Bebé con encías hinchadas, mucha baba y ganas de morder todo', 'oong', 1, ['dentición', 'le están saliendo los dientes']],
+      ['ojos_pican_ambos', 'Ambos ojos pican mucho, están rojos y llorosos, a veces con párpados hinchados, sin lagañas espesas', 'ojos', 1, ['conjuntivitis alérgica', 'alergia en los ojos']],
+      ['placas_moneda', 'Placas redondas como monedas, rojas, que pican y a veces supuran o forman costras (piernas, brazos)', 'piel', 1, ['eccema numular', 'dermatitis numular']],
+      ['oido_supura_semanas', 'Oído que supura una y otra vez o durante semanas, con baja de audición', 'oong', 2, ['otitis crónica', 'oído que supura']],
+      ['pie_plano', 'Pie sin arco al estar de pie (toda la planta apoya en el suelo), a veces con dolor al caminar', 'musculo', 1, ['pie plano']],
+      ['dedo_pie_garra', 'Un dedo del pie (a menudo el segundo) doblado hacia abajo como garra, con un callo encima', 'musculo', 1, ['dedo en martillo', 'dedo en garra']],
+      ['boca_seca', 'Boca seca, saliva escasa y espesa; cuesta tragar o hablar', 'oong', 1, ['xerostomía', 'boca seca']],
+      ['linea_roja_piel', 'Línea roja que sube por un brazo o una pierna desde una herida o una zona infectada', 'piel', 3, ['linfangitis', 'vena roja']],
+      ['granitos_blancos_cara', 'Granitos blancos diminutos y duros, como perlas, en la nariz, las mejillas o los párpados (muy frecuentes en recién nacidos)', 'piel', 1, ['milia', 'milium']],
+      ['dolor_tras_extraccion', 'Dolor intenso que empeora 1 a 3 días después de sacar una muela, con mal olor o sabor y el hueco vacío', 'oong', 2, ['alveolitis seca', 'alvéolo seco']],
+      ['parpado_tiembla', 'Temblor o tic leve y repetido de un párpado, que va y viene', 'ojos', 1, ['tic del ojo', 'párpado que salta']],
+      ['ctx_uv_ojos', 'Horas antes estuviste en la nieve, en altura o en el agua sin lentes de sol, soldaste sin protección o usaste lámparas de bronceado', 'contexto', 0, ['ceguera de la nieve', 'soldadura', 'quemadura de los ojos']],
+      ['ctx_ieca', 'Tomas un medicamento para la presión o el corazón terminado en «-pril» (enalapril, captopril, lisinopril u otro)', 'contexto', 0, ['enalapril', 'IECA']],
+      ['corte_piel', 'Corte o herida reciente en la piel que sangra o queda abierta', 'piel', 1, ['corte', 'herida cortante', 'tajo']],
+      ['hipo', 'Hipo que dura más de 48 horas o se repite a menudo', 'digestivo', 1, ['hipo persistente']],
+      ['tartamudeo', 'Repite sonidos o sílabas, alarga sonidos o se traba al empezar a hablar', 'mente', 1, ['tartamudez', 'tartamudeo']]
+    ],
+    sources: {
+      mp_latex_hogar: [MP, 'Manejo de las alergias al látex en el hogar', 'https://medlineplus.gov/spanish/ency/patientinstructions/000500.htm'],
+      mp_latex_hospital: [MP, 'Alergias al látex: pacientes en hospitales', 'https://medlineplus.gov/spanish/ency/patientinstructions/000499.htm'],
+      mp_roseola: [MP, 'Roséola', 'https://medlineplus.gov/spanish/ency/article/000968.htm'],
+      mp_quinta_t: [MP, 'Quinta enfermedad', 'https://medlineplus.gov/spanish/fifthdisease.html'],
+      mp_como_sanan_heridas: [MP, 'Cómo sanan las heridas', 'https://medlineplus.gov/spanish/ency/patientinstructions/000741.htm'],
+      mp_cortaduras: [MP, 'Cortaduras y heridas penetrantes', 'https://medlineplus.gov/spanish/ency/article/000043.htm'],
+      mayo_cabeza_bebe: [MAYO, 'Asimetría craneal en bebés (Red de noticias de Mayo Clinic)', 'https://newsnetwork.mayoclinic.org/es/2012/05/01/experta-de-mayo-clinic-disponible-para-hablar-sobre-tratamiento-de-bebs-con-asimetra-craneal/'],
+      mp_craneosinostosis: [MP, 'Craneosinostosis', 'https://medlineplus.gov/spanish/ency/article/001590.htm'],
+      mp_pilas_boton: [MP, 'Pilas de botón', 'https://medlineplus.gov/spanish/ency/article/002764.htm'],
+      mp_objetos_ingeridos: [MP, 'Objetos extraños: ingestión', 'https://medlineplus.gov/spanish/ency/article/000036.htm'],
+      mp_denticion: [MP, 'Dentición', 'https://medlineplus.gov/spanish/ency/article/002045.htm'],
+      mayo_urticaria_cronica: [MAYO, 'Urticaria crónica', 'https://www.mayoclinic.org/es/diseases-conditions/chronic-hives/symptoms-causes/syc-20352719'],
+      mp_eccema_numular: [MP, 'Eccema numular', 'https://medlineplus.gov/spanish/ency/article/000870.htm'],
+      mp_otitis_cronica: [MP, 'Infección crónica del oído', 'https://medlineplus.gov/spanish/ency/article/000619.htm'],
+      mp_pie_plano: [MP, 'Pie plano', 'https://medlineplus.gov/spanish/ency/article/001262.htm'],
+      mp_dedo_martillo: [MP, 'Dedo del pie en martillo', 'https://medlineplus.gov/spanish/ency/article/001235.htm'],
+      mp_boca_seca: [MP, 'Boca seca', 'https://medlineplus.gov/spanish/ency/article/007760.htm'],
+      mp_linfangitis: [MP, 'Linfangitis', 'https://medlineplus.gov/spanish/ency/article/007296.htm'],
+      mp_ginecomastia: [MP, 'Agrandamiento de senos en los hombres', 'https://medlineplus.gov/spanish/ency/article/003165.htm'],
+      mp_milios: [MP, 'Milios', 'https://medlineplus.gov/spanish/ency/article/001367.htm'],
+      mayo_alveolitis: [MAYO, 'Alveolitis seca', 'https://www.mayoclinic.org/es/diseases-conditions/dry-socket/symptoms-causes/syc-20354376'],
+      mp_alveolo_seco: [MP, 'Alvéolo seco', 'https://medlineplus.gov/spanish/ency/patientinstructions/000780.htm'],
+      mayo_tic_ojo: [MAYO, 'Fasciculaciones oculares: causas', 'https://www.mayoclinic.org/es/symptoms/eye-twitching/basics/causes/sym-20050838'],
+      mp_lesion_corneal: [MP, 'Lesión corneal (incluye la quemadura por luz ultravioleta)', 'https://medlineplus.gov/spanish/ency/article/001017.htm'],
+      achs_ojos_sol: ['ACHS', 'Cuida tus ojos del sol', 'https://www.achs.cl/centro-de-noticias/noticia/2017/cuida-tus-ojos-del-sol'],
+      mp_ieca: [MP, 'Inhibidores de la enzima convertidora de angiotensina (IECA)', 'https://medlineplus.gov/spanish/ency/patientinstructions/000087.htm'],
+      mp_tos: [MP, 'Tos', 'https://medlineplus.gov/spanish/ency/article/003072.htm'],
+      mp_hipo_t: [MP, 'Hipo', 'https://medlineplus.gov/spanish/hiccups.html'],
+      mp_tartamudeo: [MP, 'Tartamudeo', 'https://medlineplus.gov/spanish/ency/article/001427.htm'],
+      mayo_tartamudez: [MAYO, 'Tartamudez', 'https://www.mayoclinic.org/es/diseases-conditions/stuttering/symptoms-causes/syc-20353572']
+    },
+    conditions: [
+      {
+        id: 'alergia_latex', n: 'Alergia al látex', urg: 3, prev: 1.0, dur: ['h', 'd'],
+        req: ['ctx_latex'], reqF: 0.2,
+        s: { ctx_latex: 3, ronchas: 2, picazon_piel: 2, erupcion: 1, hinchazon_labios: 1, sibilancias: 1, estornudos: 1 },
+        que: 'Reacción del sistema inmune a proteínas del látex de caucho natural, presente en guantes, globos, condones, sondas y otros objetos. Es más frecuente en trabajadores de la salud y en personas con muchas cirugías. Produce picazón, ronchas o erupción donde tocó el látex, estornudos o silbido al respirar y, en casos graves, anafilaxia. Algunas personas también reaccionan a frutas como la palta, el plátano, el kiwi o la castaña.',
+        trat: 'Evitar el látex (usar guantes de nitrilo o vinilo) y avisar siempre de la alergia en atenciones médicas y dentales; antihistamínicos para reacciones leves y adrenalina autoinyectable si el médico la indica.',
+        esp: 'Médico general; alergólogo.',
+        alarma: 'Hinchazón de la cara o la garganta, dificultad para respirar o mareo: llama al 131.',
+        src: ['mp_latex_hogar', 'mp_latex_hospital']
+      },
+      {
+        id: 'roseola', n: 'Roséola', alt: 'Exantema súbito', urg: 1, prev: 1.0, dur: ['d'],
+        ageRange: [0, 4], age: [[0, 2, 1.3]],
+        req: ['fiebre_luego_manchas'], reqF: 0.3,
+        s: { fiebre_luego_manchas: 3, fiebre: 2, irritabilidad: 1, secrecion_nasal: 1, petequias: -2 },
+        que: 'Infección viral muy común en bebés y niños pequeños (herpesvirus humano 6). Produce fiebre alta durante 3 a 5 días con el niño relativamente bien, a veces con irritabilidad o mocos, y cuando la fiebre baja aparece una erupción de manchitas rosadas en el tronco que se extiende y desaparece en pocos días sin picar.',
+        trat: 'No tiene tratamiento específico: paracetamol o ibuprofeno para la fiebre, líquidos y reposo. Mejora sola.',
+        esp: 'Pediatra o médico general.',
+        alarma: 'Convulsión con la fiebre, decaimiento marcado, manchas que no se borran al presionar o fiebre en un bebé menor de 3 meses: consulta de inmediato.',
+        src: ['mp_roseola']
+      },
+      {
+        id: 'quinta_enfermedad', n: 'Quinta enfermedad', alt: 'Eritema infeccioso', urg: 1, prev: 1.0, dur: ['d', 's'],
+        age: [[3, 15, 1.3]],
+        s: { mejillas_abofeteadas: 3, febricula: 1, dolor_articular: 1, secrecion_nasal: 1 },
+        que: 'Infección viral leve (parvovirus B19), frecuente en niños en edad escolar. Tras síntomas parecidos a un resfrío aparecen mejillas muy rojas, como abofeteadas, y luego una erupción en forma de encaje en brazos, piernas y tronco que puede ir y venir por semanas. En adultos puede causar dolores articulares.',
+        trat: 'No requiere tratamiento específico: reposo, líquidos y analgésicos. Cuando aparece la erupción ya casi no contagia.',
+        esp: 'Pediatra o médico general.',
+        alarma: 'Embarazadas expuestas o con síntomas, o personas con anemias de la sangre o defensas bajas: consulta pronto.',
+        src: ['mp_quinta_t']
+      },
+      {
+        id: 'herida_infectada', n: 'Infección de una herida', urg: 3, prev: 1.0, dur: ['d'],
+        req: ['herida_infectada'], reqF: 0.3,
+        s: { herida_infectada: 3, fiebre: 1, piel_roja_caliente: 1, ganglios: 1, ctx_herida_sucia: 1, ctx_diabetes: 1 },
+        que: 'Las bacterias de la piel o del ambiente infectan un corte, una herida o una cirugía reciente. La herida se pone más roja, caliente, hinchada y dolorosa en vez de mejorar, puede supurar pus o tener mal olor, y a veces hay fiebre. Las heridas profundas, sucias o en los pies se infectan con más facilidad.',
+        trat: 'Limpieza de la herida y curaciones; antibióticos indicados por un médico si hay infección; a veces drenar el pus. Revisar la vacuna antitetánica.',
+        esp: 'Médico general o enfermería del CESFAM.',
+        alarma: 'Línea roja que sube desde la herida, fiebre alta, dolor muy intenso o piel morada: urgencia.',
+        src: ['mp_como_sanan_heridas', 'mp_cortaduras']
+      },
+      {
+        id: 'plagiocefalia', n: 'Cabeza plana del bebé', alt: 'Plagiocefalia postural', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        ageRange: [0, 2],
+        s: { cabeza_plana_bebe: 3, craneo_deformado: -2 },
+        que: 'Aplanamiento de la parte de atrás de la cabeza (de un lado o pareja) porque el bebé pasa mucho tiempo apoyado en la misma posición; el cráneo del bebé es blando y se moldea. Es frecuente y no afecta el desarrollo del cerebro. Hay que diferenciarla de la craneosinostosis, en que el cráneo tiene crestas duras.',
+        trat: 'Cambiar la posición de la cabeza al dormir (siempre boca arriba), dar «tiempo boca abajo» supervisado mientras está despierto y ofrecer juguetes hacia el otro lado; si no mejora, kinesiología o, a veces, un casco, que funciona mejor alrededor de los 4 a 6 meses.',
+        esp: 'Pediatra o control sano.',
+        alarma: 'Crestas duras en el cráneo, frente o cara asimétricas, o cabeza que crece muy rápido: consulta pronto.',
+        src: ['mayo_cabeza_bebe', 'mp_craneosinostosis']
+      },
+      {
+        id: 'ingesta_pila_boton', n: 'Ingesta de pila de botón u objeto', urg: 5, prev: 1.0, dur: ['h'],
+        age: [[0, 6, 1.3]],
+        req: ['ctx_trago_objeto'], reqF: 0.1,
+        s: { ctx_trago_objeto: 3, disfagia: 1, vomitos: 1, tos_seca: 1, dolor_pecho_respirar: 1 },
+        que: 'Los niños pequeños se tragan con frecuencia monedas, imanes, juguetes o pilas. Las pilas de botón, sobre todo las grandes, son muy peligrosas: si se atascan en el esófago pueden quemarlo gravemente en pocas horas, aunque el niño no tenga síntomas. Los imanes múltiples también pueden dañar el intestino.',
+        trat: 'Ante la sospecha, ir de inmediato a urgencia para una radiografía; las pilas atascadas se retiran por endoscopia lo antes posible. No provocar el vómito. Guardar las pilas y los aparatos que las usan fuera del alcance de los niños.',
+        esp: 'Servicio de urgencia; gastroenterólogo o cirujano infantil.',
+        alarma: 'Si un niño pudo tragar una pila de botón o imanes, ve de inmediato a urgencia o llama al 131, aunque se vea bien.',
+        src: ['mp_pilas_boton', 'mp_objetos_ingeridos', 'cituc']
+      },
+      {
+        id: 'denticion', n: 'Dentición', alt: 'Salida de los dientes', urg: 1, prev: 1.0, dur: ['d', 's'],
+        ageRange: [0, 3],
+        s: { encias_hinchadas_bebe: 3, irritabilidad: 2, insomnio: 1, fiebre: -2, diarrea: -1 },
+        que: 'Salida de los dientes de leche, que suele empezar entre los 6 y 8 meses. Produce encías hinchadas y sensibles, mucha baba, ganas de morder, irritabilidad y mal dormir. La dentición no causa fiebre ni diarrea: si aparecen, hay que buscar otra causa.',
+        trat: 'Mordedores fríos (no congelados) y masajear las encías con un dedo limpio; analgésicos si el pediatra lo indica. No usar geles con anestésicos, remedios homeopáticos ni aspirina.',
+        esp: 'Pediatra o control sano.',
+        alarma: 'Fiebre, diarrea o decaimiento: consulta (no se deben a los dientes).',
+        src: ['mp_denticion']
+      },
+      {
+        id: 'agotamiento_calor', n: 'Agotamiento por calor', urg: 3, prev: 1.0, dur: ['h'],
+        req: ['ctx_calor'], reqF: 0.2,
+        s: { ctx_calor: 3, sudoracion: 2, mareo: 2, debilidad_general: 1, nauseas: 1, dolor_cabeza: 1, calambres: 1, sed: 1, piel_caliente_seca: -2, confusion: -2 },
+        que: 'Etapa previa al golpe de calor, por exposición al calor o ejercicio intenso con poca hidratación. Produce sudor abundante, piel fría y húmeda, cansancio, mareo, dolor de cabeza, náuseas, calambres y sed, con la temperatura normal o algo elevada. Sin medidas puede avanzar a golpe de calor.',
+        trat: 'Ir a un lugar fresco y a la sombra, aflojar la ropa, beber agua o bebidas con sales, enfriar la piel con paños húmedos y descansar. Debe mejorar en menos de una hora.',
+        esp: 'Autocuidado; servicio de urgencia si no mejora.',
+        alarma: 'Confusión, piel caliente y seca, desmayo, vómitos o temperatura muy alta: llama al 131 (posible golpe de calor).',
+        src: ['mp_calor']
+      },
+      {
+        id: 'conjuntivitis_alergica', n: 'Conjuntivitis alérgica', urg: 1, prev: 1.0, dur: ['h', 'd', 's', 'm'],
+        s: { ojos_pican_ambos: 3, picazon_ojos_nariz: 2, lagrimeo: 1, ojo_rojo: 1, ctx_alergeno: 1, estornudos: 1, laganas: -1, dolor_ojo: -2 },
+        que: 'Inflamación de la conjuntiva por alergia al polen, los ácaros del polvo, el pelo de mascotas, el moho u otras sustancias. Produce picazón intensa, enrojecimiento, lagrimeo y párpados hinchados en ambos ojos, a menudo junto con rinitis alérgica y en ciertas épocas del año. No se contagia.',
+        trat: 'Evitar los alérgenos, compresas frías, lágrimas artificiales y colirios o comprimidos antihistamínicos indicados por un médico; no frotarse los ojos.',
+        esp: 'Médico general; oftalmólogo o alergólogo si es persistente.',
+        alarma: 'Dolor en el ojo, visión borrosa o sensibilidad intensa a la luz: consulta pronto.',
+        src: ['mp_conj_alergica']
+      },
+      {
+        id: 'urticaria_cronica', n: 'Urticaria crónica', urg: 2, prev: 0.9, dur: ['m'],
+        s: { ronchas: 3, picazon_piel: 2, hinchazon_sin_ronchas: 1, ctx_estres: 1, hinchazon_labios: -1 },
+        que: 'Ronchas que pican y aparecen y desaparecen por más de 6 semanas, a veces durante meses o años; cada roncha dura menos de un día. A veces se acompañan de hinchazón de párpados, labios o mejillas. Generalmente no se encuentra una causa; pueden empeorar con el estrés, el calor, la presión de la ropa o los antiinflamatorios.',
+        trat: 'Antihistamínicos diarios indicados por el médico (a veces en dosis altas) y evitar lo que la empeora; en casos difíciles, otros medicamentos indicados por un especialista.',
+        esp: 'Médico general; dermatólogo o alergólogo.',
+        alarma: 'Hinchazón de la lengua o la garganta, dificultad para respirar o mareo: llama al 131.',
+        src: ['mayo_urticaria_cronica']
+      },
+      {
+        id: 'dermatitis_numular', n: 'Dermatitis numular', alt: 'Eccema numular', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[50, 200, 1.2]],
+        s: { placas_moneda: 3, picazon_piel: 2, piel_seca: 1, placa_anillo: -1 },
+        que: 'Tipo de eccema con placas redondas como monedas, rojas, que pican mucho y pueden supurar o formar costras, sobre todo en las piernas, los brazos y el tronco. Es más común en adultos mayores con piel seca, en invierno, y tras roces o pequeñas heridas. No se contagia.',
+        trat: 'Hidratar la piel varias veces al día, duchas cortas y tibias, cremas con corticoides indicadas por un médico y tratar la infección si las placas supuran.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Placas con mucho pus, costras amarillas o fiebre: consulta (posible infección).',
+        src: ['mp_eccema_numular']
+      },
+      {
+        id: 'otitis_cronica', n: 'Otitis media crónica', alt: 'Oído que supura', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        s: { oido_supura_semanas: 3, audicion: 2, secrecion_oido: 1, dolor_oido: 1, fiebre: -1, ctx_presion: -1 },
+        que: 'Infección o inflamación del oído medio que no se cura o se repite, a menudo con una perforación del tímpano que no cierra. Produce secreción del oído intermitente o constante, baja de audición y molestias leves. Sin tratamiento puede dañar el oído y, rara vez, causar complicaciones graves.',
+        trat: 'Limpieza del oído por el médico, gotas antibióticas y mantener el oído seco; si persiste, cirugía para reparar el tímpano o tratar el hueso.',
+        esp: 'Médico general; otorrinolaringólogo.',
+        alarma: 'Dolor o hinchazón detrás de la oreja, dolor de cabeza fuerte, fiebre alta, mareo o debilidad de la cara: urgencia.',
+        src: ['mp_otitis_cronica']
+      },
+      {
+        id: 'pie_plano', n: 'Pie plano', urg: 1, prev: 1.0, dur: ['m'],
+        s: { pie_plano: 3, dolor_talon: 1, dolor_planta_delantera: 1 },
+        que: 'El pie no tiene el arco habitual y toda la planta apoya en el suelo al estar de pie. Es normal en bebés y niños pequeños, y muchos lo mantienen sin problemas; en adultos puede aparecer con la edad, el sobrepeso o la debilidad de un tendón, y a veces causa dolor o cansancio de los pies.',
+        trat: 'Si no duele, no necesita tratamiento. Si duele: calzado firme con buen soporte, plantillas, ejercicios y control del peso; rara vez cirugía.',
+        esp: 'Pediatra o médico general; podólogo; traumatólogo.',
+        alarma: 'Pie plano rígido, doloroso o que aparece en un solo pie en un adulto: consulta.',
+        src: ['mp_pie_plano']
+      },
+      {
+        id: 'dedo_martillo', n: 'Dedo en martillo', urg: 1, prev: 1.0, dur: ['m'], sexF: 1.3,
+        s: { dedo_pie_garra: 3, callo: 1, juanete: 1 },
+        que: 'Un dedo del pie, casi siempre el segundo, queda doblado hacia abajo como una garra, por usar zapatos estrechos o cortos, juanetes o desequilibrio de los músculos. Al principio se puede estirar, pero con el tiempo queda rígido; produce roce, callos y dolor al caminar.',
+        trat: 'Calzado ancho y alto en la punta, almohadillas, ejercicios de los dedos y plantillas; si el dedo está rígido y duele, cirugía.',
+        esp: 'Médico general; podólogo; traumatólogo de pie.',
+        alarma: 'En personas con diabetes, heridas sobre el dedo: consulta pronto.',
+        src: ['mp_dedo_martillo']
+      },
+      {
+        id: 'boca_seca', n: 'Boca seca', alt: 'Xerostomía', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[60, 200, 1.2]],
+        s: { boca_seca: 3, mal_aliento: 1, ardor_boca: 1, boca_y_ojos_secos: -1, sed: -1 },
+        que: 'Las glándulas salivales producen poca saliva. Es muy frecuente por medicamentos (para la presión, la depresión, las alergias y muchos otros), la edad, la respiración por la boca, la radioterapia de cabeza y cuello o enfermedades como el síndrome de Sjögren. Produce saliva espesa, dificultad para tragar o hablar, mal aliento y más caries.',
+        trat: 'Beber sorbos de agua, chicles o caramelos sin azúcar, saliva artificial, evitar alcohol, tabaco y cafeína, y revisar los medicamentos con el médico. Cuidar mucho la higiene dental.',
+        esp: 'Médico general o dentista.',
+        alarma: 'Boca seca con mucha sed y orinar mucho (posible diabetes), o con ojos secos y dolores articulares: consulta.',
+        src: ['mp_boca_seca']
+      },
+      {
+        id: 'linfangitis', n: 'Linfangitis', alt: 'Infección de los vasos linfáticos', urg: 4, prev: 1.0, dur: ['h', 'd'],
+        req: ['linea_roja_piel'], reqF: 0.3,
+        s: { linea_roja_piel: 3, fiebre: 2, ganglios: 1, herida_infectada: 1, piel_roja_caliente: 1, escalofrios: 1 },
+        que: 'Infección de los vasos linfáticos, casi siempre por estreptococo, que se extiende desde una herida o una infección de la piel. Aparecen líneas rojas que suben por el brazo o la pierna hacia la axila o la ingle, ganglios dolorosos, fiebre y malestar. Puede diseminarse en horas.',
+        trat: 'Antibióticos indicados por un médico lo antes posible (a veces por vena), reposo, elevar la extremidad y compresas tibias.',
+        esp: 'Servicio de urgencia o médico general hoy.',
+        alarma: 'Línea roja que avanza rápido, fiebre alta, escalofríos o confusión: llama al 131.',
+        src: ['mp_linfangitis']
+      },
+      {
+        id: 'ginecomastia', n: 'Ginecomastia', alt: 'Crecimiento de las mamas en hombres', urg: 2, prev: 1.0, dur: ['s', 'm'], sex: 'M',
+        age: [[10, 16, 1.3], [50, 200, 1.2]],
+        s: { crecimiento_mamas_hombre: 3, ctx_sobrepeso: 1, testiculos_pequenos: -2, infertilidad: -1, sin_pubertad: -1 },
+        que: 'Crecimiento del tejido de la mama en hombres o niños, en una o ambas mamas, a veces sensible. Es muy común en recién nacidos, en la pubertad (más de la mitad de los adolescentes) y después de los 50 años, por cambios hormonales; también por sobrepeso, algunos medicamentos, la marihuana, problemas del hígado, del riñón o de las hormonas.',
+        trat: 'En la pubertad suele desaparecer sola en meses o pocos años; en otros casos, tratar la causa o suspender el medicamento responsable, y a veces medicamentos o cirugía.',
+        esp: 'Médico general o pediatra; endocrinólogo.',
+        alarma: 'Bulto duro, fijo o de un solo lado, secreción con sangre por el pezón o cambios en la piel de la mama: consulta pronto.',
+        src: ['mp_ginecomastia']
+      },
+      {
+        id: 'milia', n: 'Milia', alt: 'Quistes de milium', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[0, 0, 1.5]],
+        s: { granitos_blancos_cara: 3, perlitas_piel: -1, acne: -1 },
+        que: 'Pequeños quistes blancos y duros, como perlitas, que se forman cuando la queratina queda atrapada bajo la piel. Son muy frecuentes en recién nacidos (en la nariz, las mejillas y el mentón) y desaparecen solos en semanas. En adultos pueden aparecer en los párpados y las mejillas, o tras quemaduras o cremas espesas.',
+        trat: 'En bebés no necesitan tratamiento ni hay que apretarlos. En adultos, si molestan, un dermatólogo puede retirarlos.',
+        esp: 'Pediatra o dermatólogo.',
+        alarma: 'Granitos que se ponen rojos, con pus o que se acompañan de fiebre: consulta.',
+        src: ['mp_milios']
+      },
+      {
+        id: 'alveolitis_seca', n: 'Alveolitis seca', alt: 'Alvéolo seco tras sacar una muela', urg: 2, prev: 1.0, dur: ['d'],
+        req: ['dolor_tras_extraccion'], reqF: 0.3,
+        s: { dolor_tras_extraccion: 3, mal_aliento: 1, dolor_oido: 1, fiebre: -1 },
+        que: 'Complicación dolorosa y frecuente tras sacar un diente, sobre todo una muela del juicio, cuando el coágulo del hueco se cae o no se forma y queda el hueso expuesto. Entre 1 y 3 días después aparece un dolor intenso que puede irradiarse al oído, mal olor o mal sabor, y el hueco se ve vacío. Es más común en fumadores y con extracciones difíciles.',
+        trat: 'El dentista limpia el alvéolo, coloca un apósito medicado e indica analgésicos; mejora en pocos días. Para prevenirla, no fumar, no usar bombilla ni escupir con fuerza los primeros días.',
+        esp: 'Dentista o cirujano maxilofacial.',
+        alarma: 'Fiebre, hinchazón de la cara o pus: consulta pronto (posible infección).',
+        src: ['mayo_alveolitis', 'mp_alveolo_seco']
+      },
+      {
+        id: 'mioquimia', n: 'Temblor del párpado', alt: 'Mioquimia palpebral', urg: 1, prev: 1.0, dur: ['d', 's'],
+        s: { parpado_tiembla: 3, ctx_estres: 1, insomnio: 1, espasmo_cara_lado: -2, parpado_caido: -1 },
+        que: 'Contracciones leves, repetidas e involuntarias de un párpado, generalmente el de abajo, que van y vienen durante días o semanas. Es muy frecuente y benigno, y se relaciona con el estrés, el cansancio, la falta de sueño, la cafeína, el alcohol o los ojos secos.',
+        trat: 'Descansar y dormir bien, reducir la cafeína y el estrés, y usar lágrimas artificiales si hay sequedad; suele desaparecer solo.',
+        esp: 'Autocuidado; médico general si dura más de unas semanas.',
+        alarma: 'Si el párpado se cierra por completo, el tic se extiende a otras partes de la cara o hay ojo rojo o con secreción: consulta.',
+        src: ['mayo_tic_ojo']
+      },
+      {
+        id: 'fotoqueratitis', n: 'Quemadura de los ojos por luz ultravioleta', alt: 'Fotoqueratitis, ceguera de la nieve u ojo de soldador', urg: 3, prev: 1.0, dur: ['h', 'd'],
+        req: ['ctx_uv_ojos'], reqF: 0.2,
+        s: { ctx_uv_ojos: 3, dolor_ojo: 2, arena_ojos: 2, fotofobia: 2, lagrimeo: 1, ojo_rojo: 1 },
+        que: 'Quemadura de la superficie del ojo (córnea) por radiación ultravioleta: reflejo del sol en la nieve, la altura o el agua, soldadura sin protección o lámparas de bronceado. Horas después aparecen dolor, sensación de arena, ojos rojos y llorosos, molestia intensa con la luz y visión borrosa. Suele curarse en 1 a 3 días.',
+        trat: 'Descansar los ojos en un ambiente con poca luz, compresas frías, lágrimas artificiales y analgésicos; no frotarse ni usar lentes de contacto. Prevención: lentes de sol con filtro UV y máscara de soldar.',
+        esp: 'Médico general u oftalmólogo.',
+        alarma: 'Dolor que no mejora en 24 horas o pérdida de visión: consulta pronto.',
+        src: ['mp_lesion_corneal', 'achs_ojos_sol']
+      },
+      {
+        id: 'tos_ieca', n: 'Tos por medicamentos para la presión', alt: 'Tos por IECA', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        req: ['ctx_ieca'], reqF: 0.2,
+        s: { ctx_ieca: 3, tos_seca: 3, tos_prolongada: 1, fiebre: -2, tos_flema: -1, tos_sangre: -2 },
+        que: 'Tos seca y persistente, a veces con picor de garganta, que es un efecto secundario frecuente de los medicamentos para la presión o el corazón llamados IECA (enalapril, captopril, lisinopril y otros). Puede empezar semanas o meses después de iniciarlos y desaparece días o semanas después de cambiarlos.',
+        trat: 'No suspendas el medicamento por tu cuenta: consulta para que el médico lo cambie por otro (por ejemplo, un ARA II como el losartán) si corresponde.',
+        esp: 'Médico general.',
+        alarma: 'Hinchazón de los labios, la lengua o la garganta mientras tomas un IECA: llama al 131. Tos con sangre, fiebre o falta de aire: consulta pronto.',
+        src: ['mp_ieca', 'mp_tos']
+      },
+      {
+        id: 'herida_cortante', n: 'Herida cortante', alt: 'Corte en la piel', urg: 2, prev: 1.0, dur: ['h'],
+        req: ['corte_piel'], reqF: 0.2,
+        s: { corte_piel: 3, ctx_herida_sucia: 1, herida_infectada: -2 },
+        que: 'Corte o herida en la piel por un objeto filoso, un golpe o una caída. Las heridas pequeñas y superficiales se pueden curar en casa; las profundas, largas, abiertas, con bordes separados, en la cara, las manos o las articulaciones, o causadas por mordeduras o elementos sucios, necesitan atención para limpiarlas y, a veces, suturarlas.',
+        trat: 'Lavarse las manos, presionar con un paño limpio para detener el sangrado, lavar con agua y jabón y cubrir. Si es profunda o abierta, consultar en las primeras horas (es mejor suturar pronto) y revisar la vacuna antitetánica.',
+        esp: 'Autocuidado; SAPU, SAR o servicio de urgencia si es profunda.',
+        alarma: 'Sangrado que no se detiene tras 10 minutos de presión, sangre que sale a chorros, objeto clavado (no retirarlo) o adormecimiento o falta de movimiento bajo la herida: urgencia o 131.',
+        src: ['mp_cortaduras']
+      },
+      {
+        id: 'hipo_persistente', n: 'Hipo persistente', urg: 2, prev: 1.0, dur: ['d', 's'],
+        req: ['hipo', 'hipo_vomitos_persistentes'], reqF: 0.3,
+        s: { hipo: 3, hipo_vomitos_persistentes: 2, ardor_pecho: 1, ctx_alcohol: 1, vision_dolor_un_ojo: -2, debilidad_piernas_horas: -1 },
+        que: 'El hipo se produce por contracciones involuntarias del diafragma. Casi siempre dura minutos, tras comer rápido, bebidas con gas, alcohol o emociones. Si dura más de 48 horas o se repite mucho, conviene estudiar causas como el reflujo, algunos medicamentos, problemas del sistema nervioso, del tórax o del abdomen.',
+        trat: 'Para el hipo común: contener la respiración, beber agua fría a sorbos o respirar en una bolsa de papel. Si persiste, el médico buscará la causa y puede indicar medicamentos.',
+        esp: 'Médico general.',
+        alarma: 'Hipo con debilidad, visión doble, dificultad para hablar o tragar, o con vómitos persistentes: consulta pronto.',
+        src: ['mp_hipo_t']
+      },
+      {
+        id: 'tartamudez', n: 'Tartamudez', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[2, 6, 1.4]],
+        s: { tartamudeo: 3, ansiedad: 1, ctx_familia: 1 },
+        que: 'Trastorno de la fluidez del habla: se repiten sonidos o sílabas, se alargan sonidos o hay bloqueos al empezar a hablar. Es frecuente en niños de 2 a 5 años mientras aprenden a hablar y en la mayoría desaparece en 3 a 4 años. Tiende a ser hereditaria y empeora con el estrés, el cansancio o la presión para hablar.',
+        trat: 'Hablar con calma, sin apurar ni corregir constantemente al niño; si dura más de 6 meses, empieza después de los 5 años o le causa angustia, terapia con un fonoaudiólogo.',
+        esp: 'Pediatra; fonoaudiólogo.',
+        alarma: 'Tartamudez que aparece de repente en un adulto, con debilidad o confusión: llama al 131 (descartar un ACV).',
+        src: ['mp_tartamudeo', 'mayo_tartamudez']
+      }
+    ]
+  });
 })();
