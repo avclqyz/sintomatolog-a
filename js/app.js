@@ -626,14 +626,6 @@
     bindSearch();
     renderSourcesIndex();
 
-    // Aviso temporal de la versión 2.0: se muestra solo durante 8 horas desde su publicación.
-    const NOVEDADES_HASTA = Date.parse('2026-11-25T18:15:00Z');
-    const novedades = $('#novedades');
-    if (novedades && Date.now() < NOVEDADES_HASTA) {
-      novedades.hidden = false;
-      $('#novedades-cerrar').addEventListener('click', () => { novedades.hidden = true; });
-    }
-
     $('#analizar').addEventListener('click', () => {
       if (!state.acepta || !state.sel.size) return;
       state.analizado = true;
