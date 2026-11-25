@@ -1337,7 +1337,7 @@
     },
     {
       id: 'anemia', n: 'Anemia por falta de hierro', urg: 2, prev: 1.0, dur: ['s', 'm'], sexF: 1.2,
-      s: { fatiga: 3, palidez: 3, mareo: 2, falta_aire: 1, palpitaciones: 1, dolor_cabeza: 1, caida_pelo: 1, intolerancia_frio: 1, mareo_al_pararse: 1, reglas_abundantes: 1, anemia_no_mejora: -1, ictericia: -1 },
+      s: { fatiga: 3, palidez: 3, mareo: 2, falta_aire: 1, palpitaciones: 1, dolor_cabeza: 1, caida_pelo: 1, intolerancia_frio: 1, mareo_al_pararse: 1, reglas_abundantes: 1, anemia_no_mejora: -1, ictericia: -1, infecciones_repetidas: -1, moretones_faciles: -1 },
       que: 'Faltan glóbulos rojos sanos por falta de hierro, frecuentemente por menstruaciones abundantes, embarazo, dieta pobre en hierro o pérdidas de sangre digestivas. Produce cansancio, palidez, falta de aire con el esfuerzo, mareo, palpitaciones, uñas quebradizas y antojos de hielo o tierra.',
       trat: 'Se confirma con hemograma y ferritina. Se trata con suplementos de hierro y alimentos ricos en hierro, y buscando la causa de la pérdida (especialmente en hombres y en mujeres después de la menopausia).',
       esp: 'Médico general; hematólogo o gastroenterólogo según la causa.',
@@ -1776,7 +1776,7 @@
     {
       id: 'hepatitis_a', n: 'Hepatitis viral aguda', alt: 'Hepatitis A', urg: 3, prev: 0.85, dur: ['d', 's'],
       age: [[0, 1, 0.2]],
-      s: { ictericia: 3, coluria: 3, acolia: 2, fatiga: 2, nauseas: 2, dolor_hipocondrio: 2, fiebre: 1, inapetencia: 1, vomitos: 1, dolor_muscular: 1 },
+      s: { ictericia: 3, coluria: 3, acolia: 2, fatiga: 2, nauseas: 2, dolor_hipocondrio: 2, fiebre: 1, inapetencia: 1, vomitos: 1, dolor_muscular: 1, palidez: -1 },
       que: 'Inflamación del hígado causada por un virus. La hepatitis A se transmite por agua o alimentos contaminados con deposiciones: produce cansancio, náuseas, dolor bajo las costillas derechas y fiebre, y luego piel y ojos amarillos, orina oscura y deposiciones claras. Suele mejorar sola en algunas semanas.',
       trat: 'No tiene un tratamiento específico: reposo, buena hidratación, controles de exámenes y evitar el alcohol y los medicamentos que dañan el hígado (incluido el exceso de paracetamol). Existe vacuna. Las hepatitis B y C requieren otros estudios y tratamientos.',
       esp: 'Médico general; gastroenterólogo o hepatólogo.',

@@ -109,31 +109,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C098 Síndrome de abstinencia de alcohol — tanda 4 · `abstinencia_alcohol`
 - [x] C099 Duelo — tanda 4 · `duelo`
 - [x] C100 Ansiedad por separación (niños) — tanda 4 · `ansiedad_separacion`
-- [ ] C101 Dispepsia funcional
-- [ ] C102 Hernia hiatal
-- [ ] C103 Hernia umbilical o de la pared abdominal
-- [ ] C104 Hígado graso
-- [ ] C105 Hepatitis B
-- [ ] C106 Hepatitis C
-- [ ] C107 Cálculo en el colédoco o colangitis
-- [ ] C108 Diarrea por antibióticos (Clostridioides difficile)
-- [ ] C109 Diarrea del viajero
-- [ ] C110 Alergia a la proteína de la leche de vaca
-- [ ] C111 Alergia alimentaria
-- [ ] C112 Reflujo del lactante
-- [ ] C113 Picazón anal (prurito anal)
-- [ ] C114 Fístula anal
-- [ ] C115 Quiste pilonidal
-- [ ] C116 Incontinencia fecal
-- [ ] C117 Síndrome de Gilbert
-- [ ] C118 Esofagitis
-- [ ] C119 Vejiga hiperactiva
-- [ ] C120 Hidrocele
-- [ ] C121 Espermatocele (quiste del epidídimo)
-- [ ] C122 Balanitis
-- [ ] C123 Fimosis y parafimosis
-- [ ] C124 Eyaculación precoz
-- [ ] C125 Testosterona baja (hipogonadismo masculino)
+- [x] C101 Dispepsia funcional — tanda 5 · `dispepsia`
+- [x] C102 Hernia hiatal — tanda 5 · `hernia_hiatal`
+- [x] C103 Hernia umbilical o de la pared abdominal — tanda 5 · `hernia_umbilical`
+- [x] C104 Hígado graso — tanda 5 · `higado_graso`
+- [x] C105 Hepatitis B — tanda 5 · `hepatitis_b`
+- [x] C106 Hepatitis C — tanda 5 · `hepatitis_c`
+- [x] C107 Cálculo en el colédoco o colangitis — tanda 5 · `coledocolitiasis`
+- [x] C108 Diarrea por antibióticos (Clostridioides difficile) — tanda 5 · `colitis_c_difficile`
+- [x] C109 Diarrea del viajero — tanda 5 · `diarrea_viajero`
+- [x] C110 Alergia a la proteína de la leche de vaca — tanda 5 · `alergia_leche_vaca`
+- [x] C111 Alergia alimentaria — tanda 5 · `alergia_alimentaria`
+- [x] C112 Reflujo del lactante — tanda 5 · `reflujo_lactante`
+- [x] C113 Picazón anal (prurito anal) — tanda 5 · `prurito_anal`
+- [x] C114 Fístula anal — tanda 5 · `fistula_anal`
+- [x] C115 Quiste pilonidal — tanda 5 · `quiste_pilonidal`
+- [x] C116 Incontinencia fecal — tanda 5 · `incontinencia_fecal`
+- [x] C117 Síndrome de Gilbert — tanda 5 · `gilbert`
+- [x] C118 Esofagitis — tanda 5 · `esofagitis`
+- [x] C119 Vejiga hiperactiva — tanda 5 · `vejiga_hiperactiva`
+- [x] C120 Hidrocele — tanda 5 · `hidrocele`
+- [x] C121 Espermatocele (quiste del epidídimo) — tanda 5 · `espermatocele`
+- [x] C122 Balanitis — tanda 5 · `balanitis`
+- [x] C123 Fimosis y parafimosis — tanda 5 · `fimosis`
+- [x] C124 Eyaculación precoz — tanda 5 · `eyaculacion_precoz`
+- [x] C125 Testosterona baja (hipogonadismo masculino) — tanda 5 · `hipogonadismo`
 - [ ] C126 Señales de cáncer de próstata
 - [ ] C127 Tricomoniasis
 - [ ] C128 Verrugas genitales (VPH)
@@ -375,31 +375,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R098 Trombocitopenia inmune (PTI) — tanda 4 · `pti`
 - [x] R099 Púrpura trombocitopénica trombótica — tanda 4 · `ptt`
 - [x] R100 Síndrome hemolítico urémico — tanda 4 · `shu`
-- [ ] R101 Anemia aplásica
-- [ ] R102 Anemia hemolítica autoinmune
-- [ ] R103 Hemoglobinuria paroxística nocturna
-- [ ] R104 Mastocitosis
-- [ ] R105 Amiloidosis
-- [ ] R106 Histiocitosis de células de Langerhans
-- [ ] R107 Narcolepsia
-- [ ] R108 Distonía
-- [ ] R109 Corea de Sydenham
-- [ ] R110 Parálisis supranuclear progresiva
-- [ ] R111 Atrofia multisistémica
-- [ ] R112 Demencia frontotemporal
-- [ ] R113 Demencia con cuerpos de Lewy
-- [ ] R114 Enfermedad de Creutzfeldt-Jakob
-- [ ] R115 Hipertensión intracraneal idiopática
-- [ ] R116 Malformación de Chiari
-- [ ] R117 Siringomielia
-- [ ] R118 Hidrocefalia normotensiva
-- [ ] R119 Síndrome de Ramsay Hunt
-- [ ] R120 Síndrome de dolor regional complejo
-- [ ] R121 Encefalitis
-- [ ] R122 Absceso cerebral
-- [ ] R123 Señales de tumor cerebral
-- [ ] R124 Neurocisticercosis
-- [ ] R125 Síndrome de Wernicke-Korsakoff
+- [x] R101 Anemia aplásica — tanda 5 · `anemia_aplasica`
+- [x] R102 Anemia hemolítica autoinmune — tanda 5 · `anemia_hemolitica_autoinmune`
+- [x] R103 Hemoglobinuria paroxística nocturna — tanda 5 · `hpn`
+- [x] R104 Mastocitosis — tanda 5 · `mastocitosis`
+- [x] R105 Amiloidosis — tanda 5 · `amiloidosis`
+- [-] R106 Histiocitosis de células de Langerhans — omitida: sin una fuente de divulgación confiable en español; se reemplaza por una de reserva
+- [x] R107 Narcolepsia — tanda 5 · `narcolepsia`
+- [x] R108 Distonía — tanda 5 · `distonia`
+- [x] R109 Corea de Sydenham — tanda 5 · `corea_sydenham`
+- [x] R110 Parálisis supranuclear progresiva — tanda 5 · `paralisis_supranuclear`
+- [x] R111 Atrofia multisistémica — tanda 5 · `atrofia_multisistemica`
+- [x] R112 Demencia frontotemporal — tanda 5 · `demencia_frontotemporal`
+- [x] R113 Demencia con cuerpos de Lewy — tanda 5 · `demencia_lewy`
+- [x] R114 Enfermedad de Creutzfeldt-Jakob — tanda 5 · `creutzfeldt_jakob`
+- [x] R115 Hipertensión intracraneal idiopática — tanda 5 · `hipertension_intracraneal`
+- [x] R116 Malformación de Chiari — tanda 5 · `chiari`
+- [x] R117 Siringomielia — tanda 5 · `siringomielia`
+- [x] R118 Hidrocefalia normotensiva — tanda 5 · `hidrocefalia_normotensiva`
+- [x] R119 Síndrome de Ramsay Hunt — tanda 5 · `ramsay_hunt`
+- [x] R120 Síndrome de dolor regional complejo — tanda 5 · `sdrc`
+- [x] R121 Encefalitis — tanda 5 · `encefalitis`
+- [x] R122 Absceso cerebral — tanda 5 · `absceso_cerebral`
+- [x] R123 Señales de tumor cerebral — tanda 5 · `tumor_cerebral`
+- [x] R124 Neurocisticercosis — tanda 5 · `neurocisticercosis`
+- [x] R125 Síndrome de Wernicke-Korsakoff — tanda 5 · `wernicke`
 - [ ] R126 Espasmos infantiles (síndrome de West)
 - [ ] R127 Neuritis óptica
 - [ ] R128 Espasmo hemifacial

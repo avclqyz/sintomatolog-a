@@ -1319,4 +1319,307 @@
       }
     ]
   });
+
+  // ── Tanda 5 (noviembre 2026): sangre, sueño, movimiento, demencias e infecciones del cerebro
+  D.addPack({
+    symptoms: [
+      ['orina_oscura_manana', 'Orina oscura (como té o bebida cola), sobre todo la primera de la mañana', 'urogenital', 1, ['hemoglobinuria', 'orina oscura en la mañana']],
+      ['manchas_cafe_ronchas', 'Manchas café rojizas que se hinchan y pican al frotarlas', 'piel', 1, ['mastocitosis', 'urticaria pigmentosa']],
+      ['bochornos_rubor', 'Rubor o enrojecimiento brusco de la cara y el pecho', 'piel', 1, ['flushing', 'enrojecimiento súbito']],
+      ['lengua_grande', 'Lengua agrandada, con marcas de los dientes en los bordes', 'oong', 1, ['macroglosia', 'lengua grande']],
+      ['cataplejia', 'Debilidad muscular súbita al reír o emocionarte (se te doblan las rodillas)', 'musculo', 1, ['cataplejía']],
+      ['paralisis_sueno', 'Al dormirte o despertar no puedes moverte por unos segundos, a veces con imágenes muy vívidas', 'mente', 1, ['parálisis del sueño', 'subirse el muerto']],
+      ['postura_anormal', 'Contracciones involuntarias que tuercen el cuello, la mano o el pie en posturas anormales', 'cabeza', 1, ['distonía', 'calambre del escribiente', 'tortícolis espasmódica']],
+      ['caidas_atras', 'Caídas frecuentes hacia atrás y dificultad para mover los ojos hacia arriba o abajo', 'cabeza', 2, ['parálisis supranuclear progresiva']],
+      ['cambio_personalidad', 'Cambios de personalidad o de conducta (desinhibición, apatía, conductas inapropiadas) que avanzan', 'mente', 2, ['cambio de carácter', 'desinhibición']],
+      ['actua_suenos', 'Actúa sus sueños: golpea, grita o se mueve bruscamente mientras duerme', 'mente', 1, ['trastorno de conducta del sueño REM']],
+      ['sacudidas_musculares', 'Sacudidas musculares bruscas e involuntarias', 'cabeza', 1, ['mioclonías', 'sacudones']],
+      ['deterioro_rapido', 'Deterioro de la memoria y la conducta muy rápido, en semanas o pocos meses', 'mente', 2, ['demencia rápida']],
+      ['vision_oscurece', 'La visión se oscurece por segundos al pararte o agacharte, con un zumbido que late', 'ojos', 1, ['oscurecimientos visuales', 'pseudotumor cerebral']],
+      ['dolor_nuca_toser', 'Dolor de cabeza en la nuca que empeora al toser, estornudar o hacer fuerza', 'cabeza', 1, ['dolor de cabeza al toser', 'Chiari']],
+      ['perdida_dolor_temperatura', 'No sientes bien el dolor ni la temperatura en hombros, brazos o manos (te quemas sin notarlo)', 'musculo', 1, ['siringomielia', 'pérdida de sensibilidad']],
+      ['marcha_magnetica', 'Marcha lenta con pasos cortos, como si los pies estuvieran pegados al suelo', 'cabeza', 1, ['marcha magnética', 'hidrocefalia normotensiva']],
+      ['ampollas_oreja', 'Ampollas dolorosas en la oreja o dentro del conducto del oído', 'oong', 1, ['herpes en el oído', 'Ramsay Hunt']],
+      ['dolor_desproporcionado', 'Dolor quemante intenso y desproporcionado en un brazo o una pierna tras una lesión, con cambios de color, temperatura e hinchazón', 'musculo', 2, ['síndrome de dolor regional complejo', 'Sudeck']],
+      ['dolor_cabeza_progresivo', 'Dolor de cabeza nuevo que empeora semana a semana', 'cabeza', 2, ['cefalea progresiva']],
+      ['ctx_faringitis_previa', 'Amigdalitis o faringitis con placas en las últimas semanas o meses', 'contexto', 0, ['estreptococo reciente', 'anginas recientes']],
+      ['ctx_cerdo_rural', 'Viviste en zonas rurales con cerdos sueltos, o en países donde es frecuente la cisticercosis', 'contexto', 0, ['cerdos', 'tenia del cerdo']]
+    ],
+    sources: {
+      mp_anemia_aplasica_t: [MP, 'Anemia aplásica', 'https://medlineplus.gov/spanish/aplasticanemia.html'],
+      mp_anemia_hemolitica: [MP, 'Anemia hemolítica inmunitaria', 'https://medlineplus.gov/spanish/ency/article/000576.htm'],
+      mp_hpn: [MP, 'Hemoglobinuria paroxística nocturna', 'https://medlineplus.gov/spanish/ency/article/000534.htm'],
+      mayo_mastocitosis: [MAYO, 'Mastocitosis sistémica', 'https://www.mayoclinic.org/es/diseases-conditions/systemic-mastocytosis/symptoms-causes/syc-20352859'],
+      mp_amiloidosis: [MP, 'Amiloidosis sistémica secundaria', 'https://medlineplus.gov/spanish/ency/article/000585.htm'],
+      mayo_narcolepsia: [MAYO, 'Narcolepsia', 'https://www.mayoclinic.org/es/diseases-conditions/narcolepsy/symptoms-causes/syc-20375497'],
+      mp_distonia_t: [MP, 'Distonía', 'https://medlineplus.gov/spanish/dystonia.html'],
+      mp_sydenham: [MP, 'Corea de Sydenham', 'https://medlineplus.gov/spanish/ency/article/001358.htm'],
+      mp_fiebre_reumatica: [MP, 'Fiebre reumática', 'https://medlineplus.gov/spanish/ency/article/003940.htm'],
+      mp_parkinsonismo_secundario: [MP, 'Parkinsonismo secundario (incluye PSP, atrofia multisistémica y cuerpos de Lewy)', 'https://medlineplus.gov/spanish/ency/article/000759.htm'],
+      mp_dft: [MP, 'Demencia frontotemporal', 'https://medlineplus.gov/spanish/ency/article/000744.htm'],
+      mp_perdida_memoria: [MP, 'Pérdida de la memoria', 'https://medlineplus.gov/spanish/ency/article/003257.htm'],
+      mayo_cjd: [MAYO, 'Enfermedad de Creutzfeldt-Jakob', 'https://www.mayoclinic.org/es/diseases-conditions/creutzfeldt-jakob-disease/diagnosis-treatment/drc-20371230'],
+      mp_cerebro_t: [MP, 'Enfermedades del cerebro (incluye la hipertensión intracraneal idiopática)', 'https://medlineplus.gov/spanish/braindiseases.html'],
+      mayo_chiari: [MAYO, 'Malformación de Chiari', 'https://www.mayoclinic.org/es/diseases-conditions/chiari-malformation/symptoms-causes/syc-20354010'],
+      mayo_siringomielia: [MAYO, 'Siringomielia', 'https://www.mayoclinic.org/es/diseases-conditions/syringomyelia/symptoms-causes/syc-20354771'],
+      mp_hidrocefalia_normotensiva: [MP, 'Hidrocefalia normotensiva', 'https://medlineplus.gov/spanish/ency/article/000752.htm'],
+      mp_culebrilla_t: [MP, 'Culebrilla (incluye el síndrome de Ramsay Hunt)', 'https://medlineplus.gov/spanish/shingles.html'],
+      mayo_sdrc: [MAYO, 'Síndrome de dolor regional complejo', 'https://www.mayoclinic.org/es/diseases-conditions/crps-complex-regional-pain-syndrome/symptoms-causes/syc-20371151'],
+      mp_encefalitis_t: [MP, 'Encefalitis', 'https://medlineplus.gov/spanish/encephalitis.html'],
+      mp_tumores_cerebrales_t: [MP, 'Tumores cerebrales', 'https://medlineplus.gov/spanish/braintumors.html'],
+      mp_cisticercosis: [MP, 'Cisticercosis', 'https://medlineplus.gov/spanish/ency/article/000627.htm'],
+      mp_wernicke: [MP, 'Síndrome de Wernicke-Korsakoff', 'https://medlineplus.gov/spanish/ency/article/000771.htm'],
+      mp_beriberi: [MP, 'Beriberi', 'https://medlineplus.gov/spanish/ency/article/000339.htm']
+    },
+    conditions: [
+      {
+        id: 'anemia_aplasica', n: 'Anemia aplásica', urg: 3, prev: 0.5, dur: ['s', 'm'],
+        req: ['moretones_faciles', 'infecciones_repetidas', 'petequias'], reqF: 0.4,
+        s: { palidez: 2, fatiga: 2, infecciones_repetidas: 2, moretones_faciles: 2, petequias: 1, sangrado_encias: 1, fiebre: 1 },
+        que: 'La médula ósea deja de producir suficientes glóbulos rojos, glóbulos blancos y plaquetas. Produce cansancio y palidez, infecciones repetidas con fiebre y moretones o sangrados fáciles. Puede deberse a una reacción autoinmune, medicamentos, tóxicos, virus o causas hereditarias.',
+        trat: 'Transfusiones y antibióticos según necesidad, medicamentos inmunosupresores o trasplante de médula ósea, en centros especializados.',
+        esp: 'Hematólogo.',
+        alarma: 'Fiebre, sangrados que no se detienen o petequias extensas: urgencia.',
+        src: ['mp_anemia_aplasica_t']
+      },
+      {
+        id: 'anemia_hemolitica_autoinmune', n: 'Anemia hemolítica autoinmune', urg: 3, prev: 0.5, dur: ['d', 's'],
+        req: ['coluria', 'ictericia'], reqF: 0.4,
+        s: { palidez: 2, fatiga: 2, ictericia: 2, coluria: 2, falta_aire: 1, ctx_autoinmune: 1, dolor_hipocondrio: -1, acolia: -2 },
+        que: 'El sistema inmune produce anticuerpos que destruyen los propios glóbulos rojos. Produce cansancio, palidez, falta de aire, color amarillo de piel u ojos y orina oscura. Puede aparecer sola o asociada a infecciones, medicamentos, lupus o linfomas.',
+        trat: 'Corticoides y otros medicamentos inmunosupresores; a veces transfusiones o extirpación del bazo. Tratar la causa asociada.',
+        esp: 'Hematólogo.',
+        alarma: 'Palidez intensa, falta de aire, dolor de pecho o confusión: urgencia.',
+        src: ['mp_anemia_hemolitica']
+      },
+      {
+        id: 'hpn', n: 'Hemoglobinuria paroxística nocturna', urg: 3, prev: 0.4, dur: ['s', 'm'],
+        req: ['orina_oscura_manana'], reqF: 0.3,
+        s: { orina_oscura_manana: 3, fatiga: 2, palidez: 2, dolor_abdominal: 1, disfagia: 1, ctx_coagulos_previos: 1 },
+        que: 'Enfermedad adquirida poco frecuente en que los glóbulos rojos se destruyen antes de tiempo por falta de una proteína protectora. Produce orina oscura (sobre todo en la mañana), anemia, cansancio, dolor abdominal, dificultad para tragar y coágulos en lugares poco habituales. Puede asociarse a anemia aplásica.',
+        trat: 'Medicamentos que bloquean el complemento, transfusiones, ácido fólico y anticoagulantes si hay trombosis; en algunos casos, trasplante de médula.',
+        esp: 'Hematólogo.',
+        alarma: 'Dolor abdominal intenso, dolor de cabeza fuerte, falta de aire o hinchazón de una pierna: urgencia (trombosis).',
+        src: ['mp_hpn']
+      },
+      {
+        id: 'mastocitosis', n: 'Mastocitosis', urg: 2, prev: 0.5, dur: ['m'],
+        req: ['manchas_cafe_ronchas', 'bochornos_rubor'], reqF: 0.3,
+        s: { manchas_cafe_ronchas: 3, bochornos_rubor: 2, picazon_piel: 1, diarrea: 1, palpitaciones: 1, desmayo: 1 },
+        que: 'Acumulación excesiva de mastocitos (células que liberan histamina) en la piel y otros órganos. Produce manchas café rojizas que se hinchan y pican al frotarlas, episodios de rubor, picazón, diarrea, palpitaciones y, a veces, reacciones alérgicas graves.',
+        trat: 'Evitar desencadenantes (calor, alcohol, roce, algunos medicamentos), antihistamínicos y otros medicamentos; llevar adrenalina si ha tenido reacciones graves.',
+        esp: 'Dermatólogo; hematólogo o inmunólogo.',
+        alarma: 'Dificultad para respirar, hinchazón de labios o garganta, desmayo: llama al 131.',
+        src: ['mayo_mastocitosis']
+      },
+      {
+        id: 'amiloidosis', n: 'Amiloidosis', urg: 3, prev: 0.5, dur: ['m'],
+        age: [[50, 200, 1.2]],
+        req: ['lengua_grande'], reqF: 0.3,
+        s: { lengua_grande: 3, orina_espumosa: 2, hinchazon_piernas: 2, fatiga: 1, falta_aire: 1, ardor_pies: 1, hormigueo_mano: 1, moretones_faciles: 1 },
+        que: 'Grupo de enfermedades en que se depositan proteínas anormales (amiloide) en órganos como el riñón, el corazón, los nervios y el hígado. Puede producir orina espumosa e hinchazón, falta de aire, hormigueo de manos y pies, lengua agrandada y moretones alrededor de los ojos. A veces se asocia a enfermedades inflamatorias crónicas o al mieloma.',
+        trat: 'Depende del tipo: tratar la enfermedad de base, quimioterapia o medicamentos que estabilizan o reducen el amiloide, y apoyo a los órganos afectados.',
+        esp: 'Medicina interna; hematólogo, nefrólogo o cardiólogo.',
+        alarma: 'Falta de aire, desmayos u orina muy escasa: urgencia.',
+        src: ['mp_amiloidosis']
+      },
+      {
+        id: 'narcolepsia', n: 'Narcolepsia', urg: 2, prev: 0.6, dur: ['m'],
+        age: [[10, 30, 1.3]],
+        req: ['cataplejia', 'paralisis_sueno'], reqF: 0.4,
+        s: { somnolencia_diurna: 3, cataplejia: 3, paralisis_sueno: 2, insomnio: 1, ronquidos: -1, pausas_respiratorias: -1 },
+        que: 'Trastorno crónico del sueño en que el cerebro no regula bien el sueño y la vigilia. Produce mucho sueño durante el día con ataques de sueño repentinos, debilidad súbita al reír o emocionarse (cataplejía), parálisis del sueño y alucinaciones al dormirse.',
+        trat: 'No tiene cura, pero se controla con medicamentos que mantienen despierto y otros para la cataplejía, siestas programadas y horarios regulares de sueño. Precaución al manejar.',
+        esp: 'Neurólogo o especialista en medicina del sueño.',
+        alarma: 'Quedarte dormido manejando o en situaciones de riesgo: consulta pronto y evita manejar.',
+        src: ['mayo_narcolepsia']
+      },
+      {
+        id: 'distonia', n: 'Distonía', urg: 2, prev: 0.7, dur: ['m'],
+        s: { postura_anormal: 3, dolor_cuello: 1, temblor: 1, tics: -1 },
+        que: 'Trastorno del movimiento con contracciones musculares involuntarias que provocan posturas anormales o movimientos de torsión: cuello torcido hacia un lado (tortícolis espasmódica), calambre de la mano al escribir, parpadeo forzado o pie que se tuerce. Puede ser hereditaria, por medicamentos o por otras enfermedades.',
+        trat: 'Inyecciones de toxina botulínica en los músculos afectados, medicamentos, kinesiología y, en casos graves, estimulación cerebral profunda.',
+        esp: 'Neurólogo.',
+        alarma: 'Postura anormal que aparece de golpe tras un medicamento nuevo (por ejemplo, para las náuseas) o con dificultad para tragar o respirar: urgencia.',
+        src: ['mp_distonia_t']
+      },
+      {
+        id: 'corea_sydenham', n: 'Corea de Sydenham', urg: 3, prev: 0.5, dur: ['s', 'm'], sexF: 1.5,
+        ageRange: [3, 18],
+        req: ['ctx_faringitis_previa'], reqF: 0.4,
+        s: { movimientos_involuntarios: 3, ctx_faringitis_previa: 2, irritabilidad: 1, ctx_infeccion_reciente: 1 },
+        que: 'Trastorno del movimiento que aparece semanas o meses después de una infección por estreptococo (amigdalitis con placas), como parte de la fiebre reumática. Produce movimientos rápidos, bruscos e involuntarios de manos, brazos, cara o piernas, torpeza y cambios de ánimo, sobre todo en niñas antes de la pubertad.',
+        trat: 'Antibióticos para eliminar el estreptococo y prevenir nuevas infecciones, medicamentos para los movimientos si molestan y controles del corazón. Suele desaparecer en algunos meses.',
+        esp: 'Pediatra; neurólogo infantil; cardiólogo.',
+        alarma: 'Falta de aire, dolor de pecho o articulaciones hinchadas: consulta pronto (posible fiebre reumática).',
+        src: ['mp_sydenham', 'mp_fiebre_reumatica']
+      },
+      {
+        id: 'paralisis_supranuclear', n: 'Parálisis supranuclear progresiva', urg: 2, prev: 0.4, dur: ['m'],
+        age: [[0, 49, 0.2], [60, 200, 1.3]],
+        req: ['caidas_atras'], reqF: 0.3,
+        s: { caidas_atras: 3, torpeza_progresiva: 2, habla_arrastrada: 1, disfagia: 1, cambio_personalidad: 1, temblor_reposo: -1 },
+        que: 'Enfermedad degenerativa del cerebro que se parece al Parkinson, pero con caídas tempranas y frecuentes hacia atrás, rigidez del cuello y dificultad para mover los ojos hacia arriba o abajo. Con los años aparecen problemas para hablar, tragar y cambios de conducta. Suele empezar después de los 60 años.',
+        trat: 'No tiene cura: medicamentos con efecto limitado, kinesiología para prevenir caídas, fonoaudiología para el habla y la deglución, y apoyo a la familia.',
+        esp: 'Neurólogo.',
+        alarma: 'Atoros frecuentes, neumonías o caídas con golpes en la cabeza: consulta pronto.',
+        src: ['mp_parkinsonismo_secundario']
+      },
+      {
+        id: 'atrofia_multisistemica', n: 'Atrofia multisistémica', urg: 2, prev: 0.5, dur: ['m'],
+        age: [[45, 75, 1.2]],
+        req: ['mareo_al_pararse', 'torpeza_progresiva'], reqF: 0.4,
+        s: { mareo_al_pararse: 3, torpeza_progresiva: 3, perdida_orina: 2, disfuncion_erectil: 1, temblor_reposo: 1, actua_suenos: 1 },
+        que: 'Enfermedad degenerativa poco frecuente que combina síntomas parecidos al Parkinson o una marcha inestable con fallas del sistema nervioso autónomo: mareos y desmayos al ponerse de pie, problemas para orinar, disfunción eréctil y alteraciones del sueño.',
+        trat: 'No tiene cura: medicamentos para la presión baja al pararse, la vejiga y el movimiento, kinesiología y apoyo en un equipo especializado.',
+        esp: 'Neurólogo.',
+        alarma: 'Desmayos, ruidos al respirar durmiendo o atoros: consulta pronto.',
+        src: ['mp_parkinsonismo_secundario']
+      },
+      {
+        id: 'demencia_frontotemporal', n: 'Demencia frontotemporal', urg: 2, prev: 0.5, dur: ['m'],
+        age: [[0, 39, 0.2], [45, 70, 1.3]],
+        req: ['cambio_personalidad'], reqF: 0.3,
+        s: { cambio_personalidad: 3, impulsividad: 1, olvidos_progresivos: 1, anhedonia: 1 },
+        que: 'Demencia que afecta los lóbulos frontales y temporales del cerebro y suele empezar antes de los 65 años. Al inicio predominan los cambios de personalidad y conducta (desinhibición, apatía, conductas inapropiadas o compulsivas) o del lenguaje, más que los olvidos.',
+        trat: 'No tiene un tratamiento específico: medicamentos para la conducta y el ánimo, terapia del lenguaje y apoyo y orientación a la familia y los cuidadores.',
+        esp: 'Neurólogo; psiquiatra; geriatra.',
+        alarma: 'Conductas de riesgo, agresividad o descuido grave: consulta pronto y busca apoyo para la familia.',
+        src: ['mp_dft']
+      },
+      {
+        id: 'demencia_lewy', n: 'Demencia con cuerpos de Lewy', urg: 2, prev: 0.5, dur: ['m'],
+        age: [[0, 49, 0.2], [60, 200, 1.3]],
+        req: ['alucinaciones', 'actua_suenos'], reqF: 0.4,
+        s: { olvidos_progresivos: 2, alucinaciones: 3, actua_suenos: 2, temblor_reposo: 1, confusion: 1 },
+        que: 'Demencia frecuente después de los 60 años en que se combinan deterioro de la memoria y la atención con fluctuaciones marcadas de un día a otro, alucinaciones visuales muy vívidas, síntomas parecidos al Parkinson y movimientos bruscos durante el sueño.',
+        trat: 'Medicamentos para la memoria y para el movimiento con cuidado; los antipsicóticos pueden ser peligrosos y solo deben usarse con indicación de especialista. Apoyo a los cuidadores.',
+        esp: 'Neurólogo; geriatra.',
+        alarma: 'Confusión que empeora de golpe, caídas o rigidez intensa tras un medicamento nuevo: urgencia.',
+        src: ['mp_parkinsonismo_secundario', 'mp_perdida_memoria']
+      },
+      {
+        id: 'creutzfeldt_jakob', n: 'Enfermedad de Creutzfeldt-Jakob', urg: 3, prev: 0.3, dur: ['s', 'm'],
+        age: [[55, 80, 1.2]],
+        req: ['deterioro_rapido'], reqF: 0.3,
+        s: { deterioro_rapido: 3, sacudidas_musculares: 2, torpeza_progresiva: 2, vision_borrosa: 1, cambio_personalidad: 1 },
+        que: 'Enfermedad cerebral muy poco frecuente causada por proteínas anormales llamadas priones. Produce un deterioro muy rápido de la memoria y la conducta en semanas o pocos meses, con torpeza, problemas de visión y sacudidas musculares. Es mortal.',
+        trat: 'No existe un tratamiento eficaz: cuidados para el confort y apoyo a la familia. Se confirma con exámenes especiales del líquido cefalorraquídeo y resonancia.',
+        esp: 'Neurólogo.',
+        alarma: 'Cualquier deterioro rápido de la memoria o la conducta: consulta pronto para buscar causas tratables.',
+        src: ['mayo_cjd']
+      },
+      {
+        id: 'hipertension_intracraneal', n: 'Hipertensión intracraneal idiopática', alt: 'Pseudotumor cerebral', urg: 3, prev: 0.5, dur: ['s', 'm'], sexF: 1.5,
+        age: [[15, 45, 1.2]],
+        req: ['vision_oscurece'], reqF: 0.4,
+        s: { vision_oscurece: 3, dolor_cabeza: 2, dolor_cabeza_despertar: 2, ctx_sobrepeso: 2, zumbido: 1, nauseas: 1 },
+        que: 'Aumento de la presión del líquido que rodea el cerebro sin un tumor que lo explique, más frecuente en mujeres jóvenes con sobrepeso. Produce dolor de cabeza, oscurecimientos breves de la visión, zumbido que late con el pulso y visión doble; puede dañar el nervio óptico.',
+        trat: 'Bajar de peso, medicamentos que disminuyen la producción de líquido y controles de la vista; si la visión está en riesgo, punciones o cirugía.',
+        esp: 'Neurólogo; oftalmólogo.',
+        alarma: 'Pérdida de visión o dolor de cabeza muy intenso con vómitos: urgencia.',
+        src: ['mp_cerebro_t']
+      },
+      {
+        id: 'chiari', n: 'Malformación de Chiari', urg: 2, prev: 0.5, dur: ['m'],
+        req: ['dolor_nuca_toser'], reqF: 0.3,
+        s: { dolor_nuca_toser: 3, mareo: 1, hormigueo_mano: 1, disfagia: 1, dolor_cuello: 1, perdida_dolor_temperatura: 1 },
+        que: 'La parte baja del cerebelo desciende hacia el canal de la columna y comprime el tronco cerebral. Muchas personas no tienen síntomas; otras presentan dolor de cabeza en la nuca que empeora al toser o hacer fuerza, mareos, problemas de equilibrio, hormigueo en las manos o dificultad para tragar. A veces se asocia a siringomielia.',
+        trat: 'Si no da síntomas, controles. Si los da, cirugía de descompresión de la fosa posterior.',
+        esp: 'Neurólogo; neurocirujano.',
+        alarma: 'Debilidad, dificultad para tragar o respirar, o problemas para caminar: consulta urgente.',
+        src: ['mayo_chiari']
+      },
+      {
+        id: 'siringomielia', n: 'Siringomielia', urg: 2, prev: 0.4, dur: ['m'],
+        req: ['perdida_dolor_temperatura'], reqF: 0.3,
+        s: { perdida_dolor_temperatura: 3, debilidad_progresiva: 1, dolor_cuello: 1, columna_desviada: 1, dolor_nuca_toser: 1 },
+        que: 'Se forma una cavidad llena de líquido (siringe) dentro de la médula espinal que crece con los años, casi siempre asociada a la malformación de Chiari o a lesiones de la médula. Produce pérdida de la sensibilidad al dolor y la temperatura en hombros y brazos, debilidad de las manos, dolor y escoliosis.',
+        trat: 'Tratar la causa (descompresión del Chiari) o drenar la cavidad; controles con resonancia y manejo del dolor.',
+        esp: 'Neurocirujano; neurólogo.',
+        alarma: 'Debilidad que avanza, quemaduras sin dolor o problemas para caminar: consulta pronto.',
+        src: ['mayo_siringomielia']
+      },
+      {
+        id: 'hidrocefalia_normotensiva', n: 'Hidrocefalia normotensiva', urg: 2, prev: 0.6, dur: ['m'],
+        age: [[0, 49, 0.2], [60, 200, 1.4]],
+        req: ['marcha_magnetica'], reqF: 0.3,
+        s: { marcha_magnetica: 3, olvidos_progresivos: 2, perdida_orina: 2 },
+        que: 'Acumulación de líquido en los ventrículos del cerebro en personas mayores, con presión normal. Produce la tríada típica: marcha lenta con pasos cortos y pies como pegados al suelo, pérdida de control de la orina y olvidos. Es importante porque es una de las causas tratables de demencia.',
+        trat: 'Una válvula (derivación) que drena el líquido puede mejorar mucho la marcha y, a veces, la memoria; antes se prueba retirando líquido con una punción.',
+        esp: 'Neurólogo; neurocirujano; geriatra.',
+        alarma: 'Caídas frecuentes o empeoramiento rápido: consulta pronto.',
+        src: ['mp_hidrocefalia_normotensiva']
+      },
+      {
+        id: 'ramsay_hunt', n: 'Síndrome de Ramsay Hunt', alt: 'Herpes zóster del oído', urg: 4, prev: 0.6, dur: ['d'],
+        age: [[50, 200, 1.2]],
+        req: ['ampollas_oreja'], reqF: 0.3,
+        s: { ampollas_oreja: 3, paralisis_facial: 3, dolor_oido: 2, audicion: 1, vertigo: 1, zumbido: 1 },
+        que: 'Reactivación del virus de la varicela (herpes zóster) en un nervio cercano al oído. Produce dolor intenso del oído con ampollas en la oreja o el conducto auditivo y parálisis de un lado de la cara; puede haber pérdida de audición, zumbido y vértigo.',
+        trat: 'Antivirales y corticoides indicados por un médico lo antes posible (idealmente en los primeros 3 días), analgésicos y cuidado del ojo que no cierra.',
+        esp: 'Servicio de urgencia o médico el mismo día; otorrinolaringólogo.',
+        alarma: 'Debilidad de un lado del cuerpo, dificultad para hablar o confusión: llama al 131.',
+        src: ['mp_culebrilla_t', 'mayo_zoster', 'mp_bell']
+      },
+      {
+        id: 'sdrc', n: 'Síndrome de dolor regional complejo', alt: 'Síndrome de Sudeck', urg: 3, prev: 0.6, dur: ['s', 'm'],
+        req: ['dolor_desproporcionado'], reqF: 0.3,
+        s: { dolor_desproporcionado: 3, ctx_torcedura: 1, dolor_quemante_piel: 1, hinchazon_moreton: 1 },
+        que: 'Dolor crónico, quemante e intenso, desproporcionado a la lesión que lo originó (fractura, esguince, cirugía, a veces un ACV o infarto), en un brazo o una pierna. Se acompaña de hinchazón, cambios de color y temperatura de la piel, sensibilidad al roce, rigidez y cambios en el vello y las uñas.',
+        trat: 'Mientras antes se trate, mejor: kinesiología y terapia ocupacional para mantener el movimiento, medicamentos para el dolor neuropático, bloqueos nerviosos y apoyo psicológico, en una unidad del dolor.',
+        esp: 'Fisiatra; unidad del dolor; traumatólogo o neurólogo.',
+        alarma: 'Dolor que empeora y se extiende o impide mover la extremidad: consulta pronto.',
+        src: ['mayo_sdrc']
+      },
+      {
+        id: 'encefalitis', n: 'Encefalitis', alt: 'Inflamación del cerebro', urg: 5, prev: 0.6, dur: ['h', 'd'],
+        s: { confusion: 3, fiebre: 2, dolor_cabeza: 2, convulsion: 2, somnolencia: 1, cambio_personalidad: 1, alucinaciones: 1 },
+        que: 'Inflamación del cerebro, casi siempre por virus (como el herpes simple) y a veces autoinmune. Produce fiebre, dolor de cabeza, confusión, cambios de conducta, alucinaciones, convulsiones, somnolencia o debilidad. Es una emergencia.',
+        trat: 'Hospitalización inmediata: antivirales por vena (aciclovir) desde la sospecha, control de las convulsiones y, si es autoinmune, inmunoterapia.',
+        esp: 'Servicio de urgencia; neurólogo; infectólogo.',
+        alarma: 'Fiebre con confusión, convulsiones o cambio brusco de conducta: llama al 131.',
+        src: ['mp_encefalitis_t', 'mp_sindrome_organico']
+      },
+      {
+        id: 'absceso_cerebral', n: 'Absceso cerebral', urg: 5, prev: 0.5, dur: ['d', 's'],
+        s: { dolor_cabeza_progresivo: 3, fiebre: 2, vomitos: 1, convulsion: 1, debilidad_lado: 1, confusion: 1, ctx_infeccion_reciente: 1 },
+        que: 'Acumulación de pus en el cerebro, a partir de una infección cercana (sinusitis, otitis, infección dental) o que llega por la sangre. Produce dolor de cabeza que empeora en días, fiebre, vómitos, convulsiones, debilidad de un lado o confusión.',
+        trat: 'Hospitalización: antibióticos por vena durante semanas y, muchas veces, drenaje quirúrgico.',
+        esp: 'Servicio de urgencia; neurocirujano; infectólogo.',
+        alarma: 'Dolor de cabeza con fiebre y debilidad, convulsión o confusión: llama al 131.',
+        src: ['mp_absceso', 'mp_sindrome_organico']
+      },
+      {
+        id: 'tumor_cerebral', n: 'Señales de tumor cerebral', urg: 3, prev: 0.7, dur: ['s', 'm'],
+        s: { dolor_cabeza_progresivo: 3, dolor_cabeza_despertar: 2, convulsion: 2, vomitos: 1, debilidad_lado: 1, cambio_personalidad: 1, vision_borrosa: 1, fiebre: -1 },
+        que: 'Crecimiento anormal de células en el cerebro, benigno o maligno. Puede producir dolor de cabeza nuevo que empeora y es mayor al despertar, vómitos, convulsiones de inicio en la adultez, debilidad o adormecimiento de un lado, cambios de conducta o problemas de la vista. La mayoría de los dolores de cabeza no se deben a un tumor.',
+        trat: 'Se estudia con resonancia o escáner. Según el tipo, cirugía, radioterapia o quimioterapia en un equipo especializado.',
+        ges: 'Los tumores primarios del sistema nervioso central en personas de 15 años y más están cubiertos por GES.',
+        esp: 'Médico general (consulta pronto); neurólogo o neurocirujano.',
+        alarma: 'Convulsión, debilidad de un lado, confusión o dolor de cabeza con vómitos que empeora: urgencia.',
+        src: ['mp_tumores_cerebrales_t', 'mp_cefalea_peligro', 'minsal_ges']
+      },
+      {
+        id: 'neurocisticercosis', n: 'Neurocisticercosis', urg: 3, prev: 0.5, dur: ['s', 'm'],
+        req: ['ctx_cerdo_rural'], reqF: 0.3,
+        s: { ctx_cerdo_rural: 3, convulsion: 3, dolor_cabeza: 2, vomitos: 1 },
+        que: 'Infección del cerebro por las larvas de la tenia del cerdo (Taenia solium), al tragar huevos presentes en alimentos o agua contaminados con deposiciones de personas infectadas. Es una causa frecuente de convulsiones en adultos de zonas donde se crían cerdos sin control sanitario.',
+        trat: 'Medicamentos antiparasitarios y corticoides según el caso, y anticonvulsivantes. Prevención: lavado de manos, agua segura y cocción de la carne de cerdo.',
+        esp: 'Neurólogo; infectólogo.',
+        alarma: 'Convulsión, dolor de cabeza intenso con vómitos o confusión: urgencia.',
+        src: ['mp_cisticercosis']
+      },
+      {
+        id: 'wernicke', n: 'Síndrome de Wernicke-Korsakoff', alt: 'Falta grave de vitamina B1', urg: 5, prev: 0.5, dur: ['h', 'd', 'm'],
+        req: ['ctx_alcohol', 'conducta_alimentaria'], reqF: 0.3,
+        s: { confusion: 3, ctx_alcohol: 3, perdida_equilibrio: 2, vision_subita: 1, memoria: 2, conducta_alimentaria: 1 },
+        que: 'Daño cerebral por falta grave de vitamina B1 (tiamina), sobre todo en personas con consumo excesivo de alcohol, desnutrición, vómitos prolongados o después de una cirugía bariátrica. La encefalopatía de Wernicke produce confusión, marcha inestable y movimientos anormales de los ojos o visión doble; si no se trata, deja pérdida grave de la memoria (Korsakoff).',
+        trat: 'Es una emergencia: tiamina por vena de inmediato en el hospital, nutrición y tratamiento del consumo de alcohol.',
+        esp: 'Servicio de urgencia; medicina interna; programas de alcohol (SENDA, fono 1412).',
+        alarma: 'Confusión con marcha inestable o visión doble en alguien que bebe mucho o está desnutrido: llama al 131.',
+        src: ['mp_wernicke', 'mp_beriberi']
+      }
+    ]
+  });
 })();

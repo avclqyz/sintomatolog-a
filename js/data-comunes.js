@@ -1226,4 +1226,303 @@
       }
     ]
   });
+
+  // ── Tanda 5 (noviembre 2026): digestivas, hígado y urológicas
+  D.addPack({
+    symptoms: [
+      ['bulto_ombligo', 'Bulto en el ombligo o en una cicatriz del abdomen que sale al pujar o toser', 'digestivo', 1, ['hernia umbilical', 'ombligo salido', 'eventración']],
+      ['sangre_heces_bebe', 'Bebé con hilos de sangre o mucosidad en las deposiciones', 'digestivo', 2, ['sangre en la caca del bebé', 'deposiciones con mucosidad']],
+      ['reaccion_repite_alimento', 'Reacción (ronchas, picazón en la boca, vómitos) cada vez que comes un alimento específico', 'digestivo', 1, ['alergia a un alimento', 'alergia al maní', 'alergia a los mariscos']],
+      ['secrecion_anal', 'Secreción de pus o líquido por un orificio cerca del ano', 'digestivo', 1, ['fístula anal', 'pus en el ano']],
+      ['bulto_coxis', 'Bulto doloroso o con pus en el pliegue entre los glúteos, sobre el coxis', 'piel', 1, ['quiste pilonidal', 'quiste en el coxis']],
+      ['escape_deposiciones', 'Escape involuntario de deposiciones o gases', 'digestivo', 1, ['incontinencia fecal', 'no aguanto la caca']],
+      ['dolor_tragar', 'Dolor al tragar detrás del esternón (no en la garganta)', 'digestivo', 1, ['odinofagia', 'dolor del esófago']],
+      ['urgencia_orinar', 'Ganas urgentes y repentinas de orinar, a veces con escape', 'urogenital', 1, ['vejiga hiperactiva', 'urgencia urinaria']],
+      ['escroto_hinchado_indoloro', 'Escroto agrandado, blando e indoloro (como una bolsa de agua)', 'urogenital', 1, ['hidrocele', 'agua en el testículo'], 'M'],
+      ['bulto_sobre_testiculo', 'Bultito blando e indoloro encima o detrás de un testículo, separado de él', 'urogenital', 1, ['espermatocele', 'quiste del epidídimo'], 'M'],
+      ['glande_rojo', 'Glande rojo e hinchado, con picazón, ardor o secreción', 'urogenital', 1, ['balanitis', 'cabeza del pene irritada'], 'M'],
+      ['prepucio_no_baja', 'El prepucio no se puede bajar, o quedó atrapado detrás del glande y está hinchado', 'urogenital', 2, ['fimosis', 'parafimosis'], 'M'],
+      ['eyacula_antes', 'Eyaculación antes de lo deseado casi siempre, con malestar', 'urogenital', 1, ['eyaculación precoz', 'eyaculación rápida'], 'M'],
+      ['deseo_sexual_bajo', 'Disminución marcada del deseo sexual', 'urogenital', 1, ['bajo deseo sexual', 'libido baja', 'sin ganas']],
+      ['ctx_sobrepeso', 'Sobrepeso u obesidad, sobre todo en la cintura', 'contexto', 0, ['obesidad', 'sobrepeso', 'guatita']],
+      ['ctx_examen_higado', 'Te dijeron que tienes el hígado graso o las enzimas del hígado elevadas en un examen', 'contexto', 0, ['hígado graso', 'transaminasas altas']],
+      ['ctx_hepatitis_b', 'Te dijeron que tienes un examen positivo para hepatitis B', 'contexto', 0, ['hepatitis B positiva']],
+      ['ctx_hepatitis_c', 'Te dijeron que tienes un examen positivo para hepatitis C', 'contexto', 0, ['hepatitis C positiva']],
+      ['ctx_antibioticos', 'Tomaste antibióticos en las últimas semanas', 'contexto', 0, ['antibiótico reciente']],
+      ['ctx_ayuno_estres', 'Aparece con ayuno, estrés, ejercicio intenso o infecciones', 'contexto', 0, ['ayuno', 'trasnoche']]
+    ],
+    sources: {
+      mp_indigestion: [MP, 'Indigestión', 'https://medlineplus.gov/spanish/ency/article/003260.htm'],
+      mp_hernia_hiato: [MP, 'Hernia de hiato', 'https://medlineplus.gov/spanish/ency/article/001137.htm'],
+      mp_hernia_umbilical: [MP, 'Hernia umbilical', 'https://medlineplus.gov/spanish/ency/article/000987.htm'],
+      mp_higado_graso: [MP, 'Enfermedad del hígado graso no alcohólico', 'https://medlineplus.gov/spanish/ency/article/007657.htm'],
+      mp_hepatitis: [MP, 'Hepatitis', 'https://medlineplus.gov/spanish/ency/article/001154.htm'],
+      who_hep_c: [OMS, 'Hepatitis C (nota descriptiva)', 'https://www.who.int/es/news-room/fact-sheets/detail/hepatitis-c'],
+      mp_colestasis: [MP, 'Colestasis', 'https://medlineplus.gov/spanish/ency/article/000215.htm'],
+      mp_colitis_seudomembranosa: [MP, 'Colitis seudomembranosa (C. difficile)', 'https://medlineplus.gov/spanish/ency/article/000259.htm'],
+      mp_diarrea_viajero: [MP, 'Dieta para la diarrea del viajero', 'https://medlineplus.gov/spanish/ency/article/002433.htm'],
+      mp_guia_viajeros: [MP, 'Guía de viajeros para evitar enfermedades infecciosas', 'https://medlineplus.gov/spanish/ency/article/001925.htm'],
+      mp_alergia_alimentaria: [MP, 'Alergia alimentaria', 'https://medlineplus.gov/spanish/ency/article/000817.htm'],
+      mp_reflujo_bebes: [MP, 'Reflujo gastroesofágico en bebés', 'https://medlineplus.gov/spanish/ency/article/001134.htm'],
+      mp_ano_t: [MP, 'Enfermedades del ano (incluye el prurito anal y las fístulas)', 'https://medlineplus.gov/spanish/analdisorders.html'],
+      mp_pilonidal: [MP, 'Enfermedad del seno pilonidal', 'https://medlineplus.gov/spanish/ency/article/003253.htm'],
+      mp_reeducacion_intestinal: [MP, 'Reeducación intestinal (incontinencia fecal)', 'https://medlineplus.gov/spanish/ency/article/003971.htm'],
+      mp_gilbert: [MP, 'Síndrome de Gilbert', 'https://medlineplus.gov/spanish/ency/article/000301.htm'],
+      mp_esofagitis: [MP, 'Esofagitis', 'https://medlineplus.gov/spanish/ency/article/001153.htm'],
+      mp_miccion_urgente: [MP, 'Micción urgente o frecuente', 'https://medlineplus.gov/spanish/ency/article/003140.htm'],
+      mp_hidrocele_img: [MP, 'Hidrocele (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/19667.htm'],
+      mp_espermatocele_img: [MP, 'Espermatocele (ilustración)', 'https://medlineplus.gov/spanish/ency/esp_imagepages/19692.htm'],
+      mp_balanitis: [MP, 'Balanitis', 'https://medlineplus.gov/spanish/ency/article/000862.htm'],
+      mp_parafimosis: [MP, 'Parafimosis', 'https://medlineplus.gov/spanish/ency/article/001281.htm'],
+      mp_eyaculacion_precoz: [MP, 'Eyaculación precoz', 'https://medlineplus.gov/spanish/ency/article/001524.htm'],
+      mp_hipogonadismo: [MP, 'Hipogonadismo masculino', 'https://medlineplus.gov/spanish/ency/article/000395.htm']
+    },
+    conditions: [
+      {
+        id: 'dispepsia', n: 'Dispepsia funcional', alt: 'Indigestión', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        s: { dolor_epigastrio: 3, llenura: 3, nauseas: 1, hinchazon_abdominal: 1, deposiciones_negras: -2, vomito_sangre: -2, perdida_peso: -1 },
+        que: 'Molestia o dolor recurrente en la parte alta del abdomen, con sensación de llenura rápida o pesadez después de comer, sin una lesión que lo explique en los exámenes. Empeora con comidas abundantes, grasas o picantes, el café, el alcohol, el tabaco y el estrés.',
+        trat: 'Comer porciones pequeñas y sin apuro, reducir grasas, café, alcohol y tabaco, manejar el estrés y, según indicación médica, medicamentos para la acidez o que mejoran el vaciamiento del estómago. Buscar Helicobacter pylori si corresponde.',
+        esp: 'Médico general; gastroenterólogo si persiste.',
+        alarma: 'Vómitos con sangre, deposiciones negras, baja de peso, dificultad para tragar o anemia, sobre todo después de los 40 años: consulta pronto.',
+        src: ['mp_indigestion']
+      },
+      {
+        id: 'hernia_hiatal', n: 'Hernia hiatal', alt: 'Hernia de hiato', urg: 2, prev: 0.95, dur: ['m'],
+        age: [[50, 200, 1.2]],
+        s: { ardor_pecho: 3, regurgitacion: 2, llenura: 1, disfagia: 1, ctx_sobrepeso: 1 },
+        que: 'Parte del estómago sube hacia el tórax a través de una abertura del diafragma. Es frecuente con la edad, el sobrepeso y el tabaco; muchas veces no da síntomas, pero puede causar acidez, regurgitación y reflujo.',
+        trat: 'Las mismas medidas del reflujo: bajar de peso, comer porciones pequeñas, no acostarse después de comer, elevar la cabecera y medicamentos para la acidez. Rara vez se necesita cirugía.',
+        esp: 'Médico general; gastroenterólogo.',
+        alarma: 'Dolor de pecho intenso, vómitos que no ceden, dificultad para tragar o vómito con sangre: urgencia.',
+        src: ['mp_hernia_hiato']
+      },
+      {
+        id: 'hernia_umbilical', n: 'Hernia umbilical o de la pared abdominal', alt: 'Hernia del ombligo o eventración', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        s: { bulto_ombligo: 3, dolor_abdominal: 1, ctx_sobrepeso: 1, bulto_ingle: -1 },
+        que: 'Bulto en el ombligo o en una cicatriz de una cirugía, por donde sale parte del contenido del abdomen a través de un punto débil de la pared. Aumenta al toser o pujar y suele volver a entrar al acostarse. En los bebés es frecuente y casi siempre se cierra sola.',
+        trat: 'En niños, observar hasta los 4 o 5 años. En adultos, si molesta o crece, cirugía programada para repararla.',
+        esp: 'Médico general o pediatra; cirujano.',
+        alarma: 'Bulto duro, muy doloroso, que no vuelve a entrar o se pone rojo, con vómitos: urgencia (hernia atascada).',
+        src: ['mp_hernia_umbilical', 'mp_hernia']
+      },
+      {
+        id: 'higado_graso', n: 'Hígado graso', alt: 'Esteatosis hepática', urg: 2, prev: 1.0, dur: ['m'],
+        req: ['ctx_examen_higado', 'ctx_sobrepeso'], reqF: 0.4,
+        s: { ctx_examen_higado: 3, ctx_sobrepeso: 3, ctx_diabetes: 1, fatiga: 1, dolor_hipocondrio: 1 },
+        que: 'Acumulación de grasa en el hígado no causada por el alcohol, muy frecuente en personas con sobrepeso, diabetes, colesterol o triglicéridos altos. Casi nunca da síntomas y se descubre en una ecografía o por exámenes alterados; en algunos casos avanza a inflamación y cirrosis.',
+        trat: 'Bajar de peso de forma gradual (un 7 a 10 % mejora mucho el hígado), alimentación saludable, ejercicio, evitar el alcohol y controlar la diabetes y el colesterol.',
+        esp: 'Médico general; gastroenterólogo o hepatólogo.',
+        alarma: 'Ictericia, abdomen que crece o vómitos con sangre: consulta urgente.',
+        src: ['mp_higado_graso']
+      },
+      {
+        id: 'hepatitis_b', n: 'Hepatitis B', urg: 2, prev: 0.9, dur: ['d', 's', 'm'],
+        req: ['ctx_hepatitis_b'], reqF: 0.3,
+        s: { ctx_hepatitis_b: 3, fatiga: 2, ictericia: 2, coluria: 1, dolor_hipocondrio: 1, dolor_articular: 1, ctx_sexo: 1 },
+        que: 'Infección del hígado por un virus que se transmite por sangre, relaciones sexuales y de la madre al bebé durante el parto. Puede no dar síntomas o causar cansancio, ictericia y orina oscura; en algunas personas se vuelve crónica y lleva a cirrosis o cáncer de hígado.',
+        trat: 'La infección aguda suele tratarse con reposo y controles. La crónica se controla con antivirales indicados por un especialista. Existe una vacuna eficaz, incluida en el programa de vacunación.',
+        ges: 'La hepatitis crónica por virus de la hepatitis B está cubierta por GES.',
+        esp: 'Médico general; gastroenterólogo o hepatólogo.',
+        alarma: 'Ictericia con confusión, somnolencia, vómitos persistentes o sangrados: urgencia.',
+        src: ['mp_hepatitis', 'who_hep_b', 'minsal_ges']
+      },
+      {
+        id: 'hepatitis_c', n: 'Hepatitis C', urg: 2, prev: 0.9, dur: ['m'],
+        req: ['ctx_hepatitis_c'], reqF: 0.3,
+        s: { ctx_hepatitis_c: 3, fatiga: 2, ictericia: 1, dolor_articular: 1, dolor_hipocondrio: 1 },
+        que: 'Infección del hígado por un virus que se transmite sobre todo por la sangre (jeringas compartidas, transfusiones antiguas, tatuajes sin control). Suele no dar síntomas durante años mientras daña el hígado y puede llevar a cirrosis o cáncer de hígado.',
+        trat: 'Hoy se cura en más del 95 % de los casos con antivirales orales por 8 a 12 semanas. Se recomienda hacerse el examen al menos una vez en la vida.',
+        ges: 'El tratamiento de la hepatitis C está cubierto por GES.',
+        esp: 'Médico general; gastroenterólogo o hepatólogo.',
+        alarma: 'Ictericia, abdomen que crece, vómitos con sangre o confusión: urgencia.',
+        src: ['mp_hepatitis', 'who_hep_c', 'minsal_ges']
+      },
+      {
+        id: 'coledocolitiasis', n: 'Cálculo en el colédoco o colangitis', alt: 'Piedra en el conducto biliar', urg: 4, prev: 0.9, dur: ['h', 'd'],
+        age: [[40, 200, 1.2]],
+        s: { ictericia: 3, dolor_hipocondrio: 3, fiebre: 2, escalofrios: 2, coluria: 2, acolia: 1, nauseas: 1 },
+        que: 'Un cálculo de la vesícula pasa al conducto biliar principal (colédoco) y lo tapa: dolor arriba a la derecha, ictericia, orina oscura y deposiciones claras. Si la bilis se infecta (colangitis) aparecen fiebre alta y escalofríos, lo que es grave.',
+        trat: 'Requiere hospitalización: antibióticos si hay infección y extracción del cálculo por endoscopia (ERCP), y luego sacar la vesícula.',
+        esp: 'Servicio de urgencia; gastroenterólogo y cirujano.',
+        alarma: 'Fiebre con escalofríos e ictericia, confusión o presión baja: urgencia inmediata.',
+        src: ['mp_colestasis', 'mp_calculos_biliares']
+      },
+      {
+        id: 'colitis_c_difficile', n: 'Diarrea por antibióticos', alt: 'Colitis por Clostridioides difficile', urg: 3, prev: 0.95, dur: ['d', 's'],
+        age: [[65, 200, 1.2]],
+        req: ['ctx_antibioticos'], reqF: 0.3,
+        s: { ctx_antibioticos: 3, diarrea: 3, dolor_abdominal: 2, fiebre: 1, diarrea_sangre: 1 },
+        que: 'Diarrea que aparece durante o semanas después de tomar antibióticos. Las formas leves se deben al desequilibrio de las bacterias intestinales; las más intensas, a la bacteria Clostridioides difficile, que produce diarrea acuosa frecuente, dolor abdominal y fiebre, sobre todo en mayores o tras hospitalizaciones.',
+        trat: 'Hidratación; si es por C. difficile, antibióticos específicos indicados por el médico. No usar antidiarreicos sin indicación. Lavado de manos con agua y jabón para evitar el contagio.',
+        esp: 'Médico general; gastroenterólogo o infectólogo.',
+        alarma: 'Diarrea con sangre, fiebre alta, abdomen hinchado y doloroso o signos de deshidratación: urgencia.',
+        src: ['mp_colitis_seudomembranosa']
+      },
+      {
+        id: 'diarrea_viajero', n: 'Diarrea del viajero', urg: 2, prev: 1.0, dur: ['h', 'd'],
+        req: ['ctx_viaje_tropical'], reqF: 0.3,
+        s: { ctx_viaje_tropical: 3, diarrea: 3, dolor_abdominal: 2, nauseas: 1, fiebre: 1, vomitos: 1 },
+        que: 'Diarrea que aparece durante o poco después de un viaje, por consumir agua o alimentos contaminados con bacterias, virus o parásitos. Suele durar pocos días y rara vez es grave en adultos.',
+        trat: 'Rehidratación con abundante líquido o sales de rehidratación oral y comidas livianas. A veces el médico indica antibióticos. Prevención: agua embotellada o hervida, evitar hielo, comida cruda y alimentos de la calle.',
+        esp: 'Médico general.',
+        alarma: 'Diarrea con sangre, fiebre alta, vómitos que impiden beber o signos de deshidratación, sobre todo en niños: consulta urgente.',
+        src: ['mp_diarrea_viajero', 'mp_guia_viajeros']
+      },
+      {
+        id: 'alergia_leche_vaca', n: 'Alergia a la proteína de la leche de vaca', alt: 'En lactantes', urg: 2, prev: 1.0, dur: ['d', 's', 'm'],
+        ageRange: [0, 3],
+        s: { sangre_heces_bebe: 3, vomitos: 1, eccema: 1, irritabilidad: 1, llanto_inconsolable: 1, poco_crecimiento: 1, ronchas: 1, diarrea: 1 },
+        que: 'Reacción del sistema inmune a las proteínas de la leche de vaca, frecuente en lactantes que toman fórmula o cuya madre consume lácteos. Puede producir deposiciones con sangre o mucosidad, vómitos, eccema, cólicos y poco aumento de peso; a veces ronchas o reacciones rápidas.',
+        trat: 'Eliminar la leche de vaca: fórmulas especiales hidrolizadas o, si amamanta, dieta sin lácteos de la madre, según indicación médica. La mayoría la supera antes de los 3 años.',
+        esp: 'Pediatra; gastroenterólogo infantil o alergólogo.',
+        alarma: 'Hinchazón de labios o lengua, dificultad para respirar, vómitos intensos o decaimiento: urgencia.',
+        src: ['mp_alergia_alimentaria']
+      },
+      {
+        id: 'alergia_alimentaria', n: 'Alergia alimentaria', urg: 2, prev: 1.0, dur: ['h', 'm'],
+        s: { reaccion_repite_alimento: 3, ronchas: 2, ctx_alergeno: 2, picazon_piel: 1, vomitos: 1, dolor_abdominal: 1, hinchazon_labios: 1 },
+        que: 'Reacción del sistema inmune a un alimento (maní, nueces, mariscos, pescado, huevo, leche, soya o trigo) que aparece minutos u horas después de comerlo: ronchas, picazón en la boca, hinchazón, vómitos o, en casos graves, anafilaxia. Es distinta de la intolerancia a la lactosa.',
+        trat: 'Evitar el alimento (leer las etiquetas), antihistamínicos para reacciones leves y, si hubo reacciones graves, llevar adrenalina autoinyectable indicada por el médico. Estudio con alergólogo.',
+        esp: 'Médico general; alergólogo.',
+        alarma: 'Hinchazón de labios, lengua o garganta, dificultad para respirar, mareo o desmayo: llama al 131.',
+        src: ['mp_alergia_alimentaria']
+      },
+      {
+        id: 'reflujo_lactante', n: 'Reflujo del lactante', urg: 1, prev: 1.0, dur: ['d', 's', 'm'],
+        ageRange: [0, 1],
+        s: { regurgitacion: 3, vomitos: 1, irritabilidad: 1, poco_crecimiento: -1, fiebre: -1 },
+        que: 'El contenido del estómago se devuelve hacia el esófago y la boca, con «chanchitos» o regurgitaciones después de mamar. Es normal en muchos bebés, no les impide subir de peso y suele desaparecer antes del año.',
+        trat: 'Hacerlo eructar, mantenerlo erguido un rato después de comer, no sobrealimentarlo y acostarlo de espaldas. Rara vez se necesitan medicamentos.',
+        esp: 'Pediatra.',
+        alarma: 'Vómitos con fuerza (en proyectil), verdes o con sangre, bebé que no sube de peso, rechaza el alimento o tiene dificultad para respirar: consulta urgente.',
+        src: ['mp_reflujo_bebes']
+      },
+      {
+        id: 'prurito_anal', n: 'Picazón anal', alt: 'Prurito anal', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[0, 12, 0.5]],
+        s: { picazon_anal: 3, sangre_roja_defecar: -1, ctx_convivientes: -1 },
+        que: 'Picazón persistente alrededor del ano. Suele deberse a una higiene excesiva o insuficiente, humedad, irritación por jabones o papel perfumado, hemorroides, fisuras, hongos, parásitos (oxiuros) o algunos alimentos (café, picantes).',
+        trat: 'Limpiar con agua tibia y secar suave, evitar jabones perfumados y rascarse, usar ropa interior de algodón y cremas protectoras. Tratar la causa si se encuentra.',
+        esp: 'Médico general; dermatólogo o coloproctólogo si persiste.',
+        alarma: 'Sangrado, bulto, cambios del hábito intestinal o picazón que no mejora en semanas: consulta.',
+        src: ['mp_ano_t']
+      },
+      {
+        id: 'fistula_anal', n: 'Fístula anal', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        s: { secrecion_anal: 3, dolor_anal: 1, bulto_anal: 1, picazon_anal: 1, ctx_colitis: 1 },
+        que: 'Túnel anormal entre el interior del ano y la piel cercana, casi siempre después de un absceso perianal. Produce secreción de pus o líquido por un orificio cerca del ano, irritación y molestias que van y vienen.',
+        trat: 'Generalmente requiere cirugía para cerrarla o drenarla; si se asocia a enfermedad de Crohn, tratamiento médico específico.',
+        esp: 'Coloproctólogo o cirujano.',
+        alarma: 'Dolor intenso, fiebre o hinchazón roja y caliente cerca del ano: urgencia (nuevo absceso).',
+        src: ['mp_ano_t', 'mp_absceso_anorrectal']
+      },
+      {
+        id: 'quiste_pilonidal', n: 'Quiste pilonidal', urg: 2, prev: 1.0, dur: ['d', 's', 'm'], sexF: 0.6,
+        age: [[15, 35, 1.3]],
+        s: { bulto_coxis: 3, fiebre: 1, bulto_pus: 1 },
+        que: 'Inflamación de los folículos pilosos en el pliegue entre los glúteos, sobre el coxis, que forma un quiste o un orificio con pelos. Si se infecta produce un bulto doloroso con pus. Es más frecuente en hombres jóvenes con mucho vello o que pasan mucho tiempo sentados.',
+        trat: 'Si no da molestias, buena higiene y depilación de la zona. Si se infecta, drenaje y antibióticos; si se repite, cirugía para extirparlo.',
+        esp: 'Médico general; cirujano.',
+        alarma: 'Bulto muy doloroso, rojo y caliente con fiebre: consulta pronto para drenarlo.',
+        src: ['mp_pilonidal']
+      },
+      {
+        id: 'incontinencia_fecal', n: 'Incontinencia fecal', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        ageRange: [15, 200], age: [[65, 200, 1.3]],
+        s: { escape_deposiciones: 3, diarrea: 1, estrenimiento: 1, perdida_orina: 1 },
+        que: 'Escape involuntario de deposiciones o gases. Es más frecuente en personas mayores y en mujeres después de partos difíciles, y se asocia a diarrea, estreñimiento con impactación, daño de los músculos del ano o enfermedades de los nervios.',
+        trat: 'Tratar la diarrea o el estreñimiento, ajustar la fibra, ejercicios del piso pélvico y reeducación intestinal (biofeedback); a veces cirugía.',
+        esp: 'Médico general; gastroenterólogo o coloproctólogo; kinesiólogo de piso pélvico.',
+        alarma: 'Pérdida brusca del control de las deposiciones u orina con dolor de espalda o adormecimiento entre las piernas: urgencia.',
+        src: ['mp_reeducacion_intestinal']
+      },
+      {
+        id: 'gilbert', n: 'Síndrome de Gilbert', urg: 1, prev: 1.0, dur: ['d', 'm'],
+        age: [[0, 1, 0.2], [12, 40, 1.2]],
+        req: ['ctx_ayuno_estres'], reqF: 0.4,
+        s: { ictericia: 3, ctx_ayuno_estres: 2, ctx_familia: 1, coluria: -2, acolia: -2, dolor_hipocondrio: -1, fiebre: -1, palidez: -1, bazo_grande: -1, poco_crecimiento: -1, picazon_piel: -1, vomitos: -1 },
+        que: 'Condición hereditaria y benigna muy frecuente en que el hígado procesa más lento la bilirrubina. Produce un color amarillo leve de los ojos o la piel que aparece con ayuno, estrés, ejercicio intenso o infecciones. No daña el hígado.',
+        trat: 'No requiere tratamiento. Conviene saberlo para no repetir estudios innecesarios y mantener comidas regulares.',
+        esp: 'Médico general.',
+        alarma: 'Ictericia con orina oscura, deposiciones claras, dolor abdominal o fiebre: consulta pronto (otra causa).',
+        src: ['mp_gilbert']
+      },
+      {
+        id: 'esofagitis', n: 'Esofagitis', alt: 'Inflamación del esófago', urg: 2, prev: 0.95, dur: ['d', 's'],
+        s: { dolor_tragar: 3, ardor_pecho: 2, disfagia: 2, placas_boca: 1, regurgitacion: 1 },
+        que: 'Inflamación del esófago por reflujo ácido, por pastillas que se quedan pegadas al tragarlas con poca agua (como algunos antibióticos o antiinflamatorios) o por infecciones (hongos o virus) en personas con defensas bajas. Produce dolor al tragar, acidez y dificultad para tragar.',
+        trat: 'Medicamentos para la acidez, tomar las pastillas con abundante agua y sin acostarse enseguida, y tratar la infección si existe.',
+        esp: 'Médico general; gastroenterólogo.',
+        alarma: 'Vómito con sangre, imposibilidad de tragar líquidos o dolor de pecho intenso: urgencia.',
+        src: ['mp_esofagitis']
+      },
+      {
+        id: 'vejiga_hiperactiva', n: 'Vejiga hiperactiva', urg: 2, prev: 1.0, dur: ['m'],
+        age: [[50, 200, 1.2]],
+        s: { urgencia_orinar: 3, orinar_frecuente: 2, nicturia: 2, perdida_orina: 1, ardor_orinar: -2, orina_turbia: -1, fiebre: -1 },
+        que: 'Ganas urgentes y repentinas de orinar, difíciles de aguantar, con necesidad de ir muchas veces al baño de día y de noche y, a veces, escapes de orina. Es más frecuente con la edad y no se debe a una infección.',
+        trat: 'Entrenamiento de la vejiga (ir a horarios y aguantar de a poco), ejercicios del piso pélvico, reducir la cafeína y el alcohol y, si no basta, medicamentos.',
+        esp: 'Médico general; urólogo o ginecólogo.',
+        alarma: 'Ardor al orinar, fiebre, sangre en la orina o imposibilidad de orinar: consulta pronto.',
+        src: ['mp_miccion_urgente']
+      },
+      {
+        id: 'hidrocele', n: 'Hidrocele', alt: 'Líquido alrededor del testículo', urg: 2, prev: 1.0, dur: ['s', 'm'], sex: 'M',
+        age: [[0, 1, 1.4]],
+        s: { escroto_hinchado_indoloro: 3, dolor_testicular: -2, bulto_testiculo: -1 },
+        que: 'Acumulación de líquido alrededor de un testículo que agranda el escroto de forma blanda e indolora. Es común en recién nacidos y suele desaparecer en los primeros meses; en adultos puede aparecer tras una inflamación o un golpe.',
+        trat: 'En bebés, observar. En adultos, si es grande o molesta, cirugía. Siempre conviene una ecografía para descartar otras causas.',
+        esp: 'Pediatra o médico general; urólogo.',
+        alarma: 'Dolor testicular súbito, bulto duro en el testículo o hinchazón que aumenta con el esfuerzo y no se reduce: consulta urgente.',
+        src: ['mp_hidrocele_img']
+      },
+      {
+        id: 'espermatocele', n: 'Espermatocele', alt: 'Quiste del epidídimo', urg: 2, prev: 0.95, dur: ['m'], sex: 'M',
+        s: { bulto_sobre_testiculo: 3, bulto_testiculo: -2, dolor_testicular: -2 },
+        que: 'Quiste lleno de líquido en el epidídimo, el conducto que está encima y detrás del testículo. Se siente como un bultito blando, liso e indoloro separado del testículo. Es benigno.',
+        trat: 'Generalmente no necesita tratamiento; si crece mucho o molesta, cirugía. Una ecografía confirma el diagnóstico.',
+        esp: 'Médico general; urólogo.',
+        alarma: 'Bulto duro dentro del propio testículo o dolor súbito: consulta urgente.',
+        src: ['mp_espermatocele_img']
+      },
+      {
+        id: 'balanitis', n: 'Balanitis', alt: 'Inflamación del glande', urg: 2, prev: 1.0, dur: ['d', 's'], sex: 'M',
+        s: { glande_rojo: 3, picazon_genital: 2, ctx_diabetes: 1, secrecion_uretral: -1 },
+        que: 'Inflamación del glande y a veces del prepucio, con enrojecimiento, hinchazón, picazón, ardor y mal olor. Suele deberse a hongos (candidiasis), bacterias, higiene insuficiente o irritantes; es más frecuente en hombres no circuncidados y con diabetes.',
+        trat: 'Lavar con agua tibia y secar bien, evitar jabones irritantes y usar cremas antifúngicas o antibióticas según indicación médica. Controlar la diabetes.',
+        esp: 'Médico general; urólogo o dermatólogo.',
+        alarma: 'Imposibilidad de bajar o subir el prepucio, dificultad para orinar o úlceras: consulta pronto.',
+        src: ['mp_balanitis']
+      },
+      {
+        id: 'fimosis', n: 'Fimosis y parafimosis', urg: 3, prev: 1.0, dur: ['h', 'm'], sex: 'M',
+        s: { prepucio_no_baja: 3, glande_rojo: 1, dolor_relaciones: 1 },
+        que: 'En la fimosis, el prepucio es tan estrecho que no se puede bajar para descubrir el glande; es normal en niños pequeños y suele resolverse con los años. En la parafimosis, el prepucio queda atrapado detrás del glande y lo aprieta, con hinchazón y dolor: es una urgencia.',
+        trat: 'Fimosis: higiene, cremas de corticoides o cirugía (circuncisión) si persiste o causa problemas. Parafimosis: el médico debe reducirla cuanto antes.',
+        esp: 'Pediatra o médico general; urólogo.',
+        alarma: 'Prepucio atrapado detrás del glande con hinchazón o dolor, o glande de color oscuro: urgencia inmediata.',
+        src: ['mp_parafimosis']
+      },
+      {
+        id: 'eyaculacion_precoz', n: 'Eyaculación precoz', urg: 1, prev: 1.0, dur: ['m'], sex: 'M',
+        s: { eyacula_antes: 3, ansiedad: 1 },
+        que: 'Eyaculación que ocurre antes de lo que la persona desea, casi siempre, causando malestar. Es la queja sexual más frecuente en los hombres y puede tener causas psicológicas, de pareja o físicas.',
+        trat: 'Técnicas conductuales (parar y empezar, compresión), terapia sexual y de pareja y, a veces, medicamentos o anestésicos tópicos indicados por el médico.',
+        esp: 'Médico general; urólogo o sexólogo.',
+        alarma: 'Si se acompaña de dificultad de erección, dolor o tristeza persistente: consulta.',
+        src: ['mp_eyaculacion_precoz']
+      },
+      {
+        id: 'hipogonadismo', n: 'Testosterona baja', alt: 'Hipogonadismo masculino', urg: 2, prev: 0.95, dur: ['m'], sex: 'M',
+        age: [[50, 200, 1.2]],
+        s: { deseo_sexual_bajo: 3, disfuncion_erectil: 2, fatiga: 2, crecimiento_mamas_hombre: 1, tristeza: 1, testiculos_pequenos: 1 },
+        que: 'Los testículos producen poca testosterona, por un problema propio o de la hipófisis, o con la edad y la obesidad. Produce menos deseo sexual, problemas de erección, cansancio, ánimo bajo, pérdida de masa muscular y a veces crecimiento de las mamas.',
+        trat: 'Confirmar con exámenes de sangre en la mañana y buscar la causa; tratar el sobrepeso y otras enfermedades; reemplazo de testosterona cuando está indicado, con controles.',
+        esp: 'Médico general; endocrinólogo o urólogo.',
+        alarma: 'Dolor de cabeza intenso con problemas de la vista o secreción de leche por las mamas: consulta pronto.',
+        src: ['mp_hipogonadismo']
+      }
+    ]
+  });
 })();
