@@ -2544,7 +2544,7 @@
 
     // ───────────── Salud de la mujer y embarazo
     {
-      id: 'sop', n: 'Síndrome de ovario poliquístico', alt: 'SOP', urg: 2, prev: 0.95, dur: ['m'], sex: 'F',
+      id: 'sop', n: 'Síndrome de ovario poliquístico', alt: 'SOP', urg: 2, prev: 0.95, dur: ['m'], sex: 'F', ageRange: [10, 55],
       age: [[12, 45, 1.2]],
       s: { reglas_irregulares: 3, vello_excesivo: 3, acne: 2, aumento_peso: 2, caida_pelo: 1 },
       que: 'Trastorno hormonal frecuente en mujeres en edad fértil (MedlinePlus lo llama ahora síndrome ovárico metabólico poliendocrino): reglas irregulares o ausentes, exceso de hormonas masculinas (vello en la cara o el cuerpo, acné, caída del pelo) y, a menudo, aumento de peso y resistencia a la insulina. Puede dificultar el embarazo y aumenta el riesgo de diabetes.',
@@ -3009,8 +3009,8 @@
     },
     {
       id: 'acne_vulgar', n: 'Acné', urg: 1, prev: 1.05, dur: ['s', 'm'],
-      age: [[11, 25, 1.4], [40, 200, 0.6]],
-      s: { acne: 3, vello_excesivo: -1, reglas_irregulares: -1 },
+      age: [[0, 8, 0.3], [11, 25, 1.4], [40, 200, 0.6]],
+      s: { acne: 3, vello_excesivo: -1, reglas_irregulares: -1, pubertad_temprana: -1 },
       que: 'Afección de la piel muy común en la adolescencia, cuando los poros se tapan con grasa y células muertas. Produce puntos negros y blancos, granos y a veces quistes en la cara, el pecho y la espalda.',
       trat: 'Lavado suave dos veces al día y productos con peróxido de benzoilo o ácido salicílico; no apretar los granos para evitar cicatrices. Si es moderado o severo, el médico puede indicar cremas con receta, antibióticos u otros tratamientos.',
       esp: 'Médico general; dermatólogo.',

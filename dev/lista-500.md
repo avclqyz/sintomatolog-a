@@ -34,31 +34,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C023 Cuerpo extraño en la nariz — tanda 1 · `cuerpo_extrano_nariz`
 - [x] C024 Cuerpo extraño en el oído — tanda 1 · `cuerpo_extrano_oido`
 - [x] C025 Fractura de nariz — tanda 1 · `fractura_nasal`
-- [ ] C026 Trauma dental (diente roto o caído)
-- [ ] C027 Mal aliento (halitosis)
-- [ ] C028 Frenillo lingual corto
-- [ ] C029 Leucoplasia oral
-- [ ] C030 Mucocele (quiste del labio)
-- [ ] C031 Amigdalitis recurrente
-- [ ] C032 Chalazión
-- [ ] C033 Pterigión y pinguécula
-- [ ] C034 Derrame en el ojo (hemorragia subconjuntival)
-- [ ] C035 Vicios de refracción (miopía, hipermetropía, astigmatismo)
-- [ ] C036 Estrabismo
-- [ ] C037 Ambliopía (ojo perezoso)
-- [ ] C038 Queratitis o úlcera de córnea
-- [ ] C039 Uveítis (iritis)
-- [ ] C040 Glaucoma crónico
-- [ ] C041 Retinopatía diabética
-- [ ] C042 Desprendimiento del vítreo (moscas volantes)
-- [ ] C043 Obstrucción del lagrimal o dacriocistitis
-- [ ] C044 Fatiga visual por pantallas
-- [ ] C045 Ojo morado (golpe en el ojo)
-- [ ] C046 Quemadura química del ojo
-- [ ] C047 Celulitis periorbitaria u orbitaria
-- [ ] C048 Daltonismo
-- [ ] C049 Párpado caído (ptosis)
-- [ ] C050 Bronquiectasias
+- [x] C026 Trauma dental (diente roto o caído) — tanda 2 · `trauma_dental`
+- [x] C027 Mal aliento (halitosis) — tanda 2 · `halitosis`
+- [x] C028 Frenillo lingual corto — tanda 2 · `frenillo_corto`
+- [x] C029 Leucoplasia oral — tanda 2 · `leucoplasia`
+- [x] C030 Mucocele (quiste del labio) — tanda 2 · `mucocele`
+- [x] C031 Amigdalitis recurrente — tanda 2 · `amigdalitis_recurrente`
+- [x] C032 Chalazión — tanda 2 · `chalazion`
+- [x] C033 Pterigión y pinguécula — tanda 2 · `pterigion`
+- [x] C034 Derrame en el ojo (hemorragia subconjuntival) — tanda 2 · `hemorragia_subconjuntival`
+- [x] C035 Vicios de refracción (miopía, hipermetropía, astigmatismo) — tanda 2 · `vicios_refraccion`
+- [x] C036 Estrabismo — tanda 2 · `estrabismo`
+- [x] C037 Ambliopía (ojo perezoso) — tanda 2 · `ambliopia`
+- [x] C038 Queratitis o úlcera de córnea — tanda 2 · `queratitis`
+- [x] C039 Uveítis (iritis) — tanda 2 · `uveitis`
+- [x] C040 Glaucoma crónico — tanda 2 · `glaucoma_cronico`
+- [x] C041 Retinopatía diabética — tanda 2 · `retinopatia_diabetica`
+- [x] C042 Desprendimiento del vítreo (moscas volantes) — tanda 2 · `desprendimiento_vitreo`
+- [x] C043 Obstrucción del lagrimal o dacriocistitis — tanda 2 · `lagrimal_obstruido`
+- [x] C044 Fatiga visual por pantallas — tanda 2 · `fatiga_visual`
+- [x] C045 Ojo morado (golpe en el ojo) — tanda 2 · `ojo_morado`
+- [x] C046 Quemadura química del ojo — tanda 2 · `quemadura_quimica_ojo`
+- [x] C047 Celulitis periorbitaria u orbitaria — tanda 2 · `celulitis_periorbitaria`
+- [x] C048 Daltonismo — tanda 2 · `daltonismo`
+- [x] C049 Párpado caído (ptosis) — tanda 2 · `ptosis`
+- [x] C050 Bronquiectasias — tanda 2 · `bronquiectasias`
 - [ ] C051 Derrame pleural
 - [ ] C052 Pleuritis (pleuresía)
 - [ ] C053 Asma inducida por ejercicio
@@ -300,31 +300,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R023 Enfermedad de Charcot-Marie-Tooth — tanda 1 · `charcot_marie_tooth`
 - [x] R024 Ataxia de Friedreich — tanda 1 · `ataxia_friedreich`
 - [x] R025 Enfermedad de Huntington — tanda 1 · `huntington`
-- [ ] R026 Esclerosis lateral amiotrófica (ELA)
-- [ ] R027 Fenilcetonuria
-- [ ] R028 Galactosemia
-- [ ] R029 Enfermedad de Gaucher
-- [ ] R030 Enfermedad de Fabry
-- [ ] R031 Enfermedad de Pompe
-- [ ] R032 Mucopolisacaridosis
-- [ ] R033 Tirosinemia tipo 1
-- [ ] R034 Enfermedad de Wilson
-- [ ] R035 Hemocromatosis hereditaria
-- [ ] R036 Porfiria aguda intermitente
-- [ ] R037 Porfiria cutánea tarda
-- [ ] R038 Enfermedad de Tay-Sachs
-- [ ] R039 Enfermedad de Niemann-Pick
-- [ ] R040 Adrenoleucodistrofia
-- [ ] R041 Hipercolesterolemia familiar
-- [ ] R042 Hiperplasia suprarrenal congénita
-- [ ] R043 Hipotiroidismo congénito
-- [ ] R044 Retinitis pigmentosa
-- [ ] R045 Albinismo
-- [ ] R046 Ictiosis
-- [ ] R047 Epidermólisis bullosa
-- [ ] R048 Poliposis adenomatosa familiar
-- [ ] R049 Enfermedad renal poliquística
-- [ ] R050 Síndrome de Alport
+- [x] R026 Esclerosis lateral amiotrófica (ELA) — tanda 2 · `ela`
+- [x] R027 Fenilcetonuria — tanda 2 · `fenilcetonuria`
+- [x] R028 Galactosemia — tanda 2 · `galactosemia`
+- [x] R029 Enfermedad de Gaucher — tanda 2 · `gaucher`
+- [x] R030 Enfermedad de Fabry — tanda 2 · `fabry`
+- [x] R031 Enfermedad de Pompe — tanda 2 · `pompe`
+- [x] R032 Mucopolisacaridosis — tanda 2 · `mucopolisacaridosis`
+- [x] R033 Tirosinemia tipo 1 — tanda 2 · `tirosinemia`
+- [x] R034 Enfermedad de Wilson — tanda 2 · `wilson`
+- [x] R035 Hemocromatosis hereditaria — tanda 2 · `hemocromatosis`
+- [x] R036 Porfiria aguda intermitente — tanda 2 · `porfiria_aguda`
+- [x] R037 Porfiria cutánea tarda — tanda 2 · `porfiria_cutanea`
+- [x] R038 Enfermedad de Tay-Sachs — tanda 2 · `tay_sachs`
+- [x] R039 Enfermedad de Niemann-Pick — tanda 2 · `niemann_pick`
+- [x] R040 Adrenoleucodistrofia — tanda 2 · `adrenoleucodistrofia`
+- [x] R041 Hipercolesterolemia familiar — tanda 2 · `hipercolesterolemia_familiar`
+- [x] R042 Hiperplasia suprarrenal congénita — tanda 2 · `hiperplasia_suprarrenal`
+- [x] R043 Hipotiroidismo congénito — tanda 2 · `hipotiroidismo_congenito`
+- [x] R044 Retinitis pigmentosa — tanda 2 · `retinitis_pigmentosa`
+- [x] R045 Albinismo — tanda 2 · `albinismo`
+- [x] R046 Ictiosis — tanda 2 · `ictiosis`
+- [x] R047 Epidermólisis bullosa — tanda 2 · `epidermolisis_bullosa`
+- [x] R048 Poliposis adenomatosa familiar — tanda 2 · `poliposis_adenomatosa`
+- [x] R049 Enfermedad renal poliquística — tanda 2 · `rinon_poliquistico`
+- [x] R050 Síndrome de Alport — tanda 2 · `alport`
 - [ ] R051 Cistinuria
 - [ ] R052 Déficit de alfa-1 antitripsina
 - [ ] R053 Angioedema hereditario

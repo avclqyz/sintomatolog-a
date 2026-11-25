@@ -310,4 +310,304 @@
       }
     ]
   });
+
+  // ── Tanda 2 (noviembre 2026): boca, ojos y bronquios
+  D.addPack({
+    symptoms: [
+      ['diente_roto', 'Diente roto, suelto o que se salió por un golpe', 'oong', 2, ['diente quebrado', 'se me cayó un diente', 'trauma dental']],
+      ['lengua_atada', 'Lengua que no se puede sacar ni levantar bien (o bebé que no logra mamar bien)', 'oong', 1, ['frenillo corto', 'anquiloglosia', 'lengua atada']],
+      ['placa_blanca_fija', 'Placa blanca en la boca que no se desprende al rasparla', 'oong', 1, ['leucoplasia', 'mancha blanca en la boca']],
+      ['bulto_labio', 'Bultito blando, transparente o azulado, en el labio o dentro de la boca', 'oong', 1, ['mucocele', 'quiste en el labio', 'ampolla en el labio']],
+      ['ctx_anginas_repetidas', 'Has tenido muchas amigdalitis («anginas») en el último año', 'contexto', 0, ['amigdalitis a repetición', 'anginas seguidas']],
+      ['bulto_parpado_indoloro', 'Bulto firme e indoloro en el párpado que crece lento', 'ojos', 1, ['chalazión', 'quiste en el párpado']],
+      ['carnosidad_ojo', 'Carnosidad o mancha amarillenta en la parte blanca del ojo, junto a la córnea', 'ojos', 1, ['pterigión', 'carnosidad', 'pinguécula', 'telita en el ojo']],
+      ['mancha_roja_ojo', 'Mancha roja intensa en la parte blanca del ojo, sin dolor', 'ojos', 1, ['derrame en el ojo', 'vena reventada en el ojo', 'hemorragia subconjuntival']],
+      ['vision_lejos', 'Dificultad para ver de lejos (pizarra, letreros, televisión)', 'ojos', 1, ['miopía', 'no veo de lejos']],
+      ['ojos_desviados', 'Un ojo se desvía hacia adentro, afuera, arriba o abajo', 'ojos', 1, ['estrabismo', 'ojo bizco', 'ojo desviado']],
+      ['vision_un_ojo_nino', 'Un ojo ve menos que el otro (lo detectaron en un control o en el colegio)', 'ojos', 1, ['ojo perezoso', 'ojo flojo', 'ambliopía']],
+      ['vision_lateral', 'Pérdida lenta de la visión de los costados (visión en túnel)', 'ojos', 1, ['visión de túnel', 'pierdo visión lateral']],
+      ['hinchazon_lagrimal', 'Hinchazón roja y dolorosa en el ángulo interno del ojo, junto a la nariz', 'ojos', 1, ['dacriocistitis', 'lagrimal infectado']],
+      ['moreton_ojo', 'Moretón e hinchazón alrededor del ojo tras un golpe', 'ojos', 1, ['ojo morado', 'ojo en tinta', 'hematoma en el ojo']],
+      ['parpado_hinchado_rojo', 'Párpado muy hinchado, rojo y caliente', 'ojos', 2, ['celulitis del párpado', 'párpado inflamado']],
+      ['colores_confunde', 'Confundes algunos colores (por ejemplo, rojo con verde)', 'ojos', 1, ['daltonismo', 'no distingo colores']],
+      ['flema_abundante', 'Mucha flema todos los días, a veces con mal olor', 'respiracion', 1, ['expectoración abundante', 'desgarro diario', 'bronquiectasias']],
+      ['ctx_lentes_contacto', 'Usas lentes de contacto', 'contexto', 0, ['lentes de contacto', 'pupilentes']],
+      ['ctx_pantallas', 'Muchas horas al día frente a pantallas o leyendo', 'contexto', 0, ['computador', 'celular', 'pantallas']],
+      ['ctx_quimico_ojo', 'Te entró un químico en el ojo (cloro, cal, cemento, soda cáustica, limpiadores)', 'contexto', 0, ['químico en el ojo', 'cloro en el ojo', 'quemadura química']]
+    ],
+    sources: {
+      mp_diente_golpe: [MP, 'Fractura o caída de un diente por un golpe', 'https://medlineplus.gov/spanish/ency/article/000058.htm'],
+      mp_aliento: [MP, 'Aliento fuerte', 'https://medlineplus.gov/spanish/ency/article/003058.htm'],
+      mp_frenillo: [MP, 'Frenillo lingual corto', 'https://medlineplus.gov/spanish/ency/article/001640.htm'],
+      mayo_frenillo: [MAYO, 'Anquiloglosia (frenillo lingual corto)', 'https://www.mayoclinic.org/es/diseases-conditions/tongue-tie/symptoms-causes/syc-20378452'],
+      mp_cancer_oral: [MP, 'Cáncer oral (incluye la leucoplasia)', 'https://medlineplus.gov/spanish/ency/article/001035.htm'],
+      mp_mucocele: [MP, 'Quiste mucoso oral', 'https://medlineplus.gov/spanish/ency/article/001639.htm'],
+      mp_amigdalitis: [MP, 'Amigdalitis', 'https://medlineplus.gov/spanish/ency/article/001043.htm'],
+      mp_chalazion: [MP, 'Chalazión', 'https://medlineplus.gov/spanish/ency/article/001006.htm'],
+      mp_pinguecula: [MP, 'Pinguécula (y pterigión)', 'https://medlineplus.gov/spanish/ency/article/001025.htm'],
+      mp_hemorragia_subconj: [MP, 'Hemorragia subconjuntival', 'https://medlineplus.gov/spanish/ency/article/001616.htm'],
+      mp_miopia: [MP, 'Miopía', 'https://medlineplus.gov/spanish/ency/article/001023.htm'],
+      mp_astigmatismo: [MP, 'Astigmatismo', 'https://medlineplus.gov/spanish/ency/article/001015.htm'],
+      mp_refraccion_t: [MP, 'Errores de refracción', 'https://medlineplus.gov/spanish/refractiveerrors.html'],
+      mp_estrabismo: [MP, 'Estrabismo', 'https://medlineplus.gov/spanish/ency/article/001004.htm'],
+      mp_ambliopia: [MP, 'Ambliopía', 'https://medlineplus.gov/spanish/ency/article/001014.htm'],
+      mp_ulcera_cornea: [MP, 'Úlceras e infecciones corneales', 'https://medlineplus.gov/spanish/ency/article/001032.htm'],
+      mp_ojos_rojos: [MP, 'Enrojecimiento de los ojos (incluye la uveítis)', 'https://medlineplus.gov/spanish/ency/article/003031.htm'],
+      mp_lampara_hendidura: [MP, 'Examen con lámpara de hendidura', 'https://medlineplus.gov/spanish/ency/article/003880.htm'],
+      mp_diabetes_ojos: [MP, 'Diabetes y enfermedad ocular', 'https://medlineplus.gov/spanish/ency/article/001212.htm'],
+      mp_moscas_volantes: [MP, 'Moscas volantes', 'https://medlineplus.gov/spanish/ency/article/002085.htm'],
+      mp_conj_neonatal: [MP, 'Conjuntivitis neonatal (y conducto lagrimal obstruido)', 'https://medlineplus.gov/spanish/ency/article/001606.htm'],
+      mayo_fatiga_ocular: [MAYO, 'Fatiga ocular', 'https://www.mayoclinic.org/es/diseases-conditions/eyestrain/symptoms-causes/syc-20372397'],
+      mayo_ojo_morado: [MAYO, 'Ojo morado: primeros auxilios', 'https://www.mayoclinic.org/es/first-aid/first-aid-black-eye/basics/art-20056675'],
+      mp_celulitis_periorbitaria: [MP, 'Celulitis periorbitaria', 'https://medlineplus.gov/spanish/ency/article/000976.htm'],
+      mayo_daltonismo: [MAYO, 'Daltonismo', 'https://www.mayoclinic.org/es/diseases-conditions/color-blindness/symptoms-causes/syc-20354988'],
+      mp_parpado_caido: [MP, 'Párpado caído', 'https://medlineplus.gov/spanish/ency/article/001018.htm'],
+      mp_bronquiectasia: [MP, 'Bronquiectasia', 'https://medlineplus.gov/spanish/ency/article/000144.htm']
+    },
+    conditions: [
+      {
+        id: 'trauma_dental', n: 'Trauma dental', alt: 'Diente roto o caído por un golpe', urg: 4, prev: 0.95, dur: ['h', 'd'],
+        s: { diente_roto: 3, ctx_golpe: 1, dolor_muela: 2, sangrado_encias: -1 },
+        que: 'Fractura, aflojamiento o salida completa de un diente por un golpe (caídas, deporte, accidentes). Un diente definitivo que se salió puede volver a implantarse si se actúa rápido, idealmente en menos de una hora.',
+        trat: 'Tomar el diente por la corona (nunca por la raíz), no frotarlo ni limpiarlo con alcohol; si es posible, volver a ponerlo en su lugar y morder una gasa, o guardarlo en leche o en saliva. Ir de inmediato al dentista o a una urgencia dental.',
+        ges: 'La urgencia odontológica ambulatoria está cubierta por GES.',
+        esp: 'Dentista (urgencia dental).',
+        alarma: 'Golpe en la cabeza con pérdida de conocimiento, vómitos o si no puedes juntar los dientes (posible fractura de mandíbula): urgencia.',
+        src: ['mp_diente_golpe', 'minsal_ges']
+      },
+      {
+        id: 'halitosis', n: 'Mal aliento', alt: 'Halitosis', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        s: { mal_aliento: 3, sed: 1, goteo_posnasal: 1, encias_cepillado: 1, regurgitacion: 1 },
+        que: 'Olor desagradable de la boca que persiste. Casi siempre se origina en la propia boca: restos de comida y bacterias en la lengua, caries o enfermedad de las encías, boca seca, tabaco o algunos alimentos. Con menos frecuencia viene de la nariz, la garganta, el estómago o enfermedades generales.',
+        trat: 'Cepillarse los dientes y la lengua, usar hilo dental, tomar agua, no fumar y controlarse con el dentista. Si persiste a pesar de una buena higiene, consultar al médico para buscar otras causas.',
+        esp: 'Dentista; médico general si persiste.',
+        alarma: 'Mal aliento con fiebre, dolor o hinchazón de la boca, o con baja de peso: consulta pronto.',
+        src: ['mp_aliento']
+      },
+      {
+        id: 'frenillo_corto', n: 'Frenillo lingual corto', alt: 'Anquiloglosia', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[0, 2, 1.4], [12, 200, 0.4]],
+        s: { lengua_atada: 3 },
+        que: 'La banda de tejido bajo la lengua es corta o gruesa y limita su movimiento. Es frecuente en recién nacidos; a veces dificulta la lactancia (mal agarre, dolor del pezón) y, en niños mayores, algunos sonidos del habla.',
+        trat: 'Muchos no necesitan tratamiento. Si causa problemas de lactancia o del habla, se corta con un procedimiento simple (frenotomía o frenuloplastía). Una matrona o consultora de lactancia puede ayudar con el agarre.',
+        esp: 'Pediatra; matrona o consultora de lactancia; odontopediatra u otorrino.',
+        alarma: 'Bebé que no sube de peso o que moja pocos pañales: consulta pronto.',
+        src: ['mp_frenillo', 'mayo_frenillo']
+      },
+      {
+        id: 'leucoplasia', n: 'Leucoplasia oral', urg: 2, prev: 0.9, dur: ['s', 'm'],
+        age: [[0, 34, 0.4], [40, 200, 1.2]],
+        s: { placa_blanca_fija: 3, ctx_fumador: 2, ctx_alcohol: 1, placas_boca: -1 },
+        que: 'Placas blancas y gruesas en la lengua, las encías o las mejillas que no se desprenden al rasparlas. Se relaciona con el tabaco, el alcohol o roces crónicos. Casi siempre es benigna, pero algunas pueden transformarse en cáncer de boca.',
+        trat: 'Dejar de fumar y de beber alcohol y corregir roces de prótesis o dientes. El dentista o médico puede pedir una biopsia y, según el resultado, extirparla y hacer controles.',
+        esp: 'Dentista; cirujano maxilofacial o dermatólogo.',
+        alarma: 'Placa roja o mixta, herida que no cicatriza en 2 semanas, bulto o dolor al tragar: consulta pronto para descartar cáncer.',
+        src: ['mp_cancer_oral']
+      },
+      {
+        id: 'mucocele', n: 'Mucocele', alt: 'Quiste mucoso del labio', urg: 1, prev: 1.0, dur: ['d', 's', 'm'],
+        s: { bulto_labio: 3 },
+        que: 'Bultito blando, liso y a veces azulado en la cara interna del labio inferior, en las mejillas o bajo la lengua. Se forma cuando una glándula salival pequeña se rompe o se tapa, a menudo por morderse el labio. No es grave.',
+        trat: 'Muchas veces desaparece solo. Si persiste, se repite o molesta, el dentista o cirujano lo extirpa con un procedimiento menor. Evitar morderse el labio.',
+        esp: 'Dentista; cirujano maxilofacial.',
+        alarma: 'Bulto duro, que sangra, crece rápido o no desaparece en un mes: consulta para revisarlo.',
+        src: ['mp_mucocele']
+      },
+      {
+        id: 'amigdalitis_recurrente', n: 'Amigdalitis recurrente', alt: 'Anginas a repetición', urg: 2, prev: 0.95, dur: ['d', 'm'],
+        req: ['ctx_anginas_repetidas'], reqF: 0.4,
+        s: { ctx_anginas_repetidas: 3, dolor_garganta: 2, placas: 2, fiebre: 1, ganglios: 1, mal_aliento: 1, ronquidos: 1 },
+        que: 'Inflamación repetida de las amígdalas, por virus o por estreptococo, varias veces al año. Además de los episodios de dolor de garganta y fiebre, puede haber amígdalas grandes con ronquidos o pausas al dormir.',
+        trat: 'Cada episodio se trata según su causa (antibiótico si es estreptococo). Cuando las amigdalitis son muy frecuentes (por ejemplo, 7 o más en un año) o hay apneas del sueño, el otorrino puede indicar sacar las amígdalas.',
+        esp: 'Médico general o pediatra; otorrinolaringólogo.',
+        alarma: 'Dolor intenso de un lado con dificultad para abrir la boca o tragar saliva, voz apagada o dificultad para respirar: urgencia.',
+        src: ['mp_amigdalitis']
+      },
+      {
+        id: 'chalazion', n: 'Chalazión', alt: 'Quiste del párpado', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        s: { bulto_parpado_indoloro: 3, bulto_parpado: 1, vision_borrosa: 1 },
+        que: 'Bulto firme y generalmente indoloro en el párpado, causado por la obstrucción de una glándula de grasa. Puede quedar después de un orzuelo y es más frecuente con blefaritis o rosácea.',
+        trat: 'Compresas tibias varias veces al día por unos minutos y masaje suave; muchos desaparecen en semanas. Si persiste o es grande, el oftalmólogo puede vaciarlo con una cirugía menor o inyectarlo.',
+        esp: 'Médico general; oftalmólogo.',
+        alarma: 'Párpado muy rojo e hinchado con fiebre, o bulto que vuelve a salir en el mismo lugar: consulta (a veces hay que descartar otras lesiones).',
+        src: ['mp_chalazion', 'mp_parpado']
+      },
+      {
+        id: 'pterigion', n: 'Pterigión y pinguécula', alt: '«Carnosidad» en el ojo', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[0, 19, 0.3]],
+        s: { carnosidad_ojo: 3, ojo_rojo: 1, arena_ojos: 1, ctx_calor: 1 },
+        que: 'Crecimientos benignos de la conjuntiva por la exposición al sol, el viento y el polvo. La pinguécula es una mancha amarillenta que no cubre la córnea; el pterigión es una carnosidad que avanza sobre ella y, si es grande, puede afectar la visión.',
+        trat: 'Lágrimas artificiales y lentes de sol con filtro UV; gotas antiinflamatorias si se inflaman. Si el pterigión crece hacia el centro de la córnea o molesta mucho, se extirpa con cirugía.',
+        esp: 'Oftalmólogo.',
+        alarma: 'Disminución de la visión o crecimiento rápido: consulta con oftalmólogo.',
+        src: ['mp_pinguecula']
+      },
+      {
+        id: 'hemorragia_subconjuntival', n: 'Derrame en el ojo', alt: 'Hemorragia subconjuntival', urg: 1, prev: 1.0, dur: ['h', 'd', 's'],
+        s: { mancha_roja_ojo: 3, ojo_rojo: 1, dolor_ojo: -2, vision_borrosa: -1, laganas: -1 },
+        que: 'Mancha roja intensa en la parte blanca del ojo por la rotura de un vasito sanguíneo, muchas veces tras toser, estornudar o hacer fuerza, o sin causa clara. No duele ni afecta la visión, aunque se ve llamativa.',
+        trat: 'No necesita tratamiento: se reabsorbe sola en 2 a 3 semanas, cambiando de color como un moretón. Lágrimas artificiales si hay sensación de arenilla. Controlar la presión arterial.',
+        esp: 'Médico general si se repite.',
+        alarma: 'Dolor, baja de la visión, sangrado tras un golpe fuerte, derrames repetidos o moretones en otras partes: consulta pronto.',
+        src: ['mp_hemorragia_subconj']
+      },
+      {
+        id: 'vicios_refraccion', n: 'Vicios de refracción', alt: 'Miopía, hipermetropía o astigmatismo', urg: 1, prev: 1.05, dur: ['m'],
+        s: { vision_lejos: 3, vision_borrosa: 2, dolor_cabeza: 1, vision_cerca: 1, arena_ojos: 1, vision_subita: -2 },
+        que: 'El ojo no enfoca bien la luz: en la miopía se ve mal de lejos, en la hipermetropía cuesta enfocar de cerca y en el astigmatismo se ve borroso o distorsionado. Suelen aparecer en la niñez o la adolescencia y causar dolor de cabeza o cansancio visual.',
+        trat: 'Lentes ópticos o de contacto; en adultos con la graduación estable, cirugía láser. En niños son importantes los controles para no afectar el aprendizaje.',
+        ges: 'Los vicios de refracción en personas de 65 años y más están cubiertos por GES.',
+        esp: 'Oftalmólogo o tecnólogo médico en oftalmología.',
+        alarma: 'Pérdida súbita de visión, visión doble, destellos o una cortina en la vista: urgencia.',
+        src: ['mp_miopia', 'mp_astigmatismo', 'mp_refraccion_t']
+      },
+      {
+        id: 'estrabismo', n: 'Estrabismo', alt: 'Ojos desviados («bizco»)', urg: 2, prev: 1.0, dur: ['m'],
+        age: [[0, 9, 1.4]],
+        s: { ojos_desviados: 3, vision_un_ojo_nino: 1, vision_borrosa: 1 },
+        que: 'Los ojos no miran en la misma dirección: uno se desvía hacia adentro, afuera, arriba o abajo. Es frecuente en niños y, si no se trata a tiempo, el cerebro deja de usar el ojo desviado (ojo perezoso).',
+        trat: 'Lentes, parches en el ojo sano y, a veces, cirugía de los músculos del ojo. Mientras antes se trate en niños, mejor es el resultado.',
+        ges: 'El estrabismo en menores de 9 años está cubierto por GES.',
+        esp: 'Oftalmólogo (oftalmología infantil).',
+        alarma: 'Desviación de un ojo o visión doble que aparece de golpe en un adulto o un niño mayor: urgencia (puede ser un problema neurológico).',
+        src: ['mp_estrabismo', 'minsal_ges']
+      },
+      {
+        id: 'ambliopia', n: 'Ambliopía', alt: 'Ojo perezoso', urg: 2, prev: 1.0, dur: ['m'],
+        ageRange: [0, 18], age: [[0, 8, 1.3]],
+        s: { vision_un_ojo_nino: 3, ojos_desviados: 2, vision_borrosa: 1 },
+        que: 'Disminución de la visión de un ojo porque el cerebro dejó de usarlo durante la infancia, por estrabismo, una diferencia grande de graduación entre ambos ojos o algo que tapaba la visión (como un párpado caído o una catarata).',
+        trat: 'Corregir la causa (lentes) y obligar al ojo débil a trabajar con parches en el ojo sano o gotas. Funciona mejor antes de los 7 u 8 años; por eso son importantes los controles visuales infantiles.',
+        esp: 'Oftalmólogo (oftalmología infantil).',
+        alarma: 'Cualquier sospecha en un niño pequeño: consulta pronto, porque el tratamiento depende de la edad.',
+        src: ['mp_ambliopia']
+      },
+      {
+        id: 'queratitis', n: 'Queratitis o úlcera de córnea', urg: 4, prev: 0.95, dur: ['h', 'd'],
+        s: { dolor_ojo: 3, ojo_rojo: 2, fotofobia: 2, vision_borrosa: 2, ctx_lentes_contacto: 2, lagrimeo: 1, laganas: 1, cuerpo_extrano_ojo: 1 },
+        que: 'Infección o inflamación de la córnea, la capa transparente del ojo, por bacterias, virus (herpes), hongos o amebas. Es más frecuente en personas que usan lentes de contacto, sobre todo si duermen con ellos o los lavan con agua. Produce dolor, ojo rojo, molestia con la luz y visión borrosa.',
+        trat: 'Requiere evaluación oftalmológica urgente y tratamiento con gotas antibióticas, antivirales o antifúngicas según la causa. Suspender los lentes de contacto. Si se retrasa, puede dejar cicatriz y pérdida de visión.',
+        esp: 'Oftalmólogo (urgencia oftalmológica).',
+        alarma: 'Dolor intenso, mancha blanca en la córnea o baja de la visión: urgencia el mismo día.',
+        src: ['mp_ulcera_cornea']
+      },
+      {
+        id: 'uveitis', n: 'Uveítis', alt: 'Iritis (inflamación dentro del ojo)', urg: 4, prev: 0.9, dur: ['h', 'd', 's'],
+        s: { fotofobia: 3, dolor_ojo: 2, ojo_rojo: 2, vision_borrosa: 2, moscas_destellos: 1, dolor_lumbar: 1, laganas: -2 },
+        que: 'Inflamación de la úvea, la capa media del ojo. Produce ojo rojo (sobre todo alrededor de la córnea), dolor, mucha molestia con la luz y visión borrosa, sin lagañas. Puede asociarse a enfermedades reumáticas (como la espondilitis), intestinales o infecciones.',
+        trat: 'Gotas de corticoides y gotas que dilatan la pupila indicadas por el oftalmólogo; a veces tratamiento general. Hay que buscar enfermedades asociadas.',
+        esp: 'Oftalmólogo (pronto); reumatólogo si se repite.',
+        alarma: 'Baja de la visión o dolor intenso: urgencia oftalmológica el mismo día.',
+        src: ['mp_ojos_rojos', 'mp_lampara_hendidura']
+      },
+      {
+        id: 'glaucoma_cronico', n: 'Glaucoma crónico', alt: 'Glaucoma de ángulo abierto', urg: 2, prev: 1.0, dur: ['m'],
+        age: [[0, 39, 0.3], [60, 200, 1.4]],
+        s: { vision_lateral: 3, ctx_familia: 1, vision_borrosa: 1, ctx_diabetes: 1, dolor_ojo: -2, halos: -1 },
+        que: 'Daño lento del nervio óptico, generalmente por presión alta dentro del ojo. No duele y al principio no da síntomas; con los años se pierde la visión de los costados. Es más frecuente después de los 40 años, con antecedentes familiares, diabetes o miopía alta.',
+        trat: 'Gotas que bajan la presión del ojo, de por vida, y a veces láser o cirugía. La visión perdida no se recupera, por eso es clave el control con fondo de ojo y medición de la presión desde los 40 años.',
+        esp: 'Oftalmólogo.',
+        alarma: 'Dolor intenso del ojo con visión borrosa, halos, náuseas o vómitos: urgencia (crisis de glaucoma agudo).',
+        src: ['mp_glaucoma', 'mp_ojos_rojos']
+      },
+      {
+        id: 'retinopatia_diabetica', n: 'Retinopatía diabética', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        req: ['ctx_diabetes'], reqF: 0.3,
+        s: { ctx_diabetes: 3, vision_borrosa: 2, moscas_destellos: 1, vision_central: 1 },
+        que: 'Daño de los vasos sanguíneos de la retina por la diabetes. Al principio no da síntomas; después aparecen visión borrosa, manchas o pérdida de visión. Es una de las principales causas de ceguera en adultos y se puede prevenir.',
+        trat: 'Buen control del azúcar, la presión y el colesterol; fondo de ojo al menos una vez al año. Según la etapa, láser, inyecciones dentro del ojo o cirugía.',
+        ges: 'La retinopatía diabética está cubierta por GES.',
+        esp: 'Médico de cabecera; oftalmólogo.',
+        alarma: 'Pérdida súbita de visión, muchas manchas nuevas o una cortina en la vista: urgencia oftalmológica.',
+        src: ['mp_diabetes_ojos', 'minsal_ges']
+      },
+      {
+        id: 'desprendimiento_vitreo', n: 'Desprendimiento del vítreo', alt: '«Moscas volantes»', urg: 3, prev: 1.0, dur: ['h', 'd', 's', 'm'],
+        age: [[0, 39, 0.4], [50, 200, 1.3]],
+        s: { moscas_destellos: 3, vision_borrosa: 1, cortina_vision: -2 },
+        que: 'Con la edad, el gel que llena el ojo (vítreo) se licúa y se separa de la retina. Aparecen manchas, hilos o telarañas que flotan en la visión, a veces con destellos de luz. Suele ser benigno, pero en algunos casos rompe la retina.',
+        trat: 'Las moscas volantes antiguas no necesitan tratamiento y el cerebro se acostumbra. Cuando aparecen de golpe, sobre todo con destellos, el oftalmólogo debe revisar la retina con las pupilas dilatadas en los días siguientes.',
+        esp: 'Oftalmólogo.',
+        alarma: 'Muchas manchas nuevas de golpe, destellos o una sombra o cortina que tapa parte de la visión: urgencia el mismo día (posible desprendimiento de retina).',
+        src: ['mp_moscas_volantes']
+      },
+      {
+        id: 'lagrimal_obstruido', n: 'Obstrucción del lagrimal o dacriocistitis', urg: 2, prev: 1.0, dur: ['d', 's', 'm'],
+        age: [[0, 1, 1.5]],
+        s: { lagrimeo: 3, laganas: 2, hinchazon_lagrimal: 2, ojo_rojo: 1, fiebre: 1 },
+        que: 'El conducto que drena las lágrimas hacia la nariz está tapado, lo que causa lagrimeo constante y lagañas. Es muy frecuente en lactantes y suele abrirse solo antes del año. En adultos puede infectarse (dacriocistitis), con hinchazón roja y dolorosa junto a la nariz.',
+        trat: 'En bebés, masaje suave entre el ojo y la nariz varias veces al día y limpieza; si no se resuelve al año, un procedimiento simple. Si hay infección, antibióticos; en adultos con obstrucción persistente, cirugía.',
+        esp: 'Pediatra o médico general; oftalmólogo.',
+        alarma: 'Hinchazón roja y caliente junto al ojo con fiebre, párpado muy hinchado o un recién nacido con mucha secreción: consulta urgente.',
+        src: ['mp_conj_neonatal']
+      },
+      {
+        id: 'fatiga_visual', n: 'Fatiga visual', alt: 'Cansancio de la vista por pantallas', urg: 1, prev: 1.0, dur: ['h', 'd', 's', 'm'],
+        req: ['ctx_pantallas'], reqF: 0.5,
+        s: { ctx_pantallas: 3, arena_ojos: 2, vision_borrosa: 1, dolor_cabeza: 1, dolor_cuello: 1, ojo_rojo: 1 },
+        que: 'Ojos cansados, secos, que arden o pican y visión borrosa después de mirar pantallas o leer por mucho rato, a menudo con dolor de cabeza o de cuello. Se debe a que se pestañea menos y se enfoca de cerca por mucho tiempo.',
+        trat: 'Regla 20-20-20 (cada 20 minutos, mirar algo a unos 6 metros por 20 segundos), pestañear más, buena iluminación, pantalla un poco bajo la altura de los ojos y lágrimas artificiales. Revisar si se necesitan lentes.',
+        esp: 'Médico general; oftalmólogo si persiste.',
+        alarma: 'Dolor de ojo intenso, visión doble o pérdida de visión: consulta pronto.',
+        src: ['mayo_fatiga_ocular']
+      },
+      {
+        id: 'ojo_morado', n: 'Ojo morado', alt: 'Hematoma alrededor del ojo', urg: 2, prev: 1.0, dur: ['h', 'd'],
+        s: { moreton_ojo: 3, ctx_golpe: 2, hinchazon_moreton: 1, mancha_roja_ojo: 1 },
+        que: 'Moretón e hinchazón de los párpados y la piel alrededor del ojo después de un golpe. Suele ser leve y cambia de color durante varios días, pero puede acompañar a lesiones del ojo o de los huesos de la cara.',
+        trat: 'Frío local sin presionar el ojo durante las primeras 24 a 48 horas, después compresas tibias. Paracetamol para el dolor. Consultar para revisar el ojo si el golpe fue fuerte.',
+        esp: 'Médico general; oftalmólogo si hay molestias en la visión.',
+        alarma: 'Visión doble o borrosa, sangre dentro del ojo, dolor intenso, ambos ojos morados tras un golpe en la cabeza o líquido por la nariz: urgencia.',
+        src: ['mayo_ojo_morado']
+      },
+      {
+        id: 'quemadura_quimica_ojo', n: 'Quemadura química del ojo', urg: 4, prev: 0.9, dur: ['h'],
+        req: ['ctx_quimico_ojo'], reqF: 0.2,
+        s: { ctx_quimico_ojo: 3, dolor_ojo: 2, ojo_rojo: 2, lagrimeo: 1, vision_borrosa: 1 },
+        que: 'Lesión del ojo por contacto con un químico. Los álcalis (cal, cemento, soda cáustica, amoníaco) son los más peligrosos porque penetran el ojo; los ácidos y el cloro también pueden dañar la córnea.',
+        trat: 'Lavar de inmediato el ojo con abundante agua limpia durante al menos 15 a 20 minutos, manteniendo los párpados abiertos, y luego ir a urgencia. No frotar ni poner otras sustancias. Llevar el envase del producto.',
+        esp: 'Servicio de urgencia; oftalmólogo.',
+        alarma: 'Siempre requiere atención urgente después de lavar el ojo, sobre todo con álcalis o si la visión está afectada.',
+        src: ['mp_emergencias_ojo']
+      },
+      {
+        id: 'celulitis_periorbitaria', n: 'Celulitis periorbitaria u orbitaria', alt: 'Infección del párpado y alrededor del ojo', urg: 4, prev: 0.9, dur: ['d'],
+        age: [[0, 10, 1.3]],
+        s: { parpado_hinchado_rojo: 3, fiebre: 2, dolor_ojo: 1, congestion: 1, vision_subita: 1 },
+        que: 'Infección del párpado y la piel alrededor del ojo, más frecuente en niños, a menudo después de una sinusitis, una picadura o una herida. Si la infección pasa detrás del ojo (celulitis orbitaria) es grave: dolor al mover el ojo, ojo saltón y visión doble.',
+        trat: 'Antibióticos indicados por un médico; en niños pequeños o si es orbitaria, hospitalización con antibióticos por vena y, a veces, cirugía para drenar.',
+        esp: 'Servicio de urgencia; oftalmólogo; otorrino si viene de una sinusitis.',
+        alarma: 'Dolor al mover el ojo, ojo saltón, visión doble o borrosa, fiebre alta o decaimiento: urgencia inmediata.',
+        src: ['mp_celulitis_periorbitaria']
+      },
+      {
+        id: 'daltonismo', n: 'Daltonismo', alt: 'Deficiencia de la visión de los colores', urg: 1, prev: 1.0, dur: ['m'], sexF: 0.2,
+        s: { colores_confunde: 3, ctx_familia: 1, vision_borrosa: -1 },
+        que: 'Dificultad para distinguir ciertos colores, sobre todo rojo y verde. Casi siempre es hereditario y presente desde el nacimiento, mucho más frecuente en hombres; a veces aparece por enfermedades del ojo o medicamentos.',
+        trat: 'El daltonismo hereditario no tiene tratamiento, pero no empeora y la mayoría se adapta bien. Existen lentes con filtros que ayudan a algunas personas. Si aparece en la adultez, buscar la causa.',
+        esp: 'Oftalmólogo.',
+        alarma: 'Cambio en la visión de los colores que aparece de repente o en un solo ojo: consulta pronto.',
+        src: ['mayo_daltonismo']
+      },
+      {
+        id: 'ptosis', n: 'Párpado caído', alt: 'Ptosis palpebral', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        age: [[60, 200, 1.3]],
+        s: { parpado_caido: 3, vision_borrosa: 1, debilidad_progresiva: -1, miotonia: -1 },
+        que: 'El párpado superior cae más de lo normal. En adultos mayores suele deberse a que el músculo se estira con la edad o tras usar lentes de contacto por años; también puede venir de nacimiento o por enfermedades de nervios o músculos.',
+        trat: 'Si tapa la visión o molesta, se corrige con cirugía del párpado. En niños es importante tratarlo para evitar el ojo perezoso. Si es reciente, buscar la causa.',
+        esp: 'Oftalmólogo; neurólogo si apareció de golpe o varía durante el día.',
+        alarma: 'Párpado que cae de golpe con dolor de cabeza, visión doble, pupila más grande o debilidad: urgencia. Si empeora en la tarde y mejora al descansar, consulta pronto (miastenia).',
+        src: ['mp_parpado_caido']
+      },
+      {
+        id: 'bronquiectasias', n: 'Bronquiectasias', urg: 2, prev: 0.9, dur: ['m'],
+        s: { flema_abundante: 3, tos_prolongada: 2, tos_flema: 2, infecciones_repetidas: 2, falta_aire: 1, tos_sangre: 1, sibilancias: 1 },
+        que: 'Los bronquios quedan dilatados y dañados de forma permanente, por infecciones graves anteriores, tuberculosis, fibrosis quística u otras enfermedades. Se acumula flema y hay tos crónica con mucha expectoración e infecciones respiratorias repetidas.',
+        trat: 'Kinesiología respiratoria para sacar las secreciones, ejercicio, vacunas y antibióticos en las infecciones (a veces de forma preventiva); tratar la causa si se conoce.',
+        esp: 'Médico general; broncopulmonar.',
+        alarma: 'Tos con sangre abundante, fiebre alta o falta de aire que aumenta: urgencia.',
+        src: ['mp_bronquiectasia']
+      }
+    ]
+  });
 })();
