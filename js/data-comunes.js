@@ -920,4 +920,310 @@
       }
     ]
   });
+
+  // ── Tanda 4 (noviembre 2026): salud mental, sueño, infancia y nervios
+  D.addPack({
+    symptoms: [
+      ['mano_caida', 'No puedes levantar la muñeca ni estirar los dedos (mano caída)', 'musculo', 2, ['mano caída', 'parálisis del sábado', 'nervio radial']],
+      ['dolor_gluteo', 'Dolor profundo en un glúteo que empeora al estar sentado', 'musculo', 1, ['piriforme', 'dolor en la nalga']],
+      ['miedo_objeto', 'Miedo intenso y desproporcionado a algo específico (animales, alturas, agujas, volar)', 'mente', 1, ['fobia', 'terror a las arañas', 'miedo a volar']],
+      ['miedo_social', 'Miedo intenso a ser juzgado o hacer el ridículo frente a otros, que te hace evitar situaciones sociales', 'mente', 1, ['fobia social', 'timidez extrema', 'ansiedad social']],
+      ['miedo_lugares', 'Miedo a estar en lugares de los que es difícil escapar (multitudes, transporte, salir solo/a)', 'mente', 1, ['agorafobia', 'miedo a salir']],
+      ['animo_bajo_anos', 'Ánimo bajo casi todos los días durante 2 años o más', 'mente', 1, ['distimia', 'depresión crónica', 'siempre triste']],
+      ['emociones_inestables', 'Emociones muy intensas y cambiantes, miedo al abandono y relaciones muy inestables', 'mente', 1, ['inestabilidad emocional', 'trastorno límite', 'limítrofe']],
+      ['alucinaciones', 'Escuchar voces o ver cosas que otros no perciben, o creencias extrañas que nadie comparte', 'mente', 2, ['alucinaciones', 'escucho voces', 'delirios', 'psicosis']],
+      ['aislamiento', 'Aislamiento, descuido personal y pérdida de interés en estudiar o trabajar', 'mente', 1, ['se encierra', 'abandono personal']],
+      ['preocupacion_sintomas', 'Preocupación excesiva y constante por síntomas físicos, que ocupa gran parte del día', 'mente', 1, ['somatización', 'preocupación por el cuerpo']],
+      ['miedo_enfermedad', 'Miedo persistente a tener una enfermedad grave a pesar de exámenes normales', 'mente', 1, ['hipocondría', 'miedo a estar enfermo']],
+      ['ganas_fumar', 'No logras dejar de fumar o fumas apenas despiertas', 'mente', 1, ['adicción al cigarro', 'tabaquismo', 'dependencia a la nicotina']],
+      ['despierta_gritando', 'Niño que despierta gritando o aterrado de noche y luego no recuerda nada', 'mente', 1, ['terrores nocturnos', 'pesadillas']],
+      ['camina_dormido', 'Camina o hace cosas dormido y no lo recuerda', 'mente', 1, ['sonambulismo', 'sonámbulo']],
+      ['moja_cama', 'Moja la cama durante la noche (después de los 5 años)', 'urogenital', 1, ['enuresis', 'se hace pipí en la cama', 'se orina en la cama']],
+      ['ensucia_ropa', 'Niño que ensucia la ropa interior con deposiciones después de haber aprendido a ir al baño', 'digestivo', 1, ['encopresis', 'se hace caca']],
+      ['miedo_separarse', 'Niño con angustia intensa al separarse de sus padres o de la casa (no quiere ir al colegio)', 'mente', 1, ['ansiedad por separación', 'no quiere ir al colegio']],
+      ['ctx_viaje_movimiento', 'Ocurre al viajar en auto, bus, barco o avión', 'contexto', 0, ['mareo en el auto', 'mareo en barco']],
+      ['ctx_posparto', 'Tuviste un bebé en los últimos 12 meses', 'contexto', 0, ['posparto', 'puerperio', 'recién parida'], 'F'],
+      ['ctx_cambio_vital', 'Un cambio o problema importante en los últimos 3 meses (separación, despido, mudanza, enfermedad)', 'contexto', 0, ['crisis', 'problema importante', 'cambio de vida']],
+      ['ctx_viaje_husos', 'Viaje reciente cruzando varios husos horarios o trabajo por turnos de noche', 'contexto', 0, ['jet lag', 'turnos de noche', 'desfase horario']],
+      ['ctx_dejo_alcohol', 'Dejaste o bajaste bruscamente el alcohol después de beber mucho por tiempo', 'contexto', 0, ['abstinencia', 'dejé de tomar']],
+      ['ctx_muerte_cercano', 'Muerte de un ser querido en los últimos meses', 'contexto', 0, ['duelo', 'falleció un familiar', 'pérdida']]
+    ],
+    sources: {
+      mayo_cinetosis: [MAYO, 'Mareos por movimiento: primeros auxilios', 'https://www.mayoclinic.org/es/first-aid/first-aid-motion-sickness/basics/art-20056697'],
+      mp_nervio_radial: [MP, 'Disfunción del nervio radial', 'https://medlineplus.gov/spanish/ency/article/000790.htm'],
+      mp_piriforme: [MP, 'Síndrome piriforme', 'https://medlineplus.gov/spanish/ency/patientinstructions/000776.htm'],
+      mp_fobias_t: [MP, 'Fobias', 'https://medlineplus.gov/spanish/phobias.html'],
+      mp_fobia_social: [MP, 'Fobia social', 'https://medlineplus.gov/spanish/ency/article/000957.htm'],
+      mp_agorafobia: [MP, 'Agorafobia', 'https://medlineplus.gov/spanish/ency/article/000923.htm'],
+      mp_distimia: [MP, 'Trastorno depresivo persistente', 'https://medlineplus.gov/spanish/ency/article/000918.htm'],
+      mp_depresion_posparto: [MP, 'Depresión posparto', 'https://medlineplus.gov/spanish/ency/article/007215.htm'],
+      mp_adaptacion: [MP, 'Trastorno de adaptación', 'https://medlineplus.gov/spanish/ency/article/000932.htm'],
+      mayo_tlp: [MAYO, 'Trastorno límite de la personalidad', 'https://www.mayoclinic.org/es/diseases-conditions/borderline-personality-disorder/symptoms-causes/syc-20370237'],
+      mp_esquizofrenia: [MP, 'Esquizofrenia', 'https://medlineplus.gov/spanish/ency/article/000928.htm'],
+      mp_psicosis: [MP, 'Psicosis', 'https://medlineplus.gov/spanish/ency/article/001553.htm'],
+      mp_tea: [MP, 'Trastorno del espectro autista', 'https://medlineplus.gov/spanish/ency/article/001526.htm'],
+      mp_sintomas_somaticos: [MP, 'Trastorno de síntomas somáticos', 'https://medlineplus.gov/spanish/ency/article/000955.htm'],
+      mp_ansiedad_enfermedad: [MP, 'Trastorno de ansiedad por enfermedad', 'https://medlineplus.gov/spanish/ency/article/001236.htm'],
+      mp_nicotina: [MP, 'Nicotina y tabaco', 'https://medlineplus.gov/spanish/ency/article/000953.htm'],
+      mp_tdpm: [MP, 'Trastorno disfórico premenstrual', 'https://medlineplus.gov/spanish/ency/article/007193.htm'],
+      mp_trastornos_sueno: [MP, 'Trastornos del sueño (incluye los terrores nocturnos)', 'https://medlineplus.gov/spanish/ency/article/000800.htm'],
+      mp_sonambulismo: [MP, 'Sonambulismo', 'https://medlineplus.gov/spanish/ency/article/000808.htm'],
+      mp_enuresis: [MP, 'Orinarse en la cama', 'https://medlineplus.gov/spanish/ency/patientinstructions/000703.htm'],
+      mayo_enuresis: [MAYO, 'Mojar la cama', 'https://www.mayoclinic.org/es/diseases-conditions/bed-wetting/symptoms-causes/syc-20366685'],
+      mp_encopresis: [MP, 'Encopresis', 'https://medlineplus.gov/spanish/ency/article/001570.htm'],
+      mp_jet_lag: [MP, 'Prevención del desfase horario (jet lag)', 'https://medlineplus.gov/spanish/ency/patientinstructions/000719.htm'],
+      mp_abstinencia_alcohol: [MP, 'Abstinencia alcohólica', 'https://medlineplus.gov/spanish/ency/article/000764.htm'],
+      mp_delirium_tremens: [MP, 'Delirium tremens', 'https://medlineplus.gov/spanish/ency/article/000766.htm'],
+      mp_duelo: [MP, 'Duelo', 'https://medlineplus.gov/spanish/ency/article/001530.htm'],
+      mayo_ansiedad_separacion: [MAYO, 'Trastorno de ansiedad por separación', 'https://www.mayoclinic.org/es/diseases-conditions/separation-anxiety-disorder/symptoms-causes/syc-20377455']
+    },
+    conditions: [
+      {
+        id: 'deterioro_cognitivo_leve', n: 'Deterioro cognitivo leve', urg: 2, prev: 1.0, dur: ['m'],
+        age: [[0, 49, 0.2], [65, 200, 1.4]],
+        s: { memoria: 3, olvidos_progresivos: -1, tristeza: -1, confusion: -1 },
+        que: 'Más problemas de memoria o de concentración de lo esperado para la edad, pero sin que afecten la independencia en la vida diaria. No siempre avanza a demencia, y a veces se debe a causas tratables como depresión, falta de vitamina B12, hipotiroidismo o medicamentos.',
+        trat: 'Evaluar y tratar las causas reversibles; controlar la presión, el azúcar y la audición; ejercicio físico, actividad mental y social, buen sueño. Controles periódicos para ver si avanza.',
+        esp: 'Médico general; neurólogo o geriatra.',
+        alarma: 'Confusión que aparece de golpe, desorientación, dificultad para hablar o debilidad: urgencia.',
+        src: ['mp_demencia']
+      },
+      {
+        id: 'cinetosis', n: 'Mareo por movimiento', alt: 'Cinetosis', urg: 1, prev: 1.0, dur: ['h'],
+        req: ['ctx_viaje_movimiento'], reqF: 0.3,
+        s: { ctx_viaje_movimiento: 3, nauseas: 2, mareo: 2, vomitos: 1, sudoracion: 1, palidez: 1 },
+        que: 'Náuseas, mareo, sudor frío y a veces vómitos al viajar en auto, bus, barco, avión o en juegos mecánicos, porque el oído interno y la vista envían señales distintas al cerebro. Es muy frecuente en niños y embarazadas.',
+        trat: 'Sentarse adelante o donde haya menos movimiento, mirar el horizonte, no leer ni usar pantallas, ventilar y comer liviano. Medicamentos de farmacia (como dimenhidrinato o meclizina) 30 a 60 minutos antes de viajar, según indicación.',
+        esp: 'Médico general si es muy intenso.',
+        alarma: 'Mareo o vértigo que aparece sin viajar, con dolor de cabeza intenso, visión doble o debilidad: consulta urgente.',
+        src: ['mayo_cinetosis']
+      },
+      {
+        id: 'paralisis_radial', n: 'Parálisis del nervio radial', alt: 'Mano caída («parálisis del sábado en la noche»)', urg: 3, prev: 0.9, dur: ['h', 'd', 's'],
+        s: { mano_caida: 3, hormigueo_mano: 1, ctx_alcohol_agudo: 1, debilidad_lado: -2, cara_caida: -2 },
+        que: 'Daño del nervio radial, que mueve los músculos que levantan la muñeca y los dedos. Suele deberse a una compresión del brazo (dormir apoyado sobre él, a veces tras beber alcohol, o el uso de muletas) o a una fractura del húmero. La mano cae y cuesta estirar la muñeca y los dedos.',
+        trat: 'Si es por compresión, suele recuperarse en semanas o meses: férula que mantiene la muñeca levantada y kinesiología. Si hay fractura o no mejora, evaluación por especialista.',
+        esp: 'Médico general; traumatólogo o neurólogo; kinesiólogo.',
+        alarma: 'Debilidad de todo un lado del cuerpo, cara caída o dificultad para hablar: llama al 131 (puede ser un ACV).',
+        src: ['mp_nervio_radial']
+      },
+      {
+        id: 'piriforme', n: 'Síndrome del piriforme', urg: 1, prev: 0.95, dur: ['d', 's', 'm'], sexF: 1.2,
+        s: { dolor_gluteo: 3, ciatica: 2, dolor_lumbar: -1 },
+        que: 'El músculo piriforme, en el glúteo, comprime el nervio ciático. Produce dolor profundo en el glúteo que puede bajar por la parte posterior de la pierna y que empeora al estar sentado mucho rato o al subir escaleras.',
+        trat: 'Elongaciones del glúteo, kinesiología, calor o frío local y antiinflamatorios; evitar estar mucho tiempo sentado. A veces infiltraciones; la cirugía es excepcional.',
+        esp: 'Médico general; kinesiólogo; traumatólogo.',
+        alarma: 'Pérdida de fuerza en la pierna, adormecimiento entre las piernas o pérdida del control de la orina: urgencia.',
+        src: ['mp_piriforme']
+      },
+      {
+        id: 'fobia_especifica', n: 'Fobia específica', urg: 2, prev: 1.0, dur: ['m'],
+        s: { miedo_objeto: 3, ansiedad: 1, palpitaciones: 1, sudoracion: 1 },
+        que: 'Miedo intenso y desproporcionado a algo concreto (animales, alturas, agujas, sangre, volar, espacios cerrados), que lleva a evitarlo y limita la vida diaria. Al enfrentarlo pueden aparecer palpitaciones, sudor o una crisis de pánico.',
+        trat: 'La terapia cognitivo-conductual con exposición gradual es muy eficaz; a veces medicamentos por un tiempo corto en situaciones puntuales.',
+        esp: 'Psicólogo; psiquiatra si es grave.',
+        alarma: 'Si el miedo impide atenderte en salud (por ejemplo, a agujas) o se acompaña de tristeza intensa: consulta.',
+        src: ['mp_fobias_t']
+      },
+      {
+        id: 'ansiedad_social', n: 'Ansiedad social', alt: 'Fobia social', urg: 2, prev: 1.0, dur: ['m'],
+        age: [[12, 35, 1.2]],
+        s: { miedo_social: 3, ansiedad: 1, sudoracion: 1, palpitaciones: 1, temblor: 1 },
+        que: 'Miedo intenso y persistente a ser observado, juzgado o hacer el ridículo en situaciones sociales (hablar en público, comer frente a otros, conocer gente). Lleva a evitarlas y afecta los estudios, el trabajo y las relaciones.',
+        trat: 'Terapia cognitivo-conductual con exposición gradual; en algunos casos, antidepresivos indicados por un médico.',
+        esp: 'Psicólogo; psiquiatra.',
+        alarma: 'Tristeza profunda, consumo de alcohol para enfrentar situaciones o ideas de hacerse daño: consulta pronto (línea *4141).',
+        src: ['mp_fobia_social']
+      },
+      {
+        id: 'agorafobia', n: 'Agorafobia', urg: 2, prev: 0.95, dur: ['m'],
+        s: { miedo_lugares: 3, miedo_intenso: 1, ansiedad: 1, palpitaciones: 1 },
+        que: 'Miedo y ansiedad intensos a estar en lugares o situaciones de los que sería difícil escapar o recibir ayuda (multitudes, transporte, filas, salir solo). A menudo aparece después de crisis de pánico y puede llevar a no salir de casa.',
+        trat: 'Terapia cognitivo-conductual con exposición gradual y, a veces, antidepresivos. Mientras antes se trate, mejor.',
+        esp: 'Psicólogo; psiquiatra.',
+        alarma: 'Si no puedes salir de casa, o hay tristeza intensa o ideas de hacerte daño: consulta pronto (línea *4141).',
+        src: ['mp_agorafobia']
+      },
+      {
+        id: 'distimia', n: 'Trastorno depresivo persistente', alt: 'Distimia', urg: 2, prev: 0.95, dur: ['m'],
+        s: { animo_bajo_anos: 3, tristeza: 2, fatiga: 1, insomnio: 1, culpa: 1, anhedonia: 1 },
+        que: 'Forma crónica de depresión: el ánimo está bajo casi todos los días durante 2 años o más, con poca energía, baja autoestima, problemas de sueño o apetito y dificultad para concentrarse. Al ser tan prolongada, muchas personas creen que «son así».',
+        trat: 'Psicoterapia y antidepresivos, que funcionan mejor combinados; actividad física y apoyo social.',
+        ges: 'La depresión en personas de 15 años y más está cubierta por GES.',
+        esp: 'Médico general; psicólogo; psiquiatra.',
+        alarma: 'Pensamientos de muerte o de hacerte daño: llama a la línea *4141 o al 131.',
+        src: ['mp_distimia', 'minsal_ges']
+      },
+      {
+        id: 'depresion_posparto', n: 'Depresión posparto', urg: 3, prev: 1.0, dur: ['s', 'm'], sex: 'F',
+        req: ['ctx_posparto'], reqF: 0.3,
+        s: { ctx_posparto: 3, tristeza: 2, anhedonia: 2, culpa: 2, ansiedad: 1, insomnio: 1, irritabilidad: 1, ideas_suicidas: 1 },
+        que: 'Depresión que aparece en el primer año después del parto, con más frecuencia en los primeros 3 meses. A diferencia de la «tristeza posparto», que dura pocos días, persiste más de 2 semanas: tristeza, llanto, culpa, angustia, falta de interés, dificultad para cuidar al bebé o para crear un vínculo con él.',
+        trat: 'Psicoterapia y, si es necesario, antidepresivos compatibles con la lactancia; apoyo de la pareja y la familia, descanso y redes de apoyo. Tiene buen pronóstico con tratamiento.',
+        ges: 'La depresión en personas de 15 años y más está cubierta por GES.',
+        esp: 'Médico general, matrona o ginecólogo; psicólogo; psiquiatra.',
+        alarma: 'Pensamientos de hacerte daño o de dañar al bebé, o ideas extrañas o voces: urgencia inmediata (131 o línea *4141).',
+        src: ['mp_depresion_posparto', 'minsal_ges']
+      },
+      {
+        id: 'trastorno_adaptacion', n: 'Trastorno de adaptación', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        req: ['ctx_cambio_vital'], reqF: 0.4,
+        s: { ctx_cambio_vital: 3, tristeza: 2, ansiedad: 2, insomnio: 1, irritabilidad: 1, palpitaciones: 1 },
+        que: 'Reacción emocional o de conducta más intensa de lo esperado frente a un cambio o problema importante (separación, despido, mudanza, enfermedad), que aparece dentro de los 3 meses y afecta el trabajo o la vida social: tristeza, ansiedad, llanto, insomnio o molestias físicas.',
+        trat: 'Psicoterapia breve, apoyo social y técnicas para manejar el estrés; a veces medicamentos por poco tiempo. Suele mejorar en meses.',
+        esp: 'Médico general; psicólogo.',
+        alarma: 'Ideas de muerte o de hacerte daño, o consumo de alcohol o drogas para sobrellevarlo: consulta pronto (línea *4141).',
+        src: ['mp_adaptacion']
+      },
+      {
+        id: 'trastorno_limite', n: 'Trastorno límite de la personalidad', urg: 3, prev: 0.9, dur: ['m'],
+        age: [[15, 40, 1.2]],
+        s: { emociones_inestables: 3, impulsividad: 2, irritabilidad: 1, tristeza: 1, ideas_suicidas: 1 },
+        que: 'Patrón persistente de emociones muy intensas y cambiantes, miedo intenso al abandono, relaciones inestables, impulsividad, sensación de vacío, enojo intenso y, a veces, autolesiones. Suele comenzar al inicio de la adultez.',
+        trat: 'La psicoterapia especializada (como la terapia dialéctico-conductual) es el tratamiento principal; los medicamentos ayudan con síntomas como la depresión o la ansiedad. Con tratamiento, muchas personas mejoran.',
+        esp: 'Psiquiatra; psicólogo.',
+        alarma: 'Autolesiones o pensamientos de quitarte la vida: llama a la línea *4141 o al 131.',
+        src: ['mayo_tlp']
+      },
+      {
+        id: 'esquizofrenia', n: 'Esquizofrenia y psicosis', urg: 4, prev: 0.9, dur: ['s', 'm'],
+        age: [[15, 35, 1.3]],
+        s: { alucinaciones: 3, aislamiento: 2, confusion: 1, menos_sueno: 1, irritabilidad: 1, euforia: -1 },
+        que: 'La psicosis es la pérdida de contacto con la realidad: escuchar voces, creencias extrañas (como sentirse perseguido), lenguaje desorganizado. La esquizofrenia es un trastorno mental crónico que suele empezar entre los 15 y 35 años, a menudo con aislamiento y descuido personal antes de las alucinaciones. El consumo de drogas puede desencadenarla.',
+        trat: 'Medicamentos antipsicóticos, generalmente por largo tiempo, junto con psicoterapia, apoyo familiar y rehabilitación. Mientras antes se trate el primer episodio, mejor es la evolución.',
+        ges: 'El tratamiento de la esquizofrenia está cubierto por GES.',
+        esp: 'Psiquiatra (consulta urgente si es un primer episodio).',
+        alarma: 'Riesgo de hacerse daño o dañar a otros, agitación intensa o voces que ordenan hacer daño: urgencia inmediata (131).',
+        src: ['mp_esquizofrenia', 'mp_psicosis', 'minsal_ges']
+      },
+      {
+        id: 'autismo', n: 'Trastorno del espectro autista', alt: 'TEA', urg: 2, prev: 1.0, dur: ['m'], sexF: 0.4,
+        age: [[1, 12, 1.3]],
+        s: { dificultad_social: 3, sin_habla: 1, retraso_desarrollo: 1, cara_alargada: -2, movimientos_manos: -1 },
+        que: 'Condición del neurodesarrollo que aparece en los primeros años: dificultades en la comunicación y la interacción social (poco contacto visual, no responde a su nombre, le cuesta jugar con otros), intereses muy restringidos y conductas o movimientos repetitivos, con sensibilidad a sonidos o texturas.',
+        trat: 'No es una enfermedad que se cure, pero la intervención temprana (terapia del lenguaje, terapia ocupacional, análisis conductual) mejora mucho el desarrollo y la autonomía. Apoyo escolar y familiar.',
+        esp: 'Pediatra; neurólogo infantil o psiquiatra infantil; fonoaudiólogo; terapeuta ocupacional.',
+        alarma: 'Pérdida de palabras o habilidades ya adquiridas a cualquier edad: consulta pronto.',
+        src: ['mp_tea']
+      },
+      {
+        id: 'sintomas_somaticos', n: 'Trastorno de síntomas somáticos', urg: 2, prev: 0.9, dur: ['m'],
+        s: { preocupacion_sintomas: 3, dolor_generalizado: 1, fatiga: 1, ansiedad: 1 },
+        que: 'Síntomas físicos reales (dolor, cansancio, molestias digestivas) acompañados de una preocupación tan intensa y constante que ocupa gran parte del día y afecta la vida, aunque los exámenes no muestren una enfermedad que los explique por completo. La persona no los está inventando.',
+        trat: 'Un médico de cabecera estable, controles regulares, terapia cognitivo-conductual y, a veces, antidepresivos; evitar exámenes innecesarios repetidos.',
+        esp: 'Médico general; psicólogo; psiquiatra.',
+        alarma: 'Un síntoma nuevo o distinto (por ejemplo, dolor de pecho, baja de peso o sangrados): consulta para evaluarlo.',
+        src: ['mp_sintomas_somaticos']
+      },
+      {
+        id: 'hipocondria', n: 'Ansiedad por la salud', alt: 'Hipocondría', urg: 2, prev: 0.95, dur: ['m'],
+        s: { miedo_enfermedad: 3, ansiedad: 2, insomnio: 1 },
+        que: 'Preocupación persistente de tener una enfermedad grave, a pesar de exámenes normales y de que un médico lo descarte. Lleva a revisarse el cuerpo, buscar información en internet y consultar o evitar al médico de forma repetida.',
+        trat: 'La terapia cognitivo-conductual es eficaz; a veces antidepresivos. Ayuda limitar las búsquedas de síntomas en internet y mantener controles con un mismo médico.',
+        esp: 'Médico general; psicólogo; psiquiatra.',
+        alarma: 'Ante síntomas nuevos de alarma (dolor de pecho, falta de aire, debilidad), consulta igualmente.',
+        src: ['mp_ansiedad_enfermedad']
+      },
+      {
+        id: 'tabaquismo', n: 'Tabaquismo', alt: 'Dependencia de la nicotina', urg: 2, prev: 1.0, dur: ['m'],
+        req: ['ctx_fumador'], reqF: 0.3,
+        s: { ctx_fumador: 3, ganas_fumar: 3, tos_flema: 1, ansiedad: 1, irritabilidad: 1 },
+        que: 'Adicción a la nicotina del cigarrillo, del cigarrillo electrónico u otros productos de tabaco. Al intentar dejarlo aparecen ganas intensas de fumar, ansiedad, irritabilidad e insomnio. Es la principal causa evitable de cáncer, infartos, ACV y EPOC.',
+        trat: 'Consejería, terapia de reemplazo de nicotina (parches, chicles) y medicamentos indicados por un médico aumentan mucho la probabilidad de dejarlo. Nunca es tarde para dejar de fumar.',
+        esp: 'Médico general; programas de cesación tabáquica del consultorio.',
+        alarma: 'Tos con sangre, baja de peso, falta de aire que aumenta o dolor de pecho: consulta pronto.',
+        src: ['mp_nicotina']
+      },
+      {
+        id: 'tdpm', n: 'Trastorno disfórico premenstrual', urg: 2, prev: 0.95, dur: ['m'], sex: 'F',
+        req: ['ctx_premenstrual'], reqF: 0.3,
+        s: { ctx_premenstrual: 3, irritabilidad: 3, tristeza: 2, ansiedad: 2, insomnio: 1, sensibilidad_mamas: 1 },
+        que: 'Forma grave del síndrome premenstrual: en la semana previa a la regla aparecen tristeza intensa, irritabilidad o enojo, ansiedad y cambios de ánimo que afectan el trabajo y las relaciones, y desaparecen pocos días después de que empieza la regla.',
+        trat: 'Ejercicio, manejo del estrés y, según indicación médica, antidepresivos (a veces solo en la segunda mitad del ciclo) o anticonceptivos hormonales.',
+        esp: 'Ginecólogo o médico general; psiquiatra si es necesario.',
+        alarma: 'Ideas de hacerte daño: llama a la línea *4141 o al 131.',
+        src: ['mp_tdpm']
+      },
+      {
+        id: 'terrores_nocturnos', n: 'Pesadillas y terrores nocturnos', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[2, 10, 1.4]],
+        s: { despierta_gritando: 3, insomnio: 1, convulsion: -2 },
+        que: 'Los terrores nocturnos son episodios en que el niño se sienta o grita aterrado durante el sueño profundo, sin despertar del todo, y al día siguiente no lo recuerda. Las pesadillas, en cambio, son sueños angustiantes que el niño sí recuerda. Ambos son frecuentes y suelen desaparecer con la edad.',
+        trat: 'Mantener horarios regulares de sueño, evitar el cansancio excesivo y las pantallas antes de dormir, no despertarlo bruscamente durante un terror nocturno y cuidar su seguridad.',
+        esp: 'Pediatra si son muy frecuentes.',
+        alarma: 'Movimientos rígidos o sacudidas, mordedura de lengua o pérdida de orina durante el episodio: consulta (descartar convulsiones).',
+        src: ['mp_trastornos_sueno']
+      },
+      {
+        id: 'sonambulismo', n: 'Sonambulismo', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[4, 14, 1.3]],
+        s: { camina_dormido: 3, somnolencia_diurna: 1 },
+        que: 'Levantarse y caminar o hacer otras actividades mientras se duerme, sin recordarlo después. Es frecuente en niños y disminuye con la edad; se asocia al cansancio, la falta de sueño y la ansiedad.',
+        trat: 'Dormir lo suficiente, horarios regulares y un ambiente seguro (cerrar puertas y ventanas, retirar objetos peligrosos). No es necesario despertarlo; basta con guiarlo de vuelta a la cama.',
+        esp: 'Pediatra o médico general si es muy frecuente o hay riesgo.',
+        alarma: 'Episodios con lesiones, conductas violentas o que empiezan en la adultez: consulta.',
+        src: ['mp_sonambulismo', 'mp_trastornos_sueno']
+      },
+      {
+        id: 'enuresis', n: 'Enuresis nocturna', alt: 'Mojar la cama', urg: 1, prev: 1.0, dur: ['m'],
+        ageRange: [5, 17],
+        s: { moja_cama: 3, ctx_familia: 1, ardor_orinar: -1, sed: -1 },
+        que: 'Orinarse en la cama durante el sueño en niños mayores de 5 años. Es muy frecuente, suele ser hereditaria y se debe a que la vejiga y su control todavía están madurando o a que se produce mucha orina de noche. No es culpa del niño.',
+        trat: 'Nunca castigar. Reducir líquidos en la noche, orinar antes de dormir, alarmas de humedad y, a veces, desmopresina. La mayoría lo supera con la edad.',
+        esp: 'Pediatra.',
+        alarma: 'Si vuelve a mojar la cama después de meses seco, o hay ardor al orinar, mucha sed o se orina también de día: consulta.',
+        src: ['mp_enuresis', 'mayo_enuresis']
+      },
+      {
+        id: 'encopresis', n: 'Encopresis', urg: 2, prev: 0.95, dur: ['m'],
+        ageRange: [4, 17],
+        s: { ensucia_ropa: 3, estrenimiento: 2, dolor_abdominal: 1 },
+        que: 'Niño que ya aprendió a ir al baño y vuelve a ensuciar la ropa interior con deposiciones. Casi siempre se debe a un estreñimiento crónico: las deposiciones duras se acumulan y las más blandas se escapan sin que el niño lo note.',
+        trat: 'Tratar el estreñimiento (vaciar el intestino y mantener deposiciones blandas con laxantes indicados por el médico), rutinas para ir al baño después de comer, más fibra y agua. Sin castigos.',
+        esp: 'Pediatra.',
+        alarma: 'Dolor abdominal intenso, vómitos, sangre o falta de crecimiento: consulta pronto.',
+        src: ['mp_encopresis']
+      },
+      {
+        id: 'jet_lag', n: 'Jet lag y alteraciones del ritmo del sueño', alt: 'Desfase horario', urg: 1, prev: 1.0, dur: ['d', 's'],
+        req: ['ctx_viaje_husos'], reqF: 0.3,
+        s: { ctx_viaje_husos: 3, insomnio: 2, somnolencia_diurna: 2, fatiga: 1, memoria: 1, irritabilidad: 1 },
+        que: 'Alteración del reloj biológico al viajar cruzando varios husos horarios o al trabajar en turnos de noche: insomnio, sueño durante el día, cansancio, dificultad para concentrarse y molestias digestivas.',
+        trat: 'Adaptarse al horario del destino desde el primer día, exponerse a la luz natural de día y evitar la luz de noche; la melatonina puede ayudar. En turnos, mantener horarios regulares de sueño.',
+        esp: 'Médico general si persiste.',
+        alarma: 'Somnolencia que provoca accidentes o casi accidentes al manejar: consulta.',
+        src: ['mp_jet_lag']
+      },
+      {
+        id: 'abstinencia_alcohol', n: 'Síndrome de abstinencia de alcohol', urg: 4, prev: 0.95, dur: ['h', 'd'],
+        req: ['ctx_dejo_alcohol'], reqF: 0.3,
+        s: { ctx_dejo_alcohol: 3, temblor: 3, sudoracion: 2, ansiedad: 2, nauseas: 1, insomnio: 1, palpitaciones: 1, alucinaciones: 1, convulsion: 1, confusion: 1 },
+        que: 'Síntomas que aparecen horas o días después de dejar o reducir el alcohol en personas que beben mucho por tiempo: temblor, sudor, ansiedad, náuseas, insomnio y palpitaciones. En casos graves hay convulsiones o delirium tremens (confusión, alucinaciones, fiebre), que puede ser mortal.',
+        trat: 'Requiere evaluación médica: medicamentos para la abstinencia, vitamina B1 (tiamina) y control; los casos graves se tratan en el hospital. Después, apoyo para mantener la abstinencia.',
+        esp: 'Servicio de urgencia o médico; programas de tratamiento de alcohol (SENDA, fono 1412).',
+        alarma: 'Convulsión, confusión, alucinaciones o fiebre: llama al 131.',
+        src: ['mp_abstinencia_alcohol', 'mp_delirium_tremens', 'senda']
+      },
+      {
+        id: 'duelo', n: 'Duelo', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        req: ['ctx_muerte_cercano'], reqF: 0.3,
+        s: { ctx_muerte_cercano: 3, tristeza: 2, insomnio: 1, culpa: 1, inapetencia: 1, anhedonia: 1 },
+        que: 'Reacción natural ante la muerte de un ser querido: tristeza, llanto, rabia, culpa, incredulidad, problemas de sueño o apetito, que van y vienen y suelen disminuir con los meses. No ocurre en etapas fijas y cada persona lo vive a su manera.',
+        trat: 'Darse tiempo, hablar de la pérdida, apoyarse en familiares, amigos o grupos de duelo, cuidar el sueño y la alimentación. Si es muy intenso o se prolonga, ayuda psicológica.',
+        esp: 'Médico general o psicólogo si se complica.',
+        alarma: 'Ideas de muerte o de hacerte daño, consumo de alcohol o drogas, o no poder funcionar después de varios meses: consulta (línea *4141).',
+        src: ['mp_duelo']
+      },
+      {
+        id: 'ansiedad_separacion', n: 'Ansiedad por separación', alt: 'En niños', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        age: [[3, 12, 1.4]],
+        s: { miedo_separarse: 3, dolor_abdominal: 1, dolor_cabeza: 1, insomnio: 1 },
+        que: 'Angustia excesiva y persistente del niño al separarse de sus padres o de la casa, más de lo esperado para su edad: miedo a que les pase algo, rechazo a ir al colegio o a dormir solo, y dolores de guata o de cabeza antes de separarse.',
+        trat: 'Terapia cognitivo-conductual con participación de los padres, separaciones graduales y coordinación con el colegio; rara vez medicamentos.',
+        esp: 'Pediatra; psicólogo infantil.',
+        alarma: 'Si deja de ir al colegio por semanas, o hay tristeza intensa o crisis de pánico: consulta pronto.',
+        src: ['mayo_ansiedad_separacion']
+      }
+    ]
+  });
 })();

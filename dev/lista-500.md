@@ -84,31 +84,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C073 Síndrome de fatiga crónica — tanda 3 · `fatiga_cronica`
 - [x] C074 Tics y síndrome de Tourette — tanda 3 · `tics_tourette`
 - [x] C075 Crisis de ausencia — tanda 3 · `crisis_ausencia`
-- [ ] C076 Deterioro cognitivo leve
-- [ ] C077 Mareo por movimiento (cinetosis)
-- [ ] C078 Parálisis del nervio radial (mano caída)
-- [ ] C079 Síndrome del piriforme
-- [ ] C080 Fobia específica
-- [ ] C081 Ansiedad social
-- [ ] C082 Agorafobia
-- [ ] C083 Distimia (depresión persistente)
-- [ ] C084 Depresión posparto
-- [ ] C085 Trastorno de adaptación
-- [ ] C086 Trastorno límite de la personalidad
-- [ ] C087 Esquizofrenia y psicosis
-- [ ] C088 Trastorno del espectro autista
-- [ ] C089 Trastorno de síntomas somáticos
-- [ ] C090 Ansiedad por la salud (hipocondría)
-- [ ] C091 Tabaquismo (dependencia de la nicotina)
-- [ ] C092 Trastorno disfórico premenstrual
-- [ ] C093 Pesadillas y terrores nocturnos
-- [ ] C094 Sonambulismo
-- [ ] C095 Enuresis nocturna
-- [ ] C096 Encopresis
-- [ ] C097 Jet lag y alteraciones del ritmo del sueño
-- [ ] C098 Síndrome de abstinencia de alcohol
-- [ ] C099 Duelo
-- [ ] C100 Ansiedad por separación (niños)
+- [x] C076 Deterioro cognitivo leve — tanda 4 · `deterioro_cognitivo_leve`
+- [x] C077 Mareo por movimiento (cinetosis) — tanda 4 · `cinetosis`
+- [x] C078 Parálisis del nervio radial (mano caída) — tanda 4 · `paralisis_radial`
+- [x] C079 Síndrome del piriforme — tanda 4 · `piriforme`
+- [x] C080 Fobia específica — tanda 4 · `fobia_especifica`
+- [x] C081 Ansiedad social — tanda 4 · `ansiedad_social`
+- [x] C082 Agorafobia — tanda 4 · `agorafobia`
+- [x] C083 Distimia (depresión persistente) — tanda 4 · `distimia`
+- [x] C084 Depresión posparto — tanda 4 · `depresion_posparto`
+- [x] C085 Trastorno de adaptación — tanda 4 · `trastorno_adaptacion`
+- [x] C086 Trastorno límite de la personalidad — tanda 4 · `trastorno_limite`
+- [x] C087 Esquizofrenia y psicosis — tanda 4 · `esquizofrenia`
+- [x] C088 Trastorno del espectro autista — tanda 4 · `autismo`
+- [x] C089 Trastorno de síntomas somáticos — tanda 4 · `sintomas_somaticos`
+- [x] C090 Ansiedad por la salud (hipocondría) — tanda 4 · `hipocondria`
+- [x] C091 Tabaquismo (dependencia de la nicotina) — tanda 4 · `tabaquismo`
+- [x] C092 Trastorno disfórico premenstrual — tanda 4 · `tdpm`
+- [x] C093 Pesadillas y terrores nocturnos — tanda 4 · `terrores_nocturnos`
+- [x] C094 Sonambulismo — tanda 4 · `sonambulismo`
+- [x] C095 Enuresis nocturna — tanda 4 · `enuresis`
+- [x] C096 Encopresis — tanda 4 · `encopresis`
+- [x] C097 Jet lag y alteraciones del ritmo del sueño — tanda 4 · `jet_lag`
+- [x] C098 Síndrome de abstinencia de alcohol — tanda 4 · `abstinencia_alcohol`
+- [x] C099 Duelo — tanda 4 · `duelo`
+- [x] C100 Ansiedad por separación (niños) — tanda 4 · `ansiedad_separacion`
 - [ ] C101 Dispepsia funcional
 - [ ] C102 Hernia hiatal
 - [ ] C103 Hernia umbilical o de la pared abdominal
@@ -350,31 +350,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R073 Enfermedad de Behçet — tanda 3 · `behcet`
 - [x] R074 Enfermedad de Kawasaki — tanda 3 · `kawasaki`
 - [x] R075 Púrpura de Schönlein-Henoch (vasculitis por IgA) — tanda 3 · `purpura_hsp`
-- [ ] R076 Enfermedad de Still del adulto
-- [ ] R077 Sarcoidosis
-- [ ] R078 Polimialgia reumática
-- [ ] R079 Espondilitis anquilosante
-- [ ] R080 Artritis psoriásica
-- [ ] R081 Artritis idiopática juvenil
-- [ ] R082 Síndrome antifosfolípido
-- [ ] R083 Hepatitis autoinmune
-- [ ] R084 Colangitis biliar primaria
-- [ ] R085 Colangitis esclerosante primaria
-- [ ] R086 Esofagitis eosinofílica
-- [ ] R087 Pénfigo vulgar
-- [ ] R088 Penfigoide ampolloso
-- [ ] R089 Dermatitis herpetiforme
-- [ ] R090 Liquen escleroso
-- [ ] R091 Morfea
-- [ ] R092 Pioderma gangrenoso
-- [ ] R093 Eritema nodoso
-- [ ] R094 Neuromielitis óptica
-- [ ] R095 Polineuropatía desmielinizante inflamatoria crónica (CIDP)
-- [ ] R096 Mielitis transversa
-- [ ] R097 Tiroiditis subaguda (de De Quervain)
-- [ ] R098 Trombocitopenia inmune (PTI)
-- [ ] R099 Púrpura trombocitopénica trombótica
-- [ ] R100 Síndrome hemolítico urémico
+- [x] R076 Enfermedad de Still del adulto — tanda 4 · `still_adulto`
+- [x] R077 Sarcoidosis — tanda 4 · `sarcoidosis`
+- [x] R078 Polimialgia reumática — tanda 4 · `polimialgia`
+- [x] R079 Espondilitis anquilosante — tanda 4 · `espondilitis`
+- [x] R080 Artritis psoriásica — tanda 4 · `artritis_psoriasica`
+- [x] R081 Artritis idiopática juvenil — tanda 4 · `artritis_juvenil`
+- [x] R082 Síndrome antifosfolípido — tanda 4 · `antifosfolipido`
+- [x] R083 Hepatitis autoinmune — tanda 4 · `hepatitis_autoinmune`
+- [x] R084 Colangitis biliar primaria — tanda 4 · `colangitis_biliar`
+- [x] R085 Colangitis esclerosante primaria — tanda 4 · `colangitis_esclerosante`
+- [x] R086 Esofagitis eosinofílica — tanda 4 · `esofagitis_eosinofilica`
+- [x] R087 Pénfigo vulgar — tanda 4 · `penfigo`
+- [x] R088 Penfigoide ampolloso — tanda 4 · `penfigoide`
+- [x] R089 Dermatitis herpetiforme — tanda 4 · `dermatitis_herpetiforme`
+- [x] R090 Liquen escleroso — tanda 4 · `liquen_escleroso`
+- [x] R091 Morfea — tanda 4 · `morfea`
+- [x] R092 Pioderma gangrenoso — tanda 4 · `pioderma_gangrenoso`
+- [x] R093 Eritema nodoso — tanda 4 · `eritema_nodoso`
+- [x] R094 Neuromielitis óptica — tanda 4 · `neuromielitis_optica`
+- [x] R095 Polineuropatía desmielinizante inflamatoria crónica (CIDP) — tanda 4 · `cidp`
+- [x] R096 Mielitis transversa — tanda 4 · `mielitis_transversa`
+- [x] R097 Tiroiditis subaguda (de De Quervain) — tanda 4 · `tiroiditis_subaguda`
+- [x] R098 Trombocitopenia inmune (PTI) — tanda 4 · `pti`
+- [x] R099 Púrpura trombocitopénica trombótica — tanda 4 · `ptt`
+- [x] R100 Síndrome hemolítico urémico — tanda 4 · `shu`
 - [ ] R101 Anemia aplásica
 - [ ] R102 Anemia hemolítica autoinmune
 - [ ] R103 Hemoglobinuria paroxística nocturna

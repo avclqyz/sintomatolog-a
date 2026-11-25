@@ -1552,7 +1552,7 @@
     },
     {
       id: 'aftas', n: 'Aftas bucales', alt: 'Úlceras en la boca', urg: 1, prev: 1.0, dur: ['d', 's'],
-      s: { llagas_boca: 3, ctx_estres: 1, fiebre: -1, aftas_repetidas_genitales: -2 },
+      s: { llagas_boca: 3, ctx_estres: 1, fiebre: -1, aftas_repetidas_genitales: -2, ampollas_flacidas: -2 },
       que: 'Pequeñas llagas redondas, blancas o amarillentas con borde rojo, dentro de la boca. Son dolorosas pero no contagiosas, y se relacionan con pequeñas heridas, estrés, cambios hormonales o algunos alimentos.',
       trat: 'Suelen sanar solas en 1 a 2 semanas. Ayudan los enjuagues con agua con sal o bicarbonato, evitar comidas ácidas o picantes y los geles anestésicos de farmacia.',
       esp: 'Médico general o dentista si son muy grandes, frecuentes o duran más de 2 semanas.',

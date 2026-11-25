@@ -248,9 +248,10 @@
         src: ['mp_klinefelter']
       },
       {
-        id: 'x_fragil', n: 'Síndrome X frágil', urg: 2, prev: 0.6, dur: ['m'], sexF: 0.5,
+        id: 'x_fragil', n: 'Síndrome X frágil', urg: 2, prev: 0.7, dur: ['m'], sexF: 0.5,
+        age: [[2, 15, 1.2]],
         req: ['cara_alargada', 'retraso_desarrollo'], reqF: 0.3,
-        s: { retraso_desarrollo: 3, cara_alargada: 3, dificultad_social: 2, ctx_familia: 2, impulsividad: 1, inatencion: 1 },
+        s: { retraso_desarrollo: 3, cara_alargada: 3, dificultad_social: 2, ctx_familia: 2 },
         que: 'La causa hereditaria más común de discapacidad intelectual en los hombres, por un cambio en un gen del cromosoma X. Produce retraso del desarrollo y del lenguaje, rasgos del espectro autista, hiperactividad y, con la edad, cara alargada con orejas grandes. En las mujeres suele ser más leve.',
         trat: 'No tiene un tratamiento específico: estimulación temprana, terapia del lenguaje y ocupacional, apoyo escolar y medicamentos para la ansiedad o la hiperactividad. Consejo genético para la familia.',
         esp: 'Pediatra; neurólogo infantil; genetista.',
@@ -1002,6 +1003,319 @@
         esp: 'Pediatra; nefrólogo infantil si hay compromiso renal.',
         alarma: 'Dolor abdominal intenso, vómitos, deposiciones con sangre, orina oscura o escasa, o manchas con fiebre y decaimiento: urgencia.',
         src: ['mp_vasculitis_iga']
+      }
+    ]
+  });
+
+  // ── Tanda 4 (noviembre 2026): autoinmunes, piel, nervios y sangre
+  D.addPack({
+    symptoms: [
+      ['fiebre_tarde_erupcion', 'Fiebre alta diaria en picos (de tarde) con una erupción rosada que aparece con la fiebre', 'general', 2, ['fiebre en picos', 'enfermedad de Still']],
+      ['nodulos_rojos_piernas', 'Nódulos rojos y dolorosos bajo la piel de las piernas (canillas)', 'piel', 1, ['eritema nudoso', 'bultos rojos en las piernas']],
+      ['rigidez_hombros_caderas', 'Dolor y rigidez de hombros y caderas por la mañana (cuesta levantar los brazos o pararse)', 'musculo', 2, ['polimialgia', 'rigidez de hombros']],
+      ['dolor_lumbar_inflamatorio', 'Dolor lumbar de más de 3 meses que mejora con el ejercicio y empeora en reposo (despierta de noche)', 'musculo', 2, ['espondilitis', 'dolor inflamatorio de espalda']],
+      ['dedo_salchicha', 'Un dedo de la mano o del pie hinchado entero, como salchicha', 'musculo', 1, ['dactilitis', 'dedo en salchicha']],
+      ['cojera_nino', 'Niño que cojea o no quiere usar un brazo o una pierna, sin un golpe claro', 'musculo', 1, ['cojera', 'no quiere caminar']],
+      ['hinchazon_articular_nino', 'Articulación hinchada por más de 6 semanas en un niño, con rigidez en la mañana', 'musculo', 1, ['artritis juvenil']],
+      ['ampollas_flacidas', 'Ampollas blandas que se rompen fácil, dejando heridas en la piel y la boca', 'piel', 2, ['pénfigo', 'ampollas que se revientan']],
+      ['ampollas_tensas', 'Ampollas grandes y tensas que pican, en brazos, piernas o tronco', 'piel', 2, ['penfigoide', 'ampollas grandes']],
+      ['ampollitas_codos', 'Ampollitas agrupadas que pican intensamente en codos, rodillas o glúteos', 'piel', 1, ['dermatitis herpetiforme']],
+      ['manchas_blancas_genitales', 'Manchas blancas, delgadas y brillantes en la piel de los genitales o el ano, con picazón', 'piel', 1, ['liquen escleroso']],
+      ['placa_piel_dura', 'Placa de piel endurecida y brillante, color marfil con borde violáceo', 'piel', 1, ['morfea', 'esclerodermia localizada']],
+      ['ulcera_crece_rapido', 'Úlcera muy dolorosa que crece rápido, con borde violáceo, a veces tras una herida pequeña', 'piel', 2, ['pioderma gangrenoso']],
+      ['comida_atascada', 'Sensación de comida atascada en el pecho al tragar', 'digestivo', 2, ['se me atora la comida', 'impactación']],
+      ['hipo_vomitos_persistentes', 'Hipo o vómitos persistentes por días, sin una causa clara', 'digestivo', 1, ['hipo que no se quita']],
+      ['debilidad_hormigueo_meses', 'Debilidad y hormigueo en brazos y piernas que avanzan durante más de 2 meses', 'musculo', 2, ['polineuropatía', 'CIDP']],
+      ['debilidad_piernas_horas', 'Debilidad o adormecimiento de ambas piernas que aparece en horas o días, con una banda en el tronco', 'musculo', 3, ['mielitis', 'no puedo mover las piernas']],
+      ['dolor_tiroides', 'Dolor en la parte delantera del cuello (sobre la tiroides) que se va a la mandíbula o los oídos', 'oong', 1, ['tiroiditis', 'dolor de tiroides']],
+      ['ctx_abortos_repetidos', 'Abortos espontáneos repetidos o complicaciones graves de embarazos anteriores', 'contexto', 0, ['pérdidas de embarazo'], 'F'],
+      ['ctx_coagulos_previos', 'Coágulos previos en las piernas, los pulmones o el cerebro', 'contexto', 0, ['trombosis previa', 'embolia previa']],
+      ['ctx_autoinmune', 'Tienes otra enfermedad autoinmune (tiroides, celiaquía, artritis, lupus u otra)', 'contexto', 0, ['enfermedad autoinmune']],
+      ['ctx_colitis', 'Tienes colitis ulcerosa o enfermedad de Crohn', 'contexto', 0, ['enfermedad inflamatoria intestinal', 'Crohn', 'colitis ulcerosa']]
+    ],
+    sources: {
+      mp_still: [MP, 'Enfermedad de Still del adulto', 'https://medlineplus.gov/spanish/ency/article/000450.htm'],
+      mp_sarcoidosis: [MP, 'Sarcoidosis', 'https://medlineplus.gov/spanish/ency/article/000076.htm'],
+      mp_polimialgia: [MP, 'Polimialgia reumática', 'https://medlineplus.gov/spanish/ency/article/000415.htm'],
+      mp_espondilitis: [MP, 'Espondilitis anquilosante', 'https://medlineplus.gov/spanish/ency/article/000420.htm'],
+      mayo_artritis_psoriasica: [MAYO, 'Artritis psoriásica', 'https://www.mayoclinic.org/es/diseases-conditions/psoriatic-arthritis/symptoms-causes/syc-20354076'],
+      mp_aij: [MP, 'Artritis idiopática juvenil', 'https://medlineplus.gov/spanish/ency/article/000451.htm'],
+      mp_antifosfolipido: [MP, 'Síndrome antifosfolípido', 'https://medlineplus.gov/spanish/ency/article/000547.htm'],
+      mayo_hepatitis_autoinmune: [MAYO, 'Hepatitis autoinmunitaria', 'https://www.mayoclinic.org/es/diseases-conditions/autoimmune-hepatitis/symptoms-causes/syc-20352153'],
+      mp_cbp: [MP, 'Colangitis (cirrosis) biliar primaria', 'https://medlineplus.gov/spanish/ency/article/000282.htm'],
+      mp_vias_biliares_t: [MP, 'Enfermedades de las vías biliares (incluye la colangitis esclerosante)', 'https://medlineplus.gov/spanish/bileductdiseases.html'],
+      mp_esofagitis_eosinofilica: [MP, 'Esofagitis eosinofílica', 'https://medlineplus.gov/spanish/ency/article/007717.htm'],
+      mp_penfigo: [MP, 'Pénfigo vulgar', 'https://medlineplus.gov/spanish/ency/article/000882.htm'],
+      mp_penfigoide: [MP, 'Penfigoide ampolloso', 'https://medlineplus.gov/spanish/ency/article/000883.htm'],
+      mp_dermatitis_herpetiforme: [MP, 'Dermatitis herpetiforme', 'https://medlineplus.gov/spanish/ency/article/001480.htm'],
+      mayo_liquen_escleroso: [MAYO, 'Liquen escleroso', 'https://www.mayoclinic.org/es/diseases-conditions/lichen-sclerosus/symptoms-causes/syc-20374448'],
+      mayo_pioderma: [MAYO, 'Pioderma gangrenoso', 'https://www.mayoclinic.org/es/diseases-conditions/pyoderma-gangrenosum/diagnosis-treatment/drc-20350392'],
+      mp_eritema_nodoso: [MP, 'Eritema nudoso', 'https://medlineplus.gov/spanish/ency/article/000881.htm'],
+      mayo_nmo: [MAYO, 'Neuromielitis óptica', 'https://www.mayoclinic.org/es/diseases-conditions/neuromyelitis-optica/symptoms-causes/syc-20375652'],
+      mp_nervios_perifericos_t: [MP, 'Neuropatía periférica (incluye la polineuropatía desmielinizante inflamatoria crónica)', 'https://medlineplus.gov/spanish/peripheralnervedisorders.html'],
+      mp_mielitis: [MP, 'Mielitis transversa', 'https://medlineplus.gov/spanish/ency/article/007766.htm'],
+      mayo_mielitis: [MAYO, 'Mielitis transversa', 'https://www.mayoclinic.org/es/diseases-conditions/transverse-myelitis/symptoms-causes/syc-20354726'],
+      mp_anti_tpo: [MP, 'Anticuerpos antiperoxidasa tiroidea (incluye la tiroiditis subaguda)', 'https://medlineplus.gov/spanish/ency/article/003556.htm'],
+      mp_pti: [MP, 'Púrpura trombocitopénica inmune (PTI)', 'https://medlineplus.gov/spanish/ency/article/000535.htm'],
+      mp_ptt: [MP, 'Púrpura trombocitopénica trombótica', 'https://medlineplus.gov/spanish/ency/article/000552.htm'],
+      mp_shu: [MP, 'Síndrome hemolítico urémico', 'https://medlineplus.gov/spanish/ency/article/000510.htm']
+    },
+    conditions: [
+      {
+        id: 'still_adulto', n: 'Enfermedad de Still del adulto', urg: 3, prev: 0.4, dur: ['d', 's'],
+        age: [[16, 35, 1.3]],
+        req: ['fiebre_tarde_erupcion'], reqF: 0.3,
+        s: { fiebre_tarde_erupcion: 3, dolor_articular: 2, dolor_garganta: 2, ganglios: 1, dolor_muscular: 1, fatiga: 1 },
+        que: 'Enfermedad inflamatoria poco frecuente, parecida a la forma sistémica de la artritis juvenil. Produce fiebre alta en picos cada día, una erupción rosada que aparece con la fiebre, dolor de garganta y dolor e hinchazón de las articulaciones.',
+        trat: 'Antiinflamatorios, corticoides y, si no basta, medicamentos inmunosupresores o biológicos indicados por un reumatólogo. Primero hay que descartar infecciones y otras causas de fiebre.',
+        esp: 'Reumatólogo; medicina interna.',
+        alarma: 'Fiebre con decaimiento intenso, falta de aire o dolor de pecho: urgencia.',
+        src: ['mp_still']
+      },
+      {
+        id: 'sarcoidosis', n: 'Sarcoidosis', urg: 2, prev: 0.5, dur: ['s', 'm'],
+        age: [[20, 50, 1.2]],
+        s: { tos_seca: 2, falta_aire_progresiva: 2, nodulos_rojos_piernas: 2, fatiga: 1, ganglios: 1, ojo_rojo: 1, dolor_articular: 1 },
+        que: 'Enfermedad inflamatoria en la que se forman pequeños nódulos (granulomas) en distintos órganos, sobre todo los pulmones y los ganglios del tórax, pero también la piel, los ojos y el hígado. Produce tos seca, falta de aire, cansancio, nódulos rojos en las piernas o inflamación de los ojos; a veces no da síntomas.',
+        trat: 'Muchos casos mejoran solos. Si hay compromiso importante de pulmones, ojos, corazón u otros órganos, corticoides u otros inmunosupresores.',
+        esp: 'Broncopulmonar; reumatólogo; oftalmólogo.',
+        alarma: 'Falta de aire que aumenta, palpitaciones o desmayos, o baja de la visión: consulta pronto.',
+        src: ['mp_sarcoidosis']
+      },
+      {
+        id: 'polimialgia', n: 'Polimialgia reumática', urg: 2, prev: 0.8, dur: ['s', 'm'],
+        ageRange: [50, 200], age: [[70, 200, 1.2]],
+        s: { rigidez_hombros_caderas: 3, rigidez_matinal: 2, fatiga: 1, febricula: 1, perdida_peso: 1, dolor_sien: -1 },
+        que: 'Inflamación que produce dolor y rigidez de hombros, cuello y caderas, sobre todo en la mañana, en personas mayores de 50 años. Cuesta levantar los brazos, vestirse o pararse de la silla. A veces se asocia a la arteritis de células gigantes.',
+        trat: 'Corticoides en dosis bajas, con mejoría rápida en pocos días, que se disminuyen lentamente durante 1 a 2 años, con controles.',
+        esp: 'Médico general; reumatólogo.',
+        alarma: 'Dolor de cabeza nuevo en la sien, dolor al masticar o baja de la visión: urgencia (posible arteritis temporal).',
+        src: ['mp_polimialgia']
+      },
+      {
+        id: 'espondilitis', n: 'Espondilitis anquilosante', alt: 'Espondiloartritis axial', urg: 2, prev: 0.8, dur: ['m'], sexF: 0.5,
+        age: [[15, 40, 1.3], [50, 200, 0.5]],
+        s: { dolor_lumbar_inflamatorio: 3, rigidez_matinal: 2, dolor_lumbar: 1, ojo_rojo: 1, fatiga: 1 },
+        que: 'Artritis crónica que afecta sobre todo la columna y las articulaciones entre la columna y la pelvis. Empieza en jóvenes con dolor lumbar y rigidez que mejoran con el ejercicio y empeoran en reposo o de noche; puede afectar los ojos (uveítis) y, con los años, endurecer la columna.',
+        trat: 'Ejercicio y kinesiología diarios, antiinflamatorios y, si no basta, medicamentos biológicos. Dejar de fumar.',
+        esp: 'Reumatólogo; kinesiólogo.',
+        alarma: 'Ojo rojo con dolor y molestia a la luz: consulta urgente con oftalmología.',
+        src: ['mp_espondilitis']
+      },
+      {
+        id: 'artritis_psoriasica', n: 'Artritis psoriásica', urg: 2, prev: 0.8, dur: ['m'],
+        req: ['placas_escamas', 'dedo_salchicha'], reqF: 0.4,
+        s: { dedo_salchicha: 3, placas_escamas: 2, dolor_articular: 2, articulaciones_manos: 1, rigidez_matinal: 1, dolor_talon: 1 },
+        que: 'Artritis que afecta a algunas personas con psoriasis: dolor, rigidez e hinchazón de articulaciones, a veces un dedo entero hinchado como salchicha, dolor en el talón y cambios en las uñas. Puede aparecer antes que las lesiones de la piel.',
+        trat: 'Antiinflamatorios, medicamentos modificadores de la enfermedad (como metotrexato) y biológicos indicados por un reumatólogo; ejercicio y cuidado de la piel.',
+        esp: 'Reumatólogo; dermatólogo.',
+        alarma: 'Articulación muy hinchada, roja y caliente con fiebre: urgencia (descartar infección).',
+        src: ['mayo_artritis_psoriasica']
+      },
+      {
+        id: 'artritis_juvenil', n: 'Artritis idiopática juvenil', urg: 3, prev: 0.6, dur: ['s', 'm'],
+        ageRange: [0, 16],
+        req: ['hinchazon_articular_nino', 'cojera_nino'], reqF: 0.3,
+        s: { hinchazon_articular_nino: 3, cojera_nino: 2, rigidez_matinal: 2, dolor_articular: 1, fiebre: 1, ojo_rojo: 1 },
+        que: 'Grupo de artritis crónicas que empiezan antes de los 16 años: una o varias articulaciones hinchadas por más de 6 semanas, rigidez en la mañana, cojera o rechazo a usar una extremidad. Algunas formas dan fiebre y erupción, y otras inflaman los ojos sin dar síntomas.',
+        trat: 'Antiinflamatorios, infiltraciones, metotrexato y biológicos según el tipo; kinesiología y controles oftalmológicos periódicos.',
+        ges: 'La artritis idiopática juvenil está cubierta por GES.',
+        esp: 'Pediatra; reumatólogo infantil; oftalmólogo.',
+        alarma: 'Articulación roja y caliente con fiebre alta o un niño que no puede apoyar la pierna: urgencia (descartar infección).',
+        src: ['mp_aij', 'minsal_ges']
+      },
+      {
+        id: 'antifosfolipido', n: 'Síndrome antifosfolípido', urg: 3, prev: 0.5, dur: ['m'], sexF: 1.4,
+        req: ['ctx_abortos_repetidos', 'ctx_coagulos_previos'], reqF: 0.3,
+        s: { ctx_coagulos_previos: 3, ctx_abortos_repetidos: 3, livedo: 1, ctx_autoinmune: 1, pantorrilla: 1 },
+        que: 'Trastorno autoinmune en que el cuerpo produce anticuerpos que facilitan la formación de coágulos en venas y arterias (trombosis de piernas, embolias, ACV a edad joven) y complicaciones del embarazo, como abortos repetidos. Es más frecuente en mujeres y puede asociarse al lupus.',
+        trat: 'Anticoagulantes a largo plazo después de una trombosis; en el embarazo, aspirina y heparina indicadas por especialistas. Evitar el tabaco y los anticonceptivos con estrógenos.',
+        esp: 'Hematólogo o reumatólogo; ginecólogo en el embarazo.',
+        alarma: 'Pierna hinchada y dolorosa, falta de aire, dolor de pecho o debilidad de un lado: urgencia (131).',
+        src: ['mp_antifosfolipido']
+      },
+      {
+        id: 'hepatitis_autoinmune', n: 'Hepatitis autoinmune', urg: 3, prev: 0.5, dur: ['s', 'm'], sexF: 1.5,
+        req: ['ctx_autoinmune'], reqF: 0.4,
+        s: { ictericia: 2, fatiga: 2, ctx_autoinmune: 2, dolor_hipocondrio: 1, dolor_articular: 1, coluria: 1 },
+        que: 'El sistema inmune ataca el hígado y produce inflamación crónica. Puede no dar síntomas o causar cansancio, dolor bajo las costillas derechas, ictericia y dolor articular; si no se trata, avanza a cirrosis. Muchas personas tienen otra enfermedad autoinmune.',
+        trat: 'Corticoides y otros inmunosupresores (como azatioprina), generalmente por años; en casos graves, trasplante de hígado.',
+        esp: 'Gastroenterólogo o hepatólogo.',
+        alarma: 'Ictericia intensa, confusión, vómitos con sangre o abdomen que crece: urgencia.',
+        src: ['mayo_hepatitis_autoinmune']
+      },
+      {
+        id: 'colangitis_biliar', n: 'Colangitis biliar primaria', alt: 'Antes llamada cirrosis biliar primaria', urg: 2, prev: 0.5, dur: ['m'], sexF: 2.0,
+        age: [[35, 70, 1.2]],
+        req: ['ictericia', 'xantomas', 'ctx_autoinmune'], reqF: 0.3,
+        s: { picazon_piel: 3, fatiga: 2, ictericia: 1, xantomas: 1, ctx_autoinmune: 1, boca_y_ojos_secos: 1 },
+        que: 'Enfermedad autoinmune en que se inflaman y destruyen lentamente los pequeños conductos biliares del hígado. Afecta sobre todo a mujeres de mediana edad: picazón en la piel, cansancio, ojos y boca secos y, con los años, ictericia y cirrosis. Muchas veces se descubre por exámenes alterados.',
+        trat: 'Ácido ursodesoxicólico de por vida, que frena su avance, y otros medicamentos si no responde; tratamiento de la picazón. En etapas avanzadas, trasplante.',
+        esp: 'Gastroenterólogo o hepatólogo.',
+        alarma: 'Ictericia, abdomen que crece, vómitos con sangre o confusión: urgencia.',
+        src: ['mp_cbp']
+      },
+      {
+        id: 'colangitis_esclerosante', n: 'Colangitis esclerosante primaria', urg: 3, prev: 0.4, dur: ['m'], sexF: 0.7,
+        req: ['ctx_colitis'], reqF: 0.3,
+        s: { ctx_colitis: 3, ictericia: 2, picazon_piel: 2, fatiga: 1, dolor_hipocondrio: 1, fiebre: 1 },
+        que: 'Inflamación crónica que endurece y estrecha los conductos biliares dentro y fuera del hígado. Se asocia con frecuencia a la colitis ulcerosa. Produce cansancio, picazón, ictericia y episodios de fiebre por infección de la bilis; con los años, cirrosis.',
+        trat: 'No tiene un tratamiento que la detenga: control de la picazón, dilatación de estrecheces por endoscopia, antibióticos en las infecciones y vigilancia de cáncer; en etapas avanzadas, trasplante de hígado.',
+        esp: 'Gastroenterólogo o hepatólogo.',
+        alarma: 'Fiebre con escalofríos e ictericia: urgencia (colangitis).',
+        src: ['mp_vias_biliares_t']
+      },
+      {
+        id: 'esofagitis_eosinofilica', n: 'Esofagitis eosinofílica', urg: 2, prev: 0.6, dur: ['m'], sexF: 0.6,
+        age: [[5, 45, 1.2]],
+        s: { comida_atascada: 3, disfagia: 3, ardor_pecho: 1, dolor_pecho_opresivo: -1 },
+        que: 'Inflamación crónica alérgica del esófago. En adolescentes y adultos jóvenes produce dificultad para tragar y sensación de comida atascada, a veces con atoros que requieren urgencia; en niños, vómitos o rechazo a comer. Es frecuente en personas con asma, rinitis o alergias alimentarias.',
+        trat: 'Medicamentos para la acidez en dosis altas, corticoides tragados o dietas que eliminan los alimentos desencadenantes (leche, trigo, huevo, soya, mariscos, frutos secos); a veces dilatación del esófago.',
+        esp: 'Gastroenterólogo; alergólogo.',
+        alarma: 'Comida atascada que no baja, no poder tragar ni la saliva o dolor de pecho intenso: urgencia.',
+        src: ['mp_esofagitis_eosinofilica']
+      },
+      {
+        id: 'penfigo', n: 'Pénfigo vulgar', urg: 3, prev: 0.5, dur: ['s', 'm'],
+        age: [[40, 70, 1.2]],
+        req: ['ampollas_flacidas'], reqF: 0.3,
+        s: { ampollas_flacidas: 3, llagas_boca: 2 },
+        que: 'Enfermedad autoinmune grave en que se forman ampollas blandas que se rompen con facilidad y dejan heridas dolorosas en la boca y la piel. Suele empezar en la boca. Sin tratamiento puede ser grave por infecciones y pérdida de líquidos.',
+        trat: 'Corticoides e inmunosupresores (incluido rituximab) indicados por un dermatólogo, cuidado de las heridas y tratamiento de las infecciones; a veces hospitalización.',
+        esp: 'Dermatólogo.',
+        alarma: 'Heridas extensas, fiebre o dificultad para comer o tragar: urgencia.',
+        src: ['mp_penfigo']
+      },
+      {
+        id: 'penfigoide', n: 'Penfigoide ampolloso', urg: 3, prev: 0.6, dur: ['s', 'm'],
+        age: [[0, 49, 0.2], [70, 200, 1.4]],
+        req: ['ampollas_tensas'], reqF: 0.3,
+        s: { ampollas_tensas: 3, picazon_piel: 2, erupcion: 1, ronchas: 1 },
+        que: 'Enfermedad autoinmune de la piel, frecuente en personas mayores, que produce ampollas grandes y tensas sobre piel roja o normal en brazos, piernas y tronco, con mucha picazón. A veces empieza solo con picazón o manchas parecidas a ronchas.',
+        trat: 'Corticoides en crema o en comprimidos y otros medicamentos indicados por un dermatólogo; cuidado de las ampollas para evitar infecciones. Suele responder bien.',
+        esp: 'Dermatólogo.',
+        alarma: 'Ampollas extensas con fiebre o signos de infección: consulta urgente.',
+        src: ['mp_penfigoide']
+      },
+      {
+        id: 'dermatitis_herpetiforme', n: 'Dermatitis herpetiforme', urg: 2, prev: 0.5, dur: ['s', 'm'],
+        req: ['ampollitas_codos'], reqF: 0.3,
+        s: { ampollitas_codos: 3, picazon_piel: 2, diarrea: 1, hinchazon_abdominal: 1, ctx_autoinmune: 1 },
+        que: 'Erupción con ampollitas y granitos que pican intensamente, agrupados en codos, rodillas, glúteos y espalda. Es una manifestación de la enfermedad celíaca (intolerancia al gluten), aunque no siempre haya síntomas digestivos. No tiene relación con el herpes.',
+        trat: 'Dieta estricta sin gluten de por vida, que controla la piel y el intestino, y al principio un medicamento (dapsona) indicado por el dermatólogo.',
+        esp: 'Dermatólogo; gastroenterólogo.',
+        alarma: 'Baja de peso, anemia o diarrea persistente: consulta.',
+        src: ['mp_dermatitis_herpetiforme', 'mp_celiaca']
+      },
+      {
+        id: 'liquen_escleroso', n: 'Liquen escleroso', urg: 2, prev: 0.7, dur: ['m'], sexF: 1.5,
+        req: ['manchas_blancas_genitales'], reqF: 0.3,
+        s: { manchas_blancas_genitales: 3, picazon_genital: 2, dolor_relaciones: 1, estrenimiento: 1 },
+        que: 'Enfermedad crónica de la piel que produce manchas blancas, delgadas y brillantes, sobre todo en la piel de los genitales y alrededor del ano, con picazón intensa, fisuras y dolor. Es más frecuente en mujeres después de la menopausia y en niñas; no es contagiosa.',
+        trat: 'Cremas de corticoides potentes indicadas por el médico, de forma regular, y controles periódicos porque aumenta levemente el riesgo de cáncer de vulva.',
+        esp: 'Dermatólogo o ginecólogo.',
+        alarma: 'Herida o bulto que no sana en la zona genital: consulta pronto.',
+        src: ['mayo_liquen_escleroso']
+      },
+      {
+        id: 'morfea', n: 'Morfea', alt: 'Esclerodermia localizada', urg: 2, prev: 0.5, dur: ['m'],
+        req: ['placa_piel_dura'], reqF: 0.3,
+        s: { placa_piel_dura: 3, piel_dura: 2, dedos_blancos_frio: -1 },
+        que: 'Forma localizada de esclerodermia que afecta solo la piel: placas endurecidas, brillantes, de color marfil con un borde violáceo, en el tronco o las extremidades. No compromete los órganos internos y suele mejorar en algunos años.',
+        trat: 'Cremas de corticoides o inmunomoduladores, fototerapia y, en formas extensas o en niños, metotrexato. Kinesiología si afecta la movilidad.',
+        esp: 'Dermatólogo; reumatólogo.',
+        alarma: 'Dedos que se ponen blancos con el frío, dificultad para tragar o falta de aire: consulta (descartar la forma sistémica).',
+        src: ['mp_esclerodermia']
+      },
+      {
+        id: 'pioderma_gangrenoso', n: 'Pioderma gangrenoso', urg: 3, prev: 0.4, dur: ['d', 's'],
+        req: ['ulcera_crece_rapido'], reqF: 0.3,
+        s: { ulcera_crece_rapido: 3, ctx_colitis: 2, fiebre: 1, dolor_articular: 1, bulto_pus: -1 },
+        que: 'Enfermedad inflamatoria poco frecuente de la piel: un granito o nódulo se transforma rápido en una úlcera muy dolorosa con borde violáceo, a menudo tras una pequeña herida o cirugía. Se asocia a la enfermedad inflamatoria intestinal y a la artritis. No es una infección.',
+        trat: 'Corticoides e inmunosupresores, curaciones cuidadosas y tratar la enfermedad asociada. Debe evitarse el desbridamiento quirúrgico agresivo, que puede empeorarla.',
+        esp: 'Dermatólogo.',
+        alarma: 'Úlcera que crece rápido, con fiebre o dolor intenso: consulta pronto.',
+        src: ['mayo_pioderma']
+      },
+      {
+        id: 'eritema_nodoso', n: 'Eritema nudoso', urg: 2, prev: 0.8, dur: ['d', 's'], sexF: 1.5,
+        s: { nodulos_rojos_piernas: 3, dolor_articular: 1, fiebre: 1, ctx_infeccion_reciente: 1 },
+        que: 'Inflamación de la grasa bajo la piel que produce nódulos rojos, calientes y dolorosos, sobre todo en las canillas. En la mitad de los casos no se encuentra la causa; en el resto se asocia a infecciones (como la faringitis estreptocócica), medicamentos, el embarazo, la sarcoidosis o la enfermedad inflamatoria intestinal.',
+        trat: 'Reposo con las piernas elevadas, antiinflamatorios y tratar la causa. Suele desaparecer en unas 6 semanas, aunque puede volver.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Fiebre alta, tos o falta de aire, o diarrea con sangre: consulta pronto.',
+        src: ['mp_eritema_nodoso']
+      },
+      {
+        id: 'neuromielitis_optica', n: 'Neuromielitis óptica', urg: 4, prev: 0.4, dur: ['h', 'd'], sexF: 1.5,
+        req: ['hipo_vomitos_persistentes', 'vision_dolor_un_ojo', 'debilidad_piernas_horas'], reqF: 0.3,
+        s: { vision_dolor_un_ojo: 3, hipo_vomitos_persistentes: 3, debilidad_piernas_horas: 2, hormigueo: 1, esfinteres: 1 },
+        que: 'Enfermedad autoinmune poco frecuente que inflama los nervios ópticos y la médula espinal. Produce pérdida de visión con dolor en uno o ambos ojos, debilidad o parálisis de las piernas y, a veces, hipo o vómitos persistentes. Las crisis pueden repetirse.',
+        trat: 'En las crisis, corticoides en dosis altas o plasmaféresis en el hospital; después, medicamentos que previenen nuevas crisis.',
+        esp: 'Neurólogo.',
+        alarma: 'Pérdida de visión, debilidad de las piernas o pérdida del control de la orina: urgencia.',
+        src: ['mayo_nmo']
+      },
+      {
+        id: 'cidp', n: 'Polineuropatía desmielinizante inflamatoria crónica', alt: 'CIDP', urg: 3, prev: 0.5, dur: ['m'],
+        req: ['debilidad_hormigueo_meses'], reqF: 0.3,
+        s: { debilidad_hormigueo_meses: 3, ardor_pies: 1, pie_caido: 1, fatiga: 1, debilidad_ascendente: -1 },
+        que: 'Inflamación autoinmune de los nervios periféricos que produce debilidad y hormigueo en brazos y piernas que avanzan lentamente durante más de 2 meses, a veces con recaídas. Se parece a un Guillain-Barré de evolución lenta.',
+        trat: 'Inmunoglobulina por vena, corticoides o plasmaféresis indicados por un neurólogo; kinesiología. Muchas personas mejoran con tratamiento.',
+        esp: 'Neurólogo.',
+        alarma: 'Debilidad que avanza en días, dificultad para respirar o tragar: urgencia.',
+        src: ['mp_nervios_perifericos_t']
+      },
+      {
+        id: 'mielitis_transversa', n: 'Mielitis transversa', urg: 4, prev: 0.5, dur: ['h', 'd'],
+        req: ['debilidad_piernas_horas'], reqF: 0.3,
+        s: { debilidad_piernas_horas: 3, esfinteres: 2, dolor_lumbar: 1, ctx_infeccion_reciente: 1, hormigueo: 1 },
+        que: 'Inflamación de un segmento de la médula espinal, a veces después de una infección o asociada a enfermedades autoinmunes. En horas o días aparecen dolor de espalda, debilidad o adormecimiento de ambas piernas, una banda de molestia en el tronco y problemas para orinar o defecar.',
+        trat: 'Es una urgencia: corticoides en dosis altas por vena o plasmaféresis en el hospital, y luego rehabilitación. Alrededor de un tercio se recupera por completo.',
+        esp: 'Servicio de urgencia; neurólogo.',
+        alarma: 'Debilidad de piernas que aparece en horas o pérdida del control de la orina: urgencia inmediata.',
+        src: ['mp_mielitis', 'mayo_mielitis']
+      },
+      {
+        id: 'tiroiditis_subaguda', n: 'Tiroiditis subaguda', alt: 'Tiroiditis de De Quervain', urg: 2, prev: 0.7, dur: ['d', 's'], sexF: 1.5,
+        req: ['dolor_tiroides'], reqF: 0.3,
+        s: { dolor_tiroides: 3, ctx_infeccion_reciente: 2, fiebre: 1, palpitaciones: 1, temblor: 1, fatiga: 1 },
+        que: 'Inflamación dolorosa de la tiroides que suele aparecer después de una infección respiratoria viral. Produce dolor en la parte delantera del cuello que se va hacia la mandíbula o los oídos, fiebre y, al principio, síntomas de tiroides acelerada (palpitaciones, temblor), que luego pueden pasar a tiroides lenta.',
+        trat: 'Antiinflamatorios o corticoides para el dolor y betabloqueadores para las palpitaciones. Suele resolverse en semanas o meses; controles de la función tiroidea.',
+        esp: 'Médico general; endocrinólogo.',
+        alarma: 'Dificultad para tragar o respirar, o palpitaciones muy rápidas: urgencia.',
+        src: ['mp_anti_tpo']
+      },
+      {
+        id: 'pti', n: 'Trombocitopenia inmune', alt: 'PTI (plaquetas bajas)', urg: 3, prev: 0.6, dur: ['d', 's', 'm'],
+        req: ['moretones_faciles', 'petequias'], reqF: 0.4,
+        s: { moretones_faciles: 3, petequias: 2, sangrado_nariz: 1, sangrado_encias: 1, ctx_infeccion_reciente: 1, reglas_abundantes: 1 },
+        que: 'El sistema inmune destruye las plaquetas. Aparecen moretones con facilidad, puntitos rojos en la piel (petequias), sangrado de nariz o encías y reglas abundantes. En niños suele seguir a una infección viral y mejorar sola; en adultos tiende a ser crónica.',
+        trat: 'Si las plaquetas no están muy bajas, solo controles. Si hay sangrado o están muy bajas, corticoides, inmunoglobulina u otros medicamentos indicados por un hematólogo. Evitar aspirina e ibuprofeno.',
+        esp: 'Hematólogo.',
+        alarma: 'Sangrado que no se detiene, sangre en la orina o las deposiciones, dolor de cabeza intenso o petequias con fiebre: urgencia.',
+        src: ['mp_pti']
+      },
+      {
+        id: 'ptt', n: 'Púrpura trombocitopénica trombótica', alt: 'PTT', urg: 5, prev: 0.4, dur: ['h', 'd'],
+        req: ['petequias', 'moretones_faciles'], reqF: 0.3,
+        s: { petequias: 2, confusion: 2, palidez: 2, fiebre: 1, ictericia: 1, moretones_faciles: 1, dolor_abdominal: 1, dolor_cabeza: 1 },
+        que: 'Trastorno de la sangre poco frecuente y grave en que se forman pequeños coágulos en todo el cuerpo, se consumen las plaquetas y se destruyen los glóbulos rojos. Produce petequias, moretones, palidez, ictericia, fiebre y síntomas neurológicos como confusión o debilidad.',
+        trat: 'Es una emergencia: recambio de plasma (plasmaféresis) en el hospital, corticoides y otros medicamentos.',
+        esp: 'Servicio de urgencia; hematólogo.',
+        alarma: 'Petequias con confusión, debilidad, dolor de cabeza o palidez intensa: llama al 131.',
+        src: ['mp_ptt']
+      },
+      {
+        id: 'shu', n: 'Síndrome hemolítico urémico', alt: 'SHU', urg: 5, prev: 0.5, dur: ['d'],
+        age: [[0, 10, 1.5]],
+        req: ['diarrea_sangre'], reqF: 0.3,
+        s: { diarrea_sangre: 3, orina_escasa: 3, palidez: 2, petequias: 1, somnolencia: 1, hinchazon_cara_manos: 1 },
+        que: 'Complicación grave, sobre todo en niños pequeños, que aparece días después de una diarrea con sangre por la bacteria E. coli productora de toxina (carne mal cocida, leche no pasteurizada, agua o verduras contaminadas). Se destruyen glóbulos rojos y plaquetas y se dañan los riñones: palidez, orina escasa, hinchazón y decaimiento.',
+        trat: 'Requiere hospitalización: control de líquidos y, a veces, diálisis y transfusiones. No usar antibióticos ni antidiarreicos sin indicación médica en una diarrea con sangre.',
+        esp: 'Servicio de urgencia; nefrólogo infantil.',
+        alarma: 'Niño con diarrea con sangre que orina poco, está pálido o decaído: urgencia inmediata.',
+        src: ['mp_shu']
       }
     ]
   });
