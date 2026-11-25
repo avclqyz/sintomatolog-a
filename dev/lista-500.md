@@ -9,31 +9,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 
 ## A. Frecuentes (250)
 
-- [ ] C001 Sinusitis crónica
-- [ ] C002 Rinitis no alérgica (vasomotora)
-- [ ] C003 Pólipos nasales
-- [ ] C004 Desviación del tabique nasal
-- [ ] C005 Hipertrofia de adenoides
-- [ ] C006 Nódulos o pólipos en las cuerdas vocales
-- [ ] C007 Otitis media con efusión (otitis serosa)
-- [ ] C008 Perforación del tímpano
-- [ ] C009 Tinnitus crónico (acúfenos)
-- [ ] C010 Pérdida de audición por la edad (presbiacusia)
-- [ ] C011 Pérdida de audición por ruido
-- [ ] C012 Barotrauma del oído
-- [ ] C013 Disfunción de la trompa de Eustaquio
-- [ ] C014 Cálculo o infección de una glándula salival
-- [ ] C015 Caries dental
-- [ ] C016 Periodontitis
-- [ ] C017 Pericoronaritis (muela del juicio)
-- [ ] C018 Sensibilidad dental
-- [ ] C019 Queilitis angular (boqueras)
-- [ ] C020 Gingivoestomatitis herpética
-- [ ] C021 Herpangina
-- [ ] C022 Lengua geográfica
-- [ ] C023 Cuerpo extraño en la nariz
-- [ ] C024 Cuerpo extraño en el oído
-- [ ] C025 Fractura de nariz
+- [x] C001 Sinusitis crónica — tanda 1 · `sinusitis_cronica`
+- [x] C002 Rinitis no alérgica (vasomotora) — tanda 1 · `rinitis_vasomotora`
+- [x] C003 Pólipos nasales — tanda 1 · `polipos_nasales`
+- [x] C004 Desviación del tabique nasal — tanda 1 · `tabique_desviado`
+- [x] C005 Hipertrofia de adenoides — tanda 1 · `hipertrofia_adenoides`
+- [x] C006 Nódulos o pólipos en las cuerdas vocales — tanda 1 · `nodulos_vocales`
+- [x] C007 Otitis media con efusión (otitis serosa) — tanda 1 · `otitis_efusion`
+- [x] C008 Perforación del tímpano — tanda 1 · `timpano_perforado`
+- [x] C009 Tinnitus crónico (acúfenos) — tanda 1 · `tinnitus`
+- [x] C010 Pérdida de audición por la edad (presbiacusia) — tanda 1 · `presbiacusia`
+- [x] C011 Pérdida de audición por ruido — tanda 1 · `hipoacusia_ruido`
+- [x] C012 Barotrauma del oído — tanda 1 · `barotrauma`
+- [x] C013 Disfunción de la trompa de Eustaquio — tanda 1 · `disfuncion_trompa`
+- [x] C014 Cálculo o infección de una glándula salival — tanda 1 · `sialolitiasis`
+- [x] C015 Caries dental — tanda 1 · `caries`
+- [x] C016 Periodontitis — tanda 1 · `periodontitis`
+- [x] C017 Pericoronaritis (muela del juicio) — tanda 1 · `pericoronaritis`
+- [x] C018 Sensibilidad dental — tanda 1 · `sensibilidad_dental`
+- [x] C019 Queilitis angular (boqueras) — tanda 1 · `queilitis_angular`
+- [x] C020 Gingivoestomatitis herpética — tanda 1 · `gingivoestomatitis`
+- [x] C021 Herpangina — tanda 1 · `herpangina`
+- [x] C022 Lengua geográfica — tanda 1 · `lengua_geografica`
+- [x] C023 Cuerpo extraño en la nariz — tanda 1 · `cuerpo_extrano_nariz`
+- [x] C024 Cuerpo extraño en el oído — tanda 1 · `cuerpo_extrano_oido`
+- [x] C025 Fractura de nariz — tanda 1 · `fractura_nasal`
 - [ ] C026 Trauma dental (diente roto o caído)
 - [ ] C027 Mal aliento (halitosis)
 - [ ] C028 Frenillo lingual corto
@@ -275,31 +275,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 
 ## B. Poco frecuentes o raras (250 + reserva)
 
-- [ ] R001 Fibrosis quística
-- [ ] R002 Hemofilia
-- [ ] R003 Enfermedad de von Willebrand
-- [ ] R004 Anemia de células falciformes
-- [ ] R005 Talasemia
-- [ ] R006 Esferocitosis hereditaria
-- [ ] R007 Déficit de G6PD (favismo)
-- [ ] R008 Síndrome de Marfan
-- [ ] R009 Síndrome de Ehlers-Danlos
-- [ ] R010 Osteogénesis imperfecta
-- [ ] R011 Acondroplasia
-- [ ] R012 Neurofibromatosis tipo 1
-- [ ] R013 Esclerosis tuberosa
-- [ ] R014 Síndrome de Turner
-- [ ] R015 Síndrome de Klinefelter
-- [ ] R016 Síndrome X frágil
-- [ ] R017 Síndrome de Prader-Willi
-- [ ] R018 Síndrome de Angelman
-- [ ] R019 Síndrome de Rett
-- [ ] R020 Distrofia muscular de Duchenne
-- [ ] R021 Distrofia miotónica
-- [ ] R022 Atrofia muscular espinal
-- [ ] R023 Enfermedad de Charcot-Marie-Tooth
-- [ ] R024 Ataxia de Friedreich
-- [ ] R025 Enfermedad de Huntington
+- [x] R001 Fibrosis quística — tanda 1 · `fibrosis_quistica`
+- [x] R002 Hemofilia — tanda 1 · `hemofilia`
+- [x] R003 Enfermedad de von Willebrand — tanda 1 · `von_willebrand`
+- [x] R004 Anemia de células falciformes — tanda 1 · `drepanocitosis`
+- [x] R005 Talasemia — tanda 1 · `talasemia`
+- [x] R006 Esferocitosis hereditaria — tanda 1 · `esferocitosis`
+- [x] R007 Déficit de G6PD (favismo) — tanda 1 · `deficit_g6pd`
+- [x] R008 Síndrome de Marfan — tanda 1 · `marfan`
+- [x] R009 Síndrome de Ehlers-Danlos — tanda 1 · `ehlers_danlos`
+- [x] R010 Osteogénesis imperfecta — tanda 1 · `osteogenesis_imperfecta`
+- [x] R011 Acondroplasia — tanda 1 · `acondroplasia`
+- [x] R012 Neurofibromatosis tipo 1 — tanda 1 · `neurofibromatosis`
+- [x] R013 Esclerosis tuberosa — tanda 1 · `esclerosis_tuberosa`
+- [x] R014 Síndrome de Turner — tanda 1 · `turner`
+- [x] R015 Síndrome de Klinefelter — tanda 1 · `klinefelter`
+- [x] R016 Síndrome X frágil — tanda 1 · `x_fragil`
+- [x] R017 Síndrome de Prader-Willi — tanda 1 · `prader_willi`
+- [x] R018 Síndrome de Angelman — tanda 1 · `angelman`
+- [x] R019 Síndrome de Rett — tanda 1 · `rett`
+- [x] R020 Distrofia muscular de Duchenne — tanda 1 · `duchenne`
+- [x] R021 Distrofia miotónica — tanda 1 · `distrofia_miotonica`
+- [x] R022 Atrofia muscular espinal — tanda 1 · `ame`
+- [x] R023 Enfermedad de Charcot-Marie-Tooth — tanda 1 · `charcot_marie_tooth`
+- [x] R024 Ataxia de Friedreich — tanda 1 · `ataxia_friedreich`
+- [x] R025 Enfermedad de Huntington — tanda 1 · `huntington`
 - [ ] R026 Esclerosis lateral amiotrófica (ELA)
 - [ ] R027 Fenilcetonuria
 - [ ] R028 Galactosemia

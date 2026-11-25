@@ -1337,7 +1337,7 @@
     },
     {
       id: 'anemia', n: 'Anemia por falta de hierro', urg: 2, prev: 1.0, dur: ['s', 'm'], sexF: 1.2,
-      s: { fatiga: 3, palidez: 3, mareo: 2, falta_aire: 1, palpitaciones: 1, dolor_cabeza: 1, caida_pelo: 1, intolerancia_frio: 1, mareo_al_pararse: 1, reglas_abundantes: 1 },
+      s: { fatiga: 3, palidez: 3, mareo: 2, falta_aire: 1, palpitaciones: 1, dolor_cabeza: 1, caida_pelo: 1, intolerancia_frio: 1, mareo_al_pararse: 1, reglas_abundantes: 1, anemia_no_mejora: -1, ictericia: -1 },
       que: 'Faltan glóbulos rojos sanos por falta de hierro, frecuentemente por menstruaciones abundantes, embarazo, dieta pobre en hierro o pérdidas de sangre digestivas. Produce cansancio, palidez, falta de aire con el esfuerzo, mareo, palpitaciones, uñas quebradizas y antojos de hielo o tierra.',
       trat: 'Se confirma con hemograma y ferritina. Se trata con suplementos de hierro y alimentos ricos en hierro, y buscando la causa de la pérdida (especialmente en hombres y en mujeres después de la menopausia).',
       esp: 'Médico general; hematólogo o gastroenterólogo según la causa.',
