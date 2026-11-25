@@ -1828,4 +1828,309 @@
       }
     ]
   });
+
+  // ── Tanda 7 (noviembre 2026): piel, pelo, uñas, bultos, cicatrices y picaduras
+  D.addPack({
+    symptoms: [
+      ['manchas_claras_tronco', 'Manchas más claras, rosadas o café, con escamas finas, en el pecho, la espalda o los hombros (se notan más después del sol)', 'piel', 1, ['tiña versicolor', 'manchas del sol', 'hongos en la piel']],
+      ['manchas_blancas_piel', 'Manchas blancas como la leche, sin escamas, que crecen de a poco (manos, cara, alrededor de la boca o de los genitales)', 'piel', 1, ['vitíligo', 'piel despigmentada']],
+      ['manchas_oscuras_cara', 'Manchas café o grisáceas, parejas a ambos lados, en mejillas, frente, nariz o sobre el labio', 'piel', 1, ['melasma', 'paño', 'manchas del embarazo']],
+      ['calva_redonda', 'Zonas redondas sin pelo, de piel lisa, que aparecen de repente (cuero cabelludo, barba o cejas)', 'piel', 1, ['alopecia areata', 'pelada']],
+      ['entradas_coronilla', 'El pelo se va adelgazando de a poco: entradas y coronilla en hombres, o la raya del centro más ancha en mujeres', 'piel', 1, ['calvicie', 'alopecia androgénica']],
+      ['caida_pelo_abundante', 'Se cae mucho pelo de todo el cuero cabelludo, semanas o meses después de una enfermedad, un parto, una dieta o un estrés fuerte', 'piel', 1, ['efluvio telógeno', 'se me cae el pelo a mechones']],
+      ['manchas_pegadas', 'Manchas o placas café a negras, de aspecto ceroso, como «pegadas» sobre la piel', 'piel', 1, ['queratosis seborreica', 'verrugas de la edad']],
+      ['placa_aspera_sol', 'Placa pequeña, áspera y escamosa, como lija, en piel expuesta al sol (cara, orejas, calva, dorso de las manos)', 'piel', 1, ['queratosis actínica', 'lesión por sol']],
+      ['bulto_perlado', 'Bultito brillante o perlado, con vasitos finos, que sangra fácil y forma costra (cara, cuello, orejas)', 'piel', 2, ['carcinoma basocelular', 'cáncer de piel']],
+      ['bulto_escamoso_crece', 'Bulto rojo y firme o placa con escamas y costra que crece en semanas, en piel expuesta al sol o en el labio inferior', 'piel', 2, ['carcinoma espinocelular', 'cáncer de piel']],
+      ['herida_no_sana_piel', 'Herida o costra en la piel que no sana en 4 semanas o vuelve a abrirse', 'piel', 2, ['herida que no cicatriza']],
+      ['bulto_blando_movil', 'Bulto blando, gomoso e indoloro bajo la piel, que se mueve al presionarlo y crece muy lento', 'piel', 1, ['lipoma', 'bolita de grasa']],
+      ['bulto_piel_punto', 'Bulto redondo bajo la piel con un puntito oscuro al centro; a veces sale un material espeso con mal olor', 'piel', 1, ['quiste sebáceo', 'quiste epidérmico']],
+      ['cicatriz_gruesa', 'Cicatriz gruesa, elevada y brillante que crece más allá de la herida original y pica', 'piel', 1, ['queloide', 'cicatriz hipertrófica']],
+      ['sudor_excesivo', 'Sudas demasiado en manos, pies, axilas o cara, sin calor ni ejercicio, hasta mojar la ropa o gotear', 'piel', 1, ['hiperhidrosis', 'manos sudorosas']],
+      ['pliegue_rojo', 'Piel roja, húmeda y con ardor en los pliegues (bajo las mamas, en las ingles o entre los rollitos de la guata)', 'piel', 1, ['intertrigo', 'roce en los pliegues', 'paspadura']],
+      ['papulas_violaceas', 'Bultitos planos de color violáceo que pican mucho (muñecas, tobillos), a veces con líneas blancas en la boca', 'piel', 1, ['liquen plano']],
+      ['bultos_axilas_ingle', 'Bultos dolorosos que se repiten en axilas, ingles o bajo las mamas, supuran y dejan cicatrices', 'piel', 2, ['hidradenitis supurativa', 'golondrinos']],
+      ['granitos_pelos', 'Granitos rojos o con pus alrededor de los pelos (barba, piernas, glúteos), que pican o arden', 'piel', 1, ['foliculitis', 'pelos encarnados']],
+      ['callo', 'Piel dura y engrosada en zonas de roce o presión (planta del pie, dedos o manos)', 'piel', 1, ['callo', 'callosidad', 'ojo de pescado']],
+      ['ctx_picadura_abeja', 'Te picó una abeja, avispa o chaqueta amarilla', 'contexto', 0, ['abeja', 'avispa', 'chaqueta amarilla']],
+      ['hinchazon_picadura', 'Hinchazón, dolor y enrojecimiento alrededor de una picadura', 'piel', 1, ['picadura hinchada']],
+      ['ronchas_picaduras', 'Ronchitas rojas que pican mucho, en grupos o en línea, en zonas descubiertas o donde aprieta la ropa', 'piel', 1, ['picaduras de zancudo', 'picaduras de pulga', 'chinches']],
+      ['ampollitas_dedos', 'Ampollitas pequeñas y profundas que pican mucho en los costados de los dedos, las palmas o las plantas', 'piel', 1, ['eccema dishidrótico', 'ponfólix']],
+      ['dedo_unia_hinchado', 'Borde de una uña de la mano rojo, hinchado y doloroso, a veces con pus', 'piel', 1, ['panadizo', 'paroniquia', 'uñero']],
+      ['dedos_rojos_frio', 'Zonas rojas o moradas, hinchadas, que pican o arden en los dedos de manos o pies, horas después de estar en el frío', 'piel', 1, ['sabañones']],
+      ['herida_presion', 'Zona roja que no se aclara al presionarla, o herida, sobre huesos que apoyan (sacro, talones, caderas) en alguien que pasa mucho tiempo en cama o en silla', 'piel', 2, ['escara', 'úlcera por presión', 'llaga por estar en cama']]
+    ],
+    sources: {
+      mp_tina_versicolor: [MP, 'Tiña versicolor', 'https://medlineplus.gov/spanish/ency/article/001465.htm'],
+      mp_vitiligo: [MP, 'Vitiligo', 'https://medlineplus.gov/spanish/ency/article/000831.htm'],
+      mayo_vitiligo: [MAYO, 'Vitiligo', 'https://www.mayoclinic.org/es/diseases-conditions/vitiligo/symptoms-causes/syc-20355912'],
+      mp_manchas_piel: [MP, 'Manchas en la piel (incluye melasma y vitiligo)', 'https://medlineplus.gov/spanish/ency/article/003224.htm'],
+      mayo_melasma: [MAYO, 'Preguntas y respuestas: tratar el melasma', 'https://newsnetwork.mayoclinic.org/es/2020/03/09/preguntas-y-respuestas-tratar-el-melasma/'],
+      mp_alopecia_areata: [MP, 'Alopecia areata', 'https://medlineplus.gov/spanish/ency/article/001450.htm'],
+      mp_perdida_cabello: [MP, 'Pérdida de cabello', 'https://medlineplus.gov/spanish/ency/article/003246.htm'],
+      mp_queratosis_seborreica: [MP, 'Queratosis seborreica', 'https://medlineplus.gov/spanish/ency/article/000884.htm'],
+      mp_queratosis_actinica: [MP, 'Queratosis actínica', 'https://medlineplus.gov/spanish/ency/article/000827.htm'],
+      mp_basocelular: [MP, 'Carcinoma de células basales', 'https://medlineplus.gov/spanish/ency/article/000824.htm'],
+      mp_escamocelular: [MP, 'Cáncer de piel escamocelular', 'https://medlineplus.gov/spanish/ency/article/000829.htm'],
+      mayo_lipoma: [MAYO, 'Lipoma', 'https://www.mayoclinic.org/es/diseases-conditions/lipoma/symptoms-causes/syc-20374470'],
+      mp_quiste_epidermoide: [MP, 'Quiste epidermoide', 'https://medlineplus.gov/spanish/ency/article/000842.htm'],
+      mayo_quiste_epidermoide: [MAYO, 'Quistes epidermoides', 'https://www.mayoclinic.org/es/diseases-conditions/epidermoid-cysts/symptoms-causes/syc-20352701'],
+      mayo_queloide: [MAYO, 'Cicatriz queloide', 'https://www.mayoclinic.org/es/diseases-conditions/keloid-scar/symptoms-causes/syc-20520901'],
+      mp_hiperhidrosis: [MP, 'Hiperhidrosis', 'https://medlineplus.gov/spanish/ency/article/007259.htm'],
+      mp_intertrigo: [MP, 'Intertrigo', 'https://medlineplus.gov/spanish/ency/article/003223.htm'],
+      mp_liquen_plano: [MP, 'Liquen plano', 'https://medlineplus.gov/spanish/ency/article/000867.htm'],
+      mp_hidradenitis_t: [MP, 'Hidradenitis supurativa', 'https://medlineplus.gov/spanish/hidradenitissuppurativa.html'],
+      mayo_foliculitis: [MAYO, 'Foliculitis', 'https://www.mayoclinic.org/es/diseases-conditions/folliculitis/symptoms-causes/syc-20361634'],
+      mp_callos: [MP, 'Callos y callosidades', 'https://medlineplus.gov/spanish/ency/article/001232.htm'],
+      mp_picaduras: [MP, 'Mordeduras y picaduras de insectos', 'https://medlineplus.gov/spanish/ency/article/000033.htm'],
+      mp_pulgas: [MP, 'Pulgas', 'https://medlineplus.gov/spanish/ency/article/001329.htm'],
+      mp_ponfolix: [MP, 'Eccema ponfólix (dishidrótico)', 'https://medlineplus.gov/spanish/ency/article/000832.htm'],
+      mp_paroniquia: [MP, 'Paroniquia', 'https://medlineplus.gov/spanish/ency/article/001444.htm'],
+      mayo_sabanones: [MAYO, 'Sabañones', 'https://www.mayoclinic.org/es/diseases-conditions/chilblains/symptoms-causes/syc-20351097'],
+      mp_ulceras_presion_cuidado: [MP, 'Cómo cuidar las úlceras de decúbito', 'https://medlineplus.gov/spanish/ency/patientinstructions/000740.htm'],
+      mp_prevenir_presion: [MP, 'Prevenir las lesiones por presión', 'https://medlineplus.gov/spanish/ency/patientinstructions/000147.htm']
+    },
+    conditions: [
+      {
+        id: 'pitiriasis_versicolor', n: 'Pitiriasis versicolor', alt: 'Tiña versicolor', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[0, 11, 0.4], [12, 40, 1.2]],
+        s: { manchas_claras_tronco: 3, picazon_piel: 1, ctx_calor: 1 },
+        que: 'Infección superficial y muy frecuente de la piel por un hongo (Malassezia) que vive normalmente en ella. Produce manchas bien delimitadas, más claras, rosadas o café, con escamas finas, en el pecho, la espalda y los hombros, que se notan más después de tomar sol. No se contagia y es más frecuente con calor, humedad y sudor.',
+        trat: 'Champús, cremas o lociones antifúngicas y, si es extensa, antifúngicos en comprimidos indicados por un médico. El color de la piel puede tardar meses en emparejarse y suele volver, por lo que a veces se repite el tratamiento.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Manchas que no mejoran con el tratamiento o pierden la sensibilidad: consulta.',
+        src: ['mp_tina_versicolor']
+      },
+      {
+        id: 'vitiligo', n: 'Vitíligo', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        s: { manchas_blancas_piel: 3, ctx_autoinmune: 1, ctx_familia: 1, manchas_blancas_hoja: -1, manchas_claras_tronco: -1 },
+        que: 'Las células que dan color a la piel dejan de funcionar y aparecen manchas blancas, sin escamas, que suelen empezar en las manos, la cara o alrededor de la boca y los genitales, y pueden agrandarse con el tiempo. El pelo de esas zonas puede ponerse blanco. Se relaciona con el sistema inmune y a veces con otras enfermedades autoinmunes, como las de tiroides. No es contagioso.',
+        trat: 'Cremas con corticoides u otros medicamentos, fototerapia con luz ultravioleta y protección solar de las manchas. Puede afectar la autoestima: el apoyo psicológico también ayuda.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Cansancio, cambios de peso u otros síntomas de tiroides: consulta.',
+        src: ['mp_vitiligo', 'mayo_vitiligo']
+      },
+      {
+        id: 'melasma', n: 'Melasma', alt: 'Paño o manchas del embarazo', urg: 1, prev: 1.0, dur: ['m'], sexF: 1.5, sexM: 0.4,
+        age: [[0, 14, 0.2], [20, 50, 1.3]],
+        s: { manchas_oscuras_cara: 3, ctx_calor: 1, lunar_cambia: -1 },
+        que: 'Manchas café o grisáceas en la cara, parejas a ambos lados, sobre todo en mejillas, frente, nariz y labio superior. Es mucho más frecuente en mujeres y se desencadena con el sol y los cambios hormonales del embarazo o los anticonceptivos. No es dañino, pero suele volver.',
+        trat: 'Protector solar diario de amplio espectro (y sombrero), cremas despigmentantes indicadas por un dermatólogo y, a veces, peelings u otros procedimientos. Puede aclarar solo después del embarazo.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Una mancha que cambia de forma, color o tamaño, o que sangra: consulta pronto.',
+        src: ['mp_manchas_piel', 'mayo_melasma']
+      },
+      {
+        id: 'alopecia_areata', n: 'Alopecia areata', alt: 'Pelada', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        s: { calva_redonda: 3, caida_pelo: 1, ctx_autoinmune: 1, ctx_estres: 1 },
+        que: 'Enfermedad autoinmune en que el sistema de defensas ataca la raíz del pelo. Produce zonas redondas sin pelo, de piel lisa y sana, que aparecen en poco tiempo en el cuero cabelludo, la barba o las cejas. Muchas veces el pelo vuelve a crecer solo en meses, aunque puede repetirse.',
+        trat: 'Inyecciones o cremas con corticoides y otros medicamentos indicados por un dermatólogo; en casos extensos existen tratamientos orales nuevos. El apoyo emocional es importante.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Pérdida rápida de todo el pelo, o zonas con piel roja, escamas o pus (puede ser una tiña): consulta.',
+        src: ['mp_alopecia_areata']
+      },
+      {
+        id: 'calvicie_comun', n: 'Calvicie común', alt: 'Alopecia androgénica', urg: 1, prev: 1.0, dur: ['m'], sexM: 1.3,
+        age: [[0, 14, 0.2], [20, 200, 1.2]],
+        s: { entradas_coronilla: 3, caida_pelo: 1, ctx_familia: 1 },
+        que: 'La causa más frecuente de pérdida de pelo, hereditaria y relacionada con las hormonas. En hombres produce entradas y pérdida en la coronilla; en mujeres, adelgazamiento difuso con la raya del centro más ancha. Avanza lentamente con los años y no es una enfermedad.',
+        trat: 'Si molesta, minoxidil en loción y, en hombres, medicamentos como la finasterida indicados por un médico; también trasplante capilar. Los resultados aparecen tras meses y se pierden al suspender.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'En mujeres, caída de pelo con reglas irregulares, acné o vello en la cara: consulta (posible causa hormonal).',
+        src: ['mp_perdida_cabello']
+      },
+      {
+        id: 'efluvio_telogeno', n: 'Caída del pelo por estrés', alt: 'Efluvio telógeno', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        s: { caida_pelo_abundante: 3, caida_pelo: 2, ctx_estres: 1, ctx_posparto: 1, ctx_infeccion_reciente: 1, perdida_peso: 1, calva_redonda: -1 },
+        que: 'Caída abundante y pareja de pelo de todo el cuero cabelludo que aparece 2 a 3 meses después de un evento que «estresa» al cuerpo: fiebre alta o una infección (como el COVID), un parto, una cirugía, una dieta estricta, la falta de hierro o un estrés emocional fuerte. No deja zonas calvas.',
+        trat: 'Suele recuperarse sola en 6 a 12 meses al pasar la causa. Conviene revisar el hierro, la tiroides y la alimentación con un médico si dura más o se repite.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Caída que no se detiene después de 6 meses, o con cansancio, frío o palidez: consulta.',
+        src: ['mp_perdida_cabello']
+      },
+      {
+        id: 'queratosis_seborreica', n: 'Queratosis seborreica', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[0, 30, 0.2], [40, 200, 1.3]],
+        s: { manchas_pegadas: 3, picazon_piel: 1, lunar_cambia: -1 },
+        que: 'Crecimientos benignos y muy frecuentes de la piel desde los 40 años. Son manchas o placas café a negras, redondas u ovaladas, de superficie cerosa o rugosa, como «pegadas» sobre la piel; suelen ser varias y tienden a ser hereditarias. No son cáncer.',
+        trat: 'No necesitan tratamiento; si molestan, se pueden quitar con congelación (crioterapia), raspado o láser.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Una lesión única, que cambia rápido, sangra o tiene bordes o colores irregulares: consulta pronto (descartar melanoma).',
+        src: ['mp_queratosis_seborreica']
+      },
+      {
+        id: 'queratosis_actinica', n: 'Queratosis actínica', alt: 'Lesión precancerosa por sol', urg: 2, prev: 1.0, dur: ['m'],
+        age: [[0, 30, 0.2], [50, 200, 1.3]],
+        s: { placa_aspera_sol: 3, ctx_calor: 1 },
+        que: 'Zona pequeña, áspera y escamosa de la piel causada por años de exposición al sol, más frecuente en personas de piel clara, mayores o con trasplantes. Aparece en la cara, las orejas, la calva o el dorso de las manos. Es una lesión precancerosa: algunas se transforman en cáncer de piel escamocelular.',
+        trat: 'Congelación (crioterapia), cremas indicadas por el dermatólogo, terapia fotodinámica o raspado. Protector solar diario y sombrero para prevenir nuevas.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Si la lesión crece, se endurece, duele o sangra: consulta pronto.',
+        src: ['mp_queratosis_actinica']
+      },
+      {
+        id: 'carcinoma_basocelular', n: 'Señales de carcinoma basocelular', alt: 'Cáncer de piel más frecuente', urg: 3, prev: 0.9, dur: ['s', 'm'],
+        age: [[0, 30, 0.2], [50, 200, 1.4]],
+        s: { bulto_perlado: 3, herida_no_sana_piel: 2, ctx_calor: 1 },
+        que: 'El cáncer de piel más frecuente, relacionado con la exposición al sol durante años, sobre todo en personas de piel clara mayores de 50. Suele aparecer en la cara, el cuello o las orejas como un bultito brillante o perlado con vasitos finos, o como una herida que sangra, forma costra y no sana. Crece lento y casi nunca se extiende a otros órganos, pero puede dañar la piel alrededor.',
+        trat: 'Extirpación con cirugía (a veces cirugía de Mohs), raspado y quemado, cremas o radioterapia, según el tamaño y la ubicación. Revisar la piel periódicamente y usar protector solar.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Toda herida en la piel que no sana en un mes debe evaluarse.',
+        src: ['mp_basocelular']
+      },
+      {
+        id: 'carcinoma_espinocelular', n: 'Señales de carcinoma espinocelular', alt: 'Cáncer de piel escamocelular', urg: 3, prev: 0.9, dur: ['s', 'm'],
+        age: [[0, 30, 0.2], [50, 200, 1.4]],
+        s: { bulto_escamoso_crece: 3, herida_no_sana_piel: 2, placa_aspera_sol: 1, ctx_calor: 1, ctx_fumador: 1 },
+        que: 'El segundo cáncer de piel más frecuente. Aparece en piel expuesta al sol (o en el labio inferior en fumadores) como un bulto rojo y firme, una placa con escamas y costra, o una herida que crece. Puede nacer de una queratosis actínica y, a diferencia del basocelular, a veces se extiende, por lo que debe extirparse pronto.',
+        trat: 'Cirugía en la mayoría de los casos; a veces raspado y quemado, cirugía de Mohs o radioterapia. Controles de la piel y protección solar.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Bulto que crece rápido, duele o sangra, o ganglios inflamados cerca: consulta pronto.',
+        src: ['mp_escamocelular']
+      },
+      {
+        id: 'lipoma', n: 'Lipoma', alt: 'Bulto de grasa bajo la piel', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[0, 19, 0.4], [40, 60, 1.2]],
+        s: { bulto_blando_movil: 3 },
+        que: 'Bulto de grasa de crecimiento muy lento bajo la piel, blando, gomoso, indoloro y que se mueve con los dedos. Suele aparecer en el cuello, los hombros, la espalda, el abdomen, los brazos o los muslos. No es cáncer y tiende a ser hereditario.',
+        trat: 'No necesita tratamiento; si molesta, duele o crece, se extirpa con una cirugía menor.',
+        esp: 'Médico general; cirujano o dermatólogo.',
+        alarma: 'Bulto duro, fijo, doloroso, que crece rápido o mide más de 5 cm: consulta pronto.',
+        src: ['mayo_lipoma', 'mp_protuberancias']
+      },
+      {
+        id: 'quiste_epidermico', n: 'Quiste epidérmico', alt: 'Quiste sebáceo', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        s: { bulto_piel_punto: 3, bulto_pus: 1 },
+        que: 'Bulto redondo, benigno y de crecimiento lento bajo la piel, con frecuencia en la cara, el cuello o el tronco. A menudo tiene un puntito oscuro al centro por donde puede salir un material espeso, blanco y de mal olor (queratina). Puede inflamarse o infectarse.',
+        trat: 'Si no molesta, no requiere tratamiento. Si se inflama: compresas tibias y, a veces, drenaje o inyección de corticoide; para que no vuelva, se extirpa completo con cirugía menor. No hay que reventarlo.',
+        esp: 'Médico general; dermatólogo o cirujano.',
+        alarma: 'Enrojecimiento que se extiende, dolor intenso o fiebre: consulta pronto.',
+        src: ['mp_quiste_epidermoide', 'mayo_quiste_epidermoide']
+      },
+      {
+        id: 'queloide', n: 'Queloide', alt: 'Cicatriz que crece de más', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[10, 30, 1.2]],
+        s: { cicatriz_gruesa: 3, picazon_piel: 1 },
+        que: 'Cicatriz gruesa, elevada y brillante que sigue creciendo más allá de la herida original, por exceso de colágeno al cicatrizar. Aparece tras cortes, cirugías, quemaduras, acné o perforaciones, sobre todo en el lóbulo de la oreja, los hombros, las mejillas o el pecho. Puede picar o doler. No es cáncer ni se contagia.',
+        trat: 'Inyecciones de corticoides, láminas o geles de silicona, presión, congelación o cirugía (que a veces se combina con radioterapia porque puede volver). Quienes los forman deben evitar perforaciones y tatuajes.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Cicatriz que sangra, se abre o cambia de forma: consulta.',
+        src: ['mayo_queloide']
+      },
+      {
+        id: 'hiperhidrosis', n: 'Hiperhidrosis', alt: 'Sudoración excesiva', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[12, 40, 1.2]],
+        s: { sudor_excesivo: 3, ansiedad: 1, sudoracion: 1, sudor_nocturno: -1, perdida_peso: -1, palpitaciones: -1, fiebre: -1 },
+        que: 'Sudoración mucho mayor de la necesaria para enfriar el cuerpo, sobre todo en manos, pies, axilas o cara, que puede empapar la ropa. Suele empezar en la niñez o la adolescencia y la mayoría de las veces no tiene una causa; con menos frecuencia se debe a otra enfermedad (tiroides, diabetes, menopausia, infecciones) o medicamentos.',
+        trat: 'Antitranspirantes con cloruro de aluminio, iontoforesis para manos y pies, toxina botulínica, medicamentos y, en casos seleccionados, cirugía.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Sudor de todo el cuerpo que empieza de adulto, de noche, o con baja de peso, fiebre o palpitaciones: consulta (descartar otras causas).',
+        src: ['mp_hiperhidrosis']
+      },
+      {
+        id: 'intertrigo', n: 'Intertrigo', alt: 'Roce en los pliegues', urg: 1, prev: 1.0, dur: ['d', 's'],
+        s: { pliegue_rojo: 3, picazon_piel: 1, ctx_sobrepeso: 1, ctx_diabetes: 1, ctx_calor: 1 },
+        que: 'Inflamación de los pliegues de la piel donde dos superficies se rozan y queda humedad: bajo las mamas, en las ingles, las axilas o entre los rollitos de la guata. La piel se pone roja, húmeda, con ardor o picazón y a veces mal olor; puede sobreinfectarse con hongos o bacterias.',
+        trat: 'Mantener los pliegues limpios y secos (separarlos con gasa o una tela de algodón, secar con aire frío), ropa suelta y cremas de barrera; si hay hongos o bacterias, cremas antifúngicas o antibióticas indicadas por el médico.',
+        esp: 'Médico general.',
+        alarma: 'Mal olor fuerte, pus, dolor o fiebre: consulta.',
+        src: ['mp_intertrigo']
+      },
+      {
+        id: 'liquen_plano', n: 'Liquen plano', urg: 2, prev: 0.9, dur: ['s', 'm'],
+        age: [[30, 60, 1.2]],
+        s: { papulas_violaceas: 3, picazon_piel: 2, placas_boca: 1, llagas_boca: 1 },
+        que: 'Inflamación de la piel o de la boca de causa no del todo conocida, relacionada con el sistema inmune. En la piel aparecen bultitos planos, violáceos y brillantes que pican mucho, sobre todo en muñecas y tobillos; en la boca, líneas blancas como encaje o heridas dolorosas. También puede afectar uñas, cuero cabelludo y genitales.',
+        trat: 'Cremas con corticoides, antihistamínicos para la picazón y otros tratamientos indicados por el dermatólogo. En la piel suele mejorar en meses o pocos años; el de la boca dura más y requiere controles.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Heridas en la boca que no sanan o un bulto en la boca: consulta pronto.',
+        src: ['mp_liquen_plano']
+      },
+      {
+        id: 'hidradenitis', n: 'Hidradenitis supurativa', urg: 2, prev: 0.9, dur: ['s', 'm'], sexF: 1.3,
+        age: [[0, 11, 0.2], [15, 40, 1.3]],
+        s: { bultos_axilas_ingle: 3, bulto_pus: 2, ctx_sobrepeso: 1, ctx_fumador: 1 },
+        que: 'Enfermedad crónica en que se tapan e inflaman los folículos del pelo de zonas con pliegues: axilas, ingles, glúteos y bajo las mamas. Produce bultos dolorosos que se repiten, supuran y dejan cicatrices o túneles bajo la piel. Empieza después de la pubertad y empeora con el tabaco y el sobrepeso. No se debe a falta de higiene ni se contagia.',
+        trat: 'Antibióticos, cremas, medicamentos biológicos en casos moderados a graves, y cirugía. Dejar de fumar y bajar de peso ayudan mucho. Tratarla temprano evita cicatrices.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Fiebre, dolor muy intenso o enrojecimiento que se extiende: consulta pronto.',
+        src: ['mp_hidradenitis_t']
+      },
+      {
+        id: 'foliculitis', n: 'Foliculitis', urg: 1, prev: 1.0, dur: ['d', 's'],
+        s: { granitos_pelos: 3, picazon_piel: 1, bulto_pus: 1, ctx_agua: 1 },
+        que: 'Inflamación de los folículos del pelo, casi siempre por bacterias (estafilococo) y a veces por hongos o por el roce y el afeitado. Aparecen granitos rojos o con pus alrededor de los pelos que pican o arden, en la barba, las piernas, los glúteos o el cuero cabelludo; también tras usar tinas calientes o piscinas mal mantenidas.',
+        trat: 'Los casos leves mejoran en días con lavado suave, compresas tibias y evitar afeitarse o la ropa apretada; si no mejora o se extiende, cremas o comprimidos antibióticos o antifúngicos indicados por un médico.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Bultos grandes y dolorosos, fiebre o enrojecimiento que se extiende: consulta pronto.',
+        src: ['mayo_foliculitis', 'mp_forunculo']
+      },
+      {
+        id: 'callos', n: 'Callos y callosidades', urg: 1, prev: 1.0, dur: ['m'],
+        s: { callo: 3 },
+        que: 'Engrosamiento de la piel en zonas de roce o presión repetida, como defensa: callosidades en la planta del pie o las manos y callos más pequeños y dolorosos, con un centro duro, sobre o entre los dedos. Se deben a zapatos apretados, deformidades de los pies o trabajos manuales.',
+        trat: 'Zapatos cómodos, almohadillas o plantillas, limar la piel tras un baño tibio y cremas con urea o ácido salicílico. Quienes tienen diabetes o mala circulación no deben cortarlos en casa: deben acudir al podólogo.',
+        esp: 'Podólogo; médico general.',
+        alarma: 'En personas con diabetes: enrojecimiento, herida, pus o dolor en el callo, consulta pronto.',
+        src: ['mp_callos']
+      },
+      {
+        id: 'picadura_abeja', n: 'Picadura de abeja o avispa', urg: 1, prev: 1.0, dur: ['h', 'd'],
+        req: ['ctx_picadura_abeja'], reqF: 0.3,
+        s: { ctx_picadura_abeja: 3, hinchazon_picadura: 3, picazon_piel: 1, hinchazon_labios: -2, ahogo_severo: -2, ronchas: -1 },
+        que: 'La picadura produce dolor, enrojecimiento e hinchazón en el lugar, que pueden extenderse por varios centímetros durante uno o dos días. En personas alérgicas, o con muchas picaduras a la vez, puede causar una reacción grave en todo el cuerpo (anafilaxia).',
+        trat: 'Retirar el aguijón raspándolo con una tarjeta, lavar con agua y jabón, frío local, elevar la zona y analgésicos o antihistamínicos. Quienes han tenido reacciones graves deben portar adrenalina autoinyectable indicada por un médico.',
+        esp: 'Autocuidado; médico general si la hinchazón es muy grande.',
+        alarma: 'Ronchas en el cuerpo, hinchazón de la cara o la garganta, dificultad para respirar o mareo tras una picadura: llama al 131.',
+        src: ['mp_picaduras']
+      },
+      {
+        id: 'picaduras_insectos', n: 'Picaduras de insectos', alt: 'Zancudos, pulgas o chinches', urg: 1, prev: 1.0, dur: ['d', 's'],
+        s: { ronchas_picaduras: 3, picazon_piel: 2, hinchazon_picadura: 1, ctx_convivientes: 1, picazon_nocturna: -1, surcos_dedos: -2 },
+        que: 'Ronchitas rojas que pican mucho por picaduras de zancudos, pulgas (de mascotas, en grupos en los tobillos), chinches de cama (en línea, en zonas descubiertas al dormir) u otros insectos. Rascarse puede infectarlas.',
+        trat: 'Lavar, frío local, cremas para la picazón o antihistamínicos; evitar rascarse. Buscar la fuente: tratar a las mascotas contra pulgas, revisar colchones por chinches, usar mosquiteros y repelentes.',
+        esp: 'Autocuidado; médico general si se infectan.',
+        alarma: 'Fiebre, pus, una zona roja que crece o reacción en todo el cuerpo: consulta.',
+        src: ['mp_picaduras', 'mp_pulgas']
+      },
+      {
+        id: 'eccema_dishidrotico', n: 'Eccema dishidrótico', alt: 'Ponfólix', urg: 1, prev: 1.0, dur: ['d', 's'],
+        s: { ampollitas_dedos: 3, picazon_piel: 2, ctx_estres: 1, ctx_calor: 1, ctx_irritante: 1, fiebre: -1 },
+        que: 'Brotes de ampollitas pequeñas y profundas, que pican mucho, en los costados de los dedos, las palmas o las plantas; al secarse, la piel se pela y se agrieta. Se relaciona con el estrés, las alergias, el contacto con irritantes o metales, el sudor y el calor. No se contagia.',
+        trat: 'Compresas frías, cremas con corticoides, hidratación de la piel y evitar los irritantes (usar guantes); en casos difíciles, otros tratamientos indicados por el dermatólogo.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Pus, dolor intenso o fiebre: consulta (posible infección).',
+        src: ['mp_ponfolix']
+      },
+      {
+        id: 'paroniquia', n: 'Paroniquia', alt: 'Panadizo o uñero', urg: 2, prev: 1.0, dur: ['d', 's'],
+        s: { dedo_unia_hinchado: 3, bulto_pus: 1, una_encarnada: -1 },
+        que: 'Infección de la piel alrededor de la uña. La forma aguda, por bacterias, aparece tras morderse las uñas, sacarse los pellejitos o una manicura, con el borde rojo, hinchado, caliente y doloroso, a veces con pus. La forma crónica, por hongos, es frecuente en quienes tienen las manos mucho tiempo en agua.',
+        trat: 'Remojar el dedo en agua tibia 2 a 3 veces al día; si hay pus, el médico puede drenarlo, y a veces se usan antibióticos o antifúngicos. No cortar las cutículas.',
+        esp: 'Médico general.',
+        alarma: 'Enrojecimiento que avanza por el dedo o la mano, fiebre o mucho dolor: consulta pronto.',
+        src: ['mp_paroniquia']
+      },
+      {
+        id: 'sabanones', n: 'Sabañones', urg: 1, prev: 1.0, dur: ['d', 's'], sexF: 1.2,
+        age: [[15, 30, 1.2]],
+        s: { dedos_rojos_frio: 3, ctx_frio: 2, picazon_piel: 1, dedos_blancos_frio: -1 },
+        que: 'Inflamación de los vasos sanguíneos pequeños de la piel por una reacción anormal al frío húmedo seguido de recalentamiento. Horas después aparecen zonas rojas o moradas, hinchadas, que pican o arden, sobre todo en los dedos de manos y pies; a veces con ampollas o heridas. Más frecuentes en mujeres jóvenes, personas delgadas y en invierno.',
+        trat: 'Suelen mejorar en 1 a 3 semanas: recalentar la piel lentamente (sin estufa ni agua caliente directa), no rascar, mantener manos y pies abrigados y secos; a veces cremas o medicamentos indicados por el médico.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Heridas que se infectan, síntomas que no mejoran en 2 semanas o que siguen en primavera: consulta.',
+        src: ['mayo_sabanones']
+      },
+      {
+        id: 'ulceras_presion', n: 'Úlceras por presión', alt: 'Escaras', urg: 3, prev: 1.0, dur: ['d', 's', 'm'],
+        age: [[70, 200, 1.3]],
+        s: { herida_presion: 3, ctx_inmovil: 2, fiebre: 1, ctx_diabetes: 1 },
+        que: 'Heridas de la piel y los tejidos que aparecen cuando la presión se mantiene en la misma zona, en personas que pasan mucho tiempo en cama o en silla de ruedas. Empiezan como una zona roja que no se aclara al presionarla, caliente, dura o esponjosa, sobre el sacro, los talones, las caderas o los codos, y pueden convertirse en úlceras profundas.',
+        trat: 'Aliviar la presión cambiando de posición al menos cada 2 horas, colchones o cojines especiales, curaciones según la etapa, buena alimentación e hidratación y control de la humedad de la piel.',
+        esp: 'Enfermería (curaciones) en el CESFAM o a domicilio; médico general.',
+        alarma: 'Fiebre, mal olor, pus, herida que se agranda o se ve el hueso: consulta pronto.',
+        src: ['mp_ulceras_presion_cuidado', 'mp_prevenir_presion']
+      }
+    ]
+  });
 })();

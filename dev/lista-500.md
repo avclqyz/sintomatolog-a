@@ -159,31 +159,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C148 Dolor de ovulación (Mittelschmerz) — tanda 6 · `mittelschmerz`
 - [x] C149 Molusco contagioso — tanda 6 · `molusco`
 - [x] C150 Pitiriasis rosada — tanda 6 · `pitiriasis_rosada`
-- [ ] C151 Pitiriasis versicolor
-- [ ] C152 Vitíligo
-- [ ] C153 Melasma
-- [ ] C154 Alopecia areata
-- [ ] C155 Calvicie común (alopecia androgénica)
-- [ ] C156 Caída del pelo por estrés (efluvio telógeno)
-- [ ] C157 Queratosis seborreica
-- [ ] C158 Queratosis actínica
-- [ ] C159 Señales de carcinoma basocelular
-- [ ] C160 Señales de carcinoma espinocelular
-- [ ] C161 Lipoma
-- [ ] C162 Quiste epidérmico (quiste sebáceo)
-- [ ] C163 Queloide
-- [ ] C164 Hiperhidrosis
-- [ ] C165 Intertrigo
-- [ ] C166 Liquen plano
-- [ ] C167 Hidradenitis supurativa
-- [ ] C168 Foliculitis
-- [ ] C169 Callos y callosidades
-- [ ] C170 Picadura de abeja o avispa
-- [ ] C171 Picaduras de insectos (zancudos, pulgas, chinches)
-- [ ] C172 Eccema dishidrótico
-- [ ] C173 Paroniquia (panadizo)
-- [ ] C174 Sabañones
-- [ ] C175 Úlceras por presión (escaras)
+- [x] C151 Pitiriasis versicolor — tanda 7 · `pitiriasis_versicolor`
+- [x] C152 Vitíligo — tanda 7 · `vitiligo`
+- [x] C153 Melasma — tanda 7 · `melasma`
+- [x] C154 Alopecia areata — tanda 7 · `alopecia_areata`
+- [x] C155 Calvicie común (alopecia androgénica) — tanda 7 · `calvicie_comun`
+- [x] C156 Caída del pelo por estrés (efluvio telógeno) — tanda 7 · `efluvio_telogeno`
+- [x] C157 Queratosis seborreica — tanda 7 · `queratosis_seborreica`
+- [x] C158 Queratosis actínica — tanda 7 · `queratosis_actinica`
+- [x] C159 Señales de carcinoma basocelular — tanda 7 · `carcinoma_basocelular`
+- [x] C160 Señales de carcinoma espinocelular — tanda 7 · `carcinoma_espinocelular`
+- [x] C161 Lipoma — tanda 7 · `lipoma`
+- [x] C162 Quiste epidérmico (quiste sebáceo) — tanda 7 · `quiste_epidermico`
+- [x] C163 Queloide — tanda 7 · `queloide`
+- [x] C164 Hiperhidrosis — tanda 7 · `hiperhidrosis`
+- [x] C165 Intertrigo — tanda 7 · `intertrigo`
+- [x] C166 Liquen plano — tanda 7 · `liquen_plano`
+- [x] C167 Hidradenitis supurativa — tanda 7 · `hidradenitis`
+- [x] C168 Foliculitis — tanda 7 · `foliculitis`
+- [x] C169 Callos y callosidades — tanda 7 · `callos`
+- [x] C170 Picadura de abeja o avispa — tanda 7 · `picadura_abeja`
+- [x] C171 Picaduras de insectos (zancudos, pulgas, chinches) — tanda 7 · `picaduras_insectos`
+- [x] C172 Eccema dishidrótico — tanda 7 · `eccema_dishidrotico`
+- [x] C173 Paroniquia (panadizo) — tanda 7 · `paroniquia`
+- [x] C174 Sabañones — tanda 7 · `sabanones`
+- [x] C175 Úlceras por presión (escaras) — tanda 7 · `ulceras_presion`
 - [ ] C176 Pie diabético
 - [ ] C177 Dermatitis perioral
 - [ ] C178 Piel seca (xerosis)
@@ -425,31 +425,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R148 Divertículo de Zenker — tanda 6 · `zenker`
 - [x] R149 Gastroparesia — tanda 6 · `gastroparesia`
 - [x] R150 Isquemia mesentérica — tanda 6 · `isquemia_mesenterica`
-- [ ] R151 Vólvulo
-- [ ] R152 Hepatitis alcohólica
-- [ ] R153 Síndrome de Budd-Chiari
-- [ ] R154 Pancreatitis crónica
-- [ ] R155 Señales de cáncer de páncreas
-- [ ] R156 Señales de cáncer de hígado
-- [ ] R157 Señales de cáncer de esófago
-- [ ] R158 Señales de cáncer de vesícula
-- [ ] R159 Tumores neuroendocrinos (síndrome carcinoide)
-- [ ] R160 Divertículo de Meckel
-- [ ] R161 Invaginación intestinal
-- [ ] R162 Estenosis pilórica
-- [ ] R163 Síndrome de vómitos cíclicos
-- [ ] R164 Síndrome de Zollinger-Ellison
-- [ ] R165 Fiebre tifoidea
-- [ ] R166 Cólera
-- [ ] R167 Amebiasis
-- [ ] R168 Teniasis
-- [ ] R169 Ascariasis
-- [ ] R170 Toxocariasis
-- [ ] R171 Triquinosis
-- [ ] R172 Fasciolasis (distomatosis hepática)
-- [ ] R173 Difilobotriasis (tenia del pescado)
-- [ ] R174 Anisakiasis
-- [ ] R175 Colestasis del embarazo
+- [x] R151 Vólvulo — tanda 7 · `volvulo`
+- [x] R152 Hepatitis alcohólica — tanda 7 · `hepatitis_alcoholica`
+- [x] R153 Síndrome de Budd-Chiari — tanda 7 · `budd_chiari`
+- [x] R154 Pancreatitis crónica — tanda 7 · `pancreatitis_cronica`
+- [x] R155 Señales de cáncer de páncreas — tanda 7 · `cancer_pancreas`
+- [x] R156 Señales de cáncer de hígado — tanda 7 · `cancer_higado`
+- [x] R157 Señales de cáncer de esófago — tanda 7 · `cancer_esofago`
+- [x] R158 Señales de cáncer de vesícula — tanda 7 · `cancer_vesicula`
+- [x] R159 Tumores neuroendocrinos (síndrome carcinoide) — tanda 7 · `sindrome_carcinoide`
+- [x] R160 Divertículo de Meckel — tanda 7 · `meckel`
+- [x] R161 Invaginación intestinal — tanda 7 · `invaginacion`
+- [x] R162 Estenosis pilórica — tanda 7 · `estenosis_pilorica`
+- [x] R163 Síndrome de vómitos cíclicos — tanda 7 · `vomitos_ciclicos`
+- [x] R164 Síndrome de Zollinger-Ellison — tanda 7 · `zollinger_ellison`
+- [x] R165 Fiebre tifoidea — tanda 7 · `fiebre_tifoidea`
+- [x] R166 Cólera — tanda 7 · `colera`
+- [x] R167 Amebiasis — tanda 7 · `amebiasis`
+- [x] R168 Teniasis — tanda 7 · `teniasis`
+- [x] R169 Ascariasis — tanda 7 · `ascariasis`
+- [x] R170 Toxocariasis — tanda 7 · `toxocariasis`
+- [x] R171 Triquinosis — tanda 7 · `triquinosis`
+- [x] R172 Fasciolasis (distomatosis hepática) — tanda 7 · `fasciolasis`
+- [x] R173 Difilobotriasis (tenia del pescado) — tanda 7 · `difilobotriasis`
+- [x] R174 Anisakiasis — tanda 7 · `anisakiasis`
+- [x] R175 Colestasis del embarazo — tanda 7 · `colestasis_embarazo`
 - [ ] R176 Hernia femoral
 - [ ] R177 Glomerulonefritis
 - [ ] R178 Síndrome nefrótico

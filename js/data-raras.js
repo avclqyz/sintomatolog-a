@@ -1954,4 +1954,321 @@
       }
     ]
   });
+
+  // ── Tanda 7 (noviembre 2026): intestino, hígado, páncreas, cánceres digestivos, parásitos e infecciones intestinales
+  D.addPack({
+    symptoms: [
+      ['vomito_verde', 'Vómito verde o amarillo intenso (bilioso), sobre todo en un bebé', 'digestivo', 3, ['vómito bilioso', 'vómito verde']],
+      ['sangrado_rectal_nino', 'Niño con sangrado abundante por el ano, rojo oscuro o como ladrillo, sin dolor', 'digestivo', 3, ['sangrado rectal en niños']],
+      ['llanto_dolor_crisis', 'Bebé o niño pequeño con crisis de llanto intenso por dolor de guata cada 15 a 20 minutos, encogiendo las piernas, y decaído entre una crisis y otra', 'digestivo', 3, ['invaginación', 'crisis de dolor en un bebé']],
+      ['deposicion_jalea', 'Deposición con sangre y mucosidad, como mermelada o jalea de frutilla', 'digestivo', 3, ['jalea de grosella', 'caca con sangre y moco']],
+      ['vomito_proyectil', 'Bebé de pocas semanas que vomita «en proyectil» después de cada mamada y queda con hambre', 'digestivo', 2, ['estenosis pilórica', 'vómito explosivo']],
+      ['vomitos_episodios', 'Episodios repetidos de vómitos intensos que duran horas o días, separados por semanas o meses en que estás bien', 'digestivo', 2, ['vómitos cíclicos']],
+      ['diarrea_agua_arroz', 'Diarrea muy abundante y acuosa, como agua de arroz, con poca o ninguna fiebre', 'digestivo', 3, ['cólera', 'diarrea acuosa profusa']],
+      ['manchas_rosadas_tronco', 'Manchitas rosadas, pequeñas y planas, en el pecho o el abdomen, durante una fiebre', 'piel', 1, ['roséola tifoídica']],
+      ['trozos_tenia', 'Trocitos blancos y planos (como granos de arroz o fideos) que a veces se mueven, en las deposiciones o la ropa interior', 'digestivo', 1, ['tenia', 'lombriz solitaria', 'proglótidos']],
+      ['gusano_largo', 'Sale un gusano largo, redondo y rosado (como una lombriz de tierra) en las deposiciones, por la boca o la nariz', 'digestivo', 1, ['áscaris', 'lombriz intestinal']],
+      ['picazon_palmas', 'Picazón intensa en las palmas y las plantas, peor de noche, sin erupción (en el embarazo)', 'mujer', 1, ['colestasis del embarazo', 'picazón en el embarazo'], 'F'],
+      ['ctx_calculos_vesicula', 'Te dijeron que tienes cálculos en la vesícula', 'contexto', 0, ['piedras en la vesícula', 'colelitiasis']],
+      ['ctx_ulceras_repetidas', 'Te han diagnosticado úlceras del estómago o del duodeno repetidas o difíciles de tratar', 'contexto', 0, ['úlceras repetidas']],
+      ['ctx_agua_verduras', 'Tomaste agua no potable o comiste verduras crudas mal lavadas, mariscos crudos o comida callejera de dudosa higiene', 'contexto', 0, ['agua contaminada', 'verduras regadas con aguas servidas']],
+      ['ctx_carne_cruda', 'Comiste carne de vacuno, cerdo o jabalí cruda o poco cocida (o embutidos caseros sin control)', 'contexto', 0, ['carne cruda', 'faena casera', 'jabalí']],
+      ['ctx_tierra_perros', 'Niño que juega en tierra o arena con fecas de perros o gatos, o se lleva tierra a la boca', 'contexto', 0, ['tierra con fecas', 'come tierra']],
+      ['ctx_berros', 'Comiste berros u otras hierbas silvestres recogidas en riberas, acequias o esteros', 'contexto', 0, ['berros silvestres']],
+      ['ctx_pescado_crudo', 'Comiste pescado crudo o poco cocido (ceviche, sushi, pescado ahumado en frío o marinado)', 'contexto', 0, ['ceviche', 'sushi', 'pescado crudo']]
+    ],
+    sources: {
+      mp_volvulo_infancia: [MP, 'Vólvulo en la infancia', 'https://medlineplus.gov/spanish/ency/article/000985.htm'],
+      mp_higado_alcohol: [MP, 'Enfermedad hepática alcohólica', 'https://medlineplus.gov/spanish/ency/article/000281.htm'],
+      mp_budd_chiari: [MP, 'Obstrucción de la vena hepática (síndrome de Budd-Chiari)', 'https://medlineplus.gov/spanish/ency/article/000239.htm'],
+      mp_pancreatitis_cronica: [MP, 'Pancreatitis crónica', 'https://medlineplus.gov/spanish/ency/article/000221.htm'],
+      mp_cancer_pancreas: [MP, 'Cáncer pancreático', 'https://medlineplus.gov/spanish/ency/article/000236.htm'],
+      mp_cancer_higado: [MP, 'Cáncer de hígado: carcinoma hepatocelular', 'https://medlineplus.gov/spanish/ency/article/000280.htm'],
+      mp_cancer_esofago: [MP, 'Cáncer esofágico', 'https://medlineplus.gov/spanish/ency/article/000283.htm'],
+      mayo_cancer_vesicula: [MAYO, 'Cáncer de la vesícula biliar', 'https://www.mayoclinic.org/es/diseases-conditions/gallbladder-cancer/symptoms-causes/syc-20353370'],
+      sup_ges_vesicula: [SUP, 'GES: colecistectomía preventiva del cáncer de vesícula en personas de 35 a 49 años', 'https://www.supersalud.gob.cl/difusion/665/w3-article-18815.html'],
+      mp_carcinoide: [MP, 'Síndrome carcinoide', 'https://medlineplus.gov/spanish/ency/article/000347.htm'],
+      mp_tne_pancreas: [MP, 'Tumores neuroendocrinos pancreáticos', 'https://medlineplus.gov/spanish/ency/article/000393.htm'],
+      mp_meckel: [MP, 'Divertículo de Meckel', 'https://medlineplus.gov/spanish/ency/article/000234.htm'],
+      mp_invaginacion: [MP, 'Invaginación intestinal en los niños', 'https://medlineplus.gov/spanish/ency/article/000958.htm'],
+      mp_estenosis_pilorica: [MP, 'Estenosis pilórica en bebés', 'https://medlineplus.gov/spanish/ency/article/000970.htm'],
+      mayo_vomitos_ciclicos: [MAYO, 'Síndrome de vómitos cíclicos', 'https://www.mayoclinic.org/es/diseases-conditions/cyclic-vomiting-syndrome/symptoms-causes/syc-20352161'],
+      mp_tifoidea: [MP, 'Fiebre tifoidea', 'https://medlineplus.gov/spanish/ency/article/001332.htm'],
+      mp_colera: [MP, 'Cólera', 'https://medlineplus.gov/spanish/ency/article/000303.htm'],
+      mp_amebiasis: [MP, 'Amebiasis', 'https://medlineplus.gov/spanish/ency/article/000298.htm'],
+      mp_tenia_carne: [MP, 'Infección con tenia de la carne (cerdo o res)', 'https://medlineplus.gov/spanish/ency/article/001391.htm'],
+      mp_ascariasis: [MP, 'Ascariasis', 'https://medlineplus.gov/spanish/ency/article/000628.htm'],
+      mp_toxocariasis: [MP, 'Larva migratoria visceral (toxocariasis)', 'https://medlineplus.gov/spanish/ency/article/000633.htm'],
+      mp_triquinosis: [MP, 'Triquinosis', 'https://medlineplus.gov/spanish/ency/article/000631.htm'],
+      minsal_fasciola: [MINSAL, 'Seremi de Salud de Valparaíso: enfermedad parasitaria por consumo de berros silvestres', 'https://www.minsal.cl/seremi-salud-valparaiso-llama-a-autocuidado-tras-caso-de-enfermedad-parasitaria-por-consumo-de-berros-silvestres/'],
+      mp_tenia_pescado: [MP, 'Infección con tenia de los peces', 'https://medlineplus.gov/spanish/ency/article/001375.htm'],
+      orpha_anisakiasis: [ORPHA, 'Anisakiasis', 'https://www.orpha.net/es/disease/detail/1070'],
+      minsal_guias_alimentarias: [MINSAL, 'Guías alimentarias para Chile: manual educativo (PDF)', 'https://www.minsal.cl/wp-content/uploads/2023/07/Manual-educativo-Guias-Alimentarias-Formato-Digital.pdf'],
+      mayo_colestasis_embarazo: [MAYO, 'Colestasis del embarazo', 'https://www.mayoclinic.org/es/diseases-conditions/cholestasis-of-pregnancy/symptoms-causes/syc-20363257'],
+      mp_piel_embarazo: [MP, 'Cambios en el cabello y la piel durante el embarazo', 'https://medlineplus.gov/spanish/ency/patientinstructions/000611.htm']
+    },
+    conditions: [
+      {
+        id: 'volvulo', n: 'Vólvulo', alt: 'Torsión del intestino', urg: 5, prev: 0.5, dur: ['h', 'd'],
+        age: [[0, 1, 1.4], [70, 200, 1.2]],
+        req: ['vomito_verde', 'no_elimina_gases'], reqF: 0.3,
+        s: { vomito_verde: 3, no_elimina_gases: 3, hinchazon_abdominal: 2, dolor_abdominal_intenso: 2, vomitos: 1, sangre_heces_bebe: 1, estrenimiento: 1 },
+        que: 'El intestino se tuerce sobre sí mismo, se obstruye y puede perder la circulación. En bebés suele deberse a una malrotación intestinal de nacimiento y aparece en el primer año de vida con vómitos verdes, guata hinchada y dolorosa y deposiciones con sangre. En adultos mayores suele torcerse el colon sigmoides, con guata muy hinchada, dolor y sin poder eliminar gases ni deposiciones.',
+        trat: 'Es una emergencia: hospitalización y, a menudo, cirugía urgente para destorcer el intestino y extirpar la parte dañada; en algunos adultos se destuerce por endoscopia.',
+        esp: 'Servicio de urgencia; cirujano (infantil en bebés).',
+        alarma: 'Vómitos verdes en un bebé, o guata muy hinchada y dolorosa sin poder eliminar gases: llama al 131 o acude de inmediato a urgencia.',
+        src: ['mp_volvulo_infancia', 'mp_obstruccion']
+      },
+      {
+        id: 'hepatitis_alcoholica', n: 'Hepatitis alcohólica', urg: 4, prev: 0.8, dur: ['d', 's'],
+        req: ['ctx_alcohol'], reqF: 0.3,
+        s: { ctx_alcohol: 3, ictericia: 3, dolor_hipocondrio: 2, fiebre: 1, inapetencia: 1, nauseas: 1, ascitis: 1, confusion: 1 },
+        que: 'Inflamación del hígado por consumir alcohol en exceso durante años, que a menudo aparece después de un período de consumo aún mayor. Produce color amarillo de piel y ojos, dolor bajo las costillas a la derecha, fiebre, falta de apetito, náuseas y, en casos graves, líquido en la guata, confusión o sangrados. Puede llevar a la cirrosis.',
+        trat: 'Dejar el alcohol por completo es lo más importante, con apoyo para la abstinencia; alimentación adecuada y, en casos graves, hospitalización y corticoides.',
+        esp: 'Médico general o servicio de urgencia; gastroenterólogo; programas de alcohol y drogas (SENDA, fono 1412).',
+        alarma: 'Confusión, somnolencia, vómitos con sangre o deposiciones negras: llama al 131.',
+        src: ['mp_higado_alcohol']
+      },
+      {
+        id: 'budd_chiari', n: 'Síndrome de Budd-Chiari', alt: 'Obstrucción de las venas del hígado', urg: 4, prev: 0.4, dur: ['d', 's', 'm'],
+        req: ['ctx_coagulos_previos'], reqF: 0.3,
+        s: { ascitis: 3, dolor_hipocondrio: 3, ctx_coagulos_previos: 2, hinchazon_piernas: 1, ictericia: 1, vomito_sangre: 1 },
+        que: 'Las venas que sacan la sangre del hígado se obstruyen, casi siempre por un coágulo. Es más frecuente en personas con tendencia a formar coágulos (enfermedades de la sangre, anticonceptivos con estrógenos, embarazo o algunos cánceres). Produce dolor bajo las costillas a la derecha, hígado grande, líquido en la guata y, a veces, color amarillo o sangrado digestivo.',
+        trat: 'Anticoagulantes, medicamentos para el líquido y procedimientos para destapar las venas o derivar la sangre; en casos graves, trasplante de hígado. Se trata en centros especializados.',
+        esp: 'Servicio de urgencia; gastroenterólogo o hepatólogo; hematólogo.',
+        alarma: 'Vómitos con sangre, confusión o dolor abdominal intenso: llama al 131.',
+        src: ['mp_budd_chiari']
+      },
+      {
+        id: 'pancreatitis_cronica', n: 'Pancreatitis crónica', urg: 3, prev: 0.6, dur: ['s', 'm'],
+        req: ['diarrea_grasosa', 'ctx_alcohol'], reqF: 0.4,
+        s: { dolor_cinturon: 3, diarrea_grasosa: 3, perdida_peso: 2, ctx_alcohol: 2, ctx_diabetes: 1, nauseas: 1 },
+        que: 'Inflamación del páncreas que no se cura y lo daña con los años, casi siempre por consumo de alcohol durante mucho tiempo y también tras pancreatitis agudas repetidas, por el tabaco o causas hereditarias. Produce dolor en la parte alta de la guata que se va a la espalda, peor después de comer, deposiciones grasosas y de mal olor, baja de peso y, con el tiempo, diabetes.',
+        trat: 'Dejar el alcohol y el tabaco, comidas bajas en grasa, enzimas pancreáticas con las comidas, tratamiento del dolor y de la diabetes; a veces endoscopia o cirugía.',
+        esp: 'Médico general; gastroenterólogo.',
+        alarma: 'Dolor intenso que no cede, vómitos persistentes o color amarillo de piel u ojos: urgencia.',
+        src: ['mp_pancreatitis_cronica']
+      },
+      {
+        id: 'cancer_pancreas', n: 'Señales de cáncer de páncreas', urg: 3, prev: 0.6, dur: ['s', 'm'],
+        age: [[0, 49, 0.2], [60, 200, 1.4]],
+        s: { ictericia: 3, perdida_peso: 3, coluria: 1, acolia: 1, picazon_piel: 1, dolor_cinturon: 1, inapetencia: 1, ctx_diabetes: 1, ctx_fumador: 1, fiebre: -1 },
+        que: 'Cáncer que suele crecer sin síntomas al principio y se descubre avanzado. Sus señales pueden ser color amarillo de piel y ojos sin dolor (con orina oscura, deposiciones claras y picazón), baja de peso sin explicación, falta de apetito, dolor en la parte alta de la guata o la espalda y diabetes que aparece de repente. El riesgo aumenta con la edad, el tabaco, la obesidad, la diabetes, la pancreatitis crónica y los antecedentes familiares.',
+        trat: 'Según la etapa: cirugía (operación de Whipple u otras), quimioterapia y radioterapia, y tratamientos para la ictericia y el dolor, en centros oncológicos.',
+        esp: 'Médico general; gastroenterólogo; cirujano digestivo; oncólogo.',
+        alarma: 'Color amarillo de piel u ojos: consulta pronto, aunque no haya dolor.',
+        src: ['mp_cancer_pancreas']
+      },
+      {
+        id: 'cancer_higado', n: 'Señales de cáncer de hígado', alt: 'Carcinoma hepatocelular', urg: 3, prev: 0.5, dur: ['s', 'm'],
+        age: [[0, 39, 0.2], [55, 200, 1.3]],
+        req: ['ctx_hepatitis_b', 'ctx_hepatitis_c', 'ctx_alcohol', 'ascitis'], reqF: 0.4,
+        s: { perdida_peso: 3, dolor_hipocondrio: 3, ctx_hepatitis_b: 2, ctx_hepatitis_c: 2, ctx_alcohol: 1, ascitis: 1, ictericia: 1, bulto_abdomen: 1 },
+        que: 'El cáncer más frecuente del hígado, que aparece casi siempre en un hígado dañado por años de cirrosis, hepatitis B o C, alcohol o hígado graso. Puede no dar síntomas hasta etapas avanzadas: dolor o bulto bajo las costillas a la derecha, baja de peso, falta de apetito, líquido en la guata o color amarillo. Quienes tienen cirrosis o hepatitis B deben hacerse ecografías de control periódicas.',
+        trat: 'Según la etapa y el estado del hígado: cirugía, trasplante, tratamientos locales (ablación, quimioembolización) o medicamentos, en centros especializados.',
+        esp: 'Gastroenterólogo o hepatólogo; oncólogo.',
+        alarma: 'Vómitos con sangre, confusión, dolor intenso o color amarillo que aumenta: urgencia.',
+        src: ['mp_cancer_higado']
+      },
+      {
+        id: 'cancer_esofago', n: 'Señales de cáncer de esófago', urg: 3, prev: 0.6, dur: ['s', 'm'], sexM: 1.4,
+        age: [[0, 44, 0.2], [60, 200, 1.3]],
+        s: { disfagia: 3, perdida_peso: 3, comida_atascada: 2, dolor_tragar: 1, ctx_fumador: 1, ctx_alcohol: 1, ardor_pecho: 1, ronquera: 1, vomito_sangre: 1, regurgita_comida: -1 },
+        que: 'Cáncer del tubo que lleva la comida al estómago, más frecuente en hombres mayores, fumadores, bebedores de alcohol o con reflujo de muchos años (esófago de Barrett). Su síntoma principal es la dificultad para tragar que empeora (primero los sólidos y luego los líquidos), con baja de peso; también dolor al tragar, ronquera o tos.',
+        trat: 'Según la etapa: cirugía, quimioterapia y radioterapia, o tratamientos por endoscopia en etapas muy iniciales; además, apoyo para la alimentación.',
+        esp: 'Médico general; gastroenterólogo (endoscopia); oncólogo.',
+        alarma: 'No poder tragar ni líquidos, vómitos con sangre o baja de peso rápida: consulta pronto.',
+        src: ['mp_cancer_esofago']
+      },
+      {
+        id: 'cancer_vesicula', n: 'Señales de cáncer de vesícula', urg: 3, prev: 0.5, dur: ['s', 'm'], sexF: 1.5,
+        age: [[0, 39, 0.2], [55, 200, 1.3]],
+        req: ['ctx_calculos_vesicula'], reqF: 0.4,
+        s: { ctx_calculos_vesicula: 3, perdida_peso: 2, dolor_hipocondrio: 2, ictericia: 2, bulto_abdomen: 1, hinchazon_abdominal: 1 },
+        que: 'Cáncer importante en Chile, más frecuente en mujeres y en personas mayores. Su principal factor de riesgo son los cálculos en la vesícula de muchos años. Suele no dar síntomas hasta etapas avanzadas: dolor bajo las costillas a la derecha, hinchazón, baja de peso o color amarillo de piel y ojos.',
+        trat: 'La mejor prevención es operar la vesícula con cálculos a tiempo. Si hay cáncer, cirugía según la etapa, a veces con quimioterapia o radioterapia.',
+        ges: 'La colecistectomía preventiva del cáncer de vesícula en personas de 35 a 49 años con cálculos está cubierta por GES.',
+        esp: 'Médico general; cirujano digestivo.',
+        alarma: 'Color amarillo de piel u ojos, baja de peso o dolor persistente: consulta pronto.',
+        src: ['mayo_cancer_vesicula', 'sup_ges_vesicula']
+      },
+      {
+        id: 'sindrome_carcinoide', n: 'Tumor neuroendocrino', alt: 'Síndrome carcinoide', urg: 3, prev: 0.4, dur: ['s', 'm'],
+        req: ['bochornos_rubor'], reqF: 0.3,
+        s: { bochornos_rubor: 3, diarrea: 2, sibilancias: 1, dolor_abdominal: 1, palpitaciones: 1, perdida_peso: 1 },
+        que: 'Los tumores neuroendocrinos (antes llamados carcinoides) crecen lentamente, sobre todo en el intestino, el apéndice, el páncreas o los bronquios. Pocas veces, cuando ya se han extendido al hígado, liberan sustancias que producen el síndrome carcinoide: enrojecimiento brusco de la cara y el pecho, diarrea, silbido al respirar y palpitaciones.',
+        trat: 'Cirugía cuando es posible y medicamentos que controlan las sustancias que liberan (análogos de somatostatina), entre otros, en centros especializados.',
+        esp: 'Médico general; gastroenterólogo o endocrinólogo; oncólogo.',
+        alarma: 'Enrojecimiento con presión baja, falta de aire o palpitaciones intensas: urgencia.',
+        src: ['mp_carcinoide', 'mp_tne_pancreas']
+      },
+      {
+        id: 'meckel', n: 'Divertículo de Meckel', urg: 4, prev: 0.5, dur: ['h', 'd'],
+        age: [[0, 5, 1.4], [18, 200, 0.3]],
+        req: ['sangrado_rectal_nino'], reqF: 0.3,
+        s: { sangrado_rectal_nino: 3, palidez: 2, dolor_abdominal: 1, vomitos: 1, sangre_roja_defecar: 1 },
+        que: 'Pequeña bolsa en el intestino delgado que queda desde el nacimiento; es una de las malformaciones más comunes y la mayoría nunca da síntomas. Cuando los da, suele ser en niños pequeños: sangrado por el ano sin dolor, abundante y rojo oscuro, que puede causar anemia; a veces obstrucción o inflamación parecida a una apendicitis.',
+        trat: 'Si sangra o se complica, cirugía para extirpar el divertículo. Requiere evaluación urgente.',
+        esp: 'Servicio de urgencia; cirujano infantil.',
+        alarma: 'Sangrado abundante por el ano en un niño, palidez o decaimiento: acude a urgencia de inmediato.',
+        src: ['mp_meckel']
+      },
+      {
+        id: 'invaginacion', n: 'Invaginación intestinal', urg: 5, prev: 0.6, dur: ['h', 'd'],
+        ageRange: [0, 10], age: [[0, 3, 1.4]],
+        req: ['llanto_dolor_crisis', 'deposicion_jalea'], reqF: 0.3,
+        s: { llanto_dolor_crisis: 3, deposicion_jalea: 3, vomitos: 2, somnolencia: 1, sangre_heces_bebe: 1, vomito_verde: 1 },
+        que: 'Una parte del intestino se mete dentro de la siguiente, como un telescopio, y lo obstruye. Es la causa más común de obstrucción intestinal entre los 5 meses y los 3 años. Produce crisis de dolor intenso cada 15 a 20 minutos en que el niño llora y encoge las piernas, vómitos, decaimiento entre las crisis y deposiciones con sangre y mucosidad como jalea.',
+        trat: 'Es una emergencia: en el hospital se suele resolver con un enema de aire o contraste guiado por imágenes; si no funciona, cirugía.',
+        esp: 'Servicio de urgencia pediátrica; cirujano infantil.',
+        alarma: 'Crisis de dolor con llanto intenso, vómitos o deposición con sangre en un niño pequeño: llama al 131 o acude de inmediato a urgencia.',
+        src: ['mp_invaginacion']
+      },
+      {
+        id: 'estenosis_pilorica', n: 'Estenosis pilórica', urg: 4, prev: 0.6, dur: ['d', 's'], sexM: 1.4,
+        ageRange: [0, 1],
+        req: ['vomito_proyectil'], reqF: 0.3,
+        s: { vomito_proyectil: 3, poco_crecimiento: 2, vomitos: 1, hambre: 1, orina_escasa: 1, fiebre: -1, vomito_verde: -1 },
+        que: 'Engrosamiento del músculo de la salida del estómago (píloro) que impide el paso de la leche. Aparece en bebés de 2 a 8 semanas, más en hombres: vómitos en proyectil después de cada mamada, el bebé queda con hambre, no sube de peso y puede deshidratarse (pocos pañales mojados).',
+        trat: 'Hidratación por vena y una cirugía sencilla (piloromiotomía) que suele solucionarlo por completo.',
+        esp: 'Pediatra o servicio de urgencia; cirujano infantil.',
+        alarma: 'Bebé que vomita todo, moja pocos pañales, está decaído o tiene la mollera hundida: urgencia hoy.',
+        src: ['mp_estenosis_pilorica']
+      },
+      {
+        id: 'vomitos_ciclicos', n: 'Síndrome de vómitos cíclicos', urg: 3, prev: 0.6, dur: ['h', 'd', 'm'],
+        age: [[3, 12, 1.3]],
+        req: ['vomitos_episodios'], reqF: 0.3,
+        s: { vomitos_episodios: 3, nauseas: 2, vomitos: 2, dolor_abdominal: 1, dolor_cabeza: 1, fotofobia: 1, palidez: 1, diarrea: -1, fiebre: -1 },
+        que: 'Episodios repetidos de náuseas y vómitos intensos que duran horas o días, a menudo empiezan en la mañana y se separan por semanas o meses sin síntomas. Es más común que comience entre los 3 y 7 años, aunque también ocurre en adultos. Se relaciona con la migraña y puede desencadenarse por estrés, emociones, infecciones o falta de sueño.',
+        trat: 'Durante las crisis, hidratación (a veces por vena) y medicamentos para las náuseas; entre crisis, evitar los desencadenantes y medicamentos preventivos como los usados para la migraña. Hay que descartar otras causas de vómitos.',
+        esp: 'Pediatra o médico general; gastroenterólogo.',
+        alarma: 'Signos de deshidratación (orina escasa, boca seca, decaimiento), vómitos verdes o con sangre, o dolor intenso: urgencia.',
+        src: ['mayo_vomitos_ciclicos']
+      },
+      {
+        id: 'zollinger_ellison', n: 'Síndrome de Zollinger-Ellison', urg: 3, prev: 0.4, dur: ['s', 'm'],
+        req: ['ctx_ulceras_repetidas'], reqF: 0.3,
+        s: { ctx_ulceras_repetidas: 3, dolor_epigastrio: 3, diarrea: 2, ardor_pecho: 1, deposiciones_negras: 1, perdida_peso: 1, ctx_familia: 1 },
+        que: 'Uno o más tumores del páncreas o del duodeno (gastrinomas) producen una hormona que hace que el estómago fabrique demasiado ácido. Causa úlceras repetidas o difíciles de tratar, dolor en la boca del estómago, acidez y diarrea. Puede ser parte de un síndrome hereditario.',
+        trat: 'Medicamentos que bloquean el ácido en dosis altas y, cuando es posible, cirugía del tumor.',
+        esp: 'Gastroenterólogo; endocrinólogo; cirujano.',
+        alarma: 'Vómitos con sangre, deposiciones negras o dolor abdominal intenso y súbito: llama al 131.',
+        src: ['mp_ulcera', 'mp_tne_pancreas']
+      },
+      {
+        id: 'fiebre_tifoidea', n: 'Fiebre tifoidea', urg: 3, prev: 0.5, dur: ['d', 's'],
+        req: ['ctx_agua_verduras', 'ctx_viaje_tropical', 'manchas_rosadas_tronco'], reqF: 0.3,
+        s: { fiebre: 3, dolor_abdominal: 2, ctx_agua_verduras: 2, manchas_rosadas_tronco: 2, dolor_cabeza: 1, inapetencia: 1, diarrea: 1, estrenimiento: 1, ctx_viaje_tropical: 1 },
+        que: 'Infección por la bacteria Salmonella typhi, que se transmite por agua o alimentos contaminados con deposiciones. Produce fiebre alta que sube día a día, dolor de cabeza, malestar, dolor de guata, falta de apetito, diarrea o estitiquez y, a veces, manchitas rosadas en el pecho o el abdomen. Algunas personas quedan como portadoras sin síntomas.',
+        trat: 'Antibióticos indicados por un médico tras confirmar con exámenes (hemocultivo); los síntomas mejoran en 2 a 4 semanas. Prevención: agua potable, lavado de manos, lavar bien las verduras y no comer mariscos crudos; existe vacuna para viajeros.',
+        esp: 'Médico general; infectólogo.',
+        alarma: 'Dolor abdominal intenso, sangre en las deposiciones, confusión o decaimiento marcado: urgencia.',
+        src: ['mp_tifoidea']
+      },
+      {
+        id: 'colera', n: 'Cólera', urg: 4, prev: 0.6, dur: ['h', 'd'],
+        req: ['ctx_viaje_tropical', 'ctx_agua_verduras'], reqF: 0.3,
+        s: { diarrea_agua_arroz: 3, ctx_viaje_tropical: 2, ctx_agua_verduras: 2, vomitos: 2, sed: 2, calambres: 1, orina_escasa: 1, fiebre: -1 },
+        que: 'Infección intestinal por la bacteria Vibrio cholerae, que se adquiere con agua o alimentos contaminados en zonas con brotes. Su toxina provoca una diarrea acuosa muy abundante, como agua de arroz, con vómitos, sed intensa y calambres; puede deshidratar gravemente en horas.',
+        trat: 'Reponer rápido el agua y las sales perdidas con sales de rehidratación oral o suero por vena; a veces antibióticos. Prevención: agua potable o hervida, alimentos bien cocidos y lavado de manos.',
+        esp: 'Servicio de urgencia; infectólogo.',
+        alarma: 'Diarrea muy abundante con boca seca, poca orina, mareo o decaimiento: acude hoy a urgencia.',
+        src: ['mp_colera']
+      },
+      {
+        id: 'amebiasis', n: 'Amebiasis', alt: 'Disentería por amebas', urg: 3, prev: 0.65, dur: ['d', 's', 'm'],
+        req: ['ctx_viaje_tropical', 'ctx_agua_verduras'], reqF: 0.4,
+        s: { diarrea_sangre: 3, dolor_abdominal: 2, ctx_viaje_tropical: 1, ctx_agua_verduras: 1, fiebre: 1, dolor_hipocondrio: 1, perdida_peso: 1 },
+        que: 'Infección intestinal por el parásito Entamoeba histolytica, que se transmite por agua o alimentos contaminados con deposiciones. La mayoría no tiene síntomas; otros presentan dolor de guata, diarrea con sangre y mucosidad, fiebre y baja de peso. Rara vez forma un absceso en el hígado, con fiebre y dolor bajo las costillas a la derecha.',
+        trat: 'Medicamentos antiparasitarios indicados por un médico tras confirmar con examen de deposiciones. Prevención: agua potable, lavado de manos y de alimentos.',
+        esp: 'Médico general; infectólogo o gastroenterólogo.',
+        alarma: 'Fiebre alta con dolor bajo las costillas a la derecha, deshidratación o mucha sangre en las deposiciones: urgencia.',
+        src: ['mp_amebiasis']
+      },
+      {
+        id: 'teniasis', n: 'Teniasis', alt: 'Lombriz solitaria', urg: 2, prev: 0.6, dur: ['s', 'm'],
+        req: ['trozos_tenia', 'ctx_carne_cruda'], reqF: 0.3,
+        s: { trozos_tenia: 3, ctx_carne_cruda: 2, dolor_abdominal: 1, picazon_anal: 1, perdida_peso: 1, hambre: 1, nauseas: 1 },
+        que: 'Infección del intestino por la tenia del vacuno o del cerdo, que se adquiere al comer carne cruda o poco cocida con larvas. Muchas veces no da síntomas, salvo ver trocitos blancos y planos del gusano en las deposiciones; a veces dolor de guata, náuseas o baja de peso. Los huevos de la tenia del cerdo pueden causar cisticercosis, que afecta el cerebro.',
+        trat: 'Antiparasitarios (praziquantel o niclosamida) indicados por un médico. Prevención: cocinar bien la carne y no consumir carne sin control sanitario.',
+        esp: 'Médico general.',
+        alarma: 'Convulsiones o dolor de cabeza fuerte y persistente: urgencia (posible cisticercosis).',
+        src: ['mp_tenia_carne']
+      },
+      {
+        id: 'ascariasis', n: 'Ascariasis', alt: 'Lombrices intestinales', urg: 2, prev: 0.6, dur: ['s', 'm'],
+        age: [[1, 12, 1.3]],
+        req: ['gusano_largo'], reqF: 0.3,
+        s: { gusano_largo: 3, dolor_abdominal: 2, hinchazon_abdominal: 1, poco_crecimiento: 1, ctx_agua_verduras: 1, tos_seca: 1, vomitos: 1 },
+        que: 'Infección por el gusano Ascaris lumbricoides, que se adquiere al tragar sus huevos en alimentos, agua o tierra contaminados. Es más frecuente y más intensa en niños. Puede no dar síntomas o causar dolor de guata, mal crecimiento, tos al pasar las larvas por los pulmones y la salida de gusanos largos en las deposiciones o por la boca o nariz; muchos gusanos pueden obstruir el intestino.',
+        trat: 'Antiparasitarios (albendazol o mebendazol) indicados por un médico. Prevención: lavado de manos, lavar las verduras y beber agua potable.',
+        esp: 'Pediatra o médico general.',
+        alarma: 'Vómitos repetidos con guata hinchada y dolorosa, sin poder eliminar gases: urgencia.',
+        src: ['mp_ascariasis']
+      },
+      {
+        id: 'toxocariasis', n: 'Toxocariasis', alt: 'Larva migratoria visceral', urg: 3, prev: 0.6, dur: ['s', 'm'],
+        age: [[1, 12, 1.3]],
+        req: ['ctx_tierra_perros'], reqF: 0.3,
+        s: { ctx_tierra_perros: 3, vision_un_ojo_nino: 2, fiebre: 1, tos_seca: 1, sibilancias: 1, dolor_abdominal: 1, ojos_desviados: 1, fatiga: 1 },
+        que: 'Infección por larvas de un gusano de perros y gatos (Toxocara), que se adquiere al tragar huevos de tierra o arena contaminada con fecas. Afecta sobre todo a niños pequeños. Puede no dar síntomas o causar fiebre, tos, silbido al respirar, dolor de guata y cansancio; si la larva llega a un ojo, produce pérdida de visión o un ojo desviado.',
+        trat: 'Antiparasitarios y, si afecta el ojo, tratamiento por el oftalmólogo. Prevención: desparasitar a las mascotas, recoger sus fecas, lavado de manos y evitar que los niños coman tierra.',
+        esp: 'Pediatra o médico general; oftalmólogo si afecta la visión.',
+        alarma: 'Pérdida de visión, ojo rojo o desviado en un niño: consulta pronto.',
+        src: ['mp_toxocariasis']
+      },
+      {
+        id: 'triquinosis', n: 'Triquinosis', urg: 3, prev: 0.5, dur: ['d', 's'],
+        req: ['ctx_carne_cruda'], reqF: 0.3,
+        s: { ctx_carne_cruda: 3, dolor_muscular: 3, fiebre: 2, hinchazon_cara_manos: 2, diarrea: 1, debilidad_general: 1, trozos_tenia: -1 },
+        que: 'Infección por las larvas del gusano Trichinella, que se adquiere al comer carne de cerdo o de animales salvajes (como el jabalí) cruda o mal cocida. Al principio puede causar diarrea y dolor de guata; días después, dolores musculares intensos, fiebre, hinchazón de párpados y cara y debilidad. Suele aparecer en brotes entre quienes comieron la misma carne.',
+        trat: 'Antiparasitarios indicados por un médico y, a veces, corticoides para la inflamación. Prevención: cocinar bien la carne y no comer carne de faenas caseras sin control sanitario.',
+        esp: 'Médico general; infectólogo.',
+        alarma: 'Falta de aire, palpitaciones o debilidad intensa: urgencia.',
+        src: ['mp_triquinosis']
+      },
+      {
+        id: 'fasciolasis', n: 'Fasciolasis', alt: 'Distomatosis hepática', urg: 3, prev: 0.65, dur: ['s', 'm'],
+        req: ['ctx_berros'], reqF: 0.2,
+        s: { ctx_berros: 3, dolor_hipocondrio: 2, fiebre: 2, ronchas: 1, ictericia: 1, perdida_peso: 1, nauseas: 1 },
+        que: 'Infección por un parásito del ganado (Fasciola hepatica) que llega al hígado y a la vía biliar. En personas se adquiere sobre todo al comer berros silvestres crecidos en riberas o acequias contaminadas; los berros de cultivo controlado no tienen este riesgo. Produce fiebre, dolor bajo las costillas a la derecha, ronchas y malestar y, con los meses, molestias por obstrucción de la bilis.',
+        trat: 'Un antiparasitario específico (triclabendazol) indicado por un médico. Prevención: no consumir berros ni hierbas silvestres.',
+        esp: 'Médico general; infectólogo o gastroenterólogo.',
+        alarma: 'Color amarillo de piel u ojos o dolor intenso con fiebre: consulta pronto.',
+        src: ['minsal_fasciola']
+      },
+      {
+        id: 'difilobotriasis', n: 'Difilobotriasis', alt: 'Tenia del pescado', urg: 2, prev: 0.5, dur: ['s', 'm'],
+        req: ['ctx_pescado_crudo'], reqF: 0.3,
+        s: { ctx_pescado_crudo: 3, trozos_tenia: 3, dolor_abdominal: 1, diarrea: 1, fatiga: 1, palidez: 1, hormigueo: 1 },
+        que: 'Infección por una tenia que se adquiere al comer pescado de agua dulce crudo o poco cocido (como truchas o salmones de lagos y ríos) que contiene sus larvas. Puede medir varios metros. Suele no dar síntomas o causar molestias de guata, diarrea y la salida de trozos del gusano; con el tiempo puede producir falta de vitamina B12, con anemia, cansancio y hormigueos.',
+        trat: 'Antiparasitario (praziquantel) indicado por un médico y vitamina B12 si falta. Prevención: cocinar bien el pescado o congelarlo bien antes de comerlo crudo.',
+        esp: 'Médico general.',
+        alarma: 'Palidez marcada, cansancio intenso u hormigueos persistentes: consulta.',
+        src: ['mp_tenia_pescado']
+      },
+      {
+        id: 'anisakiasis', n: 'Anisakiasis', urg: 3, prev: 0.5, dur: ['h', 'd'],
+        req: ['ctx_pescado_crudo'], reqF: 0.2,
+        s: { ctx_pescado_crudo: 3, dolor_epigastrio: 3, nauseas: 2, vomitos: 2, ronchas: 1, dolor_abdominal: 1, trozos_tenia: -1 },
+        que: 'Infección por larvas de un gusano (Anisakis y parásitos parecidos) presentes en pescados y mariscos de mar, que se adquiere al comerlos crudos, ahumados en frío o marinados, como en el ceviche o el sushi: el jugo de limón no mata los parásitos. Horas después produce dolor intenso en la boca del estómago, náuseas y vómitos; también puede causar reacciones alérgicas, desde ronchas hasta anafilaxia.',
+        trat: 'Extracción de la larva por endoscopia cuando se ve y tratamiento de los síntomas o de la alergia. Prevención: cocinar bien el pescado o congelarlo antes si se va a comer crudo.',
+        esp: 'Servicio de urgencia o médico general; gastroenterólogo.',
+        alarma: 'Dificultad para respirar, hinchazón de cara o garganta, o ronchas en todo el cuerpo tras comer pescado: llama al 131.',
+        src: ['orpha_anisakiasis', 'minsal_guias_alimentarias']
+      },
+      {
+        id: 'colestasis_embarazo', n: 'Colestasis del embarazo', urg: 3, prev: 0.7, dur: ['d', 's'], sex: 'F', preg: true,
+        ageRange: [12, 55],
+        req: ['picazon_palmas'], reqF: 0.3,
+        s: { picazon_palmas: 3, ctx_embarazo20: 2, picazon_piel: 1, coluria: 1, ictericia: 1, erupcion: -1, surcos_dedos: -1 },
+        que: 'Alteración del hígado propia del embarazo, generalmente del tercer trimestre, en que los ácidos biliares se acumulan en la sangre. Su síntoma principal es una picazón intensa, sobre todo en las palmas y las plantas, peor de noche y sin erupción; a veces orina oscura o color amarillo. Desaparece pocos días después del parto, pero aumenta los riesgos para el bebé.',
+        trat: 'Exámenes de sangre (ácidos biliares y pruebas hepáticas), medicamentos (ácido ursodesoxicólico) para la picazón, controles más frecuentes del bebé y, a menudo, adelantar el parto.',
+        esp: 'Matrona; ginecólogo obstetra.',
+        alarma: 'Picazón intensa sin erupción en el embarazo: consulta pronto. Si el bebé se mueve menos: urgencia de la maternidad.',
+        src: ['mayo_colestasis_embarazo', 'mp_piel_embarazo']
+      }
+    ]
+  });
 })();
