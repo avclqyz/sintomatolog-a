@@ -1299,7 +1299,7 @@
     {
       id: 'diabetes', n: 'Diabetes (azúcar alta)', alt: 'Hiperglicemia', urg: 3, prev: 1.0, dur: ['s', 'm'],
       age: [[0, 29, 0.6], [45, 200, 1.2]],
-      s: { sed: 3, orinar_frecuente: 2, perdida_peso: 2, fatiga: 2, vision_borrosa: 2, hambre: 1, hormigueo: 1 },
+      s: { sed: 3, orinar_frecuente: 2, perdida_peso: 2, fatiga: 2, vision_borrosa: 2, hambre: 1, hormigueo: 1, orina_mucha: 1, ctx_glucosa_normal: -2 },
       que: 'La glucosa en la sangre se mantiene elevada porque el cuerpo no produce suficiente insulina o no la usa bien. Puede no dar síntomas por años; cuando está alta produce mucha sed, orinar seguido, cansancio, visión borrosa y baja de peso.',
       trat: 'Se diagnostica con exámenes de sangre (glicemia, hemoglobina glicosilada). Se trata con alimentación saludable, actividad física, control de peso y medicamentos (metformina u otros, a veces insulina).',
       esp: 'Médico general (Programa de Salud Cardiovascular del CESFAM); endocrinólogo o diabetólogo.',
@@ -2351,7 +2351,7 @@
     {
       id: 'hipertension', n: 'Hipertensión arterial', alt: 'Presión alta', urg: 2, prev: 1.05, dur: ['s', 'm'],
       age: [[0, 29, 0.5], [45, 200, 1.2]],
-      s: { presion_alta_cronica: 3, dolor_cabeza_despertar: 1, mareo: 1, sangrado_nariz: 1, zumbido: 1 },
+      s: { presion_alta_cronica: 3, dolor_cabeza_despertar: 1, mareo: 1, sangrado_nariz: 1, zumbido: 1, crisis_adrenergicas: -1 },
       que: 'Presión arterial elevada de forma persistente (en Chile, 140/90 mm Hg o más en mediciones repetidas). Habitualmente no da síntomas, por eso se le llama “asesina silenciosa”, y se detecta midiendo la presión. Sin tratamiento aumenta el riesgo de infarto, ACV, insuficiencia cardíaca y daño de los riñones.',
       trat: 'Cambios de estilo de vida (menos sal, más actividad física, control del peso, menos alcohol, no fumar) y, en muchos casos, medicamentos diarios. El control se hace en el Programa de Salud Cardiovascular del CESFAM.',
       esp: 'Médico general (Programa de Salud Cardiovascular); cardiólogo o internista si es difícil de controlar.',
@@ -2801,7 +2801,7 @@
     },
     {
       id: 'nodulo_tiroideo', n: 'Nódulo tiroideo', alt: 'Bulto en la tiroides', urg: 2, prev: 0.95, dur: ['s', 'm'], sexF: 1.3,
-      s: { bulto_cuello: 3, disfagia: 1, ronquera: 1 },
+      s: { bulto_cuello: 3, disfagia: 1, ronquera: 1, bulto_cuello_duro: -1 },
       que: 'Bulto en la glándula tiroides, en la parte delantera del cuello, que se mueve al tragar. La gran mayoría son benignos y no dan síntomas, pero deben estudiarse; los grandes pueden molestar al tragar o cambiar la voz.',
       trat: 'Se estudia con exámenes de sangre de la tiroides y una ecografía; según sus características se hace una punción para analizarlo. Muchos solo se controlan; algunos requieren tratamiento o cirugía.',
       esp: 'Médico general; endocrinólogo.',

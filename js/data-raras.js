@@ -2271,4 +2271,322 @@
       }
     ]
   });
+
+  // ── Tanda 8 (noviembre 2026): riñón, vía urinaria, pene, hormonas, sodio y tétanos
+  D.addPack({
+    call131: ['mandibula_trabada'],
+    symptoms: [
+      ['bulto_bajo_ingle', 'Bulto en la parte alta del muslo, justo bajo el pliegue de la ingle', 'digestivo', 1, ['hernia femoral', 'hernia crural']],
+      ['dolor_vejiga', 'Dolor o presión en la vejiga (bajo vientre) que mejora al orinar y vuelve a medida que se llena', 'urogenital', 1, ['cistitis intersticial', 'vejiga dolorosa']],
+      ['pene_curvo', 'Curvatura del pene o un bulto duro en él, con erecciones dolorosas', 'urogenital', 1, ['Peyronie', 'pene torcido'], 'M'],
+      ['ereccion_prolongada', 'Erección dolorosa que dura más de 4 horas sin estimulación sexual', 'urogenital', 3, ['priapismo'], 'M'],
+      ['chorro_dividido', 'Chorro de orina dividido, en spray o que se desvía', 'urogenital', 1, ['chorro en regadera']],
+      ['ganas_sal', 'Ganas intensas de comer sal', 'general', 1, ['antojo de sal']],
+      ['cara_redonda', 'Cara redonda e hinchada, joroba de grasa en la nuca y guata grande con brazos y piernas delgados', 'general', 1, ['cara de luna', 'Cushing']],
+      ['estrias_moradas', 'Estrías anchas y moradas en la guata, los muslos, las mamas o las axilas', 'piel', 1, ['estrías violáceas']],
+      ['crisis_adrenergicas', 'Crisis repentinas de dolor de cabeza fuerte, sudor intenso y palpitaciones, con la presión muy alta', 'corazon', 2, ['feocromocitoma', 'crisis de presión']],
+      ['manos_pies_crecen', 'Manos y pies que crecen en la adultez (ya no te queda el anillo o el zapato), con rasgos de la cara más gruesos', 'general', 1, ['acromegalia']],
+      ['orina_mucha', 'Orinas muchísimo (litros de orina clara como agua), de día y de noche', 'urogenital', 2, ['poliuria', 'orinar demasiado']],
+      ['hormigueo_boca_dedos', 'Hormigueo alrededor de la boca y en las puntas de los dedos, con calambres o espasmos de las manos', 'cabeza', 2, ['tetania', 'calcio bajo']],
+      ['hipoglucemias_ayuno', 'Episodios repetidos de sudor, temblor, confusión o desmayo en ayunas o tras hacer ejercicio, que mejoran al comer azúcar', 'general', 2, ['hipoglucemias', 'bajones de azúcar']],
+      ['bulto_cuello_duro', 'Bulto en el cuello duro, fijo o que crece rápido', 'oong', 2, ['nódulo tiroideo sospechoso']],
+      ['mandibula_trabada', 'Mandíbula trabada (no puedes abrir bien la boca) con espasmos dolorosos del cuello, la espalda o la guata', 'cabeza', 3, ['trismus', 'tétanos']],
+      ['ctx_sonda_uretra', 'Tuviste una sonda urinaria, una cirugía o un golpe en la uretra, o una uretritis', 'contexto', 0, ['sonda', 'golpe en el periné'], 'M'],
+      ['ctx_corticoides', 'Tomas corticoides (prednisona u otros) desde hace semanas o meses', 'contexto', 0, ['prednisona', 'corticoides']],
+      ['ctx_glucosa_normal', 'Te midieron la glucosa (azúcar) y salió normal', 'contexto', 0, ['glicemia normal']],
+      ['ctx_calcio_alto', 'Te dijeron que tienes el calcio alto en un examen de sangre', 'contexto', 0, ['hipercalcemia']],
+      ['ctx_cirugia_tiroides', 'Te operaron de la tiroides o del cuello', 'contexto', 0, ['tiroidectomía']],
+      ['ctx_presion_dificil', 'Tu presión sigue alta aunque tomas 3 o más medicamentos, o te dijeron que tienes el potasio bajo', 'contexto', 0, ['hipertensión resistente', 'potasio bajo']],
+      ['ctx_diureticos', 'Tomas diuréticos («pastillas para orinar») o tomaste muchísima agua (por ejemplo, en una carrera larga)', 'contexto', 0, ['diuréticos', 'exceso de agua']],
+      ['ctx_herida_sucia', 'Tuviste una herida sucia o profunda (clavo, objeto oxidado, mordedura) o una quemadura en las últimas semanas, sin vacuna antitetánica al día', 'contexto', 0, ['herida con clavo', 'antitetánica']]
+    ],
+    sources: {
+      mp_hernia_femoral: [MP, 'Hernia femoral', 'https://medlineplus.gov/spanish/ency/article/001136.htm'],
+      mp_glomerulonefritis: [MP, 'Glomerulonefritis', 'https://medlineplus.gov/spanish/ency/article/000484.htm'],
+      mp_nefritico: [MP, 'Síndrome nefrítico agudo', 'https://medlineplus.gov/spanish/ency/article/000495.htm'],
+      mp_gn_postestreptococica: [MP, 'Glomerulonefritis posestreptocócica', 'https://medlineplus.gov/spanish/ency/article/000503.htm'],
+      mp_nefrotico: [MP, 'Síndrome nefrótico', 'https://medlineplus.gov/spanish/ency/article/000490.htm'],
+      mp_iga: [MP, 'Nefropatía por IgA', 'https://medlineplus.gov/spanish/ency/article/000466.htm'],
+      mp_cancer_rinon: [MP, 'Carcinoma de células renales', 'https://medlineplus.gov/spanish/ency/article/000516.htm'],
+      mp_cancer_vejiga: [MP, 'Cáncer vesical', 'https://medlineplus.gov/spanish/ency/article/000486.htm'],
+      mp_cistitis_intersticial: [MP, 'Cistitis intersticial', 'https://medlineplus.gov/spanish/ency/article/000477.htm'],
+      mayo_peyronie: [MAYO, 'Enfermedad de Peyronie', 'https://www.mayoclinic.org/es/diseases-conditions/peyronies-disease/symptoms-causes/syc-20353468'],
+      mayo_priapismo: [MAYO, 'Priapismo', 'https://www.mayoclinic.org/es/diseases-conditions/priapism/symptoms-causes/syc-20352005'],
+      mp_necrosis_tubular: [MP, 'Necrosis tubular aguda (lesión renal aguda)', 'https://medlineplus.gov/spanish/ency/article/000512.htm'],
+      mp_azotemia_prerrenal: [MP, 'Azotemia prerrenal', 'https://medlineplus.gov/spanish/ency/article/000508.htm'],
+      mp_estenosis_uretral: [MP, 'Estenosis uretral', 'https://medlineplus.gov/spanish/ency/article/001271.htm'],
+      mp_addison: [MP, 'Enfermedad de Addison', 'https://medlineplus.gov/spanish/ency/article/000378.htm'],
+      mayo_cushing: [MAYO, 'Síndrome de Cushing', 'https://www.mayoclinic.org/es/diseases-conditions/cushing-syndrome/symptoms-causes/syc-20351310'],
+      mp_tumor_hipofisario: [MP, 'Tumor hipofisario', 'https://medlineplus.gov/spanish/ency/article/000704.htm'],
+      mp_feocromocitoma: [MP, 'Feocromocitoma', 'https://medlineplus.gov/spanish/ency/article/000340.htm'],
+      mp_acromegalia: [MP, 'Acromegalia', 'https://medlineplus.gov/spanish/ency/article/000321.htm'],
+      mp_prolactinoma: [MP, 'Prolactinoma', 'https://medlineplus.gov/spanish/ency/article/000336.htm'],
+      mp_diabetes_insipida: [MP, 'Diabetes insípida', 'https://medlineplus.gov/spanish/ency/article/000377.htm'],
+      mp_hiperparatiroidismo: [MP, 'Hiperparatiroidismo', 'https://medlineplus.gov/spanish/ency/article/001215.htm'],
+      mp_hipoparatiroidismo: [MP, 'Hipoparatiroidismo', 'https://medlineplus.gov/spanish/ency/article/000385.htm'],
+      mp_hiperaldosteronismo: [MP, 'Hiperaldosteronismo primario y secundario', 'https://medlineplus.gov/spanish/ency/article/000330.htm'],
+      mp_insulinoma: [MP, 'Insulinoma', 'https://medlineplus.gov/spanish/ency/article/000387.htm'],
+      minsal_ges_tiroides: [MINSAL, 'GES: cáncer de tiroides en personas de 15 años y más', 'https://auge.minsal.cl/problemasdesalud/index/82'],
+      mp_hiponatremia: [MP, 'Nivel bajo de sodio en sangre', 'https://medlineplus.gov/spanish/ency/article/000394.htm'],
+      mp_pubertad_precoz: [MP, 'Pubertad precoz', 'https://medlineplus.gov/spanish/ency/article/001168.htm'],
+      mp_tetanos: [MP, 'Tétanos', 'https://medlineplus.gov/spanish/ency/article/000615.htm'],
+      mayo_tetanos: [MAYO, 'Tétanos', 'https://www.mayoclinic.org/es/diseases-conditions/tetanus/symptoms-causes/syc-20351625']
+    },
+    conditions: [
+      {
+        id: 'hernia_femoral', n: 'Hernia femoral', alt: 'Hernia crural', urg: 3, prev: 0.6, dur: ['s', 'm'], sexF: 1.5,
+        age: [[50, 200, 1.2]],
+        s: { bulto_bajo_ingle: 3, bulto_ingle: 1, dolor_abdominal: 1, vomitos: 1 },
+        que: 'Parte del intestino o de la grasa del abdomen sale por el canal por donde pasan los vasos del muslo, formando un bulto justo bajo el pliegue de la ingle. Es menos frecuente que la hernia inguinal y más común en mujeres mayores. Tiene más riesgo de atascarse (estrangularse), por lo que suele operarse.',
+        trat: 'Cirugía programada para repararla; de urgencia si se atasca.',
+        esp: 'Médico general; cirujano.',
+        alarma: 'Bulto que duele, se pone rojo, morado u oscuro o no vuelve a entrar, con náuseas o vómitos: urgencia de inmediato.',
+        src: ['mp_hernia_femoral']
+      },
+      {
+        id: 'glomerulonefritis', n: 'Glomerulonefritis', alt: 'Inflamación de los filtros del riñón', urg: 3, prev: 0.5, dur: ['d', 's'],
+        req: ['orina_roja_oscura', 'sangre_orina'], reqF: 0.4,
+        s: { orina_roja_oscura: 2, sangre_orina: 2, hinchazon_cara_manos: 2, presion_alta_cronica: 2, orina_escasa: 2, orina_espumosa: 1, ctx_faringitis_previa: 1 },
+        que: 'Inflamación de los pequeños filtros del riñón (glomérulos), que puede ser pasajera o avanzar. Produce orina oscura, color té o con sangre, hinchazón de la cara (sobre todo de los párpados) y de las piernas, orina escasa o con espuma y presión alta. Puede aparecer semanas después de una infección por estreptococo, con lupus u otras enfermedades.',
+        trat: 'Depende de la causa: control de la presión y de la sal, diuréticos y, en algunos tipos, medicamentos que regulan el sistema inmune; a veces diálisis.',
+        esp: 'Médico general; nefrólogo.',
+        alarma: 'Orina muy escasa, falta de aire, hinchazón rápida o presión muy alta: urgencia.',
+        src: ['mp_glomerulonefritis', 'mp_nefritico', 'mp_gn_postestreptococica']
+      },
+      {
+        id: 'sindrome_nefrotico', n: 'Síndrome nefrótico', urg: 3, prev: 0.6, dur: ['d', 's', 'm'],
+        age: [[2, 8, 1.3]],
+        req: ['orina_espumosa'], reqF: 0.4,
+        s: { orina_espumosa: 3, hinchazon_cara_manos: 3, hinchazon_piernas: 2, aumento_peso: 1, ascitis: 1, fatiga: 1, sangre_orina: -1 },
+        que: 'Los riñones pierden demasiada proteína por la orina. Produce hinchazón, al principio alrededor de los ojos en la mañana y luego en piernas, tobillos y guata, orina con mucha espuma y aumento de peso por líquido. En niños suele deberse a la enfermedad de cambios mínimos; en adultos, a glomerulopatías, diabetes u otras.',
+        trat: 'Corticoides u otros medicamentos según la causa, dieta baja en sal, diuréticos y control del colesterol y de los coágulos.',
+        esp: 'Pediatra o médico general; nefrólogo.',
+        alarma: 'Fiebre con dolor abdominal, falta de aire, orina muy escasa o dolor e hinchazón de una pierna: urgencia.',
+        src: ['mp_nefrotico']
+      },
+      {
+        id: 'nefropatia_iga', n: 'Nefropatía por IgA', alt: 'Enfermedad de Berger', urg: 3, prev: 0.5, dur: ['d', 's', 'm'], sexM: 1.4,
+        age: [[15, 40, 1.2]],
+        req: ['ctx_infeccion_reciente', 'orina_espumosa'], reqF: 0.4,
+        s: { sangre_orina: 3, ctx_infeccion_reciente: 2, orina_espumosa: 1, presion_alta_cronica: 1, hinchazon_piernas: 1, ardor_orinar: -1, colico_renal: -2 },
+        que: 'Enfermedad del riñón en que se depositan anticuerpos (IgA) en sus filtros. Es más frecuente en hombres jóvenes y suele descubrirse por episodios de orina con sangre visible, a menudo pocos días después de un resfrío o una infección de garganta, o por sangre o proteínas en un examen de orina. Avanza lentamente y en algunas personas daña el riñón con los años.',
+        trat: 'Control de la presión arterial (con medicamentos que protegen el riñón), de las proteínas en la orina y del colesterol; en algunos casos, medicamentos inmunosupresores.',
+        esp: 'Médico general; nefrólogo.',
+        alarma: 'Orina escasa, hinchazón o presión alta: consulta pronto.',
+        src: ['mp_iga']
+      },
+      {
+        id: 'cancer_rinon', n: 'Señales de cáncer de riñón', urg: 3, prev: 0.5, dur: ['s', 'm'], sexM: 1.3,
+        age: [[0, 44, 0.2], [55, 200, 1.3]],
+        s: { sangre_orina: 3, dolor_costado: 2, perdida_peso: 2, bulto_abdomen: 1, fiebre: 1, ctx_fumador: 1, ardor_orinar: -1, colico_renal: -1 },
+        que: 'El tipo más común es el carcinoma de células renales, más frecuente en hombres de 60 a 70 años, fumadores, con obesidad o presión alta. Muchas veces se descubre por casualidad en una ecografía. Puede producir sangre en la orina, dolor en el costado, un bulto en el abdomen, baja de peso o fiebre.',
+        trat: 'Cirugía para extirpar el tumor o el riñón; en etapas avanzadas, medicamentos dirigidos o inmunoterapia.',
+        esp: 'Médico general; urólogo; oncólogo.',
+        alarma: 'Sangre en la orina sin dolor: consulta pronto, aunque desaparezca.',
+        src: ['mp_cancer_rinon']
+      },
+      {
+        id: 'cancer_vejiga', n: 'Señales de cáncer de vejiga', urg: 3, prev: 0.6, dur: ['s', 'm'], sexM: 1.4,
+        age: [[0, 44, 0.2], [60, 200, 1.3]],
+        s: { sangre_orina: 3, ctx_fumador: 2, orinar_frecuente: 1, ardor_orinar: 1, dolor_costado: -1, fiebre: -1 },
+        que: 'Cáncer que empieza en el revestimiento de la vejiga, más frecuente en hombres mayores y fumadores, y en personas expuestas a algunos químicos industriales. Su señal más común es la sangre en la orina, a menudo sin dolor y que va y viene; también ardor, urgencia o ganas frecuentes de orinar.',
+        trat: 'Según la etapa: resección por cistoscopia, medicamentos dentro de la vejiga (como la BCG), cirugía, quimioterapia, radioterapia o inmunoterapia. Dejar de fumar.',
+        esp: 'Médico general; urólogo.',
+        alarma: 'Toda sangre visible en la orina debe evaluarse pronto, aunque se vaya sola.',
+        src: ['mp_cancer_vejiga']
+      },
+      {
+        id: 'cistitis_intersticial', n: 'Cistitis intersticial', alt: 'Síndrome de vejiga dolorosa', urg: 2, prev: 0.7, dur: ['m'], sexF: 1.6,
+        s: { dolor_vejiga: 3, orinar_frecuente: 2, urgencia_orinar: 1, nicturia: 1, dolor_relaciones: 1, fiebre: -1, orina_turbia: -1 },
+        que: 'Problema crónico de la vejiga, mucho más frecuente en mujeres, que produce dolor, presión o ardor en la vejiga y la pelvis, con ganas frecuentes y urgentes de orinar, de día y de noche, sin una infección que lo explique. Los síntomas suben y bajan, y pueden empeorar con algunos alimentos, el estrés o la regla. Su causa no se conoce.',
+        trat: 'No hay un tratamiento único: cambios en la dieta, entrenamiento de la vejiga, kinesiología de piso pélvico, medicamentos orales o instilados en la vejiga y manejo del dolor, probando hasta encontrar alivio.',
+        esp: 'Médico general; urólogo o ginecólogo.',
+        alarma: 'Fiebre, sangre en la orina o dolor en el costado: consulta pronto.',
+        src: ['mp_cistitis_intersticial']
+      },
+      {
+        id: 'peyronie', n: 'Enfermedad de Peyronie', alt: 'Curvatura adquirida del pene', urg: 2, prev: 0.9, dur: ['s', 'm'], sex: 'M',
+        age: [[0, 29, 0.3], [40, 70, 1.2]],
+        s: { pene_curvo: 3, disfuncion_erectil: 1 },
+        que: 'Se forma tejido cicatricial (placa) dentro del pene que produce una curvatura o un acortamiento durante la erección, a veces con dolor, un bulto palpable y dificultad para tener relaciones o mantener la erección. Se cree que se debe a pequeñas lesiones repetidas; no es cáncer.',
+        trat: 'A veces mejora sola; medicamentos inyectados en la placa, dispositivos de tracción o cirugía si la curvatura impide las relaciones. Conviene consultar temprano.',
+        esp: 'Urólogo.',
+        alarma: 'Dolor intenso o un golpe con chasquido en el pene durante una erección: urgencia.',
+        src: ['mayo_peyronie']
+      },
+      {
+        id: 'priapismo', n: 'Priapismo', alt: 'Erección prolongada', urg: 5, prev: 0.9, dur: ['h'], sex: 'M',
+        req: ['ereccion_prolongada'], reqF: 0.2,
+        s: { ereccion_prolongada: 3 },
+        que: 'Erección prolongada y a menudo dolorosa que no se debe a estimulación sexual. La forma más común (isquémica) es una emergencia: la sangre queda atrapada y, sin tratamiento, daña el pene y causa disfunción eréctil. Puede deberse a medicamentos (incluidos los para la erección), alcohol o drogas, anemia de células falciformes u otras causas.',
+        trat: 'Atención de urgencia: drenaje de la sangre con aguja y medicamentos inyectados; a veces cirugía.',
+        esp: 'Servicio de urgencia; urólogo.',
+        alarma: 'Una erección que dura más de 4 horas: acude de inmediato a urgencia.',
+        src: ['mayo_priapismo']
+      },
+      {
+        id: 'lesion_renal_aguda', n: 'Lesión renal aguda', alt: 'Insuficiencia renal aguda', urg: 4, prev: 0.6, dur: ['h', 'd'],
+        age: [[65, 200, 1.3]],
+        req: ['orina_escasa'], reqF: 0.3,
+        s: { orina_escasa: 3, hinchazon_piernas: 2, ctx_antiinflam: 2, fatiga: 1, nauseas: 1, confusion: 1, falta_aire: 1, vomitos: 1, diarrea: 1, sed: -1 },
+        que: 'Los riñones dejan de funcionar bien en horas o días. Puede deberse a falta de líquido o sangre (diarrea, vómitos, sangrado), infecciones graves, medicamentos (antiinflamatorios, algunos antibióticos o contrastes) u obstrucción de la orina. Produce orina escasa, hinchazón, cansancio, náuseas y, en casos graves, confusión o falta de aire.',
+        trat: 'Tratar la causa en el hospital: hidratación, suspender los medicamentos dañinos y controlar el líquido y las sales; a veces diálisis temporal. Muchas personas se recuperan.',
+        esp: 'Servicio de urgencia; nefrólogo.',
+        alarma: 'Casi no orinas, falta de aire, confusión o palpitaciones: llama al 131.',
+        src: ['mp_necrosis_tubular', 'mp_azotemia_prerrenal']
+      },
+      {
+        id: 'estrechez_uretral', n: 'Estrechez uretral', alt: 'Estenosis de la uretra', urg: 2, prev: 0.6, dur: ['s', 'm'], sexM: 1.5,
+        req: ['ctx_sonda_uretra', 'chorro_dividido'], reqF: 0.4,
+        s: { chorro_debil: 3, chorro_dividido: 2, ctx_sonda_uretra: 2, ardor_orinar: 1, orinar_frecuente: 1, nicturia: -1 },
+        que: 'Estrechamiento de la uretra por cicatrices tras infecciones, sondas, cirugías o golpes en el periné. Produce chorro débil, dividido o en spray, esfuerzo para orinar, goteo, sensación de no vaciar la vejiga e infecciones urinarias repetidas.',
+        trat: 'Dilatación de la uretra, corte de la cicatriz por endoscopia o cirugía de reconstrucción (uretroplastía), según su largo y ubicación.',
+        esp: 'Urólogo.',
+        alarma: 'No poder orinar con la vejiga llena y dolorosa: urgencia.',
+        src: ['mp_estenosis_uretral']
+      },
+      {
+        id: 'addison', n: 'Enfermedad de Addison', alt: 'Insuficiencia suprarrenal', urg: 3, prev: 0.55, dur: ['s', 'm'],
+        s: { piel_bronceada: 3, fatiga: 2, perdida_peso: 2, mareo_al_pararse: 2, ganas_sal: 2, nauseas: 1, dolor_abdominal: 1, debilidad_general: 1, dolor_articular: -1 },
+        que: 'Las glándulas suprarrenales no producen suficientes hormonas (cortisol y aldosterona), casi siempre porque el sistema inmune las daña. Produce cansancio y debilidad que aumentan, baja de peso, falta de apetito, mareo al pararse, ganas de comer sal, náuseas, dolor de guata y piel bronceada sin haber tomado sol. Una infección u otro estrés puede desencadenar una crisis grave.',
+        trat: 'Reemplazo de por vida de las hormonas que faltan (hidrocortisona y fludrocortisona), aumentando la dosis ante enfermedades según indicación médica; portar una identificación.',
+        esp: 'Médico general; endocrinólogo.',
+        alarma: 'Vómitos, dolor abdominal intenso, confusión, presión baja o desmayo: llama al 131 (crisis suprarrenal).',
+        src: ['mp_addison']
+      },
+      {
+        id: 'cushing', n: 'Síndrome de Cushing', alt: 'Exceso de cortisol', urg: 3, prev: 0.5, dur: ['m'],
+        req: ['cara_redonda', 'estrias_moradas', 'ctx_corticoides'], reqF: 0.3,
+        s: { cara_redonda: 3, estrias_moradas: 3, aumento_peso: 2, ctx_corticoides: 2, moretones_faciles: 1, presion_alta_cronica: 1, debilidad_general: 1, vello_excesivo: 1, ctx_diabetes: 1 },
+        que: 'Exceso de la hormona cortisol en el cuerpo, la mayoría de las veces por tomar corticoides por mucho tiempo y, con menos frecuencia, por tumores de la hipófisis o las suprarrenales. Produce aumento de peso en la cara (redonda), la nuca y la guata con brazos y piernas delgados, estrías anchas moradas, moretones fáciles, debilidad muscular, presión alta, azúcar alta y huesos frágiles.',
+        trat: 'Si se debe a corticoides, el médico los disminuye de a poco (nunca suspenderlos de golpe); si hay un tumor, cirugía, radioterapia o medicamentos.',
+        esp: 'Médico general; endocrinólogo.',
+        alarma: 'No suspendas los corticoides por tu cuenta. Debilidad intensa, presión muy alta o infecciones graves: urgencia.',
+        src: ['mayo_cushing', 'mp_tumor_hipofisario']
+      },
+      {
+        id: 'feocromocitoma', n: 'Feocromocitoma', urg: 3, prev: 0.7, dur: ['h', 'm'],
+        req: ['crisis_adrenergicas'], reqF: 0.3,
+        s: { crisis_adrenergicas: 3, presion_alta_cronica: 2, palpitaciones: 1, sudoracion: 1, dolor_cabeza: 1, temblor: 1, palidez: 1, miedo_intenso: -1 },
+        que: 'Tumor poco frecuente, casi siempre benigno, de las glándulas suprarrenales, que libera adrenalina y hormonas parecidas. Produce crisis repentinas de dolor de cabeza fuerte, sudor intenso, palpitaciones, palidez y temblor, con presión muy alta, o presión alta difícil de controlar. Algunas formas son hereditarias.',
+        trat: 'Medicamentos para controlar la presión y luego cirugía para extirpar el tumor, en un centro especializado.',
+        esp: 'Médico general; endocrinólogo; cirujano.',
+        alarma: 'Crisis con dolor de pecho, dolor de cabeza intensísimo o presión de 180/120 o más: llama al 131.',
+        src: ['mp_feocromocitoma']
+      },
+      {
+        id: 'acromegalia', n: 'Acromegalia', urg: 2, prev: 0.4, dur: ['m'],
+        age: [[0, 17, 0.3]],
+        req: ['manos_pies_crecen'], reqF: 0.3,
+        s: { manos_pies_crecen: 3, ronquidos: 1, sudoracion: 1, dolor_articular: 1, dolor_cabeza: 1, vision_lateral: 1, rasgos_toscos: 1 },
+        que: 'Exceso de hormona de crecimiento en un adulto, casi siempre por un tumor benigno de la hipófisis. Avanza muy lento: crecen las manos y los pies, los rasgos de la cara se engruesan (mandíbula, nariz, labios), aparecen sudor excesivo, dolores articulares, ronquidos, dolor de cabeza y, a veces, pérdida de la visión de los costados, diabetes y problemas del corazón.',
+        trat: 'Cirugía del tumor de la hipófisis, medicamentos y, a veces, radioterapia, en un centro especializado.',
+        esp: 'Médico general; endocrinólogo; neurocirujano.',
+        alarma: 'Pérdida de visión o dolor de cabeza intenso y súbito: urgencia.',
+        src: ['mp_acromegalia', 'mp_tumor_hipofisario']
+      },
+      {
+        id: 'prolactinoma', n: 'Prolactinoma', urg: 2, prev: 0.8, dur: ['s', 'm'],
+        s: { secrecion_pezon: 3, sin_regla_meses: 2, vision_lateral: 2, dolor_cabeza: 1, deseo_sexual_bajo: 1, disfuncion_erectil: 1, infertilidad: 1 },
+        que: 'El tumor de la hipófisis productor de hormonas más frecuente, casi siempre benigno, que produce demasiada prolactina. En mujeres causa reglas irregulares o ausentes, salida de leche por los pezones e infertilidad; en hombres, baja del deseo sexual y disfunción eréctil. Si es grande, puede dar dolor de cabeza y pérdida de la visión de los costados.',
+        trat: 'Medicamentos (agonistas de dopamina como la cabergolina) que suelen achicarlo y normalizar la prolactina; rara vez cirugía.',
+        esp: 'Médico general o ginecólogo; endocrinólogo.',
+        alarma: 'Pérdida de visión o dolor de cabeza súbito e intenso: urgencia.',
+        src: ['mp_prolactinoma', 'mp_tumor_hipofisario']
+      },
+      {
+        id: 'diabetes_insipida', n: 'Diabetes insípida', urg: 3, prev: 0.5, dur: ['d', 's', 'm'],
+        req: ['ctx_glucosa_normal'], reqF: 0.3,
+        s: { orina_mucha: 3, sed: 3, ctx_glucosa_normal: 2, nicturia: 1, ctx_diabetes: -2 },
+        que: 'Enfermedad poco frecuente en que el cuerpo no logra retener agua: se orinan grandes cantidades de orina clara, de día y de noche, con sed intensa. No tiene relación con el azúcar (la glucosa es normal). Se debe a falta de la hormona antidiurética (por golpes en la cabeza, cirugías, tumores) o a que el riñón no responde a ella (algunos medicamentos como el litio, o causas hereditarias).',
+        trat: 'Según el tipo: desmopresina (hormona sintética), tratar la causa y beber agua según la sed; ajustes de la dieta o medicamentos en la forma renal.',
+        esp: 'Médico general; endocrinólogo o nefrólogo.',
+        alarma: 'Confusión, mareo intenso o no poder beber agua (riesgo de deshidratación grave): urgencia.',
+        src: ['mp_diabetes_insipida']
+      },
+      {
+        id: 'hiperparatiroidismo', n: 'Hiperparatiroidismo primario', alt: 'Calcio alto por las paratiroides', urg: 2, prev: 0.6, dur: ['m'], sexF: 1.5,
+        age: [[40, 65, 1.3]],
+        req: ['ctx_calcio_alto'], reqF: 0.3,
+        s: { ctx_calcio_alto: 3, ctx_calculos_repetidos: 1, dolor_huesos: 1, fatiga: 1, sed: 1, estrenimiento: 1, tristeza: 1, memoria: 1 },
+        que: 'Una o más glándulas paratiroides del cuello producen demasiada hormona y sube el calcio en la sangre. Es más frecuente en mujeres de 40 a 65 años y a menudo se descubre en un examen de rutina. Puede causar cálculos renales, huesos frágiles, cansancio, sed y orinar mucho, estitiquez, ánimo bajo y problemas de memoria.',
+        trat: 'Cirugía para extirpar la glándula alterada en la mayoría de los casos; si es leve, controles del calcio, los huesos y los riñones, o medicamentos.',
+        esp: 'Médico general; endocrinólogo; cirujano de cabeza y cuello.',
+        alarma: 'Confusión, vómitos, mucha sed o somnolencia: urgencia (calcio muy alto).',
+        src: ['mp_hiperparatiroidismo']
+      },
+      {
+        id: 'hipoparatiroidismo', n: 'Hipoparatiroidismo', alt: 'Calcio bajo por las paratiroides', urg: 3, prev: 0.5, dur: ['d', 's', 'm'],
+        req: ['hormigueo_boca_dedos', 'ctx_cirugia_tiroides'], reqF: 0.3,
+        s: { hormigueo_boca_dedos: 3, calambres: 2, ctx_cirugia_tiroides: 2, fatiga: 1, convulsion: 1, miedo_intenso: -1, respiracion_rapida: -1 },
+        que: 'Las glándulas paratiroides producen muy poca hormona y baja el calcio en la sangre. La causa más común es una lesión de esas glándulas durante una cirugía de tiroides o del cuello. Produce hormigueo alrededor de la boca y en los dedos, calambres y espasmos de las manos, cansancio y, en casos graves, convulsiones.',
+        trat: 'Calcio y vitamina D activa por boca; en crisis, calcio por vena en el hospital. Controles periódicos del calcio.',
+        esp: 'Médico general; endocrinólogo.',
+        alarma: 'Espasmos fuertes, dificultad para respirar o convulsión: llama al 131.',
+        src: ['mp_hipoparatiroidismo']
+      },
+      {
+        id: 'hiperaldosteronismo', n: 'Hiperaldosteronismo primario', urg: 2, prev: 0.6, dur: ['m'],
+        req: ['ctx_presion_dificil'], reqF: 0.3,
+        s: { presion_alta_cronica: 3, ctx_presion_dificil: 3, calambres: 1, debilidad_general: 1, sed: 1, orinar_frecuente: 1, dolor_cabeza: 1 },
+        que: 'Las glándulas suprarrenales producen demasiada aldosterona, una hormona que retiene sal y pierde potasio. Es una causa frecuente de presión alta difícil de controlar, a veces con potasio bajo, que puede dar calambres, debilidad, sed y orinar mucho. Muchas veces se debe a un tumor benigno de la suprarrenal.',
+        trat: 'Si hay un tumor en una sola glándula, cirugía; si no, medicamentos que bloquean la aldosterona (como la espironolactona) y dieta baja en sal.',
+        esp: 'Médico general; endocrinólogo o especialista en hipertensión.',
+        alarma: 'Presión de 180/120 o más, debilidad intensa o palpitaciones: urgencia.',
+        src: ['mp_hiperaldosteronismo']
+      },
+      {
+        id: 'insulinoma', n: 'Insulinoma', urg: 3, prev: 0.4, dur: ['s', 'm'],
+        req: ['hipoglucemias_ayuno'], reqF: 0.3,
+        s: { hipoglucemias_ayuno: 3, aumento_peso: 1, confusion: 1, sudoracion: 1, temblor: 1, ctx_diabetes: -2 },
+        que: 'Tumor poco frecuente del páncreas, casi siempre benigno, que produce demasiada insulina y baja el azúcar en la sangre en personas sin diabetes. Produce episodios repetidos de sudor, temblor, hambre, palpitaciones, confusión, visión borrosa o desmayo, sobre todo en ayunas o tras ejercicio, que mejoran al comer azúcar; muchos suben de peso por comer seguido.',
+        trat: 'Cirugía para extirpar el tumor, que suele curarlo; mientras tanto, comidas frecuentes y, a veces, medicamentos.',
+        esp: 'Médico general; endocrinólogo; cirujano.',
+        alarma: 'Confusión, convulsión o desmayo: da azúcar si puede tragar y llama al 131.',
+        src: ['mp_insulinoma']
+      },
+      {
+        id: 'cancer_tiroides', n: 'Señales de cáncer de tiroides', urg: 3, prev: 0.6, dur: ['s', 'm'], sexF: 1.3,
+        s: { bulto_cuello_duro: 3, bulto_cuello: 2, ronquera: 2, ganglios_persistentes: 1, disfagia: 1, ctx_familia: 1 },
+        que: 'Cáncer que suele presentarse como un bulto en la parte delantera del cuello, más frecuente en mujeres. La mayoría de los nódulos tiroideos son benignos; son más sospechosos los duros, fijos o que crecen rápido, sobre todo si hay ronquera, dificultad para tragar o ganglios en el cuello. La mayoría de estos cánceres tiene muy buen pronóstico con tratamiento.',
+        trat: 'Ecografía y punción del nódulo; según el resultado, cirugía de la tiroides y, a veces, yodo radiactivo y controles.',
+        ges: 'El cáncer de tiroides en personas de 15 años y más está cubierto por GES.',
+        esp: 'Médico general; endocrinólogo; cirujano de cabeza y cuello.',
+        alarma: 'Bulto que crece rápido, dificultad para respirar o tragar: consulta pronto.',
+        src: ['minsal_ges_tiroides', 'mp_bulto_cuello']
+      },
+      {
+        id: 'hiponatremia', n: 'Sodio bajo en la sangre', alt: 'Hiponatremia', urg: 4, prev: 0.6, dur: ['h', 'd', 's'],
+        age: [[70, 200, 1.3]],
+        req: ['ctx_diureticos'], reqF: 0.3,
+        s: { ctx_diureticos: 3, confusion: 2, nauseas: 2, dolor_cabeza: 1, debilidad_general: 1, calambres: 1, vomitos: 1, somnolencia: 1, convulsion: 1 },
+        que: 'El sodio de la sangre baja de lo normal, generalmente porque hay demasiada agua para la sal del cuerpo. Es frecuente en personas mayores que toman diuréticos u otros medicamentos, con insuficiencia cardíaca, del hígado o del riñón, vómitos o diarrea, y en quienes beben muchísima agua. Produce náuseas, dolor de cabeza, confusión, cansancio y calambres; si baja rápido o mucho, convulsiones o coma.',
+        trat: 'Según la causa y la rapidez: ajustar medicamentos, restringir el agua o administrar sal por vena en el hospital, corrigiendo de a poco para no dañar el cerebro.',
+        esp: 'Servicio de urgencia o médico general.',
+        alarma: 'Confusión, somnolencia o convulsiones: llama al 131.',
+        src: ['mp_hiponatremia']
+      },
+      {
+        id: 'pubertad_precoz', n: 'Pubertad precoz', urg: 2, prev: 0.6, dur: ['s', 'm'],
+        ageRange: [1, 10],
+        req: ['pubertad_temprana'], reqF: 0.3,
+        s: { pubertad_temprana: 3, dolor_cabeza: 1, vello_excesivo: -2, genitales_ambiguos: -2 },
+        que: 'Aparición de signos de la pubertad antes de los 8 años en niñas (mamas, vello púbico o axilar, estirón, regla) o antes de los 9 en niños (crecimiento de testículos y pene, vello, cambio de voz). En la mayoría de las niñas no se encuentra una causa; en niños es más frecuente que exista una enfermedad de fondo (cerebro, suprarrenales o testículos). Puede afectar la estatura final y el ánimo.',
+        trat: 'Estudio por endocrinología infantil; según la causa, medicamentos que frenan la pubertad hasta la edad normal o tratamiento de la causa.',
+        esp: 'Pediatra; endocrinólogo infantil.',
+        alarma: 'Dolor de cabeza, vómitos o problemas de la vista junto a la pubertad temprana: consulta pronto.',
+        src: ['mp_pubertad_precoz']
+      },
+      {
+        id: 'tetanos', n: 'Tétanos', urg: 5, prev: 0.5, dur: ['h', 'd'],
+        req: ['mandibula_trabada', 'ctx_herida_sucia'], reqF: 0.3,
+        s: { mandibula_trabada: 3, ctx_herida_sucia: 3, rigidez_cuello: 1, fiebre: 1, sudoracion: 1, dolor_mandibula: 1 },
+        que: 'Enfermedad grave por la toxina de una bacteria (Clostridium tetani) que vive en la tierra, el polvo y el estiércol y entra por heridas profundas o sucias. Unos 3 a 21 días después aparecen espasmos de la mandíbula (no se puede abrir la boca), rigidez del cuello y espasmos dolorosos de la espalda y la guata. Casi siempre ocurre en personas sin vacuna o sin refuerzos.',
+        trat: 'Hospitalización urgente: inmunoglobulina antitetánica, antibióticos, limpieza de la herida y control de los espasmos y la respiración. Prevención: vacuna y refuerzos, y vacunarse ante heridas de riesgo si no se está al día.',
+        esp: 'Emergencia; hospital.',
+        alarma: 'Mandíbula trabada o espasmos musculares después de una herida: llama al 131. Ante una herida sucia o profunda sin vacuna al día, consulta el mismo día para la vacuna antitetánica.',
+        src: ['mp_tetanos', 'mayo_tetanos']
+      }
+    ]
+  });
 })();

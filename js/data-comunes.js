@@ -1779,7 +1779,7 @@
       },
       {
         id: 'galactorrea', n: 'Galactorrea', alt: 'Secreción de leche fuera de la lactancia', urg: 2, prev: 0.95, dur: ['s', 'm'],
-        s: { secrecion_pezon: 3, sin_regla_meses: 1, reglas_irregulares: 1, dolor_cabeza: 1, vision_borrosa: 1 },
+        s: { secrecion_pezon: 3, sin_regla_meses: 1, reglas_irregulares: 1, dolor_cabeza: 1, vision_borrosa: 1, vision_lateral: -1 },
         que: 'Salida de líquido lechoso por uno o ambos pezones sin estar embarazada ni amamantando. Suele deberse a la prolactina alta por medicamentos (algunos para el ánimo, las náuseas o la presión), hipotiroidismo o un tumor benigno de la hipófisis; también puede aparecer en hombres.',
         trat: 'Medir la prolactina y la tiroides, revisar los medicamentos y, si hay un tumor de la hipófisis, medicamentos que la reducen.',
         esp: 'Médico general o ginecólogo; endocrinólogo.',
@@ -2130,6 +2130,318 @@
         esp: 'Enfermería (curaciones) en el CESFAM o a domicilio; médico general.',
         alarma: 'Fiebre, mal olor, pus, herida que se agranda o se ve el hueso: consulta pronto.',
         src: ['mp_ulceras_presion_cuidado', 'mp_prevenir_presion']
+      }
+    ]
+  });
+
+  // ── Tanda 8 (noviembre 2026): piel del bebé y del adulto, tendones, muñeca y rodilla
+  D.addPack({
+    symptoms: [
+      ['herida_pie_diabetico', 'Herida, ampolla o zona roja en el pie que duele poco o nada, en alguien con diabetes', 'piel', 2, ['pie diabético', 'úlcera del pie']],
+      ['granitos_boca', 'Granitos rojos pequeños alrededor de la boca, la nariz o los ojos, que respetan el borde del labio', 'piel', 1, ['dermatitis perioral']],
+      ['mancha_roja_bebe', 'Mancha o bulto rojo frambuesa o azulado en la piel de un bebé, que crece en los primeros meses', 'piel', 1, ['hemangioma', 'frutilla', 'mancha vascular']],
+      ['granitos_calor', 'Granitos rojos o ampollitas transparentes que pican o pinchan en zonas de sudor (cuello, pecho, pliegues) con el calor', 'piel', 1, ['sudamina', 'miliaria', 'salpullido por calor']],
+      ['manchas_rn', 'Recién nacido con manchas rojas con un puntito blanco o amarillo al centro, en los primeros días de vida', 'piel', 1, ['eritema tóxico', 'granitos del recién nacido']],
+      ['zona_pelo_escamas', 'Zonas del cuero cabelludo con escamas, pelos quebrados y caída de pelo, a veces con pus (en niños)', 'piel', 1, ['tiña de la cabeza', 'hongos en el cuero cabelludo']],
+      ['ingle_roja_borde', 'Mancha roja que pica en las ingles o la cara interna de los muslos, con el borde más marcado', 'piel', 1, ['tiña inguinal', 'hongos en la ingle']],
+      ['piel_gallina_brazos', 'Granitos ásperos como «piel de gallina» en la parte de atrás de los brazos, los muslos o las mejillas', 'piel', 1, ['queratosis pilar']],
+      ['piel_oscura_pliegues', 'Piel más oscura, gruesa y aterciopelada en el cuello, las axilas o las ingles', 'piel', 1, ['acantosis nigricans', 'cuello oscuro']],
+      ['ronchas_sol', 'Granitos o placas rojas que pican en zonas expuestas al sol, horas después de asolearte (sobre todo en primavera)', 'piel', 1, ['alergia al sol', 'erupción polimorfa lumínica']],
+      ['manchas_claras_cara_nino', 'Manchas más claras, redondeadas y algo ásperas en la cara o los brazos de un niño, que se notan más en verano', 'piel', 1, ['pitiriasis alba', 'manchas blancas en la cara']],
+      ['manchas_cafe_sol', 'Manchas planas café claro a oscuro en zonas expuestas al sol (dorso de las manos, cara, hombros)', 'piel', 1, ['manchas solares', 'lentigos', 'manchas de la edad']],
+      ['bulto_codo_rodilla', 'Hinchazón blanda y dolorosa sobre el codo, la rodilla o el costado de la cadera (como una bolsa de líquido)', 'musculo', 1, ['bursitis', 'codo de estudiante', 'rodilla de beata']],
+      ['dolor_aquiles', 'Dolor y rigidez en el tendón de atrás del tobillo, sobre el talón, al caminar, correr o en la mañana', 'musculo', 1, ['tendinitis de Aquiles']],
+      ['chasquido_talon', 'Sentiste un golpe o chasquido en la parte de atrás del tobillo y ahora no puedes ponerte en puntas de pie', 'musculo', 2, ['rotura del tendón de Aquiles']],
+      ['dolor_pulgar_muneca', 'Dolor en el lado del pulgar de la muñeca al agarrar, pellizcar o girar la mano', 'musculo', 1, ['tendinitis de De Quervain', 'dolor de muñeca']],
+      ['dedo_trabado', 'Un dedo se traba doblado y luego se suelta de golpe, con dolor o un bultito en su base', 'musculo', 1, ['dedo en gatillo', 'dedo en resorte']],
+      ['bulto_muneca', 'Bulto redondo, firme o blando, en el dorso o la palma de la muñeca o en un dedo', 'musculo', 1, ['ganglión', 'quiste sinovial']],
+      ['bulto_detras_rodilla', 'Bulto o hinchazón detrás de la rodilla que se siente apretado al estirarla', 'musculo', 1, ['quiste de Baker']],
+      ['dolor_frente_rodilla', 'Dolor en la parte de adelante de la rodilla, alrededor de la rótula, al subir o bajar escaleras, agacharte o estar mucho rato sentado', 'musculo', 1, ['condromalacia', 'dolor patelofemoral', 'rodilla del corredor']],
+      ['rodilla_trabada', 'La rodilla se traba o se «engancha» y cuesta estirarla del todo, después de girarla con el pie apoyado', 'musculo', 1, ['menisco', 'rodilla bloqueada']],
+      ['rodilla_hinchada', 'Rodilla hinchada después de una lesión o un esfuerzo', 'musculo', 1, ['derrame en la rodilla']],
+      ['chasquido_rodilla', 'Sentiste un chasquido en la rodilla al frenar, saltar o cambiar de dirección, y ahora la rodilla «se va» o falla', 'musculo', 2, ['ligamento cruzado', 'LCA']],
+      ['bulto_bajo_rotula', 'Bulto doloroso justo bajo la rótula, en un niño o adolescente deportista', 'musculo', 1, ['Osgood-Schlatter']]
+    ],
+    sources: {
+      mp_ulceras_pie_diabetes: [MP, 'Úlceras en los pies por diabetes', 'https://medlineplus.gov/spanish/ency/patientinstructions/000077.htm'],
+      mp_pies_diabetes: [MP, 'Cuidado de los pies en caso de diabetes', 'https://medlineplus.gov/spanish/ency/patientinstructions/000081.htm'],
+      mp_dermatitis_perioral: [MP, 'Dermatitis perioral', 'https://medlineplus.gov/spanish/ency/article/001455.htm'],
+      mp_xerosis: [MP, 'Xerosis (piel seca)', 'https://medlineplus.gov/spanish/ency/article/000835.htm'],
+      mp_piel_rn: [MP, 'Signos en la piel de los recién nacidos (incluye hemangiomas)', 'https://medlineplus.gov/spanish/ency/article/002301.htm'],
+      mp_ictericia_rn: [MP, 'Ictericia del recién nacido', 'https://medlineplus.gov/spanish/ency/article/001559.htm'],
+      mayo_miliaria: [MAYO, 'Miliaria (sarpullido por calor)', 'https://www.mayoclinic.org/es/diseases-conditions/heat-rash/symptoms-causes/syc-20373276'],
+      mp_eritema_toxico: [MP, 'Eritema tóxico', 'https://medlineplus.gov/spanish/ency/article/001458.htm'],
+      mp_tina_cabeza: [MP, 'Tiña de la cabeza', 'https://medlineplus.gov/spanish/ency/article/000878.htm'],
+      mp_tina: [MP, 'Tiña (incluye la tiña inguinal)', 'https://medlineplus.gov/spanish/ency/article/001439.htm'],
+      mp_queratosis_pilar: [MP, 'Queratosis pilar', 'https://medlineplus.gov/spanish/ency/article/001462.htm'],
+      mp_acantosis: [MP, 'Acantosis nigricans', 'https://medlineplus.gov/spanish/ency/article/000852.htm'],
+      mayo_erupcion_luminica: [MAYO, 'Erupción polimorfa lumínica', 'https://www.mayoclinic.org/es/diseases-conditions/polymorphous-light-eruption/symptoms-causes/syc-20355868'],
+      mayo_alergia_sol: [MAYO, 'Alergia al sol', 'https://www.mayoclinic.org/es/diseases-conditions/sun-allergy/symptoms-causes/syc-20378077'],
+      mp_pitiriasis_alba: [MP, 'Pitiriasis alba', 'https://medlineplus.gov/spanish/ency/article/001463.htm'],
+      mayo_manchas_edad: [MAYO, 'Manchas seniles (lentigos solares)', 'https://www.mayoclinic.org/es/diseases-conditions/age-spots/symptoms-causes/syc-20355859'],
+      mp_manchas_vejez: [MP, 'Manchas de la vejez: ¿debe preocuparse?', 'https://medlineplus.gov/spanish/ency/article/002086.htm'],
+      mayo_bursitis: [MAYO, 'Bursitis', 'https://www.mayoclinic.org/es/diseases-conditions/bursitis/symptoms-causes/syc-20353242'],
+      mp_tendinitis_aquilea: [MP, 'Tendinitis aquílea', 'https://medlineplus.gov/spanish/ency/article/001072.htm'],
+      mp_rotura_aquiles: [MP, 'Atención postratamiento para la ruptura del tendón de Aquiles', 'https://medlineplus.gov/spanish/ency/patientinstructions/000546.htm'],
+      mayo_de_quervain: [MAYO, 'Tenosinovitis de De Quervain', 'https://www.mayoclinic.org/es/diseases-conditions/de-quervain-tenosynovitis/symptoms-causes/syc-20371332'],
+      mp_de_quervain: [MP, 'Tendinitis de De Quervain: cuidados', 'https://medlineplus.gov/spanish/ency/patientinstructions/000537.htm'],
+      mayo_dedo_gatillo: [MAYO, 'Dedo en gatillo', 'https://www.mayoclinic.org/es/diseases-conditions/trigger-finger/symptoms-causes/syc-20365100'],
+      mayo_ganglion: [MAYO, 'Ganglión (quiste ganglionar)', 'https://www.mayoclinic.org/es/diseases-conditions/ganglion-cyst/symptoms-causes/syc-20351156'],
+      mayo_quiste_baker: [MAYO, 'Quiste de Baker', 'https://www.mayoclinic.org/es/diseases-conditions/bakers-cyst/symptoms-causes/syc-20369950'],
+      mp_dolor_anterior_rodilla: [MP, 'Dolor anterior de rodilla (condromalacia rotuliana)', 'https://medlineplus.gov/spanish/ency/article/000452.htm'],
+      mayo_menisco: [MAYO, 'Rotura de menisco', 'https://www.mayoclinic.org/es/diseases-conditions/torn-meniscus/symptoms-causes/syc-20354818'],
+      mp_lca: [MP, 'Lesión del ligamento cruzado anterior (LCA)', 'https://medlineplus.gov/spanish/ency/article/001074.htm'],
+      mayo_lca: [MAYO, 'Lesión del ligamento cruzado anterior', 'https://www.mayoclinic.org/es/diseases-conditions/acl-injury/symptoms-causes/syc-20350738'],
+      mp_osgood: [MP, 'Enfermedad de Osgood-Schlatter', 'https://medlineplus.gov/spanish/ency/article/001258.htm']
+    },
+    conditions: [
+      {
+        id: 'pie_diabetico', n: 'Pie diabético', alt: 'Úlcera del pie por diabetes', urg: 3, prev: 1.0, dur: ['d', 's', 'm'],
+        age: [[0, 29, 0.4], [50, 200, 1.2]],
+        req: ['ctx_diabetes'], reqF: 0.3,
+        s: { herida_pie_diabetico: 3, ctx_diabetes: 3, ardor_pies: 1, piel_roja_caliente: 1, fiebre: 1 },
+        que: 'La diabetes daña con los años los nervios y la circulación de los pies: se pierde la sensibilidad y las heridas, ampollas o roces pasan inadvertidos y sanan mal. Pueden infectarse y avanzar hasta la gangrena; es una de las principales causas de amputación.',
+        trat: 'Curaciones por profesionales, descargar el pie (no apoyar la herida), antibióticos si hay infección y buen control de la glucosa. Prevención: revisar los pies todos los días, lavarlos y secarlos bien, usar calzado cómodo, no andar descalzo y acudir al control de pies en el CESFAM.',
+        esp: 'CESFAM (control y curaciones de pie diabético); médico general; cirujano vascular si hay mala circulación.',
+        alarma: 'Herida con pus, mal olor, enrojecimiento que avanza, fiebre o un dedo negro: consulta hoy.',
+        src: ['mp_ulceras_pie_diabetes', 'mp_pies_diabetes']
+      },
+      {
+        id: 'dermatitis_perioral', n: 'Dermatitis perioral', urg: 1, prev: 1.0, dur: ['s', 'm'], sexF: 1.4,
+        age: [[15, 45, 1.2]],
+        s: { granitos_boca: 3, picazon_piel: 1, acne: -1, rash_mariposa: -1 },
+        que: 'Erupción de granitos rojos pequeños, a veces con escamas o pus, alrededor de la boca y, a veces, de la nariz o los ojos, que suele dejar libre una franja junto al labio. Es más frecuente en mujeres jóvenes y empeora con cremas de corticoides en la cara, cremas muy grasas o algunos cosméticos.',
+        trat: 'Suspender las cremas con corticoides y los cosméticos pesados (puede empeorar al principio), lavar con agua y un limpiador suave y usar cremas o comprimidos antibióticos indicados por un médico; el tratamiento dura varias semanas o meses.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Si se extiende, duele o no mejora con el tratamiento: consulta.',
+        src: ['mp_dermatitis_perioral']
+      },
+      {
+        id: 'xerosis', n: 'Piel seca', alt: 'Xerosis', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[65, 200, 1.3]],
+        s: { piel_seca: 3, picazon_piel: 2, ctx_frio: 1, eccema: -1, intolerancia_frio: -1 },
+        que: 'Sequedad anormal de la piel que produce descamación, picazón, aspereza y a veces grietas, sobre todo en las piernas, los brazos y las manos. Es muy frecuente en personas mayores, en invierno, con la calefacción y con duchas largas y calientes.',
+        trat: 'Cremas humectantes (mejor con urea o ácido láctico) justo después del baño, duchas cortas con agua tibia, jabones suaves y secar la piel con toques suaves.',
+        esp: 'Autocuidado; médico general si no mejora.',
+        alarma: 'Picazón intensa en todo el cuerpo sin causa clara, grietas que sangran o se infectan, o piel seca con mucho cansancio y frío: consulta.',
+        src: ['mp_xerosis']
+      },
+      {
+        id: 'hemangioma', n: 'Hemangioma infantil', alt: 'Mancha frutilla', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        ageRange: [0, 10], age: [[0, 1, 1.4]],
+        s: { mancha_roja_bebe: 3 },
+        que: 'Tumor benigno y frecuente de los vasos sanguíneos de la piel, que aparece al nacer o en las primeras semanas como una mancha o bulto rojo frambuesa (o azulado si es más profundo). Crece en los primeros meses y luego se achica de a poco durante años; la mayoría no necesita tratamiento.',
+        trat: 'Controles con el pediatra; si está cerca del ojo, la nariz, la boca o los genitales, crece muy rápido, sangra o se ulcera, existen medicamentos (como el propranolol) indicados por especialistas.',
+        esp: 'Pediatra; dermatólogo infantil.',
+        alarma: 'Hemangioma que sangra, se ulcera, crece muy rápido o está cerca del ojo o la boca: consulta pronto.',
+        src: ['mp_piel_rn']
+      },
+      {
+        id: 'ictericia_rn', n: 'Ictericia del recién nacido', urg: 3, prev: 1.0, dur: ['d', 's'],
+        ageRange: [0, 0],
+        s: { ictericia: 3, somnolencia: 1, cansancio_mamar: 1, acolia: -2, coluria: -1, vomitos: -2, ctx_leche_bebe: -1, hipotonia_bebe: -2, estrenimiento: -1 },
+        que: 'Color amarillo de la piel y los ojos del recién nacido por acumulación de bilirrubina. Es muy frecuente y casi siempre aparece entre el segundo y tercer día de vida y desaparece sola en una o dos semanas. A veces la bilirrubina sube demasiado y debe tratarse para proteger el cerebro del bebé.',
+        trat: 'Amamantar seguido (8 a 12 veces al día) y control en la consulta del recién nacido; si la bilirrubina está alta, fototerapia (luz especial) y, rara vez, otros tratamientos.',
+        esp: 'Pediatra o control del recién nacido; matrona.',
+        alarma: 'Amarillo intenso o que avanza hacia las piernas, ictericia en las primeras 24 horas o que dura más de 2 semanas, bebé muy dormido que no mama, fiebre o deposiciones claras: consulta hoy.',
+        src: ['mp_ictericia_rn']
+      },
+      {
+        id: 'miliaria', n: 'Sudamina', alt: 'Miliaria o salpullido por calor', urg: 1, prev: 1.0, dur: ['h', 'd'],
+        age: [[0, 3, 1.3]],
+        s: { granitos_calor: 3, ctx_calor: 2, picazon_piel: 1, fiebre: -1 },
+        que: 'Erupción que aparece cuando el sudor queda atrapado bajo la piel, con calor y humedad o por exceso de abrigo. Son granitos rojos o ampollitas transparentes que pican o pinchan en el cuello, el pecho, la espalda o los pliegues. Es muy frecuente en bebés.',
+        trat: 'Enfriar la piel: ambiente fresco, ropa liviana de algodón, no abrigar de más y baños tibios. Suele desaparecer en pocos días; evitar cremas espesas.',
+        esp: 'Autocuidado; pediatra o médico general si no mejora.',
+        alarma: 'Fiebre, granitos con pus o bebé decaído: consulta.',
+        src: ['mayo_miliaria']
+      },
+      {
+        id: 'eritema_toxico', n: 'Eritema tóxico del recién nacido', urg: 1, prev: 1.0, dur: ['d'],
+        ageRange: [0, 0],
+        s: { manchas_rn: 3, fiebre: -2 },
+        que: 'Erupción benigna y muy frecuente en los recién nacidos (la mitad la tiene), que aparece entre el primer y tercer día de vida: manchas rojas con un puntito blanco o amarillo al centro en la cara, el tronco o las extremidades. No molesta al bebé y desaparece sola en días.',
+        trat: 'No necesita tratamiento.',
+        esp: 'Pediatra o control del recién nacido.',
+        alarma: 'Fiebre, ampollas, bebé decaído o que no mama: consulta de inmediato.',
+        src: ['mp_eritema_toxico', 'mp_piel_rn']
+      },
+      {
+        id: 'tina_cabeza', n: 'Tiña de la cabeza', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        age: [[2, 12, 1.4], [18, 200, 0.3]],
+        s: { zona_pelo_escamas: 3, picazon_piel: 1, ganglios: 1, ctx_convivientes: 1, calva_redonda: -1 },
+        que: 'Infección por hongos del cuero cabelludo, casi exclusiva de los niños, que se contagia entre personas o por perros y gatos. Produce zonas con escamas, pelos quebrados y caída de pelo; a veces una placa inflamada con pus (querion) y ganglios en el cuello.',
+        trat: 'Requiere antifúngicos en comprimidos durante varias semanas, indicados por un médico; el champú antifúngico ayuda a no contagiar pero no la cura solo. Revisar a los convivientes y mascotas.',
+        esp: 'Pediatra o médico general; dermatólogo.',
+        alarma: 'Placa hinchada con pus o fiebre: consulta pronto.',
+        src: ['mp_tina_cabeza']
+      },
+      {
+        id: 'tina_inguinal', n: 'Tiña inguinal', alt: 'Hongos en la ingle', urg: 1, prev: 1.0, dur: ['d', 's'], sexM: 1.4,
+        s: { ingle_roja_borde: 3, picazon_piel: 2, ctx_calor: 1, pie_atleta: 1, pliegue_rojo: 1 },
+        que: 'Infección por hongos de las ingles y la cara interna de los muslos, más frecuente en hombres, con el calor, el sudor, la ropa ajustada y el pie de atleta. Produce una mancha roja que pica y arde, con el borde más marcado y a veces escamas.',
+        trat: 'Cremas antifúngicas por 2 a 4 semanas, mantener la zona seca, ropa interior de algodón y tratar también el pie de atleta para evitar que vuelva.',
+        esp: 'Autocuidado o médico general.',
+        alarma: 'Si se extiende, supura o no mejora en 2 semanas de tratamiento: consulta.',
+        src: ['mp_tina']
+      },
+      {
+        id: 'queratosis_pilar', n: 'Queratosis pilar', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[5, 30, 1.2]],
+        s: { piel_gallina_brazos: 3, piel_seca: 1 },
+        que: 'Condición frecuente e inofensiva en que la queratina tapa los folículos del pelo y forma granitos ásperos, como piel de gallina, en la parte de atrás de los brazos, los muslos o las mejillas. Es hereditaria, empeora en invierno y suele mejorar con la edad.',
+        trat: 'Cremas humectantes, sobre todo con urea, ácido láctico o salicílico; evitar frotar fuerte.',
+        esp: 'Autocuidado; dermatólogo si molesta.',
+        alarma: 'No es peligrosa; consulta si se inflama o pica mucho.',
+        src: ['mp_queratosis_pilar']
+      },
+      {
+        id: 'acantosis_nigricans', n: 'Acantosis nigricans', alt: 'Piel oscura y aterciopelada en los pliegues', urg: 2, prev: 1.0, dur: ['m'],
+        s: { piel_oscura_pliegues: 3, ctx_sobrepeso: 2, ctx_diabetes: 1, vello_excesivo: 1 },
+        que: 'Piel más oscura, gruesa y aterciopelada en los pliegues, sobre todo el cuello, las axilas y las ingles. Casi siempre se relaciona con sobrepeso y resistencia a la insulina (riesgo de diabetes tipo 2); también con problemas hormonales o algunos medicamentos. Si aparece de forma rápida y extensa en un adulto, debe descartarse un cáncer.',
+        trat: 'No es una suciedad: no se quita lavando. Mejora al tratar la causa: bajar de peso, actividad física y estudio de glucosa e insulina; a veces cremas para aclarar.',
+        esp: 'Médico general; endocrinólogo; dermatólogo.',
+        alarma: 'Aparición rápida en un adulto, con baja de peso: consulta pronto.',
+        src: ['mp_acantosis']
+      },
+      {
+        id: 'erupcion_luminica', n: 'Alergia al sol', alt: 'Erupción polimorfa lumínica', urg: 1, prev: 1.0, dur: ['h', 'd'], sexF: 1.3,
+        s: { ronchas_sol: 3, ctx_calor: 1, picazon_piel: 1, rash_mariposa: -1, dolor_articular: -1 },
+        que: 'Erupción que aparece horas después de exponerse al sol en personas que se han vuelto sensibles a él, sobre todo en primavera y comienzos del verano. Produce granitos, ampollitas o placas rojas que pican o arden en el escote, los brazos o las piernas. Suele repetirse cada año y desaparece sola en unos 10 días sin dejar marca.',
+        trat: 'Evitar el sol fuerte, ropa que cubra y protector solar de amplio espectro; cremas con corticoides o antihistamínicos para la picazón. En casos graves, fototerapia preventiva indicada por el dermatólogo.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Manchas en la cara con dolores articulares, fiebre o cansancio: consulta (descartar lupus).',
+        src: ['mayo_erupcion_luminica', 'mayo_alergia_sol']
+      },
+      {
+        id: 'pitiriasis_alba', n: 'Pitiriasis alba', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[2, 15, 1.4], [20, 200, 0.3]],
+        s: { manchas_claras_cara_nino: 3, piel_seca: 1, eccema: 1, manchas_blancas_piel: -1 },
+        que: 'Manchas más claras, redondeadas y algo escamosas, muy frecuentes en niños y adolescentes, en la cara, el cuello o la parte alta de los brazos. Se relaciona con la piel atópica y se nota más en verano porque la piel de alrededor se broncea. Es inofensiva.',
+        trat: 'Cremas humectantes y protector solar; a veces cremas con corticoides suaves. El color se recupera solo en meses.',
+        esp: 'Pediatra o médico general.',
+        alarma: 'Manchas que pierden la sensibilidad o crecen sin parar: consulta.',
+        src: ['mp_pitiriasis_alba']
+      },
+      {
+        id: 'lentigos', n: 'Manchas solares', alt: 'Lentigos o manchas de la edad', urg: 1, prev: 1.0, dur: ['m'],
+        age: [[0, 30, 0.2], [50, 200, 1.3]],
+        s: { manchas_cafe_sol: 3, ctx_calor: 1, lunar_cambia: -2 },
+        que: 'Manchas planas de color café claro a oscuro que aparecen por años de exposición al sol, sobre todo en el dorso de las manos, la cara, los hombros y los brazos, desde los 50 años. Son inofensivas y no necesitan tratamiento.',
+        trat: 'Protector solar diario para prevenir nuevas; si molestan, cremas aclarantes, láser o congelación con un dermatólogo.',
+        esp: 'Autocuidado; dermatólogo.',
+        alarma: 'Mancha oscura que cambia de tamaño, forma o color, con bordes irregulares, o que sangra: consulta pronto (descartar melanoma).',
+        src: ['mayo_manchas_edad', 'mp_manchas_vejez']
+      },
+      {
+        id: 'bursitis', n: 'Bursitis', urg: 2, prev: 1.0, dur: ['d', 's', 'm'],
+        age: [[40, 200, 1.2]],
+        s: { bulto_codo_rodilla: 3, dolor_hombro: 1, articulacion_hinchada: 1, fiebre: 1 },
+        que: 'Inflamación de las bolsas de líquido que amortiguan huesos, tendones y músculos cerca de las articulaciones, sobre todo en el hombro, el codo, la cadera y la rodilla. Produce dolor, rigidez e hinchazón que empeoran al moverse o al apoyarse; se debe a movimientos repetidos, apoyarse mucho en codos o rodillas, golpes, gota, artritis o infecciones.',
+        trat: 'Reposo relativo de la zona, hielo, analgésicos o antiinflamatorios y kinesiología; a veces punción o inyección de corticoide. Si está infectada, antibióticos.',
+        esp: 'Médico general; traumatólogo; kinesiólogo.',
+        alarma: 'Fiebre, zona muy roja y caliente o dolor que impide mover la articulación: consulta pronto (posible infección).',
+        src: ['mayo_bursitis']
+      },
+      {
+        id: 'tendinitis_aquiles', n: 'Tendinitis de Aquiles', urg: 1, prev: 1.0, dur: ['d', 's', 'm'],
+        age: [[30, 60, 1.2]],
+        s: { dolor_aquiles: 3, ctx_ejercicio: 1, dolor_talon: 1, chasquido_talon: -2 },
+        que: 'Inflamación o desgaste del tendón que une la pantorrilla con el talón, por sobrecarga: correr o saltar mucho, aumentar de golpe el ejercicio, calzado inadecuado o pantorrillas tensas. Produce dolor y rigidez sobre el talón, peor en la mañana y al hacer actividad. Aumenta el riesgo de rotura del tendón.',
+        trat: 'Reducir la actividad que causa dolor, hielo, analgésicos, ejercicios de estiramiento y fortalecimiento (excéntricos) y calzado con algo de taco; kinesiología. Rara vez cirugía.',
+        esp: 'Médico general; kinesiólogo; traumatólogo.',
+        alarma: 'Chasquido brusco y dolor fuerte en el talón, o no poder ponerte en puntas de pie: urgencia (posible rotura).',
+        src: ['mp_tendinitis_aquilea']
+      },
+      {
+        id: 'rotura_aquiles', n: 'Rotura del tendón de Aquiles', urg: 3, prev: 0.95, dur: ['h', 'd'],
+        age: [[30, 60, 1.2]],
+        req: ['chasquido_talon'], reqF: 0.3,
+        s: { chasquido_talon: 3, no_apoyar: 1, hinchazon_moreton: 1, ctx_ejercicio: 1, dolor_aquiles: 1 },
+        que: 'Desgarro del tendón que une la pantorrilla con el talón, casi siempre al empujar o saltar con fuerza en deportes como el fútbol, el básquetbol o el tenis, a veces sobre un tendón ya dañado. Se siente como un golpe o chasquido detrás del tobillo, con dolor e hinchazón, y no se puede empujar con el pie ni ponerse en puntas.',
+        trat: 'Inmovilización con bota o yeso o cirugía de reparación, según el caso, seguidas de kinesiología por varios meses.',
+        esp: 'Servicio de urgencia o traumatólogo; kinesiólogo.',
+        alarma: 'Ante la sospecha, consulta en las próximas horas; el tratamiento temprano mejora el resultado.',
+        src: ['mp_rotura_aquiles']
+      },
+      {
+        id: 'de_quervain', n: 'Tenosinovitis de De Quervain', alt: 'Tendinitis del pulgar', urg: 1, prev: 1.0, dur: ['s', 'm'], sexF: 1.3,
+        s: { dolor_pulgar_muneca: 3, ctx_manos: 1, hormigueo_mano: -1 },
+        que: 'Inflamación de los tendones del lado del pulgar de la muñeca por movimientos repetidos de la mano. Produce dolor e hinchazón cerca de la base del pulgar al agarrar, pellizcar, girar la muñeca o cerrar el puño, a veces con sensación de traba. Es frecuente en mujeres y en quienes cuidan a un bebé.',
+        trat: 'Reposo de la mano con una férula para el pulgar, hielo, antiinflamatorios y cambiar los movimientos que la provocan; a veces una inyección de corticoide y, rara vez, cirugía. Suele mejorar en 4 a 6 semanas.',
+        esp: 'Médico general; traumatólogo; terapeuta ocupacional o kinesiólogo.',
+        alarma: 'Hinchazón roja y caliente con fiebre, o dolor que no mejora en semanas: consulta.',
+        src: ['mayo_de_quervain', 'mp_de_quervain']
+      },
+      {
+        id: 'dedo_gatillo', n: 'Dedo en gatillo', urg: 1, prev: 1.0, dur: ['s', 'm'], sexF: 1.2,
+        age: [[40, 200, 1.2]],
+        s: { dedo_trabado: 3, ctx_manos: 1, ctx_diabetes: 1, rigidez_matinal: 1 },
+        que: 'Un dedo se traba en posición doblada y luego se estira de golpe, como un gatillo, porque su tendón no se desliza bien por su vaina. Produce rigidez (sobre todo en la mañana), chasquido y un bultito doloroso en la base del dedo; afecta más al pulgar y al anular. Es más frecuente en mujeres, personas con diabetes o artritis y trabajos de agarre repetido.',
+        trat: 'Reposo, férula nocturna y ejercicios suaves; una inyección de corticoide suele solucionarlo, y si no, una cirugía menor libera el tendón.',
+        esp: 'Médico general; traumatólogo de mano.',
+        alarma: 'Dedo trabado que no se puede estirar, o hinchazón roja y caliente: consulta pronto.',
+        src: ['mayo_dedo_gatillo']
+      },
+      {
+        id: 'ganglion', n: 'Ganglión', alt: 'Quiste sinovial', urg: 1, prev: 1.0, dur: ['s', 'm'], sexF: 1.3,
+        age: [[20, 40, 1.2]],
+        s: { bulto_muneca: 3, hormigueo_mano: 1 },
+        que: 'Bulto redondo lleno de un líquido gelatinoso que sale de una articulación o un tendón, casi siempre en el dorso o la palma de la muñeca, y también en dedos, tobillos o pies. Es benigno, suele no doler y puede cambiar de tamaño o desaparecer solo; si presiona un nervio, causa dolor u hormigueo. Es más frecuente entre los 20 y 40 años y en mujeres.',
+        trat: 'Si no molesta, solo controlar; si duele o limita, inmovilización, punción para aspirar el líquido o cirugía. No hay que golpearlo para reventarlo.',
+        esp: 'Médico general; traumatólogo.',
+        alarma: 'Bulto duro que crece rápido, duele mucho o con adormecimiento persistente: consulta.',
+        src: ['mayo_ganglion']
+      },
+      {
+        id: 'quiste_baker', n: 'Quiste de Baker', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        age: [[40, 200, 1.2]],
+        s: { bulto_detras_rodilla: 3, dolor_rodilla_cadera: 1, rodilla_hinchada: 1, pantorrilla: -2 },
+        que: 'Bolsa de líquido detrás de la rodilla que se forma cuando la rodilla produce demasiado líquido por una artrosis, un desgarro del menisco u otra inflamación. Produce un abultamiento con sensación de tirantez, a veces dolor y rigidez. Si se rompe, el líquido baja a la pantorrilla y puede parecer una trombosis.',
+        trat: 'Tratar la causa de la rodilla, reposo relativo, hielo y analgésicos; a veces punción o inyección de corticoide.',
+        esp: 'Médico general; traumatólogo.',
+        alarma: 'Pantorrilla hinchada, roja y dolorosa: consulta hoy (descartar trombosis venosa).',
+        src: ['mayo_quiste_baker']
+      },
+      {
+        id: 'dolor_patelofemoral', n: 'Dolor patelofemoral', alt: 'Condromalacia o rodilla del corredor', urg: 1, prev: 1.0, dur: ['s', 'm'], sexF: 1.3,
+        age: [[10, 35, 1.3]],
+        s: { dolor_frente_rodilla: 3, ctx_ejercicio: 1, dolor_rodilla_cadera: 1, rodilla_trabada: -1, chasquido_rodilla: -2 },
+        que: 'Dolor en la parte de adelante de la rodilla, alrededor de la rótula, muy frecuente en adolescentes y adultos jóvenes deportistas, sobre todo mujeres. Empeora al subir o bajar escaleras, agacharse, correr o estar mucho rato sentado, y puede haber sensación de roce. Se relaciona con sobrecarga, debilidad del muslo y la cadera o mala alineación de la rótula.',
+        trat: 'Reducir por un tiempo la actividad que lo provoca, hielo, analgésicos y, sobre todo, ejercicios de fortalecimiento de cuádriceps y cadera con un kinesiólogo.',
+        esp: 'Médico general; kinesiólogo; traumatólogo.',
+        alarma: 'Rodilla muy hinchada, que se traba o que falla: consulta (posible lesión interna).',
+        src: ['mp_dolor_anterior_rodilla']
+      },
+      {
+        id: 'menisco', n: 'Lesión de menisco', urg: 2, prev: 1.0, dur: ['d', 's', 'm'],
+        s: { rodilla_trabada: 3, ctx_torcedura: 2, rodilla_hinchada: 2, dolor_rodilla_cadera: 1, hinchazon_moreton: -1 },
+        que: 'Desgarro del cartílago en forma de C que amortigua la rodilla, al girarla bruscamente con el pie apoyado (deporte) o por desgaste en personas mayores. Produce dolor al girar, hinchazón y rigidez que pueden aparecer en las horas siguientes, dificultad para estirar la rodilla y sensación de que se traba o se engancha.',
+        trat: 'Reposo relativo, hielo, elevación, analgésicos y kinesiología; si la rodilla se bloquea o no mejora, artroscopia para reparar o recortar el menisco.',
+        esp: 'Médico general; traumatólogo; kinesiólogo.',
+        alarma: 'Rodilla bloqueada que no se puede estirar, o muy hinchada: consulta pronto.',
+        src: ['mayo_menisco']
+      },
+      {
+        id: 'lesion_lca', n: 'Rotura del ligamento cruzado anterior', alt: 'Lesión del LCA', urg: 3, prev: 1.0, dur: ['h', 'd', 's'],
+        age: [[14, 40, 1.2]],
+        req: ['chasquido_rodilla'], reqF: 0.3,
+        s: { chasquido_rodilla: 3, rodilla_hinchada: 2, ctx_torcedura: 2, no_apoyar: 1 },
+        que: 'Rotura de uno de los ligamentos principales de la rodilla, típica de deportes con frenadas, saltos o cambios bruscos de dirección (fútbol, básquetbol, esquí). Se siente un chasquido, dolor fuerte que impide seguir jugando, hinchazón rápida y luego sensación de que la rodilla falla. A menudo se acompaña de lesión de meniscos.',
+        trat: 'Hielo, elevación, muletas y kinesiología al inicio; según la edad, la actividad y la inestabilidad, cirugía de reconstrucción del ligamento seguida de rehabilitación de 4 a 6 meses o más.',
+        esp: 'Servicio de urgencia o traumatólogo; kinesiólogo.',
+        alarma: 'Deformidad, adormecimiento o pie frío, o dolor intenso que no permite apoyar: urgencia.',
+        src: ['mp_lca', 'mayo_lca']
+      },
+      {
+        id: 'osgood', n: 'Enfermedad de Osgood-Schlatter', urg: 1, prev: 1.0, dur: ['s', 'm'], sexM: 1.2,
+        ageRange: [8, 18],
+        s: { bulto_bajo_rotula: 3, ctx_ejercicio: 1, dolor_frente_rodilla: 1 },
+        que: 'Inflamación dolorosa del bulto óseo justo bajo la rótula, donde se inserta su tendón, en niños y adolescentes deportistas en pleno crecimiento. Duele al correr, saltar, arrodillarse o subir escaleras y mejora con el reposo. Desaparece al terminar el crecimiento, aunque el bulto puede quedar.',
+        trat: 'Reducir por un tiempo la actividad que causa dolor (sin dejar de moverse), hielo después del deporte, analgésicos, rodillera o cinta bajo la rótula y ejercicios de elongación.',
+        esp: 'Pediatra o médico general; kinesiólogo; traumatólogo infantil.',
+        alarma: 'Dolor de noche, fiebre, cojera intensa o hinchazón roja: consulta (descartar otras causas).',
+        src: ['mp_osgood']
       }
     ]
   });

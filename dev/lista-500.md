@@ -184,31 +184,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C173 Paroniquia (panadizo) — tanda 7 · `paroniquia`
 - [x] C174 Sabañones — tanda 7 · `sabanones`
 - [x] C175 Úlceras por presión (escaras) — tanda 7 · `ulceras_presion`
-- [ ] C176 Pie diabético
-- [ ] C177 Dermatitis perioral
-- [ ] C178 Piel seca (xerosis)
-- [ ] C179 Hemangioma infantil
-- [ ] C180 Ictericia del recién nacido
-- [ ] C181 Sudamina (miliaria)
-- [ ] C182 Eritema tóxico del recién nacido
-- [ ] C183 Tiña de la cabeza
-- [ ] C184 Tiña inguinal
-- [ ] C185 Queratosis pilaris
-- [ ] C186 Acantosis nigricans
-- [ ] C187 Alergia al sol (erupción polimorfa lumínica)
-- [ ] C188 Pitiriasis alba
-- [ ] C189 Manchas solares (lentigos)
-- [ ] C190 Bursitis
-- [ ] C191 Tendinitis de Aquiles
-- [ ] C192 Rotura del tendón de Aquiles
-- [ ] C193 Tenosinovitis de De Quervain
-- [ ] C194 Dedo en gatillo
-- [ ] C195 Ganglión (quiste sinovial)
-- [ ] C196 Quiste de Baker
-- [ ] C197 Dolor patelofemoral (condromalacia)
-- [ ] C198 Lesión de menisco
-- [ ] C199 Rotura del ligamento cruzado anterior
-- [ ] C200 Enfermedad de Osgood-Schlatter
+- [x] C176 Pie diabético — tanda 8 · `pie_diabetico`
+- [x] C177 Dermatitis perioral — tanda 8 · `dermatitis_perioral`
+- [x] C178 Piel seca (xerosis) — tanda 8 · `xerosis`
+- [x] C179 Hemangioma infantil — tanda 8 · `hemangioma`
+- [x] C180 Ictericia del recién nacido — tanda 8 · `ictericia_rn`
+- [x] C181 Sudamina (miliaria) — tanda 8 · `miliaria`
+- [x] C182 Eritema tóxico del recién nacido — tanda 8 · `eritema_toxico`
+- [x] C183 Tiña de la cabeza — tanda 8 · `tina_cabeza`
+- [x] C184 Tiña inguinal — tanda 8 · `tina_inguinal`
+- [x] C185 Queratosis pilaris — tanda 8 · `queratosis_pilar`
+- [x] C186 Acantosis nigricans — tanda 8 · `acantosis_nigricans`
+- [x] C187 Alergia al sol (erupción polimorfa lumínica) — tanda 8 · `erupcion_luminica`
+- [x] C188 Pitiriasis alba — tanda 8 · `pitiriasis_alba`
+- [x] C189 Manchas solares (lentigos) — tanda 8 · `lentigos`
+- [x] C190 Bursitis — tanda 8 · `bursitis`
+- [x] C191 Tendinitis de Aquiles — tanda 8 · `tendinitis_aquiles`
+- [x] C192 Rotura del tendón de Aquiles — tanda 8 · `rotura_aquiles`
+- [x] C193 Tenosinovitis de De Quervain — tanda 8 · `de_quervain`
+- [x] C194 Dedo en gatillo — tanda 8 · `dedo_gatillo`
+- [x] C195 Ganglión (quiste sinovial) — tanda 8 · `ganglion`
+- [x] C196 Quiste de Baker — tanda 8 · `quiste_baker`
+- [x] C197 Dolor patelofemoral (condromalacia) — tanda 8 · `dolor_patelofemoral`
+- [x] C198 Lesión de menisco — tanda 8 · `menisco`
+- [x] C199 Rotura del ligamento cruzado anterior — tanda 8 · `lesion_lca`
+- [x] C200 Enfermedad de Osgood-Schlatter — tanda 8 · `osgood`
 - [ ] C201 Enfermedad de Sever
 - [ ] C202 Escoliosis
 - [ ] C203 Osteoporosis
@@ -450,31 +450,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R173 Difilobotriasis (tenia del pescado) — tanda 7 · `difilobotriasis`
 - [x] R174 Anisakiasis — tanda 7 · `anisakiasis`
 - [x] R175 Colestasis del embarazo — tanda 7 · `colestasis_embarazo`
-- [ ] R176 Hernia femoral
-- [ ] R177 Glomerulonefritis
-- [ ] R178 Síndrome nefrótico
-- [ ] R179 Nefropatía por IgA
-- [ ] R180 Señales de cáncer de riñón
-- [ ] R181 Señales de cáncer de vejiga
-- [ ] R182 Cistitis intersticial
-- [ ] R183 Enfermedad de Peyronie
-- [ ] R184 Priapismo
-- [ ] R185 Lesión renal aguda
-- [ ] R186 Estrechez uretral
-- [ ] R187 Enfermedad de Addison
-- [ ] R188 Síndrome de Cushing
-- [ ] R189 Feocromocitoma
-- [ ] R190 Acromegalia
-- [ ] R191 Prolactinoma
-- [ ] R192 Diabetes insípida
-- [ ] R193 Hiperparatiroidismo primario
-- [ ] R194 Hipoparatiroidismo
-- [ ] R195 Hiperaldosteronismo primario
-- [ ] R196 Insulinoma
-- [ ] R197 Señales de cáncer de tiroides
-- [ ] R198 Hiponatremia
-- [ ] R199 Pubertad precoz
-- [ ] R200 Tétanos
+- [x] R176 Hernia femoral — tanda 8 · `hernia_femoral`
+- [x] R177 Glomerulonefritis — tanda 8 · `glomerulonefritis`
+- [x] R178 Síndrome nefrótico — tanda 8 · `sindrome_nefrotico`
+- [x] R179 Nefropatía por IgA — tanda 8 · `nefropatia_iga`
+- [x] R180 Señales de cáncer de riñón — tanda 8 · `cancer_rinon`
+- [x] R181 Señales de cáncer de vejiga — tanda 8 · `cancer_vejiga`
+- [x] R182 Cistitis intersticial — tanda 8 · `cistitis_intersticial`
+- [x] R183 Enfermedad de Peyronie — tanda 8 · `peyronie`
+- [x] R184 Priapismo — tanda 8 · `priapismo`
+- [x] R185 Lesión renal aguda — tanda 8 · `lesion_renal_aguda`
+- [x] R186 Estrechez uretral — tanda 8 · `estrechez_uretral`
+- [x] R187 Enfermedad de Addison — tanda 8 · `addison`
+- [x] R188 Síndrome de Cushing — tanda 8 · `cushing`
+- [x] R189 Feocromocitoma — tanda 8 · `feocromocitoma`
+- [x] R190 Acromegalia — tanda 8 · `acromegalia`
+- [x] R191 Prolactinoma — tanda 8 · `prolactinoma`
+- [x] R192 Diabetes insípida — tanda 8 · `diabetes_insipida`
+- [x] R193 Hiperparatiroidismo primario — tanda 8 · `hiperparatiroidismo`
+- [x] R194 Hipoparatiroidismo — tanda 8 · `hipoparatiroidismo`
+- [x] R195 Hiperaldosteronismo primario — tanda 8 · `hiperaldosteronismo`
+- [x] R196 Insulinoma — tanda 8 · `insulinoma`
+- [x] R197 Señales de cáncer de tiroides — tanda 8 · `cancer_tiroides`
+- [x] R198 Hiponatremia — tanda 8 · `hiponatremia`
+- [x] R199 Pubertad precoz — tanda 8 · `pubertad_precoz`
+- [x] R200 Tétanos — tanda 8 · `tetanos`
 - [ ] R201 Botulismo
 - [ ] R202 Difteria
 - [ ] R203 Lepra
