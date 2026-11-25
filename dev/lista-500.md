@@ -59,31 +59,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C048 Daltonismo — tanda 2 · `daltonismo`
 - [x] C049 Párpado caído (ptosis) — tanda 2 · `ptosis`
 - [x] C050 Bronquiectasias — tanda 2 · `bronquiectasias`
-- [ ] C051 Derrame pleural
-- [ ] C052 Pleuritis (pleuresía)
-- [ ] C053 Asma inducida por ejercicio
-- [ ] C054 Neumonía atípica (Mycoplasma)
-- [ ] C055 Estenosis aórtica
-- [ ] C056 Prolapso o insuficiencia de la válvula mitral
-- [ ] C057 Bradicardia o bloqueo cardíaco
-- [ ] C058 Extrasístoles (latidos prematuros)
-- [ ] C059 Fenómeno de Raynaud
-- [ ] C060 Tromboflebitis superficial
-- [ ] C061 Úlcera venosa de la pierna
-- [ ] C062 Linfedema
-- [ ] C063 Síndrome de taquicardia postural (POTS)
-- [ ] C064 Cefalea por abuso de analgésicos
-- [ ] C065 Neuralgia occipital
-- [ ] C066 Neuralgia posherpética
-- [ ] C067 Temblor esencial
-- [ ] C068 Síndrome del túnel cubital
-- [ ] C069 Meralgia parestésica
-- [ ] C070 Hernia de disco cervical (radiculopatía cervical)
-- [ ] C071 Estenosis del canal lumbar
-- [ ] C072 Hematoma subdural
-- [ ] C073 Síndrome de fatiga crónica
-- [ ] C074 Tics y síndrome de Tourette
-- [ ] C075 Crisis de ausencia
+- [x] C051 Derrame pleural — tanda 3 · `derrame_pleural`
+- [x] C052 Pleuritis (pleuresía) — tanda 3 · `pleuritis`
+- [x] C053 Asma inducida por ejercicio — tanda 3 · `asma_ejercicio`
+- [x] C054 Neumonía atípica (Mycoplasma) — tanda 3 · `neumonia_atipica`
+- [x] C055 Estenosis aórtica — tanda 3 · `estenosis_aortica`
+- [x] C056 Prolapso o insuficiencia de la válvula mitral — tanda 3 · `valvula_mitral`
+- [x] C057 Bradicardia o bloqueo cardíaco — tanda 3 · `bradicardia`
+- [x] C058 Extrasístoles (latidos prematuros) — tanda 3 · `extrasistoles`
+- [x] C059 Fenómeno de Raynaud — tanda 3 · `raynaud`
+- [x] C060 Tromboflebitis superficial — tanda 3 · `tromboflebitis`
+- [x] C061 Úlcera venosa de la pierna — tanda 3 · `ulcera_venosa`
+- [x] C062 Linfedema — tanda 3 · `linfedema`
+- [x] C063 Síndrome de taquicardia postural (POTS) — tanda 3 · `pots`
+- [x] C064 Cefalea por abuso de analgésicos — tanda 3 · `cefalea_abuso`
+- [x] C065 Neuralgia occipital — tanda 3 · `neuralgia_occipital`
+- [x] C066 Neuralgia posherpética — tanda 3 · `neuralgia_posherpetica`
+- [x] C067 Temblor esencial — tanda 3 · `temblor_esencial`
+- [x] C068 Síndrome del túnel cubital — tanda 3 · `tunel_cubital`
+- [x] C069 Meralgia parestésica — tanda 3 · `meralgia`
+- [x] C070 Hernia de disco cervical (radiculopatía cervical) — tanda 3 · `hernia_cervical`
+- [x] C071 Estenosis del canal lumbar — tanda 3 · `estenosis_lumbar`
+- [x] C072 Hematoma subdural — tanda 3 · `hematoma_subdural`
+- [x] C073 Síndrome de fatiga crónica — tanda 3 · `fatiga_cronica`
+- [x] C074 Tics y síndrome de Tourette — tanda 3 · `tics_tourette`
+- [x] C075 Crisis de ausencia — tanda 3 · `crisis_ausencia`
 - [ ] C076 Deterioro cognitivo leve
 - [ ] C077 Mareo por movimiento (cinetosis)
 - [ ] C078 Parálisis del nervio radial (mano caída)
@@ -325,31 +325,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R048 Poliposis adenomatosa familiar — tanda 2 · `poliposis_adenomatosa`
 - [x] R049 Enfermedad renal poliquística — tanda 2 · `rinon_poliquistico`
 - [x] R050 Síndrome de Alport — tanda 2 · `alport`
-- [ ] R051 Cistinuria
-- [ ] R052 Déficit de alfa-1 antitripsina
-- [ ] R053 Angioedema hereditario
-- [ ] R054 Fiebre mediterránea familiar
-- [ ] R055 Síndrome de QT largo
-- [ ] R056 Síndrome de Brugada
-- [ ] R057 Miocardiopatía hipertrófica
-- [ ] R058 Síndrome de Wolff-Parkinson-White
-- [ ] R059 Hidrocefalia
-- [ ] R060 Craneosinostosis
-- [ ] R061 Enfermedad de Hirschsprung
-- [ ] R062 Atresia biliar
-- [ ] R063 Cardiopatía congénita
-- [ ] R064 Inmunodeficiencia común variable
-- [ ] R065 Miastenia gravis
-- [ ] R066 Dermatomiositis y polimiositis
-- [ ] R067 Esclerodermia (esclerosis sistémica)
-- [ ] R068 Síndrome de Sjögren
-- [ ] R069 Arteritis de células gigantes (arteritis temporal)
-- [ ] R070 Arteritis de Takayasu
-- [ ] R071 Granulomatosis con poliangitis
-- [ ] R072 Poliarteritis nodosa
-- [ ] R073 Enfermedad de Behçet
-- [ ] R074 Enfermedad de Kawasaki
-- [ ] R075 Púrpura de Schönlein-Henoch (vasculitis por IgA)
+- [x] R051 Cistinuria — tanda 3 · `cistinuria`
+- [x] R052 Déficit de alfa-1 antitripsina — tanda 3 · `deficit_alfa1`
+- [x] R053 Angioedema hereditario — tanda 3 · `angioedema_hereditario`
+- [x] R054 Fiebre mediterránea familiar — tanda 3 · `fiebre_mediterranea`
+- [x] R055 Síndrome de QT largo — tanda 3 · `qt_largo`
+- [x] R056 Síndrome de Brugada — tanda 3 · `brugada`
+- [x] R057 Miocardiopatía hipertrófica — tanda 3 · `miocardiopatia_hipertrofica`
+- [x] R058 Síndrome de Wolff-Parkinson-White — tanda 3 · `wpw`
+- [x] R059 Hidrocefalia — tanda 3 · `hidrocefalia`
+- [x] R060 Craneosinostosis — tanda 3 · `craneosinostosis`
+- [x] R061 Enfermedad de Hirschsprung — tanda 3 · `hirschsprung`
+- [x] R062 Atresia biliar — tanda 3 · `atresia_biliar`
+- [x] R063 Cardiopatía congénita — tanda 3 · `cardiopatia_congenita`
+- [x] R064 Inmunodeficiencia común variable — tanda 3 · `inmunodeficiencia_comun`
+- [x] R065 Miastenia gravis — tanda 3 · `miastenia`
+- [x] R066 Dermatomiositis y polimiositis — tanda 3 · `dermatomiositis`
+- [x] R067 Esclerodermia (esclerosis sistémica) — tanda 3 · `esclerodermia`
+- [x] R068 Síndrome de Sjögren — tanda 3 · `sjogren`
+- [x] R069 Arteritis de células gigantes (arteritis temporal) — tanda 3 · `arteritis_temporal`
+- [x] R070 Arteritis de Takayasu — tanda 3 · `takayasu`
+- [x] R071 Granulomatosis con poliangitis — tanda 3 · `granulomatosis_poliangitis`
+- [x] R072 Poliarteritis nodosa — tanda 3 · `poliarteritis_nodosa`
+- [x] R073 Enfermedad de Behçet — tanda 3 · `behcet`
+- [x] R074 Enfermedad de Kawasaki — tanda 3 · `kawasaki`
+- [x] R075 Púrpura de Schönlein-Henoch (vasculitis por IgA) — tanda 3 · `purpura_hsp`
 - [ ] R076 Enfermedad de Still del adulto
 - [ ] R077 Sarcoidosis
 - [ ] R078 Polimialgia reumática

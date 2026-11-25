@@ -683,4 +683,326 @@
       }
     ]
   });
+
+  // ── Tanda 3 (noviembre 2026): inmunitarias, cardíacas hereditarias, congénitas y vasculitis
+  D.addPack({
+    symptoms: [
+      ['hinchazon_sin_ronchas', 'Hinchazones grandes y repetidas de cara, manos, pies o genitales, sin ronchas ni picazón', 'piel', 2, ['angioedema', 'hinchazón sin alergia']],
+      ['fiebre_episodios', 'Episodios de fiebre de 1 a 3 días que se repiten cada cierto tiempo', 'general', 1, ['fiebre recurrente', 'fiebres periódicas']],
+      ['cabeza_grande', 'Cabeza que crece demasiado rápido o fontanela abombada (en un bebé)', 'general', 2, ['hidrocefalia', 'mollera abombada', 'cabeza grande']],
+      ['craneo_deformado', 'Forma anormal de la cabeza del bebé, con una cresta dura en el cráneo', 'general', 1, ['craneosinostosis', 'cabeza alargada']],
+      ['no_meconio', 'Recién nacido que no hizo su primera deposición (meconio) en las primeras 48 horas', 'digestivo', 2, ['no hace caca', 'meconio']],
+      ['cansancio_mamar', 'Bebé que se cansa o suda al mamar, respira rápido o no sube de peso', 'general', 2, ['se cansa al mamar', 'suda al mamar']],
+      ['debilidad_fluctuante', 'Debilidad muscular que empeora al usar el músculo y mejora con el reposo (peor en la tarde)', 'musculo', 2, ['miastenia', 'me canso al masticar', 'debilidad que varía']],
+      ['vision_doble_cansancio', 'Visión doble que aparece con el cansancio y mejora al descansar', 'ojos', 1, ['visión doble intermitente', 'diplopía']],
+      ['rash_parpados_nudillos', 'Erupción violácea en los párpados o rojiza sobre los nudillos', 'piel', 1, ['dermatomiositis', 'pápulas de Gottron']],
+      ['piel_dura', 'Piel que se engrosa y endurece (dedos, manos o cara)', 'piel', 1, ['esclerodermia', 'piel tirante']],
+      ['boca_y_ojos_secos', 'Boca y ojos muy secos a la vez, durante meses', 'oong', 1, ['Sjögren', 'sequedad']],
+      ['dolor_sien', 'Dolor de cabeza nuevo en la sien, con el cuero cabelludo sensible', 'cabeza', 2, ['arteritis temporal', 'dolor en la sien']],
+      ['pulso_debil_brazo', 'Pulso débil o presión distinta entre ambos brazos, con dolor del brazo al usarlo', 'corazon', 1, ['Takayasu', 'sin pulso']],
+      ['costras_nariz', 'Costras y sangrado nasal persistentes, a veces con la nariz que se hunde', 'oong', 1, ['granulomatosis', 'nariz en silla de montar']],
+      ['livedo', 'Manchas violáceas en forma de red (como encaje) en la piel de las piernas', 'piel', 1, ['livedo reticularis']],
+      ['aftas_repetidas_genitales', 'Aftas repetidas en la boca y también en los genitales', 'oong', 1, ['Behçet', 'aftas genitales']],
+      ['fiebre_5_dias', 'Fiebre alta que dura 5 días o más', 'general', 2, ['fiebre persistente', 'fiebre prolongada']],
+      ['labios_rojos_lengua_fresa', 'Labios muy rojos y agrietados, con lengua color frutilla', 'oong', 1, ['lengua de fresa', 'Kawasaki']],
+      ['purpura_piernas', 'Manchas moradas en relieve en las piernas y los glúteos', 'piel', 2, ['púrpura', 'Schönlein-Henoch', 'vasculitis por IgA']],
+      ['ctx_calculos_repetidos', 'Cálculos renales repetidos desde joven', 'contexto', 0, ['piedras en el riñón a repetición']],
+      ['ctx_muerte_subita_familia', 'Familiares jóvenes con muerte súbita o desmayos inexplicables', 'contexto', 0, ['muerte súbita en la familia']]
+    ],
+    sources: {
+      mp_cistinuria: [MP, 'Cistinuria', 'https://medlineplus.gov/spanish/ency/article/000346.htm'],
+      mp_alfa1: [MP, 'Deficiencia de alfa-1 antitripsina', 'https://medlineplus.gov/spanish/ency/article/000120.htm'],
+      mp_angioedema: [MP, 'Angioedema (incluye el angioedema hereditario)', 'https://medlineplus.gov/spanish/ency/article/000846.htm'],
+      mp_fiebre_mediterranea: [MP, 'Fiebre mediterránea familiar', 'https://medlineplus.gov/spanish/ency/article/000363.htm'],
+      mayo_qt_largo: [MAYO, 'Síndrome del intervalo QT largo', 'https://www.mayoclinic.org/es/diseases-conditions/long-qt-syndrome/symptoms-causes/syc-20352518'],
+      mayo_brugada: [MAYO, 'Síndrome de Brugada', 'https://www.mayoclinic.org/es/diseases-conditions/brugada-syndrome/symptoms-causes/syc-20370489'],
+      mp_miocardiopatia: [MP, 'Miocardiopatía', 'https://medlineplus.gov/spanish/ency/article/001105.htm'],
+      mp_wpw: [MP, 'Síndrome de Wolff-Parkinson-White (WPW)', 'https://medlineplus.gov/spanish/ency/article/000151.htm'],
+      mp_hidrocefalia: [MP, 'Hidrocefalia', 'https://medlineplus.gov/spanish/ency/article/001571.htm'],
+      mp_craneosinostosis: [MP, 'Craneosinostosis', 'https://medlineplus.gov/spanish/ency/article/001590.htm'],
+      mp_hirschsprung: [MP, 'Enfermedad de Hirschsprung', 'https://medlineplus.gov/spanish/ency/article/001140.htm'],
+      mp_atresia_biliar: [MP, 'Atresia biliar', 'https://medlineplus.gov/spanish/ency/article/001145.htm'],
+      mp_cardiopatia_congenita_t: [MP, 'Cardiopatías congénitas', 'https://medlineplus.gov/spanish/congenitalheartdefects.html'],
+      mayo_idcv: [MAYO, 'Inmunodeficiencia común variable', 'https://www.mayoclinic.org/es/diseases-conditions/common-variable-immunodeficiency/symptoms-causes/syc-20355821'],
+      mp_miastenia: [MP, 'Miastenia grave', 'https://medlineplus.gov/spanish/ency/article/000712.htm'],
+      mp_dermatomiositis: [MP, 'Dermatomiositis', 'https://medlineplus.gov/spanish/ency/article/000839.htm'],
+      mp_polimiositis: [MP, 'Polimiositis del adulto', 'https://medlineplus.gov/spanish/ency/article/000428.htm'],
+      mp_esclerodermia: [MP, 'Esclerodermia', 'https://medlineplus.gov/spanish/ency/article/000429.htm'],
+      mp_sjogren: [MP, 'Síndrome de Sjögren', 'https://medlineplus.gov/spanish/ency/article/000456.htm'],
+      mp_arteritis_celulas_gigantes: [MP, 'Arteritis de células gigantes', 'https://medlineplus.gov/spanish/ency/article/000448.htm'],
+      mp_takayasu: [MP, 'Arteritis de Takayasu', 'https://medlineplus.gov/spanish/ency/article/001250.htm'],
+      mp_gpa: [MP, 'Granulomatosis con poliangitis', 'https://medlineplus.gov/spanish/ency/article/000135.htm'],
+      mp_vasculitis_necrosante: [MP, 'Vasculitis necrosante (incluye la poliarteritis nodosa)', 'https://medlineplus.gov/spanish/ency/article/000432.htm'],
+      mp_behcet_t: [MP, 'Enfermedad de Behçet', 'https://medlineplus.gov/spanish/behcetssyndrome.html'],
+      mp_kawasaki: [MP, 'Enfermedad de Kawasaki', 'https://medlineplus.gov/spanish/ency/article/000989.htm'],
+      mp_vasculitis_iga: [MP, 'Vasculitis por IgA (púrpura de Henoch-Schönlein)', 'https://medlineplus.gov/spanish/ency/article/000425.htm']
+    },
+    conditions: [
+      {
+        id: 'cistinuria', n: 'Cistinuria', urg: 2, prev: 0.5, dur: ['h', 'd', 'm'],
+        age: [[0, 30, 1.3]],
+        req: ['ctx_calculos_repetidos'], reqF: 0.3,
+        s: { ctx_calculos_repetidos: 3, colico_renal: 2, ctx_familia: 2, sangre_orina: 1, dolor_costado: 1 },
+        que: 'Enfermedad hereditaria en que el riñón deja pasar a la orina un aminoácido (cistina) que forma cálculos. Produce cálculos renales repetidos desde la niñez o la juventud, con cólicos, sangre en la orina e infecciones.',
+        trat: 'Tomar mucha agua todos los días (también de noche), reducir la sal, medicamentos que hacen la orina menos ácida y, si no basta, medicamentos que disuelven la cistina. Los cálculos grandes se tratan con urología.',
+        esp: 'Nefrólogo; urólogo.',
+        alarma: 'Cólico con fiebre, vómitos que no ceden u orina muy escasa: urgencia.',
+        src: ['mp_cistinuria']
+      },
+      {
+        id: 'deficit_alfa1', n: 'Déficit de alfa-1 antitripsina', urg: 2, prev: 0.5, dur: ['m'],
+        age: [[25, 55, 1.2]],
+        req: ['ctx_familia', 'ictericia'], reqF: 0.3,
+        s: { falta_aire_progresiva: 3, sibilancias: 2, ctx_familia: 2, tos_prolongada: 1, ictericia: 1, ctx_fumador: 1 },
+        que: 'Trastorno hereditario en que el cuerpo produce poca de una proteína que protege los pulmones y el hígado. Puede causar enfisema a edades tempranas (antes de los 40 a 50 años), sobre todo en fumadores, y enfermedad del hígado desde la infancia.',
+        trat: 'No fumar es lo más importante; inhaladores y rehabilitación como en la EPOC, vacunas y, en algunos casos, reemplazo de la proteína por vena. Controlar el hígado y estudiar a los familiares.',
+        esp: 'Broncopulmonar; hepatólogo.',
+        alarma: 'Falta de aire en reposo, labios morados o ictericia: consulta urgente.',
+        src: ['mp_alfa1']
+      },
+      {
+        id: 'angioedema_hereditario', n: 'Angioedema hereditario', urg: 3, prev: 0.5, dur: ['h', 'd'],
+        req: ['hinchazon_sin_ronchas'], reqF: 0.3,
+        s: { hinchazon_sin_ronchas: 3, dolor_abdominal: 2, ctx_familia: 2, hinchazon_labios: 1, vomitos: 1, ronchas: -2 },
+        que: 'Enfermedad hereditaria en que falta o funciona mal una proteína (inhibidor de C1) que regula la inflamación. Produce crisis repetidas de hinchazón de la piel, el intestino (dolor abdominal intenso) o la garganta, sin ronchas ni picazón y sin responder a los antialérgicos.',
+        trat: 'Medicamentos específicos para las crisis y para prevenirlas, indicados por un inmunólogo; los antihistamínicos y los corticoides no sirven. Llevar un plan de emergencia.',
+        esp: 'Inmunólogo.',
+        alarma: 'Hinchazón de la lengua o la garganta, voz ronca o dificultad para respirar o tragar: llama al 131.',
+        src: ['mp_angioedema']
+      },
+      {
+        id: 'fiebre_mediterranea', n: 'Fiebre mediterránea familiar', urg: 2, prev: 0.4, dur: ['d', 'm'],
+        req: ['fiebre_episodios'], reqF: 0.3,
+        s: { fiebre_episodios: 3, dolor_abdominal: 2, ctx_familia: 2, dolor_pecho_respirar: 1, articulacion_hinchada: 1, erupcion: 1 },
+        que: 'Enfermedad hereditaria que produce episodios repetidos de fiebre de 1 a 3 días con inflamación del abdomen, el tórax o las articulaciones. Es más frecuente en familias de origen mediterráneo, de Medio Oriente o de Armenia.',
+        trat: 'Colchicina todos los días, que previene las crisis y una complicación renal (amiloidosis); otros medicamentos si no responde.',
+        esp: 'Reumatólogo.',
+        alarma: 'Dolor abdominal intenso con abdomen duro, o hinchazón y orina espumosa: consulta urgente.',
+        src: ['mp_fiebre_mediterranea']
+      },
+      {
+        id: 'qt_largo', n: 'Síndrome de QT largo', urg: 4, prev: 0.5, dur: ['h', 'm'],
+        age: [[5, 40, 1.2]],
+        req: ['desmayo_esfuerzo', 'ctx_muerte_subita_familia'], reqF: 0.3,
+        s: { desmayo_esfuerzo: 3, ctx_muerte_subita_familia: 3, palpitaciones: 2, convulsion: 1, desmayo: 1 },
+        que: 'Trastorno del ritmo cardíaco, hereditario o causado por algunos medicamentos, que puede provocar arritmias rápidas y desordenadas. Se manifiesta con desmayos repentinos durante el ejercicio, emociones fuertes o ruidos bruscos, a veces convulsiones, e incluso muerte súbita.',
+        trat: 'Betabloqueadores, evitar los medicamentos que alargan el QT y algunos deportes; en casos de alto riesgo, un desfibrilador implantable. Estudiar a los familiares con electrocardiograma.',
+        esp: 'Cardiólogo (arritmias).',
+        alarma: 'Desmayo durante el ejercicio o con un susto: urgencia. Persona inconsciente que no respira: llama al 131 e inicia RCP.',
+        src: ['mayo_qt_largo']
+      },
+      {
+        id: 'brugada', n: 'Síndrome de Brugada', urg: 4, prev: 0.4, dur: ['h', 'm'], sexF: 0.3,
+        age: [[25, 55, 1.3]],
+        req: ['ctx_muerte_subita_familia'], reqF: 0.3,
+        s: { ctx_muerte_subita_familia: 3, desmayo: 3, palpitaciones: 2, fiebre: 1, desmayo_esfuerzo: -1 },
+        que: 'Trastorno hereditario del ritmo cardíaco, más frecuente en hombres adultos, que puede causar arritmias graves en reposo o durmiendo; la fiebre puede desencadenarlas. A veces se manifiesta con desmayos, palpitaciones o muerte súbita en la familia, y se sospecha por un electrocardiograma característico.',
+        trat: 'Bajar la fiebre de inmediato, evitar ciertos medicamentos y el exceso de alcohol; en personas de alto riesgo, un desfibrilador implantable. Estudiar a los familiares.',
+        esp: 'Cardiólogo (arritmias).',
+        alarma: 'Desmayo, respiración ruidosa durante el sueño o palpitaciones con mareo: urgencia. Persona inconsciente que no respira: llama al 131 e inicia RCP.',
+        src: ['mayo_brugada']
+      },
+      {
+        id: 'miocardiopatia_hipertrofica', n: 'Miocardiopatía hipertrófica', urg: 3, prev: 0.6, dur: ['m'],
+        age: [[0, 11, 0.6], [12, 45, 1.2]],
+        req: ['desmayo_esfuerzo', 'ctx_muerte_subita_familia', 'ctx_soplo'], reqF: 0.3,
+        s: { desmayo_esfuerzo: 3, dolor_pecho_esfuerzo: 2, falta_aire: 2, palpitaciones: 2, ctx_soplo: 2, ctx_muerte_subita_familia: 2 },
+        que: 'Engrosamiento anormal del músculo del corazón, casi siempre hereditario. Puede no dar síntomas o causar falta de aire, dolor de pecho y palpitaciones al esfuerzo y desmayos; es una causa de muerte súbita en deportistas jóvenes.',
+        trat: 'Medicamentos (betabloqueadores u otros), evitar deportes de competencia intensos según indicación, y a veces procedimientos para reducir el engrosamiento o un desfibrilador implantable. Estudiar a los familiares.',
+        esp: 'Cardiólogo.',
+        alarma: 'Desmayo durante el ejercicio, dolor de pecho o palpitaciones con mareo: urgencia.',
+        src: ['mp_miocardiopatia']
+      },
+      {
+        id: 'wpw', n: 'Síndrome de Wolff-Parkinson-White', alt: 'WPW', urg: 3, prev: 0.6, dur: ['h', 'm'],
+        age: [[0, 30, 1.3]],
+        s: { palpitaciones_subitas: 3, mareo: 1, desmayo: 1, ctx_familia: 1, falta_aire: 1 },
+        que: 'Hay una vía eléctrica extra en el corazón desde el nacimiento, que puede causar episodios de latidos muy rápidos que empiezan y terminan de golpe. Es una de las causas más comunes de taquicardia en niños y jóvenes; se descubre en un electrocardiograma.',
+        trat: 'Maniobras y medicamentos para cortar las crisis; la ablación por cateterismo suele curarlo de forma definitiva.',
+        esp: 'Cardiólogo (arritmias).',
+        alarma: 'Palpitaciones con desmayo, dolor de pecho o falta de aire, o que no ceden: urgencia.',
+        src: ['mp_wpw']
+      },
+      {
+        id: 'hidrocefalia', n: 'Hidrocefalia', urg: 4, prev: 0.6, dur: ['d', 's', 'm'],
+        age: [[0, 2, 1.5]],
+        req: ['cabeza_grande'], reqF: 0.3,
+        s: { cabeza_grande: 3, vomitos: 2, somnolencia: 2, irritabilidad: 1, dolor_cabeza: 1, convulsion: 1 },
+        que: 'Acumulación de líquido dentro del cráneo por un problema en la circulación del líquido cefalorraquídeo. En bebés, la cabeza crece demasiado rápido, la fontanela se abomba y aparecen vómitos, somnolencia e irritabilidad; en niños mayores y adultos, dolor de cabeza y vómitos.',
+        trat: 'Generalmente se instala una válvula (derivación) que drena el líquido hacia el abdomen, o se hace un procedimiento endoscópico. Requiere controles por neurocirugía.',
+        esp: 'Pediatra; neurocirujano.',
+        alarma: 'Bebé con vómitos, somnolencia, convulsiones o fontanela muy abombada; persona con válvula y dolor de cabeza, vómitos o fiebre: urgencia.',
+        src: ['mp_hidrocefalia']
+      },
+      {
+        id: 'craneosinostosis', n: 'Craneosinostosis', urg: 2, prev: 0.6, dur: ['m'],
+        ageRange: [0, 5],
+        req: ['craneo_deformado'], reqF: 0.3,
+        s: { craneo_deformado: 3, cabeza_grande: -1 },
+        que: 'Defecto de nacimiento en que una o más uniones (suturas) entre los huesos del cráneo se cierran antes de tiempo, lo que deforma la cabeza (alargada, triangular o asimétrica) y se palpa una cresta dura. La mayoría de los niños son sanos y con inteligencia normal.',
+        trat: 'Cirugía en los primeros meses o años para dar forma al cráneo y espacio al cerebro, a veces con cascos ortopédicos después.',
+        esp: 'Pediatra; neurocirujano infantil.',
+        alarma: 'Vómitos, somnolencia o irritabilidad marcada (aumento de presión en el cráneo): urgencia.',
+        src: ['mp_craneosinostosis']
+      },
+      {
+        id: 'hirschsprung', n: 'Enfermedad de Hirschsprung', urg: 3, prev: 0.5, dur: ['d', 'm'],
+        ageRange: [0, 18], age: [[0, 2, 1.5]],
+        req: ['no_meconio', 'hinchazon_abdominal'], reqF: 0.3,
+        s: { no_meconio: 3, estrenimiento: 3, hinchazon_abdominal: 2, vomitos: 2, poco_crecimiento: 1 },
+        que: 'Enfermedad presente al nacer en que a una parte del intestino grueso le faltan las neuronas que lo mueven, lo que produce una obstrucción. El recién nacido no elimina el meconio en las primeras 48 horas, se hincha la guata y vomita; en niños mayores, estreñimiento grave desde siempre.',
+        trat: 'Cirugía para sacar la parte del intestino sin neuronas y unir la parte sana; a veces en dos tiempos.',
+        esp: 'Pediatra; cirujano infantil.',
+        alarma: 'Guata muy hinchada, vómitos verdes, fiebre o diarrea con mal olor (enterocolitis): urgencia.',
+        src: ['mp_hirschsprung']
+      },
+      {
+        id: 'atresia_biliar', n: 'Atresia biliar', urg: 4, prev: 0.5, dur: ['s'],
+        ageRange: [0, 1],
+        s: { acolia: 3, ictericia: 3, coluria: 2, poco_crecimiento: 1, hinchazon_abdominal: 1 },
+        que: 'Obstrucción de los conductos que llevan la bilis del hígado al intestino en un lactante. Entre las 2 y 8 semanas de vida aparece ictericia que no se va, deposiciones muy claras (color masilla) y orina oscura. Sin tratamiento lleva a cirrosis.',
+        trat: 'Cirugía (operación de Kasai) idealmente antes de los 2 meses de vida; muchos niños requieren después un trasplante de hígado.',
+        esp: 'Pediatra; gastroenterólogo y cirujano infantil.',
+        alarma: 'Recién nacido con ictericia después de las 2 semanas y deposiciones blancas o claras: consulta urgente.',
+        src: ['mp_atresia_biliar']
+      },
+      {
+        id: 'cardiopatia_congenita', n: 'Cardiopatía congénita', alt: 'Malformación del corazón de nacimiento', urg: 3, prev: 0.7, dur: ['d', 's', 'm'],
+        ageRange: [0, 18], age: [[0, 1, 1.5]],
+        req: ['cansancio_mamar', 'labios_azules', 'ctx_soplo'], reqF: 0.3,
+        s: { cansancio_mamar: 3, ctx_soplo: 2, poco_crecimiento: 2, labios_azules: 2, respiracion_rapida: 1, sudoracion: 1 },
+        que: 'Malformaciones del corazón presentes al nacer, como comunicaciones entre cavidades o válvulas estrechas. Algunas no dan síntomas (solo un soplo) y otras producen cansancio o sudor al mamar, respiración rápida, color azulado o poco aumento de peso.',
+        trat: 'Según el tipo: controles, medicamentos, cateterismo o cirugía, muchas veces en los primeros meses de vida.',
+        ges: 'Las cardiopatías congénitas operables en menores de 15 años están cubiertas por GES.',
+        esp: 'Pediatra; cardiólogo infantil.',
+        alarma: 'Labios o piel azulada, dificultad para respirar o bebé que no se alimenta: urgencia.',
+        src: ['mp_cardiopatia_congenita_t', 'minsal_ges']
+      },
+      {
+        id: 'inmunodeficiencia_comun', n: 'Inmunodeficiencia común variable', urg: 2, prev: 0.5, dur: ['m'],
+        req: ['infecciones_repetidas'], reqF: 0.3,
+        s: { infecciones_repetidas: 3, tos_flema: 1, diarrea: 1, ctx_familia: 1 },
+        que: 'Trastorno del sistema inmune en que el cuerpo produce pocos anticuerpos. Causa infecciones repetidas de los oídos, los senos nasales, los pulmones (neumonías) y el intestino; puede empezar en la niñez o en la adultez y asociarse a enfermedades autoinmunes.',
+        trat: 'Reemplazo de anticuerpos (inmunoglobulina) por vena o bajo la piel de por vida, antibióticos para las infecciones y controles en inmunología.',
+        esp: 'Inmunólogo.',
+        alarma: 'Fiebre alta, neumonía o infección grave: consulta urgente.',
+        src: ['mayo_idcv']
+      },
+      {
+        id: 'miastenia', n: 'Miastenia gravis', urg: 3, prev: 0.6, dur: ['s', 'm'],
+        req: ['debilidad_fluctuante', 'vision_doble_cansancio'], reqF: 0.3,
+        s: { debilidad_fluctuante: 3, parpado_caido: 2, vision_doble_cansancio: 2, disfagia: 1, habla_arrastrada: 1 },
+        que: 'Enfermedad autoinmune en que fallan las señales entre los nervios y los músculos. Produce debilidad que empeora con el uso y mejora con el reposo: párpados caídos, visión doble, dificultad para masticar, tragar o hablar, y debilidad de brazos y piernas. A veces se asocia a un tumor del timo.',
+        trat: 'Medicamentos que mejoran la transmisión nerviosa, inmunosupresores y, en algunos casos, cirugía del timo. En crisis, tratamientos en el hospital.',
+        esp: 'Neurólogo.',
+        alarma: 'Dificultad para respirar o para tragar: urgencia (crisis miasténica).',
+        src: ['mp_miastenia']
+      },
+      {
+        id: 'dermatomiositis', n: 'Dermatomiositis y polimiositis', urg: 3, prev: 0.5, dur: ['s', 'm'],
+        req: ['rash_parpados_nudillos', 'debilidad_progresiva'], reqF: 0.3,
+        s: { debilidad_progresiva: 3, rash_parpados_nudillos: 3, dolor_muscular: 1, disfagia: 1, fatiga: 1, falta_aire: 1 },
+        que: 'Enfermedades inflamatorias de los músculos que producen debilidad progresiva de hombros, brazos, caderas y muslos (cuesta subir escaleras o levantar los brazos). En la dermatomiositis hay además una erupción violácea en los párpados y rojiza sobre los nudillos. En adultos pueden asociarse a cáncer.',
+        trat: 'Corticoides e inmunosupresores, kinesiología y protección solar para la piel. Se buscan tumores asociados en adultos.',
+        esp: 'Reumatólogo o neurólogo; dermatólogo.',
+        alarma: 'Dificultad para tragar o respirar: urgencia.',
+        src: ['mp_dermatomiositis', 'mp_polimiositis']
+      },
+      {
+        id: 'esclerodermia', n: 'Esclerodermia', alt: 'Esclerosis sistémica', urg: 2, prev: 0.5, dur: ['m'], sexF: 1.4,
+        age: [[30, 55, 1.2]],
+        req: ['piel_dura'], reqF: 0.3,
+        s: { piel_dura: 3, dedos_blancos_frio: 2, disfagia: 1, ardor_pecho: 1, falta_aire: 1, dolor_articular: 1 },
+        que: 'Enfermedad autoinmune en que se acumula tejido fibroso en la piel y, en la forma sistémica, en el esófago, los pulmones, el corazón y los riñones. Casi siempre empieza con fenómeno de Raynaud y luego la piel de dedos, manos y cara se engrosa y endurece.',
+        trat: 'No tiene cura: medicamentos según el órgano afectado (para la circulación, el reflujo, la presión y la inflamación del pulmón) e inmunosupresores, con controles periódicos.',
+        esp: 'Reumatólogo.',
+        alarma: 'Falta de aire que aumenta, presión muy alta con dolor de cabeza o heridas en los dedos: consulta urgente.',
+        src: ['mp_esclerodermia']
+      },
+      {
+        id: 'sjogren', n: 'Síndrome de Sjögren', urg: 2, prev: 0.7, dur: ['m'], sexF: 1.5,
+        age: [[40, 65, 1.2]],
+        req: ['boca_y_ojos_secos'], reqF: 0.4,
+        s: { boca_y_ojos_secos: 3, sed: 2, arena_ojos: 2, dolor_articular: 1, hinchazon_parotida: 1, fatiga: 1 },
+        que: 'Enfermedad autoinmune que daña las glándulas que producen lágrimas y saliva: ojos secos con sensación de arena y boca seca, con caries y dificultad para tragar alimentos secos. Puede afectar articulaciones, piel, pulmones y nervios, y es más frecuente en mujeres de 40 a 50 años.',
+        trat: 'Lágrimas y saliva artificiales, medicamentos que estimulan la saliva, buena higiene dental y, si hay compromiso de otros órganos, inmunosupresores.',
+        esp: 'Reumatólogo; oftalmólogo; dentista.',
+        alarma: 'Ganglios o glándulas salivales que crecen mucho y no bajan: consulta pronto.',
+        src: ['mp_sjogren']
+      },
+      {
+        id: 'arteritis_temporal', n: 'Arteritis de células gigantes', alt: 'Arteritis temporal', urg: 4, prev: 0.7, dur: ['d', 's'],
+        ageRange: [50, 200], age: [[70, 200, 1.3]],
+        s: { dolor_sien: 3, vision_subita: 2, dolor_mandibula: 1, fiebre: 1, fatiga: 1, rigidez_matinal: 1, perdida_peso: 1 },
+        que: 'Inflamación de arterias medianas y grandes, sobre todo las de la sien, en personas mayores de 50 años. Produce un dolor de cabeza nuevo en la sien, cuero cabelludo sensible, dolor de mandíbula al masticar, cansancio y fiebre; puede causar ceguera súbita.',
+        trat: 'Corticoides en dosis altas de inmediato, incluso antes de confirmar con biopsia, por 1 a 2 años o más; a veces otros medicamentos.',
+        esp: 'Servicio de urgencia o médico el mismo día; reumatólogo.',
+        alarma: 'Pérdida o disminución brusca de la visión: urgencia inmediata.',
+        src: ['mp_arteritis_celulas_gigantes']
+      },
+      {
+        id: 'takayasu', n: 'Arteritis de Takayasu', urg: 3, prev: 0.4, dur: ['m'], sexF: 1.6,
+        age: [[10, 40, 1.3]],
+        req: ['pulso_debil_brazo'], reqF: 0.3,
+        s: { pulso_debil_brazo: 3, mareo: 1, fatiga: 1, febricula: 1, presion_alta_cronica: 1, dolor_cuello: 1 },
+        que: 'Inflamación de la aorta y sus ramas principales, más frecuente en mujeres jóvenes. Las arterias se estrechan: pulso débil o ausente en un brazo, presión distinta entre los brazos, dolor de brazos al usarlos, mareos y presión alta.',
+        trat: 'Corticoides e inmunosupresores; a veces angioplastía o cirugía de las arterias estrechas.',
+        esp: 'Reumatólogo; cirujano vascular.',
+        alarma: 'Pérdida de visión, desmayo, dolor de pecho o debilidad de un lado del cuerpo: llama al 131.',
+        src: ['mp_takayasu']
+      },
+      {
+        id: 'granulomatosis_poliangitis', n: 'Granulomatosis con poliangitis', alt: 'Granulomatosis de Wegener', urg: 3, prev: 0.4, dur: ['s', 'm'],
+        req: ['costras_nariz', 'sangre_orina'], reqF: 0.3,
+        s: { costras_nariz: 3, sangrado_nariz: 2, tos_sangre: 2, sangre_orina: 2, dolor_cara: 1, fatiga: 1, fiebre: 1 },
+        que: 'Vasculitis poco frecuente que afecta sobre todo la nariz, los senos paranasales, los oídos, los pulmones y los riñones. Produce costras y sangrado nasal persistentes, sinusitis que no mejora, tos con sangre y sangre en la orina.',
+        trat: 'Corticoides e inmunosupresores potentes que han cambiado el pronóstico; tratamiento de mantención por años.',
+        esp: 'Reumatólogo; nefrólogo; otorrino.',
+        alarma: 'Tos con sangre abundante, falta de aire u orina escasa: urgencia.',
+        src: ['mp_gpa']
+      },
+      {
+        id: 'poliarteritis_nodosa', n: 'Poliarteritis nodosa', urg: 3, prev: 0.4, dur: ['s', 'm'],
+        req: ['livedo'], reqF: 0.3,
+        s: { livedo: 3, dolor_muscular: 2, perdida_peso: 2, fiebre: 1, pie_caido: 1, dolor_abdominal: 1, presion_alta_cronica: 1 },
+        que: 'Inflamación de arterias medianas que puede afectar la piel, los nervios, el intestino, los riñones y el corazón. Produce fiebre, baja de peso, dolores musculares, manchas violáceas en red o nódulos en la piel, debilidad de un pie o una mano y dolor abdominal. Se asocia a veces a la hepatitis B.',
+        trat: 'Corticoides e inmunosupresores; si se asocia a hepatitis B, antivirales.',
+        esp: 'Reumatólogo.',
+        alarma: 'Dolor abdominal intenso, debilidad súbita de un pie o una mano o dolor de pecho: urgencia.',
+        src: ['mp_vasculitis_necrosante']
+      },
+      {
+        id: 'behcet', n: 'Enfermedad de Behçet', urg: 2, prev: 0.55, dur: ['s', 'm'],
+        req: ['aftas_repetidas_genitales'], reqF: 0.3,
+        s: { aftas_repetidas_genitales: 3, llagas_boca: 2, ojo_rojo: 1, articulacion_hinchada: 1 },
+        que: 'Vasculitis crónica que produce aftas dolorosas repetidas en la boca y los genitales, inflamación de los ojos (uveítis), lesiones de la piel y dolor articular. Es más frecuente en personas del Mediterráneo, Medio Oriente y Asia.',
+        trat: 'Colchicina, corticoides, cremas para las aftas e inmunosupresores si hay compromiso de los ojos o de otros órganos.',
+        esp: 'Reumatólogo; oftalmólogo.',
+        alarma: 'Ojo rojo con dolor o baja de la visión, o dolor de cabeza intenso: urgencia.',
+        src: ['mp_behcet_t']
+      },
+      {
+        id: 'kawasaki', n: 'Enfermedad de Kawasaki', urg: 4, prev: 0.6, dur: ['d'],
+        ageRange: [0, 12], age: [[0, 5, 1.4]],
+        req: ['fiebre_5_dias'], reqF: 0.3,
+        s: { fiebre_5_dias: 3, ojo_rojo: 2, labios_rojos_lengua_fresa: 2, erupcion: 2, hinchazon_cara_manos: 1, ganglios: 1, laganas: -1 },
+        que: 'Inflamación de los vasos sanguíneos que afecta sobre todo a niños menores de 5 años. Produce fiebre alta por 5 días o más, ojos rojos sin lagañas, labios rojos y agrietados con lengua color frutilla, erupción, manos y pies hinchados y un ganglio grande en el cuello. Puede dañar las arterias del corazón.',
+        trat: 'Requiere hospitalización: inmunoglobulina por vena y aspirina indicadas por el médico, idealmente en los primeros 10 días, con controles del corazón (ecocardiograma).',
+        esp: 'Servicio de urgencia; pediatra; cardiólogo infantil.',
+        alarma: 'Niño con fiebre de 5 días o más con ojos rojos o erupción: consulta urgente.',
+        src: ['mp_kawasaki']
+      },
+      {
+        id: 'purpura_hsp', n: 'Púrpura de Schönlein-Henoch', alt: 'Vasculitis por IgA', urg: 3, prev: 0.7, dur: ['d', 's'],
+        age: [[3, 15, 1.4]],
+        req: ['purpura_piernas'], reqF: 0.3,
+        s: { purpura_piernas: 3, dolor_articular: 2, dolor_abdominal: 2, sangre_orina: 1, petequias: 1, hinchazon_cara_manos: 1 },
+        que: 'La vasculitis más frecuente en niños de 3 a 15 años, a menudo después de una infección respiratoria. Produce manchas moradas en relieve en piernas y glúteos, dolor e hinchazón de las articulaciones, dolor abdominal y, a veces, daño renal (sangre en la orina).',
+        trat: 'Reposo, analgésicos y controles de la orina y la presión por varios meses; corticoides en algunos casos. Suele mejorar sola en semanas.',
+        esp: 'Pediatra; nefrólogo infantil si hay compromiso renal.',
+        alarma: 'Dolor abdominal intenso, vómitos, deposiciones con sangre, orina oscura o escasa, o manchas con fiebre y decaimiento: urgencia.',
+        src: ['mp_vasculitis_iga']
+      }
+    ]
+  });
 })();

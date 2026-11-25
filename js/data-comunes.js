@@ -592,7 +592,7 @@
       {
         id: 'ptosis', n: 'Párpado caído', alt: 'Ptosis palpebral', urg: 2, prev: 0.95, dur: ['s', 'm'],
         age: [[60, 200, 1.3]],
-        s: { parpado_caido: 3, vision_borrosa: 1, debilidad_progresiva: -1, miotonia: -1 },
+        s: { parpado_caido: 3, vision_borrosa: 1, debilidad_progresiva: -1, miotonia: -1, debilidad_fluctuante: -1, vision_doble_cansancio: -1 },
         que: 'El párpado superior cae más de lo normal. En adultos mayores suele deberse a que el músculo se estira con la edad o tras usar lentes de contacto por años; también puede venir de nacimiento o por enfermedades de nervios o músculos.',
         trat: 'Si tapa la visión o molesta, se corrige con cirugía del párpado. En niños es importante tratarlo para evitar el ojo perezoso. Si es reciente, buscar la causa.',
         esp: 'Oftalmólogo; neurólogo si apareció de golpe o varía durante el día.',
@@ -607,6 +607,316 @@
         esp: 'Médico general; broncopulmonar.',
         alarma: 'Tos con sangre abundante, fiebre alta o falta de aire que aumenta: urgencia.',
         src: ['mp_bronquiectasia']
+      }
+    ]
+  });
+
+  // ── Tanda 3 (noviembre 2026): pulmones, corazón, circulación y nervios
+  D.addPack({
+    symptoms: [
+      ['falta_aire_progresiva', 'Falta de aire que aumenta de a poco en días o semanas', 'respiracion', 2, ['ahogo progresivo', 'cada vez me falta más el aire']],
+      ['desmayo_esfuerzo', 'Desmayo o casi desmayo al hacer ejercicio o esfuerzo', 'corazon', 3, ['síncope de esfuerzo', 'me desmayé corriendo']],
+      ['pulso_lento', 'Pulso lento (menos de 50 por minuto) medido en reposo', 'corazon', 2, ['bradicardia', 'pulso bajo', 'corazón lento']],
+      ['latido_salteado', 'Sensación de latido que se salta o de un golpe fuerte aislado en el pecho', 'corazon', 1, ['extrasístoles', 'el corazón se salta un latido', 'vuelco en el corazón']],
+      ['dedos_blancos_frio', 'Dedos que se ponen blancos o morados con el frío o el estrés y luego rojos', 'piel', 1, ['Raynaud', 'dedos blancos', 'dedos morados con el frío']],
+      ['cordon_vena', 'Vena superficial dura, roja y dolorosa, como un cordón', 'corazon', 1, ['flebitis', 'tromboflebitis', 'vena inflamada']],
+      ['herida_pierna', 'Herida en la pierna, cerca del tobillo, que no cicatriza', 'piel', 2, ['úlcera varicosa', 'úlcera venosa', 'herida que no sana']],
+      ['hinchazon_un_brazo_pierna', 'Hinchazón persistente de un brazo o una pierna que no se va al descansar', 'corazon', 1, ['linfedema', 'brazo hinchado', 'pierna hinchada']],
+      ['taquicardia_pararse', 'El pulso sube mucho (más de 30 latidos) al ponerte de pie', 'corazon', 1, ['POTS', 'taquicardia al pararse']],
+      ['dolor_nuca_punzante', 'Dolor punzante o como corriente en la nuca que sube por detrás de la cabeza', 'cabeza', 1, ['neuralgia occipital', 'dolor en la nuca']],
+      ['dolor_quemante_piel', 'Dolor quemante o como corriente en una zona de la piel, que aumenta al rozarla', 'piel', 1, ['dolor neuropático', 'ardor en la piel', 'alodinia']],
+      ['temblor_accion', 'Temblor de las manos al usarlas (escribir, beber), que mejora en reposo', 'cabeza', 1, ['temblor esencial', 'me tiemblan las manos al escribir']],
+      ['hormigueo_menique', 'Hormigueo o adormecimiento del meñique y parte del anular', 'musculo', 1, ['nervio cubital', 'túnel cubital', 'meñique dormido']],
+      ['ardor_muslo', 'Ardor, hormigueo o adormecimiento en la cara externa de un muslo', 'musculo', 1, ['meralgia parestésica', 'muslo dormido']],
+      ['dolor_brazo_cuello', 'Dolor que baja del cuello a un brazo, con hormigueo en la mano', 'musculo', 2, ['hernia cervical', 'radiculopatía cervical', 'cervicobraquialgia']],
+      ['dolor_piernas_caminar', 'Dolor o adormecimiento de las piernas al caminar o estar de pie, que alivia al sentarte o inclinarte', 'musculo', 2, ['canal lumbar estrecho', 'estenosis lumbar', 'claudicación neurógena']],
+      ['malestar_post_esfuerzo', 'Cansancio que empeora mucho después de un esfuerzo y dura días', 'general', 1, ['fatiga crónica', 'crash después del ejercicio']],
+      ['tics', 'Movimientos o sonidos repetitivos y bruscos que cuesta controlar', 'cabeza', 1, ['tics', 'Tourette', 'tic nervioso']],
+      ['desconexiones', 'Episodios breves de mirada fija y desconexión (segundos), muchas veces al día', 'cabeza', 2, ['ausencias', 'se queda pegado', 'crisis de ausencia']],
+      ['ctx_ejercicio', 'Los síntomas aparecen durante o justo después de hacer ejercicio', 'contexto', 0, ['al hacer deporte', 'al correr']],
+      ['ctx_soplo', 'Te han dicho que tienes un soplo en el corazón', 'contexto', 0, ['soplo cardíaco', 'soplo']],
+      ['ctx_estimulantes', 'Tomas mucho café, bebidas energéticas, alcohol o fumas', 'contexto', 0, ['cafeína', 'energéticas', 'estimulantes']],
+      ['ctx_cirugia_ganglios', 'Cirugía o radioterapia con extracción de ganglios (por ejemplo, por cáncer de mama)', 'contexto', 0, ['vaciamiento ganglionar', 'cirugía de cáncer']],
+      ['ctx_analgesicos_frecuentes', 'Tomas analgésicos para el dolor de cabeza 10 o más días al mes', 'contexto', 0, ['abuso de analgésicos', 'tomo pastillas para el dolor todos los días']],
+      ['ctx_herpes_zoster', 'Tuviste herpes zóster («culebrilla») en esa zona', 'contexto', 0, ['culebrilla', 'herpes zóster previo']],
+      ['ctx_anticoagulantes', 'Tomas anticoagulantes o aspirina a diario', 'contexto', 0, ['anticoagulante', 'tomo aspirina', 'acenocumarol']]
+    ],
+    sources: {
+      mp_derrame_paraneumonico: [MP, 'Derrame pleural paraneumónico', 'https://medlineplus.gov/spanish/ency/article/000139.htm'],
+      mp_pleura_t: [MP, 'Enfermedades de la pleura (pleuresía y derrame pleural)', 'https://medlineplus.gov/spanish/pleuraldisorders.html'],
+      mp_asma_ejercicio: [MP, 'El ejercicio y el asma en la escuela', 'https://medlineplus.gov/spanish/ency/patientinstructions/000037.htm'],
+      mp_micoplasma: [MP, 'Neumonía por micoplasma', 'https://medlineplus.gov/spanish/ency/article/000082.htm'],
+      mp_neumonia_atipica: [MP, 'Neumonía atípica', 'https://medlineplus.gov/spanish/ency/article/000079.htm'],
+      mp_estenosis_aortica: [MP, 'Estenosis aórtica', 'https://medlineplus.gov/spanish/ency/article/000178.htm'],
+      mp_insuf_mitral: [MP, 'Insuficiencia de la válvula mitral', 'https://medlineplus.gov/spanish/ency/article/000176.htm'],
+      mp_valvulas_t: [MP, 'Enfermedades de las válvulas del corazón', 'https://medlineplus.gov/spanish/heartvalvediseases.html'],
+      mayo_bradicardia: [MAYO, 'Bradicardia', 'https://www.mayoclinic.org/es/diseases-conditions/bradycardia/symptoms-causes/syc-20355474'],
+      mayo_extrasistoles: [MAYO, 'Contracciones ventriculares prematuras', 'https://www.mayoclinic.org/es/diseases-conditions/premature-ventricular-contractions/symptoms-causes/syc-20376757'],
+      mp_raynaud: [MP, 'Fenómeno de Raynaud', 'https://medlineplus.gov/spanish/ency/article/000412.htm'],
+      mayo_tromboflebitis: [MAYO, 'Tromboflebitis', 'https://www.mayoclinic.org/es/diseases-conditions/thrombophlebitis/symptoms-causes/syc-20354607'],
+      mp_obstruccion_linfatica: [MP, 'Obstrucción linfática (linfedema)', 'https://medlineplus.gov/spanish/ency/article/001117.htm'],
+      mp_linfedema_t: [MP, 'Linfedema', 'https://medlineplus.gov/spanish/lymphedema.html'],
+      mayo_pots: [MAYO, 'Síndrome de taquicardia ortostática postural en adolescentes (en inglés)', 'https://www.mayoclinic.org/medical-professionals/endocrinology/news/postural-orthostatic-tachycardia-syndrome-and-chronic-fatigue-in-adolescents/mac-20430815'],
+      mayo_cefalea_abuso: [MAYO, 'Cefalea por abuso de medicamentos', 'https://www.mayoclinic.org/es/diseases-conditions/medication-overuse-headache/diagnosis-treatment/drc-20377089'],
+      mp_neuralgia: [MP, 'Neuralgia', 'https://medlineplus.gov/spanish/ency/article/001407.htm'],
+      mp_neuralgia_posherpetica: [MP, 'Neuralgia posherpética: cuidados posteriores', 'https://medlineplus.gov/spanish/ency/patientinstructions/000555.htm'],
+      mp_temblor_esencial: [MP, 'Temblor esencial', 'https://medlineplus.gov/spanish/ency/article/000762.htm'],
+      mp_nervio_cubital: [MP, 'Disfunción del nervio cubital', 'https://medlineplus.gov/spanish/ency/article/000789.htm'],
+      mp_mononeuropatia: [MP, 'Mononeuropatía', 'https://medlineplus.gov/spanish/ency/article/000780.htm'],
+      mp_espondilosis_cervical: [MP, 'Espondilosis cervical', 'https://medlineplus.gov/spanish/ency/article/000436.htm'],
+      mp_dolor_cuello: [MP, 'Dolor de cuello', 'https://medlineplus.gov/spanish/ency/article/003025.htm'],
+      mp_estenosis_raquidea: [MP, 'Estenosis raquídea', 'https://medlineplus.gov/spanish/ency/article/000441.htm'],
+      mp_hematoma_subdural: [MP, 'Hematoma subdural', 'https://medlineplus.gov/spanish/ency/article/000713.htm'],
+      mp_hematoma_subdural_cronico: [MP, 'Hematoma subdural crónico', 'https://medlineplus.gov/spanish/ency/article/000781.htm'],
+      mp_fatiga_cronica: [MP, 'Encefalomielitis miálgica / síndrome de fatiga crónica', 'https://medlineplus.gov/spanish/ency/article/001244.htm'],
+      mp_tourette: [MP, 'Síndrome de la Tourette', 'https://medlineplus.gov/spanish/ency/article/000733.htm'],
+      mp_tics: [MP, 'Tics faciales', 'https://medlineplus.gov/spanish/ency/article/001410.htm']
+    },
+    conditions: [
+      {
+        id: 'derrame_pleural', n: 'Derrame pleural', alt: 'Líquido alrededor del pulmón', urg: 3, prev: 0.9, dur: ['d', 's'],
+        s: { falta_aire_progresiva: 3, falta_aire: 2, dolor_pecho_respirar: 2, tos_seca: 1, fiebre: 1, hinchazon_piernas: 1 },
+        que: 'Acumulación de líquido entre el pulmón y la pared del tórax. Se debe con más frecuencia a insuficiencia cardíaca, neumonía, cáncer o embolia pulmonar. Produce falta de aire que aumenta, dolor al respirar hondo y tos seca.',
+        trat: 'Tratar la causa (por ejemplo, antibióticos si viene de una neumonía o diuréticos si es por el corazón). Si es grande o hay infección, se saca el líquido con una aguja (toracocentesis) o con un tubo.',
+        esp: 'Médico general; broncopulmonar.',
+        alarma: 'Falta de aire en reposo, labios morados, fiebre alta o dolor de pecho intenso: urgencia.',
+        src: ['mp_pleura_t', 'mp_derrame_paraneumonico']
+      },
+      {
+        id: 'pleuritis', n: 'Pleuritis', alt: 'Pleuresía', urg: 3, prev: 0.9, dur: ['d', 's'],
+        s: { dolor_pecho_respirar: 3, tos_seca: 1, fiebre: 1, ctx_infeccion_reciente: 1, dolor_pecho_presion: -1 },
+        que: 'Inflamación de la pleura, la membrana que rodea los pulmones. Produce un dolor punzante en el pecho que aumenta al respirar hondo, toser o estornudar. La causa más frecuente es una infección viral, pero también aparece con neumonía, embolia pulmonar o enfermedades autoinmunes.',
+        trat: 'Antiinflamatorios y reposo; tratar la causa. Un médico debe descartar neumonía, embolia o neumotórax, sobre todo si hay falta de aire.',
+        esp: 'Médico general.',
+        alarma: 'Dolor de pecho con falta de aire, tos con sangre, pierna hinchada o fiebre alta: urgencia.',
+        src: ['mp_pleura_t']
+      },
+      {
+        id: 'asma_ejercicio', n: 'Asma inducida por ejercicio', alt: 'Broncoconstricción por ejercicio', urg: 2, prev: 1.0, dur: ['h', 's', 'm'],
+        req: ['ctx_ejercicio'], reqF: 0.4,
+        s: { ctx_ejercicio: 3, sibilancias: 2, falta_aire: 2, tos_seca: 2, dolor_pecho_presion: -1 },
+        que: 'Estrechamiento de los bronquios que aparece durante o poco después del ejercicio, sobre todo con aire frío y seco. Produce tos, silbido al respirar, opresión en el pecho y falta de aire. Es frecuente en personas con asma o alergias, pero puede aparecer sola.',
+        trat: 'Calentar antes del ejercicio y usar el inhalador de alivio rápido (salbutamol) unos 15 minutos antes, según indicación médica; tratar el asma de base si existe. Con buen control se puede hacer deporte sin problemas.',
+        esp: 'Médico general o pediatra; broncopulmonar.',
+        alarma: 'Ahogo que no mejora con el inhalador, labios morados o dificultad para hablar: llama al 131.',
+        src: ['mp_asma_ejercicio']
+      },
+      {
+        id: 'neumonia_atipica', n: 'Neumonía atípica', alt: 'Neumonía por micoplasma («neumonía caminante»)', urg: 2, prev: 0.95, dur: ['d', 's'],
+        age: [[5, 40, 1.3]],
+        s: { tos_seca: 3, febricula: 2, fatiga: 2, dolor_garganta: 1, dolor_cabeza: 1, tos_prolongada: 1, falta_aire: 1 },
+        que: 'Neumonía causada por bacterias como Mycoplasma pneumoniae, frecuente en niños en edad escolar y adultos jóvenes. Los síntomas suelen ser más leves que en la neumonía típica: tos seca persistente, fiebre baja, cansancio, dolor de garganta y de cabeza, que se prolongan por semanas.',
+        trat: 'Antibióticos indicados por un médico (macrólidos como la azitromicina u otros), reposo y líquidos. La tos puede durar varias semanas.',
+        esp: 'Médico general o pediatra.',
+        alarma: 'Falta de aire, dolor al respirar, fiebre alta persistente o decaimiento: consulta pronto.',
+        src: ['mp_micoplasma', 'mp_neumonia_atipica']
+      },
+      {
+        id: 'estenosis_aortica', n: 'Estenosis aórtica', alt: 'Válvula aórtica estrecha', urg: 3, prev: 0.9, dur: ['s', 'm'],
+        age: [[0, 49, 0.3], [65, 200, 1.4]],
+        s: { ctx_soplo: 3, dolor_pecho_esfuerzo: 2, falta_aire: 2, desmayo_esfuerzo: 2, fatiga: 1, palpitaciones: 1 },
+        que: 'La válvula aórtica, que deja salir la sangre del corazón al cuerpo, se estrecha y se endurece con la edad. Durante años no da síntomas (solo un soplo); luego aparecen dolor de pecho y falta de aire al esfuerzo, cansancio y desmayos.',
+        trat: 'Controles con ecocardiograma; cuando aparecen síntomas o la estrechez es grave, se reemplaza la válvula con cirugía o por cateterismo (TAVI).',
+        ges: 'El tratamiento quirúrgico de las lesiones crónicas de la válvula aórtica en personas de 15 años y más está cubierto por GES.',
+        esp: 'Médico general; cardiólogo.',
+        alarma: 'Desmayo, dolor de pecho o falta de aire con esfuerzos pequeños: consulta urgente; si el dolor no cede, llama al 131.',
+        src: ['mp_estenosis_aortica', 'minsal_ges']
+      },
+      {
+        id: 'valvula_mitral', n: 'Prolapso o insuficiencia de la válvula mitral', urg: 2, prev: 0.95, dur: ['m'],
+        s: { ctx_soplo: 3, palpitaciones: 2, falta_aire: 1, fatiga: 1, ortopnea: 1, dolor_pecho_presion: 1 },
+        que: 'La válvula mitral no cierra bien y deja que parte de la sangre se devuelva. El prolapso es frecuente y muchas veces solo da un soplo o palpitaciones; la insuficiencia importante produce cansancio, falta de aire al esfuerzo o al acostarse y arritmias.',
+        trat: 'Si es leve, solo controles. Medicamentos para los síntomas y, si la insuficiencia es grave, reparación o reemplazo de la válvula.',
+        ges: 'El tratamiento quirúrgico de las lesiones crónicas de las válvulas mitral y tricúspide en personas de 15 años y más está cubierto por GES.',
+        esp: 'Médico general; cardiólogo.',
+        alarma: 'Falta de aire que empeora, palpitaciones con mareo o desmayo: consulta urgente.',
+        src: ['mp_insuf_mitral', 'mp_valvulas_t', 'minsal_ges']
+      },
+      {
+        id: 'bradicardia', n: 'Bradicardia o bloqueo cardíaco', alt: 'Corazón demasiado lento', urg: 3, prev: 0.9, dur: ['d', 's', 'm'],
+        age: [[0, 49, 0.4], [65, 200, 1.3]],
+        s: { pulso_lento: 3, mareo: 2, fatiga: 2, desmayo: 2, falta_aire: 1, confusion: 1 },
+        que: 'El corazón late demasiado lento (menos de 60 por minuto) por un problema en su sistema eléctrico, que es más frecuente con la edad, o por medicamentos (como algunos para la presión o el corazón). Puede no dar síntomas o causar cansancio, mareos, falta de aire o desmayos.',
+        trat: 'Revisar y ajustar los medicamentos que la causan y tratar problemas como el hipotiroidismo. Si da síntomas o hay un bloqueo importante, se implanta un marcapasos.',
+        ges: 'Los trastornos de generación del impulso y conducción que requieren marcapaso, en personas de 15 años y más, están cubiertos por GES.',
+        esp: 'Médico general; cardiólogo.',
+        alarma: 'Desmayo, dolor de pecho, confusión o falta de aire con el pulso lento: llama al 131.',
+        src: ['mayo_bradicardia', 'minsal_ges']
+      },
+      {
+        id: 'extrasistoles', n: 'Extrasístoles', alt: 'Latidos prematuros', urg: 2, prev: 1.0, dur: ['d', 's', 'm'],
+        s: { latido_salteado: 3, palpitaciones: 2, ctx_estimulantes: 1, ansiedad: 1, palpitaciones_subitas: -1 },
+        que: 'Latidos que llegan antes de tiempo y se sienten como un salto, un vuelco o un golpe en el pecho. Son muy frecuentes y casi siempre benignos; aumentan con la cafeína, el alcohol, el tabaco, el estrés y la falta de sueño.',
+        trat: 'Si el corazón es sano, suele bastar con reducir los estimulantes y el estrés. El médico puede pedir un electrocardiograma o un Holter; si son muy frecuentes o molestas, hay medicamentos o ablación.',
+        esp: 'Médico general; cardiólogo.',
+        alarma: 'Palpitaciones con desmayo, dolor de pecho o falta de aire: urgencia.',
+        src: ['mayo_extrasistoles']
+      },
+      {
+        id: 'raynaud', n: 'Fenómeno de Raynaud', urg: 2, prev: 1.0, dur: ['m'], sexF: 1.3,
+        s: { dedos_blancos_frio: 3, ctx_frio: 2, hormigueo: 1, piel_dura: -1 },
+        que: 'Los vasos de los dedos se cierran en exceso con el frío o el estrés: los dedos se ponen blancos, luego morados y al recuperarse rojos, con dolor u hormigueo. Suele ser benigno (primario), pero a veces se asocia a enfermedades como la esclerodermia o el lupus.',
+        trat: 'Abrigar manos y pies, evitar cambios bruscos de temperatura, no fumar y manejar el estrés. Si es intenso, medicamentos que dilatan los vasos. Buscar enfermedades asociadas.',
+        esp: 'Médico general; reumatólogo si hay otros síntomas.',
+        alarma: 'Heridas en las yemas de los dedos, crisis muy dolorosas o piel que se endurece: consulta pronto.',
+        src: ['mp_raynaud']
+      },
+      {
+        id: 'tromboflebitis', n: 'Tromboflebitis superficial', alt: 'Flebitis', urg: 2, prev: 1.0, dur: ['d', 's'],
+        s: { cordon_vena: 3, varices: 2, piel_roja_caliente: 1, pantorrilla: -1 },
+        que: 'Inflamación con un coágulo en una vena cercana a la piel, frecuente en várices o después de una vía venosa. Se nota un cordón duro, rojo, caliente y doloroso a lo largo de la vena.',
+        trat: 'Calor local, elevar la pierna, medias de compresión y antiinflamatorios según indicación. Si es extensa o está cerca de la ingle, el médico puede indicar anticoagulantes y una ecografía.',
+        esp: 'Médico general; cirujano vascular.',
+        alarma: 'Pantorrilla hinchada y dolorosa, falta de aire o dolor de pecho: urgencia (posible trombosis profunda o embolia).',
+        src: ['mayo_tromboflebitis']
+      },
+      {
+        id: 'ulcera_venosa', n: 'Úlcera venosa de la pierna', alt: 'Úlcera varicosa', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        age: [[0, 39, 0.4], [60, 200, 1.3]],
+        s: { herida_pierna: 3, varices: 2, hinchazon_piernas: 2, piernas_pesadas: 1 },
+        que: 'Herida abierta que no cicatriza, casi siempre cerca del tobillo, causada por la mala circulación de las venas (insuficiencia venosa). La piel alrededor suele estar oscura, endurecida y con picazón, y la pierna se hincha.',
+        trat: 'Curaciones regulares, vendaje o medias de compresión, elevar las piernas y caminar. Tratar las várices. Es importante controlar la diabetes y descartar problemas arteriales.',
+        esp: 'Médico general o enfermería; cirujano vascular.',
+        alarma: 'Enrojecimiento que se extiende, fiebre, mal olor o dolor intenso: consulta pronto (infección).',
+        src: ['mp_insuf_venosa']
+      },
+      {
+        id: 'linfedema', n: 'Linfedema', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        s: { hinchazon_un_brazo_pierna: 3, ctx_cirugia_ganglios: 2, piel_roja_caliente: -1, pantorrilla: -1 },
+        que: 'Hinchazón crónica de un brazo o una pierna porque el sistema linfático está dañado o bloqueado, con más frecuencia después de una cirugía o radioterapia por cáncer (por ejemplo, de mama). La extremidad se siente pesada y la piel se puede engrosar.',
+        trat: 'No tiene cura, pero se controla de por vida con drenaje linfático manual, vendajes o prendas de compresión, ejercicios y cuidado de la piel para evitar infecciones.',
+        esp: 'Médico general; fisiatra o kinesiólogo especializado.',
+        alarma: 'Enrojecimiento, calor y fiebre en la extremidad (infección), o hinchazón brusca con dolor de pantorrilla: urgencia.',
+        src: ['mp_obstruccion_linfatica', 'mp_linfedema_t']
+      },
+      {
+        id: 'pots', n: 'Síndrome de taquicardia postural', alt: 'POTS', urg: 2, prev: 0.9, dur: ['s', 'm'], sexF: 1.4,
+        age: [[12, 45, 1.2]],
+        s: { taquicardia_pararse: 3, mareo_al_pararse: 2, palpitaciones: 2, fatiga: 2, ctx_infeccion_reciente: 1, desmayo: 1 },
+        que: 'Alteración del sistema nervioso autónomo en la que el pulso sube mucho al ponerse de pie, con mareo, palpitaciones, cansancio, dificultad para concentrarse y a veces desmayo. Es más frecuente en mujeres jóvenes y puede aparecer después de una infección viral.',
+        trat: 'Más agua y sal en la dieta (si el médico lo indica), medias de compresión, ejercicio progresivo y, a veces, medicamentos. Requiere descartar otras causas.',
+        esp: 'Médico general; cardiólogo o neurólogo.',
+        alarma: 'Desmayo con golpe, dolor de pecho o palpitaciones en reposo que no ceden: urgencia.',
+        src: ['mayo_pots', 'mayo_ortostatica']
+      },
+      {
+        id: 'cefalea_abuso', n: 'Cefalea por abuso de analgésicos', alt: 'Cefalea de rebote', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        req: ['ctx_analgesicos_frecuentes'], reqF: 0.3,
+        s: { ctx_analgesicos_frecuentes: 3, dolor_cabeza: 2, dolor_cabeza_despertar: 1, irritabilidad: 1 },
+        que: 'Dolor de cabeza casi diario (15 o más días al mes) en personas que toman analgésicos para la cefalea muchos días al mes. Los medicamentos dejan de funcionar y el dolor empeora cuando su efecto pasa.',
+        trat: 'Suspender o reducir los analgésicos con apoyo médico (el dolor suele empeorar unos días antes de mejorar) e iniciar un tratamiento preventivo de la migraña o la cefalea de base.',
+        esp: 'Médico general; neurólogo.',
+        alarma: 'Dolor de cabeza súbito e intenso, con fiebre, rigidez de cuello, confusión o debilidad: urgencia.',
+        src: ['mayo_cefalea_abuso']
+      },
+      {
+        id: 'neuralgia_occipital', n: 'Neuralgia occipital', urg: 2, prev: 0.95, dur: ['d', 's', 'm'],
+        s: { dolor_nuca_punzante: 3, dolor_cuello: 1, dolor_cabeza: 1, fotofobia: 1 },
+        que: 'Dolor por irritación de los nervios occipitales, que suben desde el cuello por detrás de la cabeza. Se siente como pinchazos o descargas en la nuca y el cuero cabelludo, a veces detrás del ojo, y el cuero cabelludo queda sensible.',
+        trat: 'Calor local, masaje, reposo y analgésicos o antiinflamatorios; si persiste, medicamentos para el dolor de los nervios o bloqueos anestésicos indicados por un especialista.',
+        esp: 'Médico general; neurólogo.',
+        alarma: 'Dolor de cabeza súbito e intenso, fiebre con rigidez de cuello o debilidad: urgencia.',
+        src: ['mp_neuralgia']
+      },
+      {
+        id: 'neuralgia_posherpetica', n: 'Neuralgia posherpética', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        age: [[60, 200, 1.3]],
+        req: ['ctx_herpes_zoster'], reqF: 0.3,
+        s: { ctx_herpes_zoster: 3, dolor_quemante_piel: 3, insomnio: 1, ampollas_franja: -1 },
+        que: 'Dolor que persiste más de un mes después de un herpes zóster («culebrilla»), en la misma zona donde estuvo la erupción. Es quemante o como descargas, y empeora con el roce de la ropa. Es más frecuente en mayores de 60 años.',
+        trat: 'Medicamentos para el dolor de los nervios, parches de lidocaína y cremas indicadas por el médico. La vacuna contra el herpes zóster reduce el riesgo.',
+        esp: 'Médico general; neurólogo o unidad del dolor.',
+        alarma: 'Dolor que impide dormir o comer, o tristeza persistente: consulta pronto.',
+        src: ['mp_neuralgia_posherpetica', 'mp_neuralgia']
+      },
+      {
+        id: 'temblor_esencial', n: 'Temblor esencial', urg: 2, prev: 1.0, dur: ['m'],
+        age: [[50, 200, 1.2]],
+        s: { temblor_accion: 3, temblor: 2, ctx_familia: 1, temblor_reposo: -2 },
+        que: 'El tipo de temblor más frecuente: un temblor de las manos que aparece al usarlas (escribir, tomar una taza) y suele ser menor en reposo. A veces afecta la cabeza o la voz, empeora con el estrés o la cafeína y suele haber familiares con temblor.',
+        trat: 'Si molesta, medicamentos como propranolol o primidona; en casos graves, cirugía o estimulación cerebral. Reducir la cafeína.',
+        esp: 'Médico general; neurólogo.',
+        alarma: 'Temblor en reposo con lentitud y rigidez (posible Parkinson), o temblor que aparece de golpe con otros síntomas: consulta.',
+        src: ['mp_temblor_esencial']
+      },
+      {
+        id: 'tunel_cubital', n: 'Síndrome del túnel cubital', alt: 'Compresión del nervio cubital en el codo', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        s: { hormigueo_menique: 3, dolor_codo: 1, hormigueo_mano: -1 },
+        que: 'Compresión del nervio cubital a nivel del codo (el «hueso de la risa»), por apoyar mucho el codo o mantenerlo doblado. Produce hormigueo y adormecimiento del meñique y parte del anular y, con el tiempo, torpeza de la mano.',
+        trat: 'Evitar apoyar el codo y dormir con el brazo doblado, férula nocturna y antiinflamatorios. Si hay debilidad o no mejora, cirugía para liberar el nervio.',
+        esp: 'Médico general; traumatólogo o neurólogo.',
+        alarma: 'Pérdida de fuerza o de masa muscular en la mano: consulta pronto.',
+        src: ['mp_nervio_cubital']
+      },
+      {
+        id: 'meralgia', n: 'Meralgia parestésica', urg: 1, prev: 0.95, dur: ['s', 'm'],
+        s: { ardor_muslo: 3, aumento_peso: 1 },
+        que: 'Compresión de un nervio de la sensibilidad del muslo a la altura de la ingle. Produce ardor, hormigueo o adormecimiento en la cara externa del muslo. Se asocia al sobrepeso, el embarazo, los pantalones o cinturones apretados y la diabetes.',
+        trat: 'Usar ropa holgada, bajar de peso y analgésicos. Si persiste, medicamentos para el dolor de los nervios o una infiltración.',
+        esp: 'Médico general; neurólogo.',
+        alarma: 'Debilidad de la pierna, dolor de espalda con pérdida de control de la orina: urgencia.',
+        src: ['mp_mononeuropatia']
+      },
+      {
+        id: 'hernia_cervical', n: 'Hernia de disco cervical', alt: 'Radiculopatía cervical', urg: 2, prev: 1.0, dur: ['d', 's', 'm'],
+        s: { dolor_brazo_cuello: 3, dolor_cuello: 2, hormigueo_mano: 1, debilidad_general: -1 },
+        que: 'Un disco o el desgaste de la columna del cuello (espondilosis) comprime una raíz nerviosa. Produce dolor de cuello que baja por un brazo, con hormigueo, adormecimiento o debilidad en la mano.',
+        trat: 'Analgésicos, antiinflamatorios, kinesiología y evitar posturas forzadas; la mayoría mejora en semanas. Si hay debilidad progresiva o compresión de la médula, cirugía.',
+        esp: 'Médico general; traumatólogo o neurocirujano; kinesiólogo.',
+        alarma: 'Debilidad en brazos o piernas, torpeza al caminar o pérdida del control de la orina: urgencia.',
+        src: ['mp_espondilosis_cervical', 'mp_dolor_cuello']
+      },
+      {
+        id: 'estenosis_lumbar', n: 'Estenosis del canal lumbar', alt: 'Canal lumbar estrecho', urg: 2, prev: 1.0, dur: ['m'],
+        age: [[0, 49, 0.3], [60, 200, 1.4]],
+        s: { dolor_piernas_caminar: 3, dolor_lumbar: 2, ciatica: 1, debilidad_pierna: 1 },
+        que: 'Estrechamiento del canal de la columna lumbar por desgaste, que comprime los nervios. Produce dolor, adormecimiento o calambres en las piernas al caminar o estar de pie, que se alivian al sentarse o inclinarse hacia adelante. Es frecuente después de los 60 años.',
+        trat: 'Kinesiología, ejercicio, analgésicos e infiltraciones. Si limita mucho la marcha o hay debilidad, cirugía para descomprimir los nervios.',
+        esp: 'Médico general; traumatólogo o neurocirujano.',
+        alarma: 'Pérdida de control de la orina o las deposiciones, o adormecimiento entre las piernas: urgencia.',
+        src: ['mp_estenosis_raquidea']
+      },
+      {
+        id: 'hematoma_subdural', n: 'Hematoma subdural', alt: 'Sangre entre el cráneo y el cerebro', urg: 5, prev: 0.9, dur: ['h', 'd', 's'],
+        age: [[0, 49, 0.5], [65, 200, 1.4]],
+        req: ['ctx_golpe', 'ctx_anticoagulantes'], reqF: 0.4,
+        s: { ctx_golpe: 2, dolor_cabeza: 2, confusion: 2, somnolencia: 2, ctx_anticoagulantes: 2, olvidos_progresivos: 1, debilidad_lado: 1, vomitos: 1 },
+        que: 'Acumulación de sangre entre las membranas que cubren el cerebro, casi siempre tras un golpe en la cabeza. En personas mayores o que toman anticoagulantes puede aparecer días o semanas después de un golpe leve, con dolor de cabeza, confusión, somnolencia, olvidos o debilidad de un lado.',
+        trat: 'Es una urgencia: se confirma con un escáner. Según su tamaño, se observa en el hospital o se drena con cirugía, y se revisan los anticoagulantes.',
+        ges: 'El traumatismo craneoencefálico moderado o grave está cubierto por GES.',
+        esp: 'Servicio de urgencia; neurocirujano.',
+        alarma: 'Somnolencia, confusión, vómitos, debilidad o pupilas desiguales después de un golpe: llama al 131.',
+        src: ['mp_hematoma_subdural', 'mp_hematoma_subdural_cronico', 'minsal_ges']
+      },
+      {
+        id: 'fatiga_cronica', n: 'Síndrome de fatiga crónica', alt: 'Encefalomielitis miálgica', urg: 2, prev: 0.9, dur: ['m'], sexF: 1.3,
+        s: { malestar_post_esfuerzo: 3, fatiga: 3, memoria: 2, insomnio: 1, dolor_muscular: 1, dolor_cabeza: 1, mareo_al_pararse: 1 },
+        que: 'Enfermedad prolongada con cansancio intenso que no mejora con el descanso y empeora claramente después de esfuerzos físicos o mentales, junto con sueño no reparador, problemas de memoria y concentración, y a veces mareo al ponerse de pie. Puede comenzar tras una infección.',
+        trat: 'No hay cura: dosificar la actividad para no superar los propios límites, mejorar el sueño, tratar el dolor y los síntomas asociados, y apoyo psicológico. Requiere descartar otras causas de cansancio.',
+        esp: 'Médico general; medicina interna.',
+        alarma: 'Baja de peso, fiebre, sudores nocturnos o tristeza intensa con ideas de hacerse daño: consulta pronto.',
+        src: ['mp_fatiga_cronica']
+      },
+      {
+        id: 'tics_tourette', n: 'Tics y síndrome de Tourette', urg: 1, prev: 1.0, dur: ['s', 'm'], sexF: 0.4,
+        age: [[4, 18, 1.4]],
+        s: { tics: 3, ctx_familia: 1, inatencion: 1, obsesiones: 1 },
+        que: 'Los tics son movimientos o sonidos breves, repetitivos y difíciles de controlar (parpadear, encoger los hombros, carraspear). Son frecuentes en la niñez y suelen pasar solos; cuando hay tics motores y vocales por más de un año se habla de síndrome de Tourette, que puede acompañarse de déficit atencional o TOC.',
+        trat: 'Muchos niños no necesitan tratamiento: explicar a la familia y al colegio, sin retar al niño. Si los tics interfieren, terapia conductual (como la inversión de hábitos) y, a veces, medicamentos.',
+        esp: 'Pediatra; neurólogo infantil; psicólogo.',
+        alarma: 'Tics que causan dolor o lesiones, problemas importantes en el colegio o tristeza: consulta.',
+        src: ['mp_tourette', 'mp_tics']
+      },
+      {
+        id: 'crisis_ausencia', n: 'Crisis de ausencia', alt: 'Epilepsia de ausencias', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        age: [[4, 14, 1.4]],
+        s: { desconexiones: 3, inatencion: 1, convulsion: -1 },
+        que: 'Tipo de epilepsia frecuente en niños: episodios de pocos segundos en que el niño se queda con la mirada fija, desconectado, a veces parpadeando, y luego sigue como si nada. Pueden repetirse muchas veces al día y confundirse con distracción.',
+        trat: 'Medicamentos antiepilépticos indicados por un neurólogo; muchos niños dejan de tenerlas en la adolescencia. Se confirma con un electroencefalograma.',
+        ges: 'La epilepsia no refractaria en personas desde 1 año y menores de 15 años está cubierta por GES.',
+        esp: 'Pediatra; neurólogo infantil.',
+        alarma: 'Convulsión con sacudidas, desmayo o una crisis que dura más de 5 minutos: llama al 131.',
+        src: ['mp_epilepsia', 'mp_convulsiones', 'minsal_ges']
       }
     ]
   });

@@ -1552,7 +1552,7 @@
     },
     {
       id: 'aftas', n: 'Aftas bucales', alt: 'Úlceras en la boca', urg: 1, prev: 1.0, dur: ['d', 's'],
-      s: { llagas_boca: 3, ctx_estres: 1, fiebre: -1 },
+      s: { llagas_boca: 3, ctx_estres: 1, fiebre: -1, aftas_repetidas_genitales: -2 },
       que: 'Pequeñas llagas redondas, blancas o amarillentas con borde rojo, dentro de la boca. Son dolorosas pero no contagiosas, y se relacionan con pequeñas heridas, estrés, cambios hormonales o algunos alimentos.',
       trat: 'Suelen sanar solas en 1 a 2 semanas. Ayudan los enjuagues con agua con sal o bicarbonato, evitar comidas ácidas o picantes y los geles anestésicos de farmacia.',
       esp: 'Médico general o dentista si son muy grandes, frecuentes o duran más de 2 semanas.',
@@ -1775,6 +1775,7 @@
     },
     {
       id: 'hepatitis_a', n: 'Hepatitis viral aguda', alt: 'Hepatitis A', urg: 3, prev: 0.85, dur: ['d', 's'],
+      age: [[0, 1, 0.2]],
       s: { ictericia: 3, coluria: 3, acolia: 2, fatiga: 2, nauseas: 2, dolor_hipocondrio: 2, fiebre: 1, inapetencia: 1, vomitos: 1, dolor_muscular: 1 },
       que: 'Inflamación del hígado causada por un virus. La hepatitis A se transmite por agua o alimentos contaminados con deposiciones: produce cansancio, náuseas, dolor bajo las costillas derechas y fiebre, y luego piel y ojos amarillos, orina oscura y deposiciones claras. Suele mejorar sola en algunas semanas.',
       trat: 'No tiene un tratamiento específico: reposo, buena hidratación, controles de exámenes y evitar el alcohol y los medicamentos que dañan el hígado (incluido el exceso de paracetamol). Existe vacuna. Las hepatitis B y C requieren otros estudios y tratamientos.',
