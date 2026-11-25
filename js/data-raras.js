@@ -1622,4 +1622,336 @@
       }
     ]
   });
+
+  // ── Tanda 6 (noviembre 2026): nervios, corazón, pulmón (incluye laborales y de altura), esófago e intoxicaciones
+  D.addPack({
+    call131: ['tos_espuma'],
+    symptoms: [
+      ['espasmos_bebe', 'Bebé con series de sacudidas breves: dobla el cuerpo o la cabeza hacia adelante y levanta o estira los brazos, a menudo al despertar', 'general', 2, ['espasmos infantiles', 'síndrome de West', 'sacudidas en racimo']],
+      ['perdida_habilidades', 'El niño pierde habilidades que ya tenía (deja de sonreír, de balbucear, de seguir con la mirada o de hablar)', 'general', 2, ['regresión del desarrollo', 'retroceso']],
+      ['colores_apagados', 'Los colores se ven apagados o desteñidos con un ojo', 'ojos', 1, ['colores desteñidos']],
+      ['espasmo_cara_lado', 'Contracciones involuntarias que empiezan en un párpado y se extienden a la mejilla y la boca del mismo lado', 'cabeza', 1, ['espasmo hemifacial', 'tic en la cara', 'se me tira la cara']],
+      ['ardor_boca', 'Ardor o quemazón en la lengua, los labios o toda la boca, sin heridas visibles', 'oong', 1, ['boca ardiente', 'lengua que quema']],
+      ['dedos_palillo', 'Puntas de los dedos engrosadas y uñas muy curvas (dedos en palillo de tambor)', 'piel', 1, ['acropaquia', 'dedos en palillo de tambor']],
+      ['manchas_unas_dedos', 'Rayitas rojas bajo las uñas o manchitas rojas en palmas, plantas o yemas de los dedos', 'piel', 2, ['hemorragias en astilla', 'nódulos de Osler']],
+      ['bulto_late_abdomen', 'Sensación de un bulto que late en el abdomen, cerca del ombligo', 'digestivo', 2, ['latido en la guata', 'aneurisma']],
+      ['dolor_articular_migra', 'Dolor e hinchazón de articulaciones grandes que salta de una a otra (rodillas, tobillos, codos, muñecas)', 'musculo', 2, ['artritis migratoria']],
+      ['tos_espuma', 'Tos con flema espumosa, blanca o rosada, con mucho ahogo', 'respiracion', 3, ['edema pulmonar', 'espuma rosada']],
+      ['flema_tapones', 'Tos con tapones o grumos de flema café', 'respiracion', 1, ['tapones de moco']],
+      ['heridas_dedos', 'Heridas o úlceras dolorosas en las puntas de los dedos de las manos o los pies', 'piel', 2, ['úlceras en los dedos']],
+      ['regurgita_comida', 'Devuelves comida sin digerir, a veces horas después de haber comido', 'digestivo', 1, ['devolver la comida', 'regurgitación de alimentos']],
+      ['gorgoteo_garganta', 'Ruido de gorgoteo en la garganta al tragar, o la comida parece quedarse en el cuello', 'oong', 1, ['divertículo de Zenker', 'ruido al tragar']],
+      ['dolor_despues_comer', 'Dolor de guata que aparece entre 15 y 60 minutos después de comer, por lo que terminas comiendo menos', 'digestivo', 2, ['angina intestinal', 'miedo a comer']],
+      ['ctx_valvula', 'Tienes una válvula del corazón enferma u operada, un marcapasos, o te inyectas drogas', 'contexto', 0, ['válvula cardíaca', 'prótesis valvular']],
+      ['ctx_estres_subito', 'Los síntomas empezaron justo después de un estrés emocional o físico intenso y repentino (una muerte, una pelea, un gran susto, una cirugía)', 'contexto', 0, ['corazón roto', 'impresión fuerte']],
+      ['ctx_aves_moho', 'Tienes contacto frecuente con aves (palomas, loros, plumas), heno, granos o moho', 'contexto', 0, ['palomas', 'pulmón del granjero', 'criador de aves']],
+      ['ctx_silice', 'Trabajaste años expuesto a polvo de sílice (minería, túneles, canteras, cortar o pulir piedra, arenado, cerámica)', 'contexto', 0, ['polvo de mina', 'sílice', 'silicosis']],
+      ['ctx_asbesto', 'Estuviste expuesto a asbesto hace años (construcción antigua, aislantes, frenos, astilleros, planchas de pizarreño antiguas)', 'contexto', 0, ['asbesto', 'amianto']],
+      ['ctx_defensas_bajas', 'Tienes las defensas bajas (quimioterapia, trasplante, corticoides en dosis altas por mucho tiempo o VIH avanzado)', 'contexto', 0, ['inmunosuprimido', 'defensas bajas']],
+      ['ctx_buceo', 'Buceaste con tanque en las últimas 48 horas (o volaste poco después de bucear)', 'contexto', 0, ['buceo', 'buzo']],
+      ['ctx_atoro', 'Te atoraste con comida, líquido o vómito que se fue «para el otro lado», o te atoras seguido al tragar', 'contexto', 0, ['aspiración', 'atorarse']],
+      ['ctx_paracetamol', 'Tomaste más paracetamol del indicado (muchas pastillas de una vez o dosis altas por varios días)', 'contexto', 0, ['sobredosis de paracetamol', 'intoxicación por paracetamol']]
+    ],
+    sources: {
+      orpha_west: [ORPHA, 'Síndrome de espasmos epilépticos infantiles (síndrome de West)', 'https://www.orpha.net/es/disease/detail/3451'],
+      mp_neuritis_optica: [MP, 'Neuritis óptica', 'https://medlineplus.gov/spanish/ency/article/000741.htm'],
+      mayo_espasmo_hemifacial: [MAYO, 'Espasmo hemifacial', 'https://www.mayoclinic.org/es/diseases-conditions/hemifacial-spasm/symptoms-causes/syc-20373296'],
+      mayo_boca_ardiente: [MAYO, 'Síndrome de boca ardiente', 'https://www.mayoclinic.org/es/diseases-conditions/burning-mouth-syndrome/symptoms-causes/syc-20350911'],
+      mp_hipertension_pulmonar: [MP, 'Hipertensión pulmonar', 'https://medlineplus.gov/spanish/ency/article/000112.htm'],
+      mp_fpi: [MP, 'Fibrosis pulmonar idiopática', 'https://medlineplus.gov/spanish/ency/article/000069.htm'],
+      mp_endocarditis: [MP, 'Endocarditis', 'https://medlineplus.gov/spanish/ency/article/001098.htm'],
+      mayo_takotsubo: [MAYO, 'Síndrome del corazón roto (miocardiopatía por estrés)', 'https://www.mayoclinic.org/es/diseases-conditions/broken-heart-syndrome/symptoms-causes/syc-20354617'],
+      mp_aneurisma_abdominal: [MP, 'Aneurisma aórtico abdominal', 'https://medlineplus.gov/spanish/ency/article/000162.htm'],
+      mp_neumonitis_hipersensibilidad: [MP, 'Neumonitis por hipersensibilidad', 'https://medlineplus.gov/spanish/ency/article/000109.htm'],
+      mp_silicosis: [MP, 'Silicosis', 'https://medlineplus.gov/spanish/ency/article/000134.htm'],
+      mp_asbestosis: [MP, 'Asbestosis', 'https://medlineplus.gov/spanish/ency/article/000118.htm'],
+      mp_aspergilosis: [MP, 'Aspergilosis', 'https://medlineplus.gov/spanish/ency/article/001326.htm'],
+      mp_mesotelioma: [MP, 'Mesotelioma maligno', 'https://medlineplus.gov/spanish/ency/article/000115.htm'],
+      achs_buceo: ['ACHS', 'Patologías del buceo: guía clínica y de primeros auxilios (PDF)', 'https://www.achs.cl/docs/librariesprovider2/empresa/centro-de-fichas/trabajadores/patologias-del-buceo.pdf?sfvrsn=23f74b7e_0'],
+      mp_oxigeno_hiperbarico: [MP, 'Oxigenoterapia hiperbárica', 'https://medlineplus.gov/spanish/ency/article/002375.htm'],
+      mp_buerger: [MP, 'Tromboangeítis obliterante (enfermedad de Buerger)', 'https://medlineplus.gov/spanish/ency/article/000172.htm'],
+      mp_neumonia_aspiracion: [MP, 'Neumonía por aspiración', 'https://medlineplus.gov/spanish/ency/article/000121.htm'],
+      mp_acalasia: [MP, 'Acalasia', 'https://medlineplus.gov/spanish/ency/article/000267.htm'],
+      mayo_zenker: [MAYO, 'Divertículo de Zenker', 'https://www.mayoclinic.org/es/diseases-conditions/zenkers-diverticulum/symptoms-causes/syc-20568839'],
+      mp_gastroparesia: [MP, 'Gastroparesia', 'https://medlineplus.gov/spanish/ency/article/000297.htm'],
+      mp_isquemia_mesenterica: [MP, 'Isquemia de las arterias mesentéricas', 'https://medlineplus.gov/spanish/ency/article/001156.htm'],
+      mp_sobredosis_paracetamol: [MP, 'Sobredosis de paracetamol (acetaminofeno)', 'https://medlineplus.gov/spanish/ency/article/002598.htm'],
+      gob_silicosis: [GOB, 'No más silicosis: manual para la persona trabajadora expuesta (Subsecretaría de Previsión Social, PDF)', 'https://previsionsocial.gob.cl/wp-content/uploads/2024/08/Manual-para-la-persona-trabajadora-expuesta-digital.pdf'],
+      cituc: ['CITUC', 'Centro de Información Toxicológica UC: +56 2 2635 3800, las 24 horas', 'https://cituc.uc.cl/']
+    },
+    conditions: [
+      {
+        id: 'sindrome_west', n: 'Espasmos infantiles', alt: 'Síndrome de West', urg: 4, prev: 0.6, dur: ['d', 's', 'm'],
+        ageRange: [0, 3], age: [[0, 1, 1.3]],
+        req: ['espasmos_bebe'], reqF: 0.3,
+        s: { espasmos_bebe: 3, perdida_habilidades: 2, retraso_desarrollo: 1, irritabilidad: 1, llanto_inconsolable: 1 },
+        que: 'Epilepsia poco frecuente que empieza en los primeros meses de vida, casi siempre entre los 2 y 12 meses. Produce espasmos en series: el bebé dobla brusca y brevemente el cuerpo o la cabeza y levanta o estira los brazos, a menudo al despertar; además deja de avanzar o pierde lo que ya había logrado en su desarrollo. Puede deberse a malformaciones o lesiones del cerebro, causas genéticas o metabólicas, y a veces no se encuentra la causa.',
+        trat: 'Requiere evaluación rápida por neurología infantil y un electroencefalograma. El tratamiento precoz (corticoides, ACTH o vigabatrina, según el caso) mejora el pronóstico del desarrollo.',
+        esp: 'Servicio de urgencia o pediatra el mismo día; neurólogo infantil.',
+        alarma: 'Espasmos en racimo en un bebé, aunque parezcan cólicos o sustos: consulta hoy. Grabar un video de los episodios ayuda mucho al médico.',
+        src: ['orpha_west']
+      },
+      {
+        id: 'neuritis_optica', n: 'Neuritis óptica', urg: 3, prev: 0.7, dur: ['h', 'd', 's'], sexF: 1.3,
+        age: [[15, 45, 1.3]],
+        s: { vision_dolor_un_ojo: 3, colores_apagados: 2, vision_borrosa: 1, dolor_ojo: 1, hormigueo: -1, debilidad_progresiva: -1, hipo_vomitos_persistentes: -2, debilidad_piernas_horas: -1 },
+        que: 'Inflamación del nervio óptico, más frecuente en mujeres jóvenes. Produce pérdida de visión de un ojo en horas o días, dolor al mover el ojo y colores que se ven apagados. Puede ser el primer signo de esclerosis múltiple o de neuromielitis óptica, y también aparecer con infecciones u otras enfermedades autoinmunes.',
+        trat: 'Evaluación oftalmológica y neurológica, a menudo con resonancia magnética. A veces se usan corticoides para acelerar la recuperación; la visión suele mejorar en semanas o meses.',
+        esp: 'Oftalmólogo; neurólogo.',
+        alarma: 'Pérdida de visión rápida o de ambos ojos, debilidad, hormigueo u otros síntomas neurológicos: urgencia.',
+        src: ['mp_neuritis_optica']
+      },
+      {
+        id: 'espasmo_hemifacial', n: 'Espasmo hemifacial', urg: 2, prev: 0.8, dur: ['s', 'm'], sexF: 1.2,
+        age: [[0, 39, 0.3], [40, 200, 1.3]],
+        s: { espasmo_cara_lado: 3, paralisis_facial: -1, tics: -1 },
+        que: 'Contracciones involuntarias de los músculos de un lado de la cara. Suelen empezar en el párpado y con los meses o años se extienden a la mejilla y la boca del mismo lado, volviéndose casi continuas. La causa más común es un vaso sanguíneo que presiona el nervio facial. No es grave, pero puede ser molesto y afectar la vida social.',
+        trat: 'Inyecciones de toxina botulínica cada algunos meses son el tratamiento más usado; algunos medicamentos ayudan poco. En casos seleccionados, una cirugía separa el vaso del nervio.',
+        esp: 'Médico general; neurólogo.',
+        alarma: 'Debilidad de la cara, dolor de cabeza intenso o pérdida de audición: consulta pronto.',
+        src: ['mayo_espasmo_hemifacial']
+      },
+      {
+        id: 'boca_ardiente', n: 'Síndrome de boca ardiente', urg: 2, prev: 0.8, dur: ['s', 'm'], sexF: 1.5,
+        age: [[0, 39, 0.3], [50, 200, 1.3]],
+        s: { ardor_boca: 3, boca_y_ojos_secos: 1, ansiedad: 1, llagas_boca: -2, placas_boca: -1 },
+        que: 'Ardor o quemazón persistente en la lengua, los labios, las encías o toda la boca, sin lesiones visibles. Puede acompañarse de boca seca, sabor amargo o metálico. Es más frecuente en mujeres después de la menopausia. A veces se debe a otra causa (sequedad, hongos, falta de vitaminas, reflujo, prótesis o medicamentos) y otras veces no se encuentra.',
+        trat: 'Buscar y tratar la causa; si no hay, medicamentos para el dolor de los nervios, enjuagues específicos y terapia psicológica. Evitar el alcohol, el tabaco y los alimentos muy ácidos o picantes ayuda.',
+        esp: 'Médico general o dentista; estomatólogo; neurólogo.',
+        alarma: 'Heridas o manchas que no sanan en 2 semanas, o un bulto en la boca: consulta pronto.',
+        src: ['mayo_boca_ardiente']
+      },
+      {
+        id: 'hipertension_pulmonar', n: 'Hipertensión pulmonar', urg: 3, prev: 0.5, dur: ['m'],
+        req: ['desmayo_esfuerzo', 'hinchazon_piernas', 'labios_azules'], reqF: 0.4,
+        s: { falta_aire_progresiva: 3, desmayo_esfuerzo: 2, fatiga: 2, dolor_pecho_esfuerzo: 1, hinchazon_piernas: 1, labios_azules: 1, ortopnea: -1 },
+        que: 'Presión alta en las arterias de los pulmones, que obliga al lado derecho del corazón a trabajar más. Produce falta de aire al hacer esfuerzos que aumenta con el tiempo, cansancio, mareos o desmayos al esforzarse, dolor de pecho e hinchazón de tobillos. Puede deberse a enfermedades del corazón o del pulmón, coágulos antiguos, enfermedades autoinmunes o no tener causa conocida.',
+        trat: 'Estudio en un centro especializado (ecocardiograma y otros exámenes); tratamiento de la causa, oxígeno, diuréticos y medicamentos específicos que dilatan las arterias del pulmón.',
+        esp: 'Cardiólogo o broncopulmonar; centro de hipertensión pulmonar.',
+        alarma: 'Desmayo, dolor de pecho o falta de aire en reposo: urgencia.',
+        src: ['mp_hipertension_pulmonar']
+      },
+      {
+        id: 'fibrosis_pulmonar', n: 'Fibrosis pulmonar idiopática', urg: 3, prev: 0.5, dur: ['m'],
+        age: [[0, 49, 0.3], [60, 200, 1.3]],
+        req: ['tos_seca', 'dedos_palillo'], reqF: 0.4,
+        s: { falta_aire_progresiva: 3, tos_seca: 3, dedos_palillo: 2, fatiga: 1, perdida_peso: 1, ctx_fumador: 1, sibilancias: -1, ctx_asbesto: -1, ctx_silice: -1 },
+        que: 'Los pulmones se van cicatrizando y endureciendo sin una causa conocida, sobre todo en personas mayores de 60 años. Produce falta de aire que aumenta de a poco, tos seca persistente, cansancio y, con el tiempo, dedos en palillo de tambor.',
+        trat: 'Medicamentos que frenan la cicatrización (antifibróticos), rehabilitación pulmonar, oxígeno y vacunas; en casos seleccionados, trasplante de pulmón. Dejar de fumar.',
+        esp: 'Broncopulmonar.',
+        alarma: 'Empeoramiento rápido de la falta de aire, fiebre o labios morados: urgencia.',
+        src: ['mp_fpi']
+      },
+      {
+        id: 'endocarditis', n: 'Endocarditis infecciosa', alt: 'Infección de las válvulas del corazón', urg: 4, prev: 0.6, dur: ['d', 's'],
+        req: ['ctx_valvula', 'manchas_unas_dedos', 'ctx_soplo'], reqF: 0.3,
+        s: { ctx_valvula: 3, fiebre: 3, manchas_unas_dedos: 3, escalofrios: 1, sudor_nocturno: 1, fatiga: 1, dolor_articular: 1, perdida_peso: 1, ctx_soplo: 1 },
+        que: 'Infección del revestimiento interno del corazón, casi siempre de una válvula. Es más frecuente en personas con válvulas enfermas u operadas, marcapasos o que se inyectan drogas. Produce fiebre que dura días o semanas, escalofríos, sudores nocturnos, cansancio, dolores musculares y articulares, y a veces rayitas rojas bajo las uñas o manchas en palmas y plantas.',
+        trat: 'Hospitalización y antibióticos por vena durante varias semanas; a veces cirugía de la válvula. Quienes tienen válvulas de riesgo deben cuidar mucho la salud dental y, en algunos casos, usar antibióticos antes de procedimientos dentales.',
+        esp: 'Servicio de urgencia; cardiólogo; infectólogo.',
+        alarma: 'Fiebre en alguien con una válvula operada o enferma: consulta hoy. Debilidad de un lado del cuerpo o falta de aire intensa: llama al 131.',
+        src: ['mp_endocarditis']
+      },
+      {
+        id: 'miocardiopatia_dilatada', n: 'Miocardiopatía dilatada', urg: 3, prev: 0.55, dur: ['s', 'm'],
+        age: [[0, 17, 0.5], [20, 60, 1.2]],
+        req: ['ctx_familia', 'ctx_alcohol', 'ctx_infeccion_reciente', 'ctx_posparto'], reqF: 0.4,
+        s: { falta_aire: 2, ortopnea: 2, hinchazon_piernas: 2, fatiga: 2, palpitaciones: 1, ctx_familia: 2, ctx_alcohol: 1, ctx_infeccion_reciente: 1, ctx_posparto: 1 },
+        que: 'El músculo del corazón se agranda y se debilita, y no bombea bien la sangre. Produce síntomas de insuficiencia cardíaca: falta de aire al esfuerzo o al acostarse, hinchazón de piernas, cansancio y palpitaciones. Puede ser hereditaria o deberse al alcohol, infecciones virales (miocarditis), el embarazo, algunas quimioterapias o arritmias.',
+        trat: 'Medicamentos para la insuficiencia cardíaca, dejar el alcohol, controlar la presión y la sal; a veces dispositivos (desfibrilador o marcapasos especiales) o trasplante. Si es hereditaria, se recomienda estudiar a la familia.',
+        esp: 'Cardiólogo.',
+        alarma: 'Falta de aire en reposo, dolor de pecho, desmayo o palpitaciones intensas: urgencia.',
+        src: ['mp_miocardiopatia']
+      },
+      {
+        id: 'takotsubo', n: 'Síndrome del corazón roto', alt: 'Miocardiopatía de Takotsubo', urg: 5, prev: 0.5, dur: ['h', 'd'], sexF: 1.5, sexM: 0.4,
+        age: [[0, 39, 0.3], [50, 200, 1.3]],
+        req: ['ctx_estres_subito'], reqF: 0.3,
+        s: { dolor_pecho_opresivo: 3, ctx_estres_subito: 3, falta_aire: 2, sudoracion: 1, palpitaciones: 1, desmayo: 1 },
+        que: 'Debilidad súbita y pasajera del corazón desencadenada por un estrés emocional o físico intenso (la muerte de un ser querido, una pelea, un susto, una cirugía). Sus síntomas son iguales a los de un infarto: dolor de pecho y falta de aire. Es más frecuente en mujeres mayores de 50 años y suele recuperarse en semanas.',
+        trat: 'Debe tratarse como un posible infarto hasta demostrar lo contrario: atención de urgencia, electrocardiograma y exámenes. Luego, medicamentos para el corazón mientras se recupera.',
+        esp: 'Servicio de urgencia; cardiólogo.',
+        alarma: 'Todo dolor de pecho intenso u opresivo, aunque haya estrés de por medio: llama al 131.',
+        src: ['mayo_takotsubo']
+      },
+      {
+        id: 'aneurisma_aorta_abdominal', n: 'Aneurisma de aorta abdominal', urg: 3, prev: 0.6, dur: ['s', 'm'], sexM: 1.4, sexF: 0.4,
+        age: [[0, 54, 0.2], [65, 200, 1.4]],
+        req: ['bulto_late_abdomen', 'dolor_abdominal_intenso'], reqF: 0.3,
+        s: { bulto_late_abdomen: 3, ctx_fumador: 2, dolor_lumbar: 1, dolor_abdominal: 1, dolor_abdominal_intenso: 1, desmayo: 1, presion_alta_cronica: 1 },
+        que: 'Dilatación de la aorta, la gran arteria del abdomen, que crece lentamente sin dar síntomas. Es más frecuente en hombres mayores de 65 años que fuman o fumaron. A veces se nota un bulto que late cerca del ombligo o dolor profundo en el abdomen o la espalda. Si se rompe, produce dolor súbito e intenso con desmayo, y es una emergencia.',
+        trat: 'Los pequeños se controlan con ecografías periódicas, dejando de fumar y controlando la presión; los grandes o que crecen rápido se reparan con cirugía o una prótesis por dentro de la arteria.',
+        esp: 'Médico general; cirujano vascular.',
+        alarma: 'Dolor súbito e intenso en el abdomen o la espalda, con mareo, sudor frío o desmayo: llama al 131.',
+        src: ['mp_aneurisma_abdominal']
+      },
+      {
+        id: 'fiebre_reumatica', n: 'Fiebre reumática', urg: 3, prev: 0.5, dur: ['d', 's'],
+        age: [[3, 18, 1.4], [30, 200, 0.3]],
+        req: ['ctx_faringitis_previa'], reqF: 0.3,
+        s: { ctx_faringitis_previa: 3, dolor_articular_migra: 3, fiebre: 2, articulacion_hinchada: 1, dolor_articular: 1, falta_aire: 1, dolor_pecho_respirar: 1, erupcion: 1 },
+        que: 'Enfermedad inflamatoria que aparece 2 a 4 semanas después de una faringitis o amigdalitis por estreptococo no tratada bien, sobre todo en niños de 5 a 15 años. Produce fiebre, dolor e hinchazón de articulaciones grandes que saltan de una a otra y puede dañar las válvulas del corazón; a veces da movimientos involuntarios (corea de Sydenham), manchas en la piel o nódulos.',
+        trat: 'Antibióticos para eliminar el estreptococo, antiinflamatorios y, si hay daño del corazón, otros tratamientos. Después se necesitan antibióticos preventivos por años para evitar nuevos episodios. Tratar bien las faringitis con placas la previene.',
+        esp: 'Pediatra o médico general; cardiólogo.',
+        alarma: 'Falta de aire, dolor de pecho o palpitaciones: urgencia.',
+        src: ['mp_fiebre_reumatica']
+      },
+      {
+        id: 'neumonitis_hipersensibilidad', n: 'Neumonitis por hipersensibilidad', alt: 'Pulmón del criador de aves o del granjero', urg: 3, prev: 0.6, dur: ['h', 'd', 'm'],
+        req: ['ctx_aves_moho'], reqF: 0.3,
+        s: { ctx_aves_moho: 3, tos_seca: 2, falta_aire: 2, fiebre: 1, escalofrios: 1, fatiga: 1, falta_aire_progresiva: 1 },
+        que: 'Inflamación de los pulmones por respirar repetidamente polvos orgánicos a los que el cuerpo se sensibiliza: plumas o excrementos de aves, heno o granos con moho, hongos u otros. Horas después de la exposición aparecen tos, falta de aire, fiebre, escalofríos y malestar; con la exposición prolongada, la falta de aire y la tos se vuelven constantes y el pulmón puede cicatrizarse.',
+        trat: 'Lo principal es evitar la exposición (alejar las aves, mejorar la ventilación, usar protección); a veces corticoides u otros medicamentos.',
+        esp: 'Médico general; broncopulmonar.',
+        alarma: 'Falta de aire intensa o labios morados: urgencia.',
+        src: ['mp_neumonitis_hipersensibilidad']
+      },
+      {
+        id: 'silicosis', n: 'Silicosis', urg: 2, prev: 0.6, dur: ['m'],
+        req: ['ctx_silice'], reqF: 0.3,
+        s: { ctx_silice: 3, falta_aire_progresiva: 3, tos_flema: 2, tos_seca: 1, fatiga: 1, perdida_peso: 1 },
+        que: 'Enfermedad pulmonar laboral por respirar polvo de sílice durante años, en la minería, túneles, canteras, el corte de piedra, el arenado o la cerámica. Los pulmones se cicatrizan de forma permanente: aparecen tos, falta de aire que aumenta y cansancio. Aumenta el riesgo de tuberculosis y cáncer de pulmón.',
+        trat: 'No tiene cura: dejar la exposición, no fumar, rehabilitación pulmonar, oxígeno si se necesita, vacunas y control de la tuberculosis. Es una enfermedad profesional cubierta por el seguro de la Ley 16.744: quien trabaja expuesto a sílice tiene derecho a vigilancia de su salud y a prestaciones a través de su mutualidad o el ISL.',
+        esp: 'Mutualidad o ISL; broncopulmonar.',
+        alarma: 'Fiebre, tos con sangre o falta de aire que empeora rápido: consulta pronto.',
+        src: ['mp_silicosis', 'gob_silicosis']
+      },
+      {
+        id: 'asbestosis', n: 'Asbestosis', urg: 2, prev: 0.5, dur: ['m'],
+        age: [[0, 39, 0.2], [60, 200, 1.2]],
+        req: ['ctx_asbesto'], reqF: 0.3,
+        s: { ctx_asbesto: 3, falta_aire_progresiva: 3, tos_seca: 2, dedos_palillo: 1, dolor_pecho_respirar: 1, perdida_peso: -1 },
+        que: 'Cicatrización de los pulmones por haber respirado fibras de asbesto (amianto), usado antes en construcción, aislantes, frenos y astilleros. Los síntomas aparecen 20 años o más después de la exposición: falta de aire que aumenta, tos seca, opresión en el pecho y dedos en palillo de tambor. Aumenta el riesgo de cáncer de pulmón y mesotelioma.',
+        trat: 'No tiene cura: no fumar, rehabilitación pulmonar, oxígeno si se necesita y vacunas. Si la exposición fue laboral, puede corresponder evaluación como enfermedad profesional.',
+        esp: 'Broncopulmonar; mutualidad o ISL si fue laboral.',
+        alarma: 'Baja de peso, tos con sangre o dolor de pecho persistente: consulta pronto.',
+        src: ['mp_asbestosis']
+      },
+      {
+        id: 'aspergilosis', n: 'Aspergilosis', urg: 3, prev: 0.5, dur: ['d', 's', 'm'],
+        req: ['flema_tapones', 'ctx_defensas_bajas', 'tos_sangre'], reqF: 0.3,
+        s: { flema_tapones: 3, ctx_defensas_bajas: 2, tos_sangre: 2, fiebre: 2, sibilancias: 1, falta_aire: 1, dolor_pecho_respirar: 1 },
+        que: 'Infección o alergia causada por el hongo Aspergillus, que está en el ambiente. En personas con asma o fibrosis quística produce una forma alérgica, con crisis de asma, fiebre y tos con tapones de flema café; en cavidades antiguas del pulmón (por ejemplo, después de una tuberculosis) forma una «bola de hongos» que puede hacer toser sangre; en personas con defensas muy bajas causa una infección grave.',
+        trat: 'Según la forma: corticoides y antifúngicos en la alérgica, antifúngicos por vena en la invasiva y, a veces, cirugía de la bola de hongos.',
+        esp: 'Broncopulmonar; infectólogo.',
+        alarma: 'Tos con sangre abundante, falta de aire intensa o fiebre con defensas bajas: urgencia.',
+        src: ['mp_aspergilosis']
+      },
+      {
+        id: 'mesotelioma', n: 'Mesotelioma', urg: 3, prev: 0.4, dur: ['s', 'm'],
+        age: [[0, 49, 0.3], [60, 200, 1.3]],
+        req: ['ctx_asbesto'], reqF: 0.3,
+        s: { ctx_asbesto: 3, dolor_pecho_respirar: 2, falta_aire: 2, perdida_peso: 2, tos_seca: 1, sudor_nocturno: 1, fatiga: 1, falta_aire_progresiva: -1 },
+        que: 'Cáncer poco frecuente de la membrana que recubre los pulmones (pleura) o el abdomen, causado casi siempre por haber respirado asbesto 20 a 50 años antes. Produce dolor en el pecho o el costado, falta de aire por acumulación de líquido, tos, cansancio, sudores y baja de peso.',
+        trat: 'Según la etapa: cirugía, quimioterapia, inmunoterapia o radioterapia, y cuidados para el dolor y el líquido en el pulmón, en centros oncológicos.',
+        esp: 'Broncopulmonar; oncólogo.',
+        alarma: 'Falta de aire que aumenta, dolor de pecho persistente o baja de peso en alguien expuesto a asbesto: consulta pronto.',
+        src: ['mp_mesotelioma']
+      },
+      {
+        id: 'edema_pulmonar_altura', n: 'Edema pulmonar de altura', urg: 5, prev: 0.6, dur: ['h', 'd'],
+        req: ['ctx_altura'], reqF: 0.15,
+        s: { ctx_altura: 3, falta_aire: 3, tos_espuma: 3, tos_seca: 1, fatiga: 1, labios_azules: 1 },
+        que: 'Forma grave del mal de altura: se acumula líquido en los pulmones, generalmente 2 a 4 días después de subir sobre 2.500 metros. Produce falta de aire incluso en reposo, tos (al principio seca y luego con espuma), cansancio intenso y labios morados. Puede ser mortal si no se baja.',
+        trat: 'Bajar de inmediato a menor altura, oxígeno y atención médica; a veces medicamentos o cámara hiperbárica portátil mientras se desciende.',
+        esp: 'Emergencia; servicio de salud de la faena o del lugar.',
+        alarma: 'Falta de aire en reposo o tos con espuma en altura: baja de inmediato y pide ayuda (131).',
+        src: ['mp_mal_altura', 'clc_mal_altura']
+      },
+      {
+        id: 'edema_cerebral_altura', n: 'Edema cerebral de altura', urg: 5, prev: 0.6, dur: ['h', 'd'],
+        req: ['ctx_altura'], reqF: 0.15,
+        s: { ctx_altura: 3, confusion: 3, perdida_equilibrio: 3, dolor_cabeza: 2, somnolencia: 2, vomitos: 1 },
+        que: 'Forma grave del mal de altura en que se hincha el cerebro. Suele empezar como un mal de altura que empeora: dolor de cabeza intenso, vómitos, confusión, somnolencia y torpeza al caminar (como borracho). Sin tratamiento puede llevar al coma.',
+        trat: 'Bajar de inmediato a menor altura, oxígeno y medicamentos (corticoides) indicados por un médico.',
+        esp: 'Emergencia; servicio de salud de la faena o del lugar.',
+        alarma: 'Confusión, somnolencia o dificultad para caminar en línea recta en altura: baja de inmediato y pide ayuda (131).',
+        src: ['mp_mal_altura', 'clc_mal_altura']
+      },
+      {
+        id: 'descompresion', n: 'Enfermedad por descompresión', alt: 'Enfermedad del buzo', urg: 5, prev: 0.6, dur: ['h', 'd'],
+        req: ['ctx_buceo'], reqF: 0.15,
+        s: { ctx_buceo: 3, dolor_articular: 3, hormigueo: 2, fatiga: 1, picazon_piel: 1, vertigo: 1, falta_aire: 1, debilidad_lado: 1, confusion: 1 },
+        que: 'Al subir demasiado rápido después de bucear con tanque (o volar poco después), el nitrógeno disuelto en el cuerpo forma burbujas. En las horas siguientes produce dolor en las articulaciones, cansancio extremo, picazón o manchas en la piel y, en las formas graves, hormigueos, debilidad o parálisis, vértigo, falta de aire o confusión.',
+        trat: 'Es una urgencia: oxígeno al 100 % lo antes posible y traslado a un centro con cámara hiperbárica para la recompresión, aunque los síntomas parezcan leves.',
+        esp: 'Emergencia; centro con cámara hiperbárica.',
+        alarma: 'Cualquier síntoma en las 48 horas después de bucear: llama al 131 y avisa que hubo buceo.',
+        src: ['achs_buceo', 'mp_oxigeno_hiperbarico']
+      },
+      {
+        id: 'buerger', n: 'Enfermedad de Buerger', alt: 'Tromboangeítis obliterante', urg: 3, prev: 0.5, dur: ['s', 'm'], sexM: 1.4,
+        age: [[0, 19, 0.2], [20, 45, 1.3], [60, 200, 0.4]],
+        req: ['ctx_fumador'], reqF: 0.2,
+        s: { ctx_fumador: 3, heridas_dedos: 3, dedos_blancos_frio: 2, claudicacion: 2, dolor_quemante_piel: 1 },
+        que: 'Inflamación que tapa las arterias y venas pequeñas de manos y pies, casi exclusivamente en fumadores jóvenes (generalmente menores de 45 años). Produce dolor en manos y pies al caminar o incluso en reposo, dedos que se ponen blancos o morados con el frío y heridas dolorosas en las puntas de los dedos que pueden llevar a la gangrena.',
+        trat: 'Dejar de fumar por completo (incluido el tabaco masticado y el humo ajeno) es lo único que detiene la enfermedad; además, cuidado de las heridas y medicamentos para el dolor y la circulación.',
+        esp: 'Médico general; cirujano vascular.',
+        alarma: 'Dedos negros, fríos o muy dolorosos, o heridas infectadas: urgencia.',
+        src: ['mp_buerger']
+      },
+      {
+        id: 'neumonia_aspiracion', n: 'Neumonía por aspiración', urg: 4, prev: 0.7, dur: ['d'],
+        age: [[70, 200, 1.3]],
+        req: ['ctx_atoro'], reqF: 0.3,
+        s: { ctx_atoro: 3, tos_flema: 2, fiebre: 2, falta_aire: 2, dolor_pecho_respirar: 1, disfagia: 1, ctx_alcohol: 1 },
+        que: 'Infección del pulmón por haber aspirado comida, líquidos, saliva o vómito hacia las vías respiratorias. Es más frecuente en personas mayores o con dificultad para tragar (después de un ACV, con Parkinson o demencia), y tras convulsiones, intoxicación alcohólica o anestesia. Produce tos con flema, fiebre, falta de aire y dolor de pecho.',
+        trat: 'Antibióticos indicados por un médico, a veces en el hospital. Para prevenirla: evaluación de la deglución, comer sentado y con calma y adaptar la consistencia de los alimentos.',
+        esp: 'Servicio de urgencia o médico general; fonoaudiólogo para la deglución.',
+        alarma: 'Falta de aire intensa, labios morados o confusión: llama al 131.',
+        src: ['mp_neumonia_aspiracion']
+      },
+      {
+        id: 'acalasia', n: 'Acalasia', urg: 2, prev: 0.6, dur: ['m'],
+        req: ['regurgita_comida'], reqF: 0.4,
+        s: { disfagia: 3, regurgita_comida: 3, comida_atascada: 2, perdida_peso: 2, ardor_pecho: 1, tos_seca: 1, gorgoteo_garganta: -1, ctx_vinchuca: -2 },
+        que: 'El esófago pierde su capacidad de empujar la comida y su parte final no se relaja, por lo que los alimentos se quedan atascados. Produce dificultad para tragar sólidos y también líquidos, regurgitación de comida sin digerir (a veces de noche, con tos), dolor o ardor en el pecho y baja de peso.',
+        trat: 'Dilatación con balón por endoscopia, cirugía (miotomía) o un procedimiento endoscópico; en algunos casos, toxina botulínica. En Chile también hay que descartar la enfermedad de Chagas, que puede causar un cuadro parecido.',
+        esp: 'Gastroenterólogo.',
+        alarma: 'No poder tragar ni la saliva, baja de peso importante o tos con fiebre: consulta pronto.',
+        src: ['mp_acalasia']
+      },
+      {
+        id: 'zenker', n: 'Divertículo de Zenker', urg: 2, prev: 0.5, dur: ['m'],
+        age: [[0, 39, 0.1], [60, 200, 1.4]],
+        req: ['gorgoteo_garganta', 'regurgita_comida'], reqF: 0.4,
+        s: { gorgoteo_garganta: 3, regurgita_comida: 2, disfagia: 2, mal_aliento: 2, tos_seca: 1, comida_atascada: -1 },
+        que: 'Bolsa que se forma en la parte alta del esófago, junto a la garganta, casi siempre en personas mayores. La comida se acumula en ella: produce dificultad para tragar, ruido de gorgoteo, regurgitación de comida sin digerir, mal aliento y tos; la comida puede pasar a los pulmones y causar neumonía.',
+        trat: 'Si las molestias son leves, comer bocados pequeños y blandos y masticar bien; si molesta, se trata con cirugía o por endoscopia.',
+        esp: 'Gastroenterólogo u otorrinolaringólogo.',
+        alarma: 'Tos con fiebre o falta de aire (posible neumonía), o baja de peso: consulta pronto.',
+        src: ['mayo_zenker']
+      },
+      {
+        id: 'gastroparesia', n: 'Gastroparesia', urg: 2, prev: 0.6, dur: ['s', 'm'],
+        req: ['ctx_diabetes', 'regurgita_comida'], reqF: 0.4,
+        s: { llenura: 3, ctx_diabetes: 2, nauseas: 2, vomitos: 2, regurgita_comida: 2, hinchazon_abdominal: 1, perdida_peso: 1, dolor_epigastrio: -1 },
+        que: 'El estómago se vacía demasiado lento sin que haya una obstrucción. Es frecuente en personas con diabetes de muchos años y también puede aparecer tras infecciones virales, cirugías o por algunos medicamentos. Produce llenura con pocos bocados, náuseas, vómitos de comida sin digerir horas después de comer, hinchazón y baja de peso.',
+        trat: 'Comidas pequeñas y frecuentes, bajas en grasa y fibra; buen control de la glucosa en diabéticos y medicamentos que ayudan a vaciar el estómago y para las náuseas.',
+        esp: 'Médico general; gastroenterólogo.',
+        alarma: 'Vómitos que no paran, deshidratación o baja de peso importante: consulta pronto.',
+        src: ['mp_gastroparesia']
+      },
+      {
+        id: 'isquemia_mesenterica', n: 'Isquemia mesentérica', alt: 'Falta de circulación en el intestino', urg: 4, prev: 0.5, dur: ['h', 's', 'm'],
+        age: [[0, 49, 0.2], [60, 200, 1.4]],
+        req: ['dolor_despues_comer', 'dolor_abdominal_intenso'], reqF: 0.3,
+        s: { dolor_despues_comer: 3, dolor_abdominal_intenso: 2, perdida_peso: 2, ctx_fumador: 1, palpitaciones: 1, diarrea_sangre: 1, vomitos: 1 },
+        que: 'Las arterias que llevan sangre al intestino se estrechan o se tapan. La forma crónica, en personas mayores con arterias endurecidas, produce dolor de guata después de comer, miedo a comer y baja de peso. La forma aguda, por un coágulo (por ejemplo, en la fibrilación auricular), produce un dolor abdominal súbito e intensísimo, mayor de lo que aparenta el examen, y es una emergencia.',
+        trat: 'La forma aguda requiere cirugía o un procedimiento urgente para destapar la arteria; la crónica se trata con angioplastía o cirugía, además de dejar de fumar y controlar los factores de riesgo.',
+        esp: 'Servicio de urgencia; cirujano vascular o digestivo.',
+        alarma: 'Dolor abdominal súbito e intenso, sobre todo si tienes arritmia o eres mayor: llama al 131.',
+        src: ['mp_isquemia_mesenterica']
+      },
+      {
+        id: 'intoxicacion_paracetamol', n: 'Intoxicación por paracetamol', urg: 5, prev: 0.7, dur: ['h', 'd'],
+        req: ['ctx_paracetamol'], reqF: 0.1,
+        s: { ctx_paracetamol: 3, nauseas: 2, vomitos: 2, dolor_hipocondrio: 2, sudoracion: 1, inapetencia: 1, ictericia: 1, confusion: 1 },
+        que: 'Tomar más paracetamol del indicado, de una sola vez o en dosis altas por varios días, puede dañar gravemente el hígado. Las primeras horas a menudo no da síntomas o solo náuseas, vómitos, sudoración y malestar; uno a tres días después aparecen dolor bajo las costillas a la derecha, color amarillo de la piel y confusión. El riesgo es mayor con alcohol, ayuno o enfermedad del hígado.',
+        trat: 'Es una emergencia aunque no haya síntomas: existe un antídoto (N-acetilcisteína) que funciona mejor mientras antes se administre, idealmente en las primeras 8 horas. Lleva el envase al servicio de urgencia.',
+        esp: 'Servicio de urgencia; CITUC (+56 2 2635 3800) para orientación toxicológica.',
+        alarma: 'Ante una sobredosis, llama al 131 o acude a urgencia de inmediato, aunque te sientas bien. Si fue a propósito, pide también ayuda para ti: línea de prevención del suicidio *4141 (gratis, 24 horas).',
+        src: ['mp_sobredosis_paracetamol', 'cituc']
+      }
+    ]
+  });
 })();

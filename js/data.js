@@ -2221,7 +2221,7 @@
     {
       id: 'mal_altura', n: 'Mal agudo de montaña', alt: '«Puna», soroche o apunamiento', urg: 3, prev: 0.9, dur: ['h', 'd'],
       req: ['ctx_altura'], reqF: 0.15,
-      s: { ctx_altura: 3, dolor_cabeza: 3, nauseas: 2, mareo: 2, insomnio: 2, fatiga: 1, vomitos: 1, inapetencia: 1, falta_aire: 1, confusion: 1, perdida_equilibrio: 1 },
+      s: { ctx_altura: 3, dolor_cabeza: 3, nauseas: 2, mareo: 2, insomnio: 2, fatiga: 1, vomitos: 1, inapetencia: 1, falta_aire: 1 },
       que: 'Malestar por la falta de oxígeno al subir rápido a gran altura (sobre 2.500 metros), como en el altiplano o en faenas mineras del norte. Aparece en horas: dolor de cabeza, náuseas, mareo, cansancio, falta de apetito y mal dormir. Las formas graves afectan el cerebro o los pulmones.',
       trat: 'Descansar, no seguir subiendo, hidratarse, evitar el alcohol y tomar analgésicos para el dolor de cabeza. Si no mejora o empeora, la medida principal es bajar a menor altura; a veces se usa oxígeno o medicamentos indicados por un médico. Para prevenirlo, asciende de forma gradual.',
       esp: 'Médico general o el servicio de salud de la faena; medicina del viajero o de montaña.',

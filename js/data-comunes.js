@@ -1525,4 +1525,307 @@
       }
     ]
   });
+
+  // ── Tanda 6 (noviembre 2026): salud sexual, ginecología, embarazo, lactancia y piel
+  D.addPack({
+    symptoms: [
+      ['flujo_verdoso_espumoso', 'Flujo vaginal amarillo verdoso y espumoso', 'mujer', 1, ['tricomonas', 'flujo verde'], 'F'],
+      ['verrugas_genitales_bultos', 'Verrugas o bultitos blandos en los genitales o el ano', 'urogenital', 1, ['condilomas', 'VPH', 'verrugas genitales']],
+      ['picazon_pubis', 'Picazón intensa en el vello púbico, con piojitos o liendres visibles', 'urogenital', 1, ['ladillas', 'piojos del pubis']],
+      ['testiculo_ausente', 'No se palpa un testículo en el escroto (en un niño)', 'urogenital', 1, ['criptorquidia', 'testículo no bajado'], 'M'],
+      ['bulto_vulva', 'Bulto doloroso o hinchazón a un lado de la entrada de la vagina', 'mujer', 1, ['quiste de Bartolino', 'absceso en la vulva'], 'F'],
+      ['sequedad_vaginal', 'Sequedad, ardor o irritación vaginal', 'mujer', 1, ['vagina seca', 'atrofia vaginal'], 'F'],
+      ['bulto_vagina', 'Sensación de bulto o peso que sale por la vagina', 'mujer', 1, ['prolapso', 'útero caído'], 'F'],
+      ['bulto_mama_movil', 'Bulto en la mama liso, firme e indoloro que se mueve al tocarlo', 'mujer', 1, ['fibroadenoma', 'pelotita en la mama'], 'F'],
+      ['mamas_nodulares', 'Mamas con nódulos o «grumos» dolorosos que cambian con el ciclo', 'mujer', 1, ['mamas fibroquísticas', 'mastopatía'], 'F'],
+      ['contracciones', 'Contracciones o endurecimiento de la guata repetidos (más de 4 por hora) en el embarazo', 'mujer', 2, ['contracciones', 'se pone dura la guata'], 'F'],
+      ['perdida_liquido_vagina', 'Salida de líquido claro por la vagina en el embarazo (como si te orinaras sin control)', 'mujer', 3, ['rompí bolsa', 'rotura de membranas', 'se me rompió la fuente'], 'F'],
+      ['mamas_duras_lactancia', 'Mamas muy llenas, duras, calientes y dolorosas en los primeros días de lactancia', 'mujer', 1, ['congestión mamaria', 'bajada de la leche'], 'F'],
+      ['pezon_agrietado', 'Pezones agrietados o con heridas que duelen al amamantar', 'mujer', 1, ['grietas del pezón', 'pezón herido'], 'F'],
+      ['espasmo_vaginal', 'La penetración es imposible o muy dolorosa por tensión involuntaria de la vagina', 'mujer', 1, ['vaginismo'], 'F'],
+      ['sangrado_postmenopausia', 'Sangrado vaginal después de la menopausia', 'mujer', 2, ['sangrado en la menopausia'], 'F'],
+      ['sin_regla_meses', 'No te llega la regla hace 3 meses o más (sin embarazo)', 'mujer', 1, ['amenorrea', 'se me cortó la regla'], 'F'],
+      ['secrecion_pezon', 'Salida de líquido lechoso por los pezones sin estar embarazada ni amamantando', 'mujer', 1, ['galactorrea', 'sale leche del pecho']],
+      ['dolor_mitad_ciclo', 'Dolor en un lado de la parte baja del abdomen a mitad del ciclo menstrual', 'mujer', 1, ['dolor de ovulación', 'Mittelschmerz'], 'F'],
+      ['perlitas_piel', 'Bultitos pequeños, brillantes y color perla con un hoyito en el centro', 'piel', 1, ['molusco contagioso', 'verruguitas de agua']],
+      ['placa_heraldo', 'Una mancha ovalada grande y luego muchas pequeñas en el tronco (en forma de árbol de Navidad)', 'piel', 1, ['pitiriasis rosada', 'placa heraldo']],
+      ['ctx_psa_alto', 'Te dijeron que tienes el antígeno prostático (PSA) elevado', 'contexto', 0, ['PSA alto', 'antígeno prostático'], 'M'],
+      ['ctx_glucosa_alta_embarazo', 'Te dijeron que tu glucosa salió alta en un examen del embarazo', 'contexto', 0, ['diabetes gestacional', 'azúcar alta en el embarazo'], 'F']
+    ],
+    sources: {
+      mp_cancer_prostata: [MP, 'Cáncer de próstata', 'https://medlineplus.gov/spanish/ency/article/000380.htm'],
+      mp_psa: [MP, 'Examen de sangre para antígeno prostático específico (PSA)', 'https://medlineplus.gov/spanish/ency/article/003346.htm'],
+      mp_verrugas_genitales: [MP, 'Verrugas genitales', 'https://medlineplus.gov/spanish/ency/article/000886.htm'],
+      mp_ladillas: [MP, 'Piojos del pubis (ladillas)', 'https://medlineplus.gov/spanish/ency/article/000841.htm'],
+      mayo_criptorquidia: [MAYO, 'Testículo no descendido', 'https://www.mayoclinic.org/es/diseases-conditions/undescended-testicle/symptoms-causes/syc-20351995'],
+      mp_bartolino: [MP, 'Absceso o quiste de Bartolino', 'https://medlineplus.gov/spanish/ency/article/001489.htm'],
+      mayo_adenomiosis: [MAYO, 'Adenomiosis', 'https://www.mayoclinic.org/es/diseases-conditions/adenomyosis/symptoms-causes/syc-20369138'],
+      mp_utero_t: [MP, 'Enfermedades del útero (incluye el prolapso uterino)', 'https://medlineplus.gov/spanish/uterinediseases.html'],
+      mp_fibroadenoma: [MP, 'Fibroadenoma de la mama', 'https://medlineplus.gov/spanish/ency/article/007216.htm'],
+      mp_tumor_mamario: [MP, 'Tumor mamario (bulto en la mama)', 'https://medlineplus.gov/spanish/ency/article/003155.htm'],
+      mp_mamas_fibroquisticas: [MP, 'Mamas fibroquísticas', 'https://medlineplus.gov/spanish/ency/article/000912.htm'],
+      mp_glucemia_embarazo: [MP, 'Pruebas de glucemia durante el embarazo', 'https://medlineplus.gov/spanish/ency/article/007562.htm'],
+      mp_bebe_madre_diabetica: [MP, 'Bebé de madre diabética', 'https://medlineplus.gov/spanish/ency/article/001597.htm'],
+      mp_parto_prematuro: [MP, 'Parto prematuro', 'https://medlineplus.gov/spanish/ency/patientinstructions/000486.htm'],
+      mp_rpm: [MP, 'Ruptura prematura de membranas', 'https://medlineplus.gov/spanish/ency/patientinstructions/000512.htm'],
+      mp_lactancia_problemas: [MP, 'Superación de problemas de la lactancia materna', 'https://medlineplus.gov/spanish/ency/article/002452.htm'],
+      mayo_dispareunia: [MAYO, 'Relaciones sexuales dolorosas (dispareunia)', 'https://www.mayoclinic.org/es/diseases-conditions/painful-intercourse/symptoms-causes/syc-20375967'],
+      mp_vaginismo: [MP, 'Vaginismo', 'https://medlineplus.gov/spanish/ency/article/001487.htm'],
+      mp_cancer_endometrio: [MP, 'Cáncer endometrial', 'https://medlineplus.gov/spanish/ency/article/000910.htm'],
+      mp_prolactina: [MP, 'Examen de sangre de prolactina (galactorrea y amenorrea)', 'https://medlineplus.gov/spanish/ency/article/003718.htm'],
+      mp_endometritis: [MP, 'Endometritis', 'https://medlineplus.gov/spanish/ency/article/001484.htm'],
+      mp_mittelschmerz: [MP, 'Mittelschmerz (dolor de ovulación)', 'https://medlineplus.gov/spanish/ency/article/001503.htm'],
+      mp_molusco: [MP, 'Molusco contagioso', 'https://medlineplus.gov/spanish/ency/article/000826.htm'],
+      mp_pitiriasis_rosada: [MP, 'Pitiriasis rosada', 'https://medlineplus.gov/spanish/ency/article/000871.htm']
+    },
+    conditions: [
+      {
+        id: 'cancer_prostata', n: 'Señales de cáncer de próstata', urg: 3, prev: 0.9, dur: ['m'], sex: 'M',
+        age: [[0, 39, 0.1], [55, 200, 1.4]],
+        req: ['ctx_psa_alto', 'dolor_huesos', 'sangre_orina'], reqF: 0.4,
+        s: { ctx_psa_alto: 3, chorro_debil: 2, nicturia: 1, sangre_orina: 1, dolor_huesos: 1, ctx_familia: 1 },
+        que: 'El cáncer más frecuente en hombres mayores. En etapas iniciales casi nunca da síntomas y se sospecha por un PSA elevado o un tacto rectal alterado; los síntomas urinarios suelen deberse al crecimiento benigno de la próstata. En etapas avanzadas puede causar dolor de huesos o sangre en la orina.',
+        trat: 'Según la etapa y la edad: vigilancia activa, cirugía (prostatectomía), radioterapia u hormonoterapia. Conversar con el médico los beneficios y riesgos del examen de PSA desde los 50 años (o antes con antecedentes familiares).',
+        ges: 'El cáncer de próstata en personas de 15 años y más está cubierto por GES.',
+        esp: 'Médico general; urólogo.',
+        alarma: 'Dolor de huesos persistente, baja de peso, debilidad de piernas o imposibilidad de orinar: consulta urgente.',
+        src: ['mp_cancer_prostata', 'mp_psa', 'minsal_ges']
+      },
+      {
+        id: 'tricomoniasis', n: 'Tricomoniasis', urg: 2, prev: 0.95, dur: ['d', 's'],
+        s: { flujo_verdoso_espumoso: 3, flujo_mal_olor: 2, picazon_genital: 2, ctx_sexo: 2, ardor_orinar: 1, dolor_relaciones: 1, secrecion_uretral: 1 },
+        que: 'Infección de transmisión sexual por un parásito (Trichomonas vaginalis). En mujeres produce flujo amarillo verdoso y espumoso con mal olor, picazón, ardor al orinar y dolor en las relaciones; en hombres suele no dar síntomas o causar una leve secreción.',
+        trat: 'Antibióticos (metronidazol o tinidazol) indicados por un médico, para la persona y su pareja al mismo tiempo, y sin relaciones sexuales hasta terminar el tratamiento. Usar condón.',
+        esp: 'Médico general, matrona o ginecólogo.',
+        alarma: 'Fiebre, dolor abdominal o embarazo: consulta pronto.',
+        src: ['mp_vulvovaginitis', 'mp_its_t']
+      },
+      {
+        id: 'verrugas_genitales', n: 'Verrugas genitales', alt: 'Condilomas por virus papiloma humano (VPH)', urg: 2, prev: 1.0, dur: ['s', 'm'],
+        s: { verrugas_genitales_bultos: 3, ctx_sexo: 2, picazon_genital: 1 },
+        que: 'Bultitos blandos, del color de la piel o rosados, en los genitales, el ano o la ingle, causados por algunos tipos del virus papiloma humano (VPH) que se transmiten por contacto sexual. Otros tipos del VPH pueden causar cáncer de cuello uterino, por eso es importante el Papanicolaou.',
+        trat: 'Cremas o soluciones indicadas por el médico, congelación (crioterapia), láser o cirugía; pueden volver a aparecer. La vacuna contra el VPH, incluida en el programa de vacunación escolar, las previene. Usar condón.',
+        esp: 'Médico general, matrona, dermatólogo o ginecólogo.',
+        alarma: 'Lesiones que sangran, crecen rápido o heridas que no sanan: consulta pronto.',
+        src: ['mp_verrugas_genitales']
+      },
+      {
+        id: 'ladillas', n: 'Ladillas', alt: 'Piojos del pubis', urg: 1, prev: 1.0, dur: ['d', 's'],
+        s: { picazon_pubis: 3, ctx_sexo: 1, picazon_genital: 1, piojos: -1 },
+        que: 'Infestación del vello púbico por un piojo diminuto que se transmite sobre todo por contacto sexual, y a veces por ropa o sábanas. Produce picazón intensa, peor de noche, y se pueden ver los piojos o las liendres pegadas al vello.',
+        trat: 'Lociones o cremas con permetrina, repitiendo a los 7 a 10 días; lavar la ropa de cama y la ropa con agua caliente y tratar a la pareja al mismo tiempo. Conviene estudiar otras infecciones de transmisión sexual.',
+        esp: 'Médico general o matrona.',
+        alarma: 'Si aparecen en las pestañas o en niños: consulta.',
+        src: ['mp_ladillas']
+      },
+      {
+        id: 'criptorquidia', n: 'Testículo no descendido', alt: 'Criptorquidia', urg: 2, prev: 1.0, dur: ['m'], sex: 'M',
+        ageRange: [0, 17], age: [[0, 1, 1.4]],
+        s: { testiculo_ausente: 3, bulto_ingle: 1 },
+        que: 'Uno o ambos testículos no bajaron al escroto antes del nacimiento. Es frecuente en bebés prematuros y muchas veces el testículo baja solo en los primeros meses. Si no baja, aumenta el riesgo de infertilidad, torsión y cáncer testicular.',
+        trat: 'Si no ha bajado a los 6 meses, cirugía (orquidopexia) idealmente antes del año de vida. Controles por el pediatra.',
+        esp: 'Pediatra; cirujano o urólogo infantil.',
+        alarma: 'Dolor intenso en la ingle o el escroto, o bulto doloroso en la ingle: urgencia.',
+        src: ['mayo_criptorquidia']
+      },
+      {
+        id: 'bartolino', n: 'Quiste o absceso de Bartolino', urg: 2, prev: 1.0, dur: ['d', 's'], sex: 'F',
+        s: { bulto_vulva: 3, dolor_relaciones: 1, fiebre: 1 },
+        que: 'Las glándulas de Bartolino, a cada lado de la entrada de la vagina, se tapan y se llenan de líquido formando un quiste; si se infecta se forma un absceso, con un bulto muy doloroso, rojo e hinchado que dificulta caminar o sentarse.',
+        trat: 'Baños de asiento con agua tibia varias veces al día; si hay absceso, drenaje por el médico y a veces antibióticos. Si se repite, un procedimiento para evitar que vuelva.',
+        esp: 'Médico general, matrona o ginecólogo.',
+        alarma: 'Fiebre alta, dolor intenso o bulto que crece rápido: consulta pronto. Un bulto en la vulva después de los 40 años debe evaluarse.',
+        src: ['mp_bartolino']
+      },
+      {
+        id: 'atrofia_vaginal', n: 'Atrofia vaginal', alt: 'Síndrome genitourinario de la menopausia', urg: 1, prev: 1.0, dur: ['m'], sex: 'F',
+        age: [[0, 39, 0.3], [50, 200, 1.4]],
+        s: { sequedad_vaginal: 3, dolor_relaciones: 2, picazon_genital: 1, orinar_frecuente: 1, bochornos: 1 },
+        que: 'Después de la menopausia (o con la lactancia o algunos tratamientos), la falta de estrógenos adelgaza y seca la vagina. Produce sequedad, ardor, picazón, dolor en las relaciones sexuales y molestias urinarias o infecciones urinarias más frecuentes.',
+        trat: 'Hidratantes y lubricantes vaginales; si no bastan, estrógenos vaginales en dosis bajas indicados por el médico. La actividad sexual regular ayuda a mantener la elasticidad.',
+        esp: 'Médico general, matrona o ginecólogo.',
+        alarma: 'Sangrado vaginal después de la menopausia: consulta pronto.',
+        src: ['mp_flujo', 'mp_menopausia']
+      },
+      {
+        id: 'sangrado_uterino_anormal', n: 'Sangrado uterino anormal', urg: 2, prev: 1.0, dur: ['s', 'm'], sex: 'F',
+        ageRange: [11, 55],
+        s: { reglas_abundantes: 2, sangrado_vaginal: 2, reglas_irregulares: 2, palidez: 1, fatiga: 1, atraso_menstrual: -1 },
+        que: 'Reglas demasiado abundantes, largas, frecuentes o irregulares, o sangrado entre reglas. Se debe a desequilibrios hormonales (frecuentes en la adolescencia y cerca de la menopausia), miomas, pólipos, adenomiosis, trastornos de la coagulación o, con menos frecuencia, cáncer.',
+        trat: 'Buscar la causa (ecografía, exámenes de sangre); tratamientos hormonales, ácido tranexámico, antiinflamatorios, hierro si hay anemia o procedimientos según la causa.',
+        esp: 'Médico general, matrona o ginecólogo.',
+        alarma: 'Sangrado muy abundante (empapa una toalla por hora), mareo o desmayo, o sangrado con posible embarazo: urgencia.',
+        src: ['mp_sangrado_uterino']
+      },
+      {
+        id: 'adenomiosis', n: 'Adenomiosis', urg: 2, prev: 0.9, dur: ['m'], sex: 'F',
+        age: [[0, 29, 0.4], [35, 50, 1.3]],
+        s: { reglas_abundantes: 3, dolor_menstrual: 3, dolor_pelvico: 2, dolor_relaciones: 1 },
+        que: 'El tejido que recubre el útero crece dentro de su pared muscular. Muchas veces no da síntomas; cuando los da, produce reglas muy abundantes o prolongadas, dolor menstrual intenso, dolor pélvico crónico y dolor en las relaciones. Es más frecuente entre los 35 y 50 años.',
+        trat: 'Antiinflamatorios y tratamientos hormonales (anticonceptivos, dispositivo con hormona); en casos graves, cirugía. Mejora después de la menopausia.',
+        esp: 'Ginecólogo.',
+        alarma: 'Sangrado muy abundante con mareo, palidez o desmayo: urgencia.',
+        src: ['mayo_adenomiosis']
+      },
+      {
+        id: 'prolapso_genital', n: 'Prolapso genital', alt: 'Útero o vejiga caída', urg: 2, prev: 1.0, dur: ['m'], sex: 'F',
+        age: [[0, 39, 0.3], [50, 200, 1.3]],
+        s: { bulto_vagina: 3, perdida_orina: 1, estrenimiento: 1, dolor_lumbar: 1 },
+        que: 'El útero, la vejiga o el recto descienden hacia la vagina por debilidad de los músculos y ligamentos del piso pélvico, después de partos vaginales, con la menopausia, la obesidad o el esfuerzo crónico. Produce sensación de bulto o peso en la vagina y molestias urinarias o intestinales.',
+        trat: 'Ejercicios del piso pélvico (kinesiología), un pesario vaginal o cirugía según el grado y las molestias.',
+        esp: 'Ginecólogo; kinesiólogo de piso pélvico.',
+        alarma: 'Imposibilidad de orinar, sangrado o úlcera en el tejido que sale: consulta pronto.',
+        src: ['mp_utero_t']
+      },
+      {
+        id: 'fibroadenoma', n: 'Fibroadenoma de mama', urg: 2, prev: 1.0, dur: ['s', 'm'], sex: 'F',
+        age: [[15, 35, 1.4], [50, 200, 0.3]],
+        s: { bulto_mama_movil: 3, bulto_mama: 2 },
+        que: 'El tumor benigno de la mama más frecuente en mujeres jóvenes: un bulto liso, firme, indoloro y que se mueve con facilidad bajo la piel. No es cáncer, aunque todo bulto nuevo debe evaluarse.',
+        trat: 'Se confirma con ecografía y, a veces, biopsia; muchos se controlan sin tratamiento y otros se extirpan si crecen o molestan.',
+        esp: 'Médico general, matrona o ginecólogo; especialista en mamas.',
+        alarma: 'Bulto duro, fijo o que crece rápido, cambios en la piel o el pezón, o secreción con sangre: consulta pronto.',
+        src: ['mp_fibroadenoma', 'mp_tumor_mamario']
+      },
+      {
+        id: 'mama_fibroquistica', n: 'Cambios fibroquísticos de la mama', urg: 1, prev: 1.0, dur: ['m'], sex: 'F',
+        age: [[20, 50, 1.2]],
+        s: { mamas_nodulares: 3, sensibilidad_mamas: 3, ctx_premenstrual: 1 },
+        que: 'Cambios benignos y muy frecuentes de la mama: zonas con nódulos o grumos y dolor o sensibilidad que aumentan antes de la regla y mejoran después. No aumentan el riesgo de cáncer de mama.',
+        trat: 'Sostén firme, compresas tibias o frías y analgésicos; reducir la cafeína puede ayudar a algunas mujeres. Controles y exámenes de imagen si aparece un bulto distinto.',
+        esp: 'Médico general, matrona o ginecólogo.',
+        alarma: 'Bulto nuevo que no cambia con el ciclo, cambios en la piel o el pezón, o secreción con sangre: consulta.',
+        src: ['mp_mamas_fibroquisticas']
+      },
+      {
+        id: 'diabetes_gestacional', n: 'Diabetes gestacional', urg: 2, prev: 1.0, dur: ['s', 'm'], sex: 'F', preg: true,
+        ageRange: [12, 55],
+        req: ['ctx_glucosa_alta_embarazo'], reqF: 0.4,
+        s: { ctx_glucosa_alta_embarazo: 3, sed: 2, orinar_frecuente: 1, fatiga: 1, ctx_sobrepeso: 1 },
+        que: 'Azúcar alta en la sangre que aparece o se detecta durante el embarazo, generalmente en el segundo o tercer trimestre. Casi nunca da síntomas y se detecta con los exámenes de glucosa del control prenatal. Sin control, el bebé puede crecer demasiado y aumentan las complicaciones del parto.',
+        trat: 'Alimentación indicada por nutricionista, actividad física, control de la glucosa y, si no basta, insulina u otros medicamentos. Suele desaparecer tras el parto, pero aumenta el riesgo de diabetes tipo 2 después.',
+        esp: 'Matrona; médico o ginecólogo obstetra; nutricionista.',
+        alarma: 'Mucha sed y orina abundante con decaimiento, o el bebé se mueve menos: consulta urgente.',
+        src: ['mp_glucemia_embarazo', 'mp_bebe_madre_diabetica']
+      },
+      {
+        id: 'parto_prematuro', n: 'Amenaza de parto prematuro', urg: 4, prev: 0.95, dur: ['h', 'd'], sex: 'F', preg: true,
+        ageRange: [12, 55],
+        req: ['ctx_embarazo20'], reqF: 0.4,
+        s: { contracciones: 3, ctx_embarazo20: 2, dolor_lumbar: 1, sangrado_vaginal: 1, flujo_vaginal: 1, dolor_pelvico: 1 },
+        que: 'Contracciones regulares, presión en la pelvis, dolor lumbar, aumento del flujo o sangrado antes de las 37 semanas de embarazo. Puede llevar a un parto prematuro, por eso requiere evaluación inmediata.',
+        trat: 'Evaluación en la maternidad: según el caso, medicamentos que frenan las contracciones, corticoides para madurar los pulmones del bebé y otros tratamientos.',
+        ges: 'La prevención del parto prematuro está cubierta por GES.',
+        esp: 'Urgencia de la maternidad; obstetra.',
+        alarma: 'Contracciones regulares, sangrado o salida de líquido antes de las 37 semanas: acude de inmediato a la maternidad.',
+        src: ['mp_parto_prematuro', 'minsal_ges']
+      },
+      {
+        id: 'rotura_membranas', n: 'Rotura prematura de membranas', alt: 'Romper la bolsa antes de tiempo', urg: 4, prev: 0.95, dur: ['h'], sex: 'F', preg: true,
+        ageRange: [12, 55],
+        s: { perdida_liquido_vagina: 3, ctx_embarazo20: 2, contracciones: 1, fiebre: 1 },
+        que: 'La bolsa de las aguas se rompe antes de que empiece el trabajo de parto, a veces antes de las 37 semanas. Se nota como salida de líquido claro por la vagina, en chorro o goteo continuo. Aumenta el riesgo de infección para la madre y el bebé.',
+        trat: 'Acudir a la maternidad para confirmar y decidir el manejo: hospitalización, antibióticos y, según las semanas, inducir el parto o esperar con corticoides.',
+        esp: 'Urgencia de la maternidad; obstetra.',
+        alarma: 'Toda salida de líquido por la vagina en el embarazo requiere evaluación inmediata, sobre todo con fiebre, líquido verde o el bebé se mueve menos.',
+        src: ['mp_rpm']
+      },
+      {
+        id: 'congestion_mamaria', n: 'Congestión mamaria', alt: 'Ingurgitación en la lactancia', urg: 1, prev: 1.0, dur: ['d'], sex: 'F',
+        s: { mamas_duras_lactancia: 3, ctx_lactancia: 2, febricula: 1, mama_roja: -1 },
+        que: 'En los primeros días después del parto, cuando aumenta la producción de leche, las mamas se ponen muy llenas, duras, calientes y dolorosas, y al bebé le cuesta agarrarse. Es frecuente y pasajera.',
+        trat: 'Amamantar seguido y a libre demanda, extraer un poco de leche antes para ablandar la aréola, compresas tibias antes y frías después de mamar, y apoyo de una matrona o consultora de lactancia.',
+        esp: 'Matrona; consultora de lactancia.',
+        alarma: 'Zona roja, caliente y dolorosa en una mama con fiebre o malestar: consulta pronto (posible mastitis).',
+        src: ['mp_lactancia_problemas']
+      },
+      {
+        id: 'grietas_pezon', n: 'Grietas en el pezón', urg: 1, prev: 1.0, dur: ['d', 's'], sex: 'F',
+        s: { pezon_agrietado: 3, ctx_lactancia: 2 },
+        que: 'Heridas o fisuras en los pezones durante la lactancia, casi siempre porque el bebé no se agarra bien al pecho. Producen dolor intenso al amamantar y pueden sangrar.',
+        trat: 'Corregir el acople con ayuda de una matrona o consultora de lactancia, aplicar unas gotas de la propia leche y dejar secar al aire; a veces cremas de lanolina. Revisar si el bebé tiene frenillo corto.',
+        esp: 'Matrona; consultora de lactancia; pediatra.',
+        alarma: 'Fiebre, mama roja y dolorosa o pus: consulta pronto.',
+        src: ['mp_lactancia_problemas']
+      },
+      {
+        id: 'dispareunia', n: 'Dolor en las relaciones sexuales', alt: 'Dispareunia y vaginismo', urg: 2, prev: 1.0, dur: ['s', 'm'], sexM: 0.3,
+        s: { dolor_relaciones: 3, espasmo_vaginal: 2, sequedad_vaginal: 1, ansiedad: 1 },
+        que: 'Dolor genital antes, durante o después de las relaciones sexuales. Puede deberse a falta de lubricación (menopausia, lactancia, medicamentos), infecciones, endometriosis, cicatrices o a vaginismo: contracción involuntaria de los músculos de la vagina que dificulta la penetración, a menudo relacionada con ansiedad o experiencias previas.',
+        trat: 'Tratar la causa; lubricantes, kinesiología de piso pélvico, dilatadores progresivos y terapia sexual o psicológica. Conversarlo con el médico sin vergüenza ayuda mucho.',
+        esp: 'Ginecólogo o matrona; kinesiólogo de piso pélvico; psicólogo o sexólogo.',
+        alarma: 'Dolor con fiebre, flujo con mal olor o sangrado después de las relaciones: consulta pronto.',
+        src: ['mayo_dispareunia', 'mp_vaginismo']
+      },
+      {
+        id: 'cancer_endometrio', n: 'Señales de cáncer de endometrio', alt: 'Cáncer de útero', urg: 3, prev: 0.9, dur: ['s', 'm'], sex: 'F',
+        age: [[0, 39, 0.2], [50, 200, 1.4]],
+        s: { sangrado_postmenopausia: 3, sangrado_vaginal: 2, sangrado_postcoital: 1, dolor_pelvico: 1, ctx_sobrepeso: 1, ctx_diabetes: 1 },
+        que: 'El cáncer más frecuente del útero, sobre todo después de la menopausia. Su señal principal es el sangrado vaginal después de la menopausia, o sangrados entre reglas cerca de ella. Es más frecuente con obesidad, diabetes y uso de estrógenos sin progesterona. Detectado a tiempo, suele curarse.',
+        trat: 'Ecografía y biopsia del endometrio; el tratamiento habitual es la cirugía (histerectomía), a veces con radioterapia u otros tratamientos.',
+        esp: 'Ginecólogo.',
+        alarma: 'Todo sangrado después de la menopausia debe evaluarse pronto.',
+        src: ['mp_cancer_endometrio']
+      },
+      {
+        id: 'amenorrea', n: 'Amenorrea', alt: 'Ausencia de regla', urg: 2, prev: 1.0, dur: ['m'], sex: 'F',
+        ageRange: [11, 55],
+        s: { sin_regla_meses: 3, perdida_peso: 1, ctx_estres: 1, conducta_alimentaria: 1, vello_excesivo: 1, secrecion_pezon: 1 },
+        que: 'Falta de la regla por 3 meses o más en una mujer que antes menstruaba (o ausencia de la primera regla a los 15 años). La causa más común es el embarazo; otras son el estrés, la baja de peso o el ejercicio intenso, el síndrome de ovario poliquístico, problemas de tiroides o de prolactina y la menopausia precoz.',
+        trat: 'Descartar embarazo y buscar la causa con exámenes; tratarla (alimentación, peso, tiroides, prolactina) y, a veces, tratamiento hormonal para proteger los huesos.',
+        esp: 'Médico general, matrona o ginecólogo; endocrinólogo.',
+        alarma: 'Dolor abdominal intenso o sangrado con posible embarazo: urgencia.',
+        src: ['mp_sangrado_uterino', 'mp_prolactina']
+      },
+      {
+        id: 'galactorrea', n: 'Galactorrea', alt: 'Secreción de leche fuera de la lactancia', urg: 2, prev: 0.95, dur: ['s', 'm'],
+        s: { secrecion_pezon: 3, sin_regla_meses: 1, reglas_irregulares: 1, dolor_cabeza: 1, vision_borrosa: 1 },
+        que: 'Salida de líquido lechoso por uno o ambos pezones sin estar embarazada ni amamantando. Suele deberse a la prolactina alta por medicamentos (algunos para el ánimo, las náuseas o la presión), hipotiroidismo o un tumor benigno de la hipófisis; también puede aparecer en hombres.',
+        trat: 'Medir la prolactina y la tiroides, revisar los medicamentos y, si hay un tumor de la hipófisis, medicamentos que la reducen.',
+        esp: 'Médico general o ginecólogo; endocrinólogo.',
+        alarma: 'Secreción con sangre o de un solo pezón con bulto, o dolor de cabeza con problemas de la vista: consulta pronto.',
+        src: ['mp_prolactina']
+      },
+      {
+        id: 'endometritis_posparto', n: 'Endometritis posparto', alt: 'Infección del útero después del parto', urg: 4, prev: 0.95, dur: ['d'], sex: 'F',
+        req: ['ctx_posparto'], reqF: 0.3,
+        s: { ctx_posparto: 2, fiebre: 3, dolor_pelvico: 2, flujo_mal_olor: 2, sangrado_vaginal: 1 },
+        que: 'Infección del revestimiento del útero en los días o semanas después de un parto o un aborto, más frecuente tras una cesárea o un trabajo de parto prolongado. Produce fiebre, dolor en la parte baja del abdomen y flujo con mal olor.',
+        trat: 'Antibióticos indicados por un médico, a veces en el hospital por vena.',
+        esp: 'Urgencia de la maternidad; ginecólogo obstetra.',
+        alarma: 'Fiebre después del parto, especialmente con escalofríos, mareo o sangrado abundante: urgencia.',
+        src: ['mp_endometritis']
+      },
+      {
+        id: 'mittelschmerz', n: 'Dolor de ovulación', alt: 'Mittelschmerz', urg: 1, prev: 1.0, dur: ['h', 'd'], sex: 'F',
+        ageRange: [11, 55],
+        s: { dolor_mitad_ciclo: 3, dolor_pelvico: 1, fiebre: -1, atraso_menstrual: -2 },
+        que: 'Dolor en un lado de la parte baja del abdomen a mitad del ciclo menstrual, cuando el ovario libera el óvulo. Dura de minutos a uno o dos días y puede acompañarse de un poco de flujo o manchado. Es frecuente y no es dañino.',
+        trat: 'Calor local y analgésicos; si molesta mucho cada mes, los anticonceptivos hormonales lo evitan.',
+        esp: 'Médico general o ginecólogo si es intenso.',
+        alarma: 'Dolor intenso que no cede, con fiebre, vómitos, mareo o atraso menstrual: urgencia (torsión de ovario, apendicitis o embarazo ectópico).',
+        src: ['mp_mittelschmerz']
+      },
+      {
+        id: 'molusco', n: 'Molusco contagioso', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[1, 10, 1.4]],
+        s: { perlitas_piel: 3, picazon_piel: 1 },
+        que: 'Infección viral de la piel muy frecuente en niños: bultitos pequeños, firmes, brillantes y color perla con un hoyito en el centro. Se contagia por contacto directo o toallas y puede durar meses. En adultos puede transmitirse por vía sexual.',
+        trat: 'Suele desaparecer solo en meses o hasta un par de años. Si molestan o se extienden, el médico puede retirarlos o aplicar cremas. Evitar rascarse y compartir toallas.',
+        esp: 'Pediatra o médico general; dermatólogo.',
+        alarma: 'Lesiones muy numerosas o grandes en un adulto o cerca del ojo: consulta.',
+        src: ['mp_molusco']
+      },
+      {
+        id: 'pitiriasis_rosada', n: 'Pitiriasis rosada', urg: 1, prev: 1.0, dur: ['s'],
+        age: [[10, 35, 1.2]],
+        s: { placa_heraldo: 3, picazon_piel: 1, erupcion: 1, fiebre: -1 },
+        que: 'Erupción frecuente en adolescentes y adultos jóvenes, probablemente por un virus. Empieza con una mancha ovalada rosada y escamosa (placa heraldo) y días después aparecen muchas manchas más pequeñas en el tronco, en forma de árbol de Navidad. Puede picar.',
+        trat: 'Desaparece sola en 4 a 8 semanas (a veces hasta 12). Cremas hidratantes, antihistamínicos o corticoides suaves para la picazón y algo de sol ayudan.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Fiebre, lesiones en palmas y plantas, o erupción en el embarazo: consulta (descartar otras causas).',
+        src: ['mp_pitiriasis_rosada']
+      }
+    ]
+  });
 })();

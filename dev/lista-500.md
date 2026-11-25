@@ -134,31 +134,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C123 Fimosis y parafimosis — tanda 5 · `fimosis`
 - [x] C124 Eyaculación precoz — tanda 5 · `eyaculacion_precoz`
 - [x] C125 Testosterona baja (hipogonadismo masculino) — tanda 5 · `hipogonadismo`
-- [ ] C126 Señales de cáncer de próstata
-- [ ] C127 Tricomoniasis
-- [ ] C128 Verrugas genitales (VPH)
-- [ ] C129 Ladillas (piojos del pubis)
-- [ ] C130 Testículo no descendido (criptorquidia)
-- [ ] C131 Quiste o absceso de Bartolino
-- [ ] C132 Atrofia vaginal (síndrome genitourinario de la menopausia)
-- [ ] C133 Sangrado uterino anormal
-- [ ] C134 Adenomiosis
-- [ ] C135 Prolapso genital
-- [ ] C136 Fibroadenoma de mama
-- [ ] C137 Cambios fibroquísticos de la mama
-- [ ] C138 Diabetes gestacional
-- [ ] C139 Amenaza de parto prematuro
-- [ ] C140 Rotura prematura de membranas
-- [ ] C141 Congestión mamaria
-- [ ] C142 Grietas en el pezón
-- [ ] C143 Dolor en las relaciones sexuales (dispareunia y vaginismo)
-- [ ] C144 Señales de cáncer de endometrio
-- [ ] C145 Amenorrea (ausencia de regla)
-- [ ] C146 Galactorrea (secreción de leche fuera de la lactancia)
-- [ ] C147 Endometritis posparto
-- [ ] C148 Dolor de ovulación (Mittelschmerz)
-- [ ] C149 Molusco contagioso
-- [ ] C150 Pitiriasis rosada
+- [x] C126 Señales de cáncer de próstata — tanda 6 · `cancer_prostata`
+- [x] C127 Tricomoniasis — tanda 6 · `tricomoniasis`
+- [x] C128 Verrugas genitales (VPH) — tanda 6 · `verrugas_genitales`
+- [x] C129 Ladillas (piojos del pubis) — tanda 6 · `ladillas`
+- [x] C130 Testículo no descendido (criptorquidia) — tanda 6 · `criptorquidia`
+- [x] C131 Quiste o absceso de Bartolino — tanda 6 · `bartolino`
+- [x] C132 Atrofia vaginal (síndrome genitourinario de la menopausia) — tanda 6 · `atrofia_vaginal`
+- [x] C133 Sangrado uterino anormal — tanda 6 · `sangrado_uterino_anormal`
+- [x] C134 Adenomiosis — tanda 6 · `adenomiosis`
+- [x] C135 Prolapso genital — tanda 6 · `prolapso_genital`
+- [x] C136 Fibroadenoma de mama — tanda 6 · `fibroadenoma`
+- [x] C137 Cambios fibroquísticos de la mama — tanda 6 · `mama_fibroquistica`
+- [x] C138 Diabetes gestacional — tanda 6 · `diabetes_gestacional`
+- [x] C139 Amenaza de parto prematuro — tanda 6 · `parto_prematuro`
+- [x] C140 Rotura prematura de membranas — tanda 6 · `rotura_membranas`
+- [x] C141 Congestión mamaria — tanda 6 · `congestion_mamaria`
+- [x] C142 Grietas en el pezón — tanda 6 · `grietas_pezon`
+- [x] C143 Dolor en las relaciones sexuales (dispareunia y vaginismo) — tanda 6 · `dispareunia`
+- [x] C144 Señales de cáncer de endometrio — tanda 6 · `cancer_endometrio`
+- [x] C145 Amenorrea (ausencia de regla) — tanda 6 · `amenorrea`
+- [x] C146 Galactorrea (secreción de leche fuera de la lactancia) — tanda 6 · `galactorrea`
+- [x] C147 Endometritis posparto — tanda 6 · `endometritis_posparto`
+- [x] C148 Dolor de ovulación (Mittelschmerz) — tanda 6 · `mittelschmerz`
+- [x] C149 Molusco contagioso — tanda 6 · `molusco`
+- [x] C150 Pitiriasis rosada — tanda 6 · `pitiriasis_rosada`
 - [ ] C151 Pitiriasis versicolor
 - [ ] C152 Vitíligo
 - [ ] C153 Melasma
@@ -400,31 +400,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R123 Señales de tumor cerebral — tanda 5 · `tumor_cerebral`
 - [x] R124 Neurocisticercosis — tanda 5 · `neurocisticercosis`
 - [x] R125 Síndrome de Wernicke-Korsakoff — tanda 5 · `wernicke`
-- [ ] R126 Espasmos infantiles (síndrome de West)
-- [ ] R127 Neuritis óptica
-- [ ] R128 Espasmo hemifacial
-- [ ] R129 Síndrome de boca ardiente
-- [ ] R130 Hipertensión pulmonar
-- [ ] R131 Fibrosis pulmonar idiopática
-- [ ] R132 Endocarditis infecciosa
-- [ ] R133 Miocardiopatía dilatada
-- [ ] R134 Miocardiopatía de Takotsubo
-- [ ] R135 Aneurisma de aorta abdominal
-- [ ] R136 Fiebre reumática
-- [ ] R137 Neumonitis por hipersensibilidad
-- [ ] R138 Silicosis
-- [ ] R139 Asbestosis
-- [ ] R140 Aspergilosis
-- [ ] R141 Mesotelioma
-- [ ] R142 Edema pulmonar de altura
-- [ ] R143 Edema cerebral de altura
-- [ ] R144 Enfermedad por descompresión
-- [ ] R145 Tromboangeítis obliterante (enfermedad de Buerger)
-- [ ] R146 Neumonía por aspiración
-- [ ] R147 Acalasia
-- [ ] R148 Divertículo de Zenker
-- [ ] R149 Gastroparesia
-- [ ] R150 Isquemia mesentérica
+- [x] R126 Espasmos infantiles (síndrome de West) — tanda 6 · `sindrome_west`
+- [x] R127 Neuritis óptica — tanda 6 · `neuritis_optica`
+- [x] R128 Espasmo hemifacial — tanda 6 · `espasmo_hemifacial`
+- [x] R129 Síndrome de boca ardiente — tanda 6 · `boca_ardiente`
+- [x] R130 Hipertensión pulmonar — tanda 6 · `hipertension_pulmonar`
+- [x] R131 Fibrosis pulmonar idiopática — tanda 6 · `fibrosis_pulmonar`
+- [x] R132 Endocarditis infecciosa — tanda 6 · `endocarditis`
+- [x] R133 Miocardiopatía dilatada — tanda 6 · `miocardiopatia_dilatada`
+- [x] R134 Miocardiopatía de Takotsubo — tanda 6 · `takotsubo`
+- [x] R135 Aneurisma de aorta abdominal — tanda 6 · `aneurisma_aorta_abdominal`
+- [x] R136 Fiebre reumática — tanda 6 · `fiebre_reumatica`
+- [x] R137 Neumonitis por hipersensibilidad — tanda 6 · `neumonitis_hipersensibilidad`
+- [x] R138 Silicosis — tanda 6 · `silicosis`
+- [x] R139 Asbestosis — tanda 6 · `asbestosis`
+- [x] R140 Aspergilosis — tanda 6 · `aspergilosis`
+- [x] R141 Mesotelioma — tanda 6 · `mesotelioma`
+- [x] R142 Edema pulmonar de altura — tanda 6 · `edema_pulmonar_altura`
+- [x] R143 Edema cerebral de altura — tanda 6 · `edema_cerebral_altura`
+- [x] R144 Enfermedad por descompresión — tanda 6 · `descompresion`
+- [x] R145 Tromboangeítis obliterante (enfermedad de Buerger) — tanda 6 · `buerger`
+- [x] R146 Neumonía por aspiración — tanda 6 · `neumonia_aspiracion`
+- [x] R147 Acalasia — tanda 6 · `acalasia`
+- [x] R148 Divertículo de Zenker — tanda 6 · `zenker`
+- [x] R149 Gastroparesia — tanda 6 · `gastroparesia`
+- [x] R150 Isquemia mesentérica — tanda 6 · `isquemia_mesenterica`
 - [ ] R151 Vólvulo
 - [ ] R152 Hepatitis alcohólica
 - [ ] R153 Síndrome de Budd-Chiari
@@ -546,7 +546,7 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [ ] R269 Intoxicación por plomo  _(reserva)_
 - [ ] R270 Intoxicación por arsénico  _(reserva)_
 - [ ] R271 Intoxicación por hongos  _(reserva)_
-- [ ] R272 Intoxicación por paracetamol  _(reserva)_
+- [x] R272 Intoxicación por paracetamol — tanda 6 · `intoxicacion_paracetamol`
 - [ ] R273 Picadura de araña del trigo (latrodectismo)  _(reserva)_
 - [ ] R274 Picadura de escorpión  _(reserva)_
 - [ ] R275 Intoxicación por metanol  _(reserva)_
