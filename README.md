@@ -16,9 +16,10 @@ Marcas tus síntomas (cada uno trae un color según su gravedad y tú indicas qu
 
 ## Qué cubre
 
-- **323 síntomas** en 13 zonas (general, cabeza, ojos, oídos-nariz-boca-garganta, pecho, corazón, abdomen, urinario y genital, regla-mamas-embarazo, piel, músculos y huesos, ánimo y sueño, y contexto o exposiciones), con sinónimos y modismos chilenos como "guata", "desgarro", "fuego", "pidulles", "peste cristal", "puna" o "copete".
-- **220 enfermedades**: desde resfrío, crisis de pánico o lumbago hasta infarto, ACV, meningitis, embolia pulmonar o embarazo ectópico; infecciones vigiladas por la OMS (dengue, malaria, sarampión, mpox, VIH, Chagas, rabia); señales de alerta de los cánceres más frecuentes; y cuadros propios de Chile como hantavirus, marea roja, araña de rincón, monóxido de carbono, mal de altura (puna), intoxicación por plaguicidas, hidatidosis y picadura de fragata portuguesa; además, cuadros de lactantes y niños (cólicos, convulsión febril, dermatitis del pañal) y problemas frecuentes de piel, ojos, boca y oídos.
-- **341 referencias** enlazadas.
+- **796 síntomas** en 13 zonas (general, cabeza, ojos, oídos-nariz-boca-garganta, pecho, corazón, abdomen, urinario y genital, regla-mamas-embarazo, piel, músculos y huesos, ánimo y sueño, y contexto o exposiciones), con sinónimos y modismos chilenos como "guata", "desgarro", "fuego", "pidulles", "peste cristal", "puna" o "copete".
+- **720 enfermedades**: desde resfrío, crisis de pánico o lumbago hasta infarto, ACV, meningitis, embolia pulmonar o embarazo ectópico; infecciones vigiladas por la OMS (dengue, malaria, sarampión, mpox, VIH, Chagas, rabia); señales de alerta de los cánceres más frecuentes; y cuadros propios de Chile como hantavirus, marea roja, araña de rincón, monóxido de carbono, mal de altura (puna), intoxicación por plaguicidas, hidatidosis y picadura de fragata portuguesa; además, cuadros de lactantes y niños (cólicos, convulsión febril, dermatitis del pañal) y problemas frecuentes de piel, ojos, boca y oídos.
+- En noviembre de 2026 se sumaron **500 enfermedades**: 250 frecuentes (salud mental y sueño, piel y pelo, ginecología, embarazo y lactancia, músculos, tendones y huesos, digestivas, urinarias, oídos, ojos, boca e infancia) y 250 poco frecuentes o raras (genéticas y metabólicas, autoinmunes, neurológicas, de la sangre, hormonales, cánceres, infecciones de viajeros y zoonosis, enfermedades laborales como la silicosis, tifus de los matorrales del sur de Chile e intoxicaciones). La lista completa, con la tanda y el identificador de cada una, está en [`dev/lista-500.md`](dev/lista-500.md).
+- **897 referencias** enlazadas.
 
 ## Fuentes
 
@@ -27,20 +28,30 @@ El contenido se redactó a partir de fuentes médicas reconocidas (no Wikipedia)
 - [Organización Mundial de la Salud (OMS)](https://www.who.int/es/news-room/fact-sheets), la agencia de salud de la ONU, y la [Organización Panamericana de la Salud (OPS)](https://www.paho.org/es)
 - [MedlinePlus en español](https://medlineplus.gov/spanish/), de la Biblioteca Nacional de Medicina de EE. UU. (NIH)
 - [Mayo Clinic](https://www.mayoclinic.org/es)
+- [Orphanet](https://www.orpha.net/es), el portal europeo de referencia sobre enfermedades raras
 - [Ministerio de Salud de Chile (MINSAL)](https://www.minsal.cl/), incluido el listado [AUGE/GES](https://auge.minsal.cl/problemasdesalud/index)
-- [Superintendencia de Salud](https://www.supersalud.gob.cl/), [Instituto de Salud Pública (ISP)](https://www.ispch.gob.cl/) y [SENDA](https://www.senda.gob.cl/)
+- [Superintendencia de Salud](https://www.supersalud.gob.cl/), [Instituto de Salud Pública (ISP)](https://www.ispch.gob.cl/), [SENDA](https://www.senda.gob.cl/), [FONASA](https://www.fonasa.gob.cl/) (Ley Ricarte Soto) y la [Subsecretaría de Previsión Social](https://previsionsocial.gob.cl/)
+- [Asociación Chilena de Seguridad (ACHS)](https://www.achs.cl/) y el [Centro de Información Toxicológica UC (CITUC)](https://cituc.uc.cl/)
 - Clínicas chilenas: [Clínica Las Condes](https://www.clinicalascondes.cl/), [Clínica Alemana](https://www.clinicaalemana.cl/), [UC Christus](https://www.ucchristus.cl/) y [RedSalud](https://www.redsalud.cl/)
 
 Cada enfermedad enlaza sus referencias específicas dentro de la web.
 
 ## Cómo funciona
 
-- `js/data.js` es la base de conocimiento: síntomas con su gravedad (leve, atención, alarma o contexto) y enfermedades con sus síntomas ponderados (3 = clave, 2 = frecuente, 1 = posible, negativo = lo hace menos probable), su urgencia y su edad, sexo y duración típicas.
+- `js/data.js` es la base de conocimiento original y `js/data-comunes.js` y `js/data-raras.js` suman, en bloques por tanda (`addPack`), las 500 enfermedades agregadas en noviembre de 2026. Contienen síntomas con su gravedad (leve, atención, alarma o contexto) y enfermedades con sus síntomas ponderados (3 = clave, 2 = frecuente, 1 = posible, negativo = lo hace menos probable), su urgencia y su edad, sexo y duración típicas.
 - `js/app.js` calcula la coincidencia: cuánto del cuadro típico tienes × cuánto de lo que sientes explica, ajustado por intensidad, edad, sexo, embarazo, duración, antecedentes necesarios (p. ej. hantavirus requiere contacto con roedores y marea roja, haber comido mariscos) y frecuencia de la enfermedad.
 - Los síntomas de alarma muestran un aviso para llamar al SAMU 131 o ir a urgencia. Los pensamientos de hacerse daño muestran la línea *4141.
 - Todo corre en el navegador: no hay servidor ni se envían datos. La selección se guarda solo en el almacenamiento de sesión (`sessionStorage`) y se borra al cerrar la pestaña.
 - Las tipografías se sirven desde el propio sitio (`fonts/`) y una política de seguridad de contenidos (CSP) impide cargar recursos de terceros. No hay cookies, analítica ni publicidad.
 - Antes de ver resultados, la persona debe aceptar los Términos y la Política de privacidad. Los avisos de alarma (SAMU 131, *4141) se muestran siempre, sin necesidad de aceptar.
+
+## Desarrollo y pruebas
+
+La carpeta `dev/` reúne herramientas para mantener la base de datos:
+
+- `node dev/validar.js --warn` revisa la coherencia de los datos (identificadores, zonas, pesos, fuentes con `https`, síntomas por sexo y referencias sin uso).
+- `node dev/tests/run.js` abre la web en Chromium (Playwright) y comprueba 673 escenarios clínicos de prueba: cada uno debe mostrar la enfermedad esperada en el primer lugar (o en el lugar indicado). Sin errores de consola ni peticiones a terceros.
+- `node dev/tests/verify.js` comprueba la política de seguridad de contenidos, las tipografías locales, el aviso de consentimiento, las líneas de ayuda, las páginas legales y que no haya desbordes en celulares.
 
 ## Aviso médico
 

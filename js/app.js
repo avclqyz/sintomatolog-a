@@ -605,7 +605,7 @@
     Object.values(SOURCES).forEach(([org]) => { byOrg[org] = (byOrg[org] || 0) + 1; });
     $('#fuentes-resumen').textContent = Object.entries(byOrg).map(([o, n]) => `${o} (${n})`).join(' · ');
     $('#stats').textContent = `${SYMPTOMS.length} síntomas · ${CONDITIONS.length} enfermedades · ${Object.keys(SOURCES).length} referencias`;
-    $('#hero-stats').textContent = `${CONDITIONS.length} enfermedades · ${SYMPTOMS.length} síntomas · fuentes: OMS, OPS, MedlinePlus (NIH), Mayo Clinic, MINSAL y clínicas chilenas`;
+    $('#hero-stats').textContent = `${CONDITIONS.length} enfermedades · ${SYMPTOMS.length} síntomas · fuentes: OMS, OPS, MedlinePlus (NIH), Mayo Clinic, Orphanet, MINSAL y clínicas chilenas`;
   }
 
   function init() {
