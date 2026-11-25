@@ -426,10 +426,11 @@
     'dolor_irradiado', 'presion_alta', 'vomito_sangre', 'hinchazon_labios', 'petequias', 'piel_caliente_seca', 'ideas_suicidas', 'tos_sangre',
     'estridor', 'dolor_pecho_subito_lado', 'dolor_desgarrador', 'debilidad_ascendente']);
 
-  const SYMPTOMS = RAW_SYMPTOMS.map(([id, n, z, sev, syn, sx]) => ({
+  const toSymptom = ([id, n, z, sev, syn, sx]) => ({
     id, n, z, sev, syn: syn || [], sx: sx || null,
     em: sev === 3 ? (CALL_131.has(id) ? 5 : 4) : 0
-  }));
+  });
+  const SYMPTOMS = RAW_SYMPTOMS.map(toSymptom);
 
   // ── Fuentes verificadas
   const MP = 'MedlinePlus (NIH)';
@@ -3028,5 +3029,15 @@
     }
   ];
 
-  window.SINTOMAS_DATA = { ZONES, SYMPTOMS, SOURCES, URGENCY, CONDITIONS };
+  // ── Ampliaciones
+  // Los archivos js/data-*.js se cargan después de este y suman síntomas, fuentes y enfermedades con addPack.
+  const ORGS = { MP, MAYO, MINSAL, SUP, ISP, OMS, OPS, SENDA, CLC, CA, UCC, REDSALUD, GOB, ORPHA: 'Orphanet' };
+  function addPack(pack) {
+    (pack.call131 || []).forEach((id) => CALL_131.add(id));
+    (pack.symptoms || []).forEach((t) => SYMPTOMS.push(toSymptom(t)));
+    Object.assign(SOURCES, pack.sources || {});
+    (pack.conditions || []).forEach((c) => CONDITIONS.push(c));
+  }
+
+  window.SINTOMAS_DATA = { ZONES, SYMPTOMS, SOURCES, URGENCY, CONDITIONS, ORGS, addPack };
 })();

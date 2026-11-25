@@ -1,0 +1,557 @@
+# Ampliación: 500 enfermedades nuevas
+
+Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuentes o raras, distintas de las 220 que ya tenía el sitio.
+
+- `[ ]` pendiente · `[x]` agregada (tanda e id) · `[-]` omitida (motivo).
+- Cada tanda suma 25 frecuentes (`js/data-comunes.js`) y 25 poco frecuentes (`js/data-raras.js`).
+- Las de reserva reemplazan a las que se omitan, para mantener la meta de 250 + 250.
+- Fuentes: MedlinePlus en español, Mayo Clinic, OMS/OPS, MINSAL y Orphanet; nunca Wikipedia.
+
+## A. Frecuentes (250)
+
+- [ ] C001 Sinusitis crónica
+- [ ] C002 Rinitis no alérgica (vasomotora)
+- [ ] C003 Pólipos nasales
+- [ ] C004 Desviación del tabique nasal
+- [ ] C005 Hipertrofia de adenoides
+- [ ] C006 Nódulos o pólipos en las cuerdas vocales
+- [ ] C007 Otitis media con efusión (otitis serosa)
+- [ ] C008 Perforación del tímpano
+- [ ] C009 Tinnitus crónico (acúfenos)
+- [ ] C010 Pérdida de audición por la edad (presbiacusia)
+- [ ] C011 Pérdida de audición por ruido
+- [ ] C012 Barotrauma del oído
+- [ ] C013 Disfunción de la trompa de Eustaquio
+- [ ] C014 Cálculo o infección de una glándula salival
+- [ ] C015 Caries dental
+- [ ] C016 Periodontitis
+- [ ] C017 Pericoronaritis (muela del juicio)
+- [ ] C018 Sensibilidad dental
+- [ ] C019 Queilitis angular (boqueras)
+- [ ] C020 Gingivoestomatitis herpética
+- [ ] C021 Herpangina
+- [ ] C022 Lengua geográfica
+- [ ] C023 Cuerpo extraño en la nariz
+- [ ] C024 Cuerpo extraño en el oído
+- [ ] C025 Fractura de nariz
+- [ ] C026 Trauma dental (diente roto o caído)
+- [ ] C027 Mal aliento (halitosis)
+- [ ] C028 Frenillo lingual corto
+- [ ] C029 Leucoplasia oral
+- [ ] C030 Mucocele (quiste del labio)
+- [ ] C031 Amigdalitis recurrente
+- [ ] C032 Chalazión
+- [ ] C033 Pterigión y pinguécula
+- [ ] C034 Derrame en el ojo (hemorragia subconjuntival)
+- [ ] C035 Vicios de refracción (miopía, hipermetropía, astigmatismo)
+- [ ] C036 Estrabismo
+- [ ] C037 Ambliopía (ojo perezoso)
+- [ ] C038 Queratitis o úlcera de córnea
+- [ ] C039 Uveítis (iritis)
+- [ ] C040 Glaucoma crónico
+- [ ] C041 Retinopatía diabética
+- [ ] C042 Desprendimiento del vítreo (moscas volantes)
+- [ ] C043 Obstrucción del lagrimal o dacriocistitis
+- [ ] C044 Fatiga visual por pantallas
+- [ ] C045 Ojo morado (golpe en el ojo)
+- [ ] C046 Quemadura química del ojo
+- [ ] C047 Celulitis periorbitaria u orbitaria
+- [ ] C048 Daltonismo
+- [ ] C049 Párpado caído (ptosis)
+- [ ] C050 Bronquiectasias
+- [ ] C051 Derrame pleural
+- [ ] C052 Pleuritis (pleuresía)
+- [ ] C053 Asma inducida por ejercicio
+- [ ] C054 Neumonía atípica (Mycoplasma)
+- [ ] C055 Estenosis aórtica
+- [ ] C056 Prolapso o insuficiencia de la válvula mitral
+- [ ] C057 Bradicardia o bloqueo cardíaco
+- [ ] C058 Extrasístoles (latidos prematuros)
+- [ ] C059 Fenómeno de Raynaud
+- [ ] C060 Tromboflebitis superficial
+- [ ] C061 Úlcera venosa de la pierna
+- [ ] C062 Linfedema
+- [ ] C063 Síndrome de taquicardia postural (POTS)
+- [ ] C064 Cefalea por abuso de analgésicos
+- [ ] C065 Neuralgia occipital
+- [ ] C066 Neuralgia posherpética
+- [ ] C067 Temblor esencial
+- [ ] C068 Síndrome del túnel cubital
+- [ ] C069 Meralgia parestésica
+- [ ] C070 Hernia de disco cervical (radiculopatía cervical)
+- [ ] C071 Estenosis del canal lumbar
+- [ ] C072 Hematoma subdural
+- [ ] C073 Síndrome de fatiga crónica
+- [ ] C074 Tics y síndrome de Tourette
+- [ ] C075 Crisis de ausencia
+- [ ] C076 Deterioro cognitivo leve
+- [ ] C077 Mareo por movimiento (cinetosis)
+- [ ] C078 Parálisis del nervio radial (mano caída)
+- [ ] C079 Síndrome del piriforme
+- [ ] C080 Fobia específica
+- [ ] C081 Ansiedad social
+- [ ] C082 Agorafobia
+- [ ] C083 Distimia (depresión persistente)
+- [ ] C084 Depresión posparto
+- [ ] C085 Trastorno de adaptación
+- [ ] C086 Trastorno límite de la personalidad
+- [ ] C087 Esquizofrenia y psicosis
+- [ ] C088 Trastorno del espectro autista
+- [ ] C089 Trastorno de síntomas somáticos
+- [ ] C090 Ansiedad por la salud (hipocondría)
+- [ ] C091 Tabaquismo (dependencia de la nicotina)
+- [ ] C092 Trastorno disfórico premenstrual
+- [ ] C093 Pesadillas y terrores nocturnos
+- [ ] C094 Sonambulismo
+- [ ] C095 Enuresis nocturna
+- [ ] C096 Encopresis
+- [ ] C097 Jet lag y alteraciones del ritmo del sueño
+- [ ] C098 Síndrome de abstinencia de alcohol
+- [ ] C099 Duelo
+- [ ] C100 Ansiedad por separación (niños)
+- [ ] C101 Dispepsia funcional
+- [ ] C102 Hernia hiatal
+- [ ] C103 Hernia umbilical o de la pared abdominal
+- [ ] C104 Hígado graso
+- [ ] C105 Hepatitis B
+- [ ] C106 Hepatitis C
+- [ ] C107 Cálculo en el colédoco o colangitis
+- [ ] C108 Diarrea por antibióticos (Clostridioides difficile)
+- [ ] C109 Diarrea del viajero
+- [ ] C110 Alergia a la proteína de la leche de vaca
+- [ ] C111 Alergia alimentaria
+- [ ] C112 Reflujo del lactante
+- [ ] C113 Picazón anal (prurito anal)
+- [ ] C114 Fístula anal
+- [ ] C115 Quiste pilonidal
+- [ ] C116 Incontinencia fecal
+- [ ] C117 Síndrome de Gilbert
+- [ ] C118 Esofagitis
+- [ ] C119 Vejiga hiperactiva
+- [ ] C120 Hidrocele
+- [ ] C121 Espermatocele (quiste del epidídimo)
+- [ ] C122 Balanitis
+- [ ] C123 Fimosis y parafimosis
+- [ ] C124 Eyaculación precoz
+- [ ] C125 Testosterona baja (hipogonadismo masculino)
+- [ ] C126 Señales de cáncer de próstata
+- [ ] C127 Tricomoniasis
+- [ ] C128 Verrugas genitales (VPH)
+- [ ] C129 Ladillas (piojos del pubis)
+- [ ] C130 Testículo no descendido (criptorquidia)
+- [ ] C131 Quiste o absceso de Bartolino
+- [ ] C132 Atrofia vaginal (síndrome genitourinario de la menopausia)
+- [ ] C133 Sangrado uterino anormal
+- [ ] C134 Adenomiosis
+- [ ] C135 Prolapso genital
+- [ ] C136 Fibroadenoma de mama
+- [ ] C137 Cambios fibroquísticos de la mama
+- [ ] C138 Diabetes gestacional
+- [ ] C139 Amenaza de parto prematuro
+- [ ] C140 Rotura prematura de membranas
+- [ ] C141 Congestión mamaria
+- [ ] C142 Grietas en el pezón
+- [ ] C143 Dolor en las relaciones sexuales (dispareunia y vaginismo)
+- [ ] C144 Señales de cáncer de endometrio
+- [ ] C145 Amenorrea (ausencia de regla)
+- [ ] C146 Galactorrea (secreción de leche fuera de la lactancia)
+- [ ] C147 Endometritis posparto
+- [ ] C148 Dolor de ovulación (Mittelschmerz)
+- [ ] C149 Molusco contagioso
+- [ ] C150 Pitiriasis rosada
+- [ ] C151 Pitiriasis versicolor
+- [ ] C152 Vitíligo
+- [ ] C153 Melasma
+- [ ] C154 Alopecia areata
+- [ ] C155 Calvicie común (alopecia androgénica)
+- [ ] C156 Caída del pelo por estrés (efluvio telógeno)
+- [ ] C157 Queratosis seborreica
+- [ ] C158 Queratosis actínica
+- [ ] C159 Señales de carcinoma basocelular
+- [ ] C160 Señales de carcinoma espinocelular
+- [ ] C161 Lipoma
+- [ ] C162 Quiste epidérmico (quiste sebáceo)
+- [ ] C163 Queloide
+- [ ] C164 Hiperhidrosis
+- [ ] C165 Intertrigo
+- [ ] C166 Liquen plano
+- [ ] C167 Hidradenitis supurativa
+- [ ] C168 Foliculitis
+- [ ] C169 Callos y callosidades
+- [ ] C170 Picadura de abeja o avispa
+- [ ] C171 Picaduras de insectos (zancudos, pulgas, chinches)
+- [ ] C172 Eccema dishidrótico
+- [ ] C173 Paroniquia (panadizo)
+- [ ] C174 Sabañones
+- [ ] C175 Úlceras por presión (escaras)
+- [ ] C176 Pie diabético
+- [ ] C177 Dermatitis perioral
+- [ ] C178 Piel seca (xerosis)
+- [ ] C179 Hemangioma infantil
+- [ ] C180 Ictericia del recién nacido
+- [ ] C181 Sudamina (miliaria)
+- [ ] C182 Eritema tóxico del recién nacido
+- [ ] C183 Tiña de la cabeza
+- [ ] C184 Tiña inguinal
+- [ ] C185 Queratosis pilaris
+- [ ] C186 Acantosis nigricans
+- [ ] C187 Alergia al sol (erupción polimorfa lumínica)
+- [ ] C188 Pitiriasis alba
+- [ ] C189 Manchas solares (lentigos)
+- [ ] C190 Bursitis
+- [ ] C191 Tendinitis de Aquiles
+- [ ] C192 Rotura del tendón de Aquiles
+- [ ] C193 Tenosinovitis de De Quervain
+- [ ] C194 Dedo en gatillo
+- [ ] C195 Ganglión (quiste sinovial)
+- [ ] C196 Quiste de Baker
+- [ ] C197 Dolor patelofemoral (condromalacia)
+- [ ] C198 Lesión de menisco
+- [ ] C199 Rotura del ligamento cruzado anterior
+- [ ] C200 Enfermedad de Osgood-Schlatter
+- [ ] C201 Enfermedad de Sever
+- [ ] C202 Escoliosis
+- [ ] C203 Osteoporosis
+- [ ] C204 Juanete (hallux valgus)
+- [ ] C205 Neuroma de Morton
+- [ ] C206 Metatarsalgia
+- [ ] C207 Luxación de hombro
+- [ ] C208 Codo de golfista
+- [ ] C209 Pronación dolorosa (codo de niñera)
+- [ ] C210 Calambres musculares
+- [ ] C211 Desgarro muscular
+- [ ] C212 Hombro congelado
+- [ ] C213 Sinovitis transitoria de cadera
+- [ ] C214 Displasia de cadera
+- [ ] C215 Dolores de crecimiento
+- [ ] C216 Síndrome de la banda iliotibial
+- [ ] C217 Periostitis tibial
+- [ ] C218 Fractura por estrés
+- [ ] C219 Latigazo cervical
+- [ ] C220 Dolor del coxis (coccigodinia)
+- [ ] C221 Tendinitis rotuliana
+- [ ] C222 Cetoacidosis diabética
+- [ ] C223 Déficit de vitamina B12
+- [ ] C224 Déficit de vitamina D
+- [ ] C225 Alergia a medicamentos
+- [ ] C226 Alergia al látex
+- [ ] C227 Roséola
+- [ ] C228 Quinta enfermedad (eritema infeccioso)
+- [ ] C229 Infección de una herida
+- [ ] C230 Cabeza plana del bebé (plagiocefalia)
+- [ ] C231 Ingesta de pila de botón o cuerpo extraño
+- [ ] C232 Dentición (salida de los dientes)
+- [ ] C233 Agotamiento por calor
+- [ ] C234 Conjuntivitis alérgica
+- [ ] C235 Urticaria crónica
+- [ ] C236 Dermatitis numular
+- [ ] C237 Otitis media crónica
+- [ ] C238 Pie plano
+- [ ] C239 Dedo en martillo
+- [ ] C240 Boca seca (xerostomía)
+- [ ] C241 Linfangitis
+- [ ] C242 Ginecomastia
+- [ ] C243 Milia (quistes de milium)
+- [ ] C244 Alveolitis seca (tras sacar una muela)
+- [ ] C245 Temblor del párpado (mioquimia)
+- [ ] C246 Fotoqueratitis (ojo de soldador o ceguera de la nieve)
+- [ ] C247 Tos por medicamentos para la presión (IECA)
+- [ ] C248 Herida cortante
+- [ ] C249 Hipo persistente
+- [ ] C250 Tartamudez
+
+### Reserva (frecuentes)
+
+- [ ] CR01 Infección por Helicobacter pylori
+- [ ] CR02 Absceso mamario
+- [ ] CR03 Hipertensión gestacional
+- [ ] CR04 Conjuntivitis del recién nacido
+- [ ] CR05 Erisipela
+- [ ] CR06 Disfonía funcional
+- [ ] CR07 Hematoma bajo la uña
+- [ ] CR08 Náuseas del embarazo
+- [ ] CR09 Tendinitis del bíceps
+- [ ] CR10 Bruxismo
+
+## B. Poco frecuentes o raras (250 + reserva)
+
+- [ ] R001 Fibrosis quística
+- [ ] R002 Hemofilia
+- [ ] R003 Enfermedad de von Willebrand
+- [ ] R004 Anemia de células falciformes
+- [ ] R005 Talasemia
+- [ ] R006 Esferocitosis hereditaria
+- [ ] R007 Déficit de G6PD (favismo)
+- [ ] R008 Síndrome de Marfan
+- [ ] R009 Síndrome de Ehlers-Danlos
+- [ ] R010 Osteogénesis imperfecta
+- [ ] R011 Acondroplasia
+- [ ] R012 Neurofibromatosis tipo 1
+- [ ] R013 Esclerosis tuberosa
+- [ ] R014 Síndrome de Turner
+- [ ] R015 Síndrome de Klinefelter
+- [ ] R016 Síndrome X frágil
+- [ ] R017 Síndrome de Prader-Willi
+- [ ] R018 Síndrome de Angelman
+- [ ] R019 Síndrome de Rett
+- [ ] R020 Distrofia muscular de Duchenne
+- [ ] R021 Distrofia miotónica
+- [ ] R022 Atrofia muscular espinal
+- [ ] R023 Enfermedad de Charcot-Marie-Tooth
+- [ ] R024 Ataxia de Friedreich
+- [ ] R025 Enfermedad de Huntington
+- [ ] R026 Esclerosis lateral amiotrófica (ELA)
+- [ ] R027 Fenilcetonuria
+- [ ] R028 Galactosemia
+- [ ] R029 Enfermedad de Gaucher
+- [ ] R030 Enfermedad de Fabry
+- [ ] R031 Enfermedad de Pompe
+- [ ] R032 Mucopolisacaridosis
+- [ ] R033 Tirosinemia tipo 1
+- [ ] R034 Enfermedad de Wilson
+- [ ] R035 Hemocromatosis hereditaria
+- [ ] R036 Porfiria aguda intermitente
+- [ ] R037 Porfiria cutánea tarda
+- [ ] R038 Enfermedad de Tay-Sachs
+- [ ] R039 Enfermedad de Niemann-Pick
+- [ ] R040 Adrenoleucodistrofia
+- [ ] R041 Hipercolesterolemia familiar
+- [ ] R042 Hiperplasia suprarrenal congénita
+- [ ] R043 Hipotiroidismo congénito
+- [ ] R044 Retinitis pigmentosa
+- [ ] R045 Albinismo
+- [ ] R046 Ictiosis
+- [ ] R047 Epidermólisis bullosa
+- [ ] R048 Poliposis adenomatosa familiar
+- [ ] R049 Enfermedad renal poliquística
+- [ ] R050 Síndrome de Alport
+- [ ] R051 Cistinuria
+- [ ] R052 Déficit de alfa-1 antitripsina
+- [ ] R053 Angioedema hereditario
+- [ ] R054 Fiebre mediterránea familiar
+- [ ] R055 Síndrome de QT largo
+- [ ] R056 Síndrome de Brugada
+- [ ] R057 Miocardiopatía hipertrófica
+- [ ] R058 Síndrome de Wolff-Parkinson-White
+- [ ] R059 Hidrocefalia
+- [ ] R060 Craneosinostosis
+- [ ] R061 Enfermedad de Hirschsprung
+- [ ] R062 Atresia biliar
+- [ ] R063 Cardiopatía congénita
+- [ ] R064 Inmunodeficiencia común variable
+- [ ] R065 Miastenia gravis
+- [ ] R066 Dermatomiositis y polimiositis
+- [ ] R067 Esclerodermia (esclerosis sistémica)
+- [ ] R068 Síndrome de Sjögren
+- [ ] R069 Arteritis de células gigantes (arteritis temporal)
+- [ ] R070 Arteritis de Takayasu
+- [ ] R071 Granulomatosis con poliangitis
+- [ ] R072 Poliarteritis nodosa
+- [ ] R073 Enfermedad de Behçet
+- [ ] R074 Enfermedad de Kawasaki
+- [ ] R075 Púrpura de Schönlein-Henoch (vasculitis por IgA)
+- [ ] R076 Enfermedad de Still del adulto
+- [ ] R077 Sarcoidosis
+- [ ] R078 Polimialgia reumática
+- [ ] R079 Espondilitis anquilosante
+- [ ] R080 Artritis psoriásica
+- [ ] R081 Artritis idiopática juvenil
+- [ ] R082 Síndrome antifosfolípido
+- [ ] R083 Hepatitis autoinmune
+- [ ] R084 Colangitis biliar primaria
+- [ ] R085 Colangitis esclerosante primaria
+- [ ] R086 Esofagitis eosinofílica
+- [ ] R087 Pénfigo vulgar
+- [ ] R088 Penfigoide ampolloso
+- [ ] R089 Dermatitis herpetiforme
+- [ ] R090 Liquen escleroso
+- [ ] R091 Morfea
+- [ ] R092 Pioderma gangrenoso
+- [ ] R093 Eritema nodoso
+- [ ] R094 Neuromielitis óptica
+- [ ] R095 Polineuropatía desmielinizante inflamatoria crónica (CIDP)
+- [ ] R096 Mielitis transversa
+- [ ] R097 Tiroiditis subaguda (de De Quervain)
+- [ ] R098 Trombocitopenia inmune (PTI)
+- [ ] R099 Púrpura trombocitopénica trombótica
+- [ ] R100 Síndrome hemolítico urémico
+- [ ] R101 Anemia aplásica
+- [ ] R102 Anemia hemolítica autoinmune
+- [ ] R103 Hemoglobinuria paroxística nocturna
+- [ ] R104 Mastocitosis
+- [ ] R105 Amiloidosis
+- [ ] R106 Histiocitosis de células de Langerhans
+- [ ] R107 Narcolepsia
+- [ ] R108 Distonía
+- [ ] R109 Corea de Sydenham
+- [ ] R110 Parálisis supranuclear progresiva
+- [ ] R111 Atrofia multisistémica
+- [ ] R112 Demencia frontotemporal
+- [ ] R113 Demencia con cuerpos de Lewy
+- [ ] R114 Enfermedad de Creutzfeldt-Jakob
+- [ ] R115 Hipertensión intracraneal idiopática
+- [ ] R116 Malformación de Chiari
+- [ ] R117 Siringomielia
+- [ ] R118 Hidrocefalia normotensiva
+- [ ] R119 Síndrome de Ramsay Hunt
+- [ ] R120 Síndrome de dolor regional complejo
+- [ ] R121 Encefalitis
+- [ ] R122 Absceso cerebral
+- [ ] R123 Señales de tumor cerebral
+- [ ] R124 Neurocisticercosis
+- [ ] R125 Síndrome de Wernicke-Korsakoff
+- [ ] R126 Espasmos infantiles (síndrome de West)
+- [ ] R127 Neuritis óptica
+- [ ] R128 Espasmo hemifacial
+- [ ] R129 Síndrome de boca ardiente
+- [ ] R130 Hipertensión pulmonar
+- [ ] R131 Fibrosis pulmonar idiopática
+- [ ] R132 Endocarditis infecciosa
+- [ ] R133 Miocardiopatía dilatada
+- [ ] R134 Miocardiopatía de Takotsubo
+- [ ] R135 Aneurisma de aorta abdominal
+- [ ] R136 Fiebre reumática
+- [ ] R137 Neumonitis por hipersensibilidad
+- [ ] R138 Silicosis
+- [ ] R139 Asbestosis
+- [ ] R140 Aspergilosis
+- [ ] R141 Mesotelioma
+- [ ] R142 Edema pulmonar de altura
+- [ ] R143 Edema cerebral de altura
+- [ ] R144 Enfermedad por descompresión
+- [ ] R145 Tromboangeítis obliterante (enfermedad de Buerger)
+- [ ] R146 Neumonía por aspiración
+- [ ] R147 Acalasia
+- [ ] R148 Divertículo de Zenker
+- [ ] R149 Gastroparesia
+- [ ] R150 Isquemia mesentérica
+- [ ] R151 Vólvulo
+- [ ] R152 Hepatitis alcohólica
+- [ ] R153 Síndrome de Budd-Chiari
+- [ ] R154 Pancreatitis crónica
+- [ ] R155 Señales de cáncer de páncreas
+- [ ] R156 Señales de cáncer de hígado
+- [ ] R157 Señales de cáncer de esófago
+- [ ] R158 Señales de cáncer de vesícula
+- [ ] R159 Tumores neuroendocrinos (síndrome carcinoide)
+- [ ] R160 Divertículo de Meckel
+- [ ] R161 Invaginación intestinal
+- [ ] R162 Estenosis pilórica
+- [ ] R163 Síndrome de vómitos cíclicos
+- [ ] R164 Síndrome de Zollinger-Ellison
+- [ ] R165 Fiebre tifoidea
+- [ ] R166 Cólera
+- [ ] R167 Amebiasis
+- [ ] R168 Teniasis
+- [ ] R169 Ascariasis
+- [ ] R170 Toxocariasis
+- [ ] R171 Triquinosis
+- [ ] R172 Fasciolasis (distomatosis hepática)
+- [ ] R173 Difilobotriasis (tenia del pescado)
+- [ ] R174 Anisakiasis
+- [ ] R175 Colestasis del embarazo
+- [ ] R176 Hernia femoral
+- [ ] R177 Glomerulonefritis
+- [ ] R178 Síndrome nefrótico
+- [ ] R179 Nefropatía por IgA
+- [ ] R180 Señales de cáncer de riñón
+- [ ] R181 Señales de cáncer de vejiga
+- [ ] R182 Cistitis intersticial
+- [ ] R183 Enfermedad de Peyronie
+- [ ] R184 Priapismo
+- [ ] R185 Lesión renal aguda
+- [ ] R186 Estrechez uretral
+- [ ] R187 Enfermedad de Addison
+- [ ] R188 Síndrome de Cushing
+- [ ] R189 Feocromocitoma
+- [ ] R190 Acromegalia
+- [ ] R191 Prolactinoma
+- [ ] R192 Diabetes insípida
+- [ ] R193 Hiperparatiroidismo primario
+- [ ] R194 Hipoparatiroidismo
+- [ ] R195 Hiperaldosteronismo primario
+- [ ] R196 Insulinoma
+- [ ] R197 Señales de cáncer de tiroides
+- [ ] R198 Hiponatremia
+- [ ] R199 Pubertad precoz
+- [ ] R200 Tétanos
+- [ ] R201 Botulismo
+- [ ] R202 Difteria
+- [ ] R203 Lepra
+- [ ] R204 Fiebre amarilla
+- [ ] R205 Leishmaniasis
+- [ ] R206 Enfermedad de Lyme
+- [ ] R207 Fiebre Q
+- [ ] R208 Brucelosis
+- [ ] R209 Leptospirosis
+- [ ] R210 Psitacosis
+- [ ] R211 Legionelosis
+- [ ] R212 Tifus de los matorrales (Chiloé)
+- [ ] R213 Carbunco (ántrax)
+- [ ] R214 Fascitis necrotizante
+- [ ] R215 Síndrome de shock tóxico
+- [ ] R216 Toxoplasmosis
+- [ ] R217 Listeriosis
+- [ ] R218 Rubéola
+- [ ] R219 Esporotricosis
+- [ ] R220 Histoplasmosis
+- [ ] R221 Criptococosis
+- [ ] R222 Mucormicosis
+- [ ] R223 Actinomicosis
+- [ ] R224 Enfermedad por arañazo de gato
+- [ ] R225 Linfogranuloma venéreo
+- [ ] R226 Chancroide
+- [ ] R227 Mastoiditis
+- [ ] R228 Epiglotitis
+- [ ] R229 Angina de Ludwig
+- [ ] R230 Fiebre de Oropouche
+- [ ] R231 Señales de leucemia aguda
+- [ ] R232 Leucemia crónica
+- [ ] R233 Mieloma múltiple
+- [ ] R234 Sarcoma de partes blandas
+- [ ] R235 Tumor óseo (osteosarcoma o sarcoma de Ewing)
+- [ ] R236 Retinoblastoma
+- [ ] R237 Neuroblastoma
+- [ ] R238 Tumor de Wilms
+- [ ] R239 Señales de cáncer de laringe
+- [ ] R240 Señales de cáncer de boca
+- [ ] R241 Señales de cáncer de ovario
+- [ ] R242 Policitemia vera
+- [ ] R243 Trombocitemia esencial
+- [ ] R244 Sarcoma de Kaposi
+- [ ] R245 Queratocono
+- [ ] R246 Oclusión de vasos de la retina
+- [ ] R247 Distrofia de Fuchs
+- [ ] R248 Síndrome de Horner
+- [ ] R249 Oftalmopatía tiroidea
+- [ ] R250 Escleritis
+- [ ] R251 Colesteatoma  _(reserva)_
+- [ ] R252 Otosclerosis  _(reserva)_
+- [ ] R253 Neurinoma del acústico  _(reserva)_
+- [ ] R254 Parálisis de cuerdas vocales  _(reserva)_
+- [ ] R255 Síndrome de Stevens-Johnson y necrólisis epidérmica tóxica  _(reserva)_
+- [ ] R256 Eritema multiforme  _(reserva)_
+- [ ] R257 Granuloma anular  _(reserva)_
+- [ ] R258 Urticaria por frío  _(reserva)_
+- [ ] R259 Larva migrans cutánea  _(reserva)_
+- [ ] R260 Trastorno de despersonalización  _(reserva)_
+- [ ] R261 Síndrome neuroléptico maligno  _(reserva)_
+- [ ] R262 Síndrome serotoninérgico  _(reserva)_
+- [ ] R263 Pica  _(reserva)_
+- [ ] R264 Mutismo selectivo  _(reserva)_
+- [ ] R265 Trastorno neurológico funcional (de conversión)  _(reserva)_
+- [ ] R266 Tricotilomanía  _(reserva)_
+- [ ] R267 Trastorno dismórfico corporal  _(reserva)_
+- [ ] R268 Ludopatía  _(reserva)_
+- [ ] R269 Intoxicación por plomo  _(reserva)_
+- [ ] R270 Intoxicación por arsénico  _(reserva)_
+- [ ] R271 Intoxicación por hongos  _(reserva)_
+- [ ] R272 Intoxicación por paracetamol  _(reserva)_
+- [ ] R273 Picadura de araña del trigo (latrodectismo)  _(reserva)_
+- [ ] R274 Picadura de escorpión  _(reserva)_
+- [ ] R275 Intoxicación por metanol  _(reserva)_
+- [ ] R276 Congelamiento  _(reserva)_
+- [ ] R277 Inhalación de humo  _(reserva)_
+- [ ] R278 Intoxicación por productos de limpieza  _(reserva)_
+- [ ] R279 Laringomalacia  _(reserva)_
+- [ ] R280 Mal de montaña crónico  _(reserva)_
