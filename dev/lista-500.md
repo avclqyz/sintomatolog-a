@@ -209,31 +209,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] C198 Lesión de menisco — tanda 8 · `menisco`
 - [x] C199 Rotura del ligamento cruzado anterior — tanda 8 · `lesion_lca`
 - [x] C200 Enfermedad de Osgood-Schlatter — tanda 8 · `osgood`
-- [ ] C201 Enfermedad de Sever
-- [ ] C202 Escoliosis
-- [ ] C203 Osteoporosis
-- [ ] C204 Juanete (hallux valgus)
-- [ ] C205 Neuroma de Morton
-- [ ] C206 Metatarsalgia
-- [ ] C207 Luxación de hombro
-- [ ] C208 Codo de golfista
-- [ ] C209 Pronación dolorosa (codo de niñera)
-- [ ] C210 Calambres musculares
-- [ ] C211 Desgarro muscular
-- [ ] C212 Hombro congelado
-- [ ] C213 Sinovitis transitoria de cadera
-- [ ] C214 Displasia de cadera
-- [ ] C215 Dolores de crecimiento
-- [ ] C216 Síndrome de la banda iliotibial
-- [ ] C217 Periostitis tibial
-- [ ] C218 Fractura por estrés
-- [ ] C219 Latigazo cervical
-- [ ] C220 Dolor del coxis (coccigodinia)
-- [ ] C221 Tendinitis rotuliana
-- [ ] C222 Cetoacidosis diabética
-- [ ] C223 Déficit de vitamina B12
-- [ ] C224 Déficit de vitamina D
-- [ ] C225 Alergia a medicamentos
+- [x] C201 Enfermedad de Sever — tanda 9 · `sever`
+- [x] C202 Escoliosis — tanda 9 · `escoliosis`
+- [x] C203 Osteoporosis — tanda 9 · `osteoporosis`
+- [x] C204 Juanete (hallux valgus) — tanda 9 · `juanete`
+- [x] C205 Neuroma de Morton — tanda 9 · `neuroma_morton`
+- [x] C206 Metatarsalgia — tanda 9 · `metatarsalgia`
+- [x] C207 Luxación de hombro — tanda 9 · `luxacion_hombro`
+- [x] C208 Codo de golfista — tanda 9 · `codo_golfista`
+- [x] C209 Pronación dolorosa (codo de niñera) — tanda 9 · `codo_ninera`
+- [x] C210 Calambres musculares — tanda 9 · `calambres_musculares`
+- [x] C211 Desgarro muscular — tanda 9 · `desgarro_muscular`
+- [x] C212 Hombro congelado — tanda 9 · `hombro_congelado`
+- [x] C213 Sinovitis transitoria de cadera — tanda 9 · `sinovitis_transitoria`
+- [x] C214 Displasia de cadera — tanda 9 · `displasia_cadera`
+- [x] C215 Dolores de crecimiento — tanda 9 · `dolores_crecimiento`
+- [x] C216 Síndrome de la banda iliotibial — tanda 9 · `banda_iliotibial`
+- [x] C217 Periostitis tibial — tanda 9 · `periostitis_tibial`
+- [x] C218 Fractura por estrés — tanda 9 · `fractura_estres`
+- [x] C219 Latigazo cervical — tanda 9 · `latigazo_cervical`
+- [x] C220 Dolor del coxis (coccigodinia) — tanda 9 · `coccigodinia`
+- [x] C221 Tendinitis rotuliana — tanda 9 · `tendinitis_rotuliana`
+- [x] C222 Cetoacidosis diabética — tanda 9 · `cetoacidosis`
+- [x] C223 Déficit de vitamina B12 — tanda 9 · `deficit_b12`
+- [x] C224 Déficit de vitamina D — tanda 9 · `deficit_vitamina_d`
+- [x] C225 Alergia a medicamentos — tanda 9 · `alergia_medicamentos`
 - [ ] C226 Alergia al látex
 - [ ] C227 Roséola
 - [ ] C228 Quinta enfermedad (eritema infeccioso)
@@ -475,31 +475,31 @@ Pedido del usuario (24-11-2026): 250 enfermedades frecuentes y 250 poco frecuent
 - [x] R198 Hiponatremia — tanda 8 · `hiponatremia`
 - [x] R199 Pubertad precoz — tanda 8 · `pubertad_precoz`
 - [x] R200 Tétanos — tanda 8 · `tetanos`
-- [ ] R201 Botulismo
-- [ ] R202 Difteria
-- [ ] R203 Lepra
-- [ ] R204 Fiebre amarilla
-- [ ] R205 Leishmaniasis
-- [ ] R206 Enfermedad de Lyme
-- [ ] R207 Fiebre Q
-- [ ] R208 Brucelosis
-- [ ] R209 Leptospirosis
-- [ ] R210 Psitacosis
-- [ ] R211 Legionelosis
-- [ ] R212 Tifus de los matorrales (Chiloé)
-- [ ] R213 Carbunco (ántrax)
-- [ ] R214 Fascitis necrotizante
-- [ ] R215 Síndrome de shock tóxico
-- [ ] R216 Toxoplasmosis
-- [ ] R217 Listeriosis
-- [ ] R218 Rubéola
-- [ ] R219 Esporotricosis
-- [ ] R220 Histoplasmosis
-- [ ] R221 Criptococosis
-- [ ] R222 Mucormicosis
-- [ ] R223 Actinomicosis
-- [ ] R224 Enfermedad por arañazo de gato
-- [ ] R225 Linfogranuloma venéreo
+- [x] R201 Botulismo — tanda 9 · `botulismo`
+- [x] R202 Difteria — tanda 9 · `difteria`
+- [x] R203 Lepra — tanda 9 · `lepra`
+- [x] R204 Fiebre amarilla — tanda 9 · `fiebre_amarilla`
+- [x] R205 Leishmaniasis — tanda 9 · `leishmaniasis`
+- [x] R206 Enfermedad de Lyme — tanda 9 · `lyme`
+- [x] R207 Fiebre Q — tanda 9 · `fiebre_q`
+- [x] R208 Brucelosis — tanda 9 · `brucelosis`
+- [x] R209 Leptospirosis — tanda 9 · `leptospirosis`
+- [x] R210 Psitacosis — tanda 9 · `psitacosis`
+- [x] R211 Legionelosis — tanda 9 · `legionelosis`
+- [x] R212 Tifus de los matorrales (Chiloé) — tanda 9 · `tifus_matorrales`
+- [x] R213 Carbunco (ántrax) — tanda 9 · `carbunco`
+- [x] R214 Fascitis necrotizante — tanda 9 · `fascitis_necrotizante`
+- [x] R215 Síndrome de shock tóxico — tanda 9 · `shock_toxico`
+- [x] R216 Toxoplasmosis — tanda 9 · `toxoplasmosis`
+- [x] R217 Listeriosis — tanda 9 · `listeriosis`
+- [x] R218 Rubéola — tanda 9 · `rubeola`
+- [x] R219 Esporotricosis — tanda 9 · `esporotricosis`
+- [x] R220 Histoplasmosis — tanda 9 · `histoplasmosis`
+- [x] R221 Criptococosis — tanda 9 · `criptococosis`
+- [x] R222 Mucormicosis — tanda 9 · `mucormicosis`
+- [x] R223 Actinomicosis — tanda 9 · `actinomicosis`
+- [x] R224 Enfermedad por arañazo de gato — tanda 9 · `aranazo_gato`
+- [x] R225 Linfogranuloma venéreo — tanda 9 · `linfogranuloma_venereo`
 - [ ] R226 Chancroide
 - [ ] R227 Mastoiditis
 - [ ] R228 Epiglotitis

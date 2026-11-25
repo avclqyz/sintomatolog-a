@@ -2589,4 +2589,319 @@
       }
     ]
   });
+
+  // ── Tanda 9 (noviembre 2026): infecciones poco frecuentes (toxinas, zoonosis, viajes, hongos y bacterias graves)
+  D.addPack({
+    call131: ['paralisis_descendente', 'membrana_garganta', 'piel_roja_dolor_intenso', 'erupcion_quemadura_sol'],
+    symptoms: [
+      ['paralisis_descendente', 'Visión doble, párpados caídos, dificultad para tragar y hablar, y debilidad que baja hacia los brazos y las piernas, sin fiebre', 'cabeza', 3, ['botulismo', 'parálisis descendente']],
+      ['membrana_garganta', 'Membrana gris y gruesa pegada en la garganta o las amígdalas, con el cuello muy hinchado', 'oong', 3, ['difteria', 'membrana en la garganta']],
+      ['manchas_sin_sensibilidad', 'Manchas en la piel más claras o rojizas que no sienten el tacto, el calor ni el dolor', 'piel', 2, ['lepra', 'manchas insensibles']],
+      ['ulcera_viaje', 'Llaga en la piel que no sana en semanas, con bordes elevados, después de estar en zonas tropicales o selváticas', 'piel', 2, ['leishmaniasis', 'úlcera de la selva']],
+      ['mancha_diana', 'Mancha roja que se agranda alrededor de una picadura de garrapata, a veces con el centro más claro (como una diana)', 'piel', 2, ['eritema migrans', 'Lyme']],
+      ['escara_negra', 'Costra o mancha negra (escara) en el sitio de una picadura o una herida, con fiebre o mucha hinchazón alrededor', 'piel', 2, ['escara', 'costra negra']],
+      ['piel_roja_dolor_intenso', 'Zona de piel roja, hinchada y caliente con un dolor mucho más fuerte de lo que se ve, que avanza en horas y se pone morada o con ampollas', 'piel', 3, ['fascitis necrotizante', 'bacteria come carne']],
+      ['erupcion_quemadura_sol', 'Erupción roja en todo el cuerpo, como una quemadura de sol, con fiebre alta, mareo o desmayo', 'piel', 3, ['shock tóxico']],
+      ['ganglios_nuca', 'Ganglios inflamados detrás de las orejas o en la nuca', 'general', 1, ['ganglios retroauriculares']],
+      ['nodulos_brazo_linea', 'Nódulos o llagas que aparecen en fila subiendo por un brazo, después de pincharte con espinas o astillas o de trabajar la tierra', 'piel', 1, ['esporotricosis', 'enfermedad del jardinero']],
+      ['cara_hinchada_negra', 'Hinchazón dolorosa de un lado de la cara o alrededor de un ojo, con costras negras en la nariz o el paladar', 'oong', 3, ['mucormicosis', 'hongo negro']],
+      ['bulto_mandibula_duro', 'Bulto duro en la mandíbula o el cuello, rojo o morado, que se abre por pequeños orificios por donde sale pus con granitos amarillos', 'oong', 2, ['actinomicosis']],
+      ['papula_aranazo', 'Bultito o ampollita en el sitio de un arañazo de gato, y días después un ganglio grande y doloroso cerca', 'piel', 1, ['enfermedad por arañazo de gato']],
+      ['ganglios_ingle', 'Ganglios grandes y dolorosos en la ingle, que a veces se abren y supuran', 'urogenital', 2, ['bubón', 'linfogranuloma']],
+      ['ctx_conservas', 'Comiste conservas caseras, embutidos o pescado fermentado o envasado en casa, o un bebé menor de 1 año comió miel', 'contexto', 0, ['conservas caseras', 'miel en lactantes']],
+      ['ctx_sin_vacunas', 'No estás vacunado (o no sabes si tienes las vacunas al día) o viajaste a un país con brotes', 'contexto', 0, ['sin vacunas']],
+      ['ctx_garrapata', 'Te picó una garrapata o estuviste en bosques o pastizales de países donde existe la enfermedad de Lyme (EE. UU., Europa)', 'contexto', 0, ['garrapata']],
+      ['ctx_ganado', 'Trabajas o tienes contacto con ganado (vacas, ovejas, cabras), sus partos o cueros, o tomaste leche o queso sin pasteurizar', 'contexto', 0, ['ganado', 'leche sin pasteurizar', 'zoonosis']],
+      ['ctx_inundacion', 'Contacto con agua de inundaciones, barro, esteros o alcantarillado, o con lugares con ratas (trabajo agrícola, limpieza)', 'contexto', 0, ['inundación', 'agua contaminada con orina de animales']],
+      ['ctx_aire_acondicionado', 'Estuviste en hoteles, cruceros, hospitales, spas o edificios con aire acondicionado central, duchas o tinas de hidromasaje en las últimas 2 semanas', 'contexto', 0, ['aire acondicionado', 'jacuzzi']],
+      ['ctx_chiloe', 'Estuviste en zonas rurales del sur de Chile (como Chiloé o Aysén), en contacto con vegetación, leña o pasto, en las últimas 3 semanas', 'contexto', 0, ['Chiloé', 'zona rural del sur']],
+      ['ctx_tampon', 'Usas tampones o copa menstrual, o tienes una herida, una cirugía o un taponamiento nasal reciente', 'contexto', 0, ['tampón']],
+      ['ctx_gatos_carne', 'Limpias la caja de arena de gatos, trabajas la tierra sin guantes o comes carne cruda o poco cocida', 'contexto', 0, ['gatos', 'caja de arena']],
+      ['ctx_quesos_frescos', 'Comiste quesos frescos o blandos sin pasteurizar, cecinas o embutidos fríos, patés o pescado ahumado refrigerado', 'contexto', 0, ['queso fresco', 'cecinas', 'listeria']],
+      ['ctx_cuevas_aves', 'Estuviste en cuevas, gallineros, palomares o lugares con mucho guano de aves o murciélagos', 'contexto', 0, ['guano', 'cuevas', 'gallinero']]
+    ],
+    sources: {
+      mp_botulismo: [MP, 'Botulismo', 'https://medlineplus.gov/spanish/ency/article/000598.htm'],
+      mp_difteria: [MP, 'Difteria', 'https://medlineplus.gov/spanish/ency/article/001608.htm'],
+      mp_lepra: [MP, 'Lepra', 'https://medlineplus.gov/spanish/ency/article/001347.htm'],
+      mp_fiebre_amarilla: [MP, 'Fiebre amarilla', 'https://medlineplus.gov/spanish/ency/article/001365.htm'],
+      mp_leishmaniasis: [MP, 'Leishmaniasis', 'https://medlineplus.gov/spanish/ency/article/001386.htm'],
+      mp_lyme_t: [MP, 'Enfermedad de Lyme', 'https://medlineplus.gov/spanish/lymedisease.html'],
+      mp_fiebre_q: [MP, 'Fiebre Q', 'https://medlineplus.gov/spanish/ency/article/000611.htm'],
+      mp_brucelosis: [MP, 'Brucelosis', 'https://medlineplus.gov/spanish/ency/article/000597.htm'],
+      mp_leptospirosis: [MP, 'Leptospirosis', 'https://medlineplus.gov/spanish/ency/article/001376.htm'],
+      mp_psitacosis: [MP, 'Psitacosis', 'https://medlineplus.gov/spanish/ency/article/000088.htm'],
+      mp_legionario: [MP, 'Enfermedad de los legionarios', 'https://medlineplus.gov/spanish/ency/article/000616.htm'],
+      gob_tifus_matorrales: [GOB, 'Tifus de los matorrales: todo lo que debe saber', 'https://www.gob.cl/noticias/tifus-de-los-matorrales-todo-lo-que-debe-saber-sobre-esta-compleja-infeccion/'],
+      minsal_tifus_matorrales: [MINSAL, 'Tifus de los matorrales (programa de enfermedades transmisibles)', 'https://diprece.minsal.cl/programas-de-salud/programas-enfermedades-transmisibles/tifus-de-los-matorrales/'],
+      mp_antrax_t: [MP, 'Ántrax (carbunco)', 'https://medlineplus.gov/spanish/anthrax.html'],
+      mp_necrosante: [MP, 'Infección necrosante de tejidos blandos (fascitis necrotizante)', 'https://medlineplus.gov/spanish/ency/article/001443.htm'],
+      mp_shock_toxico: [MP, 'Síndrome de shock tóxico', 'https://medlineplus.gov/spanish/ency/article/000653.htm'],
+      mp_toxoplasmosis: [MP, 'Toxoplasmosis', 'https://medlineplus.gov/spanish/ency/article/000637.htm'],
+      mp_listeriosis: [MP, 'Listeriosis', 'https://medlineplus.gov/spanish/ency/article/001380.htm'],
+      mp_rubeola: [MP, 'Rubéola', 'https://medlineplus.gov/spanish/ency/article/001574.htm'],
+      mayo_rubeola: [MAYO, 'Rubéola', 'https://www.mayoclinic.org/es/diseases-conditions/rubella/symptoms-causes/syc-20377310'],
+      mp_esporotricosis: [MP, 'Esporotricosis', 'https://medlineplus.gov/spanish/ency/article/001338.htm'],
+      mp_histoplasmosis: [MP, 'Histoplasmosis', 'https://medlineplus.gov/spanish/ency/article/001082.htm'],
+      mp_criptococosis: [MP, 'Criptococosis', 'https://medlineplus.gov/spanish/ency/article/001328.htm'],
+      mp_meningitis_criptococica: [MP, 'Meningitis criptocócica', 'https://medlineplus.gov/spanish/ency/article/000642.htm'],
+      mp_mucormicosis: [MP, 'Mucormicosis', 'https://medlineplus.gov/spanish/ency/article/000649.htm'],
+      mp_actinomicosis: [MP, 'Actinomicosis', 'https://medlineplus.gov/spanish/ency/article/000599.htm'],
+      mp_aranazo_gato: [MP, 'Enfermedad del arañazo de gato', 'https://medlineplus.gov/spanish/ency/article/001614.htm'],
+      mp_lgv: [MP, 'Linfogranuloma venéreo', 'https://medlineplus.gov/spanish/ency/article/000634.htm'],
+      minsal_chlamydia: [MINSAL, 'Chlamydiasis (incluye el linfogranuloma venéreo)', 'https://diprece.minsal.cl/temas-de-salud/orden-alfabetico/chlamydiasis/']
+    },
+    conditions: [
+      {
+        id: 'botulismo', n: 'Botulismo', urg: 5, prev: 0.5, dur: ['h', 'd'],
+        req: ['paralisis_descendente'], reqF: 0.3,
+        s: { paralisis_descendente: 3, ctx_conservas: 3, disfagia: 1, estrenimiento: 1, hipotonia_bebe: 1, fiebre: -1 },
+        que: 'Enfermedad poco frecuente y grave causada por la toxina de la bacteria Clostridium botulinum, que se forma en conservas caseras mal preparadas, en heridas o en el intestino de los bebés (por eso no se debe dar miel antes del año). Horas o días después produce visión doble o borrosa, párpados caídos, boca seca, dificultad para tragar y hablar y una debilidad que baja por el cuerpo y puede paralizar la respiración, sin fiebre.',
+        trat: 'Emergencia: hospitalización, antitoxina específica y, a menudo, apoyo para respirar. Prevención: conservas caseras bien preparadas y desechar latas abombadas.',
+        esp: 'Emergencia; hospital.',
+        alarma: 'Visión doble, dificultad para tragar o debilidad que avanza: llama al 131.',
+        src: ['mp_botulismo']
+      },
+      {
+        id: 'difteria', n: 'Difteria', urg: 5, prev: 0.55, dur: ['d'],
+        req: ['membrana_garganta'], reqF: 0.2,
+        s: { membrana_garganta: 3, dolor_garganta: 2, ctx_sin_vacunas: 2, fiebre: 1, ganglios: 1, estridor: 1 },
+        que: 'Infección grave de la garganta por una bacteria (Corynebacterium diphtheriae) que se transmite por gotitas y casi solo afecta a personas sin vacuna. Forma una membrana gris y gruesa en la garganta que puede tapar la respiración, con dolor de garganta, fiebre y cuello hinchado; su toxina puede dañar el corazón y los nervios.',
+        trat: 'Hospitalización urgente con antitoxina diftérica y antibióticos. La vacunación la previene.',
+        esp: 'Emergencia; hospital.',
+        alarma: 'Membrana en la garganta, dificultad para respirar o ruido al tomar aire: llama al 131.',
+        src: ['mp_difteria']
+      },
+      {
+        id: 'lepra', n: 'Lepra', alt: 'Enfermedad de Hansen', urg: 3, prev: 0.3, dur: ['m'],
+        req: ['manchas_sin_sensibilidad'], reqF: 0.2,
+        s: { manchas_sin_sensibilidad: 3, hormigueo: 1, debilidad_progresiva: 1, ctx_viaje_tropical: 1 },
+        que: 'Infección crónica por la bacteria Mycobacterium leprae, que avanza muy lento y afecta la piel y los nervios. Produce manchas más claras o rojizas sin sensibilidad, adormecimiento de manos y pies, debilidad muscular y, sin tratamiento, heridas y deformidades. Es poco contagiosa y se cura con tratamiento.',
+        trat: 'Combinación de antibióticos durante 6 a 12 meses y cuidado de las manos, los pies y los ojos.',
+        esp: 'Médico general; dermatólogo; infectólogo.',
+        alarma: 'Pérdida de fuerza, heridas que no duelen o problemas de la vista: consulta pronto.',
+        src: ['mp_lepra']
+      },
+      {
+        id: 'fiebre_amarilla', n: 'Fiebre amarilla', urg: 5, prev: 0.55, dur: ['d'],
+        req: ['ctx_viaje_tropical'], reqF: 0.1,
+        s: { ctx_viaje_tropical: 3, fiebre: 3, ictericia: 3, dolor_muscular: 1, dolor_cabeza: 1, vomito_sangre: 1, sangrado_encias: 1, dolor_retroocular: -1 },
+        que: 'Infección viral transmitida por mosquitos en zonas tropicales de Sudamérica y África. Empieza con fiebre, dolor de cabeza, dolores musculares y vómitos; tras una mejoría breve, algunas personas pasan a una fase grave con color amarillo de piel y ojos, sangrados y falla de órganos.',
+        trat: 'No hay tratamiento específico: hospitalización y cuidados de apoyo. La vacuna, de una sola dosis, se recomienda antes de viajar a zonas de riesgo.',
+        esp: 'Emergencia; infectólogo o medicina del viajero.',
+        alarma: 'Fiebre con color amarillo, sangrados o vómitos con sangre tras viajar a zonas tropicales: llama al 131.',
+        src: ['mp_fiebre_amarilla']
+      },
+      {
+        id: 'leishmaniasis', n: 'Leishmaniasis', urg: 3, prev: 0.4, dur: ['s', 'm'],
+        req: ['ctx_viaje_tropical'], reqF: 0.2,
+        s: { ulcera_viaje: 3, ctx_viaje_tropical: 2, fiebre: 1, perdida_peso: 1, bazo_grande: 1 },
+        que: 'Enfermedad parasitaria transmitida por la picadura de pequeños insectos (flebótomos) en zonas tropicales y subtropicales. La forma cutánea produce una llaga indolora con bordes elevados que tarda meses en sanar; la forma visceral, fiebre prolongada, baja de peso y crecimiento del bazo y el hígado.',
+        trat: 'Medicamentos antiparasitarios indicados por especialistas, según la forma y el lugar donde se adquirió.',
+        esp: 'Infectólogo o medicina del viajero; dermatólogo.',
+        alarma: 'Fiebre prolongada con baja de peso o guata que crece tras un viaje: consulta pronto.',
+        src: ['mp_leishmaniasis']
+      },
+      {
+        id: 'lyme', n: 'Enfermedad de Lyme', urg: 3, prev: 0.4, dur: ['d', 's', 'm'],
+        req: ['ctx_garrapata', 'mancha_diana'], reqF: 0.2,
+        s: { mancha_diana: 3, ctx_garrapata: 2, fiebre: 1, fatiga: 1, dolor_articular: 1, paralisis_facial: 1 },
+        que: 'Infección por la bacteria Borrelia burgdorferi transmitida por la picadura de garrapatas, presente sobre todo en zonas de EE. UU. y Europa. Al inicio produce una mancha roja que se agranda alrededor de la picadura, fiebre, dolor de cabeza y cansancio; sin tratamiento puede afectar las articulaciones, el corazón y los nervios (por ejemplo, parálisis de la cara).',
+        trat: 'Antibióticos indicados por un médico, mejor si se inician temprano. Prevención: ropa que cubra, repelente y revisar el cuerpo tras caminar por pastizales.',
+        esp: 'Médico general; infectólogo.',
+        alarma: 'Parálisis de la cara, palpitaciones o desmayos tras una picadura de garrapata: consulta pronto.',
+        src: ['mp_lyme_t']
+      },
+      {
+        id: 'fiebre_q', n: 'Fiebre Q', urg: 3, prev: 0.5, dur: ['d', 's'],
+        req: ['ctx_ganado'], reqF: 0.2,
+        s: { ctx_ganado: 3, fiebre: 3, dolor_cabeza: 2, dolor_muscular: 1, tos_seca: 1, escalofrios: 1, dolor_hipocondrio: 1, sudor_nocturno: -1 },
+        que: 'Infección por la bacteria Coxiella burnetii, que vive en ganado como vacas, ovejas y cabras. Se adquiere sobre todo al respirar polvo contaminado con sus fluidos (por ejemplo, de partos de animales) o al tomar leche sin pasteurizar. Produce fiebre alta, dolor de cabeza intenso, dolores musculares y, a veces, neumonía o hepatitis; rara vez se vuelve crónica.',
+        trat: 'Antibióticos (doxiciclina) indicados por un médico, que acortan la enfermedad.',
+        esp: 'Médico general; infectólogo.',
+        alarma: 'Falta de aire, dolor de pecho o color amarillo de piel u ojos: consulta pronto.',
+        src: ['mp_fiebre_q']
+      },
+      {
+        id: 'brucelosis', n: 'Brucelosis', urg: 3, prev: 0.5, dur: ['s', 'm'],
+        req: ['ctx_ganado'], reqF: 0.2,
+        s: { ctx_ganado: 3, fiebre: 2, sudor_nocturno: 2, dolor_articular: 2, fatiga: 1, dolor_lumbar: 1, perdida_peso: 1, fiebre_episodios: 1 },
+        que: 'Infección bacteriana que se adquiere por contacto con animales infectados (su carne, placenta o fluidos) o al consumir leche o queso sin pasteurizar. Produce fiebre que sube y baja durante semanas, sudores abundantes, dolores articulares y de espalda, cansancio y baja de peso; puede volverse crónica.',
+        trat: 'Combinación de antibióticos por varias semanas indicada por un médico. Prevención: consumir solo lácteos pasteurizados y usar protección al manipular animales.',
+        esp: 'Médico general; infectólogo.',
+        alarma: 'Dolor de espalda intenso, dolor de cabeza fuerte o confusión: consulta pronto.',
+        src: ['mp_brucelosis']
+      },
+      {
+        id: 'leptospirosis', n: 'Leptospirosis', urg: 4, prev: 0.65, dur: ['d', 's'],
+        req: ['ctx_inundacion'], reqF: 0.2,
+        s: { ctx_inundacion: 3, fiebre: 3, dolor_muscular: 2, dolor_cabeza: 1, ojo_rojo: 1, ictericia: 1, orina_escasa: 1 },
+        que: 'Infección por bacterias (Leptospira) presentes en agua dulce o barro contaminados con orina de animales, sobre todo ratas, perros y ganado. Entre 2 y 30 días después produce fiebre alta, dolor de cabeza, dolores musculares (sobre todo de pantorrillas) y ojos rojos; en la forma grave, color amarillo, falla del riñón y sangrados.',
+        trat: 'Antibióticos indicados por un médico lo antes posible; hospitalización en las formas graves. Prevención: botas y guantes al trabajar en agua o barro y control de roedores.',
+        esp: 'Servicio de urgencia o médico general; infectólogo.',
+        alarma: 'Color amarillo, orina escasa, tos con sangre o falta de aire: llama al 131.',
+        src: ['mp_leptospirosis']
+      },
+      {
+        id: 'psitacosis', n: 'Psitacosis', alt: 'Fiebre de los loros', urg: 3, prev: 0.65, dur: ['d', 's'],
+        req: ['ctx_aves_moho'], reqF: 0.2,
+        s: { ctx_aves_moho: 3, dolor_cabeza: 3, fiebre: 2, tos_seca: 2, dolor_muscular: 1, falta_aire: 1, falta_aire_progresiva: -1 },
+        que: 'Infección por la bacteria Chlamydia psittaci, que se adquiere al respirar polvo de las fecas o plumas de aves infectadas, sobre todo loros, cotorras, catitas y palomas. Unos 5 a 15 días después produce fiebre, dolor de cabeza intenso, tos seca y dolores musculares, a menudo como una neumonía.',
+        trat: 'Antibióticos (doxiciclina) indicados por un médico. Prevención: limpiar jaulas con mascarilla y humedeciendo la suciedad, y llevar al veterinario las aves enfermas.',
+        esp: 'Médico general; broncopulmonar o infectólogo.',
+        alarma: 'Falta de aire, labios morados o confusión: urgencia.',
+        src: ['mp_psitacosis']
+      },
+      {
+        id: 'legionelosis', n: 'Legionelosis', alt: 'Enfermedad del legionario', urg: 4, prev: 0.5, dur: ['d'],
+        age: [[50, 200, 1.3]],
+        req: ['ctx_aire_acondicionado'], reqF: 0.2,
+        s: { ctx_aire_acondicionado: 3, fiebre: 3, falta_aire: 2, tos_seca: 1, tos_flema: 1, diarrea: 1, confusion: 1, ctx_fumador: 1 },
+        que: 'Neumonía causada por la bacteria Legionella, que crece en sistemas de agua tibia (aire acondicionado central, torres de enfriamiento, duchas, tinas de hidromasaje) y se respira en gotitas; no se contagia entre personas. Afecta más a mayores de 50, fumadores y personas con enfermedades crónicas. Produce fiebre alta, tos, falta de aire, dolores musculares y, a menudo, diarrea o confusión.',
+        trat: 'Antibióticos iniciados apenas se sospecha, a menudo en el hospital.',
+        esp: 'Servicio de urgencia; broncopulmonar o infectólogo.',
+        alarma: 'Falta de aire, confusión o labios morados: llama al 131.',
+        src: ['mp_legionario']
+      },
+      {
+        id: 'tifus_matorrales', n: 'Tifus de los matorrales', urg: 3, prev: 0.6, dur: ['d', 's'],
+        req: ['ctx_chiloe', 'escara_negra'], reqF: 0.2,
+        s: { escara_negra: 3, ctx_chiloe: 3, fiebre: 2, dolor_cabeza: 1, dolor_muscular: 1, erupcion: 1, sudor_nocturno: 1, ctx_ganado: -1 },
+        que: 'Infección por una bacteria del género Orientia que se transmite por la picadura de un ácaro diminuto presente en la vegetación, la leña o el suelo de zonas rurales y bosques; en Chile se ha descrito en el sur, como en Chiloé. Produce una costra o mancha negra en el sitio de la picadura, fiebre que puede ser alta, dolor de cabeza y de cuerpo, escalofríos, sudor nocturno y, a veces, erupción.',
+        trat: 'Antibióticos (doxiciclina) indicados por un médico; mejora rápido con tratamiento. Prevención: ropa que cubra, repelente y revisar la piel tras estar en el campo.',
+        esp: 'Médico general o servicio de urgencia; infectólogo.',
+        alarma: 'Fiebre que no baja, falta de aire o confusión: urgencia.',
+        src: ['gob_tifus_matorrales', 'minsal_tifus_matorrales']
+      },
+      {
+        id: 'carbunco', n: 'Carbunco', alt: 'Ántrax', urg: 4, prev: 0.4, dur: ['d', 's'],
+        req: ['ctx_ganado'], reqF: 0.2,
+        s: { escara_negra: 3, ctx_ganado: 3, fiebre: 1, ganglios: 1, ctx_chiloe: -1 },
+        que: 'Infección por la bacteria Bacillus anthracis, que vive en el suelo y afecta al ganado. En personas, la forma más común es la de la piel, en quienes manipulan animales, cueros o lana: aparece un bulto que se convierte en una úlcera indolora con una costra negra y mucha hinchazón alrededor. Las formas intestinal y respiratoria son muy graves.',
+        trat: 'Antibióticos indicados por un médico; las formas graves requieren hospitalización.',
+        esp: 'Servicio de urgencia o médico general; infectólogo.',
+        alarma: 'Fiebre alta, falta de aire, dolor de guata intenso o hinchazón que avanza rápido: llama al 131.',
+        src: ['mp_antrax_t']
+      },
+      {
+        id: 'fascitis_necrotizante', n: 'Fascitis necrotizante', alt: 'Infección grave de piel y músculo', urg: 5, prev: 0.6, dur: ['h', 'd'],
+        req: ['piel_roja_dolor_intenso'], reqF: 0.3,
+        s: { piel_roja_dolor_intenso: 3, fiebre: 2, piel_roja_caliente: 2, ctx_herida_sucia: 1, ctx_diabetes: 1, confusion: 1 },
+        que: 'Infección bacteriana poco frecuente pero muy grave que destruye rápidamente la piel, la grasa y el tejido que cubre los músculos, a menudo tras una herida pequeña. Produce un dolor intensísimo, mayor de lo que aparenta la piel, hinchazón roja y caliente que avanza en horas y luego se pone morada o con ampollas, con fiebre y decaimiento.',
+        trat: 'Emergencia: antibióticos por vena y cirugía urgente para retirar el tejido dañado.',
+        esp: 'Emergencia; cirujano.',
+        alarma: 'Dolor muy intenso con piel roja que avanza rápido, ampollas o zonas moradas: llama al 131.',
+        src: ['mp_necrosante']
+      },
+      {
+        id: 'shock_toxico', n: 'Síndrome de shock tóxico', urg: 5, prev: 0.6, dur: ['h', 'd'],
+        req: ['erupcion_quemadura_sol'], reqF: 0.3,
+        s: { erupcion_quemadura_sol: 3, fiebre: 3, ctx_tampon: 2, desmayo: 1, vomitos: 1, diarrea: 1, confusion: 1, dolor_muscular: 1 },
+        que: 'Reacción grave a toxinas de bacterias (estafilococo o estreptococo). Una parte de los casos se asocia al uso de tampones; otros a heridas, cirugías o taponamientos nasales. Aparece de golpe con fiebre alta, erupción roja como una quemadura de sol, presión baja con mareo o desmayo, vómitos, diarrea, dolores musculares y confusión.',
+        trat: 'Emergencia: retirar el tampón o el material, sueros, antibióticos por vena y apoyo de los órganos en el hospital.',
+        esp: 'Emergencia; hospital.',
+        alarma: 'Fiebre alta con erupción y mareo o desmayo: retira el tampón y llama al 131.',
+        src: ['mp_shock_toxico']
+      },
+      {
+        id: 'toxoplasmosis', n: 'Toxoplasmosis', urg: 2, prev: 0.85, dur: ['s', 'm'],
+        req: ['ctx_gatos_carne'], reqF: 0.3,
+        s: { ctx_gatos_carne: 3, ganglios: 2, fatiga: 1, fiebre: 1, dolor_muscular: 1, vision_borrosa: 1, ctx_defensas_bajas: 1 },
+        que: 'Infección por el parásito Toxoplasma gondii, que se adquiere al comer carne cruda o poco cocida, verduras mal lavadas o al tocar tierra o arena con fecas de gato. En personas sanas suele no dar síntomas o causar ganglios inflamados, cansancio y fiebre leve. Es importante en el embarazo, porque puede dañar al bebé, y en personas con defensas bajas.',
+        trat: 'La mayoría no necesita tratamiento; en el embarazo, en personas con defensas bajas o si afecta el ojo, antiparasitarios indicados por un médico. Las embarazadas deben evitar la carne cruda y limpiar la caja del gato con guantes (o que lo haga otra persona).',
+        esp: 'Médico general; matrona u obstetra en el embarazo; infectólogo.',
+        alarma: 'Visión borrosa o dolor en un ojo, o infección durante el embarazo: consulta pronto.',
+        src: ['mp_toxoplasmosis']
+      },
+      {
+        id: 'listeriosis', n: 'Listeriosis', urg: 4, prev: 0.65, dur: ['d', 's'],
+        req: ['ctx_quesos_frescos'], reqF: 0.2,
+        s: { ctx_quesos_frescos: 3, fiebre: 2, dolor_muscular: 1, diarrea: 1, rigidez_cuello: 1, confusion: 1 },
+        que: 'Infección por la bacteria Listeria, que puede estar en quesos frescos sin pasteurizar, cecinas, embutidos fríos, patés o pescados ahumados refrigerados, porque crece incluso en el refrigerador. En personas sanas produce fiebre, dolores musculares y diarrea; en embarazadas puede causar pérdida del embarazo o infección del bebé, y en mayores o con defensas bajas, meningitis.',
+        trat: 'Antibióticos por vena indicados por un médico, a menudo en el hospital. Las embarazadas y personas de riesgo deben evitar esos alimentos o calentarlos hasta que humeen.',
+        esp: 'Servicio de urgencia o médico general; obstetra en el embarazo.',
+        alarma: 'Fiebre en el embarazo, rigidez de cuello o confusión: urgencia.',
+        src: ['mp_listeriosis']
+      },
+      {
+        id: 'rubeola', n: 'Rubéola', alt: 'Sarampión alemán', urg: 3, prev: 0.4, dur: ['d'],
+        s: { ganglios_nuca: 3, erupcion_cara_desciende: 2, ctx_sin_vacunas: 2, febricula: 1, dolor_articular: 1, ojo_rojo: -1, tos_seca: -1 },
+        que: 'Infección viral leve que se transmite por el aire, hoy poco común gracias a la vacuna tres vírica. Produce fiebre baja, ganglios inflamados detrás de las orejas o en la nuca y una erupción rosada que empieza en la cara y baja por el cuerpo durante unos 3 días; en adultas, dolores articulares. Es peligrosa en el embarazo, porque puede causar malformaciones graves al bebé.',
+        trat: 'No tiene tratamiento específico: reposo y paracetamol. La vacuna la previene; se debe evitar el contacto con embarazadas.',
+        esp: 'Médico general o pediatra (avisar antes de ir para no contagiar).',
+        alarma: 'Contacto con rubéola durante el embarazo: consulta de inmediato con tu matrona o médico.',
+        src: ['mp_rubeola', 'mayo_rubeola']
+      },
+      {
+        id: 'esporotricosis', n: 'Esporotricosis', alt: 'Enfermedad del jardinero', urg: 2, prev: 0.5, dur: ['s', 'm'],
+        req: ['nodulos_brazo_linea'], reqF: 0.3,
+        s: { nodulos_brazo_linea: 3, ganglios: 1, fiebre: -1 },
+        que: 'Infección crónica de la piel por un hongo (Sporothrix) que vive en plantas, espinas, musgo y tierra, y entra por pequeñas heridas, sobre todo en jardineros y agricultores; también por arañazos de gatos enfermos. Aparece un bulto que se convierte en una llaga y luego otros nódulos en fila que suben por el brazo.',
+        trat: 'Antifúngicos (itraconazol u otros) durante varios meses, indicados por un médico. Usar guantes al trabajar con plantas y tierra.',
+        esp: 'Médico general; dermatólogo.',
+        alarma: 'Fiebre, tos o dolor de articulaciones, o defensas bajas: consulta pronto.',
+        src: ['mp_esporotricosis']
+      },
+      {
+        id: 'histoplasmosis', n: 'Histoplasmosis', urg: 3, prev: 0.6, dur: ['d', 's'],
+        req: ['ctx_cuevas_aves'], reqF: 0.2,
+        s: { ctx_cuevas_aves: 3, fiebre: 2, tos_seca: 2, dolor_pecho_respirar: 1, fatiga: 1, dolor_muscular: 1 },
+        que: 'Infección por un hongo (Histoplasma) que crece en suelos con fecas de aves o murciélagos, y se adquiere al respirar sus esporas al remover tierra o entrar en cuevas o gallineros. La mayoría no tiene síntomas o tiene un cuadro parecido a una gripe con fiebre, tos y dolores; en personas con defensas bajas puede ser grave.',
+        trat: 'Los casos leves suelen sanar solos; los moderados o graves, con antifúngicos indicados por un médico.',
+        esp: 'Médico general; broncopulmonar o infectólogo.',
+        alarma: 'Falta de aire, fiebre que no cede o defensas bajas: consulta pronto.',
+        src: ['mp_histoplasmosis']
+      },
+      {
+        id: 'criptococosis', n: 'Criptococosis', alt: 'Meningitis por hongos', urg: 4, prev: 0.4, dur: ['d', 's'],
+        req: ['ctx_defensas_bajas'], reqF: 0.2,
+        s: { ctx_defensas_bajas: 3, dolor_cabeza: 2, fiebre: 2, rigidez_cuello: 1, confusion: 1, tos_seca: 1, vision_borrosa: 1 },
+        que: 'Infección por hongos (Cryptococcus) que se respiran del ambiente, sobre todo en personas con defensas muy bajas, como en el VIH avanzado. Puede afectar los pulmones, pero su forma más grave es la meningitis: dolor de cabeza que aumenta durante días o semanas, fiebre, confusión, visión borrosa y rigidez del cuello. No se contagia entre personas.',
+        trat: 'Antifúngicos por vena y luego por boca durante meses, en el hospital, además de tratar la causa de las defensas bajas.',
+        esp: 'Servicio de urgencia; infectólogo.',
+        alarma: 'Dolor de cabeza con fiebre, confusión o rigidez de cuello en alguien con defensas bajas: urgencia.',
+        src: ['mp_criptococosis', 'mp_meningitis_criptococica']
+      },
+      {
+        id: 'mucormicosis', n: 'Mucormicosis', alt: 'Infección por hongo negro', urg: 5, prev: 0.6, dur: ['h', 'd'],
+        req: ['cara_hinchada_negra'], reqF: 0.3,
+        s: { cara_hinchada_negra: 3, ctx_diabetes: 3, ctx_defensas_bajas: 2, fiebre: 1, dolor_cara: 1, secrecion_nasal: 1 },
+        que: 'Infección muy grave por hongos que viven en materia orgánica en descomposición, que afecta casi siempre a personas con diabetes mal controlada (sobre todo con cetoacidosis) o con defensas muy bajas. Suele empezar en la nariz y los senos paranasales: dolor e hinchazón de un lado de la cara, secreción nasal, costras negras en la nariz o el paladar y fiebre, y puede invadir el ojo y el cerebro.',
+        trat: 'Emergencia: antifúngicos por vena y cirugía para retirar el tejido dañado, además de controlar la diabetes o las defensas.',
+        esp: 'Emergencia; otorrinolaringólogo; infectólogo.',
+        alarma: 'Hinchazón de la cara u ojo con costras negras en la nariz o la boca: llama al 131.',
+        src: ['mp_mucormicosis']
+      },
+      {
+        id: 'actinomicosis', n: 'Actinomicosis', urg: 3, prev: 0.5, dur: ['s', 'm'],
+        req: ['bulto_mandibula_duro'], reqF: 0.3,
+        s: { bulto_mandibula_duro: 3, dolor_muela: 1, fiebre: 1, perdida_peso: 1 },
+        que: 'Infección bacteriana crónica que afecta con mayor frecuencia la cara y el cuello, a menudo tras problemas dentales o una mala higiene bucal. Forma un absceso duro, rojo a morado, en la mandíbula, que se abre por pequeños orificios por donde sale pus con granitos amarillos. Con menos frecuencia afecta el pulmón o el abdomen.',
+        trat: 'Antibióticos durante varios meses (a veces hasta un año) y, si es necesario, drenaje o cirugía. Cuidar la salud dental.',
+        esp: 'Médico general o dentista; infectólogo; cirujano maxilofacial.',
+        alarma: 'Fiebre alta, dificultad para abrir la boca, tragar o respirar: urgencia.',
+        src: ['mp_actinomicosis']
+      },
+      {
+        id: 'aranazo_gato', n: 'Enfermedad por arañazo de gato', urg: 2, prev: 0.6, dur: ['d', 's'],
+        req: ['papula_aranazo', 'ctx_mordedura'], reqF: 0.3,
+        s: { papula_aranazo: 3, ganglios: 3, ctx_mordedura: 2, fiebre: 1, fatiga: 1 },
+        que: 'Infección por la bacteria Bartonella henselae, que se adquiere por el arañazo o mordedura de un gato (sobre todo cachorros) o sus pulgas. Días después aparece un bultito o ampollita en el sitio del arañazo y, en 1 a 3 semanas, un ganglio grande y doloroso cerca (axila, cuello o ingle), a veces con fiebre y cansancio. Suele ser leve.',
+        trat: 'A menudo mejora sola en semanas o meses; a veces antibióticos indicados por un médico. Lavar bien los arañazos y controlar las pulgas de las mascotas.',
+        esp: 'Médico general o pediatra.',
+        alarma: 'Fiebre alta que no cede, ganglio muy rojo que supura, problemas de la vista o defensas bajas: consulta pronto.',
+        src: ['mp_aranazo_gato']
+      },
+      {
+        id: 'linfogranuloma_venereo', n: 'Linfogranuloma venéreo', urg: 3, prev: 0.5, dur: ['d', 's'],
+        req: ['ganglios_ingle', 'ctx_sexo'], reqF: 0.3,
+        s: { ganglios_ingle: 3, ctx_sexo: 2, ulcera_genital: 1, dolor_anal: 1, secrecion_anal: 1, fiebre: 1 },
+        que: 'Infección de transmisión sexual causada por algunos tipos de clamidia. Empieza con una llaga pequeña e indolora en los genitales o el ano que pasa desapercibida y luego, en semanas, ganglios grandes y dolorosos en la ingle que pueden abrirse; también puede causar inflamación del recto con dolor, secreción o sangre, fiebre y malestar.',
+        trat: 'Antibióticos (doxiciclina) durante 3 semanas para la persona y sus parejas sexuales, y estudio de otras infecciones de transmisión sexual. Usar condón.',
+        esp: 'Médico general o matrona; infectólogo.',
+        alarma: 'Ganglios muy dolorosos, fiebre alta o dolor rectal intenso: consulta pronto.',
+        src: ['mp_lgv', 'minsal_chlamydia']
+      }
+    ]
+  });
 })();

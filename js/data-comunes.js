@@ -2199,7 +2199,7 @@
         id: 'pie_diabetico', n: 'Pie diabético', alt: 'Úlcera del pie por diabetes', urg: 3, prev: 1.0, dur: ['d', 's', 'm'],
         age: [[0, 29, 0.4], [50, 200, 1.2]],
         req: ['ctx_diabetes'], reqF: 0.3,
-        s: { herida_pie_diabetico: 3, ctx_diabetes: 3, ardor_pies: 1, piel_roja_caliente: 1, fiebre: 1 },
+        s: { herida_pie_diabetico: 3, ctx_diabetes: 2, ardor_pies: 1, piel_roja_caliente: 1, fiebre: 1 },
         que: 'La diabetes daña con los años los nervios y la circulación de los pies: se pierde la sensibilidad y las heridas, ampollas o roces pasan inadvertidos y sanan mal. Pueden infectarse y avanzar hasta la gangrena; es una de las principales causas de amputación.',
         trat: 'Curaciones por profesionales, descargar el pie (no apoyar la herida), antibióticos si hay infección y buen control de la glucosa. Prevención: revisar los pies todos los días, lavarlos y secarlos bien, usar calzado cómodo, no andar descalzo y acudir al control de pies en el CESFAM.',
         esp: 'CESFAM (control y curaciones de pie diabético); médico general; cirujano vascular si hay mala circulación.',
@@ -2442,6 +2442,317 @@
         esp: 'Pediatra o médico general; kinesiólogo; traumatólogo infantil.',
         alarma: 'Dolor de noche, fiebre, cojera intensa o hinchazón roja: consulta (descartar otras causas).',
         src: ['mp_osgood']
+      }
+    ]
+  });
+
+  // ── Tanda 9 (noviembre 2026): huesos, pies, hombro, músculos, columna, metabolismo, vitaminas y alergia a medicamentos
+  D.addPack({
+    call131: ['aliento_frutas'],
+    symptoms: [
+      ['dolor_talon_nino', 'Dolor en el talón de un niño o preadolescente activo, que empeora al correr o saltar', 'musculo', 1, ['enfermedad de Sever', 'apofisitis del calcáneo']],
+      ['perdida_estatura', 'Has perdido estatura o se te ha encorvado la espalda con los años', 'musculo', 1, ['joroba', 'encorvamiento']],
+      ['juanete', 'Bulto óseo en el borde interno del pie, en la base del dedo gordo, que se desvía hacia los otros dedos', 'musculo', 1, ['juanete', 'hallux valgus']],
+      ['dolor_entre_dedos_pie', 'Dolor quemante, hormigueo o sensación de tener una piedrita entre el tercer y cuarto dedo del pie', 'musculo', 1, ['neuroma de Morton']],
+      ['dolor_planta_delantera', 'Dolor o ardor en la planta del pie, justo detrás de los dedos, al estar de pie, caminar o correr', 'musculo', 1, ['metatarsalgia']],
+      ['hombro_salido', 'Tras una caída o un golpe, el hombro se ve deformado o «salido» y no puedes mover el brazo', 'musculo', 2, ['hombro dislocado', 'luxación de hombro']],
+      ['dolor_codo_interno', 'Dolor en la parte interna del codo al agarrar, lanzar o doblar la muñeca', 'musculo', 1, ['codo de golfista', 'epicondilitis medial']],
+      ['nino_no_mueve_brazo', 'Niño pequeño que llora y no quiere mover un brazo después de que lo tiraron o levantaron de la mano', 'musculo', 2, ['codo de niñera', 'pronación dolorosa']],
+      ['tiron_muscular', 'Dolor brusco en un músculo (muslo, pantorrilla, espalda) durante un esfuerzo o al correr, con dolor al usarlo y a veces moretón', 'musculo', 1, ['desgarro', 'tirón', 'distensión']],
+      ['hombro_rigido', 'Hombro cada vez más rígido: no puedes levantar el brazo ni llevar la mano a la espalda, aunque alguien te ayude a moverlo', 'musculo', 1, ['hombro congelado', 'capsulitis']],
+      ['pliegues_desiguales', 'Bebé con pliegues de los muslos o glúteos desiguales, una pierna más corta o una cadera que no abre bien', 'musculo', 1, ['displasia de cadera', 'luxación de cadera']],
+      ['dolor_piernas_nino_noche', 'Niño con dolor en ambas piernas (muslos, pantorrillas o detrás de las rodillas) al final del día o de noche, que en la mañana ya no tiene', 'musculo', 1, ['dolores de crecimiento']],
+      ['dolor_lado_rodilla', 'Dolor en la parte de afuera de la rodilla o de la cadera al correr o andar en bicicleta, sobre todo en bajadas', 'musculo', 1, ['banda iliotibial', 'rodilla del corredor']],
+      ['dolor_canilla', 'Dolor a lo largo del borde interno de la canilla (tibia) al correr o saltar', 'musculo', 1, ['periostitis tibial', 'dolor de canillas']],
+      ['dolor_hueso_puntual', 'Dolor en un punto de un hueso (pie, canilla, cadera) que empeora con el ejercicio y duele al presionarlo, sin un golpe previo', 'musculo', 1, ['fractura por estrés', 'fractura por sobrecarga']],
+      ['ctx_choque_auto', 'Choque de auto (sobre todo por detrás), golpe deportivo o caída con una sacudida brusca del cuello en los últimos días', 'contexto', 0, ['choque', 'latigazo']],
+      ['dolor_coxis', 'Dolor en el coxis (la «colita»), peor al estar sentado o al pararte de una silla', 'musculo', 1, ['coccigodinia', 'dolor de rabadilla']],
+      ['dolor_bajo_rotula_salto', 'Dolor justo bajo la rótula, en el tendón, al saltar, correr o subir escaleras (en jóvenes o adultos deportistas)', 'musculo', 1, ['tendinitis rotuliana', 'rodilla del saltador']],
+      ['aliento_frutas', 'Aliento con olor a frutas o a quitaesmalte, con respiración rápida y profunda', 'oong', 3, ['cetoacidosis', 'aliento cetónico']],
+      ['lengua_roja_lisa', 'Lengua roja, lisa y adolorida', 'oong', 1, ['glositis', 'lengua depapilada']],
+      ['piernas_arqueadas', 'Niño con piernas muy arqueadas, retraso en caminar o huesos blandos', 'musculo', 1, ['raquitismo', 'piernas chuecas']],
+      ['ctx_vegano', 'Sigues una dieta vegana o vegetariana estricta, te operaron del estómago (incluida cirugía de obesidad), o tomas metformina u omeprazol hace años', 'contexto', 0, ['vegano', 'bariátrica', 'metformina']],
+      ['ctx_poco_sol', 'Pasas muy poco tiempo al sol (encierro, invierno en el sur, piel muy cubierta) o eres una persona mayor que sale poco', 'contexto', 0, ['falta de sol']],
+      ['ctx_medicamento_nuevo', 'Empezaste un medicamento nuevo (antibiótico, antiinflamatorio, anticonvulsivante u otro) en los últimos días o semanas', 'contexto', 0, ['medicamento nuevo', 'reacción a remedio']]
+    ],
+    sources: {
+      clc_talon: [CLC, 'Me duele el talón (incluye la enfermedad de Sever)', 'https://www.clinicalascondes.cl/NOTICIAS/-Me-duele-el-talon-'],
+      mp_escoliosis: [MP, 'Escoliosis', 'https://medlineplus.gov/spanish/ency/article/001241.htm'],
+      mp_osteoporosis_t: [MP, 'Osteoporosis', 'https://medlineplus.gov/spanish/osteoporosis.html'],
+      mp_aplastamiento_vertebral: [MP, 'Aplastamiento vertebral de la espalda', 'https://medlineplus.gov/spanish/ency/article/000443.htm'],
+      mp_juanetes: [MP, 'Juanetes', 'https://medlineplus.gov/spanish/ency/article/001231.htm'],
+      mp_morton: [MP, 'Neuroma de Morton', 'https://medlineplus.gov/spanish/ency/article/007286.htm'],
+      mayo_metatarsalgia: [MAYO, 'Metatarsalgia', 'https://www.mayoclinic.org/es/diseases-conditions/metatarsalgia/symptoms-causes/syc-20354790'],
+      mayo_hombro_dislocado: [MAYO, 'Hombro dislocado', 'https://www.mayoclinic.org/es/diseases-conditions/dislocated-shoulder/symptoms-causes/syc-20371715'],
+      mayo_codo_golfista: [MAYO, 'Codo de golfista', 'https://www.mayoclinic.org/es/diseases-conditions/golfers-elbow/symptoms-causes/syc-20372868'],
+      mp_codo_golfista: [MP, 'Epicondilitis medial (codo de golfista)', 'https://medlineplus.gov/spanish/ency/article/007638.htm'],
+      mp_codo_ninera: [MP, 'Subluxación de la cabeza del radio (codo de niñera)', 'https://medlineplus.gov/spanish/ency/article/000983.htm'],
+      mp_calambres: [MP, 'Calambres musculares', 'https://medlineplus.gov/spanish/ency/article/003193.htm'],
+      mayo_calambre: [MAYO, 'Calambre muscular', 'https://www.mayoclinic.org/es/diseases-conditions/muscle-cramp/symptoms-causes/syc-20350820'],
+      mayo_dolor_muscular: [MAYO, 'Dolor muscular: causas (incluye distensiones)', 'https://www.mayoclinic.org/es/symptoms/muscle-pain/basics/causes/sym-20050866'],
+      mp_dolor_pierna: [MP, 'Dolor de pierna (incluye distensión y fractura por sobrecarga)', 'https://medlineplus.gov/spanish/ency/article/003182.htm'],
+      mayo_hombro_congelado: [MAYO, 'Hombro congelado', 'https://www.mayoclinic.org/es/diseases-conditions/frozen-shoulder/symptoms-causes/syc-20372684'],
+      mp_sinovitis: [MP, 'Sinovitis tóxica (transitoria)', 'https://medlineplus.gov/spanish/ency/article/000981.htm'],
+      mp_displasia_cadera: [MP, 'Displasia del desarrollo de la cadera', 'https://medlineplus.gov/spanish/ency/article/000971.htm'],
+      mayo_dolores_crecimiento: [MAYO, 'Dolores de crecimiento', 'https://www.mayoclinic.org/es/diseases-conditions/growing-pains/symptoms-causes/syc-20354349'],
+      mp_banda_iliotibial: [MP, 'Síndrome de la banda iliotibial: cuidados', 'https://medlineplus.gov/spanish/ency/patientinstructions/000683.htm'],
+      mp_espinillas: [MP, 'Cuidados personales para el dolor en las espinillas', 'https://medlineplus.gov/spanish/ency/patientinstructions/000654.htm'],
+      mayo_latigazo: [MAYO, 'Latigazo cervical', 'https://www.mayoclinic.org/es/diseases-conditions/whiplash/symptoms-causes/syc-20378921'],
+      mayo_coxis: [MAYO, 'Dolor de cóccix: ¿cómo aliviarlo?', 'https://www.mayoclinic.org/es/diseases-conditions/back-pain/expert-answers/tailbone-pain/faq-20058211'],
+      mp_lesion_coxis: [MP, 'Atención postratamiento para lesión en el cóccix', 'https://medlineplus.gov/spanish/ency/patientinstructions/000573.htm'],
+      mayo_tendinitis_rotuliana: [MAYO, 'Tendinitis rotuliana', 'https://www.mayoclinic.org/es/diseases-conditions/patellar-tendinitis/symptoms-causes/syc-20376113'],
+      mp_cetoacidosis: [MP, 'Cetoacidosis diabética', 'https://medlineplus.gov/spanish/ency/article/000320.htm'],
+      mp_b12: [MP, 'Anemia por deficiencia de vitamina B12', 'https://medlineplus.gov/spanish/ency/article/000574.htm'],
+      mp_vitamina_d: [MP, 'Vitamina D', 'https://medlineplus.gov/spanish/ency/article/002405.htm'],
+      mp_raquitismo: [MP, 'Raquitismo', 'https://medlineplus.gov/spanish/ency/article/000344.htm'],
+      mp_osteomalacia: [MP, 'Osteomalacia', 'https://medlineplus.gov/spanish/ency/article/000376.htm'],
+      mp_enfermedad_suero: [MP, 'Enfermedad del suero (reacción tardía a medicamentos)', 'https://medlineplus.gov/spanish/ency/article/000820.htm']
+    },
+    conditions: [
+      {
+        id: 'sever', n: 'Enfermedad de Sever', alt: 'Dolor de talón en niños', urg: 1, prev: 1.0, dur: ['s', 'm'], sexM: 1.2,
+        ageRange: [6, 16],
+        s: { dolor_talon_nino: 3, ctx_ejercicio: 1, dolor_talon: 1, fiebre: -2 },
+        que: 'Inflamación del cartílago de crecimiento del talón en niños de 8 a 12 años que hacen deporte, por la tracción repetida del tendón de Aquiles. Es la causa más común de dolor de talón a esa edad; duele al correr o saltar y a veces en ambos pies. Desaparece cuando el hueso termina de crecer.',
+        trat: 'Taloneras de silicona, hielo, analgésicos, elongación de pantorrillas y reducir por un tiempo la actividad que más duele; si es intenso, reposo deportivo o una bota por algunas semanas.',
+        esp: 'Pediatra o médico general; traumatólogo infantil; kinesiólogo.',
+        alarma: 'Talón hinchado, rojo, con fiebre o decaimiento: consulta pronto (descartar infección u otras causas).',
+        src: ['clc_talon']
+      },
+      {
+        id: 'escoliosis', n: 'Escoliosis', urg: 2, prev: 1.0, dur: ['m'], sexF: 1.3,
+        age: [[10, 18, 1.4]],
+        s: { columna_desviada: 3, dolor_lumbar: 1, ctx_familia: 1 },
+        que: 'Curvatura lateral anormal de la columna, más frecuente en niñas y que suele notarse en la pubertad: un hombro o una cadera más alta, una escápula más saliente o la ropa que cuelga desigual. En la mayoría no se conoce la causa y las curvas leves no dan síntomas.',
+        trat: 'Las curvas leves solo se controlan con radiografías mientras el niño crece; las moderadas, con un corsé ortopédico; las graves o que avanzan, con cirugía. El ejercicio es recomendable.',
+        esp: 'Pediatra o médico general; traumatólogo de columna.',
+        alarma: 'Curva que aumenta rápido, dolor intenso, debilidad o adormecimiento de piernas o falta de aire: consulta pronto.',
+        src: ['mp_escoliosis']
+      },
+      {
+        id: 'osteoporosis', n: 'Osteoporosis', alt: 'Huesos frágiles', urg: 2, prev: 1.0, dur: ['m'], sexF: 1.5,
+        age: [[0, 49, 0.2], [65, 200, 1.4]],
+        s: { perdida_estatura: 3, fracturas_repetidas: 2, dolor_lumbar: 1, ctx_corticoides: 1, ctx_fumador: 1, ctx_poco_sol: 1 },
+        que: 'Los huesos pierden densidad y se vuelven frágiles, sobre todo en mujeres después de la menopausia y en personas mayores. Es una enfermedad «silenciosa»: no da síntomas hasta que se produce una fractura con una caída leve (muñeca, cadera, vértebras), pérdida de estatura o espalda encorvada. Aumentan el riesgo los corticoides, el tabaco, el alcohol, la poca actividad y la falta de calcio o vitamina D.',
+        trat: 'Medicamentos que fortalecen el hueso, calcio y vitamina D, ejercicio con carga y de equilibrio, no fumar y prevenir caídas en la casa. La densitometría ósea permite el diagnóstico.',
+        esp: 'Médico general; reumatólogo, endocrinólogo o ginecólogo.',
+        alarma: 'Dolor de espalda súbito e intenso tras un esfuerzo leve, o dolor de cadera e imposibilidad de caminar tras una caída: urgencia.',
+        src: ['mp_osteoporosis_t', 'mp_aplastamiento_vertebral']
+      },
+      {
+        id: 'juanete', n: 'Juanete', alt: 'Hallux valgus', urg: 1, prev: 1.0, dur: ['m'], sexF: 1.4,
+        s: { juanete: 3 },
+        que: 'Bulto óseo en la base del dedo gordo del pie, que se desvía hacia los otros dedos. Es más frecuente en mujeres y puede ser hereditario; empeora con zapatos de punta estrecha y taco alto. Produce dolor, roce, enrojecimiento y callos, y dificulta encontrar calzado.',
+        trat: 'Zapatos anchos y cómodos, almohadillas, separadores o plantillas, analgésicos y hielo; si el dolor limita la vida diaria, cirugía.',
+        esp: 'Médico general; podólogo; traumatólogo de pie.',
+        alarma: 'Enrojecimiento, calor e hinchazón intensa del dedo (posible gota o infección) o una herida en personas con diabetes: consulta pronto.',
+        src: ['mp_juanetes']
+      },
+      {
+        id: 'neuroma_morton', n: 'Neuroma de Morton', urg: 1, prev: 1.0, dur: ['s', 'm'], sexF: 1.4,
+        s: { dolor_entre_dedos_pie: 3, dolor_planta_delantera: 1, ardor_pies: -1 },
+        que: 'Engrosamiento del nervio entre los dedos del pie, generalmente entre el tercero y el cuarto, más frecuente en mujeres. Produce dolor quemante, hormigueo o adormecimiento en esos dedos y la sensación de pisar una piedrita, que empeora con zapatos apretados o de taco alto.',
+        trat: 'Zapatos anchos y de taco bajo, plantillas o almohadillas, analgésicos e inyecciones; si no mejora, cirugía.',
+        esp: 'Médico general; podólogo; traumatólogo de pie.',
+        alarma: 'Adormecimiento que se extiende a todo el pie o a ambos pies: consulta (descartar neuropatía).',
+        src: ['mp_morton']
+      },
+      {
+        id: 'metatarsalgia', n: 'Metatarsalgia', alt: 'Dolor de la planta delantera del pie', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        s: { dolor_planta_delantera: 3, ctx_ejercicio: 1, ctx_sobrepeso: 1, dolor_talon: -1 },
+        que: 'Dolor e inflamación en la parte delantera de la planta del pie, justo detrás de los dedos. Se debe a correr o saltar mucho, zapatos de taco alto o mal ajustados, sobrepeso, dedos en martillo o juanetes. Duele o arde al estar de pie, caminar o correr y mejora en reposo.',
+        trat: 'Reposo relativo, hielo, calzado cómodo con buena amortiguación, plantillas o almohadillas metatarsales y bajar de peso si corresponde.',
+        esp: 'Médico general; podólogo; kinesiólogo.',
+        alarma: 'Hinchazón o dolor intenso en un punto que no mejora con reposo: consulta (posible fractura por estrés).',
+        src: ['mayo_metatarsalgia']
+      },
+      {
+        id: 'luxacion_hombro', n: 'Luxación de hombro', alt: 'Hombro dislocado', urg: 4, prev: 1.0, dur: ['h'],
+        age: [[15, 35, 1.2]],
+        req: ['hombro_salido'], reqF: 0.3,
+        s: { hombro_salido: 3, ctx_torcedura: 2, deformidad: 1, no_apoyar: 1, hormigueo: 1 },
+        que: 'El hueso del brazo sale de su cavidad en el hombro, casi siempre hacia adelante, tras una caída sobre el brazo, un golpe deportivo o un movimiento brusco. Produce dolor intenso, hombro deformado o cuadrado, imposibilidad de mover el brazo y, a veces, adormecimiento u hormigueo. Puede volver a ocurrir.',
+        trat: 'No intentar ponerlo en su lugar: inmovilizar el brazo y acudir a urgencia, donde se reduce (se vuelve a su lugar) y luego se inmoviliza; kinesiología y, si se repite, cirugía.',
+        esp: 'Servicio de urgencia; traumatólogo; kinesiólogo.',
+        alarma: 'Brazo frío, pálido o sin sensibilidad: urgencia inmediata.',
+        src: ['mayo_hombro_dislocado']
+      },
+      {
+        id: 'codo_golfista', n: 'Codo de golfista', alt: 'Epicondilitis medial', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[30, 60, 1.2]],
+        s: { dolor_codo_interno: 3, ctx_manos: 1, ctx_ejercicio: 1, dolor_codo: -1, hormigueo_menique: -1 },
+        que: 'Dolor y sensibilidad en la parte interna del codo, a veces hasta el antebrazo, por sobrecarga de los músculos y tendones que doblan la muñeca y los dedos. Aparece en golfistas, pero también en deportes de lanzamiento, levantamiento de pesas o trabajos con herramientas.',
+        trat: 'Reposo de la actividad que duele, hielo, analgésicos, ejercicios de elongación y fortalecimiento, y corregir la técnica; a veces una banda o una inyección.',
+        esp: 'Médico general; kinesiólogo; traumatólogo.',
+        alarma: 'Codo hinchado, caliente o deformado, o adormecimiento de los dedos anular y meñique: consulta.',
+        src: ['mayo_codo_golfista', 'mp_codo_golfista']
+      },
+      {
+        id: 'codo_ninera', n: 'Pronación dolorosa', alt: 'Codo de niñera', urg: 3, prev: 1.0, dur: ['h'],
+        ageRange: [0, 7], age: [[1, 4, 1.3]],
+        req: ['nino_no_mueve_brazo'], reqF: 0.3,
+        s: { nino_no_mueve_brazo: 3, cojera_nino: 1, hinchazon_moreton: -1, deformidad: -2 },
+        que: 'Luxación parcial muy frecuente del codo en niños pequeños, que ocurre cuando se les tira o levanta del brazo estirado (de la mano). El niño llora y deja de usar el brazo, que mantiene junto al cuerpo, aunque casi no se ve hinchazón.',
+        trat: 'Un médico lo resuelve en minutos con una maniobra suave del codo y el antebrazo; con tratamiento no deja secuelas. Para evitarlo, no levantar ni balancear a los niños de las manos.',
+        esp: 'Pediatra, médico general o servicio de urgencia.',
+        alarma: 'Hinchazón, moretón, deformidad o caída fuerte: urgencia (descartar fractura).',
+        src: ['mp_codo_ninera']
+      },
+      {
+        id: 'calambres_musculares', n: 'Calambres musculares', urg: 1, prev: 1.0, dur: ['h', 'd', 's'],
+        s: { calambres: 3, ctx_ejercicio: 1, ctx_calor: 1, debilidad_progresiva: -1, fasciculaciones: -1, hormigueo_boca_dedos: -2 },
+        que: 'Contracciones bruscas, involuntarias y dolorosas de un músculo, sobre todo de la pantorrilla, que duran segundos o minutos. Son muy comunes y se relacionan con el ejercicio, el cansancio muscular, el calor, la deshidratación, el embarazo, la edad y algunos medicamentos (como los diuréticos).',
+        trat: 'Estirar y masajear el músculo, calor al inicio y luego frío; hidratarse bien y elongar antes de dormir o de hacer ejercicio.',
+        esp: 'Autocuidado; médico general si se repiten.',
+        alarma: 'Calambres muy frecuentes, con debilidad, adormecimiento, músculos que se achican o hinchazón de la pierna: consulta.',
+        src: ['mp_calambres', 'mayo_calambre']
+      },
+      {
+        id: 'desgarro_muscular', n: 'Desgarro muscular', alt: 'Tirón o distensión', urg: 1, prev: 1.0, dur: ['h', 'd', 's'],
+        s: { tiron_muscular: 3, ctx_ejercicio: 2, hinchazon_moreton: 1, deformidad: -1 },
+        que: 'Lesión de las fibras de un músculo o de su unión al tendón por un estiramiento o esfuerzo brusco, frecuente en los isquiotibiales, la pantorrilla, los aductores o la espalda. Se siente un dolor súbito (a veces un «pinchazo») durante la actividad, luego dolor al usar el músculo, hinchazón y, a veces, moretón.',
+        trat: 'Reposo relativo, hielo las primeras 48 horas, compresión y elevación; volver de a poco a la actividad con elongación y fortalecimiento guiados por un kinesiólogo.',
+        esp: 'Autocuidado; médico general o kinesiólogo si es moderado.',
+        alarma: 'Dolor muy intenso, hundimiento del músculo, imposibilidad de usarlo o pantorrilla hinchada y caliente: consulta pronto.',
+        src: ['mayo_dolor_muscular', 'mp_dolor_pierna']
+      },
+      {
+        id: 'hombro_congelado', n: 'Hombro congelado', alt: 'Capsulitis adhesiva', urg: 2, prev: 1.0, dur: ['m'], sexF: 1.3,
+        age: [[40, 70, 1.3]],
+        s: { hombro_rigido: 3, dolor_hombro: 2, ctx_diabetes: 1 },
+        que: 'La cápsula de la articulación del hombro se engruesa y se retrae, y el hombro se pone cada vez más rígido y doloroso, incluso cuando otra persona intenta moverlo. Es más frecuente después de los 40 años, en mujeres, en personas con diabetes y tras períodos de inmovilización. Evoluciona en etapas durante 1 a 3 años.',
+        trat: 'Analgésicos, kinesiología con ejercicios de movilidad, inyecciones de corticoide y, a veces, procedimientos para liberar la cápsula. Suele recuperarse con el tiempo.',
+        esp: 'Médico general; kinesiólogo; traumatólogo.',
+        alarma: 'Dolor de hombro con dolor de pecho, falta de aire o sudor: llama al 131.',
+        src: ['mayo_hombro_congelado']
+      },
+      {
+        id: 'sinovitis_transitoria', n: 'Sinovitis transitoria de cadera', urg: 3, prev: 1.0, dur: ['h', 'd'],
+        ageRange: [2, 12],
+        req: ['cojera_nino'], reqF: 0.3,
+        s: { cojera_nino: 3, ctx_infeccion_reciente: 2, fiebre: -1 },
+        que: 'Inflamación pasajera de la cadera, la causa más común de cojera y dolor de cadera en niños antes de la pubertad, a menudo después de un resfrío. El niño cojea o se queja de dolor en la cadera, el muslo o la rodilla, pero no se ve muy enfermo. Pasa en 7 a 10 días.',
+        trat: 'Reposo y antiinflamatorios. Siempre debe evaluarlo un médico para descartar una infección de la cadera u otras causas.',
+        esp: 'Pediatra o servicio de urgencia.',
+        alarma: 'Fiebre alta, dolor intenso, no poder apoyar la pierna o decaimiento: urgencia (posible artritis séptica).',
+        src: ['mp_sinovitis']
+      },
+      {
+        id: 'displasia_cadera', n: 'Displasia de cadera', alt: 'Displasia del desarrollo de la cadera', urg: 2, prev: 1.0, dur: ['s', 'm'], sexF: 1.4,
+        ageRange: [0, 4], age: [[0, 1, 1.3]],
+        s: { pliegues_desiguales: 3, cojera_nino: 1 },
+        que: 'La cadera del bebé no se forma bien y puede estar suelta o salida de su lugar. Es más frecuente en niñas, en primogénitos, con antecedentes familiares o en bebés que venían de nalgas. Puede notarse por pliegues desiguales en muslos o glúteos, una pierna más corta o una cadera que no abre bien; si se detecta tarde, el niño cojea al caminar.',
+        trat: 'Si se detecta en los primeros meses (con el examen y la ecografía o radiografía de caderas del control sano), un arnés o correa suele corregirla; si se detecta tarde, puede necesitarse yeso o cirugía.',
+        esp: 'Pediatra o control sano; traumatólogo infantil.',
+        alarma: 'Niño que cojea al empezar a caminar o con una pierna más corta: consulta pronto.',
+        src: ['mp_displasia_cadera']
+      },
+      {
+        id: 'dolores_crecimiento', n: 'Dolores de crecimiento', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        ageRange: [3, 12],
+        s: { dolor_piernas_nino_noche: 3, ctx_ejercicio: 1, fiebre: -2, cojera_nino: -2, perdida_peso: -2, articulacion_hinchada: -2 },
+        que: 'Dolor o molestia en ambas piernas (muslos, pantorrillas o detrás de las rodillas) en niños de 3 a 12 años, al final de la tarde o de noche, que a veces los despierta y que en la mañana ha desaparecido. Probablemente se debe al cansancio muscular por la actividad del día. No afecta el crecimiento.',
+        trat: 'Masajes, calor suave, elongación y, si es necesario, un analgésico; suelen mejorar solos en uno o dos años.',
+        esp: 'Pediatra si hay dudas.',
+        alarma: 'Dolor en una sola pierna, durante el día, con cojera, fiebre, hinchazón, decaimiento o baja de peso: consulta pronto.',
+        src: ['mayo_dolores_crecimiento']
+      },
+      {
+        id: 'banda_iliotibial', n: 'Síndrome de la banda iliotibial', alt: 'Rodilla del corredor (lado externo)', urg: 1, prev: 1.0, dur: ['s', 'm'],
+        age: [[15, 50, 1.2]],
+        s: { dolor_lado_rodilla: 3, ctx_ejercicio: 2 },
+        que: 'Irritación de la banda de tejido que va por el lado externo del muslo, desde la cadera a la rodilla, por roce repetido. Es frecuente en corredores y ciclistas: produce dolor en la parte de afuera de la rodilla (o de la cadera) que aparece durante la actividad, sobre todo en bajadas.',
+        trat: 'Reducir el entrenamiento por un tiempo, hielo, analgésicos, elongación y fortalecimiento de cadera con un kinesiólogo; revisar el calzado y la bicicleta. Rara vez necesita cirugía.',
+        esp: 'Médico general; kinesiólogo; traumatólogo.',
+        alarma: 'Rodilla hinchada, que se traba o falla: consulta (posible lesión interna).',
+        src: ['mp_banda_iliotibial']
+      },
+      {
+        id: 'periostitis_tibial', n: 'Periostitis tibial', alt: 'Dolor de canillas', urg: 1, prev: 1.0, dur: ['d', 's'],
+        s: { dolor_canilla: 3, ctx_ejercicio: 2, dolor_hueso_puntual: -1 },
+        que: 'Dolor a lo largo del borde interno de la tibia por sobrecarga, muy frecuente en corredores, militares y bailarines, sobre todo al aumentar bruscamente el entrenamiento, correr en superficies duras o con pies planos.',
+        trat: 'Reposo relativo (cambiar a natación o bicicleta), hielo, analgésicos, calzado adecuado y volver de a poco a correr.',
+        esp: 'Médico general; kinesiólogo.',
+        alarma: 'Dolor en un punto exacto del hueso, que aparece incluso en reposo o de noche: consulta (posible fractura por estrés).',
+        src: ['mp_espinillas']
+      },
+      {
+        id: 'fractura_estres', n: 'Fractura por estrés', alt: 'Fractura por sobrecarga', urg: 2, prev: 1.0, dur: ['d', 's'], sexF: 1.2,
+        s: { dolor_hueso_puntual: 3, ctx_ejercicio: 2, dolor_canilla: 1, ctx_poco_sol: 1, ctx_torcedura: -1 },
+        que: 'Pequeña fisura en un hueso por sobrecarga repetida, más frecuente en los pies, la tibia o la cadera de corredores, militares o bailarines, en personas con huesos debilitados (osteoporosis, falta de vitamina D) o mujeres con poca alimentación o sin regla. Produce dolor en un punto del hueso que aumenta con la actividad y duele al presionar.',
+        trat: 'Reposo de la actividad de impacto por 6 a 8 semanas, a veces con bota o muletas; luego volver de a poco. Estudiar y tratar la causa (alimentación, vitamina D, densidad ósea).',
+        esp: 'Médico general; traumatólogo; kinesiólogo.',
+        alarma: 'Dolor de cadera o ingle al caminar en un corredor, o dolor que no permite apoyar: consulta pronto.',
+        src: ['mp_dolor_pierna', 'mp_espinillas']
+      },
+      {
+        id: 'latigazo_cervical', n: 'Latigazo cervical', urg: 2, prev: 1.0, dur: ['h', 'd', 's'],
+        req: ['ctx_choque_auto'], reqF: 0.3,
+        s: { ctx_choque_auto: 3, dolor_cuello: 3, dolor_cabeza: 1, mareo: 1, hormigueo: 1 },
+        que: 'Lesión del cuello por un movimiento brusco hacia atrás y adelante, como en un choque de auto por detrás, un golpe deportivo o una caída. Los síntomas suelen aparecer en horas o días: dolor y rigidez del cuello, dolor de cabeza que nace en la nuca, mareo, cansancio y, a veces, hormigueo en los brazos.',
+        trat: 'Analgésicos, calor o frío, mantener el cuello en movimiento suave y ejercicios guiados por un kinesiólogo; los collares solo por poco tiempo. La mayoría mejora en semanas.',
+        esp: 'Médico general o servicio de urgencia; kinesiólogo.',
+        alarma: 'Tras un accidente: dolor intenso de cuello, debilidad, adormecimiento, mareo intenso o dificultad para caminar, acude a urgencia (descartar fractura). No muevas el cuello de alguien accidentado.',
+        src: ['mayo_latigazo']
+      },
+      {
+        id: 'coccigodinia', n: 'Dolor del coxis', alt: 'Coccigodinia', urg: 1, prev: 1.0, dur: ['d', 's', 'm'], sexF: 1.4,
+        s: { dolor_coxis: 3, ctx_torcedura: 1, ctx_posparto: 1, bulto_coxis: -2, fiebre: -1 },
+        que: 'Dolor en el coxis, el hueso del final de la columna, que empeora al estar sentado mucho rato o al pararse de una silla. Suele aparecer tras una caída sentado, un parto, estar mucho tiempo sentado en superficies duras o sin causa clara. Generalmente mejora solo en semanas o meses.',
+        trat: 'Cojín en forma de cuña o con un hueco, analgésicos, calor o frío y evitar estar mucho rato sentado; si no mejora, kinesiología, inyecciones u otros tratamientos.',
+        esp: 'Médico general; kinesiólogo; traumatólogo.',
+        alarma: 'Bulto con pus o fiebre en la zona, o dolor con pérdida de control de la orina o las deposiciones: consulta pronto.',
+        src: ['mayo_coxis', 'mp_lesion_coxis']
+      },
+      {
+        id: 'tendinitis_rotuliana', n: 'Tendinitis rotuliana', alt: 'Rodilla del saltador', urg: 1, prev: 1.0, dur: ['s', 'm'], sexM: 1.2,
+        age: [[15, 40, 1.2]],
+        s: { dolor_bajo_rotula_salto: 3, ctx_ejercicio: 2, dolor_frente_rodilla: 1, bulto_bajo_rotula: -1 },
+        que: 'Lesión del tendón que une la rótula con la tibia por sobrecarga, frecuente en deportes de salto (vóleibol, básquetbol) y carrera. El dolor se siente justo bajo la rótula, primero al empezar el ejercicio o después de entrenar y, si avanza, al subir escaleras o levantarse de una silla.',
+        trat: 'Reducir la actividad que duele, hielo, analgésicos por pocos días, ejercicios de fortalecimiento (excéntricos) y elongación con un kinesiólogo, y una cinta bajo la rótula.',
+        esp: 'Médico general; kinesiólogo; traumatólogo.',
+        alarma: 'Chasquido brusco con imposibilidad de estirar la rodilla: urgencia (posible rotura del tendón).',
+        src: ['mayo_tendinitis_rotuliana']
+      },
+      {
+        id: 'cetoacidosis', n: 'Cetoacidosis diabética', urg: 5, prev: 0.8, dur: ['h', 'd'],
+        s: { aliento_frutas: 3, sed: 2, orinar_frecuente: 2, vomitos: 2, dolor_abdominal: 2, respiracion_rapida: 2, ctx_diabetes: 2, confusion: 1, somnolencia: 1 },
+        que: 'Complicación grave de la diabetes, sobre todo la tipo 1, en que por falta de insulina el cuerpo quema grasa demasiado rápido y la sangre se acidifica. Produce mucha sed, orinar mucho, náuseas, vómitos, dolor de guata, respiración rápida y profunda, aliento a frutas, cansancio y confusión. A veces es la primera señal de una diabetes que no se conocía.',
+        trat: 'Emergencia: hospitalización con insulina, sueros y sales por vena. Para prevenirla, no suspender la insulina y medir glucosa (y cetonas) más seguido cuando se está enfermo.',
+        esp: 'Emergencia; diabetólogo o endocrinólogo.',
+        alarma: 'Vómitos con sed intensa, respiración rápida, aliento a frutas o somnolencia: llama al 131.',
+        src: ['mp_cetoacidosis']
+      },
+      {
+        id: 'deficit_b12', n: 'Déficit de vitamina B12', alt: 'Anemia por falta de B12', urg: 2, prev: 0.9, dur: ['s', 'm'],
+        age: [[60, 200, 1.3]],
+        req: ['ctx_vegano', 'lengua_roja_lisa', 'hormigueo'], reqF: 0.4,
+        s: { palidez: 2, fatiga: 2, hormigueo: 2, lengua_roja_lisa: 2, ctx_vegano: 2, ardor_pies: 1, perdida_equilibrio: 1, memoria: 1 },
+        que: 'Falta de vitamina B12, que el cuerpo necesita para formar glóbulos rojos y para los nervios. Se debe a dietas veganas estrictas sin suplemento, a problemas para absorberla (anemia perniciosa, cirugías del estómago, gastritis crónica, edad avanzada) o a medicamentos como la metformina o el omeprazol por años. Produce cansancio, palidez, lengua roja y adolorida, hormigueos en pies y manos, inestabilidad al caminar y problemas de memoria.',
+        trat: 'Vitamina B12 en inyecciones o comprimidos según la causa, a veces de por vida. Tratada a tiempo, se recupera; si pasa mucho tiempo, el daño de los nervios puede quedar.',
+        esp: 'Médico general; hematólogo o neurólogo si es grave.',
+        alarma: 'Inestabilidad al caminar, confusión o hormigueos que avanzan: consulta pronto.',
+        src: ['mp_b12']
+      },
+      {
+        id: 'deficit_vitamina_d', n: 'Déficit de vitamina D', alt: 'Raquitismo u osteomalacia', urg: 2, prev: 0.9, dur: ['m'],
+        req: ['ctx_poco_sol', 'piernas_arqueadas'], reqF: 0.3,
+        s: { ctx_poco_sol: 3, dolor_huesos: 2, piernas_arqueadas: 2, calambres: 1, debilidad_general: 1, fracturas_repetidas: 1 },
+        que: 'Falta de vitamina D por poca exposición al sol, poca vitamina en la dieta, problemas de absorción o enfermedades del hígado o el riñón. A menudo no da síntomas; cuando es marcada, ablanda los huesos: en niños produce raquitismo (piernas arqueadas, retraso para caminar, huesos blandos) y en adultos osteomalacia (dolor de huesos, debilidad muscular, fracturas). También contribuye a la osteoporosis.',
+        trat: 'Suplementos de vitamina D (y calcio si falta) indicados por el médico según el nivel en la sangre, alimentos que la contengan y algo de sol con protección.',
+        esp: 'Médico general o pediatra.',
+        alarma: 'Calambres intensos, espasmos o convulsiones en un niño: urgencia.',
+        src: ['mp_vitamina_d', 'mp_raquitismo', 'mp_osteomalacia']
+      },
+      {
+        id: 'alergia_medicamentos', n: 'Alergia a medicamentos', urg: 3, prev: 1.0, dur: ['h', 'd', 's'],
+        req: ['ctx_medicamento_nuevo'], reqF: 0.2,
+        s: { ctx_medicamento_nuevo: 3, ronchas: 2, erupcion: 2, picazon_piel: 2, hinchazon_labios: 1, fiebre: 1, dolor_articular: 1 },
+        que: 'Reacción del sistema inmune a un medicamento, a menudo antibióticos (como la penicilina), antiinflamatorios o anticonvulsivantes. Puede aparecer en minutos (ronchas, picazón, hinchazón, dificultad para respirar) o días después (erupción, fiebre, dolor de articulaciones). Algunas reacciones graves causan ampollas y heridas en la piel y las mucosas.',
+        trat: 'Suspender el medicamento solo con indicación médica (o de inmediato si la reacción es grave), antihistamínicos o corticoides; anotar la alergia y avisarla siempre antes de recibir un tratamiento.',
+        esp: 'Médico general; alergólogo o inmunólogo.',
+        alarma: 'Hinchazón de la cara o la garganta, dificultad para respirar, mareo, o ampollas y heridas en la boca o los ojos: llama al 131.',
+        src: ['mp_alergia', 'mp_enfermedad_suero']
       }
     ]
   });
